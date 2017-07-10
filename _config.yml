@@ -1,10 +1,10 @@
 theme: jekyll-theme-cayman
 # Setup
-title:        Chatbot PHP Facebook
-description: Chatbot Para Facebook Feito Em PHP Orientado a Objetos
+title:        RouterKhan
+description: RouterKhan
 show_downloads: true
-tagline:      Chatbot Para Facebook Feito Em PHP Orientado a Objetos
-baseurl:      "/ChatBot-PHP-Facebook"
+tagline:      Sistema de Rotas Feito Em PHP Orientado a Objetos
+baseurl:      "/RouterKhan"
 paginate:     1
 
 # About/contact
