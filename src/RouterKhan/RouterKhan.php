@@ -32,11 +32,11 @@
 		}
 
 		protected function __construct(){
-			if (!strcasecmp($_SERVER['REQUEST_METHOD'], 'DELETE')) {
-    			parse_str(file_get_contents('php://input'), self::$_DELETE);
+			if (strtolower($_SERVER['REQUEST_METHOD']) == 'delete') {
+    				parse_str(file_get_contents('php://input'), self::$_DELETE);
 			}
-			if (!strcasecmp($_SERVER['REQUEST_METHOD'], 'PUT')) {
-    			parse_str(file_get_contents('php://input'), self::$_PUT);
+			if (strtolower($_SERVER['REQUEST_METHOD') == 'put') {
+    				parse_str(file_get_contents('php://input'), self::$_PUT);
 			}
 		}
 
