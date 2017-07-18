@@ -1,6 +1,6 @@
 <?php
 
-	class Res{
+	class RouterKhanRes{
 
 		private static $use;
 
