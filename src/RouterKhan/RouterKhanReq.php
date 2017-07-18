@@ -20,6 +20,14 @@
 			return self::$data["post"][$name];
 		}
 
+		public function put($name){
+			return self::$data["put"][$name];
+		}
+
+		public function delete($name){
+			return self::$data["delete"][$name];
+		}
+
 		public function params($name){
 			return self::$data["params"][$name];
 		}
