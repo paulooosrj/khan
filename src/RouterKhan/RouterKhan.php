@@ -72,26 +72,19 @@
 		public function isParameter($url){
 			$routes = self::$routess["params"];
 			$routerActive = false;
-			foreach($routes as $rota => $fn):
-				if(strrpos($rota, "{") && strrpos($rota, "}")): $routerActive = $rota; endif;
-			endforeach;
+			foreach($routes as $rota => $fn){ if(preg_match('/[{}]/', $rota)): $routerActive = $rota; endif; }
 			if($routerActive){
-				$lengRoute = explode("/", substr($routerActive, 1));
-				$lengUri = explode("/", substr($url, 1));
-				if(count($lengUri) == count($lengRoute) && $lengRoute[0] == $lengUri[0]){
-					unset($lengRoute[0]); unset($lengUri[0]);
-					$rr = array(); 
-					foreach($lengRoute as $key => $r): 
-						$rr[str_replace("}", "", str_replace("{", "", $r))] = $lengUri[$key];
-					endforeach;
-					self::$routesParameter[$routerActive] = $rr;
-					return $routerActive;
-				}else{
-					return false;
-				}
-			}else{
-				return false;
+			     $lengRoute = explode("/", substr($routerActive, 1));
+			     $lengUri = explode("/", substr($url, 1));
+			     if(count($lengUri) == count($lengRoute) && $lengRoute[0] == $lengUri[0]){
+				unset($lengRoute[0], $lengUri[0]);
+				$rr = array(); 
+				foreach($lengRoute as $key => $r){ $rr[str_replace(['{','}'], '', $r)] = $lengUri[$key]; }
+				self::$routesParameter[$routerActive] = $rr;
+				return $routerActive;
+			     }
 			}
+			return false;
 		}
 
 		public function Run(){
