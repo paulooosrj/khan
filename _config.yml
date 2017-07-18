@@ -1,0 +1,20 @@
+theme: jekyll-theme-cayman
+# Setup
+title:        RouterKhan
+description: RouterKhan
+show_downloads: true
+tagline:      Sistema de Rotas Feito Em PHP Orientado a Objetos
+baseurl:      "/RouterKhan"
+paginate:     1
+
+# About/contact
+author:
+  name:       Paulão Developer
+  url:        https://paulaodev.github.io/
+
+# Gems
+gems:
+  - jekyll-paginate
+
+#Others
+markdown: kramdown
