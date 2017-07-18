@@ -36,7 +36,7 @@
 		$res->sendStatus(200);
 		$res->send($req->params('meu')." ".$req->params('nome'));
 		// Invoca uma classe externa
-		// * O AUTOLOAD FUNCIONA src/NomeDaClass/NomeDaClass.php
+		// [ O AUTOLOAD FUNCIONA src/NomeDaClass/NomeDaClass.php ] //
 		$hello = new Hello();
 	});
 
