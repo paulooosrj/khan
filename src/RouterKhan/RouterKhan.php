@@ -35,7 +35,7 @@
 			if (strtolower($_SERVER['REQUEST_METHOD']) == 'delete') {
     				parse_str(file_get_contents('php://input'), self::$_DELETE);
 			}
-			if (strtolower($_SERVER['REQUEST_METHOD') == 'put') {
+			if (strtolower($_SERVER['REQUEST_METHOD']) == 'put') {
     				parse_str(file_get_contents('php://input'), self::$_PUT);
 			}
 		}
