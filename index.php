@@ -2,8 +2,11 @@
 	
 	require __DIR__.'/autoload.php';
 
+	use RouterKhan\RouterKhan as Router;
+
 	// Instancia o Router no padrão SINGLETON
-	$router = \RouterKhan::getInstance();
+	$router = Router::getInstance();
+
 	// Define pasta das views para a funcao sendFile assim quando for enviar o arquivo so digitar o nome dele dentro da pasta views/
 	$router->used('views', 'views/');
 
@@ -11,6 +14,13 @@
 	$router->get("/", function($req, $res){
 		$res->sendStatus(200);
 		$res->sendFile("home.html");
+		$db = Database\Conn::Create(array( 
+			"DB_HOST" => "localhost",
+			"DB_NAME" => "clinica",
+			"DB_USER" => "root",
+			"DB_PASS" => null
+		));
+		$conexao = $db->Conn();
 	});
 
 	// Rota Usando Metodo POST
@@ -34,10 +44,10 @@
 	// Rota Com Parametro no caso usando 2 parametros
 	$router->params("/perfil/{meu}/{nome}", function($req, $res){
 		$res->sendStatus(200);
-		$res->send($req->params('meu')." ".$req->params('nome'));
+		$res->send($req->params('meu')." ".$req->params('nome')."<br/>");
 		// Invoca uma classe externa
 		// [ O AUTOLOAD FUNCIONA src/NomeDaClass/NomeDaClass.php ] //
-		$hello = new Hello();
+		$hello = new Hello\Hello();
 	});
 
 	$router->Run();

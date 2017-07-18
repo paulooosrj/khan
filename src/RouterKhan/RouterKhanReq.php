@@ -1,5 +1,7 @@
 <?php
-
+	
+	namespace RouterKhan;
+	
 	/**
 	* Request e Response
 	*/

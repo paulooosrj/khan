@@ -1,4 +1,8 @@
 <?php
+	
+	namespace RouterKhan;
+
+	// RouterKhan RESPONSE
 
 	class RouterKhanRes{
 

@@ -1,8 +1,10 @@
 <?php
-
+	
+	namespace Hello;
+	
 	class Hello{
 
-		public function __constructor(){
+		public function __construct(){
 			echo "Hello World!!";
 		}
 

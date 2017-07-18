@@ -1,8 +1,13 @@
 <?php
 	
+	namespace RouterKhan;
+	use RouterKhan\RouterKhanReq as RouterKhanReq;
+	use RouterKhan\RouterKhanRes as RouterKhanRes;
+	
 	/**
 	*  Classe De Rotas [ POST & GET & PARAMETER]
 	*/
+
 	class RouterKhan{
 		
 		private static $instance = null;
@@ -21,7 +26,7 @@
 
 		public static function getInstance(){
 			if(self::$instance == null){
-				self::$instance = new \RouterKhan();
+				self::$instance = new RouterKhan();
 			}
 			return self::$instance;
 		}
@@ -102,9 +107,8 @@
 			$isParams = $this->isParameter($uri);
 			// Informa metodo como param
 			if(strlen($isParams) > 0 && $isParams != false){ $method = "param"; }
-			// Verifica se é rota GET
-			if($method == "get"){
-				if(isset(self::$routess["get"][$uri])){
+			if($method == "get" && isset(self::$routess["get"][$uri])){
+					// Verifica se é rota GET
 					$fn = self::$routess["get"][$uri];
 					$dataReceive = array(
 						"get" => $_GET
@@ -113,11 +117,8 @@
 						$req = new RouterKhanReq($dataReceive),
 						$res = new RouterKhanRes(self::$routessUse)
 					);
-				}
-			}
-			// Verifica se é rota POST
-			else if($method == "post"){
-				if(isset(self::$routess["post"][$uri])){
+			} elseif($method == "post" && isset(self::$routess["post"][$uri])){ 
+				    // Verifica se é rota POST
 					$fn = self::$routess["post"][$uri];
 					$dataReceive = array(
 						"get" => $_GET, 
@@ -127,11 +128,8 @@
 						$req = new RouterKhanReq($dataReceive),
 						$res = new RouterKhanRes(self::$routessUse)
 					);
-				}
-			}
-			// Verifica metodo DELETE
-			else if($method == "delete"){
-				if(isset(self::$routess["delete"][$uri])){
+			} elseif($method == "delete" && isset(self::$routess["delete"][$uri])){
+					// Verifica metodo DELETE 
 					$fn = self::$routess["delete"][$uri];
 					$dataReceive = array(
 						"delete" => self::$_DELETE
@@ -140,11 +138,8 @@
 						$req = new RouterKhanReq($dataReceive),
 						$res = new RouterKhanRes(self::$routessUse)
 					);
-				}
-			}
-			// Verifica metodo PUT
-			else if($method == "put"){
-				if(isset(self::$routess["put"][$uri])){
+			} elseif($method == "put" && isset(self::$routess["put"][$uri])){ 
+					// Verifica metodo PUT
 					$fn = self::$routess["put"][$uri];
 					$dataReceive = array(
 						"put" => self::$_PUT
@@ -153,10 +148,8 @@
 						$req = new RouterKhanReq($dataReceive),
 						$res = new RouterKhanRes(self::$routessUse)
 					);
-				}
-			}
-			// Verifica se é rota com parametro
-			else if($method == "param" && count(self::$routesParameter) > 0){
+			} elseif($method == "param" && count(self::$routesParameter) > 0){ 
+				// Verifica se é rota com parametro
 				$fn = self::$routess["params"][$isParams];
 				$paramReceive = end(self::$routesParameter);
 				$dataReceive = array(
@@ -168,12 +161,10 @@
 					$req = new RouterKhanReq($dataReceive),
 					$res = new RouterKhanRes(self::$routessUse)
 				);
-			}
-			// Rota Caso não Exista
-			else{
+			} else{  
+				// Rota Caso não Exista ROTA
 				echo '<style>*{margin:0;padding:0}.error{height:100vh;width:100%;display:flex;justify-content:center;align-items:center;font-family:"Helvetica Neue",sans-serif !important;font-size:32px}red{color:red}</style><div class="error"><red>Error 404</red> : Rota "'.$uri.'" Não Definida!!</div>';
 				http_response_code(404);
 			}
 		}
-
 	}
