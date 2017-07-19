@@ -1,8 +1,4 @@
--------------------------------
-
-
-![alt text](http://i.imgur.com/30vV6dw.gif "Logo RouterKhan")
-
+<p align="center"> <img src="http://i.imgur.com/30vV6dw.gif" alt="ChatBotPHP"/> </p>
 
 -------------------------------
 
