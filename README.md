@@ -87,7 +87,7 @@
   ### Rotas PUT
   
   ```php
-    $router->put("/update", function($req, $res){
+ $router->put("/update", function($req, $res){
     $res->sendStatus(200);
     $res->send($req->put('meuput'));
   });
@@ -100,7 +100,7 @@
   ### Rotas DELETE
   
   ```php
-    $router->params("/delete", function($req, $res){
+ $router->params("/delete", function($req, $res){
     $res->sendStatus(200);
     $res->send($req->delete('meudelete'));
   });
