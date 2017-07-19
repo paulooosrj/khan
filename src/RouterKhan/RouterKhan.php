@@ -3,7 +3,7 @@
 	namespace RouterKhan;
 	use RouterKhan\RouterKhanReq as RouterKhanReq;
 	use RouterKhan\RouterKhanRes as RouterKhanRes;
-	
+	session_start();
 	/**
 	*  Classe De Rotas [ POST & GET & PARAMETER]
 	*/
@@ -104,7 +104,8 @@
 					// Verifica se é rota GET
 					$fn = self::$routess["get"][$uri];
 					$dataReceive = array(
-						"get" => $_GET
+						"get" => $_GET,
+						"session" => $_SESSION
 					);
 					$fn(
 						$req = new RouterKhanReq($dataReceive),
@@ -115,7 +116,8 @@
 					$fn = self::$routess["post"][$uri];
 					$dataReceive = array(
 						"get" => $_GET, 
-						"post" => $_POST
+						"post" => $_POST,
+						"session" => $_SESSION
 					);
 					$fn(
 						$req = new RouterKhanReq($dataReceive),
@@ -125,7 +127,8 @@
 					// Verifica metodo DELETE 
 					$fn = self::$routess["delete"][$uri];
 					$dataReceive = array(
-						"delete" => self::$_DELETE
+						"delete" => self::$_DELETE,
+						"session" => $_SESSION
 					);
 					$fn(
 						$req = new RouterKhanReq($dataReceive),
@@ -135,7 +138,8 @@
 					// Verifica metodo PUT
 					$fn = self::$routess["put"][$uri];
 					$dataReceive = array(
-						"put" => self::$_PUT
+						"put" => self::$_PUT,
+						"session" => $_SESSION
 					);
 					$fn(
 						$req = new RouterKhanReq($dataReceive),
@@ -148,7 +152,8 @@
 				$dataReceive = array(
 					"post" => $_POST,
 					"get" => $_GET,
-					"params" => $paramReceive
+					"params" => $paramReceive,
+					"session" => $_SESSION
 				);
 				$fn(
 					$req = new RouterKhanReq($dataReceive),

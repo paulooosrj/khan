@@ -34,4 +34,8 @@
 			return self::$data["params"][$name];
 		}
 
+		public function session($name){
+			return self::$data["session"][$name];
+		}
+
 	}
