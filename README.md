@@ -1,7 +1,7 @@
 -------------------------------
 
 
-![alt text](https://i.imgur.com/9bNPdrP.gif "Logo RouterKhan")
+![alt text](http://i.imgur.com/30vV6dw.gif "Logo RouterKhan")
 
 
 -------------------------------
@@ -27,7 +27,7 @@
 -----------------------
 
 
-  ### Rotas Gets
+  ### Rotas GETS
   
   
   ```php
@@ -46,7 +46,7 @@
   ------------------------------------------------
   
   
-  ### Rotas Posts 
+  ### Rotas POSTS
   
   ```php
     $router->post('/cadastro', function($req, $res){
@@ -59,7 +59,7 @@
   ------------------------------------------------
     
   
-  ### Rotas Com Parametros
+  ### Rotas com PARAMETROS
   
   ```php
     $router->params("/home/:meu/:nome", function($req, $res){
