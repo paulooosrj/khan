@@ -43,18 +43,6 @@
   ```
   
   
-  ```php
-  
-  
-    $router->get("/home", function($req, $res){
-		$res->sendStatus(200);
-		$res->sendFile("home.html");
-	});
-	
-	
-  ```
-  
-  
   ------------------------------------------------
   
   
