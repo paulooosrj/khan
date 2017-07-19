@@ -35,6 +35,8 @@
     $router->get("/", function($req, $res){
 		$res->sendStatus(200);
 		$res->send("Home, Inicio!!");
+    // Pega Session
+    // $res->session("minha session");
 	});
 	
 	
@@ -76,6 +78,32 @@
 		$res->sendStatus(200);
 		$res->send($req->params('meu')." ".$req->params('nome'));
 	});
+   ```
+  
+  
+  ------------------------------------------------
+
+  
+  ### Rotas PUT
+  
+  ```php
+    $router->put("/update", function($req, $res){
+    $res->sendStatus(200);
+    $res->send($req->put('meuput'));
+  });
+   ```
+  
+  
+  ------------------------------------------------
+
+  
+  ### Rotas Com Parametros
+  
+  ```php
+    $router->params("/delete", function($req, $res){
+    $res->sendStatus(200);
+    $res->send($req->delete('meudelete'));
+  });
    ```
   
   
