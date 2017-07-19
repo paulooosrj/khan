@@ -97,7 +97,7 @@
   ------------------------------------------------
 
   
-  ### Rotas Com Parametros
+  ### Rotas DELETE
   
   ```php
     $router->params("/delete", function($req, $res){
