@@ -18,13 +18,14 @@
 [![Donate Bitcoin](https://img.shields.io/badge/Donate-Bitcoin-yellow.svg)](https://blockchain.info/address/37RWdwgsXK94pANXm9fHv722k4zQmtmCpH)
 
 
--------------------------------
+================================
 
 
 - Sistema de Router para PHP
+⋅⋅⋅  `$res->sendStatus();` é uma funcão **OPCIONAL** nativa do sistema de Rotas. 
 
 
--------------------------------
+================================
 
 
   ### Rotas Gets
@@ -63,7 +64,6 @@
   
   ```php
     $router->params("/home/:meu/:nome", function($req, $res){
-		$res->sendStatus(200);
 		$res->send($req->params('meu')." ".$req->params('nome'));
 	});
    ```
