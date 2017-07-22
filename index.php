@@ -6,22 +6,31 @@
 
 	// Instancia o Router no padrão SINGLETON
 	$router = Router::getInstance();
+	$container = Container\ServiceContainer::Build();
+	$db = Database\Conn::setConfig([
+		"DB_HOST" => "localhost",
+		"DB_NAME" => "clinica",
+		"DB_USER" => "root",
+		"DB_PASS" => ""
+	]);
+	$container->set('meu_database', Database\Conn::Conexao());
 
 	// Define pasta das views para a funcao sendFile assim quando for enviar o arquivo so digitar o nome dele dentro da pasta views/
 	$router->used('views', 'views/');
 
 	// Rota Padrão Metodo GET
-	$router->get("/", function($req, $res){
-		$res->sendStatus(200);
+	$router->get("/", function($req, $res) use($container){
 		$res->sendFile("home.html");
-		$db = Database\Conn::Create(array( 
-			"DB_HOST" => "localhost",
-			"DB_NAME" => "clinica",
-			"DB_USER" => "root",
-			"DB_PASS" => null
-		));
-		$conexao = $db->Conn();
+		$res->send('<video src="./filme/cerca.mp4" controls autoplay></video>');
+		print_r($container->get("meu_database"));
 	});
+
+	/*// STREAM FILE
+	$router->params("/stream/{name}", function($req, $res){
+		$res->send("Stream File!!");
+		print_r($req->params("name"));
+		//print_r(Stream\StreamServer::CreateStream());
+	});*/
 
 	// Rota Usando Metodo POST
 	$router->post('/cadastro', function($req, $res){
@@ -48,6 +57,24 @@
 		// Invoca uma classe externa
 		// [ O AUTOLOAD FUNCIONA src/NomeDaClass/NomeDaClass.php ] //
 		$hello = new Hello\Hello();
+	});
+
+	$router->params("/filme/{nome}", function($req, $res){
+		$fileName = "assets/video/".$req->params('nome');
+		Stream\StreamServer::CreateStream($fileName);
+	});
+
+	$router->get("/bot", function($req, $res){
+    	
+    	$botMining = new Dom\DataMining();
+    	$minado = $botMining->Work();
+    	if($botMining::Status() == "minando"){
+    		header("Content-type: application/json");
+    		echo json_encode($minado);
+    	}else{ 
+    		die("Error mining!!");
+    	}
+
 	});
 
 	$router->Run();

@@ -1,33 +1,51 @@
 <?php
 	
 	namespace Database;
-	
-	class Conn{
+    use PDO;
 
-		private static $db = null;
-		private static $conn = null;
-		private static $config = null;
+	class Conn {
 
-		public static function Create(Array $config = null){
-			if(self::$db == null){
-				self::$config = $config;
-				self::$db = new Conn();
-			} 
-			if(self::$config == null && self::$db != null){
-				self::$config = $config;
-			}
-			return self::$db;
-		}
+   	 	# Variável que guarda a conexão PDO.
+    	protected static $db = null;
+    	# Private construct - garante que a classe só possa ser instanciada internamente.
+    	private function __construct(){}
+    	# Método estático - acessível para setar configuraçoes.
+    	public static function setConfig($config = null){
 
- 		protected function __construct(){}
+    		# Informações sobre o banco de dados:
+            $configs = array("DB_HOST", "DB_NAME", "DB_USER", "DB_PASS");
+            $defaults = array_keys($config);
+            if(array_diff($configs, $defaults) != null):
+                die("Erro ao passar as Configuraçoes para conexão!!");
+            endif;
 
- 		public function Conn(){
- 			if(self::$conn == null){
- 				if(self::$config == null): die("Passe as Configuraçoes!!"); endif;
- 				$config = self::$config;
- 				self::$conn = new \PDO("mysql:host=".$config["DB_HOST"].";dbname=".$config["DB_NAME"], $config["DB_USER"], $config["DB_PASS"]);
- 			}
- 			return self::$conn;
- 		}
+            $db_host = $config["DB_HOST"];
+            $db_nome = $config["DB_NAME"];
+            $db_usuario = $config["DB_USER"];
+            $db_senha = $config["DB_PASS"];
+            $db_driver = (!isset($config["DB_DRIVER"])) ? "mysql" : $config["DB_DRIVER"];
+
+            try{
+                # Atribui o objeto PDO à variável $db.
+                self::$db = new PDO("$db_driver:host=$db_host; dbname=$db_nome", $db_usuario, $db_senha);
+                # Garante que o PDO lance exceções durante erros.
+                self::$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                # Garante que os dados sejam armazenados com codificação UFT-8.
+                self::$db->exec('SET NAMES utf8');
+            } catch (PDOException $e){
+                # Então não carrega nada mais da página.
+                die("Connection Error: " . $e->getMessage());
+            }
+
+    	}
+    	# Método estático - acessível sem instanciação.
+   		public static function Conexao(){
+        	# Garante uma única instância. Se não existe uma conexão, criamos uma nova.
+        	if (!self::$db){
+            	new Database();
+        	}
+        	# Retorna a conexão.
+       	 	return self::$db;
+    	}
 
 	}

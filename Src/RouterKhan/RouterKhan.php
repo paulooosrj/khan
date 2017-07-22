@@ -72,14 +72,20 @@
 		public function isParameter($url){
 			$routes = self::$routess["params"];
 			$routerActive = false;
-			foreach($routes as $rota => $fn){ if(preg_match('/[{}]/', $rota)): $routerActive = $rota; endif; }
+			foreach($routes as $rota => $fn){ 
+				if(preg_match('/[{}]/', $rota)): 
+					$routerActive = $rota; 
+				endif; 
+			}
 			if($routerActive){
 			     $lengRoute = explode("/", substr($routerActive, 1));
 			     $lengUri = explode("/", substr($url, 1));
 			     if(count($lengUri) == count($lengRoute) && $lengRoute[0] == $lengUri[0]){
 					unset($lengRoute[0], $lengUri[0]);
 					$rr = array(); 
-					foreach($lengRoute as $key => $r){ $rr[str_replace(['{','}'], '', $r)] = $lengUri[$key]; }
+					foreach($lengRoute as $key => $r){ 
+						$rr[str_replace(['{','}'], '', $r)] = $lengUri[$key]; 
+					}
 					self::$routesParameter[$routerActive] = $rr;
 					return $routerActive;
 			     }
@@ -100,6 +106,7 @@
 			$isParams = $this->isParameter($uri);
 			// Informa metodo como param
 			if(strlen($isParams) > 0 && $isParams != false){ $method = "param"; }
+
 			if($method == "get" && isset(self::$routess["get"][$uri])){
 					// Verifica se é rota GET
 					$fn = self::$routess["get"][$uri];
