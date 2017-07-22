@@ -1,8 +1,4 @@
--------------------------------
-
-
-![alt text](https://i.imgur.com/9bNPdrP.gif "Logo RouterKhan")
-
+<p align="center"> <img src="http://i.imgur.com/30vV6dw.gif" alt="ChatBotPHP"/> </p>
 
 -------------------------------
 
@@ -18,16 +14,16 @@
 [![Donate Bitcoin](https://img.shields.io/badge/Donate-Bitcoin-yellow.svg)](https://blockchain.info/address/37RWdwgsXK94pANXm9fHv722k4zQmtmCpH)
 
 
--------------------------------
 
+-----------------------
 
 - Sistema de Router para PHP
+     `$res->sendStatus($code);`  é uma funcão **OPCIONAL** nativa do sistema de Rotas. 
+
+-----------------------
 
 
--------------------------------
-
-
-  ### Rotas Gets
+  ### Rotas GETS
   
   
   ```php
@@ -35,20 +31,8 @@
     $router->get("/", function($req, $res){
 		$res->sendStatus(200);
 		$res->send("Home, Inicio!!");
-    // Pega Session
-    // $res->session("minha session");
-	});
-	
-	
-  ```
-  
-  
-  ```php
-  
-  
-    $router->get("/home", function($req, $res){
-		$res->sendStatus(200);
-		$res->sendFile("home.html");
+        // Pega Session
+        // $res->session("minha session");
 	});
 	
 	
@@ -58,7 +42,7 @@
   ------------------------------------------------
   
   
-  ### Rotas Posts 
+  ### Rotas POSTS
   
   ```php
     $router->post('/cadastro', function($req, $res){
@@ -71,11 +55,10 @@
   ------------------------------------------------
     
   
-  ### Rotas Com Parametros
+  ### Rotas com PARAMETROS
   
   ```php
     $router->params("/home/:meu/:nome", function($req, $res){
-		$res->sendStatus(200);
 		$res->send($req->params('meu')." ".$req->params('nome'));
 	});
    ```
@@ -87,7 +70,7 @@
   ### Rotas PUT
   
   ```php
-    $router->put("/update", function($req, $res){
+ $router->put("/update", function($req, $res){
     $res->sendStatus(200);
     $res->send($req->put('meuput'));
   });
@@ -100,7 +83,7 @@
   ### Rotas DELETE
   
   ```php
-    $router->params("/delete", function($req, $res){
+ $router->params("/delete", function($req, $res){
     $res->sendStatus(200);
     $res->send($req->delete('meudelete'));
   });
