@@ -21,6 +21,9 @@
      `$res->sendStatus($code);`  é uma funcão **OPCIONAL** nativa do sistema de Rotas. 
 
 -----------------------
+### Inserido novas libs para uso Opcional
+### [Veja As Novidades](https://github.com/PaulaoDev/router-khan/issues/1)
+---------------------------------------------
 
 
   ### Rotas GETS
