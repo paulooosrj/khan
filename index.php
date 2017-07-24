@@ -64,17 +64,4 @@
 		Stream\StreamServer::CreateStream($fileName);
 	});
 
-	$router->get("/bot", function($req, $res){
-    	
-    	$botMining = new Dom\DataMining();
-    	$minado = $botMining->Work();
-    	if($botMining::Status() == "minando"){
-    		header("Content-type: application/json");
-    		echo json_encode($minado);
-    	}else{ 
-    		die("Error mining!!");
-    	}
-
-	});
-
 	$router->Run();
