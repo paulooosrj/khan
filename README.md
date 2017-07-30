@@ -17,6 +17,10 @@
 
 -----------------------
 
+  # Install `composer require "paulao-dev/router-khan":"*"`
+
+-----------------------
+
 - Sistema de Router para PHP
      `$res->sendStatus($code);`  é uma funcão **OPCIONAL** nativa do sistema de Rotas. 
 
