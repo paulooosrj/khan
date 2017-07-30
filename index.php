@@ -32,8 +32,9 @@
 		//print_r($container->get("meu_database"));
 	});
 
-	$router->get('/request', function($req, $res){
-		/*
+	$router->get('/request', function($req, $res) use($container){
+		/* 
+		$request = $container->get('request');
 		print_r($request->Get([
 			"url" => "https://api.myjson.com/bins/jloa7"
 		]));
