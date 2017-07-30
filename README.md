@@ -17,7 +17,8 @@
 
 -----------------------
 
-  # Install `composer require "paulao-dev/router-khan":"*"`
+  # Install With Composer: 
+  `composer require "paulao-dev/router-khan":"*"`
 
 -----------------------
 
