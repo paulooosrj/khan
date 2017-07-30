@@ -1,6 +1,6 @@
 <?php
 	
-	namespace RouterKhan;
+	namespace App\RouterKhan;
 	
 	/**
 	* Request e Response

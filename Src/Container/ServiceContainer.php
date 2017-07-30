@@ -1,6 +1,6 @@
 <?php
 	
-	namespace Container;
+	namespace App\Container;
 
 	class ServiceContainer{
 

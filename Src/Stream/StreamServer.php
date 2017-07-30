@@ -1,6 +1,6 @@
 <?php
 	
-	namespace Stream;
+	namespace App\Stream;
 
 	class StreamServer{
 

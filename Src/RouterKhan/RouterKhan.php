@@ -1,8 +1,8 @@
 <?php
 	
-	namespace RouterKhan;
-	use RouterKhan\RouterKhanReq as RouterKhanReq;
-	use RouterKhan\RouterKhanRes as RouterKhanRes;
+	namespace App\RouterKhan;
+	use App\RouterKhan\RouterKhanReq as RouterKhanReq;
+	use App\RouterKhan\RouterKhanRes as RouterKhanRes;
 	session_start();
 	/**
 	*  Classe De Rotas [ POST & GET & PARAMETER]
@@ -71,24 +71,31 @@
 
 		public function isParameter($url){
 			$routes = self::$routess["params"];
-			$routerActive = false;
+			$routerActive = [];
 			foreach($routes as $rota => $fn){ 
+				$lengRoute = explode("/", substr($rota, 1));
+			    $lengUri = explode("/", substr($url, 1));
 				if(preg_match('/[{}]/', $rota)): 
-					$routerActive = $rota; 
+					if(count($lengRoute) === count($lengUri)){
+						$routerActive[] = $rota; 
+					}
 				endif; 
 			}
-			if($routerActive){
-			     $lengRoute = explode("/", substr($routerActive, 1));
-			     $lengUri = explode("/", substr($url, 1));
-			     if(count($lengUri) == count($lengRoute) && $lengRoute[0] == $lengUri[0]){
-					unset($lengRoute[0], $lengUri[0]);
-					$rr = array(); 
-					foreach($lengRoute as $key => $r){ 
-						$rr[str_replace(['{','}'], '', $r)] = $lengUri[$key]; 
-					}
-					self::$routesParameter[$routerActive] = $rr;
-					return $routerActive;
-			     }
+			if(count($routerActive) > 0){
+				foreach ($routerActive as $key => $rota) {
+					$lengRoute = explode("/", substr($rota, 1));
+			     	$lengUri = explode("/", substr($url, 1));
+			     	if(count($lengUri) == count($lengRoute) && $lengRoute[0] == $lengUri[0]){
+						unset($lengRoute[0], $lengUri[0]);
+						$rr = array(); 
+						foreach($lengRoute as $key => $r){ 
+							$rr[str_replace(['{','}'], '', $r)] = $lengUri[$key]; 
+						}
+						self::$routesParameter[$rota] = $rr;
+						return $rota;
+						break;
+			     	}	
+				}
 			}
 			return false;
 		}
@@ -152,7 +159,8 @@
 						$req = new RouterKhanReq($dataReceive),
 						$res = new RouterKhanRes(self::$routessUse)
 					);
-			} elseif($method == "param" && count(self::$routesParameter) > 0){ 
+			} elseif($method == "param" && count(self::$routesParameter) > 0){
+				//print_r(self::$routesParameter); 
 				// Verifica se é rota com parametro
 				$fn = self::$routess["params"][$isParams];
 				$paramReceive = end(self::$routesParameter);
@@ -162,6 +170,7 @@
 					"params" => $paramReceive,
 					"session" => $_SESSION
 				);
+				//print_r($dataReceive);
 				$fn(
 					$req = new RouterKhanReq($dataReceive),
 					$res = new RouterKhanRes(self::$routessUse)

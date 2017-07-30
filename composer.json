@@ -1,0 +1,19 @@
+{
+    "name": "paulao-dev/router-khan",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "RouterKhan PHP",
+            "email": "jskhanframework@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "Src/"
+        }
+    }
+}
