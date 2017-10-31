@@ -1,6 +1,8 @@
 <p align="center"><img src="https://i.imgur.com/omvTJu1.png" alt="ChatBotPHP"/></p>
 
 <p align="center">
+	
+	
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/PaulaoDev/router-khan/master/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/PaulaoDev/router-khan.svg)](https://github.com/PaulaoDev/ChatBot-PHP-Facebook/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/PaulaoDev/router-khan.svg)](https://github.com/PaulaoDev/ChatBot-PHP-Facebook/fork)
@@ -9,6 +11,8 @@
 [![Whatsapp](https://img.shields.io/badge/Whatsapp-On-green.svg)](https://bit.ly/whatsappdopaulo)
 [![Donate Paypal](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://goo.gl/ujU2QU)
 [![Donate Bitcoin](https://img.shields.io/badge/Donate-Bitcoin-yellow.svg)](https://blockchain.info/address/37RWdwgsXK94pANXm9fHv722k4zQmtmCpH)
+	
+	
 </p>
 
 -----------------------
