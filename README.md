@@ -1,4 +1,4 @@
-<p align="center"><img src="https://i.imgur.com/NHxwqr5.png" alt="ChatBotPHP"/></p>
+<p align="center"><img src="https://i.imgur.com/C9Bc0FU.png" alt="ChatBotPHP"/></p>
 
 <p align="center">
 	
