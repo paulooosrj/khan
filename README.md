@@ -2,6 +2,8 @@
 
 <p align="center">
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/PaulaoDev/router-khan/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/PaulaoDev/router-khan/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/PaulaoDev/router-khan/badges/build.png?b=master)](https://scrutinizer-ci.com/g/PaulaoDev/router-khan/build-status/master)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/PaulaoDev/router-khan/master/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/PaulaoDev/router-khan.svg)](https://github.com/PaulaoDev/ChatBot-PHP-Facebook/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/PaulaoDev/router-khan.svg)](https://github.com/PaulaoDev/ChatBot-PHP-Facebook/fork)
@@ -21,17 +23,17 @@
  ### About RouterKhan
  RouterKhan is a web application framework. We believe that development must be a good and not tiresome experience to be truly productive. RouterKhan streamlines development by easing common tasks used in most web projects, including:
  
- - [Simple routing engine, easy to learn, fast, and with two-step verification for parameters.](https://github.com/PaulaoDev/router-khan/blob/master/src/RouterKhan/RouterKhan.php)
+ - [Simple routing engine, easy to learn, fast, and with two-step verification for parameters.](https://github.com/PaulaoDev/router-khan/blob/master/Src/RouterKhan/RouterKhan.php)
  - [Helpers for your application (Medoo PDO, Twig Engine View, Symfony, Carbon Date Manipulate)](https://github.com/PaulaoDev/router-khan/blob/master/composer.json)
  - [Fast Dependency injection container](https://github.com/PaulaoDev/router-khan/blob/master/src/Container/ServiceContainer.php)
- - [Stream Service](https://github.com/PaulaoDev/router-khan/blob/master/src/Stream/StreamServer.php)
+ - [Stream Service](https://github.com/PaulaoDev/router-khan/blob/master/Src/Stream/StreamServer.php)
 
 
 
 ## Learning RouterKhan
 
 A Login / Registration with Panel and image upload system was done to demonstrate the operation of the system while the documentation is being made.
-[Instalation](https://github.com/PaulaoDev/router-khan/tree/master/resources/instalation.txt)
+[Instalation](https://github.com/PaulaoDev/router-khan/tree/master/resources/installation)
 
 
   ### GETS Routes
