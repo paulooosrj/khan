@@ -35,18 +35,15 @@ A Login / Registration with Panel and image upload system was done to demonstrat
 [Instalation](https://github.com/PaulaoDev/router-khan/tree/master/resources/installation)
 
 ### Documentation
-A complete system documentation is available online [at this link] (https://paulaodev.github.io/RouterKhan/documentation).
+A complete system documentation is available online [at this link](https://paulaodev.github.io/RouterKhan/documentation).
 
 ### Contribution
-Send error reports, suggestions, and upload requests to the [GitHub issue tracker] (https://github.com/PaulaoDev/router-khan/issues).
-Read the [File] (https://github.com/PaulaoDev/router-khan/blob/master/CONTRIBUTING.md).
+ - Send error reports, suggestions, and upload requests to the [GitHub issue tracker](https://github.com/PaulaoDev/router-khan/issues).
+ - Read the [File](https://github.com/PaulaoDev/router-khan/blob/master/CONTRIBUTING.md).
 
 ### System Requirements
-PHP version 5.6 or higher.
-MySQL version 5.0 or higher.
-
-### Security
-Relate all vulnerabilities found in a responsible and constructive way [Email](jskhanframework@gmail.com).
+ - PHP >= 5.6.
+ - MySQL >= 5.0.
 
 ### Attention
 For the system to work 100% it is necessary to have a Virtual Host configured in your localhost or directly in the ROOT folder of a hosting.
@@ -194,3 +191,17 @@ For the system to work 100% it is necessary to have a Virtual Host configured in
    
   
    ------------------------------------------------
+   
+   ### Security
+    Relate all vulnerabilities found in a responsible and constructive way [Email](jskhanframework@gmail.com).
+   
+   ### Credits
+    - [Twig](https://github.com/twigphp/Twig).
+    - [Medoo](https://github.com/catfan/Medoo).
+    - [Symfony](https://github.com/symfony/symfony).
+    - [PHP ML](https://github.com/php-ai/php-ml).
+    - [Carbon](https://github.com/briannesbitt/Carbon).
+    
+  
+  ### License
+  The Slim Framework is licensed under the MIT license. See [License File](https://github.com/PaulaoDev/router-khan/blob/master/LICENSE) for more information.
