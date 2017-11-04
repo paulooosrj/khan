@@ -30,11 +30,26 @@
 
 
 
-## Learning RouterKhan
-
+### Learning RouterKhan
 A Login / Registration with Panel and image upload system was done to demonstrate the operation of the system while the documentation is being made.
 [Instalation](https://github.com/PaulaoDev/router-khan/tree/master/resources/installation)
 
+### Documentation
+A complete system documentation is available online [at this link] (https://paulaodev.github.io/RouterKhan/documentation).
+
+### Contribution
+Send error reports, suggestions, and upload requests to the [GitHub issue tracker] (https://github.com/PaulaoDev/router-khan/issues).
+Read the [File] (https://github.com/PaulaoDev/router-khan/blob/master/CONTRIBUTING.md).
+
+### System Requirements
+PHP version 5.6 or higher.
+MySQL version 5.0 or higher.
+
+### Security
+Relate all vulnerabilities found in a responsible and constructive way [Email](jskhanframework@gmail.com).
+
+### Attention
+For the system to work 100% it is necessary to have a Virtual Host configured in your localhost or directly in the ROOT folder of a hosting.
 
   ### GETS Routes
   
