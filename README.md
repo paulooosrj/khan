@@ -18,6 +18,10 @@
 
   ### Install With Composer:
   `composer require "paulao-dev/router-khan":"*"`
+  
+  
+  ### Install With Zip File
+  run `composer install` in folder
 
 
  ### About RouterKhan
