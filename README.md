@@ -197,11 +197,13 @@ For the system to work 100% it is necessary to have a Virtual Host configured in
    
    ### Credits
    
-    - [Twig](https://github.com/twigphp/Twig).
-    - [Medoo](https://github.com/catfan/Medoo).
-    - [Symfony](https://github.com/symfony/symfony).
-    - [PHP ML](https://github.com/php-ai/php-ml).
-    - [Carbon](https://github.com/briannesbitt/Carbon).
+   
+ -  [Twig](https://github.com/twigphp/Twig).
+ - [Medoo](https://github.com/catfan/Medoo).
+ - [Symfony](https://github.com/symfony/symfony).
+ - [PHP ML](https://github.com/php-ai/php-ml).
+ - [Carbon](https://github.com/briannesbitt/Carbon).
+    
     
   
   ### License
