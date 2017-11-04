@@ -85,7 +85,7 @@ A Login / Registration with Panel and image upload system was done to demonstrat
     $router->post('/', function($req, $res){ });
     /* Using Closure in Mutiples Methods */
     $router->post(['/' => function($req, $res){ },'/foo' => function($req, $res){ }]);
-  });
+
    ```
   
   
@@ -95,7 +95,7 @@ A Login / Registration with Panel and image upload system was done to demonstrat
   ### Parameters in Router
   
   ```php
-        $router->params(/* String or Array routes */, /* Class, Array or Closure */);
+    $router->params(/* String or Array routes */, /* Class, Array or Closure */);
     /* Route new class */
     $router->params('/profile/{id}', 'MyApp\Controllers\myClass');
     /* Route class method */
@@ -121,7 +121,7 @@ A Login / Registration with Panel and image upload system was done to demonstrat
   ### PUT Router
   
   ```php
-     $router->put(/* String or Array routes */, /* Class, Array or Closure */);
+    $router->put(/* String or Array routes */, /* Class, Array or Closure */);
     /* Route new class */
     $router->put('/', 'MyApp\Controllers\myClass');
     /* Route class method */
@@ -147,7 +147,7 @@ A Login / Registration with Panel and image upload system was done to demonstrat
   ### DELETE Router
   
   ```php
-     $router->delete(/* String or Array routes */, /* Class, Array or Closure */);
+    $router->delete(/* String or Array routes */, /* Class, Array or Closure */);
     /* Route new class */
     $router->delete('/', 'MyApp\Controllers\myClass');
     /* Route class method */
