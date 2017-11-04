@@ -1,0 +1,6 @@
+{
+	"clean_request": true,
+	"url_filter": true,
+	"file_error": "templates/views/error.phtml", 
+	"root": "/"
+}

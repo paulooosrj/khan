@@ -10,10 +10,17 @@
     ],
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "require": {},
+    "require": {
+        "catfan/Medoo": "^1.4",
+        "twig/twig": "^2.0",
+        "nesbot/carbon": "^1.22",
+        "symfony/symfony": "^3.3",
+        "symfony/http-foundation": "^3.3"
+    },
     "autoload": {
         "psr-4": {
-            "App\\": "Src/"
+            "App\\": "src/",
+            "MyApp\\": "bootstrap/"
         }
     }
 }

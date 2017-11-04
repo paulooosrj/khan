@@ -1,23 +1,19 @@
 <?php
 	
-	namespace App\RouterKhan;
+	namespace App\Http;
+	use Symfony\Component\HttpFoundation\Response;
 
-	// RouterKhan RESPONSE
+	/**
+	* Response Class and Interface Implement
+	*/
 
-	class RouterKhanRes{
+	class RouterKhanRes extends Response implements ResponseInterface{
 
-		private static $use;
+		private static $use = [];
 
 		public function __construct($use){
+			parent::__construct();
 			self::$use = $use;
-		}
-
-		public function sendStatus($status){
-			http_response_code($status);
-		}
-
-		public function send($m){
-			echo $m;
 		}
 
 		public function sendFile($file){
