@@ -10,9 +10,11 @@
 	 */
 
 	namespace App\RouterKhan;
-	use App\Http\EngineRegexRouter as EngineRegexRouter;
-	use App\Http\RouterKhanReq as RouterKhanReq;
-	use App\Http\RouterKhanRes as RouterKhanRes;
+	use App\Http\{
+		EngineRegexRouter as EngineRegexRouter,
+		RouterKhanReq as RouterKhanReq,
+		RouterKhanRes as RouterKhanRes
+	};
 	
 	session_start();
 

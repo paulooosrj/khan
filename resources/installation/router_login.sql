@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 04-Nov-2017 às 01:23
+-- Generation Time: 04-Nov-2017 às 18:56
 -- Versão do servidor: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -34,15 +34,17 @@ CREATE TABLE `users` (
   `email` text NOT NULL,
   `senha` varchar(300) NOT NULL,
   `icone` text NOT NULL,
-  `nivel` int(2) NOT NULL
+  `nivel` int(2) NOT NULL,
+  `active` int(2) NOT NULL,
+  `key_private` int(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `users`
 --
 
-INSERT INTO `users` (`id`, `nome`, `email`, `senha`, `icone`, `nivel`) VALUES
-(13, 'admin', 'admin@admin.com', '$2y$12$y931MAM3OXeuOgsvYDD3lOTJt3T1ukZ5MzrhiU8aiHpGbfrN6Mpsy', 'http://localhost/RouterKhan/resources/images_upload/fdeea306470fa81588ba28a1fb4a69a7.png', 0);
+INSERT INTO `users` (`id`, `nome`, `email`, `senha`, `icone`, `nivel`, `active`, `key_private`) VALUES
+(14, 'Admin', 'admin@admin.com', '$2y$12$9m1YeVSpMjeDx1r2cjWnOe0jyn2VrHhmSAtkqmM6nY4WMJQ5sE1IC', 'http://localhost/RouterKhan/resources/images_upload/default.png', 0, 1, 0);
 
 --
 -- Indexes for dumped tables
@@ -62,7 +64,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

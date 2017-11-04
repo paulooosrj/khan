@@ -16,6 +16,10 @@
 		return "templates/views/"; 
 	});
 
+	$container::bind("url", function(){ 
+		return "http://localhost/RouterKhan"; 
+	});
+
 	$container->db = function() use($database){
 		return $database;
 	};
@@ -37,7 +41,8 @@
 		return "MyApp\Models\Session";
 	};
 
-	$container->app = function($path = "http://localhost/RouterKhan"){
+	$path = $container->get('url')();
+	$container->app = function() use($path){
 		return new class($path) {
 			public function __construct($path = ''){ 
 				$this->base = $path;

@@ -50,7 +50,7 @@
 				foreach($routes as $rota => $fn){ 
 					$lengRoute = explode("/", substr($rota, 1));
 				    $lengUri = explode("/", substr($url, 1));
-					if(EngineRegexRouter::validate($rota)): 
+					if(EngineRegexRouter::validate($rota)):
 						if(count($lengRoute) === count($lengUri)){
 							$routerActive[] = $rota; 
 						}

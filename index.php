@@ -2,8 +2,10 @@
 	
 	require __DIR__.'/vendor/autoload.php';
 
-	use App\RouterKhan\RouterKhan as Router;
-	use App\Container\ServiceContainer as ServiceContainer;
+	use App\{
+		RouterKhan\RouterKhan as Router,
+		RouterKhan\Component\Container\ServiceContainer as ServiceContainer
+	};
 
 	// Instancia o Router no padrão SINGLETON
 	$router = Router::create();
@@ -28,12 +30,12 @@
 	]);
 
 	$router->params([
-		"/{id}/home/{video_id}" => function($req, $res, $app){
+		"/{id}/home/{video_id}" => function($req, $res){
 			print_r($req->params());
 		}
 	]);
 
-
+	include_once 'Src/RouterKhan/Component/Ml/BotExample.php';
 
 	/*
 	$router->get('/teste', function(){

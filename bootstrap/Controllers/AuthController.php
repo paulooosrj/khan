@@ -2,7 +2,10 @@
 
 	
 	namespace MyApp\Controllers;
-	use MyApp\Models\Files as Files;
+	use MyApp\Models\{
+		Files as Files,
+		Mail as Mail
+	};
 
 	class AuthController{
 
@@ -32,6 +35,7 @@
 
 		public static function register($req, $res){
 
+			$key = password_hash(md5(mt_rand()), PASSWORD_BCRYPT);
 			$verify = AuthController::validationUser($req, $req->post('email'));
 
 			if(!$verify){
@@ -67,7 +71,9 @@
 				    'nome' => $req->post('nome'),
 				    'senha' => password_hash($req->post('senha'), PASSWORD_BCRYPT, ['cost' => 12]),
 				    'icone' => $icone,
-				    'nivel' => $nivel
+				    'nivel' => $nivel,
+				    'key_private' => $key,
+				    'active' => 1
 				]);
 
 				echo "sucesso";

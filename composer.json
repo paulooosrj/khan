@@ -17,7 +17,8 @@
         "symfony/symfony": "^3.3",
         "symfony/http-foundation": "^3.3",
         "apigen/apigen": "dev-master",
-        "roave/better-reflection": "dev-master#c87d856"
+        "roave/better-reflection": "dev-master#c87d856",
+        "php-ai/php-ml": "^0.4.1"
     },
     "autoload": {
         "psr-4": {

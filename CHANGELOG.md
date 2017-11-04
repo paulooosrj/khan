@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## 0.0.1 - 2017-11-04
+### Added
+- Insert Documentation.
+- Insert new Component App\Component\Ml\Ml for Machine Learning.
+- Renamed components with in Src for Src/Components/.
+
 ## 0.0.1 - 2017-11-03
 ### Added
 - New Engine for checking routes with parameters, now has a two-step check.

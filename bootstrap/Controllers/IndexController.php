@@ -5,6 +5,7 @@
 	class IndexController{
 
 		public function __construct($application){
+			
 			[$req, $res] = $application;
 			$res->setContent($req->view()->render('login/home.phtml', [
 				"APP" => "http://localhost/RouterKhan",
