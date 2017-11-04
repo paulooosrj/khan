@@ -193,9 +193,7 @@ For the system to work 100% it is necessary to have a Virtual Host configured in
    ------------------------------------------------
    
    ### Security
-   
-   
-    Relate all vulnerabilities found in a responsible and constructive way [Email](jskhanframework@gmail.com).
+   Relate all vulnerabilities found in a responsible and constructive way [Email](jskhanframework@gmail.com).
    
    ### Credits
    
