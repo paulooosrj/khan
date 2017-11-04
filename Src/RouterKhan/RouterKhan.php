@@ -34,11 +34,6 @@
 		private static $config = [];
 		protected static $method;
 
-		/**
-		 * [ create instance in singleton pattern ]
-		 * @param  string $fileConfig [ file config application ]
-		 * @return [object]             [ singleton ]
-		 */
 		public static function create($fileConfig = ''){
 			if(self::$instance == null){
 				self::$instance = new RouterKhan($fileConfig);
