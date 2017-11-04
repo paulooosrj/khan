@@ -193,6 +193,8 @@ For the system to work 100% it is necessary to have a Virtual Host configured in
    ------------------------------------------------
    
    ### Security
+   
+   
     Relate all vulnerabilities found in a responsible and constructive way [Email](jskhanframework@gmail.com).
    
    ### Credits
@@ -207,7 +209,7 @@ For the system to work 100% it is necessary to have a Virtual Host configured in
     
   
   ### License
-  The Slim Framework is licensed under the MIT license. See [License File](https://github.com/PaulaoDev/router-khan/blob/master/LICENSE) for more information.
+  The RouterKhan is licensed under the MIT license. See [License File](https://github.com/PaulaoDev/router-khan/blob/master/LICENSE) for more information.
   
   ### Contact
    - [Facebook](https://fb.com/PauloRodriguesYT).
