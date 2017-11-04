@@ -46,9 +46,10 @@ A complete system documentation is available online [at this link](https://paula
  - Read the [File](https://github.com/PaulaoDev/router-khan/blob/master/CONTRIBUTING.md).
 
 ### System Requirements
- - PHP >= 5.6.
+ - PHP >= 7.0.
  - MySQL >= 5.0.
-
+ - [Composer](https://getcomposer.org/download/).
+ 
 ### Attention
 For the system to work 100% it is necessary to have a Virtual Host configured in your localhost or directly in the ROOT folder of a hosting.
 
