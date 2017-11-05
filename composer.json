@@ -11,6 +11,7 @@
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
+        "php": ">=7.1",
         "catfan/Medoo": "^1.4",
         "twig/twig": "^2.0",
         "nesbot/carbon": "^1.22",
