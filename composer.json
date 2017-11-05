@@ -8,7 +8,7 @@
             "email": "jskhanframework@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
         "catfan/Medoo": "^1.4",
@@ -16,8 +16,7 @@
         "nesbot/carbon": "^1.22",
         "symfony/symfony": "^3.3",
         "symfony/http-foundation": "^3.3",
-        "apigen/apigen": "dev-master",
-        "roave/better-reflection": "dev-master#c87d856",
+        "roave/better-reflection": "*",
         "php-ai/php-ml": "^0.4.1"
     },
     "autoload": {
