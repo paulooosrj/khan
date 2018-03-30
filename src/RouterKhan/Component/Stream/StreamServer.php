@@ -4,7 +4,7 @@
 
 	class StreamServer{
 
-		public static function RunStream($ext, $type, $file){
+		public function RunStream($ext, $type, $file){
 
 			try {
 				header("Content-Type: {$type}");
@@ -19,13 +19,13 @@
 
 		}
 
-		public static function CreateStream($file = false){
+		public function CreateStream($file = false){
 
 			if($file && file_exists($file)){
 
 				$ext = pathinfo($file, PATHINFO_EXTENSION);
 				$mimetype = mime_content_type($file);
-				StreamServer::RunStream($ext, $mimetype, $file);
+				$this->RunStream($ext, $mimetype, $file);
 
 			}
 

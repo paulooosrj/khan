@@ -1,0 +1,23 @@
+{
+    "name": "paulao-dev/router",
+    "description": "Router component",
+    "require": {
+        "symfony/http-foundation": "*",
+        "twig/twig": "*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "jskhanframework",
+            "email": "jskhanframework@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+      "psr-4": {
+        "KhanComponent\\": "src/"
+      }
+    },
+    "require-dev": {
+    }
+}

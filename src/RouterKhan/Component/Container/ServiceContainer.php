@@ -2,8 +2,9 @@
 	
 	namespace App\RouterKhan\Component\Container;
 	use stdClass;
+	use Closure;
 
-	class ServiceContainer{
+	class ServiceContainer {
 
 		private static $containers = [];
 		private static $instance = null;
@@ -58,6 +59,7 @@
 			foreach (self::$containers as $key => $value) {
 				$class_cache->$key = $value;
 			}
+			print_r($class_cache);
 			return $class_cache;
 		}
 
