@@ -54,6 +54,7 @@
 				);
 
 				rm('router-khan-master');
+				unlink('cli-update.zip');
 
 				sprint("A atualização foi concluida com sucesso!!");
 
