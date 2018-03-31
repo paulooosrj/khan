@@ -123,7 +123,7 @@
 
 		public function help(){
 
-			$this->print("Comandos: \n\n      php khan controller:NomeDoController ( cria um controller ja com a estrutura )\n      php khan server ( liga o servidor php embutido )\n      php khan gulp ( gera estrutura de sass watch e babel loader )");
+			$this->print("Comandos: \n\n      php khan controller:NomeDoController ( cria um controller ja com a estrutura )\n      php khan server ( liga o servidor php embutido )\n      php khan gulp ( gera estrutura de sass watch e babel loader )\n      php cli-update ( update to cli khan )");
 
 		}
 
