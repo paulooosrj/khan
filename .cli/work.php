@@ -2,6 +2,8 @@
 
 	error_reporting(0);
 
+	require_once 'update/build.php';
+
 	class CliKhan {
 
 		protected static $comando = '';
@@ -80,6 +82,23 @@
 				$this->print('Aguarde a instalação dos pacotes.');
 				$this->runShell('npm i gulp -g && npm install');
 			}
+
+		}
+
+		public function update($comando = null){
+
+			if(is_null($comando)){
+
+				$builder = new Build();
+				$builder->check();
+
+			}else{
+				if($comando === "last"){
+					$last = file_get_contents('.cli/update/dates/last.txt');
+					$this->print("A ultima atualização ocorreu em {$last}");
+				}
+			}
+
 
 		}
 

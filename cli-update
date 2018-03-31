@@ -1,0 +1,78 @@
+<?php
+
+	function downloadZip(){
+
+			$url = "https://github.com/PaulaoDev/router-khan/archive/master.zip";
+			$zipFile = "cli-update.zip";
+			$zipResource = fopen($zipFile, "w");
+			// Get The Zip File From Server
+			$ch = curl_init();
+			curl_setopt($ch, CURLOPT_URL, $url);
+			curl_setopt($ch, CURLOPT_FAILONERROR, true);
+			curl_setopt($ch, CURLOPT_HEADER, 0);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+			curl_setopt($ch, CURLOPT_AUTOREFERER, true);
+			curl_setopt($ch, CURLOPT_BINARYTRANSFER,true);
+			curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0); 
+			curl_setopt($ch, CURLOPT_FILE, $zipResource);
+			$page = curl_exec($ch);
+			if(!$page) {
+			 echo "Error :- ".curl_error($ch);
+			}
+			curl_close($ch);
+			return (file_exists($zipFile)) ? $zipFile : false;
+
+	}
+
+	function rm($name){
+		system("rm -r {$name}");
+	}
+
+	function sprint($text){
+		echo "\n   {$text}\n";
+	}
+
+	function extractAndMove($zipFile){
+
+			$extractPath = "./";
+			$zip = new ZipArchive;
+
+			$res = $zip->open($zipFile);
+
+			if ($res === TRUE) {
+
+				$zip->extractTo($extractPath);
+				$zip->close();
+
+				rm('.cli');
+
+				rename(
+					'router-khan-master/.cli',
+					'.cli'
+				);
+
+				rm('router-khan-master');
+
+				sprint("A atualização foi concluida com sucesso!!");
+
+				return true;
+
+			} else {
+
+			  	sprint("Erro ao atualizar!!");
+
+			}
+
+	}
+
+	sprint("Iniciando atualização do cli khan.");
+
+	$download = downloadZip();
+
+	if($download){
+
+		extractAndMove($download);
+
+	}
