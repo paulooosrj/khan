@@ -24,14 +24,14 @@
 			}else{
 
 				$this->print(self::$comando . " esta comando não existe.");
-				$this->helper();
+				$this->help();
 
 			}
 
 		}
 
 		public function helper(){
-			$this->print("Digite: ( php khan help ) para ver os comandos.");
+			$this->runShell('php khan help');
 		}
 
 		protected function runShell($shell, $debug = false){
@@ -43,7 +43,7 @@
 			echo "\n\n   {$text}\n\n";
 		}
 
-		public function serve($porta = 8080){
+		public function server($porta = 8080){
 
 			$this->print("Servidor ativo em http://localhost:{$porta}");
 			$this->runShell("php -S localhost:{$porta} public/index.php");
@@ -54,7 +54,7 @@
 
 			if(is_null($nameController)){
 
-				$this->print("Dê um nome ao controller para criar, exemplo: php khan controller:Teste.");
+				$this->print("Dê um nome ao controller para criar, exemplo: php khan controller:Teste");
 				return false;
 
 			}
@@ -80,6 +80,12 @@
 				$this->print('Aguarde a instalação dos pacotes.');
 				$this->runShell('npm i gulp -g && npm install');
 			}
+
+		}
+
+		public function help(){
+
+			$this->print("Comandos: \n\n      php khan controller:NomeDoController ( cria um controller ja com a estrutura )\n      php khan server ( liga o servidor php embutido )\n      php khan gulp ( gera estrutura de sass watch e babel loader )");
 
 		}
 
