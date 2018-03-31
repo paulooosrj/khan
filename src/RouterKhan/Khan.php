@@ -31,7 +31,9 @@
 		protected function enviroments(){
 			$dotenv = new \Dotenv\Dotenv(str_replace('src\RouterKhan', '', __DIR__));
 			$dotenv->load();
-			$this->db = Conn::getConn($_ENV);
+			$this->db = function(){
+				return Conn::getConn($_ENV);
+			};
 		}
 
 		protected function router(){
@@ -44,6 +46,8 @@
 		      "clean_request" => true,
 		      "url_filter" => true
 		    ]);
+
+		    include_once 'static.php';
 
 			foreach (glob("routes/*.php") as $filename){
 			    include_once $filename;

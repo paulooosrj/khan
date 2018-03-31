@@ -22,7 +22,9 @@
           public function __construct(){
             $this->container = Container::create();
             $this->stream = new Stream;
-            $this->db = Conn::getConn($_ENV);
+            $this->db = function(){
+              return Conn::getConn($_ENV);
+            };
           }
       }
 
@@ -99,10 +101,10 @@
               if(strripos($class, "@")){
                 list($className, $fun) = explode('@', $class);
                 $finish = new $className;
-                call_user_func_array([$finish, $fun], $data);
+                echo call_user_func_array([$finish, $fun], $data);
               }
               elseif(strripos($class, "::")){
-                call_user_func_array($class, $data);
+                echo call_user_func_array($class, $data);
               }
               else{
                 new $class($data);
@@ -116,7 +118,7 @@
           private function type_trate($type, $callback, $data){
               if($type == "object"){
                 $callback = $callback->bindTo($this->callBind());
-                call_user_func_array($callback, $data);
+                echo call_user_func_array($callback, $data);
               }
               elseif($type == "string"){
                 //$callback = $callback->bindTo(Container::class, Stream::class);
@@ -214,6 +216,31 @@
                }
               return $scope;
           }
+
+          public static function respond($route, $call = null, $method = 'RESPOND'){
+               $scope = Router::create();
+               if(Router::has($route, $method)){
+                  $type = Router::type($route);
+                  if($type === "string"){
+                    self::$routes[$method][$route] = $call;
+                  } elseif($type === "array"){
+                    foreach ($route as $key => $routeName) {
+                      if($callback == null){
+                        self::$routess[$method][$key] = $routeName;
+                      }else{
+                        self::$routess[$method][$key] = $callback;
+                      }
+                    }
+                  }
+               }
+              return $scope;
+          }
+
+          public function isRespond($key, $uri){
+              $key = '/^' . str_replace('/', '\/', $key) . '$/';
+              $matches = [];
+              return (preg_match($key, $uri, $matches)) ? $matches : false;
+          }
         
           public static function params($route, $call = null, $method = 'PARAMS'){
              $scope = Router::create();
@@ -233,6 +260,30 @@
              }
             return $scope;
           }
+
+        public function makeData($params = ''){
+            $data_receive = [
+                "post" => $_POST,
+                "get" => $_GET,
+                "params" => (is_array($params)) ? $params : [],
+                "session" => $_SESSION,
+                "files" => $_FILES,
+                "put" => (is_array(self::$put)) ? self::$put : [],
+                "delete" => (is_array(self::$delete)) ? self::$delete : []
+            ];
+            return $data_receive;
+        }
+
+        public function respondRouter($fn, $data_receive, $inject = []){
+            $data = array_merge([
+                new Request($data_receive, Router::get_uri()),
+                new Response(self::$uses),
+                'db' => function(){
+                    return Conn::getConn($_ENV);
+                }
+            ], $inject);
+            $this->trate_callback($fn, $data);
+        }
         
         public function dispatch(){
           
@@ -240,6 +291,19 @@
             
             $metodo = self::$config["method"];
 						$param_receive = false;
+
+            if(in_array('RESPOND', array_keys(self::$routes))){
+                foreach (self::$routes["RESPOND"] as $key => $fn) {
+                    if($this->isRespond($key, $uri)){
+                       $fn = self::$routes["RESPOND"][$key];
+                       $this->respondRouter(
+                          $fn, 
+                          $this->makeData(), 
+                          ["reg" => $this->isRespond($key, $uri)]
+                      );
+                    }
+                }
+            }
 					
 						if(in_array('PARAMS', array_keys(self::$routes))){
 							$param = $this->build(self::$routes["PARAMS"], $uri);
@@ -262,26 +326,19 @@
             if(in_array($metodo, array_keys(self::$routes))){
 							
 							if(in_array($uri, array_keys(self::$routes[$metodo])) || in_array($param_receive["rota"], array_keys(self::$routes[$metodo]))){
-									$data_receive = [
-										"post" => $_POST,
-										"get" => $_GET,
-										"params" => (is_array($param_receive['params'])) ? $param_receive['params'] : [],
-										"session" => $_SESSION,
-										"files" => $_FILES,
-										"put" => (is_array(self::$put)) ? self::$put : [],
-										"delete" => (is_array(self::$delete)) ? self::$delete : []
-									];
+									
+                  $data_receive = $this->makeData($param_receive['params']);
+
 									$fn = '';
+
 									if(is_array($param_receive)){
 										$fn = self::$routes[$metodo][$param_receive['rota']];
 									}else{
 										$fn = self::$routes[$metodo][$uri];
 									}
-									$this->trate_callback($fn, [
-										new Request($data_receive, Router::get_uri()),
-										new Response(self::$uses),
-                    'db' => Conn::getConn($_ENV)
-									]);
+
+									$this->respondRouter($fn, $data_receive);
+
 							}
 						}
             

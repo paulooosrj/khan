@@ -1,0 +1,27 @@
+@import 'flex';
+@import 'https://fonts.googleapis.com/css?family=Lato';
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.container{
+
+	height: 100vh;
+	width: 100%;
+	background: #fff;
+	@include flexbox;
+	@include flex-direction(column);
+	@include justify-content(center);
+	@include align-items(center);
+
+	.message {
+		
+		font-size: 3em;
+		font-family: 'Lato', sans-serif;
+		color: #4834d4;
+
+	}
+
+}

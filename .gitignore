@@ -2,3 +2,6 @@
 /resources/images_upload/default.png
 _config.yml
 composer.lock
+node_modules
+package.json
+gulpfile.js

@@ -1,43 +1,8 @@
 <?php
+	
+	require_once '.cli/work.php';
+	
+	$args = $argv;
+	unset($args[0]);
 
-error_reporting(0);
-
-$args = $argv;
-unset($args[0]);
-
-$comand = ' ' . $args[1];
-
-function command($comando){
-	if(strpos($comando, 'serve')){
-
-		$porta = (strpos($comando, ':')) ? end(explode(':', $comando)) : 8080;
-		echo "\nServidor ativo em http://localhost:{$porta}\n\n";
-		return "php -S localhost:{$porta} -t public/";
-		
-	}
-	elseif(strpos($comando, 'controller')){
-
-		$nController = (strpos($comando, ':')) ? end(explode(':', $comando)) : false;
-		if($nController){
-			if(!file_exists('app/'.$nController.'Controller.php')){
-				file_put_contents('app/'.$nController.'Controller.php', "<?php
-
-	namespace MyApp;
-
-	class {$nController}Controller {
-
-		public function index(\$req, \$res, \$db){
-			echo 'Ola mundo!!'.
-		}
-
-	}");
-			echo "\nController {$nController} Criado Com Sucesso!!\n";
-			}
-		}else{
-			echo "Passe um nome para o Controller !!\nExemplo: php khan controller:Teste";
-		}
-		
-	}
-}
-
-shell_exec(command($comand));
+	$cli = new CliKhan($args[1]);

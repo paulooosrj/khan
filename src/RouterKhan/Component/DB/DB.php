@@ -1,7 +1,6 @@
 <?php
 
 	namespace App\RouterKhan\Component\DB;
-	// Usando Medoo namespace
 	use Medoo\Medoo;
 
 	class DB {

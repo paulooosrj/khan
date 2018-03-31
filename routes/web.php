@@ -1,7 +1,7 @@
 <?php
-
+	
 	$container::bind("teste", function(){
-		return "Testando Aplicação";
+		return "Comece o desenvolvimento!!";
 	});
 
 	$router::get('/', function($req, $res){
