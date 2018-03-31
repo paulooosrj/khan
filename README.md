@@ -25,21 +25,20 @@
 
 
  ### About RouterKhan
- RouterKhan is a web application framework. We believe that development must be a good and not tiresome experience to be truly productive. RouterKhan streamlines development by easing common tasks used in most web projects, including:
+ Khan is a web application framework. We believe that development must be a good and not tiresome experience to be truly productive. RouterKhan streamlines development by easing common tasks used in most web projects, including:
  
  - [Simple routing engine, easy to learn, fast, and with two-step verification for parameters.](https://github.com/PaulaoDev/router-khan/blob/master/src/RouterKhan/RouterKhan.php)
  - [Helpers for your application (Medoo PDO, Twig Engine View, Symfony, Carbon Date Manipulate)](https://github.com/PaulaoDev/router-khan/blob/master/composer.json)
  - [Fast Dependency injection container](https://github.com/PaulaoDev/router-khan/blob/master/src/RouterKhan/Component/Container/ServiceContainer.php)
  - [Stream Service](https://github.com/PaulaoDev/router-khan/blob/master/src/RouterKhan/Component/Stream/StreamServer.php)
-
-
-
-### Learning RouterKhan
-A Login / Registration with Panel and image upload system was done to demonstrate the operation of the system while the documentation is being made.
-[Instalation](https://github.com/PaulaoDev/router-khan/tree/master/resources/installation)
-
+  
 ### Documentation
 A complete system documentation is available online [at this link](https://paulaodev.github.io/RouterKhan/documentation).
+
+### Command line
+  ```console
+  php khan help
+  ```
 
 ### Contribution
  - Send error reports, suggestions, and upload requests to the [GitHub issue tracker](https://github.com/PaulaoDev/router-khan/issues).
@@ -53,149 +52,8 @@ A complete system documentation is available online [at this link](https://paula
 ### Attention
 For the system to work 100% it is necessary to have a Virtual Host configured in your localhost or directly in the ROOT folder of a hosting.
 
-  ### GETS Routes
-  
-  
-  ```php
-  
-    $router->get(/* String or Array routes */, /* Class, Array or Closure */);
-    /* Route new class */
-    $router->get('/', 'MyApp\Controllers\myClass');
-    /* Route class method */
-    $router->get('/', 'MyApp\Controllers\myClass@method');
-    /* Route class static method */
-    $router->get('/', 'MyApp\Controllers\myClass::method');
-    /* Route mutiples in same Callback */
-    $router->get(['/', '/foo'], 'MyApp\Controllers\myClass::method');
-    /* Route mutiples in same Callback */
-    $router->get(['/', '/foo'], ['MyApp\Controllers\myClass::method','MyApp\Controllers\myClass@method']);
-    /* Mutiples Routes */
-    $router->get(['/' => 'MyApp\Controllers\myClass::method','/foo' => 'MyApp\Controllers\myClass@method']);
-    /* Using Closure */
-    $router->get('/', function($req, $res){ });
-    /* Using Closure in Mutiples Methods */
-    $router->get(['/' => function($req, $res){ },'/foo' => function($req, $res){ }]);
-  
-  ```
-  
-  
-  ------------------------------------------------
-  
-  
-  ### POSTS Routes
-  
-  ```php
-    $router->post(/* String or Array routes */, /* Class, Array or Closure */);
-    /* Route new class */
-    $router->post('/', 'MyApp\Controllers\myClass');
-    /* Route class method */
-    $router->post('/', 'MyApp\Controllers\myClass@method');
-    /* Route class static method */
-    $router->post('/', 'MyApp\Controllers\myClass::method');
-    /* Route mutiples in same Callback */
-    $router->post(['/', '/foo'], 'MyApp\Controllers\myClass::method');
-    /* Route mutiples in same Callback */
-    $router->post(['/', '/foo'], ['MyApp\Controllers\myClass::method','MyApp\Controllers\myClass@method']);
-    /* Mutiples Routes */
-    $router->post(['/' => 'MyApp\Controllers\myClass::method','/foo' => 'MyApp\Controllers\myClass@method']);
-    /* Using Closure */
-    $router->post('/', function($req, $res){ });
-    /* Using Closure in Mutiples Methods */
-    $router->post(['/' => function($req, $res){ },'/foo' => function($req, $res){ }]);
-
-   ```
-  
-  
-  ------------------------------------------------
-    
-  
-  ### Parameters in Router
-  
-  ```php
-    $router->params(/* String or Array routes */, /* Class, Array or Closure */);
-    /* Route new class */
-    $router->params('/profile/{id}', 'MyApp\Controllers\myClass');
-    /* Route class method */
-    $router->params('/{id}/home', 'MyApp\Controllers\myClass@method');
-    /* Route class static method */
-    $router->params('/home/{id}/{video_id}', 'MyApp\Controllers\myClass::method');
-    /* Route mutiples in same Callback */
-    $router->params(['/{id}/home', '/home/{id}/{video_id}'], 'MyApp\Controllers\myClass::method');
-    /* Route mutiples in same Callback */
-    $router->params(['/{id}/home', '/home/{id}/{video_id}'], ['MyApp\Controllers\myClass::method','MyApp\Controllers\myClass@method']);
-    /* Mutiples Routes */
-    $router->params(['/{id}/home' => 'MyApp\Controllers\myClass::method','/home/{id}/{video_id}' => 'MyApp\Controllers\myClass@method']);
-    /* Using Closure */
-    $router->params('/home/{id}/{video_id}', function($req, $res){ });
-    /* Using Closure in Mutiples Methods */
-    $router->params(['/home/{id}/{video_id}' => function($req, $res){ },'/{id}/home' => function($req, $res){ }]);
-   ```
-  
-  
-  ------------------------------------------------
-
-  
-  ### PUT Router
-  
-  ```php
-    $router->put(/* String or Array routes */, /* Class, Array or Closure */);
-    /* Route new class */
-    $router->put('/', 'MyApp\Controllers\myClass');
-    /* Route class method */
-    $router->put('/', 'MyApp\Controllers\myClass@method');
-    /* Route class static method */
-    $router->put('/', 'MyApp\Controllers\myClass::method');
-    /* Route mutiples in same Callback */
-    $router->put(['/', '/foo'], 'MyApp\Controllers\myClass::method');
-    /* Route mutiples in same Callback */
-    $router->put(['/', '/foo'], ['MyApp\Controllers\myClass::method','MyApp\Controllers\myClass@method']);
-    /* Mutiples Routes */
-    $router->put(['/' => 'MyApp\Controllers\myClass::method','/foo' => 'MyApp\Controllers\myClass@method']);
-    /* Using Closure */
-    $router->put('/', function($req, $res){ });
-    /* Using Closure in Mutiples Methods */
-    $router->put(['/' => function($req, $res){ },'/foo' => function($req, $res){ }]);
-   ```
-  
-  
-  ------------------------------------------------
-
-  
-  ### DELETE Router
-  
-  ```php
-    $router->delete(/* String or Array routes */, /* Class, Array or Closure */);
-    /* Route new class */
-    $router->delete('/', 'MyApp\Controllers\myClass');
-    /* Route class method */
-    $router->delete('/', 'MyApp\Controllers\myClass@method');
-    /* Route class static method */
-    $router->delete('/', 'MyApp\Controllers\myClass::method');
-    /* Route mutiples in same Callback */
-    $router->delete(['/', '/foo'], 'MyApp\Controllers\myClass::method');
-    /* Route mutiples in same Callback */
-    $router->delete(['/', '/foo'], ['MyApp\Controllers\myClass::method','MyApp\Controllers\myClass@method']);
-    /* Mutiples Routes */
-    $router->delete(['/' => 'MyApp\Controllers\myClass::method','/foo' => 'MyApp\Controllers\myClass@method']);
-    /* Using Closure */
-    $router->delete('/', function($req, $res){ });
-    /* Using Closure in Mutiples Methods */
-    $router->delete(['/' => function($req, $res){ },'/foo' => function($req, $res){ }]);
-   ```
-  
-  
-  ------------------------------------------------
-  
-  
-   ### Init Router
-   
-   
-   ```php
-    $router->dispatch();
-   ```
-   
-  
-   ------------------------------------------------
+  ### Routes
+  Create files with routes in directory **routes/**
    
    ### Security
    Relate all vulnerabilities found in a responsible and constructive way [Email](jskhanframework@gmail.com).
