@@ -76,8 +76,8 @@
 		public function gulp(){
 
 			if(
-				copy('.cli/gulp/gulpfile.js', 'gulpfile.js') && 
-				copy('.cli/gulp/package.json', 'package.json')
+				copy('.cli/gulp-files/gulpfile.js', 'gulpfile.js') && 
+				copy('.cli/gulp-files/package.json', 'package.json')
 			){
 				$this->print('Aguarde a instalação dos pacotes.');
 				$this->runShell('npm i gulp -g && npm install');
