@@ -1,20 +1,18 @@
 <p align="center"><img src="https://i.imgur.com/tmmZ1uh.png" alt="ChatBotPHP"/></p>
 
 <p align="center">
-  <a href="https://scrutinizer-ci.com/g/PaulaoDev/router-khan/?branch=master"><img src="https://scrutinizer-ci.com/g/PaulaoDev/khan-framework/badges/quality-score.png?b=master" alt="Passing"></a>
-  <a href="https://scrutinizer-ci.com/g/PaulaoDev/router-khan/build-status/master"><img src="https://scrutinizer-ci.com/g/PaulaoDev/router-khan/badges/build.png?b=master" alt="Passing"></a>
-  <a href="https://raw.githubusercontent.com/PaulaoDev/router-khan/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Passing"></a>
-  <a href="https://github.com/PaulaoDev/ChatBot-PHP-Facebook/stargazers"><img src="https://img.shields.io/github/stars/PaulaoDev/router-khan.svg" alt="Passing"></a>
+
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/PaulaoDev/router-khan/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/PaulaoDev/router-khan/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/PaulaoDev/router-khan/badges/build.png?b=master)](https://scrutinizer-ci.com/g/PaulaoDev/router-khan/build-status/master)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/PaulaoDev/router-khan/master/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/PaulaoDev/router-khan.svg)](https://github.com/PaulaoDev/ChatBot-PHP-Facebook/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/PaulaoDev/router-khan.svg)](https://github.com/PaulaoDev/ChatBot-PHP-Facebook/fork)
+[![GitHub issues](https://img.shields.io/github/issues/PaulaoDev/router-khan.svg)](https://github.com/PaulaoDev/ChatBot-PHP-Facebook/issues)
+[![GitHub watchers](https://img.shields.io/github/watchers/badges/shields.svg?style=social&label=Watch)](https://github.com/PaulaoDev/router-khan/subscription)
+[![Whatsapp](https://img.shields.io/badge/Whatsapp-On-green.svg)](https://bit.ly/whatsappdopaulo)
+[![Donate Paypal](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://goo.gl/ujU2QU)
+[![Donate Bitcoin](https://img.shields.io/badge/Donate-Bitcoin-yellow.svg)](https://blockchain.info/address/37RWdwgsXK94pANXm9fHv722k4zQmtmCpH)
 </p>
-
-<p align="center">
-   <a href="https://github.com/PaulaoDev/ChatBot-PHP-Facebook/fork"><img src="https://img.shields.io/github/forks/PaulaoDev/router-khan.svg" alt="Passing"></a>
-  <a href="https://github.com/PaulaoDev/ChatBot-PHP-Facebook/issues"><img src="https://img.shields.io/github/issues/PaulaoDev/router-khan.svg" alt="Passing"></a>
-  <a href="https://github.com/PaulaoDev/router-khan/subscription"><img src="https://img.shields.io/github/watchers/badges/shields.svg?style=social&label=Watch" alt="Passing"></a>
-  <a href="https://bit.ly/whatsappdopaulo"><img src="https://img.shields.io/badge/Whatsapp-On-green.svg" alt="Passing"></a>
-</p>
-
-
 
 -----------------------
 
