@@ -25,7 +25,16 @@
             $this->db = function(){
               return Conn::getConn($_ENV);
             };
+            $self = $this;
           }
+
+          public function helpers(){
+              foreach (func_get_args() as $key => $helper) {
+                  $name = "App\RouterKhan\Libraries"."\\".$helper;
+                  $this->$helper = new $name;
+              }
+          }
+
       }
 
       class Router {

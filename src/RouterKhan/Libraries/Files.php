@@ -1,19 +1,10 @@
-<?php 
+<?php
 
-	namespace MyApp\Models;
+	namespace App\RouterKhan\Libraries;
 
 	class Files {
 
-		private static $instance = null;
-
-		public static function create(){
-			if(self::$instance == null){
-				self::$instance = new Files();
-			}
-			return self::$instance;
-		}
-
-		protected function __construct(){
+		public function __construct(){
 			return $this;
 		}
 

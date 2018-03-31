@@ -73,6 +73,25 @@
 
 		}
 
+		public function lib($nameLib = null){
+
+			if(is_null($nameLib)){
+
+				$this->print("Dê um nome a library para criar, exemplo: php khan lib:Library");
+				return false;
+
+			}
+
+			$libDefault = file_get_contents('.cli/libraries/default.php');
+			$libDefault = str_replace('LibraryName', $nameLib, $libDefault);
+			$dir = "src/RouterKhan/libraries/{$nameLib}.php";
+
+			if(file_put_contents($dir, $libDefault)){
+				$this->print("A Library {$nameLib} foi criado com sucesso em: {$dir}");
+			}
+
+		}
+
 		public function gulp(){
 
 			if(

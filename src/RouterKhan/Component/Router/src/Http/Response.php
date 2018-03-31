@@ -25,8 +25,16 @@
 				$this->$key = $value;
 			}
 		}
+
+		public function view($name){
+			return 'resources/views/' . $name;
+		}
+
+		public function assets($name){
+			return $_ENV['APP_URL'] . "/" . "assets/" . $name;
+		}
 		
-		public function view($file, $data = []){
+		public function render($file, $data = []){
 			// print_r($this->twig->render);
 			echo $this->twig->render($file, $data);
 		}/**/

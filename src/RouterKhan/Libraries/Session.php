@@ -1,10 +1,16 @@
-<?php 
-	
-	namespace MyApp\Models;
+<?php
+
+	namespace App\RouterKhan\Libraries;
 
 	@session_start();
 
-	class Session{
+	class Session {
+
+		public static function has($name){
+			if(isset($_SESSION[$name]) && !empty($_SESSION[$name])){
+				return true;
+			}
+		}
 
 		public static function set($name, $value){
 			if(!isset($_SESSION[$name]) && empty($_SESSION[$name])){
