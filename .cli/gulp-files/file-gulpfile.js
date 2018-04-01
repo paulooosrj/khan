@@ -4,7 +4,9 @@ const browserify = require('browserify'),
       sass = require('gulp-sass'),
       autoprefixer = require('gulp-autoprefixer'),
       source = require('vinyl-source-stream'),
-      buffer = require('vinyl-buffer');
+      buffer = require('vinyl-buffer'),
+      uglify = require('gulp-uglify'),
+      cleanCSS = require('gulp-clean-css');
 
 const entry = './public/js/app.js',
       sassWatchPath = './public/sass/**/*.scss',
@@ -18,6 +20,7 @@ gulp.task('js', function () {
         .pipe(buffer())
         .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(sourcemaps.write())
+        .pipe(uglify())
         .pipe(gulp.dest('./public/js/'));
 });
 
@@ -29,6 +32,7 @@ gulp.task('sass', function () {
         browsers: ['last 2 versions']
     }))
     .pipe(sourcemaps.write())
+    .pipe(cleanCSS({ compatibility: 'ie8' }))
     .pipe(gulp.dest('./public/css'));
 });
 

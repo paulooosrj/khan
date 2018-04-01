@@ -1,3 +1,5 @@
+"use strict";
+
 const message = require('./utils/message');
 
-console.log(message);
+console.log(message + ' using babel.');

@@ -6,7 +6,7 @@
 
 	$router::get('/', function($req, $res){
 
-		$res->view('index.html', [
+		$res->render('index.html', [
 			'message' => $this->container->get('teste')()
 		]);
 		

@@ -9,3 +9,9 @@
 		print_r($this->session);
 
 	});
+
+	$router::get('/redi', function($req, $res){
+
+		redirect('/perfil/150');
+
+	});

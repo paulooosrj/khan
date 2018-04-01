@@ -48,6 +48,7 @@
 		    ]);
 
 		    include_once 'static.php';
+		    include_once 'Component/Functions/Functions.php';
 
 			foreach (glob("routes/*.php") as $filename){
 			    include_once $filename;

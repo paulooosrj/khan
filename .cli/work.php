@@ -121,9 +121,61 @@
 
 		}
 
+		public function npmPackageInstall($pack){
+			$package = (array) json_decode(file_get_contents('package.json'));
+			if(!$package["devDependencies"]){
+				$package["devDependencies"] = [];
+			}
+			if(!$package["dependencies"]){
+				$package["dependencies"] = [];
+			}
+			$dependencies = array_merge($package["devDependencies"], $package["dependencies"]);
+			return (array_key_exists($pack, $dependencies)) ? true : false;
+		}
+
+		public function js($comando = null){
+
+			if(is_null($comando)){ return false; }
+
+			$file = file_get_contents(".cli/assets/js.txt");
+
+			if(file_put_contents("public/js/{$comando}.js", $file)){
+
+				if( $this->npmPackageInstall('jquery') === false ){
+					$this->runShell('npm i --save jquery');
+				}
+
+				if( $this->npmPackageInstall('lodash') === false ){
+					$this->runShell('npm i --save lodash');
+				}
+
+				$this->print("O arquivo:  {$comando}.js foi criado com sucesso!!");
+
+			}
+
+		}
+
+		public function sass($comando = null){
+
+			if(is_null($comando)){ return false; }
+
+			$file = file_get_contents(".cli/assets/css.txt");
+
+			if(file_put_contents("public/sass/{$comando}.scss", $file)){
+
+				if( $this->npmPackageInstall('bootstrap') === false ){
+					$this->runShell('npm i --save bootstrap');
+				}
+
+				$this->print("O arquivo:  {$comando}.scss foi criado com sucesso!!");
+
+			}
+
+		}
+
 		public function help(){
 
-			$this->print("Comandos: \n\n      php khan controller:NomeDoController ( cria um controller ja com a estrutura )\n      php khan server ( liga o servidor php embutido )\n      php khan gulp ( gera estrutura de sass watch e babel loader )\n      php cli-update ( update to cli khan )");
+			$this->print("Comandos: \n\n      php khan controller:NomeDoController ( cria um controller ja com a estrutura )\n      php khan server ( liga o servidor php embutido )\n      php khan gulp ( gera estrutura de sass watch e babel loader )\n      php khan js:NomeDoArquivoJS ( gera um arquivo javascript com a estrutura. )\n      php khan sass:NomeDoSass ( gera um arquivo sass ja com estrutura e bootstrap )\n      php cli-update ( update to cli khan )");
 
 		}
 
