@@ -42,7 +42,7 @@
 			$stream = new Stream;
 			$db = $this->db;
 
-			$router = Router::create([
+		    $router = Router::create([
 		      "clean_request" => true,
 		      "url_filter" => true
 		    ]);
@@ -73,3 +73,5 @@
 		}
 
 	}
+
+?>
