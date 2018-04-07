@@ -29,7 +29,7 @@
 		protected function __construct(){}
 
 		protected function enviroments(){
-			$dotenv = new \Dotenv\Dotenv(str_replace('src\RouterKhan', '', __DIR__));
+			$dotenv = new \Dotenv\Dotenv(str_replace('src\Khan', '', __DIR__));
 			$dotenv->load();
 			$this->db = function(){
 				return Conn::getConn($_ENV);
