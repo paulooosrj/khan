@@ -17,6 +17,7 @@
   ### Install
   - Download [Zip](https://github.com/PaulaoDev/khan/archive/master.zip)
   ```bash 
+    composer global require paulaodev/khan-cli
     cd khan-master && composer install
   ```
 
@@ -33,7 +34,7 @@ A complete system documentation is available online [at this link](https://paula
 
 ### Command line
   ```console
-  php khan help
+  khan help
   ```
 
 ### Contribution
