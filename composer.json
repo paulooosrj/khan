@@ -21,7 +21,8 @@
         "php-ai/php-ml": "^0.4.1",
         "paulao-dev/router": "^1.0",
         "vlucas/phpdotenv": "^2.4",
-        "phpmailer/phpmailer": "^6.0"
+        "phpmailer/phpmailer": "^6.0",
+        "paulaodev/cli-khan": "*"
     },
     "autoload": {
         "psr-4": {

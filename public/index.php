@@ -2,5 +2,5 @@
 
 	require __DIR__ . '/../vendor/autoload.php';
 
-	$application = App\RouterKhan\Khan::create();
+	$application = App\Khan\Khan::create();
 	$application->dispatch();

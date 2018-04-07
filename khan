@@ -1,8 +1,0 @@
-<?php
-	
-	require_once '.cli/work.php';
-	
-	$args = $argv;
-	unset($args[0]);
-
-	$cli = new CliKhan($args[1]);
