@@ -18,11 +18,17 @@
   - Download [Zip](https://github.com/PaulaoDev/khan/archive/master.zip)
   ```bash 
     # download zip
-    git clone https://github.com/PaulaoDev/khan khan-project && cd khan-project
+    git clone https://github.com/PaulaoDev/khan khan-project && cd khan-project && composer install
+    
     # install cli khan
-    composer global require paulaodev/khan-cli
+    composer global require paulaodev/khan-cli 
+       
+    # download using cli khan
+    khan create khan-project && cd khan-project && composer install
+    
     # dependencies & run server
     composer install && khan server 80
+    
   ```
 
  ### About Khan
