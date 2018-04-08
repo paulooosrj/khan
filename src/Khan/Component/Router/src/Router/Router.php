@@ -80,6 +80,10 @@
               $path = (isset($server["REQUEST_URI"])) ? $server["REQUEST_URI"] : "/";
               return "{$protocol}://{$domain}{$path}";
           }
+
+          public static function methods(){
+            return self::$routes;
+          }
         
           public static function clean_request(){
               $_POST = filter_input_array(INPUT_POST, FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
@@ -149,6 +153,10 @@
                   $this->type_trate($t, $value, $data);
                 }
               }
+          }
+
+          public static function redirect($route, $args){
+              header("Location: {$route}");
           }
         
           public static function get($route, $call = null, $method = 'GET'){

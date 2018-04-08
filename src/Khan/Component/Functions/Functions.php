@@ -17,3 +17,25 @@
 		return $_ENV['APP_URL']. "/" . "assets" . $url;
 
 	}
+
+	/**
+	 * CLASSES FUNCTIONS
+	 */
+
+	class Router {
+
+		public static function __callStatic($name, $arguments){
+			$routerrr = App\Khan\Component\Router\src\Router\Router::create();
+			call_user_func_array([$routerrr, $name], $arguments);
+		}
+
+	}
+
+	class Container {
+
+		public static function __callStatic($name, $arguments){
+			$containerrr = App\Khan\Component\Container\ServiceContainer::create();
+			call_user_func_array([$containerrr, $name], $arguments);
+		}
+
+	}

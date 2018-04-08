@@ -15,7 +15,7 @@
 	use App\Khan\Component\Stream\StreamServer as Stream;
 	use App\Khan\Component\DB\DB as Conn;
 
-	class Khan{
+	class Khan {
 
 		protected static $instance = null;
 
@@ -42,10 +42,12 @@
 			$stream = new Stream;
 			$db = $this->db;
 
-		    $router = Router::create([
+		    Router::create([
 		      "clean_request" => true,
 		      "url_filter" => true
 		    ]);
+
+		    $router = Router::create();
 
 		    include_once 'static.php';
 		    include_once 'Component/Functions/Functions.php';
@@ -54,7 +56,8 @@
 			    include_once $filename;
 			}
 
-			$router->dispatch();
+			$routerFactory = Router::create();
+			$routerFactory->dispatch();
 
 		}
 

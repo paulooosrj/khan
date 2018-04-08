@@ -1,6 +1,6 @@
 <?php
 
-	$router::get('/libs', function($req, $res){
+	Router::get('/libs', function($req, $res){
 
 		$this->helpers('files', 'session');
 
@@ -10,8 +10,8 @@
 
 	});
 
-	$router::get('/redi', function($req, $res){
+	Router::get('/redi', function($req, $res){
 
-		redirect('/perfil/150');
+		Router::redirect('/perfil/150');
 
 	});
