@@ -39,3 +39,12 @@
 		}
 
 	}
+
+	class DB {
+
+		public static function __callStatic($name, $arguments){
+			$dbb = App\Khan\Component\DB\DB::getConn($_ENV);
+			call_user_func_array([$dbb, $name], $arguments);
+		}
+
+	}
