@@ -7,9 +7,9 @@
 </p>
 
 <p align="center">
-    <a href="https://github.com/PaulaoDev/ChatBot-PHP-Facebook/stargazers"><img src="https://img.shields.io/github/stars/PaulaoDev/router-khan.svg" alt="Passing"></a>
-    <a href="https://github.com/PaulaoDev/ChatBot-PHP-Facebook/fork"><img src="https://img.shields.io/github/forks/PaulaoDev/router-khan.svg" alt="Passing"></a>
-    <a href="https://github.com/PaulaoDev/ChatBot-PHP-Facebook/issues"><img src="https://img.shields.io/github/issues/PaulaoDev/router-khan.svg" alt="Passing"></a>
+    <a href="https://github.com/PaulaoDev/khan/stargazers"><img src="https://img.shields.io/github/stars/PaulaoDev/khan.svg" alt="Passing"></a>
+    <a href="https://github.com/PaulaoDev/khan/fork"><img src="https://img.shields.io/github/forks/PaulaoDev/khan.svg" alt="Passing"></a>
+    <a href="https://github.com/PaulaoDev/khan/issues"><img src="https://img.shields.io/github/issues/PaulaoDev/khan.svg" alt="Passing"></a>
 </p>
 
 -----------------------
