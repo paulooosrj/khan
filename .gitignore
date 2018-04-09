@@ -4,8 +4,8 @@ composer.lock
 node_modules
 package.json
 gulpfile.js
-.cli/update/dates/
 sami.phar
 auto-commit.sh
 config.php
 package-lock.json
+/docs/cache/
