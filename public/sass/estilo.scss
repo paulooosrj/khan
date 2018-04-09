@@ -1,0 +1,35 @@
+// Include all of Bootstrap
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	height: auto;
+	min-height: 100vh;
+}
+
+.btn-personalize{
+	width: 250px;
+    height: 55px;
+}
+
+.nav-project{
+	height: 10vh;
+}
+
+.main{
+	min-height: 80vh;
+}
+
+.btns{
+	height: 50vh;
+}
+
+.footer{
+	height: 10vh;
+}

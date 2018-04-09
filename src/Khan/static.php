@@ -1,11 +1,11 @@
 <?php
 
 	function get_mime_type($filename) {
-	    $idx = explode( '.', $filename );
-	    $count_explode = count($idx);
-	    $idx = strtolower($idx[$count_explode-1]);
+
+	    $ext = pathinfo($filename, PATHINFO_EXTENSION);
 
 	    $mimet = array( 
+
 	        'txt' => 'text/plain',
 	        'htm' => 'text/html',
 	        'html' => 'text/html',
@@ -64,18 +64,42 @@
 	        'ods' => 'application/vnd.oasis.opendocument.spreadsheet',
 	    );
 
-	    if (isset( $mimet[$idx] )) {
-	     return $mimet[$idx];
+	    if (isset($mimet[$ext])) {
+
+	     return $mimet[$ext];
+
 	    } else {
+
 	     return 'application/octet-stream';
+
 	    }
+
 	 }
 
 	$router::respond('/assets/(.*)', function($req, $res, $db, $reg){
 
-		$fileDir = "public/{$reg[1]}";
-		$mime = get_mime_type($fileDir);
-		header("Content-type: {$mime}", true);
-		return file_get_contents($fileDir);
+		$fileDir ="public/{$reg[1]}";
+
+		if(file_exists($fileDir)){
+			$mime = get_mime_type($fileDir);
+			header("Content-type: {$mime}", true);
+			return file_get_contents($fileDir);
+		}else{
+			http_response_code(404);
+		}
+
+	});
+
+	$router::respond('/docs/(.*)', function($req, $res, $db, $reg){
+
+		$fileDir ="docs/build/{$reg[1]}";
+
+		if(file_exists($fileDir)){
+			$mime = get_mime_type($fileDir);
+			header("Content-type: {$mime}", true);
+			return file_get_contents($fileDir);
+		}else{
+			http_response_code(404);
+		}
 
 	});
