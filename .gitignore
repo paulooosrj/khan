@@ -1,7 +1,7 @@
 /vendor/
 _config.yml
 composer.lock
-/node_modules/
+node_modules
 package.json
 gulpfile.js
 .cli/update/dates/
