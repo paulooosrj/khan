@@ -1,4 +1,4 @@
-<p align="center"><img src="https://i.imgur.com/tmmZ1uh.png" alt="ChatBotPHP"/></p>
+<p align="center"><img src="https://i.imgur.com/X9o9Za0.png" alt="ChatBotPHP" width="180"/></p>
 
 <p align="center">
     <a href="https://scrutinizer-ci.com/g/PaulaoDev/router-khan/?branch=master"><img src="https://scrutinizer-ci.com/g/PaulaoDev/router-khan/badges/quality-score.png?b=master" alt="Passing"></a>
@@ -7,9 +7,9 @@
 </p>
 
 <p align="center">
-    <a href="https://github.com/PaulaoDev/ChatBot-PHP-Facebook/stargazers"><img src="https://img.shields.io/github/stars/PaulaoDev/router-khan.svg" alt="Passing"></a>
-    <a href="https://github.com/PaulaoDev/ChatBot-PHP-Facebook/fork"><img src="https://img.shields.io/github/forks/PaulaoDev/router-khan.svg" alt="Passing"></a>
-    <a href="https://github.com/PaulaoDev/ChatBot-PHP-Facebook/issues"><img src="https://img.shields.io/github/issues/PaulaoDev/router-khan.svg" alt="Passing"></a>
+    <a href="https://github.com/PaulaoDev/khan/stargazers"><img src="https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Stars" alt="Stars"></a>
+    <a href="https://packagist.org/PaulaoDev/khan"><img src="https://img.shields.io/packagist/php-v/symfony/symfony.svg" alt="Package"></a>
+    <a href="https://github.com/PaulaoDev/khan/issues"><img src="https://img.shields.io/github/issues/badges/shields.svg" alt="Issues"></a>
 </p>
 
 -----------------------
@@ -18,11 +18,17 @@
   - Download [Zip](https://github.com/PaulaoDev/khan/archive/master.zip)
   ```bash 
     # download zip
-    git clone https://github.com/PaulaoDev/khan khan-project && cd khan-project
+    git clone https://github.com/PaulaoDev/khan khan-project && cd khan-project && composer install
+    
     # install cli khan
-    composer global require paulaodev/khan-cli
+    composer global require paulaodev/khan-cli 
+       
+    # download using cli khan
+    khan create khan-project && cd khan-project && composer install
+    
     # dependencies & run server
     composer install && khan server 80
+    
   ```
 
  ### About Khan
