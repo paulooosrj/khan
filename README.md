@@ -7,9 +7,9 @@
 </p>
 
 <p align="center">
-    <a href="https://github.com/PaulaoDev/khan/stargazers"><img src="https://img.shields.io/github/stars/PaulaoDev/khan.svg" alt="Passing"></a>
-    <a href="https://github.com/PaulaoDev/khan/fork"><img src="https://img.shields.io/github/forks/PaulaoDev/khan.svg" alt="Passing"></a>
-    <a href="https://github.com/PaulaoDev/khan/issues"><img src="https://img.shields.io/github/issues/PaulaoDev/khan.svg" alt="Passing"></a>
+    <a href="https://github.com/PaulaoDev/khan/stargazers"><img src="https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Stars" alt="Stars"></a>
+    <a href="https://packagist.org/PaulaoDev/khan"><img src="https://img.shields.io/packagist/php-v/symfony/symfony.svg" alt="Package"></a>
+    <a href="https://github.com/PaulaoDev/khan/issues"><img src="https://img.shields.io/github/issues/badges/shields.svg" alt="Issues"></a>
 </p>
 
 -----------------------
