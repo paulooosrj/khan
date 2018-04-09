@@ -1,4 +1,4 @@
-<p align="center"><img src="https://i.imgur.com/tmmZ1uh.png" alt="ChatBotPHP"/></p>
+<p align="center"><img src="https://i.imgur.com/JA4sdBz.jpg" alt="ChatBotPHP" width="180"/></p>
 
 <p align="center">
     <a href="https://scrutinizer-ci.com/g/PaulaoDev/router-khan/?branch=master"><img src="https://scrutinizer-ci.com/g/PaulaoDev/router-khan/badges/quality-score.png?b=master" alt="Passing"></a>
