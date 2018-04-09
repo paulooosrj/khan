@@ -1,5 +1,4 @@
 /vendor/
-/resources/images_upload/default.png
 _config.yml
 composer.lock
 node_modules
@@ -9,3 +8,4 @@ gulpfile.js
 sami.phar
 auto-commit.sh
 config.php
+package-lock.json
