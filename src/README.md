@@ -1,1 +1,1 @@
-# Khan Class
+# Khan Class Pattern
