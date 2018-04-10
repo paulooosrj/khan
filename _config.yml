@@ -1,4 +1,4 @@
-name: Khan
+name: Khan Framework PHP
 description: Khan Framework
 avatar: https://i.imgur.com/1KqeNw6.png
 theme: jekyll-theme-cayman
@@ -6,3 +6,12 @@ footer-links:
   email: jskhanframework@gmail.com
   facebook: https://facebook.com/PauloRodriguesYT
   github: PaulaoDev/khan
+# Jekyll 3 now only supports Kramdown for Markdown
+kramdown:
+  # Use GitHub flavored markdown, including triple backtick fenced code blocks
+  input: GFM
+  # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    # Use existing pygments syntax highlighting css
+    css_class: 'highlight'
