@@ -30,6 +30,12 @@
     composer install && khan server 80
     
   ```
+  
+  ### Generate login system
+  ```bash 
+    # run the command where the framework is configured
+    khan make auth
+  ```
 
  ### About Khan
  Khan is a web application framework. We believe that development must be a good and not tiresome experience to be truly productive. RouterKhan streamlines development by easing common tasks used in most web projects, including:
