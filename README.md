@@ -47,7 +47,7 @@
  - [Stream Service](https://github.com/PaulaoDev/khan/blob/master/src/Khan/Component/Stream/StreamServer.php)
   
 ### Documentation
-A complete system documentation is available online [at this link](https://paulaodev.github.io/khan/).
+A complete system documentation is available online [at this link](https://paulaodev.github.io/khan/docs/).
 
 ### Command line
   ```console
