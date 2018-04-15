@@ -5,13 +5,12 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
 
-class Mail
-{
+	class Mail{
 
-    public function __construct()
-    {
+	    public function __construct(){
 
-        $this->mail = new PHPMailer(true);
-        return $this->mail;
-    }
-}
+	        $this->mail = new PHPMailer(true);
+	        return $this->mail;
+
+	    }
+	}

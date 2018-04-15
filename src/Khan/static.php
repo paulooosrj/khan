@@ -83,6 +83,7 @@ function get_mime_type($filename)
         } else {
             http_response_code(404);
         }
+        
     });
 
     $router::respond('/docs/(.*)', function ($req, $res, $db, $reg) {
