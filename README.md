@@ -14,6 +14,14 @@
 
 -----------------------
 
+  ### Documentation
+  A complete system documentation is available online [at this link](https://paulaodev.github.io/khan/docs/).
+  
+  ### System Requirements
+ - [PHP](http://php.net/downloads.php) >= 7.1.
+ - MySQL >= 5.0.
+ - [Composer](https://getcomposer.org/download/).
+
   ### Install
   - Download [Zip](https://github.com/PaulaoDev/khan/archive/master.zip)
   ```bash 
@@ -30,6 +38,17 @@
     composer install && khan server 80
     
   ```
+  
+  
+
+  ### Command line
+  ```console
+  khan help
+  ```
+
+ ### Contribution
+ - Send error reports, suggestions, and upload requests to the [GitHub issue tracker](https://github.com/PaulaoDev/khan/issues).
+ - Read the [File](https://github.com/PaulaoDev/khan/blob/master/CONTRIBUTING.md).
   
   ### Generates
   ```bash 
@@ -51,23 +70,6 @@
  - [Fast Dependency injection container](https://github.com/PaulaoDev/khan/blob/master/src/Khan/Component/Container/ServiceContainer.php)
  - [Stream Service](https://github.com/PaulaoDev/khan/blob/master/src/Khan/Component/Stream/StreamServer.php)
  - [Websockets](https://github.com/PaulaoDev/khan/blob/master/src/Khan/Component/Socket/Socket.php)
-  
-### Documentation
-A complete system documentation is available online [at this link](https://paulaodev.github.io/khan/docs/).
-
-### Command line
-  ```console
-  khan help
-  ```
-
-### Contribution
- - Send error reports, suggestions, and upload requests to the [GitHub issue tracker](https://github.com/PaulaoDev/khan/issues).
- - Read the [File](https://github.com/PaulaoDev/khan/blob/master/CONTRIBUTING.md).
-
-### System Requirements
- - PHP >= 7.1.
- - MySQL >= 5.0.
- - [Composer](https://getcomposer.org/download/).
  
 ### Attention
 For the system to work 100% it is necessary to have a Virtual Host configured in your localhost or directly in the ROOT folder of a hosting.
@@ -75,7 +77,7 @@ For the system to work 100% it is necessary to have a Virtual Host configured in
   ### Routes
   Create files with routes in directory **routes/**
   
-  <p align="center"><img src="https://i.imgur.com/Q3q09cV.png" alt="ChatBotPHP"/></p>
+  <p align="center"><img src="https://i.imgur.com/uo0p4ic.png" alt="Routes Khan"/></p>
    
    ### Security
    Relate all vulnerabilities found in a responsible and constructive way [Email](jskhanframework@gmail.com).
