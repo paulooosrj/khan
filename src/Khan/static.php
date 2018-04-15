@@ -88,7 +88,7 @@ function get_mime_type($filename)
 
     $router::respond('/docs/(.*)', function ($req, $res, $db, $reg) {
 
-        $fileDir ="docs/{$reg[1]}";
+        $fileDir = "docs/{$reg[1]}";
 
         if (file_exists($fileDir)) {
             $mime = get_mime_type($fileDir);

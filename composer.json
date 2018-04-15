@@ -19,7 +19,8 @@
         "symfony/http-foundation": "^3.3",
         "roave/better-reflection": "*",
         "vlucas/phpdotenv": "^2.4",
-        "phpmailer/phpmailer": "^6.0"
+        "phpmailer/phpmailer": "^6.0",
+        "paulao-dev/router": "*"
     },
     "require-dev": {
         "symfony/finder": "^4.0"

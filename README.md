@@ -31,10 +31,15 @@
     
   ```
   
-  ### Generate login system
+  ### Generates
   ```bash 
     # run the command where the framework is configured
+    
+    # generates a login system
     khan make auth
+    
+    # generates a chat system
+    khan make chat
   ```
 
  ### About Khan
@@ -45,6 +50,7 @@
  - [Helpers for your application (Medoo PDO, Twig Engine View, Symfony, Carbon Date Manipulate)](https://github.com/PaulaoDev/khan/blob/master/composer.json)
  - [Fast Dependency injection container](https://github.com/PaulaoDev/khan/blob/master/src/Khan/Component/Container/ServiceContainer.php)
  - [Stream Service](https://github.com/PaulaoDev/khan/blob/master/src/Khan/Component/Stream/StreamServer.php)
+ - [Websockets](https://github.com/PaulaoDev/khan/blob/master/src/Khan/Component/Socket/Socket.php)
   
 ### Documentation
 A complete system documentation is available online [at this link](https://paulaodev.github.io/khan/docs/).
