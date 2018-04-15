@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### 1.0.2 - 2018-04-15
+### Added
+- Insert Websockets
+- Generate chat system
+
+### Update
+- Documentation
+- Readme
+
 ## 0.0.1 - 2017-11-04
 ### Added
 - Insert Documentation.

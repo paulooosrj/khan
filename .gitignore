@@ -4,8 +4,5 @@ composer.lock
 node_modules
 package.json
 gulpfile.js
-sami.phar
 auto-commit.sh
-config.php
 package-lock.json
-/docs/cache/
