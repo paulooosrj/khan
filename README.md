@@ -18,7 +18,7 @@
   A complete system documentation is available online [at this link](https://paulaodev.github.io/khan/docs/).
   
   ### System Requirements
- - [PHP](https://windows.php.net/downloads/releases/php-7.2.4-src.zip) >= 7.1.
+ - [PHP](http://php.net/downloads.php) >= 7.1.
  - MySQL >= 5.0.
  - [Composer](https://getcomposer.org/download/).
 
