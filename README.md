@@ -1,11 +1,9 @@
-# O Projeto Está Em Manutenção
-
 <p align="center"><img src="https://i.imgur.com/X9o9Za0.png" alt="ChatBotPHP" width="180"/></p>
 
 <p align="center">
-    <a href="https://scrutinizer-ci.com/g/PaulaoDev/router-khan/?branch=master"><img src="https://scrutinizer-ci.com/g/PaulaoDev/router-khan/badges/quality-score.png?b=master" alt="Passing"></a>
-    <a href="https://scrutinizer-ci.com/g/PaulaoDev/router-khan/build-status/master"><img src="https://scrutinizer-ci.com/g/PaulaoDev/router-khan/badges/build.png?b=master" alt="Passing"></a>
-    <a href="https://raw.githubusercontent.com/PaulaoDev/router-khan/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Passing"></a>
+    <a href="https://scrutinizer-ci.com/g/PaulaoDev/khan/?branch=master"><img src="https://scrutinizer-ci.com/g/PaulaoDev/router-khan/badges/quality-score.png?b=master" alt="Passing"></a>
+    <a href="https://scrutinizer-ci.com/g/PaulaoDev/khan/build-status/master"><img src="https://scrutinizer-ci.com/g/PaulaoDev/router-khan/badges/build.png?b=master" alt="Passing"></a>
+    <a href="https://raw.githubusercontent.com/PaulaoDev/khan/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Passing"></a>
 </p>
 
 <p align="center">
@@ -67,11 +65,11 @@
  Khan is a web application framework. We believe that development must be a good and not tiresome experience to be truly productive. RouterKhan streamlines development by easing common tasks used in most web projects, including:
  
  - [Khan CLI](https://github.com/PaulaoDev/khan-cli)
- - [Simple routing engine, easy to learn, fast, and with two-step verification for parameters.](https://github.com/PaulaoDev/khan/blob/master/src/Khan/Component/Router/src/Router/Router.php)
- - [Helpers for your application (Medoo PDO, Twig Engine View, Symfony, Carbon Date Manipulate)](https://github.com/PaulaoDev/khan/blob/master/composer.json)
- - [Fast Dependency injection container](https://github.com/PaulaoDev/khan/blob/master/src/Khan/Component/Container/ServiceContainer.php)
- - [Stream Service](https://github.com/PaulaoDev/khan/blob/master/src/Khan/Component/Stream/StreamServer.php)
- - [Websockets](https://github.com/PaulaoDev/khan/blob/master/src/Khan/Component/Socket/Socket.php)
+ - [Simple routing engine, easy to learn, fast, and with two-step verification for parameters.](https://github.com/PaulaoDev/khan-core/blob/master/src/Khan/Component/Router/src/Router/Router.php)
+ - [Helpers for your application (Medoo PDO, Twig Engine View, Symfony, Carbon Date Manipulate)](https://github.com/PaulaoDev/khan-core/blob/master/composer.json)
+ - [Fast Dependency injection container](https://github.com/PaulaoDev/khan-core/blob/master/src/Khan/Component/Container/ServiceContainer.php)
+ - [Stream Service](https://github.com/PaulaoDev/khan-core/blob/master/src/Khan/Component/Stream/StreamServer.php)
+ - [Websockets](https://github.com/PaulaoDev/khan-core/blob/master/src/Khan/Component/Socket/Socket.php)
  
 ### Attention
 For the system to work 100% it is necessary to have a Virtual Host configured in your localhost or directly in the ROOT folder of a hosting.
