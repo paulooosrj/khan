@@ -9,6 +9,7 @@
             header("Content-type: {$mime}", true);
             return file_get_contents($fileDir);
         } else {
+            echo "error";
             http_response_code(404);
         }
     });

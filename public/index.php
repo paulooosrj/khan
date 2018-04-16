@@ -7,7 +7,7 @@
 	 * @author   PaulaoDev <jskhanframework@gmail.com>
 	 */
 	define('KHAN_INIT', microtime(true));
-	
+	define('ROOT_FOLDER', str_replace('\public', '', __DIR__));
 	/**
 	 * Register The Auto Loader
 	 *	------------
