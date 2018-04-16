@@ -49,10 +49,16 @@ class Khan
         $stream = new Stream;
         $db = $this->db;
 
-        Router::create([
+        $configs = [
           "clean_request" => true,
           "url_filter" => true
-        ]);
+        ];
+
+        if(isset($_ENV['APP_SUBDIR']) && !empty($_ENV['APP_SUBDIR'])){
+            $configs['sub_dir'] = $_ENV['APP_SUBDIR'];
+        }
+
+        Router::create($configs);
 
         $router = Router::create();
 

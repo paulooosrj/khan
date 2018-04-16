@@ -15,7 +15,7 @@ function view($url)
 function assets($url)
 {
 
-    return $_ENV['APP_URL']. "/" . "assets" . $url;
+    return $_ENV['APP_URL']. "/" . "public" . $url;
 }
 
     /**

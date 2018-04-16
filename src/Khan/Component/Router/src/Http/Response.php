@@ -79,7 +79,7 @@
 		}
 
 		public function assets($name){
-			echo $_ENV['APP_URL'] . "/" . "assets/" . $name;
+			echo $_ENV['APP_URL'] . "/" . "public/" . $name;
 		}
 		
 		public function render($file, $data = []){
