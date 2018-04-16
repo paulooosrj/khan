@@ -21,55 +21,7 @@
     <script src="../js/jquery.smooth-scroll.js"></script>
     <script src="../js/prism.min.js"></script>
     <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
-        <script type="text/javascript">
-        function loadExternalCodeSnippets() {
-            Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
-                var src = pre.getAttribute('data-src');
-                var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
-                var language = 'php';
-
-                var code = document.createElement('code');
-                code.className = 'language-' + language;
-
-                pre.textContent = '';
-
-                code.textContent = 'Loading…';
-
-                pre.appendChild(code);
-
-                var xhr = new XMLHttpRequest();
-
-                xhr.open('GET', src, true);
-
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState == 4) {
-
-                        if (xhr.status < 400 && xhr.responseText) {
-                            code.textContent = xhr.responseText;
-
-                            Prism.highlightElement(code);
-                        }
-                        else if (xhr.status >= 400) {
-                            code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
-                        }
-                        else {
-                            code.textContent = '✖ Error: File does not exist or is empty';
-                        }
-                    }
-                };
-
-                xhr.send(null);
-            });
-        }
-
-        $(document).ready(function(){
-            loadExternalCodeSnippets();
-        });
-        $('#source-view').on('shown', function () {
-            loadExternalCodeSnippets();
-        })
-    </script>
-
+    
     <link rel="shortcut icon" href="../images/favicon.ico"/>
     <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
@@ -145,46 +97,46 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-828150180"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-485971527"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-828150180" class="accordion-body collapse in">
+            <div id="namespace-485971527" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1353579248"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2075437488"></a>
                                 <a href="../namespaces/App.html" style="margin-left: 30px; padding-left: 0">App</a>
             </div>
-            <div id="namespace-1353579248" class="accordion-body collapse ">
+            <div id="namespace-2075437488" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-12857852"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-138482006"></a>
                                 <a href="../namespaces/App.Khan.html" style="margin-left: 30px; padding-left: 0">Khan</a>
             </div>
-            <div id="namespace-12857852" class="accordion-body collapse ">
+            <div id="namespace-138482006" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1123961240"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1149102458"></a>
                                 <a href="../namespaces/App.Khan.Component.html" style="margin-left: 30px; padding-left: 0">Component</a>
             </div>
-            <div id="namespace-1123961240" class="accordion-body collapse ">
+            <div id="namespace-1149102458" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1354538158"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-811578862"></a>
                                 <a href="../namespaces/App.Khan.Component.Container.html" style="margin-left: 30px; padding-left: 0">Container</a>
             </div>
-            <div id="namespace-1354538158" class="accordion-body collapse ">
+            <div id="namespace-811578862" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
@@ -199,10 +151,10 @@
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-553458262"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-568206084"></a>
                                 <a href="../namespaces/App.Khan.Component.DB.html" style="margin-left: 30px; padding-left: 0">DB</a>
             </div>
-            <div id="namespace-553458262" class="accordion-body collapse ">
+            <div id="namespace-568206084" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
@@ -217,10 +169,10 @@
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-65198623"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-876866567"></a>
                                 <a href="../namespaces/App.Khan.Component.Mime.html" style="margin-left: 30px; padding-left: 0">Mime</a>
             </div>
-            <div id="namespace-65198623" class="accordion-body collapse ">
+            <div id="namespace-876866567" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
@@ -235,37 +187,37 @@
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-607915658"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-596083648"></a>
                                 <a href="../namespaces/App.Khan.Component.Router.html" style="margin-left: 30px; padding-left: 0">Router</a>
             </div>
-            <div id="namespace-607915658" class="accordion-body collapse ">
+            <div id="namespace-596083648" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-891696479"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-36841509"></a>
                                 <a href="../namespaces/App.Khan.Component.Router.src.html" style="margin-left: 30px; padding-left: 0">src</a>
             </div>
-            <div id="namespace-891696479" class="accordion-body collapse ">
+            <div id="namespace-36841509" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2102606252"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-701316096"></a>
                                 <a href="../namespaces/App.Khan.Component.Router.src.Http.html" style="margin-left: 30px; padding-left: 0">Http</a>
             </div>
-            <div id="namespace-2102606252" class="accordion-body collapse ">
+            <div id="namespace-701316096" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-689026106"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-494829385"></a>
                                 <a href="../namespaces/App.Khan.Component.Router.src.Http.Interfaces.html" style="margin-left: 30px; padding-left: 0">Interfaces</a>
             </div>
-            <div id="namespace-689026106" class="accordion-body collapse ">
+            <div id="namespace-494829385" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
@@ -291,10 +243,10 @@
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-504957380"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-375141901"></a>
                                 <a href="../namespaces/App.Khan.Component.Router.src.Router.html" style="margin-left: 30px; padding-left: 0">Router</a>
             </div>
-            <div id="namespace-504957380" class="accordion-body collapse ">
+            <div id="namespace-375141901" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
@@ -326,10 +278,10 @@
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1594146707"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-952395891"></a>
                                 <a href="../namespaces/App.Khan.Component.Socket.html" style="margin-left: 30px; padding-left: 0">Socket</a>
             </div>
-            <div id="namespace-1594146707" class="accordion-body collapse ">
+            <div id="namespace-952395891" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
@@ -344,10 +296,10 @@
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1626872925"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-213373400"></a>
                                 <a href="../namespaces/App.Khan.Component.Stream.html" style="margin-left: 30px; padding-left: 0">Stream</a>
             </div>
-            <div id="namespace-1626872925" class="accordion-body collapse ">
+            <div id="namespace-213373400" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
@@ -370,10 +322,10 @@
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1153151025"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1807108979"></a>
                                 <a href="../namespaces/App.Khan.Libraries.html" style="margin-left: 30px; padding-left: 0">Libraries</a>
             </div>
-            <div id="namespace-1153151025" class="accordion-body collapse ">
+            <div id="namespace-1807108979" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
@@ -409,19 +361,19 @@
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-822087062"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-820049483"></a>
                                 <a href="../namespaces/KhanComponent.html" style="margin-left: 30px; padding-left: 0">KhanComponent</a>
             </div>
-            <div id="namespace-822087062" class="accordion-body collapse ">
+            <div id="namespace-820049483" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-243507366"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1791605337"></a>
                                 <a href="../namespaces/KhanComponent.RegexEngine.html" style="margin-left: 30px; padding-left: 0">RegexEngine</a>
             </div>
-            <div id="namespace-243507366" class="accordion-body collapse ">
+            <div id="namespace-1791605337" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
@@ -457,38 +409,39 @@
     <section class="row-fluid">
         <div class="span10 offset2">
             <div class="row-fluid">
-                <div class="span8 content file">
+                <div class="span8 content namespace">
                     <nav>
-                                                                    </nav>
+                                                <a href="../namespaces/App.Khan.Component.html">\App\Khan\Component</a>
+                                            </nav>
+                    <h1><small>\App\Khan\Component</small>Mime</h1>
 
-                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
-                    <h1><small>Component/Router/src/Http</small>Response.php</h1>
-                    <p><em></em></p>
                     
-
                     
                     
                                         <h2>Classes</h2>
                     <table class="table table-hover">
                                             <tr>
-                            <td><a href="../classes/App.Khan.Component.Router.src.Http.Response.html">Response</a></td>
-                            <td><em>Response Class and Interface Implement</em></td>
+                            <td><a href="../classes/App.Khan.Component.Mime.Mime.html">Mime</a></td>
+                            <td><em></em></td>
                         </tr>
                                         </table>
                                     </div>
 
                 <aside class="span4 detailsbar">
                     <dl>
-                                                    <dt>Package</dt>
-                            <dd><div class="namespace-wrapper">\Default</div></dd>
-                        
-                        
+                        <dt>Namespace hierarchy</dt>
+                        <dd class="hierarchy">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                    <div class="namespace-wrapper"><a href="../namespaces/default.html">\</a></div>
+                                                            
+                                    <div class="namespace-wrapper"><a href="../namespaces/App.html">\App</a></div>
+                                                            
+                                    <div class="namespace-wrapper"><a href="../namespaces/App.Khan.html">\App\Khan</a></div>
+                                                            
+                                    <div class="namespace-wrapper"><a href="../namespaces/App.Khan.Component.html">\App\Khan\Component</a></div>
+                                                                                        <div class="namespace-wrapper">\App\Khan\Component\Mime</div>
+                        </dd>
                     </dl>
-                    <h2>Tags</h2>
-                    <table class="table table-condensed">
-                                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                                            </table>
-
                 </aside>
             </div>
 
@@ -496,16 +449,6 @@
             
         </div>
     </section>
-
-    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h3 id="source-view-label"></h3>
-        </div>
-        <div class="modal-body">
-            <pre data-src="../files/Component/Router/src/Http/Response.php.txt" class="language-php line-numbers"></pre>
-        </div>
-    </div>
 
     <footer class="row-fluid">
         <section class="span10 offset2">
