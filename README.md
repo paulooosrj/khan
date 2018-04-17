@@ -13,9 +13,10 @@
 </p>
 
 -----------------------
+  #### Readme in [English](https://github.com/PaulaoDev/khan/blob/master/README-en.md)
 
   ### Documentaçao
-  Uma documentação completa do sistema está disponível online [neste link] (https://paulaodev.github.io/khan/docs/).
+  Uma documentação completa do sistema está disponível online [neste link](https://paulaodev.github.io/khan/docs/).
   
   ### Requisitos de sistema
  - [PHP](http://php.net/downloads.php) >= 7.1.
@@ -47,8 +48,8 @@
   ```
 
  ### Contribuiçoes
- - Envie relatórios de erros, sugestões e solicitações de upload para o [rastreador de problemas do GitHub] (https://github.com/PaulaoDev/khan/issues).
- - Leia o [arquivo] (https://github.com/PaulaoDev/khan/blob/master/CONTRIBUTING.md).
+ - Envie relatórios de erros, sugestões e solicitações de upload para o [rastreador de problemas do GitHub](https://github.com/PaulaoDev/khan/issues).
+ - Leia o [arquivo](https://github.com/PaulaoDev/khan/blob/master/CONTRIBUTING.md).
   
   ### Geradores
   ```bash 
@@ -66,7 +67,7 @@ Khan é um framework de aplicações web. Acreditamos que o desenvolvimento deve
  
  - [Khan CLI](https://github.com/PaulaoDev/khan-cli)
  - [Mecanismo de roteamento simples, fácil de aprender, rápido e com verificação em duas etapas para parâmetros](https://github.com/PaulaoDev/khan-core/blob/master/src/Khan/Component/Router/src/Router/Router.php)
- - [Helpers para sua aplicação] (Medoo PDO, Twig Engine View, Symfony, Carbon Date Manipulate)](https://github.com/PaulaoDev/khan-core/blob/master/composer.json)
+ - [Helpers para sua aplicação (Medoo PDO, Twig Engine View, Symfony, Carbon Date Manipulate)](https://github.com/PaulaoDev/khan-core/blob/master/composer.json)
  - [Recipiente de injeção de dependência rápida](https://github.com/PaulaoDev/khan-core/blob/master/src/Khan/Component/Container/ServiceContainer.php)
  - [Serviço de transmissão](https://github.com/PaulaoDev/khan-core/blob/master/src/Khan/Component/Stream/StreamServer.php)
  - [Websockets](https://github.com/PaulaoDev/khan-core/blob/master/src/Khan/Component/Socket/Socket.php)
