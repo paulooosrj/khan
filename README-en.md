@@ -13,6 +13,7 @@
 </p>
 
 -----------------------
+#### Readme em [Portugues](https://github.com/PaulaoDev/khan/blob/master/README-en.md)
 
   ### Documentation
   A complete system documentation is available online [at this link](https://paulaodev.github.io/khan/docs/).
