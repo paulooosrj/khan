@@ -4,6 +4,10 @@
 		return "Comece o desenvolvimento!!";
 	});
 
+	Router::set('twig.testeAmigao', function($msg){
+		return "Enginer {$msg}";
+	});
+
 	Router::get('/', function($req, $res){
 
 		$res->render('index.html', [
