@@ -12,7 +12,7 @@
     "prefer-stable": true,
     "require": {
         "php": ">=7.0",
-        "paulaodev/khan-core": "v1.0"
+        "paulaodev/khan-core": "dev-master"
     },
     "require-dev": {
     },
