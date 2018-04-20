@@ -4,10 +4,6 @@
 		return "Comece o desenvolvimento!!";
 	});
 
-	Router::set('twig.testeAmigao', function($msg){
-		return "Enginer {$msg}";
-	});
-
 	Router::get('/', function($req, $res){
 
 		$res->render('index.html', [
@@ -15,6 +11,12 @@
 		]);
 		
 	});
+
+	Router::get('/teste', "MyApp\TesteController@index");
+
+	Router::get('/teste_middleware', function(){})
+			->name('teste_middleware')
+			->middleware(Middlewares\TesteMiddleware::class);
 
 	Router::post('/chat-emit', function($req, $res){
 

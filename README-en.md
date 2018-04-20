@@ -17,6 +17,8 @@
 
   ### Documentation
   A complete system documentation is available online [at this link](https://paulaodev.github.io/khan/docs/).
+
+  - [Project Core](https://github.com/PaulaoDev/khan-core)
   
   ### System Requirements
  - [PHP](http://php.net/downloads.php) >= 7.1.

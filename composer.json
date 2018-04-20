@@ -12,7 +12,7 @@
     "prefer-stable": true,
     "require": {
         "php": ">=7.0",
-        "paulaodev/khan-core": "^1.0"
+        "paulaodev/khan-core": "v1.0"
     },
     "require-dev": {
     },
@@ -24,5 +24,8 @@
     },
     "config": {
         "optimize-autoloader": true
+    },
+    "scripts": {
+        "serve": "php -S 0.0.0.0:8080 ./public/index.php"
     }
 }
