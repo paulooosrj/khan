@@ -90,9 +90,9 @@ Khan é um framework de aplicações web. Acreditamos que o desenvolvimento deve
 
 | Framework        | Requisições por segundo           | Versão do Framework  |  Versão do PHP  |
 | ------------- |:-------------:|:-------------:| -----:|
-| Khan      | 220.41 | 2.0 | 7.1 |
-| Laravel      | 66.57      |   5.6 | 7.1 |
-| Symfony |   81.78    |   3.3.6 | 7.1 |
+| Khan      | 374 | 2.0 | 7.0 |
+| Laravel      |    114.55   |   5.6 | 7.0 |
+| Symfony |   184.15    |   3.3.6 | 7.0 |
  
 ### Atenção
 Para que o sistema funcione 100% é necessário ter um Virtual Host configurado em seu localhost ou diretamente na pasta ROOT de uma hospedagem.
