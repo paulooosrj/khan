@@ -74,6 +74,25 @@
  - [Stream Service](https://github.com/PaulaoDev/khan-core/blob/master/src/Khan/Component/Stream/StreamServer.php)
  - [Websockets](https://github.com/PaulaoDev/khan-core/blob/master/src/Khan/Component/Socket/Socket.php)
  
+ ### Benchmarks
+ 
+ | Framework        | Requisitions per second            | Versão do Framework  |  PHP version  |
+| ------------- |:-------------:|:-------------:|-----:|
+| Khan      | 220.41 | 2.0 | 5.6 |
+| Laravel      | 66.57      |   5.6 | 5.6 |
+| Symfony |   81.78    |   3.3.6 | 5.6 |
+
+
+----------------------
+
+
+| Framework        | Requisitions per second            | Versão do Framework  |  PHP version  |
+| ------------- |:-------------:|:-------------:| -----:|
+| Khan      | 374 | 2.0 | 7.0 |
+| Laravel      |    114.55   |   5.6 | 7.0 |
+| Symfony |   184.15    |   3.3.6 | 7.0 |
+
+ 
 ### Attention
 For the system to work 100% it is necessary to have a Virtual Host configured in your localhost or directly in the ROOT folder of a hosting.
 
