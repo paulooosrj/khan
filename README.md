@@ -76,6 +76,24 @@ Khan é um framework de aplicações web. Acreditamos que o desenvolvimento deve
  - [Serviço de transmissão](https://github.com/PaulaoDev/khan-core/blob/master/src/Khan/Component/Stream/StreamServer.php)
  - [Websockets](https://github.com/PaulaoDev/khan-core/blob/master/src/Khan/Component/Socket/Socket.php)
  
+ ### Benchmarks
+ 
+ | Framework        | Requisições por segundo           | Versão do Framework  |  Versão do PHP  |
+| ------------- |:-------------:|:-------------:|-----:|
+| Khan      | 220.41 | 2.0 | 5.6 |
+| Laravel      | 66.57      |   5.6 | 5.6 |
+| Symfony |   81.78    |   3.3.6 | 5.6 |
+
+
+----------------------
+
+
+| Framework        | Requisições por segundo           | Versão do Framework  |  Versão do PHP  |
+| ------------- |:-------------:|:-------------:| -----:|
+| Khan      | 220.41 | 2.0 | 7.1 |
+| Laravel      | 66.57      |   5.6 | 7.1 |
+| Symfony |   81.78    |   3.3.6 | 7.1 |
+ 
 ### Atenção
 Para que o sistema funcione 100% é necessário ter um Virtual Host configurado em seu localhost ou diretamente na pasta ROOT de uma hospedagem.
 
