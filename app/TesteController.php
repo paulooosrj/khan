@@ -10,7 +10,7 @@
 
         public function index($req, $res){
             
-            return new Models\MyModel();
+            return \Models\MyModel::init();
 
         }
 

@@ -4,7 +4,7 @@
 
 	class SecureRequest implements \App\Khan\Contracts\Middlewares\Middleware {
 
-		public static function handle($req, $res, $next){
+		public static function handle($req, $res, \Closure $next){
 
 			foreach ($req->getAll() as $key => $valor) {
 				if(is_array($valor) && count($valor) > 0){

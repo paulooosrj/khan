@@ -21,7 +21,7 @@
   - [Core do Projeto](https://github.com/PaulaoDev/khan-core)
   
   ### Requisitos de sistema
- - [PHP](http://php.net/downloads.php) >= 7.1.
+ - [PHP](http://php.net/downloads.php) >= 5.6.
  - MySQL >= 5.0.
  - [Composer](https://getcomposer.org/download/).
 
@@ -38,7 +38,9 @@
     khan create khan-project && cd khan-project && composer install
     
     # instala dependencias e inicia o servidor
-    composer install && khan server 80
+    composer install
+    // so funciona em php 7
+    khan server 80
     
   ```
   

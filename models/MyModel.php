@@ -4,8 +4,8 @@
 
 	class MyModel {
 
-		public function __construct(){
-			
+		public static function init(){
+
 			return "Ola mundo!!";
 
 		}

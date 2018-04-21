@@ -4,7 +4,7 @@
 
 	class TesteMiddleware implements \App\Khan\Contracts\Middlewares\Middleware {
 
-		public static function handle($req, $res, $next){
+		public static function handle($req, $res, \Closure $next){
 
 			echo "TesteMiddleware!!<br/>";
 
