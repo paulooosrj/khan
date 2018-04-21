@@ -1,14 +1,14 @@
 <?php
 	
 	namespace App\Khan\Component\Router\src\Http;
-	use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
+	use \App\Khan\Component\HttpFoundation\Response as ResponseFoundation;
   	use \App\Khan\Component\Router\src\Http\Interfaces\Response as ResponseInterface;
 
 	/**
 	* Response Class and Interface Implement
 	*/
 
-	class Response extends SymfonyResponse implements ResponseInterface{
+	class Response extends ResponseFoundation implements ResponseInterface{
 
 		public static $extends = [
 			"view",
@@ -25,7 +25,7 @@
 			$this->loadTwig($uses);
 			$this->extendsTwig();
 			foreach(self::$use as $key => $value){
-				if(preg_match("/twig\./i", $key)){
+				if(strpos($key, "twig.") !== false){
 					$fnName = str_replace('twig.', '', $key);
 					$this->setFunctionTwig($fnName, $value);
 				}else{
@@ -46,9 +46,9 @@
 			$self = $this;
 			$function = new \Twig_SimpleFunction($fname, function() use($self, $fname, $fncall){
 					if($fncall === false){
-						call_user_func_array([$self, $fname], func_get_args());
+						echo call_user_func_array([$self, $fname], func_get_args());
 					}else{
-						call_user_func_array($fncall, func_get_args());
+						echo call_user_func_array($fncall, func_get_args());
 					}
 				});
 			$this->twig->addFunction($function);
@@ -65,21 +65,21 @@
 			$res = "<script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.slim.js' charset='utf-8'></script>";
 
 			if($dev){
-				$res .= "\n    <script src='https://rawgit.com/PaulaoDev/khan/master/src/Khan/Component/Socket/SocketAdpter.js' charset='utf-8'></script>";
+				$res .= "\n    <script src='https://rawgit.com/PaulaoDev/khan-core/master/src/Khan/Component/Socket/SocketAdpter.js' charset='utf-8'></script>";
 			}else{
-				$res .= "\n    <script src='https://cdn.rawgit.com/PaulaoDev/khan/master/src/Khan/Component/Socket/SocketAdpter.js' charset='utf-8'></script>";
+				$res .= "\n    <script src='https://cdn.rawgit.com/PaulaoDev/khan-core/master/src/Khan/Component/Socket/SocketAdpter.js' charset='utf-8'></script>";
 			}
 
-			echo $res;
+			return $res;
 
 		}
 
 		public function view($name){
-			echo 'resources/views/' . $name;
+			return 'resources/views/' . $name;
 		}
 
 		public function assets($name){
-			echo $_ENV['APP_URL'] . "/" . "public/" . $name;
+			return $_ENV['APP_URL'] . "/" . "public/" . $name;
 		}
 		
 		public function render($file, $data = []){

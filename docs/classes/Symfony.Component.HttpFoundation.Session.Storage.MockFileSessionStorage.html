@@ -1,0 +1,2080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/App.html">\App</a></li>
+                                                        <li><a href="../namespaces/Symfony.html">\Symfony</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">1991</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">1</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-194792810"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-194792810" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-264507633"></a>
+                                <a href="../namespaces/App.html" style="margin-left: 30px; padding-left: 0">App</a>
+            </div>
+            <div id="namespace-264507633" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1173251218"></a>
+                                <a href="../namespaces/App.Khan.html" style="margin-left: 30px; padding-left: 0">Khan</a>
+            </div>
+            <div id="namespace-1173251218" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-343905388"></a>
+                                <a href="../namespaces/App.Khan.Component.html" style="margin-left: 30px; padding-left: 0">Component</a>
+            </div>
+            <div id="namespace-343905388" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1257881923"></a>
+                                <a href="../namespaces/App.Khan.Component.Container.html" style="margin-left: 30px; padding-left: 0">Container</a>
+            </div>
+            <div id="namespace-1257881923" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/App.Khan.Component.Container.ServiceContainer.html">ServiceContainer</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-57936007"></a>
+                                <a href="../namespaces/App.Khan.Component.DB.html" style="margin-left: 30px; padding-left: 0">DB</a>
+            </div>
+            <div id="namespace-57936007" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/App.Khan.Component.DB.DB.html">DB</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-891104840"></a>
+                                <a href="../namespaces/App.Khan.Component.HttpFoundation.html" style="margin-left: 30px; padding-left: 0">HttpFoundation</a>
+            </div>
+            <div id="namespace-891104840" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/App.Khan.Component.HttpFoundation.RequestMatcherInterface.html">RequestMatcherInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/App.Khan.Component.HttpFoundation.AcceptHeaderItem.html">AcceptHeaderItem</a></li>
+                                                    <li class="class"><a href="../classes/App.Khan.Component.HttpFoundation.ApacheRequest.html">ApacheRequest</a></li>
+                                                    <li class="class"><a href="../classes/App.Khan.Component.HttpFoundation.BinaryFileResponse.html">BinaryFileResponse</a></li>
+                                                    <li class="class"><a href="../classes/App.Khan.Component.HttpFoundation.ExpressionRequestMatcher.html">ExpressionRequestMatcher</a></li>
+                                                    <li class="class"><a href="../classes/App.Khan.Component.HttpFoundation.FileBag.html">FileBag</a></li>
+                                                    <li class="class"><a href="../classes/App.Khan.Component.HttpFoundation.HeaderBag.html">HeaderBag</a></li>
+                                                    <li class="class"><a href="../classes/App.Khan.Component.HttpFoundation.IpUtils.html">IpUtils</a></li>
+                                                    <li class="class"><a href="../classes/App.Khan.Component.HttpFoundation.JsonResponse.html">JsonResponse</a></li>
+                                                    <li class="class"><a href="../classes/App.Khan.Component.HttpFoundation.ParameterBag.html">ParameterBag</a></li>
+                                                    <li class="class"><a href="../classes/App.Khan.Component.HttpFoundation.Request.html">Request</a></li>
+                                                    <li class="class"><a href="../classes/App.Khan.Component.HttpFoundation.RequestMatcher.html">RequestMatcher</a></li>
+                                                    <li class="class"><a href="../classes/App.Khan.Component.HttpFoundation.RequestStack.html">RequestStack</a></li>
+                                                    <li class="class"><a href="../classes/App.Khan.Component.HttpFoundation.Response.html">Response</a></li>
+                                                    <li class="class"><a href="../classes/App.Khan.Component.HttpFoundation.ResponseHeaderBag.html">ResponseHeaderBag</a></li>
+                                                    <li class="class"><a href="../classes/App.Khan.Component.HttpFoundation.ServerBag.html">ServerBag</a></li>
+                                                    <li class="class"><a href="../classes/App.Khan.Component.HttpFoundation.StreamedResponse.html">StreamedResponse</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1973343365"></a>
+                                <a href="../namespaces/App.Khan.Component.Mime.html" style="margin-left: 30px; padding-left: 0">Mime</a>
+            </div>
+            <div id="namespace-1973343365" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/App.Khan.Component.Mime.Mime.html">Mime</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1930788010"></a>
+                                <a href="../namespaces/App.Khan.Component.Router.html" style="margin-left: 30px; padding-left: 0">Router</a>
+            </div>
+            <div id="namespace-1930788010" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1839011954"></a>
+                                <a href="../namespaces/App.Khan.Component.Router.src.html" style="margin-left: 30px; padding-left: 0">src</a>
+            </div>
+            <div id="namespace-1839011954" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-717774324"></a>
+                                <a href="../namespaces/App.Khan.Component.Router.src.Http.html" style="margin-left: 30px; padding-left: 0">Http</a>
+            </div>
+            <div id="namespace-717774324" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-820091412"></a>
+                                <a href="../namespaces/App.Khan.Component.Router.src.Http.Interfaces.html" style="margin-left: 30px; padding-left: 0">Interfaces</a>
+            </div>
+            <div id="namespace-820091412" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/App.Khan.Component.Router.src.Http.Interfaces.Request.html">Request</a></li>
+                                                    <li class="interface"><a href="../classes/App.Khan.Component.Router.src.Http.Interfaces.Response.html">Response</a></li>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/App.Khan.Component.Router.src.Http.Request.html">Request</a></li>
+                                                    <li class="class"><a href="../classes/App.Khan.Component.Router.src.Http.Response.html">Response</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-595679118"></a>
+                                <a href="../namespaces/App.Khan.Component.Router.src.RegexEngine.html" style="margin-left: 30px; padding-left: 0">RegexEngine</a>
+            </div>
+            <div id="namespace-595679118" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                            <li class="trait"><a href="../classes/App.Khan.Component.Router.src.RegexEngine.RegexEngine.html">RegexEngine</a></li>
+                                                                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-811682776"></a>
+                                <a href="../namespaces/App.Khan.Component.Router.src.Router.html" style="margin-left: 30px; padding-left: 0">Router</a>
+            </div>
+            <div id="namespace-811682776" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/App.Khan.Component.Router.src.Router.ConfigureRoute.html">ConfigureRoute</a></li>
+                                                    <li class="class"><a href="../classes/App.Khan.Component.Router.src.Router.GroupRouter.html">GroupRouter</a></li>
+                                                    <li class="class"><a href="../classes/App.Khan.Component.Router.src.Router.Responser.html">Responser</a></li>
+                                                    <li class="class"><a href="../classes/App.Khan.Component.Router.src.Router.Router.html">Router</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-153789510"></a>
+                                <a href="../namespaces/App.Khan.Component.Socket.html" style="margin-left: 30px; padding-left: 0">Socket</a>
+            </div>
+            <div id="namespace-153789510" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/App.Khan.Component.Socket.Socket.html">Socket</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-293160389"></a>
+                                <a href="../namespaces/App.Khan.Component.Stream.html" style="margin-left: 30px; padding-left: 0">Stream</a>
+            </div>
+            <div id="namespace-293160389" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/App.Khan.Component.Stream.StreamServer.html">StreamServer</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1207954276"></a>
+                                <a href="../namespaces/App.Khan.Contracts.html" style="margin-left: 30px; padding-left: 0">Contracts</a>
+            </div>
+            <div id="namespace-1207954276" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1977315593"></a>
+                                <a href="../namespaces/App.Khan.Contracts.Libraries.html" style="margin-left: 30px; padding-left: 0">Libraries</a>
+            </div>
+            <div id="namespace-1977315593" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/App.Khan.Contracts.Libraries.Libraries.html">Libraries</a></li>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-717449319"></a>
+                                <a href="../namespaces/App.Khan.Contracts.Middlewares.html" style="margin-left: 30px; padding-left: 0">Middlewares</a>
+            </div>
+            <div id="namespace-717449319" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/App.Khan.Contracts.Middlewares.Middleware.html">Middleware</a></li>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1098402622"></a>
+                                <a href="../namespaces/App.Khan.Libraries.html" style="margin-left: 30px; padding-left: 0">Libraries</a>
+            </div>
+            <div id="namespace-1098402622" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/App.Khan.Libraries.Files.html">Files</a></li>
+                                                    <li class="class"><a href="../classes/App.Khan.Libraries.Image.html">Image</a></li>
+                                                    <li class="class"><a href="../classes/App.Khan.Libraries.Mail.html">Mail</a></li>
+                                                    <li class="class"><a href="../classes/App.Khan.Libraries.Request.html">Request</a></li>
+                                                    <li class="class"><a href="../classes/App.Khan.Libraries.Session.html">Session</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/App.Khan.Khan.html">Khan</a></li>
+                                                    <li class="class"><a href="../classes/App.Khan.KhanFactory.html">KhanFactory</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-530770368"></a>
+                                <a href="../namespaces/Symfony.html" style="margin-left: 30px; padding-left: 0">Symfony</a>
+            </div>
+            <div id="namespace-530770368" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1563479646"></a>
+                                <a href="../namespaces/Symfony.Component.html" style="margin-left: 30px; padding-left: 0">Component</a>
+            </div>
+            <div id="namespace-1563479646" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1140138617"></a>
+                                <a href="../namespaces/Symfony.Component.HttpFoundation.html" style="margin-left: 30px; padding-left: 0">HttpFoundation</a>
+            </div>
+            <div id="namespace-1140138617" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-324272951"></a>
+                                <a href="../namespaces/Symfony.Component.HttpFoundation.Exception.html" style="margin-left: 30px; padding-left: 0">Exception</a>
+            </div>
+            <div id="namespace-324272951" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Symfony.Component.HttpFoundation.Exception.RequestExceptionInterface.html">RequestExceptionInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Exception.ConflictingHeadersException.html">ConflictingHeadersException</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Exception.SuspiciousOperationException.html">SuspiciousOperationException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2137206242"></a>
+                                <a href="../namespaces/Symfony.Component.HttpFoundation.File.html" style="margin-left: 30px; padding-left: 0">File</a>
+            </div>
+            <div id="namespace-2137206242" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-454681401"></a>
+                                <a href="../namespaces/Symfony.Component.HttpFoundation.File.Exception.html" style="margin-left: 30px; padding-left: 0">Exception</a>
+            </div>
+            <div id="namespace-454681401" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.File.Exception.AccessDeniedException.html">AccessDeniedException</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.File.Exception.CannotWriteFileException.html">CannotWriteFileException</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.File.Exception.ExtensionFileException.html">ExtensionFileException</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.File.Exception.FileException.html">FileException</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.File.Exception.FileNotFoundException.html">FileNotFoundException</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.File.Exception.FormSizeFileException.html">FormSizeFileException</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.File.Exception.IniSizeFileException.html">IniSizeFileException</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.File.Exception.NoFileException.html">NoFileException</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.File.Exception.NoTmpDirFileException.html">NoTmpDirFileException</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.File.Exception.PartialFileException.html">PartialFileException</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.File.Exception.UnexpectedTypeException.html">UnexpectedTypeException</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.File.Exception.UploadException.html">UploadException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-176125229"></a>
+                                <a href="../namespaces/Symfony.Component.HttpFoundation.File.MimeType.html" style="margin-left: 30px; padding-left: 0">MimeType</a>
+            </div>
+            <div id="namespace-176125229" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Symfony.Component.HttpFoundation.File.MimeType.ExtensionGuesserInterface.html">ExtensionGuesserInterface</a></li>
+                                                    <li class="interface"><a href="../classes/Symfony.Component.HttpFoundation.File.MimeType.MimeTypeGuesserInterface.html">MimeTypeGuesserInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.File.MimeType.ExtensionGuesser.html">ExtensionGuesser</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.File.MimeType.FileBinaryMimeTypeGuesser.html">FileBinaryMimeTypeGuesser</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.File.MimeType.FileinfoMimeTypeGuesser.html">FileinfoMimeTypeGuesser</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.File.MimeType.MimeTypeExtensionGuesser.html">MimeTypeExtensionGuesser</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.File.MimeType.MimeTypeGuesser.html">MimeTypeGuesser</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.File.File.html">File</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.File.Stream.html">Stream</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.File.UploadedFile.html">UploadedFile</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1044125337"></a>
+                                <a href="../namespaces/Symfony.Component.HttpFoundation.Session.html" style="margin-left: 30px; padding-left: 0">Session</a>
+            </div>
+            <div id="namespace-1044125337" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-682643918"></a>
+                                <a href="../namespaces/Symfony.Component.HttpFoundation.Session.Attribute.html" style="margin-left: 30px; padding-left: 0">Attribute</a>
+            </div>
+            <div id="namespace-682643918" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Symfony.Component.HttpFoundation.Session.Attribute.AttributeBagInterface.html">AttributeBagInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Session.Attribute.AttributeBag.html">AttributeBag</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Session.Attribute.NamespacedAttributeBag.html">NamespacedAttributeBag</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2063679107"></a>
+                                <a href="../namespaces/Symfony.Component.HttpFoundation.Session.Flash.html" style="margin-left: 30px; padding-left: 0">Flash</a>
+            </div>
+            <div id="namespace-2063679107" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Symfony.Component.HttpFoundation.Session.Flash.FlashBagInterface.html">FlashBagInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Session.Flash.AutoExpireFlashBag.html">AutoExpireFlashBag</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Session.Flash.FlashBag.html">FlashBag</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2126584072"></a>
+                                <a href="../namespaces/Symfony.Component.HttpFoundation.Session.Storage.html" style="margin-left: 30px; padding-left: 0">Storage</a>
+            </div>
+            <div id="namespace-2126584072" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1281303520"></a>
+                                <a href="../namespaces/Symfony.Component.HttpFoundation.Session.Storage.Handler.html" style="margin-left: 30px; padding-left: 0">Handler</a>
+            </div>
+            <div id="namespace-1281303520" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.Handler.AbstractSessionHandler.html">AbstractSessionHandler</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.Handler.MemcachedSessionHandler.html">MemcachedSessionHandler</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.Handler.MigratingSessionHandler.html">MigratingSessionHandler</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.Handler.MongoDbSessionHandler.html">MongoDbSessionHandler</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.Handler.NativeFileSessionHandler.html">NativeFileSessionHandler</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.Handler.NullSessionHandler.html">NullSessionHandler</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.Handler.StrictSessionHandler.html">StrictSessionHandler</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-315600405"></a>
+                                <a href="../namespaces/Symfony.Component.HttpFoundation.Session.Storage.Proxy.html" style="margin-left: 30px; padding-left: 0">Proxy</a>
+            </div>
+            <div id="namespace-315600405" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.Proxy.AbstractProxy.html">AbstractProxy</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.Proxy.SessionHandlerProxy.html">SessionHandlerProxy</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.SessionStorageInterface.html">SessionStorageInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MetadataBag.html">MetadataBag</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html">MockArraySessionStorage</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockFileSessionStorage.html">MockFileSessionStorage</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.NativeSessionStorage.html">NativeSessionStorage</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.PhpBridgeSessionStorage.html">PhpBridgeSessionStorage</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Symfony.Component.HttpFoundation.Session.SessionBagInterface.html">SessionBagInterface</a></li>
+                                                    <li class="interface"><a href="../classes/Symfony.Component.HttpFoundation.Session.SessionInterface.html">SessionInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Session.Session.html">Session</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Session.SessionBagProxy.html">SessionBagProxy</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1557669649"></a>
+                                <a href="../namespaces/Symfony.Component.HttpFoundation.Tests.html" style="margin-left: 30px; padding-left: 0">Tests</a>
+            </div>
+            <div id="namespace-1557669649" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1168693233"></a>
+                                <a href="../namespaces/Symfony.Component.HttpFoundation.Tests.File.html" style="margin-left: 30px; padding-left: 0">File</a>
+            </div>
+            <div id="namespace-1168693233" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1565448732"></a>
+                                <a href="../namespaces/Symfony.Component.HttpFoundation.Tests.File.MimeType.html" style="margin-left: 30px; padding-left: 0">MimeType</a>
+            </div>
+            <div id="namespace-1565448732" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.File.MimeType.MimeTypeTest.html">MimeTypeTest</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.File.FakeFile.html">FakeFile</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.File.FileTest.html">FileTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.File.UploadedFileTest.html">UploadedFileTest</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-801666613"></a>
+                                <a href="../namespaces/Symfony.Component.HttpFoundation.Tests.Session.html" style="margin-left: 30px; padding-left: 0">Session</a>
+            </div>
+            <div id="namespace-801666613" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-106408413"></a>
+                                <a href="../namespaces/Symfony.Component.HttpFoundation.Tests.Session.Attribute.html" style="margin-left: 30px; padding-left: 0">Attribute</a>
+            </div>
+            <div id="namespace-106408413" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.Session.Attribute.AttributeBagTest.html">AttributeBagTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.Session.Attribute.NamespacedAttributeBagTest.html">NamespacedAttributeBagTest</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1947456090"></a>
+                                <a href="../namespaces/Symfony.Component.HttpFoundation.Tests.Session.Flash.html" style="margin-left: 30px; padding-left: 0">Flash</a>
+            </div>
+            <div id="namespace-1947456090" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.Session.Flash.AutoExpireFlashBagTest.html">AutoExpireFlashBagTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.Session.Flash.FlashBagTest.html">FlashBagTest</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-810818109"></a>
+                                <a href="../namespaces/Symfony.Component.HttpFoundation.Tests.Session.Storage.html" style="margin-left: 30px; padding-left: 0">Storage</a>
+            </div>
+            <div id="namespace-810818109" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-211876957"></a>
+                                <a href="../namespaces/Symfony.Component.HttpFoundation.Tests.Session.Storage.Handler.html" style="margin-left: 30px; padding-left: 0">Handler</a>
+            </div>
+            <div id="namespace-211876957" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.Session.Storage.Handler.AbstractSessionHandlerTest.html">AbstractSessionHandlerTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.Session.Storage.Handler.MemcachedSessionHandlerTest.html">MemcachedSessionHandlerTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.Session.Storage.Handler.MigratingSessionHandlerTest.html">MigratingSessionHandlerTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.Session.Storage.Handler.MockPdo.html">MockPdo</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.Session.Storage.Handler.MongoDbSessionHandlerTest.html">MongoDbSessionHandlerTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.Session.Storage.Handler.NativeFileSessionHandlerTest.html">NativeFileSessionHandlerTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.Session.Storage.Handler.NullSessionHandlerTest.html">NullSessionHandlerTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.Session.Storage.Handler.PdoSessionHandlerTest.html">PdoSessionHandlerTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.Session.Storage.Handler.PredisClusterSessionHandlerTest.html">PredisClusterSessionHandlerTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.Session.Storage.Handler.PredisSessionHandlerTest.html">PredisSessionHandlerTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.Session.Storage.Handler.RedisArraySessionHandlerTest.html">RedisArraySessionHandlerTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.Session.Storage.Handler.RedisSessionHandlerTest.html">RedisSessionHandlerTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.Session.Storage.Handler.StrictSessionHandlerTest.html">StrictSessionHandlerTest</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-826691213"></a>
+                                <a href="../namespaces/Symfony.Component.HttpFoundation.Tests.Session.Storage.Proxy.html" style="margin-left: 30px; padding-left: 0">Proxy</a>
+            </div>
+            <div id="namespace-826691213" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.Session.Storage.Proxy.AbstractProxyTest.html">AbstractProxyTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.Session.Storage.Proxy.SessionHandlerProxyTest.html">SessionHandlerProxyTest</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.Session.Storage.MetadataBagTest.html">MetadataBagTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.Session.Storage.MockArraySessionStorageTest.html">MockArraySessionStorageTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.Session.Storage.MockFileSessionStorageTest.html">MockFileSessionStorageTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.Session.Storage.NativeSessionStorageTest.html">NativeSessionStorageTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.Session.Storage.PhpBridgeSessionStorageTest.html">PhpBridgeSessionStorageTest</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.Session.SessionTest.html">SessionTest</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.AcceptHeaderItemTest.html">AcceptHeaderItemTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.AcceptHeaderTest.html">AcceptHeaderTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.ApacheRequestTest.html">ApacheRequestTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.BinaryFileResponseTest.html">BinaryFileResponseTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.CookieTest.html">CookieTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.DefaultResponse.html">DefaultResponse</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.ExpressionRequestMatcherTest.html">ExpressionRequestMatcherTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.FileBagTest.html">FileBagTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.HeaderBagTest.html">HeaderBagTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.IpUtilsTest.html">IpUtilsTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.JsonResponseTest.html">JsonResponseTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.JsonSerializableObject.html">JsonSerializableObject</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.NewRequest.html">NewRequest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.ParameterBagTest.html">ParameterBagTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.RedirectResponseTest.html">RedirectResponseTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.RequestContentProxy.html">RequestContentProxy</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.RequestMatcherTest.html">RequestMatcherTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.RequestStackTest.html">RequestStackTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.RequestTest.html">RequestTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.ResponseHeaderBagTest.html">ResponseHeaderBagTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.ResponseTest.html">ResponseTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.ResponseTestCase.html">ResponseTestCase</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.ServerBagTest.html">ServerBagTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.StreamedResponseTest.html">StreamedResponseTest</a></li>
+                                                    <li class="class"><a href="../classes/Symfony.Component.HttpFoundation.Tests.StringableObject.html">StringableObject</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Container.html">Container</a></li>
+                                                    <li class="class"><a href="../classes/DB.html">DB</a></li>
+                                                    <li class="class"><a href="../classes/Router.html">Router</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/Symfony.Component.HttpFoundation.Session.Storage.html">\Symfony\Component\HttpFoundation\Session\Storage</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\Symfony\Component\HttpFoundation\Session\Storage</small>MockFileSessionStorage</h1>
+                    <p><em>MockFileSessionStorage is used to mock sessions for
+functional testing when done in a single PHP process.</em></p>
+                    <p>No PHP session is actually started since a session can be initialized
+and shutdown only once per PHP execution cycle and this class does
+not pollute any session related globals, including session_<em>() functions
+or session.</em> PHP ini directives.</p>
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockFileSessionStorage.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html#method_setSessionData" class="">setSessionData()</a><br />
+                                                                    <a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockFileSessionStorage.html#method_start" class="">start()</a><br />
+                                                                    <a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockFileSessionStorage.html#method_regenerate" class="">regenerate()</a><br />
+                                                                    <a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html#method_getId" class="">getId()</a><br />
+                                                                    <a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html#method_setId" class="">setId()</a><br />
+                                                                    <a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html#method_getName" class="">getName()</a><br />
+                                                                    <a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html#method_setName" class="">setName()</a><br />
+                                                                    <a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockFileSessionStorage.html#method_save" class="">save()</a><br />
+                                                                    <a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html#method_clear" class="">clear()</a><br />
+                                                                    <a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html#method_registerBag" class="">registerBag()</a><br />
+                                                                    <a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html#method_getBag" class="">getBag()</a><br />
+                                                                    <a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html#method_isStarted" class="">isStarted()</a><br />
+                                                                    <a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html#method_setMetadataBag" class="">setMetadataBag()</a><br />
+                                                                    <a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html#method_getMetadataBag" class="">getMetadataBag()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html#method_generateId" class="">generateId()</a><br />
+                                                                    <a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html#method_loadSession" class="">loadSession()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html#property_id" class="">$id</a><br />
+                                                                    <a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html#property_name" class="">$name</a><br />
+                                                                    <a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html#property_started" class="">$started</a><br />
+                                                                    <a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html#property_closed" class="">$closed</a><br />
+                                                                    <a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html#property_data" class="">$data</a><br />
+                                                                    <a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html#property_metadataBag" class="">$metadataBag</a><br />
+                                                                    <a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html#property_bags" class="">$bags</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockFileSessionStorage.html#method_destroy" class="">destroy()</a><br />
+                                                                    <a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockFileSessionStorage.html#method_getFilePath" class="">getFilePath()</a><br />
+                                                                    <a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockFileSessionStorage.html#method_read" class="">read()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockFileSessionStorage.html#property_savePath" class="">$savePath</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/Component.HttpFoundation.Session.Storage.MockFileSessionStorage.html"><div class="path-wrapper">Component/HttpFoundation/Session/Storage/MockFileSessionStorage.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">Default</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                                                                                                                                                
+                                        <div class="namespace-wrapper"><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html">\Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage</a></div>
+                                                                                                    <div class="namespace-wrapper">\Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage</div>
+                            </dd>
+
+                        
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr>
+                            <th>
+                                author
+                            </th>
+                            <td>
+                                                                    <p>Drak <a href="mailto:drak@zikula.org">drak@zikula.org</a></p>
+                                                            </td>
+                        </tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_id" name="property_id" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$id</h3>
+                <pre class="signature">$id : string</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html"><div class="path-wrapper">\Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_name" name="property_name" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$name</h3>
+                <pre class="signature">$name : string</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html"><div class="path-wrapper">\Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_started" name="property_started" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$started</h3>
+                <pre class="signature">$started : boolean</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                boolean
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html"><div class="path-wrapper">\Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_closed" name="property_closed" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$closed</h3>
+                <pre class="signature">$closed : boolean</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                boolean
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html"><div class="path-wrapper">\Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_data" name="property_data" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$data</h3>
+                <pre class="signature">$data : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html"><div class="path-wrapper">\Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_metadataBag" name="property_metadataBag" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$metadataBag</h3>
+                <pre class="signature">$metadataBag : \Symfony\Component\HttpFoundation\Session\Storage\MetadataBag</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                <a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MetadataBag.html">\Symfony\Component\HttpFoundation\Session\Storage\MetadataBag</a>
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html"><div class="path-wrapper">\Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_bags" name="property_bags" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$bags</h3>
+                <pre class="signature">$bags : array|array&lt;mixed,\Symfony\Component\HttpFoundation\Session\SessionBagInterface&gt;</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array|array&lt;mixed,<a href="../classes/Symfony.Component.HttpFoundation.Session.SessionBagInterface.html">\Symfony\Component\HttpFoundation\Session\SessionBagInterface</a>&gt;
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html"><div class="path-wrapper">\Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_savePath" name="property_savePath" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$savePath</h3>
+                <pre class="signature">$savePath : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct(string  <span class="argument">$savePath = null</span>, string  <span class="argument">$name = &#039;MOCKSESSID&#039;</span>, \Symfony\Component\HttpFoundation\Session\Storage\MetadataBag  <span class="argument">$metaBag = null</span>) </pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$savePath </td>
+                                <td><p>Path of directory to save session files</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$name </td>
+                                <td><p>Session name</p></td>
+                            </tr>
+                                                    <tr>
+                                <td><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MetadataBag.html">\Symfony\Component\HttpFoundation\Session\Storage\MetadataBag</a></td>
+                                <td>$metaBag </td>
+                                <td><p>MetadataBag instance</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setSessionData" name="method_setSessionData" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setSessionData()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setSessionData(array  <span class="argument">$array</span>) </pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$array </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html"><div class="path-wrapper">\Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_start" name="method_start" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">start()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">start() : boolean</pre>
+                <p><em>Starts the session.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>True if started</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_regenerate" name="method_regenerate" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">regenerate()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">regenerate(boolean  <span class="argument">$destroy = false</span>, integer  <span class="argument">$lifetime = null</span>) : boolean</pre>
+                <p><em>Regenerates id that represents this storage.</em></p>
+                <p>This method must invoke session_regenerate_id($destroy) unless
+this interface is used for a storage object designed for unit
+or functional testing where a real PHP session would interfere
+with testing.</p>
+<p>Note regenerate+destroy should not clear the session data in memory
+only delete the session data from persistent storage.</p>
+<p>Care: When regenerating the session ID no locking is involved in PHP's
+session design. See <a href="https://bugs.php.net/bug.php?id=61470">https://bugs.php.net/bug.php?id=61470</a> for a discussion.
+So you must make sure the regenerated session is saved BEFORE sending the
+headers with the new ID. Symfony's HttpKernel offers a listener for this.
+See Symfony\Component\HttpKernel\EventListener\SaveSessionListener.
+Otherwise session data could get lost again for concurrent requests with the
+new ID. One result could be that you get logged out after just logging in.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$destroy </td>
+                                <td><p>Destroy session when regenerating?</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$lifetime </td>
+                                <td><p>Sets the cookie lifetime for the session cookie. A null value
+will leave the system settings unchanged, 0 sets the cookie
+to expire with browser session. Time is in seconds, and is
+not a Unix timestamp.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>True if session regenerated, false if error</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getId" name="method_getId" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getId()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getId() : string</pre>
+                <p><em>Returns the session ID.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>The session ID or empty</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html"><div class="path-wrapper">\Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setId" name="method_setId" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setId()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setId(string  <span class="argument">$id</span>) </pre>
+                <p><em>Sets the session ID.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$id </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html"><div class="path-wrapper">\Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getName" name="method_getName" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getName()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getName() : mixed</pre>
+                <p><em>Returns the session name.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    mixed
+                                            &mdash; <p>The session name</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html"><div class="path-wrapper">\Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setName" name="method_setName" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setName()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setName(string  <span class="argument">$name</span>) </pre>
+                <p><em>Sets the session name.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$name </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html"><div class="path-wrapper">\Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_save" name="method_save" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">save()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">save() </pre>
+                <p><em>Force the session to be saved and closed.</em></p>
+                <p>This method must invoke session_write_close() unless this interface is
+used for a storage object design for unit or functional testing where
+a real PHP session would interfere with testing, in which case
+it should actually persist the session data if required.</p>
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_clear" name="method_clear" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">clear()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">clear() </pre>
+                <p><em>Clear all session data in memory.</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html"><div class="path-wrapper">\Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_registerBag" name="method_registerBag" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">registerBag()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">registerBag(\Symfony\Component\HttpFoundation\Session\SessionBagInterface  <span class="argument">$bag</span>) </pre>
+                <p><em>Registers a SessionBagInterface for use.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td><a href="../classes/Symfony.Component.HttpFoundation.Session.SessionBagInterface.html">\Symfony\Component\HttpFoundation\Session\SessionBagInterface</a></td>
+                                <td>$bag </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html"><div class="path-wrapper">\Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getBag" name="method_getBag" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getBag()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getBag(string  <span class="argument">$name</span>) : \Symfony\Component\HttpFoundation\Session\SessionBagInterface</pre>
+                <p><em>Gets a SessionBagInterface by name.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$name </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Symfony.Component.HttpFoundation.Session.SessionBagInterface.html">\Symfony\Component\HttpFoundation\Session\SessionBagInterface</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html"><div class="path-wrapper">\Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_isStarted" name="method_isStarted" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">isStarted()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">isStarted() : boolean</pre>
+                <p><em>Checks if the session is started.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>True if started, false otherwise</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html"><div class="path-wrapper">\Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setMetadataBag" name="method_setMetadataBag" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setMetadataBag()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setMetadataBag(\Symfony\Component\HttpFoundation\Session\Storage\MetadataBag  <span class="argument">$bag = null</span>) </pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MetadataBag.html">\Symfony\Component\HttpFoundation\Session\Storage\MetadataBag</a></td>
+                                <td>$bag </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html"><div class="path-wrapper">\Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getMetadataBag" name="method_getMetadataBag" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getMetadataBag()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getMetadataBag() : \Symfony\Component\HttpFoundation\Session\Storage\MetadataBag</pre>
+                <p><em>Gets the MetadataBag.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MetadataBag.html">\Symfony\Component\HttpFoundation\Session\Storage\MetadataBag</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html"><div class="path-wrapper">\Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_generateId" name="method_generateId" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">generateId()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">generateId() : string</pre>
+                <p><em>Generates a session ID.</em></p>
+                <p>This doesn't need to be particularly cryptographically secure since this is just
+a mock.</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html"><div class="path-wrapper">\Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_loadSession" name="method_loadSession" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">loadSession()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">loadSession() </pre>
+                <p><em></em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Symfony.Component.HttpFoundation.Session.Storage.MockArraySessionStorage.html"><div class="path-wrapper">\Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_destroy" name="method_destroy" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">destroy()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">destroy() </pre>
+                <p><em>Deletes a session from persistent storage.</em></p>
+                <p>Deliberately leaves session data in memory intact.</p>
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getFilePath" name="method_getFilePath" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">getFilePath()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getFilePath() : string</pre>
+                <p><em>Calculate path to file.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>File path</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_read" name="method_read" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">read()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">read() </pre>
+                <p><em>Reads session from storage and loads session.</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">MockFileSessionStorage.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/Component/HttpFoundation/Session/Storage/MockFileSessionStorage.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/App.html">\App</a></li>
+                                                                            <li><a href="../namespaces/Symfony.html">\Symfony</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on April 21st, 2018 at 01:37.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>

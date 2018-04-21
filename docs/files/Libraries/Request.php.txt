@@ -1,12 +1,20 @@
 <?php
 
     namespace App\Khan\Libraries;
+    use App\Khan\Contracts\Libraries\Libraries as LibrariesContract;
 
-    class Request {
+    class Request implements LibrariesContract {
 
-    	public function __construct(){
-            return $this;
+    	protected static $instance = null;
+
+        public static function create(){
+            if(is_null(self::$instance)){
+                self::$instance = new Request();
+            }
+            return self::$instance;
         }
+
+        protected function __construct(){}
 
         public function post($url = null, $data = []){
         	if(is_null($url)){ return false; }

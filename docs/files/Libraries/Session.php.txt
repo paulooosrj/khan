@@ -1,10 +1,22 @@
 <?php
 
 	namespace App\Khan\Libraries;
+	use App\Khan\Contracts\Libraries\Libraries as LibrariesContract;
 
 	@session_start();
 
-	class Session {
+	class Session implements LibrariesContract {
+
+		protected static $instance = null;
+
+		public static function create(){
+            if(is_null(self::$instance)){
+                self::$instance = new Session();
+            }
+            return self::$instance;
+        }
+
+        protected function __construct(){}
 
 		public static function has($name){
 			if(isset($_SESSION[$name]) && !empty($_SESSION[$name])){

@@ -1,8 +1,8 @@
 <?php 
 
-      namespace KhanComponent\RegexEngine;
+      namespace App\Khan\Component\Router\src\RegexEngine;
 
-		  trait RegexEngine {
+      trait RegexEngine {
         
             private static $instance = null,
                            $prefix = "/[{}]/";
@@ -56,10 +56,11 @@
                     if(count($lengUri) == count($lengRoute) && $validate){
                     return ["rota" => $rota,"params" => $validate];
                     break;
-                    }	
+                    } 
                 }
               }
               return false;
             }
         
-		}
+    }
+

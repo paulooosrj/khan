@@ -1,14 +1,14 @@
 <?php
 	
 	namespace App\Khan\Component\Router\src\Http;
-	use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
+  use \App\Khan\Component\HttpFoundation\Request as RequestFoundation;
   use \App\Khan\Component\Router\src\Http\Interfaces\Request as RequestInterface;
   
 	/**
 	* Request Class and Interface Implement
 	*/
 
-	class Request extends SymfonyRequest implements RequestInterface{
+	class Request extends RequestFoundation implements RequestInterface{
       
     private static $data = [];
     
@@ -29,16 +29,14 @@
         if(is_null($_COOKIE)): $_COOKIE = []; endif;
         if(is_null($_FILES)): $_FILES = []; endif;
       }
-    
-      /* 
-        public function get($name = null){
-          if($name == null){
-            return self::$data["get"];
-          }else{
-            return self::$data["get"][$name];
-          }
-        }
-      */
+      
+      public static function getAll(){
+          return self::$data;
+      }
+       
+      public static function make($name = null, $key, $value){
+          self::$data[$name][$key] = $value;
+      }
     
       public static function validateValue($type, $value){
         return in_array($value, self::$data[$type]);
