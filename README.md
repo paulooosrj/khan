@@ -39,7 +39,7 @@
     
     # instala dependencias e inicia o servidor
     composer install
-    // so funciona em php 7
+    # so funciona em php 7
     khan server 80
     
   ```
