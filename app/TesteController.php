@@ -1,17 +1,23 @@
 <?php
 
-    namespace MyApp;
+	namespace MyApp;
 
-    use App\Khan\Component\Container\ServiceContainer as Container;
-    use App\Khan\Component\Stream\StreamServer as Stream;
-    use App\Khan\Component\DB\DB as Database;
+	class TesteController extends \App\Khan\Bootstrap\KhanController {
 
-    class TesteController {
+		public function __construct($req, $res){
 
-        public function index($req, $res){
-            
-            return \Models\MyModel::init();
+				$this->helpers('cache');
 
-        }
+				$this->cache->init();
+				if(!$this->cache->get('data', $out)){
+					$this->cache->set('data', [
+						"msg" => $this->container::get('teste')()
+					], 300);
+				}
 
-    }
+				$this->cache->get('data', $out);
+				$res->send($out['msg']);
+
+		}
+
+	}

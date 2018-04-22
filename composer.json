@@ -19,7 +19,8 @@
         "psr-4": {
             "MyApp\\": "app/",
             "Middlewares\\": "middlewares/",
-            "Models\\": "models/"
+            "Models\\": "models/",
+            "StrategysAuth\\": "config/strategy/"
         }
     },
     "config": {

@@ -4,10 +4,16 @@
 		return "Comece o desenvolvimento!!";
 	});
 
-	Router::get('/', function($req, $res){
+	Router::notFound(function($req, $res){
+		$res->setStatusCode(404);
+		return die("Route not found insert in router!!");
+	});
 
-		$res->render('index.html', []);
-		
+	Router::get('/', function($req, $res){
+		$message = Container::get('teste')();
+		$res->render('index.html', [
+			'message' => $message
+		]);
 	});
 
 	Router::get('/teste', "MyApp\TesteController@index");
