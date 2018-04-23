@@ -18,7 +18,7 @@
 
 	Router::get('/teste', "MyApp\TesteController@index");
 
-	Router::get('/teste_middleware', function(){})
+	Router::get('/teste_middleware', 'MyApp\MundoController@index')
 			->name('teste_middleware')
 			->middleware(Middlewares\TesteMiddleware::class);
 

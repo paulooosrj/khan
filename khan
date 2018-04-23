@@ -1,0 +1,23 @@
+#!/usr/bin/env php
+
+<?php
+
+	require __DIR__.'/vendor/autoload.php';
+
+	use Symfony\Component\Console\Application;
+
+	define("ROOT_FOLDER", __DIR__ );
+
+	$application = new Application('Khan CLI', '2.0');
+	$application->add(new \Command\ServerCommand());
+	$application->add(new \Command\CreateCommand());
+	$application->add(new \Command\ControllerCommand());
+	$application->add(new \Command\ModelCommand());
+	$application->add(new \Command\ViewCommand());
+	$application->add(new \Command\MiddlewareCommand());
+	$application->add(new \Command\StrategyCommand());
+	$application->add(new \Command\GulpCommand());
+	$application->add(new \Command\SassCommand());
+	$application->add(new \Command\JsCommand());
+	$application->add(new \Command\MakeCommand());
+	$application->run();

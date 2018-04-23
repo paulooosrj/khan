@@ -6,4 +6,5 @@
 	
 	return [
 		"painel" => "StrategysAuth\MyStrategy"
+		// newStrategy
 	];

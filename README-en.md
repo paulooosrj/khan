@@ -31,14 +31,17 @@
     # download zip
     git clone https://github.com/PaulaoDev/khan khan-project && cd khan-project && composer install
     
-    # install cli khan
-    composer global require paulaodev/khan-cli 
+    # using cli khan
+    php khan list
        
     # download using cli khan
-    khan create khan-project && cd khan-project && composer install
+    php khan create khan-project && cd khan-project && composer install
     
-    # dependencies & run server
-    composer install && khan server 80
+    # dependencies 
+    composer install 
+
+    # run server (  php 7 )
+    php khan server 80
     
   ```
   
@@ -46,7 +49,7 @@
 
   ### Command line
   ```console
-  khan help
+  php khan list
   ```
 
  ### Contribution
