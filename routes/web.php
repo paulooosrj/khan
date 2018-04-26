@@ -16,6 +16,15 @@
 		]);
 	});
 
+	Router::get('/form', function($req, $res){
+		return $res->render('csrf.html');
+	});
+
+	Router::post('/form', function($req, $res){
+		return Router::csrf_token_verify($req->post('token')) 
+				? 'verdadeiro': 'falso';
+	});
+
 	Router::get('/teste', "MyApp\TesteController@index");
 
 	Router::get('/teste_middleware', 'MyApp\MundoController@index')

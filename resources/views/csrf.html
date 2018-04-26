@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Csrf exemple</title>
+</head>
+<body>
+	<form action="./form" method="post" accept-charset="utf-8">
+		{{ csrf_token_input() }}
+		<input type="text" name="nome" placeholder="Nome">
+		<input type="submit" value="Enviar">
+	</form>
+</body>
+</html>
