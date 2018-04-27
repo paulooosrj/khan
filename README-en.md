@@ -102,7 +102,7 @@ For the system to work 100% it is necessary to have a Virtual Host configured in
   ### Routes
   Create files with routes in directory **routes/**
   
-  <p align="center"><img src="https://i.imgur.com/uo0p4ic.png" alt="Routes Khan"/></p>
+  <p align="center"><img src="https://i.imgur.com/Z7R5ew4.png" alt="Routes Khan"/></p>
    
    ### Security
    Relate all vulnerabilities found in a responsible and constructive way [Email](jskhanframework@gmail.com).
