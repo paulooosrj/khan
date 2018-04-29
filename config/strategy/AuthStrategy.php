@@ -2,7 +2,7 @@
 	
 	namespace StrategysAuth;
 
-	class MyStrategy {
+	class AuthStrategy {
 
 		// Table mysql using
 		const table = "login";
@@ -24,12 +24,12 @@
 		];
 
 		public static function extendsRegister($data){
-			// event
+			$data["password"] = md5($data["password"]);
 			return $data;
 		}
 
 		public static function extendsValidate($data){
-			// event
+			$data["password"] = md5($data["password"]);
 			return $data;
 		}
 

@@ -5,6 +5,7 @@
 	 */
 	
 	return [
-		"painel" => "StrategysAuth\MyStrategy"
+		"painel" => "StrategysAuth\MyStrategy",
+		"auth" => "StrategysAuth\AuthStrategy"
 		// newStrategy
 	];
