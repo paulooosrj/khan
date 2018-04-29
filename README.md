@@ -68,7 +68,7 @@
   ```
 
  ### Sobre Khan
-Khan é um framework de aplicações web. Acreditamos que o desenvolvimento deve ser uma experiência boa e não cansativa para ser verdadeiramente produtivo. O RouterKhan simplifica o desenvolvimento, facilitando tarefas comuns usadas na maioria dos projetos da web, incluindo:
+Khan é um framework de aplicações web. Acreditamos que o desenvolvimento deve ser uma experiência boa e não cansativa para ser verdadeiramente produtivo. O Khan simplifica o desenvolvimento, facilitando tarefas comuns usadas na maioria dos projetos da web, incluindo:
  
  - [Khan CLI](https://github.com/PaulaoDev/khan-cli)
  - [Mecanismo de roteamento simples, fácil de aprender, rápido e com verificação em duas etapas para parâmetros](https://github.com/PaulaoDev/khan-core/blob/master/src/Khan/Component/Router/src/Router/Router.php)
