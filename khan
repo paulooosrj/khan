@@ -2,22 +2,34 @@
 
 <?php
 
-	require __DIR__.'/vendor/autoload.php';
+	if (file_exists(__DIR__.'/../../autoload.php')) {
+	    require __DIR__.'/../../autoload.php';
+	} else {
+	    require __DIR__.'/vendor/autoload.php';
+	}
 
 	use Symfony\Component\Console\Application;
-
+	
 	define("ROOT_FOLDER", __DIR__ );
 
+	function factory($command){
+		$command = "Command\\{$command}Command";
+		return new $command;
+	}
+
 	$application = new Application('Khan CLI', '2.0');
-	$application->add(new \Command\ServerCommand());
-	$application->add(new \Command\CreateCommand());
-	$application->add(new \Command\ControllerCommand());
-	$application->add(new \Command\ModelCommand());
-	$application->add(new \Command\ViewCommand());
-	$application->add(new \Command\MiddlewareCommand());
-	$application->add(new \Command\StrategyCommand());
-	$application->add(new \Command\GulpCommand());
-	$application->add(new \Command\SassCommand());
-	$application->add(new \Command\JsCommand());
-	$application->add(new \Command\MakeCommand());
+	$application->add(factory('Server'));
+	$application->add(factory('Create'));
+	$application->add(factory('Api'));
+	$application->add(factory('Controller'));
+	$application->add(factory('Model'));
+	$application->add(factory('View'));
+	$application->add(factory('Middleware'));
+	$application->add(factory('Strategy'));
+	$application->add(factory('Gulp'));
+	$application->add(factory('React'));
+	$application->add(factory('Vue'));
+	$application->add(factory('Sass'));
+	$application->add(factory('Js'));
+	$application->add(factory('Make'));
 	$application->run();

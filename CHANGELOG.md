@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### 1.0.5 - 2018-06-28
+### Added
+- Generate vue in front-end
+- Generate react in front-end
+
+### Update
+- Remodel struture in project
+- Route component
+
 ### 1.0.2 - 2018-04-20
 ### Update
 - Support php 5.6

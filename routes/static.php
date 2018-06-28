@@ -1,4 +1,4 @@
 <?php
 
-    Router::staticFile('/public/(.*)', 'public');
-    Router::staticFile('/docs/(.*)', 'docs');
+    Router::staticFiles('/public/(.*)', 'public');
+    Router::staticFiles('/docs/(.*)', 'docs');

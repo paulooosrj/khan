@@ -17,9 +17,9 @@
     },
     "autoload": {
         "psr-4": {
-            "MyApp\\": "app/",
-            "Middlewares\\": "middlewares/",
-            "Models\\": "models/",
+            "Controllers\\": "app/http/controllers/",
+            "Middlewares\\": "app/http/middlewares/",
+            "Models\\": "app/models/",
             "StrategysAuth\\": "config/strategy/"
         }
     },

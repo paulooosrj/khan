@@ -1,6 +1,6 @@
 <?php
 
-	namespace MyApp;
+	namespace Controllers;
 	use \StrategysAuth\Strategy as Strategy;
 
 	class MundoController extends \App\Khan\Bootstrap\KhanController {

@@ -25,4 +25,4 @@
 				? 'verdadeiro': 'falso';
 	});
 
-	Router::get('/teste', "MyApp\TesteController@index");
+	Router::get('/teste', "Controllers\TesteController->index");
