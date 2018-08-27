@@ -1,5 +1,5 @@
 <?php
-	
+
 	Container::bind("teste", function(){
 		return "Comece o desenvolvimento!!";
 	});
