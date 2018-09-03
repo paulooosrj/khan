@@ -52,6 +52,13 @@
   php khan list
   ```
 
+  ### Novidades
+  <p align="center"><img src="https://i.imgur.com/H4GhPPE.png" alt="LiveServer" width="180"/></p>
+  ```console
+  # Iniciar o auto servidor
+  php khan live
+  ```
+
  ### Contribuiçoes
  - Envie relatórios de erros, sugestões e solicitações de upload para o [rastreador de problemas do GitHub](https://github.com/PaulaoDev/khan/issues).
  - Leia o [arquivo](https://github.com/PaulaoDev/khan/blob/master/CONTRIBUTING.md).

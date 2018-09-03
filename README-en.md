@@ -52,6 +52,13 @@
   php khan list
   ```
 
+  ### News
+  <p align="center"><img src="https://i.imgur.com/H4GhPPE.png" alt="LiveServer" width="180"/></p>
+  ```console
+  # Init live server
+  php khan live
+  ```
+
  ### Contribution
  - Send error reports, suggestions, and upload requests to the [GitHub issue tracker](https://github.com/PaulaoDev/khan/issues).
  - Read the [File](https://github.com/PaulaoDev/khan/blob/master/CONTRIBUTING.md).

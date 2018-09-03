@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### 1.0.7 - 2018-09-03
+### Added
+- Khan cli live server
+
+### Update
+- Injection dependency
+
 ### 1.0.5 - 2018-06-28
 ### Added
 - Generate vue in front-end
