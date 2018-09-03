@@ -53,7 +53,7 @@
   ```
 
   ### Novidades
-  <p align="center"><img src="https://i.imgur.com/H4GhPPE.png" alt="LiveServer" width="450"/></p>
+  <p align="center"><img src="https://i.imgur.com/H4GhPPE.png" alt="LiveServer" width="750"/></p>
   
   
   ```console
