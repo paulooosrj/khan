@@ -54,8 +54,10 @@
 
   ### News
   <p align="center"><img src="https://i.imgur.com/H4GhPPE.png" alt="LiveServer" width="180"/></p>
+  
+  
   ```console
-  # Init live server
+  # Iniciar o auto servidor
   php khan live
   ```
 

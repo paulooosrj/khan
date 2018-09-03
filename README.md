@@ -53,7 +53,9 @@
   ```
 
   ### Novidades
-  <p align="center"><img src="https://i.imgur.com/H4GhPPE.png" alt="LiveServer" width="180"/></p>
+  <p align="center"><img src="https://i.imgur.com/H4GhPPE.png" alt="LiveServer" width="450"/></p>
+  
+  
   ```console
   # Iniciar o auto servidor
   php khan live
