@@ -21,7 +21,7 @@
   - [Core do Projeto](https://github.com/PaulaoDev/khan-core)
   
   ### Requisitos de sistema
- - [PHP](http://php.net/downloads.php) >= 5.6.
+ - [PHP](http://php.net/downloads.php) >= 7.1.
  - MySQL >= 5.0.
  - [Composer](https://getcomposer.org/download/).
 
