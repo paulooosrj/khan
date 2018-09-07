@@ -1,0 +1,3971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>App\Khan\Component\HttpFoundation\ApacheRequest | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:App_Khan_Component_HttpFoundation_ApacheRequest" data-root-path="../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../App.html">App</a></li>
+                    <li><a href="../../../../App/Khan.html">Khan</a></li>
+                    <li><a href="../../../../App/Khan/Component.html">Component</a></li>
+                    <li><a href="../../../../App/Khan/Component/HttpFoundation.html">HttpFoundation</a></li>
+  
+            <li>ApacheRequest</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>ApacheRequest</h1>
+
+    <p>    class
+    <strong>ApacheRequest</strong>        extends <a href="../../../../App/Khan/Component/HttpFoundation/Request.html"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a>
+</p>
+
+            <p>Request represents an HTTP request from an Apache server.</p>            
+    
+            <h2>Constants</h2>
+
+            <table class="table">
+                    <tr>
+                <td><code class="language-php">HEADER_FORWARDED =  0b00001; // When using RFC 7239</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HEADER_X_FORWARDED_FOR =  0b00010;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HEADER_X_FORWARDED_HOST =  0b00100;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HEADER_X_FORWARDED_PROTO =  0b01000;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HEADER_X_FORWARDED_PORT =  0b10000;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HEADER_X_FORWARDED_ALL =  0b11110; // All &quot;X-Forwarded-*&quot; headers</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HEADER_X_FORWARDED_AWS_ELB =  0b11010; // AWS ELB doesn&#039;t send X-Forwarded-Host</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">METHOD_HEAD =  &#039;HEAD&#039;;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">METHOD_GET =  &#039;GET&#039;;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">METHOD_POST =  &#039;POST&#039;;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">METHOD_PUT =  &#039;PUT&#039;;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">METHOD_PATCH =  &#039;PATCH&#039;;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">METHOD_DELETE =  &#039;DELETE&#039;;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">METHOD_PURGE =  &#039;PURGE&#039;;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">METHOD_OPTIONS =  &#039;OPTIONS&#039;;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">METHOD_TRACE =  &#039;TRACE&#039;;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">METHOD_CONNECT =  &#039;CONNECT&#039;;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+            </table>
+
+    
+            <h2>Properties</h2>
+
+            <table class="table">
+                    <tr>
+                <td id="property_trustedProxies">
+                    <code class="language-php">static                    protected                                        string[]</code>
+                </td>
+                <td><code class="language-php">$trustedProxies</code></td>
+                <td></td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#property_trustedProxies"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_trustedHostPatterns">
+                    <code class="language-php">static                    protected                                        string[]</code>
+                </td>
+                <td><code class="language-php">$trustedHostPatterns</code></td>
+                <td></td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#property_trustedHostPatterns"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_trustedHosts">
+                    <code class="language-php">static                    protected                                        string[]</code>
+                </td>
+                <td><code class="language-php">$trustedHosts</code></td>
+                <td></td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#property_trustedHosts"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_httpMethodParameterOverride">
+                    <code class="language-php">static                    protected                                        </code>
+                </td>
+                <td><code class="language-php">$httpMethodParameterOverride</code></td>
+                <td></td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#property_httpMethodParameterOverride"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_attributes">
+                    <code class="language-php">                                                            <abbr title="Symfony\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></code>
+                </td>
+                <td><code class="language-php">$attributes</code></td>
+                <td>Custom parameters.</td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#property_attributes"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_request">
+                    <code class="language-php">                                                            <abbr title="Symfony\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></code>
+                </td>
+                <td><code class="language-php">$request</code></td>
+                <td>Request body parameters ($_POST).</td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#property_request"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_query">
+                    <code class="language-php">                                                            <abbr title="Symfony\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></code>
+                </td>
+                <td><code class="language-php">$query</code></td>
+                <td>Query string parameters ($_GET).</td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#property_query"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_server">
+                    <code class="language-php">                                                            <abbr title="Symfony\Component\HttpFoundation\ServerBag">ServerBag</abbr></code>
+                </td>
+                <td><code class="language-php">$server</code></td>
+                <td>Server and execution environment parameters ($_SERVER).</td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#property_server"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_files">
+                    <code class="language-php">                                                            <abbr title="Symfony\Component\HttpFoundation\FileBag">FileBag</abbr></code>
+                </td>
+                <td><code class="language-php">$files</code></td>
+                <td>Uploaded files ($_FILES).</td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#property_files"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_cookies">
+                    <code class="language-php">                                                            <abbr title="Symfony\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></code>
+                </td>
+                <td><code class="language-php">$cookies</code></td>
+                <td>Cookies ($_COOKIE).</td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#property_cookies"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_headers">
+                    <code class="language-php">                                                            <abbr title="Symfony\Component\HttpFoundation\HeaderBag">HeaderBag</abbr></code>
+                </td>
+                <td><code class="language-php">$headers</code></td>
+                <td>Headers (taken from the $_SERVER).</td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#property_headers"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_content">
+                    <code class="language-php">                    protected                                        string|resource|false|null</code>
+                </td>
+                <td><code class="language-php">$content</code></td>
+                <td></td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#property_content"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_languages">
+                    <code class="language-php">                    protected                                        array</code>
+                </td>
+                <td><code class="language-php">$languages</code></td>
+                <td></td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#property_languages"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_charsets">
+                    <code class="language-php">                    protected                                        array</code>
+                </td>
+                <td><code class="language-php">$charsets</code></td>
+                <td></td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#property_charsets"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_encodings">
+                    <code class="language-php">                    protected                                        array</code>
+                </td>
+                <td><code class="language-php">$encodings</code></td>
+                <td></td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#property_encodings"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_acceptableContentTypes">
+                    <code class="language-php">                    protected                                        array</code>
+                </td>
+                <td><code class="language-php">$acceptableContentTypes</code></td>
+                <td></td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#property_acceptableContentTypes"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_pathInfo">
+                    <code class="language-php">                    protected                                        string</code>
+                </td>
+                <td><code class="language-php">$pathInfo</code></td>
+                <td></td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#property_pathInfo"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_requestUri">
+                    <code class="language-php">                    protected                                        string</code>
+                </td>
+                <td><code class="language-php">$requestUri</code></td>
+                <td></td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#property_requestUri"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_baseUrl">
+                    <code class="language-php">                    protected                                        string</code>
+                </td>
+                <td><code class="language-php">$baseUrl</code></td>
+                <td></td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#property_baseUrl"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_basePath">
+                    <code class="language-php">                    protected                                        string</code>
+                </td>
+                <td><code class="language-php">$basePath</code></td>
+                <td></td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#property_basePath"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_method">
+                    <code class="language-php">                    protected                                        string</code>
+                </td>
+                <td><code class="language-php">$method</code></td>
+                <td></td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#property_method"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_format">
+                    <code class="language-php">                    protected                                        string</code>
+                </td>
+                <td><code class="language-php">$format</code></td>
+                <td></td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#property_format"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_session">
+                    <code class="language-php">                    protected                                        <a href="../../../../Symfony/Component/HttpFoundation/Session/SessionInterface.html"><abbr title="Symfony\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr></a></code>
+                </td>
+                <td><code class="language-php">$session</code></td>
+                <td></td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#property_session"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_locale">
+                    <code class="language-php">                    protected                                        string</code>
+                </td>
+                <td><code class="language-php">$locale</code></td>
+                <td></td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#property_locale"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_defaultLocale">
+                    <code class="language-php">                    protected                                        string</code>
+                </td>
+                <td><code class="language-php">$defaultLocale</code></td>
+                <td></td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#property_defaultLocale"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_formats">
+                    <code class="language-php">static                    protected                                        array</code>
+                </td>
+                <td><code class="language-php">$formats</code></td>
+                <td></td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#property_formats"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_requestFactory">
+                    <code class="language-php">static                    protected                                        </code>
+                </td>
+                <td><code class="language-php">$requestFactory</code></td>
+                <td></td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#property_requestFactory"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method___construct">__construct</a>(array $query = array(), array $request = array(), array $attributes = array(), array $cookies = array(), array $files = array(), array $server = array(), string|resource|null $content = null)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method___construct"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_initialize">initialize</a>(array $query = array(), array $request = array(), array $attributes = array(), array $cookies = array(), array $files = array(), array $server = array(), string|resource|null $content = null)</code>
+            </td>
+            <td>
+                                    Sets the parameters for this request.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_initialize"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                    static                </code>
+            </td>
+            <td class="text-right"><code class="language-php"><a href="../../../../App/Khan/Component/HttpFoundation/Request.html"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></code></td>
+            <td>
+                <code class="language-php"><a href="#method_createFromGlobals">createFromGlobals</a>()</code>
+            </td>
+            <td>
+                                    Creates a new request with values from PHP's super globals.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_createFromGlobals"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                    static                </code>
+            </td>
+            <td class="text-right"><code class="language-php"><a href="../../../../App/Khan/Component/HttpFoundation/Request.html"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></code></td>
+            <td>
+                <code class="language-php"><a href="#method_create">create</a>(string $uri, string $method = &#039;GET&#039;, array $parameters = array(), array $cookies = array(), array $files = array(), array $server = array(), string|resource|null $content = null)</code>
+            </td>
+            <td>
+                                    Creates a Request based on a given URI and configuration.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_create"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                    static                </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setFactory">setFactory</a>(callable|null $callable)</code>
+            </td>
+            <td>
+                                    Sets a callable able to create a Request instance.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_setFactory"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><a href="../../../../App/Khan/Component/HttpFoundation/Request.html"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></code></td>
+            <td>
+                <code class="language-php"><a href="#method_duplicate">duplicate</a>(array $query = null, array $request = null, array $attributes = null, array $cookies = null, array $files = null, array $server = null)</code>
+            </td>
+            <td>
+                                    Clones a request and overrides some of its parameters.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_duplicate"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method___clone">__clone</a>()</code>
+            </td>
+            <td>
+                                    Clones the current request.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method___clone"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method___toString">__toString</a>()</code>
+            </td>
+            <td>
+                                    Returns the request as a string.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method___toString"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_overrideGlobals">overrideGlobals</a>()</code>
+            </td>
+            <td>
+                                    Overrides the PHP global variables according to this request instance.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_overrideGlobals"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                    static                </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setTrustedProxies">setTrustedProxies</a>(array $proxies, int $trustedHeaderSet)</code>
+            </td>
+            <td>
+                                    Sets a list of trusted proxies.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_setTrustedProxies"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                    static                </code>
+            </td>
+            <td class="text-right"><code class="language-php">array</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getTrustedProxies">getTrustedProxies</a>()</code>
+            </td>
+            <td>
+                                    Gets the list of trusted proxies.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getTrustedProxies"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                    static                </code>
+            </td>
+            <td class="text-right"><code class="language-php">int</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getTrustedHeaderSet">getTrustedHeaderSet</a>()</code>
+            </td>
+            <td>
+                                    Gets the set of trusted headers from trusted proxies.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getTrustedHeaderSet"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                    static                </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setTrustedHosts">setTrustedHosts</a>(array $hostPatterns)</code>
+            </td>
+            <td>
+                                    Sets a list of trusted host patterns.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_setTrustedHosts"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                    static                </code>
+            </td>
+            <td class="text-right"><code class="language-php">array</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getTrustedHosts">getTrustedHosts</a>()</code>
+            </td>
+            <td>
+                                    Gets the list of trusted host patterns.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getTrustedHosts"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                    static                </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_normalizeQueryString">normalizeQueryString</a>(string $qs)</code>
+            </td>
+            <td>
+                                    Normalizes a query string.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_normalizeQueryString"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                    static                </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_enableHttpMethodParameterOverride">enableHttpMethodParameterOverride</a>()</code>
+            </td>
+            <td>
+                                    Enables support for the _method request parameter to determine the intended HTTP method.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_enableHttpMethodParameterOverride"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                    static                </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getHttpMethodParameterOverride">getHttpMethodParameterOverride</a>()</code>
+            </td>
+            <td>
+                                    Checks whether support for the _method request parameter is enabled.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getHttpMethodParameterOverride"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">mixed</code></td>
+            <td>
+                <code class="language-php"><a href="#method_get">get</a>(string $key, mixed $default = null)</code>
+            </td>
+            <td>
+                                    Gets a "parameter" value from any bag.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_get"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr>|null</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getSession">getSession</a>()</code>
+            </td>
+            <td>
+                                    Gets the Session.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getSession"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_hasPreviousSession">hasPreviousSession</a>()</code>
+            </td>
+            <td>
+                                    Whether the request contains a Session which was started in one of the
+previous requests.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_hasPreviousSession"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_hasSession">hasSession</a>()</code>
+            </td>
+            <td>
+                                    Whether the request contains a Session object.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_hasSession"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setSession">setSession</a>(<abbr title="App\Khan\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr> $session)</code>
+            </td>
+            <td>
+                                    Sets the Session.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_setSession"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setSessionFactory">setSessionFactory</a>(callable $factory)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_setSessionFactory"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">array</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getClientIps">getClientIps</a>()</code>
+            </td>
+            <td>
+                                    Returns the client IP addresses.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getClientIps"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string|null</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getClientIp">getClientIp</a>()</code>
+            </td>
+            <td>
+                                    Returns the client IP address.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getClientIp"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getScriptName">getScriptName</a>()</code>
+            </td>
+            <td>
+                                    Returns current script name.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getScriptName"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getPathInfo">getPathInfo</a>()</code>
+            </td>
+            <td>
+                                    Returns the path being requested relative to the executed script.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getPathInfo"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getBasePath">getBasePath</a>()</code>
+            </td>
+            <td>
+                                    Returns the root path from which this request is executed.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getBasePath"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getBaseUrl">getBaseUrl</a>()</code>
+            </td>
+            <td>
+                                    Returns the root URL from which this request is executed.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getBaseUrl"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getScheme">getScheme</a>()</code>
+            </td>
+            <td>
+                                    Gets the request's scheme.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getScheme"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">int|string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getPort">getPort</a>()</code>
+            </td>
+            <td>
+                                    Returns the port on which the request is made.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getPort"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string|null</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getUser">getUser</a>()</code>
+            </td>
+            <td>
+                                    Returns the user.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getUser"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string|null</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getPassword">getPassword</a>()</code>
+            </td>
+            <td>
+                                    Returns the password.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getPassword"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getUserInfo">getUserInfo</a>()</code>
+            </td>
+            <td>
+                                    Gets the user info.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getUserInfo"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getHttpHost">getHttpHost</a>()</code>
+            </td>
+            <td>
+                                    Returns the HTTP host being requested.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getHttpHost"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getRequestUri">getRequestUri</a>()</code>
+            </td>
+            <td>
+                                    Returns the requested URI (path and query string).            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getRequestUri"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getSchemeAndHttpHost">getSchemeAndHttpHost</a>()</code>
+            </td>
+            <td>
+                                    Gets the scheme and HTTP host.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getSchemeAndHttpHost"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getUri">getUri</a>()</code>
+            </td>
+            <td>
+                                    Generates a normalized URI (URL) for the Request.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getUri"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getUriForPath">getUriForPath</a>(string $path)</code>
+            </td>
+            <td>
+                                    Generates a normalized URI for the given path.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getUriForPath"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getRelativeUriForPath">getRelativeUriForPath</a>(string $path)</code>
+            </td>
+            <td>
+                                    Returns the path as relative reference from the current Request path.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getRelativeUriForPath"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string|null</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getQueryString">getQueryString</a>()</code>
+            </td>
+            <td>
+                                    Generates the normalized query string for the Request.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getQueryString"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_isSecure">isSecure</a>()</code>
+            </td>
+            <td>
+                                    Checks whether the request is secure or not.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_isSecure"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getHost">getHost</a>()</code>
+            </td>
+            <td>
+                                    Returns the host name.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getHost"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setMethod">setMethod</a>(string $method)</code>
+            </td>
+            <td>
+                                    Sets the request method.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_setMethod"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getMethod">getMethod</a>()</code>
+            </td>
+            <td>
+                                    Gets the request "intended" method.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getMethod"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getRealMethod">getRealMethod</a>()</code>
+            </td>
+            <td>
+                                    Gets the "real" request method.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getRealMethod"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getMimeType">getMimeType</a>(string $format)</code>
+            </td>
+            <td>
+                                    Gets the mime type associated with the format.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getMimeType"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                    static                </code>
+            </td>
+            <td class="text-right"><code class="language-php">array</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getMimeTypes">getMimeTypes</a>(string $format)</code>
+            </td>
+            <td>
+                                    Gets the mime types associated with the format.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getMimeTypes"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string|null</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getFormat">getFormat</a>(string $mimeType)</code>
+            </td>
+            <td>
+                                    Gets the format associated with the mime type.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getFormat"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setFormat">setFormat</a>(string $format, string|array $mimeTypes)</code>
+            </td>
+            <td>
+                                    Associates a format with mime types.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_setFormat"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getRequestFormat">getRequestFormat</a>(string $default = &#039;html&#039;)</code>
+            </td>
+            <td>
+                                    Gets the request format.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getRequestFormat"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setRequestFormat">setRequestFormat</a>(string $format)</code>
+            </td>
+            <td>
+                                    Sets the request format.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_setRequestFormat"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string|null</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getContentType">getContentType</a>()</code>
+            </td>
+            <td>
+                                    Gets the format associated with the request.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getContentType"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setDefaultLocale">setDefaultLocale</a>(string $locale)</code>
+            </td>
+            <td>
+                                    Sets the default locale.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_setDefaultLocale"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getDefaultLocale">getDefaultLocale</a>()</code>
+            </td>
+            <td>
+                                    Get the default locale.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getDefaultLocale"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setLocale">setLocale</a>(string $locale)</code>
+            </td>
+            <td>
+                                    Sets the locale.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_setLocale"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getLocale">getLocale</a>()</code>
+            </td>
+            <td>
+                                    Get the locale.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getLocale"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_isMethod">isMethod</a>(string $method)</code>
+            </td>
+            <td>
+                                    Checks if the request method is of specified type.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_isMethod"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_isMethodSafe">isMethodSafe</a>()</code>
+            </td>
+            <td>
+                                    Checks whether or not the method is safe.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_isMethodSafe"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_isMethodIdempotent">isMethodIdempotent</a>()</code>
+            </td>
+            <td>
+                                    Checks whether or not the method is idempotent.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_isMethodIdempotent"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_isMethodCacheable">isMethodCacheable</a>()</code>
+            </td>
+            <td>
+                                    Checks whether the method is cacheable or not.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_isMethodCacheable"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getProtocolVersion">getProtocolVersion</a>()</code>
+            </td>
+            <td>
+                                    Returns the protocol version.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getProtocolVersion"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string|resource</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getContent">getContent</a>(bool $asResource = false)</code>
+            </td>
+            <td>
+                                    Returns the request body content.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getContent"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">array</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getETags">getETags</a>()</code>
+            </td>
+            <td>
+                                    Gets the Etags.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getETags"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_isNoCache">isNoCache</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_isNoCache"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string|null</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getPreferredLanguage">getPreferredLanguage</a>(array $locales = null)</code>
+            </td>
+            <td>
+                                    Returns the preferred language.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getPreferredLanguage"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">array</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getLanguages">getLanguages</a>()</code>
+            </td>
+            <td>
+                                    Gets a list of languages acceptable by the client browser.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getLanguages"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">array</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getCharsets">getCharsets</a>()</code>
+            </td>
+            <td>
+                                    Gets a list of charsets acceptable by the client browser.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getCharsets"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">array</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getEncodings">getEncodings</a>()</code>
+            </td>
+            <td>
+                                    Gets a list of encodings acceptable by the client browser.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getEncodings"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">array</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getAcceptableContentTypes">getAcceptableContentTypes</a>()</code>
+            </td>
+            <td>
+                                    Gets a list of content types acceptable by the client browser.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getAcceptableContentTypes"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_isXmlHttpRequest">isXmlHttpRequest</a>()</code>
+            </td>
+            <td>
+                                    Returns true if the request is a XMLHttpRequest.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_isXmlHttpRequest"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_prepareRequestUri">prepareRequestUri</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_prepareBaseUrl">prepareBaseUrl</a>()</code>
+            </td>
+            <td>
+                                    Prepares the base URL.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_prepareBasePath">prepareBasePath</a>()</code>
+            </td>
+            <td>
+                                    Prepares the base path.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_prepareBasePath"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_preparePathInfo">preparePathInfo</a>()</code>
+            </td>
+            <td>
+                                    Prepares the path info.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_preparePathInfo"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                    static                </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_initializeFormats">initializeFormats</a>()</code>
+            </td>
+            <td>
+                                    Initializes HTTP request formats.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_initializeFormats"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_isFromTrustedProxy">isFromTrustedProxy</a>()</code>
+            </td>
+            <td>
+                                    Indicates whether this request originated from a trusted proxy.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_isFromTrustedProxy"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></small></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method___construct"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 233
+                    </div>
+        <div>
+            <h3 id="method___construct"><code class="language-php">__construct()</code></h3>
+            <code class="language-php">public __construct(array $query = array(), array $request = array(), array $attributes = array(), array $cookies = array(), array $files = array(), array $server = array(), string|resource|null $content = null)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$query</code></td>
+                <td>The GET parameters</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$request</code></td>
+                <td>The POST parameters</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$attributes</code></td>
+                <td>The request attributes (parameters parsed from the PATH_INFO, ...)</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$cookies</code></td>
+                <td>The COOKIE parameters</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$files</code></td>
+                <td>The FILES parameters</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$server</code></td>
+                <td>The SERVER parameters</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string|resource|null</code></td>
+                <td><code class="language-php">$content</code></td>
+                <td>The raw body data</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_initialize"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 251
+                    </div>
+        <div>
+            <h3 id="method_initialize"><code class="language-php">initialize()</code></h3>
+            <code class="language-php">public initialize(array $query = array(), array $request = array(), array $attributes = array(), array $cookies = array(), array $files = array(), array $server = array(), string|resource|null $content = null)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets the parameters for this request.</p>                    <p>This method also re-initializes all properties.</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$query</code></td>
+                <td>The GET parameters</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$request</code></td>
+                <td>The POST parameters</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$attributes</code></td>
+                <td>The request attributes (parameters parsed from the PATH_INFO, ...)</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$cookies</code></td>
+                <td>The COOKIE parameters</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$files</code></td>
+                <td>The FILES parameters</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$server</code></td>
+                <td>The SERVER parameters</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string|resource|null</code></td>
+                <td><code class="language-php">$content</code></td>
+                <td>The raw body data</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_createFromGlobals"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 279
+                    </div>
+        <div>
+            <h3 id="method_createFromGlobals"><code class="language-php">createFromGlobals()</code></h3>
+            <code class="language-php">public static <a href="../../../../App/Khan/Component/HttpFoundation/Request.html"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a>&nbsp;createFromGlobals()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Creates a new request with values from PHP's super globals.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><a href="../../../../App/Khan/Component/HttpFoundation/Request.html"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_create"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 309
+                    </div>
+        <div>
+            <h3 id="method_create"><code class="language-php">create()</code></h3>
+            <code class="language-php">public static <a href="../../../../App/Khan/Component/HttpFoundation/Request.html"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a>&nbsp;create(string $uri, string $method = &#039;GET&#039;, array $parameters = array(), array $cookies = array(), array $files = array(), array $server = array(), string|resource|null $content = null)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Creates a Request based on a given URI and configuration.</p>                    <p>The information contained in the URI always take precedence
+over the other information (server and parameters).</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$uri</code></td>
+                <td>The URI</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$method</code></td>
+                <td>The HTTP method</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$parameters</code></td>
+                <td>The query (GET) or request (POST) parameters</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$cookies</code></td>
+                <td>The request cookies ($_COOKIE)</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$files</code></td>
+                <td>The request files ($_FILES)</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$server</code></td>
+                <td>The server parameters ($_SERVER)</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string|resource|null</code></td>
+                <td><code class="language-php">$content</code></td>
+                <td>The raw body data</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><a href="../../../../App/Khan/Component/HttpFoundation/Request.html"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_setFactory"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 410
+                    </div>
+        <div>
+            <h3 id="method_setFactory"><code class="language-php">setFactory()</code></h3>
+            <code class="language-php">public static setFactory(callable|null $callable)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets a callable able to create a Request instance.</p>                    <p>This is mainly useful when you need to override the Request class
+to keep BC with an existing system. It should not be used for any
+other purpose.</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">callable|null</code></td>
+                <td><code class="language-php">$callable</code></td>
+                <td>A PHP callable</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_duplicate"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 427
+                    </div>
+        <div>
+            <h3 id="method_duplicate"><code class="language-php">duplicate()</code></h3>
+            <code class="language-php">public <a href="../../../../App/Khan/Component/HttpFoundation/Request.html"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a>&nbsp;duplicate(array $query = null, array $request = null, array $attributes = null, array $cookies = null, array $files = null, array $server = null)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Clones a request and overrides some of its parameters.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$query</code></td>
+                <td>The GET parameters</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$request</code></td>
+                <td>The POST parameters</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$attributes</code></td>
+                <td>The request attributes (parameters parsed from the PATH_INFO, ...)</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$cookies</code></td>
+                <td>The COOKIE parameters</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$files</code></td>
+                <td>The FILES parameters</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$server</code></td>
+                <td>The SERVER parameters</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><a href="../../../../App/Khan/Component/HttpFoundation/Request.html"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method___clone"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 477
+                    </div>
+        <div>
+            <h3 id="method___clone"><code class="language-php">__clone()</code></h3>
+            <code class="language-php">public __clone()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Clones the current request.</p>                    <p>Note that the session is not cloned as duplicated requests
+are most of the time sub-requests of the main one.</p>            </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method___toString"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 493
+                    </div>
+        <div>
+            <h3 id="method___toString"><code class="language-php">__toString()</code></h3>
+            <code class="language-php">public string&nbsp;__toString()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the request as a string.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>The request</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_overrideGlobals"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 525
+                    </div>
+        <div>
+            <h3 id="method_overrideGlobals"><code class="language-php">overrideGlobals()</code></h3>
+            <code class="language-php">public overrideGlobals()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Overrides the PHP global variables according to this request instance.</p>                    <p>It overrides $_GET, $_POST, $_REQUEST, $_SERVER, $_COOKIE.
+$_FILES is never overridden, see rfc1867</p>            </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_setTrustedProxies"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 564
+                    </div>
+        <div>
+            <h3 id="method_setTrustedProxies"><code class="language-php">setTrustedProxies()</code></h3>
+            <code class="language-php">public static setTrustedProxies(array $proxies, int $trustedHeaderSet)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets a list of trusted proxies.</p>                    <p>You should only list the reverse proxies that you manage directly.</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$proxies</code></td>
+                <td>A list of trusted proxies</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">int</code></td>
+                <td><code class="language-php">$trustedHeaderSet</code></td>
+                <td>A bit field of Request::HEADER_*, to set which headers to trust from your proxies</td>
+            </tr>
+            </table>
+
+        
+        
+                    <h4>Exceptions</h4>
+
+                <table class="table">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException"><abbr title="InvalidArgumentException">InvalidArgumentException</abbr></a></td>
+                <td>When $trustedHeaderSet is invalid</td>
+            </tr>
+            </table>
+
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getTrustedProxies"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 575
+                    </div>
+        <div>
+            <h3 id="method_getTrustedProxies"><code class="language-php">getTrustedProxies()</code></h3>
+            <code class="language-php">public static array&nbsp;getTrustedProxies()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the list of trusted proxies.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">array</code></td>
+            <td>An array of trusted proxies</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getTrustedHeaderSet"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 585
+                    </div>
+        <div>
+            <h3 id="method_getTrustedHeaderSet"><code class="language-php">getTrustedHeaderSet()</code></h3>
+            <code class="language-php">public static int&nbsp;getTrustedHeaderSet()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the set of trusted headers from trusted proxies.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">int</code></td>
+            <td>A bit field of Request::HEADER_* that defines which headers are trusted from your proxies</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_setTrustedHosts"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 597
+                    </div>
+        <div>
+            <h3 id="method_setTrustedHosts"><code class="language-php">setTrustedHosts()</code></h3>
+            <code class="language-php">public static setTrustedHosts(array $hostPatterns)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets a list of trusted host patterns.</p>                    <p>You should only list the hosts you manage using regexs.</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$hostPatterns</code></td>
+                <td>A list of trusted host patterns</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getTrustedHosts"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 611
+                    </div>
+        <div>
+            <h3 id="method_getTrustedHosts"><code class="language-php">getTrustedHosts()</code></h3>
+            <code class="language-php">public static array&nbsp;getTrustedHosts()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the list of trusted host patterns.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">array</code></td>
+            <td>An array of trusted host patterns</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_normalizeQueryString"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 626
+                    </div>
+        <div>
+            <h3 id="method_normalizeQueryString"><code class="language-php">normalizeQueryString()</code></h3>
+            <code class="language-php">public static string&nbsp;normalizeQueryString(string $qs)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Normalizes a query string.</p>                    <p>It builds a normalized query string, where keys/value pairs are alphabetized,
+have consistent escaping and unneeded delimiters are removed.</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$qs</code></td>
+                <td>Query string</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>A normalized query string for the Request</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_enableHttpMethodParameterOverride"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 649
+                    </div>
+        <div>
+            <h3 id="method_enableHttpMethodParameterOverride"><code class="language-php">enableHttpMethodParameterOverride()</code></h3>
+            <code class="language-php">public static enableHttpMethodParameterOverride()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Enables support for the _method request parameter to determine the intended HTTP method.</p>                    <p>Be warned that enabling this feature might lead to CSRF issues in your code.
+Check that you are using CSRF tokens when required.
+If the HTTP method parameter override is enabled, an html-form with method "POST" can be altered
+and used to send a "PUT" or "DELETE" request via the _method request parameter.
+If these methods are not protected against CSRF, this presents a possible vulnerability.</p>
+
+<p>The HTTP method can only be overridden when the real HTTP method is POST.</p>            </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getHttpMethodParameterOverride"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 659
+                    </div>
+        <div>
+            <h3 id="method_getHttpMethodParameterOverride"><code class="language-php">getHttpMethodParameterOverride()</code></h3>
+            <code class="language-php">public static bool&nbsp;getHttpMethodParameterOverride()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Checks whether support for the _method request parameter is enabled.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td>True when the _method request parameter is enabled, false otherwise</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_get"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 678
+                    </div>
+        <div>
+            <h3 id="method_get"><code class="language-php">get()</code></h3>
+            <code class="language-php">public mixed&nbsp;get(string $key, mixed $default = null)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets a "parameter" value from any bag.</p>                    <p>This method is mainly useful for libraries that want to provide some flexibility. If you don't need the
+flexibility in controllers, it is better to explicitly get request parameters from the appropriate
+public property instead (attributes, query, request).</p>
+
+<p>Order of precedence: PATH (routing placeholders or custom attributes), GET, BODY</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>The key</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">mixed</code></td>
+                <td><code class="language-php">$default</code></td>
+                <td>The default value if the parameter key does not exist</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">mixed</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getSession"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 700
+                    </div>
+        <div>
+            <h3 id="method_getSession"><code class="language-php">getSession()</code></h3>
+            <code class="language-php">public <abbr title="App\Khan\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr>|null&nbsp;getSession()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the Session.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr>|null</code></td>
+            <td>The session</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_hasPreviousSession"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 721
+                    </div>
+        <div>
+            <h3 id="method_hasPreviousSession"><code class="language-php">hasPreviousSession()</code></h3>
+            <code class="language-php">public bool&nbsp;hasPreviousSession()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Whether the request contains a Session which was started in one of the
+previous requests.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_hasSession"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 736
+                    </div>
+        <div>
+            <h3 id="method_hasSession"><code class="language-php">hasSession()</code></h3>
+            <code class="language-php">public bool&nbsp;hasSession()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Whether the request contains a Session object.</p>                    <p>This method does not give any information about the state of the session object,
+like whether the session is started or not. It is just a way to check if this Request
+is associated with a Session instance.</p>            </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td>true when the Request contains a Session object, false otherwise</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_setSession"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 746
+                    </div>
+        <div>
+            <h3 id="method_setSession"><code class="language-php">setSession()</code></h3>
+            <code class="language-php">public setSession(<abbr title="App\Khan\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr> $session)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets the Session.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\Session\SessionInterface">SessionInterface</abbr></code></td>
+                <td><code class="language-php">$session</code></td>
+                <td>The Session</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_setSessionFactory"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 754
+                    </div>
+        <div>
+            <h3 id="method_setSessionFactory"><code class="language-php">setSessionFactory()</code></h3>
+            <code class="language-php">public setSessionFactory(callable $factory)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">callable</code></td>
+                <td><code class="language-php">$factory</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getClientIps"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 772
+                    </div>
+        <div>
+            <h3 id="method_getClientIps"><code class="language-php">getClientIps()</code></h3>
+            <code class="language-php">public array&nbsp;getClientIps()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the client IP addresses.</p>                    <p>In the returned array the most trusted IP address is first, and the
+least trusted one last. The "real" client IP address is the last one,
+but this is also the least trusted one. Trusted proxies are stripped.</p>
+
+<p>Use this method carefully; you should use getClientIp() instead.</p>            </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">array</code></td>
+            <td>The client IP addresses</td>
+        </tr>
+    </table>
+
+        
+        
+                    <h4>See also</h4>
+
+                <table class="table">
+                    <tr>
+                <td>getClientIp()</td>
+                <td></td>
+            </tr>
+            </table>
+
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getClientIp"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 797
+                    </div>
+        <div>
+            <h3 id="method_getClientIp"><code class="language-php">getClientIp()</code></h3>
+            <code class="language-php">public string|null&nbsp;getClientIp()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the client IP address.</p>                    <p>This method can read the client IP address from the "X-Forwarded-For" header
+when trusted proxies were set via "setTrustedProxies()". The "X-Forwarded-For"
+header value is a comma+space separated list of IP addresses, the left-most
+being the original client, and each successive proxy that passed the request
+adding the IP address where it received the request from.</p>            </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string|null</code></td>
+            <td>The client IP address</td>
+        </tr>
+    </table>
+
+        
+        
+                    <h4>See also</h4>
+
+                <table class="table">
+                    <tr>
+                <td>getClientIps()</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>http://en.wikipedia.org/wiki/X-Forwarded-For</td>
+                <td></td>
+            </tr>
+            </table>
+
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getScriptName"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 809
+                    </div>
+        <div>
+            <h3 id="method_getScriptName"><code class="language-php">getScriptName()</code></h3>
+            <code class="language-php">public string&nbsp;getScriptName()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns current script name.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getPathInfo"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 828
+                    </div>
+        <div>
+            <h3 id="method_getPathInfo"><code class="language-php">getPathInfo()</code></h3>
+            <code class="language-php">public string&nbsp;getPathInfo()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the path being requested relative to the executed script.</p>                    <p>The path info always starts with a /.</p>
+
+<p>Suppose this request is instantiated from /mysite on localhost:</p>
+
+<ul>
+<li>http://localhost/mysite              returns an empty string</li>
+<li>http://localhost/mysite/about        returns '/about'</li>
+<li>http://localhost/mysite/enco%20ded   returns '/enco%20ded'</li>
+<li>http://localhost/mysite/about?var=1  returns '/about'</li>
+</ul>
+</p>            </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>The raw path (i.e. not urldecoded)</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getBasePath"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 849
+                    </div>
+        <div>
+            <h3 id="method_getBasePath"><code class="language-php">getBasePath()</code></h3>
+            <code class="language-php">public string&nbsp;getBasePath()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the root path from which this request is executed.</p>                    <p>Suppose that an index.php file instantiates this request object:</p>
+
+<ul>
+<li>http://localhost/index.php         returns an empty string</li>
+<li>http://localhost/index.php/page    returns an empty string</li>
+<li>http://localhost/web/index.php     returns '/web'</li>
+<li>http://localhost/we%20b/index.php  returns '/we%20b'</li>
+</ul>
+</p>            </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>The raw path (i.e. not urldecoded)</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getBaseUrl"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 868
+                    </div>
+        <div>
+            <h3 id="method_getBaseUrl"><code class="language-php">getBaseUrl()</code></h3>
+            <code class="language-php">public string&nbsp;getBaseUrl()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the root URL from which this request is executed.</p>                    <p>The base URL never ends with a /.</p>
+
+<p>This is similar to getBasePath(), except that it also includes the
+script filename (e.g. index.php) if one exists.</p>            </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>The raw URL (i.e. not urldecoded)</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getScheme"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 882
+                    </div>
+        <div>
+            <h3 id="method_getScheme"><code class="language-php">getScheme()</code></h3>
+            <code class="language-php">public string&nbsp;getScheme()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the request's scheme.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getPort"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 897
+                    </div>
+        <div>
+            <h3 id="method_getPort"><code class="language-php">getPort()</code></h3>
+            <code class="language-php">public int|string&nbsp;getPort()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the port on which the request is made.</p>                    <p>This method can read the client port from the "X-Forwarded-Port" header
+when trusted proxies were set via "setTrustedProxies()".</p>
+
+<p>The "X-Forwarded-Port" header must contain the client port.</p>            </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">int|string</code></td>
+            <td>can be a string if fetched from the server bag</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getUser"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 925
+                    </div>
+        <div>
+            <h3 id="method_getUser"><code class="language-php">getUser()</code></h3>
+            <code class="language-php">public string|null&nbsp;getUser()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the user.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string|null</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getPassword"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 935
+                    </div>
+        <div>
+            <h3 id="method_getPassword"><code class="language-php">getPassword()</code></h3>
+            <code class="language-php">public string|null&nbsp;getPassword()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the password.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string|null</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getUserInfo"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 945
+                    </div>
+        <div>
+            <h3 id="method_getUserInfo"><code class="language-php">getUserInfo()</code></h3>
+            <code class="language-php">public string&nbsp;getUserInfo()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the user info.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>A user name and, optionally, scheme-specific information about how to gain authorization to access the server</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getHttpHost"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 964
+                    </div>
+        <div>
+            <h3 id="method_getHttpHost"><code class="language-php">getHttpHost()</code></h3>
+            <code class="language-php">public string&nbsp;getHttpHost()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the HTTP host being requested.</p>                    <p>The port name will be appended to the host if it's non-standard.</p>            </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getRequestUri"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 981
+                    </div>
+        <div>
+            <h3 id="method_getRequestUri"><code class="language-php">getRequestUri()</code></h3>
+            <code class="language-php">public string&nbsp;getRequestUri()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the requested URI (path and query string).</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>The raw URI (i.e. not URI decoded)</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getSchemeAndHttpHost"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 998
+                    </div>
+        <div>
+            <h3 id="method_getSchemeAndHttpHost"><code class="language-php">getSchemeAndHttpHost()</code></h3>
+            <code class="language-php">public string&nbsp;getSchemeAndHttpHost()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the scheme and HTTP host.</p>                    <p>If the URL was called with basic authentication, the user
+and the password are not added to the generated string.</p>            </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>The scheme and HTTP host</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getUri"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1010
+                    </div>
+        <div>
+            <h3 id="method_getUri"><code class="language-php">getUri()</code></h3>
+            <code class="language-php">public string&nbsp;getUri()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Generates a normalized URI (URL) for the Request.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>A normalized URI (URL) for the Request</td>
+        </tr>
+    </table>
+
+        
+        
+                    <h4>See also</h4>
+
+                <table class="table">
+                    <tr>
+                <td>getQueryString()</td>
+                <td></td>
+            </tr>
+            </table>
+
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getUriForPath"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1026
+                    </div>
+        <div>
+            <h3 id="method_getUriForPath"><code class="language-php">getUriForPath()</code></h3>
+            <code class="language-php">public string&nbsp;getUriForPath(string $path)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Generates a normalized URI for the given path.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$path</code></td>
+                <td>A path to use instead of the current one</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>The normalized URI for the path</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getRelativeUriForPath"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1050
+                    </div>
+        <div>
+            <h3 id="method_getRelativeUriForPath"><code class="language-php">getRelativeUriForPath()</code></h3>
+            <code class="language-php">public string&nbsp;getRelativeUriForPath(string $path)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the path as relative reference from the current Request path.</p>                    <p>Only the URIs path component (no schema, host etc.) is relevant and must be given.
+Both paths must be absolute and not contain relative parts.
+Relative URLs from one resource to another are useful when generating self-contained downloadable document archives.
+Furthermore, they can be used to reduce the link size in documents.</p>
+
+<p>Example target paths, given a base path of "/a/b/c/d":
+- "/a/b/c/d"     -> ""
+- "/a/b/c/"      -> "./"
+- "/a/b/"        -> "../"
+- "/a/b/c/other" -> "other"
+- "/a/x/y"       -> "../../x/y"</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$path</code></td>
+                <td>The target path</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>The relative target path</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getQueryString"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1094
+                    </div>
+        <div>
+            <h3 id="method_getQueryString"><code class="language-php">getQueryString()</code></h3>
+            <code class="language-php">public string|null&nbsp;getQueryString()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Generates the normalized query string for the Request.</p>                    <p>It builds a normalized query string, where keys/value pairs are alphabetized
+and have consistent escaping.</p>            </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string|null</code></td>
+            <td>A normalized query string for the Request</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_isSecure"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1111
+                    </div>
+        <div>
+            <h3 id="method_isSecure"><code class="language-php">isSecure()</code></h3>
+            <code class="language-php">public bool&nbsp;isSecure()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Checks whether the request is secure or not.</p>                    <p>This method can read the client protocol from the "X-Forwarded-Proto" header
+when trusted proxies were set via "setTrustedProxies()".</p>
+
+<p>The "X-Forwarded-Proto" header must contain the protocol: "https" or "http".</p>            </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getHost"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1134
+                    </div>
+        <div>
+            <h3 id="method_getHost"><code class="language-php">getHost()</code></h3>
+            <code class="language-php">public string&nbsp;getHost()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the host name.</p>                    <p>This method can read the client host name from the "X-Forwarded-Host" header
+when trusted proxies were set via "setTrustedProxies()".</p>
+
+<p>The "X-Forwarded-Host" header must contain the client host name.</p>            </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+                    <h4>Exceptions</h4>
+
+                <table class="table">
+                    <tr>
+                <td><abbr title="App\Khan\Component\HttpFoundation\Exception\SuspiciousOperationException">SuspiciousOperationException</abbr></td>
+                <td>when the host name is invalid or not trusted</td>
+            </tr>
+            </table>
+
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_setMethod"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1191
+                    </div>
+        <div>
+            <h3 id="method_setMethod"><code class="language-php">setMethod()</code></h3>
+            <code class="language-php">public setMethod(string $method)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets the request method.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$method</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getMethod"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1212
+                    </div>
+        <div>
+            <h3 id="method_getMethod"><code class="language-php">getMethod()</code></h3>
+            <code class="language-php">public string&nbsp;getMethod()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the request "intended" method.</p>                    <p>If the X-HTTP-Method-Override header is set, and if the method is a POST,
+then it is used to determine the "real" intended HTTP method.</p>
+
+<p>The _method request parameter can also be used to determine the HTTP method,
+but only if enableHttpMethodParameterOverride() has been called.</p>
+
+<p>The method is always an uppercased string.</p>            </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>The request method</td>
+        </tr>
+    </table>
+
+        
+        
+                    <h4>See also</h4>
+
+                <table class="table">
+                    <tr>
+                <td>getRealMethod()</td>
+                <td></td>
+            </tr>
+            </table>
+
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getRealMethod"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1236
+                    </div>
+        <div>
+            <h3 id="method_getRealMethod"><code class="language-php">getRealMethod()</code></h3>
+            <code class="language-php">public string&nbsp;getRealMethod()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the "real" request method.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>The request method</td>
+        </tr>
+    </table>
+
+        
+        
+                    <h4>See also</h4>
+
+                <table class="table">
+                    <tr>
+                <td>getMethod()</td>
+                <td></td>
+            </tr>
+            </table>
+
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getMimeType"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1248
+                    </div>
+        <div>
+            <h3 id="method_getMimeType"><code class="language-php">getMimeType()</code></h3>
+            <code class="language-php">public string&nbsp;getMimeType(string $format)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the mime type associated with the format.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$format</code></td>
+                <td>The format</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>The associated mime type (null if not found)</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getMimeTypes"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1264
+                    </div>
+        <div>
+            <h3 id="method_getMimeTypes"><code class="language-php">getMimeTypes()</code></h3>
+            <code class="language-php">public static array&nbsp;getMimeTypes(string $format)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the mime types associated with the format.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$format</code></td>
+                <td>The format</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">array</code></td>
+            <td>The associated mime types</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getFormat"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1280
+                    </div>
+        <div>
+            <h3 id="method_getFormat"><code class="language-php">getFormat()</code></h3>
+            <code class="language-php">public string|null&nbsp;getFormat(string $mimeType)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the format associated with the mime type.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$mimeType</code></td>
+                <td>The associated mime type</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string|null</code></td>
+            <td>The format (null if not found)</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_setFormat"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1307
+                    </div>
+        <div>
+            <h3 id="method_setFormat"><code class="language-php">setFormat()</code></h3>
+            <code class="language-php">public setFormat(string $format, string|array $mimeTypes)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Associates a format with mime types.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$format</code></td>
+                <td>The format</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string|array</code></td>
+                <td><code class="language-php">$mimeTypes</code></td>
+                <td>The associated mime types (the preferred one must be the first as it will be used as the content type)</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getRequestFormat"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1329
+                    </div>
+        <div>
+            <h3 id="method_getRequestFormat"><code class="language-php">getRequestFormat()</code></h3>
+            <code class="language-php">public string&nbsp;getRequestFormat(string $default = &#039;html&#039;)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the request format.</p>                    <p>Here is the process to determine the format:</p>
+
+<ul>
+<li>format defined by the user (with setRequestFormat())</li>
+<li>_format request attribute</li>
+<li>$default</li>
+</ul>
+</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$default</code></td>
+                <td>The default format</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>The request format</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_setRequestFormat"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1343
+                    </div>
+        <div>
+            <h3 id="method_setRequestFormat"><code class="language-php">setRequestFormat()</code></h3>
+            <code class="language-php">public setRequestFormat(string $format)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets the request format.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$format</code></td>
+                <td>The request format</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getContentType"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1353
+                    </div>
+        <div>
+            <h3 id="method_getContentType"><code class="language-php">getContentType()</code></h3>
+            <code class="language-php">public string|null&nbsp;getContentType()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the format associated with the request.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string|null</code></td>
+            <td>The format (null if no content type is present)</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_setDefaultLocale"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1363
+                    </div>
+        <div>
+            <h3 id="method_setDefaultLocale"><code class="language-php">setDefaultLocale()</code></h3>
+            <code class="language-php">public setDefaultLocale(string $locale)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets the default locale.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$locale</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getDefaultLocale"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1377
+                    </div>
+        <div>
+            <h3 id="method_getDefaultLocale"><code class="language-php">getDefaultLocale()</code></h3>
+            <code class="language-php">public string&nbsp;getDefaultLocale()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Get the default locale.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_setLocale"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1387
+                    </div>
+        <div>
+            <h3 id="method_setLocale"><code class="language-php">setLocale()</code></h3>
+            <code class="language-php">public setLocale(string $locale)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets the locale.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$locale</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getLocale"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1397
+                    </div>
+        <div>
+            <h3 id="method_getLocale"><code class="language-php">getLocale()</code></h3>
+            <code class="language-php">public string&nbsp;getLocale()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Get the locale.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_isMethod"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1409
+                    </div>
+        <div>
+            <h3 id="method_isMethod"><code class="language-php">isMethod()</code></h3>
+            <code class="language-php">public bool&nbsp;isMethod(string $method)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Checks if the request method is of specified type.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$method</code></td>
+                <td>Uppercase request method (GET, POST etc)</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_isMethodSafe"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1423
+                    </div>
+        <div>
+            <h3 id="method_isMethodSafe"><code class="language-php">isMethodSafe()</code></h3>
+            <code class="language-php">public bool&nbsp;isMethodSafe()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Checks whether or not the method is safe.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+                    <h4>See also</h4>
+
+                <table class="table">
+                    <tr>
+                <td>https://tools.ietf.org/html/rfc7231#section-4.2.1</td>
+                <td></td>
+            </tr>
+            </table>
+
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_isMethodIdempotent"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1438
+                    </div>
+        <div>
+            <h3 id="method_isMethodIdempotent"><code class="language-php">isMethodIdempotent()</code></h3>
+            <code class="language-php">public bool&nbsp;isMethodIdempotent()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Checks whether or not the method is idempotent.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_isMethodCacheable"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1450
+                    </div>
+        <div>
+            <h3 id="method_isMethodCacheable"><code class="language-php">isMethodCacheable()</code></h3>
+            <code class="language-php">public bool&nbsp;isMethodCacheable()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Checks whether the method is cacheable or not.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+                    <h4>See also</h4>
+
+                <table class="table">
+                    <tr>
+                <td>https://tools.ietf.org/html/rfc7231#section-4.2.3</td>
+                <td></td>
+            </tr>
+            </table>
+
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getProtocolVersion"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1466
+                    </div>
+        <div>
+            <h3 id="method_getProtocolVersion"><code class="language-php">getProtocolVersion()</code></h3>
+            <code class="language-php">public string&nbsp;getProtocolVersion()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the protocol version.</p>                    <p>If the application is behind a proxy, the protocol version used in the
+requests between the client and the proxy and between the proxy and the
+server might be different. This returns the former (from the "Via" header)
+if the proxy is trusted (see "setTrustedProxies()"), otherwise it returns
+the latter (from the "SERVER_PROTOCOL" server parameter).</p>            </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getContent"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1488
+                    </div>
+        <div>
+            <h3 id="method_getContent"><code class="language-php">getContent()</code></h3>
+            <code class="language-php">public string|resource&nbsp;getContent(bool $asResource = false)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the request body content.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">bool</code></td>
+                <td><code class="language-php">$asResource</code></td>
+                <td>If true, a resource will be returned</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string|resource</code></td>
+            <td>The request body content or a resource to read the body stream</td>
+        </tr>
+    </table>
+
+        
+                    <h4>Exceptions</h4>
+
+                <table class="table">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/LogicException"><abbr title="LogicException">LogicException</abbr></a></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getETags"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1531
+                    </div>
+        <div>
+            <h3 id="method_getETags"><code class="language-php">getETags()</code></h3>
+            <code class="language-php">public array&nbsp;getETags()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the Etags.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">array</code></td>
+            <td>The entity tags</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_isNoCache"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1539
+                    </div>
+        <div>
+            <h3 id="method_isNoCache"><code class="language-php">isNoCache()</code></h3>
+            <code class="language-php">public bool&nbsp;isNoCache()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getPreferredLanguage"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1551
+                    </div>
+        <div>
+            <h3 id="method_getPreferredLanguage"><code class="language-php">getPreferredLanguage()</code></h3>
+            <code class="language-php">public string|null&nbsp;getPreferredLanguage(array $locales = null)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the preferred language.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$locales</code></td>
+                <td>An array of ordered available locales</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string|null</code></td>
+            <td>The preferred locale</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getLanguages"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1584
+                    </div>
+        <div>
+            <h3 id="method_getLanguages"><code class="language-php">getLanguages()</code></h3>
+            <code class="language-php">public array&nbsp;getLanguages()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets a list of languages acceptable by the client browser.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">array</code></td>
+            <td>Languages ordered in the user browser preferences</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getCharsets"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1624
+                    </div>
+        <div>
+            <h3 id="method_getCharsets"><code class="language-php">getCharsets()</code></h3>
+            <code class="language-php">public array&nbsp;getCharsets()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets a list of charsets acceptable by the client browser.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">array</code></td>
+            <td>List of charsets in preferable order</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getEncodings"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1638
+                    </div>
+        <div>
+            <h3 id="method_getEncodings"><code class="language-php">getEncodings()</code></h3>
+            <code class="language-php">public array&nbsp;getEncodings()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets a list of encodings acceptable by the client browser.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">array</code></td>
+            <td>List of encodings in preferable order</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_getAcceptableContentTypes"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1652
+                    </div>
+        <div>
+            <h3 id="method_getAcceptableContentTypes"><code class="language-php">getAcceptableContentTypes()</code></h3>
+            <code class="language-php">public array&nbsp;getAcceptableContentTypes()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets a list of content types acceptable by the client browser.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">array</code></td>
+            <td>List of content types in preferable order</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_isXmlHttpRequest"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1671
+                    </div>
+        <div>
+            <h3 id="method_isXmlHttpRequest"><code class="language-php">isXmlHttpRequest()</code></h3>
+            <code class="language-php">public bool&nbsp;isXmlHttpRequest()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns true if the request is a XMLHttpRequest.</p>                    <p>It works if your JavaScript library sets an X-Requested-With HTTP header.
+It is known to work with common JavaScript frameworks:</p>            </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td>true if the request is an XMLHttpRequest, false otherwise</td>
+        </tr>
+    </table>
+
+        
+        
+                    <h4>See also</h4>
+
+                <table class="table">
+                    <tr>
+                <td>http://en.wikipedia.org/wiki/List_of_Ajax_frameworks#JavaScript</td>
+                <td></td>
+            </tr>
+            </table>
+
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.24">24</a>
+                    </div>
+        <div>
+            <h3 id="method_prepareRequestUri"><code class="language-php">prepareRequestUri()</code></h3>
+            <code class="language-php">protected prepareRequestUri()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.32">32</a>
+                    </div>
+        <div>
+            <h3 id="method_prepareBaseUrl"><code class="language-php">prepareBaseUrl()</code></h3>
+            <code class="language-php">protected string&nbsp;prepareBaseUrl()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Prepares the base URL.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_prepareBasePath"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1800
+                    </div>
+        <div>
+            <h3 id="method_prepareBasePath"><code class="language-php">prepareBasePath()</code></h3>
+            <code class="language-php">protected string&nbsp;prepareBasePath()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Prepares the base path.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>base path</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_preparePathInfo"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1826
+                    </div>
+        <div>
+            <h3 id="method_preparePathInfo"><code class="language-php">preparePathInfo()</code></h3>
+            <code class="language-php">protected string&nbsp;preparePathInfo()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Prepares the path info.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>path info</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_initializeFormats"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1856
+                    </div>
+        <div>
+            <h3 id="method_initializeFormats"><code class="language-php">initializeFormats()</code></h3>
+            <code class="language-php">protected static initializeFormats()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Initializes HTTP request formats.</p>                                </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Request.html#method_isFromTrustedProxy"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> at line 1930
+                    </div>
+        <div>
+            <h3 id="method_isFromTrustedProxy"><code class="language-php">isFromTrustedProxy()</code></h3>
+            <code class="language-php">public bool&nbsp;isFromTrustedProxy()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Indicates whether this request originated from a trusted proxy.</p>                    <p>This can be useful to determine whether or not to trust the
+contents of a proxy-specific header.</p>            </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td>true if the request came from a trusted proxy, false otherwise</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace App\Khan\Component\HttpFoundation;
+
+/**
+ * Request represents an HTTP request from an Apache server.
+ *
+ * @author Fabien Potencier &lt;fabien@symfony.com&gt;
+ */
+class ApacheRequest extends Request
+{
+    /**
+     * {@inheritdoc}
+     */
+    protected function prepareRequestUri()
+    {
+        return $this-&gt;server-&gt;get(&#039;REQUEST_URI&#039;);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function prepareBaseUrl()
+    {
+        $baseUrl = $this-&gt;server-&gt;get(&#039;SCRIPT_NAME&#039;);
+
+        if (false === strpos($this-&gt;server-&gt;get(&#039;REQUEST_URI&#039;), $baseUrl)) {
+            // assume mod_rewrite
+            return rtrim(dirname($baseUrl), &#039;/\\&#039;);
+        }
+
+        return $baseUrl;
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

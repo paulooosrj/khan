@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Tests\ParameterBagTest | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Tests_ParameterBagTest" data-root-path="../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../Symfony/Component/HttpFoundation/Tests.html">Tests</a></li>
+  
+            <li>ParameterBagTest</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>ParameterBagTest</h1>
+
+    <p>    class
+    <strong>ParameterBagTest</strong>        extends <abbr title="PHPUnit\Framework\TestCase">TestCase</abbr>
+</p>
+
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testConstructor">testConstructor</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testAll">testAll</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testKeys">testKeys</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testAdd">testAdd</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testRemove">testRemove</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testReplace">testReplace</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGet">testGet</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetDoesNotUseDeepByDefault">testGetDoesNotUseDeepByDefault</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testSet">testSet</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testHas">testHas</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetAlpha">testGetAlpha</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetAlnum">testGetAlnum</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetDigits">testGetDigits</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetInt">testGetInt</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testFilter">testFilter</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetIterator">testGetIterator</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testCount">testCount</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetBoolean">testGetBoolean</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.19">19</a>
+                    </div>
+        <div>
+            <h3 id="method_testConstructor"><code class="language-php">testConstructor()</code></h3>
+            <code class="language-php">public testConstructor()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.24">24</a>
+                    </div>
+        <div>
+            <h3 id="method_testAll"><code class="language-php">testAll()</code></h3>
+            <code class="language-php">public testAll()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.30">30</a>
+                    </div>
+        <div>
+            <h3 id="method_testKeys"><code class="language-php">testKeys()</code></h3>
+            <code class="language-php">public testKeys()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.36">36</a>
+                    </div>
+        <div>
+            <h3 id="method_testAdd"><code class="language-php">testAdd()</code></h3>
+            <code class="language-php">public testAdd()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.43">43</a>
+                    </div>
+        <div>
+            <h3 id="method_testRemove"><code class="language-php">testRemove()</code></h3>
+            <code class="language-php">public testRemove()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.52">52</a>
+                    </div>
+        <div>
+            <h3 id="method_testReplace"><code class="language-php">testReplace()</code></h3>
+            <code class="language-php">public testReplace()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.61">61</a>
+                    </div>
+        <div>
+            <h3 id="method_testGet"><code class="language-php">testGet()</code></h3>
+            <code class="language-php">public testGet()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.70">70</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetDoesNotUseDeepByDefault"><code class="language-php">testGetDoesNotUseDeepByDefault()</code></h3>
+            <code class="language-php">public testGetDoesNotUseDeepByDefault()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.77">77</a>
+                    </div>
+        <div>
+            <h3 id="method_testSet"><code class="language-php">testSet()</code></h3>
+            <code class="language-php">public testSet()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.88">88</a>
+                    </div>
+        <div>
+            <h3 id="method_testHas"><code class="language-php">testHas()</code></h3>
+            <code class="language-php">public testHas()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.96">96</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetAlpha"><code class="language-php">testGetAlpha()</code></h3>
+            <code class="language-php">public testGetAlpha()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.104">104</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetAlnum"><code class="language-php">testGetAlnum()</code></h3>
+            <code class="language-php">public testGetAlnum()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.112">112</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetDigits"><code class="language-php">testGetDigits()</code></h3>
+            <code class="language-php">public testGetDigits()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.120">120</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetInt"><code class="language-php">testGetInt()</code></h3>
+            <code class="language-php">public testGetInt()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.128">128</a>
+                    </div>
+        <div>
+            <h3 id="method_testFilter"><code class="language-php">testFilter()</code></h3>
+            <code class="language-php">public testFilter()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.163">163</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetIterator"><code class="language-php">testGetIterator()</code></h3>
+            <code class="language-php">public testGetIterator()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.177">177</a>
+                    </div>
+        <div>
+            <h3 id="method_testCount"><code class="language-php">testCount()</code></h3>
+            <code class="language-php">public testCount()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.185">185</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetBoolean"><code class="language-php">testGetBoolean()</code></h3>
+            <code class="language-php">public testGetBoolean()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Tests;
+
+use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\ParameterBag;
+
+class ParameterBagTest extends TestCase
+{
+    public function testConstructor()
+    {
+        $this-&gt;testAll();
+    }
+
+    public function testAll()
+    {
+        $bag = new ParameterBag(array(&#039;foo&#039; =&gt; &#039;bar&#039;));
+        $this-&gt;assertEquals(array(&#039;foo&#039; =&gt; &#039;bar&#039;), $bag-&gt;all(), &#039;-&gt;all() gets all the input&#039;);
+    }
+
+    public function testKeys()
+    {
+        $bag = new ParameterBag(array(&#039;foo&#039; =&gt; &#039;bar&#039;));
+        $this-&gt;assertEquals(array(&#039;foo&#039;), $bag-&gt;keys());
+    }
+
+    public function testAdd()
+    {
+        $bag = new ParameterBag(array(&#039;foo&#039; =&gt; &#039;bar&#039;));
+        $bag-&gt;add(array(&#039;bar&#039; =&gt; &#039;bas&#039;));
+        $this-&gt;assertEquals(array(&#039;foo&#039; =&gt; &#039;bar&#039;, &#039;bar&#039; =&gt; &#039;bas&#039;), $bag-&gt;all());
+    }
+
+    public function testRemove()
+    {
+        $bag = new ParameterBag(array(&#039;foo&#039; =&gt; &#039;bar&#039;));
+        $bag-&gt;add(array(&#039;bar&#039; =&gt; &#039;bas&#039;));
+        $this-&gt;assertEquals(array(&#039;foo&#039; =&gt; &#039;bar&#039;, &#039;bar&#039; =&gt; &#039;bas&#039;), $bag-&gt;all());
+        $bag-&gt;remove(&#039;bar&#039;);
+        $this-&gt;assertEquals(array(&#039;foo&#039; =&gt; &#039;bar&#039;), $bag-&gt;all());
+    }
+
+    public function testReplace()
+    {
+        $bag = new ParameterBag(array(&#039;foo&#039; =&gt; &#039;bar&#039;));
+
+        $bag-&gt;replace(array(&#039;FOO&#039; =&gt; &#039;BAR&#039;));
+        $this-&gt;assertEquals(array(&#039;FOO&#039; =&gt; &#039;BAR&#039;), $bag-&gt;all(), &#039;-&gt;replace() replaces the input with the argument&#039;);
+        $this-&gt;assertFalse($bag-&gt;has(&#039;foo&#039;), &#039;-&gt;replace() overrides previously set the input&#039;);
+    }
+
+    public function testGet()
+    {
+        $bag = new ParameterBag(array(&#039;foo&#039; =&gt; &#039;bar&#039;, &#039;null&#039; =&gt; null));
+
+        $this-&gt;assertEquals(&#039;bar&#039;, $bag-&gt;get(&#039;foo&#039;), &#039;-&gt;get() gets the value of a parameter&#039;);
+        $this-&gt;assertEquals(&#039;default&#039;, $bag-&gt;get(&#039;unknown&#039;, &#039;default&#039;), &#039;-&gt;get() returns second argument as default if a parameter is not defined&#039;);
+        $this-&gt;assertNull($bag-&gt;get(&#039;null&#039;, &#039;default&#039;), &#039;-&gt;get() returns null if null is set&#039;);
+    }
+
+    public function testGetDoesNotUseDeepByDefault()
+    {
+        $bag = new ParameterBag(array(&#039;foo&#039; =&gt; array(&#039;bar&#039; =&gt; &#039;moo&#039;)));
+
+        $this-&gt;assertNull($bag-&gt;get(&#039;foo[bar]&#039;));
+    }
+
+    public function testSet()
+    {
+        $bag = new ParameterBag(array());
+
+        $bag-&gt;set(&#039;foo&#039;, &#039;bar&#039;);
+        $this-&gt;assertEquals(&#039;bar&#039;, $bag-&gt;get(&#039;foo&#039;), &#039;-&gt;set() sets the value of parameter&#039;);
+
+        $bag-&gt;set(&#039;foo&#039;, &#039;baz&#039;);
+        $this-&gt;assertEquals(&#039;baz&#039;, $bag-&gt;get(&#039;foo&#039;), &#039;-&gt;set() overrides previously set parameter&#039;);
+    }
+
+    public function testHas()
+    {
+        $bag = new ParameterBag(array(&#039;foo&#039; =&gt; &#039;bar&#039;));
+
+        $this-&gt;assertTrue($bag-&gt;has(&#039;foo&#039;), &#039;-&gt;has() returns true if a parameter is defined&#039;);
+        $this-&gt;assertFalse($bag-&gt;has(&#039;unknown&#039;), &#039;-&gt;has() return false if a parameter is not defined&#039;);
+    }
+
+    public function testGetAlpha()
+    {
+        $bag = new ParameterBag(array(&#039;word&#039; =&gt; &#039;foo_BAR_012&#039;));
+
+        $this-&gt;assertEquals(&#039;fooBAR&#039;, $bag-&gt;getAlpha(&#039;word&#039;), &#039;-&gt;getAlpha() gets only alphabetic characters&#039;);
+        $this-&gt;assertEquals(&#039;&#039;, $bag-&gt;getAlpha(&#039;unknown&#039;), &#039;-&gt;getAlpha() returns empty string if a parameter is not defined&#039;);
+    }
+
+    public function testGetAlnum()
+    {
+        $bag = new ParameterBag(array(&#039;word&#039; =&gt; &#039;foo_BAR_012&#039;));
+
+        $this-&gt;assertEquals(&#039;fooBAR012&#039;, $bag-&gt;getAlnum(&#039;word&#039;), &#039;-&gt;getAlnum() gets only alphanumeric characters&#039;);
+        $this-&gt;assertEquals(&#039;&#039;, $bag-&gt;getAlnum(&#039;unknown&#039;), &#039;-&gt;getAlnum() returns empty string if a parameter is not defined&#039;);
+    }
+
+    public function testGetDigits()
+    {
+        $bag = new ParameterBag(array(&#039;word&#039; =&gt; &#039;foo_BAR_012&#039;));
+
+        $this-&gt;assertEquals(&#039;012&#039;, $bag-&gt;getDigits(&#039;word&#039;), &#039;-&gt;getDigits() gets only digits as string&#039;);
+        $this-&gt;assertEquals(&#039;&#039;, $bag-&gt;getDigits(&#039;unknown&#039;), &#039;-&gt;getDigits() returns empty string if a parameter is not defined&#039;);
+    }
+
+    public function testGetInt()
+    {
+        $bag = new ParameterBag(array(&#039;digits&#039; =&gt; &#039;0123&#039;));
+
+        $this-&gt;assertEquals(123, $bag-&gt;getInt(&#039;digits&#039;), &#039;-&gt;getInt() gets a value of parameter as integer&#039;);
+        $this-&gt;assertEquals(0, $bag-&gt;getInt(&#039;unknown&#039;), &#039;-&gt;getInt() returns zero if a parameter is not defined&#039;);
+    }
+
+    public function testFilter()
+    {
+        $bag = new ParameterBag(array(
+            &#039;digits&#039; =&gt; &#039;0123ab&#039;,
+            &#039;email&#039; =&gt; &#039;example@example.com&#039;,
+            &#039;url&#039; =&gt; &#039;http://example.com/foo&#039;,
+            &#039;dec&#039; =&gt; &#039;256&#039;,
+            &#039;hex&#039; =&gt; &#039;0x100&#039;,
+            &#039;array&#039; =&gt; array(&#039;bang&#039;),
+            ));
+
+        $this-&gt;assertEmpty($bag-&gt;filter(&#039;nokey&#039;), &#039;-&gt;filter() should return empty by default if no key is found&#039;);
+
+        $this-&gt;assertEquals(&#039;0123&#039;, $bag-&gt;filter(&#039;digits&#039;, &#039;&#039;, FILTER_SANITIZE_NUMBER_INT), &#039;-&gt;filter() gets a value of parameter as integer filtering out invalid characters&#039;);
+
+        $this-&gt;assertEquals(&#039;example@example.com&#039;, $bag-&gt;filter(&#039;email&#039;, &#039;&#039;, FILTER_VALIDATE_EMAIL), &#039;-&gt;filter() gets a value of parameter as email&#039;);
+
+        $this-&gt;assertEquals(&#039;http://example.com/foo&#039;, $bag-&gt;filter(&#039;url&#039;, &#039;&#039;, FILTER_VALIDATE_URL, array(&#039;flags&#039; =&gt; FILTER_FLAG_PATH_REQUIRED)), &#039;-&gt;filter() gets a value of parameter as URL with a path&#039;);
+
+        // This test is repeated for code-coverage
+        $this-&gt;assertEquals(&#039;http://example.com/foo&#039;, $bag-&gt;filter(&#039;url&#039;, &#039;&#039;, FILTER_VALIDATE_URL, FILTER_FLAG_PATH_REQUIRED), &#039;-&gt;filter() gets a value of parameter as URL with a path&#039;);
+
+        $this-&gt;assertFalse($bag-&gt;filter(&#039;dec&#039;, &#039;&#039;, FILTER_VALIDATE_INT, array(
+            &#039;flags&#039; =&gt; FILTER_FLAG_ALLOW_HEX,
+            &#039;options&#039; =&gt; array(&#039;min_range&#039; =&gt; 1, &#039;max_range&#039; =&gt; 0xff),
+        )), &#039;-&gt;filter() gets a value of parameter as integer between boundaries&#039;);
+
+        $this-&gt;assertFalse($bag-&gt;filter(&#039;hex&#039;, &#039;&#039;, FILTER_VALIDATE_INT, array(
+            &#039;flags&#039; =&gt; FILTER_FLAG_ALLOW_HEX,
+            &#039;options&#039; =&gt; array(&#039;min_range&#039; =&gt; 1, &#039;max_range&#039; =&gt; 0xff),
+        )), &#039;-&gt;filter() gets a value of parameter as integer between boundaries&#039;);
+
+        $this-&gt;assertEquals(array(&#039;bang&#039;), $bag-&gt;filter(&#039;array&#039;, &#039;&#039;), &#039;-&gt;filter() gets a value of parameter as an array&#039;);
+    }
+
+    public function testGetIterator()
+    {
+        $parameters = array(&#039;foo&#039; =&gt; &#039;bar&#039;, &#039;hello&#039; =&gt; &#039;world&#039;);
+        $bag = new ParameterBag($parameters);
+
+        $i = 0;
+        foreach ($bag as $key =&gt; $val) {
+            ++$i;
+            $this-&gt;assertEquals($parameters[$key], $val);
+        }
+
+        $this-&gt;assertEquals(count($parameters), $i);
+    }
+
+    public function testCount()
+    {
+        $parameters = array(&#039;foo&#039; =&gt; &#039;bar&#039;, &#039;hello&#039; =&gt; &#039;world&#039;);
+        $bag = new ParameterBag($parameters);
+
+        $this-&gt;assertCount(count($parameters), $bag);
+    }
+
+    public function testGetBoolean()
+    {
+        $parameters = array(&#039;string_true&#039; =&gt; &#039;true&#039;, &#039;string_false&#039; =&gt; &#039;false&#039;);
+        $bag = new ParameterBag($parameters);
+
+        $this-&gt;assertTrue($bag-&gt;getBoolean(&#039;string_true&#039;), &#039;-&gt;getBoolean() gets the string true as boolean true&#039;);
+        $this-&gt;assertFalse($bag-&gt;getBoolean(&#039;string_false&#039;), &#039;-&gt;getBoolean() gets the string false as boolean false&#039;);
+        $this-&gt;assertFalse($bag-&gt;getBoolean(&#039;unknown&#039;), &#039;-&gt;getBoolean() returns false if a parameter is not defined&#039;);
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

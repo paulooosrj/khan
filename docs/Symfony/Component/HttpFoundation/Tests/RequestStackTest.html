@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Tests\RequestStackTest | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Tests_RequestStackTest" data-root-path="../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../Symfony/Component/HttpFoundation/Tests.html">Tests</a></li>
+  
+            <li>RequestStackTest</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>RequestStackTest</h1>
+
+    <p>    class
+    <strong>RequestStackTest</strong>        extends <abbr title="PHPUnit\Framework\TestCase">TestCase</abbr>
+</p>
+
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetCurrentRequest">testGetCurrentRequest</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetMasterRequest">testGetMasterRequest</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetParentRequest">testGetParentRequest</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.20">20</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetCurrentRequest"><code class="language-php">testGetCurrentRequest()</code></h3>
+            <code class="language-php">public testGetCurrentRequest()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.36">36</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetMasterRequest"><code class="language-php">testGetMasterRequest()</code></h3>
+            <code class="language-php">public testGetMasterRequest()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.50">50</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetParentRequest"><code class="language-php">testGetParentRequest()</code></h3>
+            <code class="language-php">public testGetParentRequest()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Tests;
+
+use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
+
+class RequestStackTest extends TestCase
+{
+    public function testGetCurrentRequest()
+    {
+        $requestStack = new RequestStack();
+        $this-&gt;assertNull($requestStack-&gt;getCurrentRequest());
+
+        $request = Request::create(&#039;/foo&#039;);
+
+        $requestStack-&gt;push($request);
+        $this-&gt;assertSame($request, $requestStack-&gt;getCurrentRequest());
+
+        $this-&gt;assertSame($request, $requestStack-&gt;pop());
+        $this-&gt;assertNull($requestStack-&gt;getCurrentRequest());
+
+        $this-&gt;assertNull($requestStack-&gt;pop());
+    }
+
+    public function testGetMasterRequest()
+    {
+        $requestStack = new RequestStack();
+        $this-&gt;assertNull($requestStack-&gt;getMasterRequest());
+
+        $masterRequest = Request::create(&#039;/foo&#039;);
+        $subRequest = Request::create(&#039;/bar&#039;);
+
+        $requestStack-&gt;push($masterRequest);
+        $requestStack-&gt;push($subRequest);
+
+        $this-&gt;assertSame($masterRequest, $requestStack-&gt;getMasterRequest());
+    }
+
+    public function testGetParentRequest()
+    {
+        $requestStack = new RequestStack();
+        $this-&gt;assertNull($requestStack-&gt;getParentRequest());
+
+        $masterRequest = Request::create(&#039;/foo&#039;);
+
+        $requestStack-&gt;push($masterRequest);
+        $this-&gt;assertNull($requestStack-&gt;getParentRequest());
+
+        $firstSubRequest = Request::create(&#039;/bar&#039;);
+
+        $requestStack-&gt;push($firstSubRequest);
+        $this-&gt;assertSame($masterRequest, $requestStack-&gt;getParentRequest());
+
+        $secondSubRequest = Request::create(&#039;/baz&#039;);
+
+        $requestStack-&gt;push($secondSubRequest);
+        $this-&gt;assertSame($firstSubRequest, $requestStack-&gt;getParentRequest());
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>App\Khan\Component\HttpFoundation\ServerBag | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:App_Khan_Component_HttpFoundation_ServerBag" data-root-path="../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../App.html">App</a></li>
+                    <li><a href="../../../../App/Khan.html">Khan</a></li>
+                    <li><a href="../../../../App/Khan/Component.html">Component</a></li>
+                    <li><a href="../../../../App/Khan/Component/HttpFoundation.html">HttpFoundation</a></li>
+  
+            <li>ServerBag</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>ServerBag</h1>
+
+    <p>    class
+    <strong>ServerBag</strong>        extends <a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a>
+</p>
+
+            <p>ServerBag is a container for HTTP headers from the $_SERVER variable.</p>            
+    
+    
+            <h2>Properties</h2>
+
+            <table class="table">
+                    <tr>
+                <td id="property_parameters">
+                    <code class="language-php">                    protected                                        </code>
+                </td>
+                <td><code class="language-php">$parameters</code></td>
+                <td>Parameter storage.</td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#property_parameters"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a></small></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method___construct">__construct</a>(array $parameters = array())</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method___construct"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">array</code></td>
+            <td>
+                <code class="language-php"><a href="#method_all">all</a>()</code>
+            </td>
+            <td>
+                                    Returns the parameters.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_all"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">array</code></td>
+            <td>
+                <code class="language-php"><a href="#method_keys">keys</a>()</code>
+            </td>
+            <td>
+                                    Returns the parameter keys.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_keys"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_replace">replace</a>(array $parameters = array())</code>
+            </td>
+            <td>
+                                    Replaces the current parameters by a new set.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_replace"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_add">add</a>(array $parameters = array())</code>
+            </td>
+            <td>
+                                    Adds parameters.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_add"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">mixed</code></td>
+            <td>
+                <code class="language-php"><a href="#method_get">get</a>(string $key, mixed $default = null)</code>
+            </td>
+            <td>
+                                    Returns a parameter by name.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_get"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_set">set</a>(string $key, mixed $value)</code>
+            </td>
+            <td>
+                                    Sets a parameter by name.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_set"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_has">has</a>(string $key)</code>
+            </td>
+            <td>
+                                    Returns true if the parameter is defined.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_has"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_remove">remove</a>(string $key)</code>
+            </td>
+            <td>
+                                    Removes a parameter.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_remove"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getAlpha">getAlpha</a>(string $key, string $default = &#039;&#039;)</code>
+            </td>
+            <td>
+                                    Returns the alphabetic characters of the parameter value.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_getAlpha"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getAlnum">getAlnum</a>(string $key, string $default = &#039;&#039;)</code>
+            </td>
+            <td>
+                                    Returns the alphabetic characters and digits of the parameter value.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_getAlnum"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getDigits">getDigits</a>(string $key, string $default = &#039;&#039;)</code>
+            </td>
+            <td>
+                                    Returns the digits of the parameter value.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_getDigits"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">int</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getInt">getInt</a>(string $key, int $default)</code>
+            </td>
+            <td>
+                                    Returns the parameter value converted to integer.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_getInt"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getBoolean">getBoolean</a>(string $key, mixed $default = false)</code>
+            </td>
+            <td>
+                                    Returns the parameter value converted to boolean.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_getBoolean"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">mixed</code></td>
+            <td>
+                <code class="language-php"><a href="#method_filter">filter</a>(string $key, mixed $default = null, int $filter = FILTER_DEFAULT, mixed $options = array())</code>
+            </td>
+            <td>
+                                    Filter key.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_filter"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><a target="_blank" href="http://php.net/ArrayIterator"><abbr title="ArrayIterator">ArrayIterator</abbr></a></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getIterator">getIterator</a>()</code>
+            </td>
+            <td>
+                                    Returns an iterator for parameters.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_getIterator"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">int</code></td>
+            <td>
+                <code class="language-php"><a href="#method_count">count</a>()</code>
+            </td>
+            <td>
+                                    Returns the number of parameters.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_count"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">array</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getHeaders">getHeaders</a>()</code>
+            </td>
+            <td>
+                                    Gets the HTTP headers.            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method___construct"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a> at line 29
+                    </div>
+        <div>
+            <h3 id="method___construct"><code class="language-php">__construct()</code></h3>
+            <code class="language-php">public __construct(array $parameters = array())</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$parameters</code></td>
+                <td>An array of parameters</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_all"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a> at line 39
+                    </div>
+        <div>
+            <h3 id="method_all"><code class="language-php">all()</code></h3>
+            <code class="language-php">public array&nbsp;all()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the parameters.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">array</code></td>
+            <td>An array of parameters</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_keys"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a> at line 49
+                    </div>
+        <div>
+            <h3 id="method_keys"><code class="language-php">keys()</code></h3>
+            <code class="language-php">public array&nbsp;keys()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the parameter keys.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">array</code></td>
+            <td>An array of parameter keys</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_replace"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a> at line 59
+                    </div>
+        <div>
+            <h3 id="method_replace"><code class="language-php">replace()</code></h3>
+            <code class="language-php">public replace(array $parameters = array())</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Replaces the current parameters by a new set.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$parameters</code></td>
+                <td>An array of parameters</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_add"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a> at line 69
+                    </div>
+        <div>
+            <h3 id="method_add"><code class="language-php">add()</code></h3>
+            <code class="language-php">public add(array $parameters = array())</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Adds parameters.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$parameters</code></td>
+                <td>An array of parameters</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_get"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a> at line 82
+                    </div>
+        <div>
+            <h3 id="method_get"><code class="language-php">get()</code></h3>
+            <code class="language-php">public mixed&nbsp;get(string $key, mixed $default = null)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns a parameter by name.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>The key</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">mixed</code></td>
+                <td><code class="language-php">$default</code></td>
+                <td>The default value if the parameter key does not exist</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">mixed</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_set"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a> at line 93
+                    </div>
+        <div>
+            <h3 id="method_set"><code class="language-php">set()</code></h3>
+            <code class="language-php">public set(string $key, mixed $value)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets a parameter by name.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>The key</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">mixed</code></td>
+                <td><code class="language-php">$value</code></td>
+                <td>The value</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_has"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a> at line 105
+                    </div>
+        <div>
+            <h3 id="method_has"><code class="language-php">has()</code></h3>
+            <code class="language-php">public bool&nbsp;has(string $key)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns true if the parameter is defined.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>The key</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td>true if the parameter exists, false otherwise</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_remove"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a> at line 115
+                    </div>
+        <div>
+            <h3 id="method_remove"><code class="language-php">remove()</code></h3>
+            <code class="language-php">public remove(string $key)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Removes a parameter.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>The key</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_getAlpha"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a> at line 128
+                    </div>
+        <div>
+            <h3 id="method_getAlpha"><code class="language-php">getAlpha()</code></h3>
+            <code class="language-php">public string&nbsp;getAlpha(string $key, string $default = &#039;&#039;)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the alphabetic characters of the parameter value.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>The parameter key</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$default</code></td>
+                <td>The default value if the parameter key does not exist</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>The filtered value</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_getAlnum"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a> at line 141
+                    </div>
+        <div>
+            <h3 id="method_getAlnum"><code class="language-php">getAlnum()</code></h3>
+            <code class="language-php">public string&nbsp;getAlnum(string $key, string $default = &#039;&#039;)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the alphabetic characters and digits of the parameter value.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>The parameter key</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$default</code></td>
+                <td>The default value if the parameter key does not exist</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>The filtered value</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_getDigits"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a> at line 154
+                    </div>
+        <div>
+            <h3 id="method_getDigits"><code class="language-php">getDigits()</code></h3>
+            <code class="language-php">public string&nbsp;getDigits(string $key, string $default = &#039;&#039;)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the digits of the parameter value.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>The parameter key</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$default</code></td>
+                <td>The default value if the parameter key does not exist</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>The filtered value</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_getInt"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a> at line 168
+                    </div>
+        <div>
+            <h3 id="method_getInt"><code class="language-php">getInt()</code></h3>
+            <code class="language-php">public int&nbsp;getInt(string $key, int $default)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the parameter value converted to integer.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>The parameter key</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">int</code></td>
+                <td><code class="language-php">$default</code></td>
+                <td>The default value if the parameter key does not exist</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">int</code></td>
+            <td>The filtered value</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_getBoolean"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a> at line 181
+                    </div>
+        <div>
+            <h3 id="method_getBoolean"><code class="language-php">getBoolean()</code></h3>
+            <code class="language-php">public bool&nbsp;getBoolean(string $key, mixed $default = false)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the parameter value converted to boolean.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>The parameter key</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">mixed</code></td>
+                <td><code class="language-php">$default</code></td>
+                <td>The default value if the parameter key does not exist</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td>The filtered value</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_filter"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a> at line 198
+                    </div>
+        <div>
+            <h3 id="method_filter"><code class="language-php">filter()</code></h3>
+            <code class="language-php">public mixed&nbsp;filter(string $key, mixed $default = null, int $filter = FILTER_DEFAULT, mixed $options = array())</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Filter key.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>Key</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">mixed</code></td>
+                <td><code class="language-php">$default</code></td>
+                <td>Default = null</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">int</code></td>
+                <td><code class="language-php">$filter</code></td>
+                <td>FILTER_* constant</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">mixed</code></td>
+                <td><code class="language-php">$options</code></td>
+                <td>Filter options</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">mixed</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+                    <h4>See also</h4>
+
+                <table class="table">
+                    <tr>
+                <td>http://php.net/manual/en/function.filter-var.php</td>
+                <td></td>
+            </tr>
+            </table>
+
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_getIterator"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a> at line 220
+                    </div>
+        <div>
+            <h3 id="method_getIterator"><code class="language-php">getIterator()</code></h3>
+            <code class="language-php">public <a target="_blank" href="http://php.net/ArrayIterator"><abbr title="ArrayIterator">ArrayIterator</abbr></a>&nbsp;getIterator()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns an iterator for parameters.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><a target="_blank" href="http://php.net/ArrayIterator"><abbr title="ArrayIterator">ArrayIterator</abbr></a></code></td>
+            <td>An \ArrayIterator instance</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/ParameterBag.html#method_count"><abbr title="App\Khan\Component\HttpFoundation\ParameterBag">ParameterBag</abbr></a> at line 230
+                    </div>
+        <div>
+            <h3 id="method_count"><code class="language-php">count()</code></h3>
+            <code class="language-php">public int&nbsp;count()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the number of parameters.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">int</code></td>
+            <td>The number of parameters</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.28">28</a>
+                    </div>
+        <div>
+            <h3 id="method_getHeaders"><code class="language-php">getHeaders()</code></h3>
+            <code class="language-php">public array&nbsp;getHeaders()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the HTTP headers.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">array</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace App\Khan\Component\HttpFoundation;
+
+/**
+ * ServerBag is a container for HTTP headers from the $_SERVER variable.
+ *
+ * @author Fabien Potencier &lt;fabien@symfony.com&gt;
+ * @author Bulat Shakirzyanov &lt;mallluhuct@gmail.com&gt;
+ * @author Robert Kiss &lt;kepten@gmail.com&gt;
+ */
+class ServerBag extends ParameterBag
+{
+    /**
+     * Gets the HTTP headers.
+     *
+     * @return array
+     */
+    public function getHeaders()
+    {
+        $headers = array();
+        $contentHeaders = array(&#039;CONTENT_LENGTH&#039; =&gt; true, &#039;CONTENT_MD5&#039; =&gt; true, &#039;CONTENT_TYPE&#039; =&gt; true);
+        foreach ($this-&gt;parameters as $key =&gt; $value) {
+            if (0 === strpos($key, &#039;HTTP_&#039;)) {
+                $headers[substr($key, 5)] = $value;
+            }
+            // CONTENT_* are not prefixed with HTTP_
+            elseif (isset($contentHeaders[$key])) {
+                $headers[$key] = $value;
+            }
+        }
+
+        if (isset($this-&gt;parameters[&#039;PHP_AUTH_USER&#039;])) {
+            $headers[&#039;PHP_AUTH_USER&#039;] = $this-&gt;parameters[&#039;PHP_AUTH_USER&#039;];
+            $headers[&#039;PHP_AUTH_PW&#039;] = isset($this-&gt;parameters[&#039;PHP_AUTH_PW&#039;]) ? $this-&gt;parameters[&#039;PHP_AUTH_PW&#039;] : &#039;&#039;;
+        } else {
+            /*
+             * php-cgi under Apache does not pass HTTP Basic user/pass to PHP by default
+             * For this workaround to work, add these lines to your .htaccess file:
+             * RewriteCond %{HTTP:Authorization} ^(.+)$
+             * RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+             *
+             * A sample .htaccess file:
+             * RewriteEngine On
+             * RewriteCond %{HTTP:Authorization} ^(.+)$
+             * RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+             * RewriteCond %{REQUEST_FILENAME} !-f
+             * RewriteRule ^(.*)$ app.php [QSA,L]
+             */
+
+            $authorizationHeader = null;
+            if (isset($this-&gt;parameters[&#039;HTTP_AUTHORIZATION&#039;])) {
+                $authorizationHeader = $this-&gt;parameters[&#039;HTTP_AUTHORIZATION&#039;];
+            } elseif (isset($this-&gt;parameters[&#039;REDIRECT_HTTP_AUTHORIZATION&#039;])) {
+                $authorizationHeader = $this-&gt;parameters[&#039;REDIRECT_HTTP_AUTHORIZATION&#039;];
+            }
+
+            if (null !== $authorizationHeader) {
+                if (0 === stripos($authorizationHeader, &#039;basic &#039;)) {
+                    // Decode AUTHORIZATION header into PHP_AUTH_USER and PHP_AUTH_PW when authorization header is basic
+                    $exploded = explode(&#039;:&#039;, base64_decode(substr($authorizationHeader, 6)), 2);
+                    if (2 == count($exploded)) {
+                        list($headers[&#039;PHP_AUTH_USER&#039;], $headers[&#039;PHP_AUTH_PW&#039;]) = $exploded;
+                    }
+                } elseif (empty($this-&gt;parameters[&#039;PHP_AUTH_DIGEST&#039;]) &amp;&amp; (0 === stripos($authorizationHeader, &#039;digest &#039;))) {
+                    // In some circumstances PHP_AUTH_DIGEST needs to be set
+                    $headers[&#039;PHP_AUTH_DIGEST&#039;] = $authorizationHeader;
+                    $this-&gt;parameters[&#039;PHP_AUTH_DIGEST&#039;] = $authorizationHeader;
+                } elseif (0 === stripos($authorizationHeader, &#039;bearer &#039;)) {
+                    /*
+                     * XXX: Since there is no PHP_AUTH_BEARER in PHP predefined variables,
+                     *      I&#039;ll just set $headers[&#039;AUTHORIZATION&#039;] here.
+                     *      http://php.net/manual/en/reserved.variables.server.php
+                     */
+                    $headers[&#039;AUTHORIZATION&#039;] = $authorizationHeader;
+                }
+            }
+        }
+
+        if (isset($headers[&#039;AUTHORIZATION&#039;])) {
+            return $headers;
+        }
+
+        // PHP_AUTH_USER/PHP_AUTH_PW
+        if (isset($headers[&#039;PHP_AUTH_USER&#039;])) {
+            $headers[&#039;AUTHORIZATION&#039;] = &#039;Basic &#039;.base64_encode($headers[&#039;PHP_AUTH_USER&#039;].&#039;:&#039;.$headers[&#039;PHP_AUTH_PW&#039;]);
+        } elseif (isset($headers[&#039;PHP_AUTH_DIGEST&#039;])) {
+            $headers[&#039;AUTHORIZATION&#039;] = $headers[&#039;PHP_AUTH_DIGEST&#039;];
+        }
+
+        return $headers;
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

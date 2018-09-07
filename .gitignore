@@ -4,5 +4,5 @@ composer.lock
 node_modules
 package.json
 gulpfile.js
-auto-commit.sh
 package-lock.json
+.env

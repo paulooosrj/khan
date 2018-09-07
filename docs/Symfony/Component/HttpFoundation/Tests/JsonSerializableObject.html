@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Tests\JsonSerializableObject | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Tests_JsonSerializableObject" data-root-path="../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../Symfony/Component/HttpFoundation/Tests.html">Tests</a></li>
+  
+            <li>JsonSerializableObject</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>JsonSerializableObject</h1>
+
+    <p>    class
+    <strong>JsonSerializableObject</strong>        implements
+        <a target="_blank" href="http://php.net/JsonSerializable"><abbr title="JsonSerializable">JsonSerializable</abbr></a>
+</p>
+
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_jsonSerialize">jsonSerialize</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.252">252</a>
+                    </div>
+        <div>
+            <h3 id="method_jsonSerialize"><code class="language-php">jsonSerialize()</code></h3>
+            <code class="language-php">public jsonSerialize()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Tests;
+
+use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\JsonResponse;
+
+class JsonResponseTest extends TestCase
+{
+    public function testConstructorEmptyCreatesJsonObject()
+    {
+        $response = new JsonResponse();
+        $this-&gt;assertSame(&#039;{}&#039;, $response-&gt;getContent());
+    }
+
+    public function testConstructorWithArrayCreatesJsonArray()
+    {
+        $response = new JsonResponse(array(0, 1, 2, 3));
+        $this-&gt;assertSame(&#039;[0,1,2,3]&#039;, $response-&gt;getContent());
+    }
+
+    public function testConstructorWithAssocArrayCreatesJsonObject()
+    {
+        $response = new JsonResponse(array(&#039;foo&#039; =&gt; &#039;bar&#039;));
+        $this-&gt;assertSame(&#039;{&quot;foo&quot;:&quot;bar&quot;}&#039;, $response-&gt;getContent());
+    }
+
+    public function testConstructorWithSimpleTypes()
+    {
+        $response = new JsonResponse(&#039;foo&#039;);
+        $this-&gt;assertSame(&#039;&quot;foo&quot;&#039;, $response-&gt;getContent());
+
+        $response = new JsonResponse(0);
+        $this-&gt;assertSame(&#039;0&#039;, $response-&gt;getContent());
+
+        $response = new JsonResponse(0.1);
+        $this-&gt;assertSame(&#039;0.1&#039;, $response-&gt;getContent());
+
+        $response = new JsonResponse(true);
+        $this-&gt;assertSame(&#039;true&#039;, $response-&gt;getContent());
+    }
+
+    public function testConstructorWithCustomStatus()
+    {
+        $response = new JsonResponse(array(), 202);
+        $this-&gt;assertSame(202, $response-&gt;getStatusCode());
+    }
+
+    public function testConstructorAddsContentTypeHeader()
+    {
+        $response = new JsonResponse();
+        $this-&gt;assertSame(&#039;application/json&#039;, $response-&gt;headers-&gt;get(&#039;Content-Type&#039;));
+    }
+
+    public function testConstructorWithCustomHeaders()
+    {
+        $response = new JsonResponse(array(), 200, array(&#039;ETag&#039; =&gt; &#039;foo&#039;));
+        $this-&gt;assertSame(&#039;application/json&#039;, $response-&gt;headers-&gt;get(&#039;Content-Type&#039;));
+        $this-&gt;assertSame(&#039;foo&#039;, $response-&gt;headers-&gt;get(&#039;ETag&#039;));
+    }
+
+    public function testConstructorWithCustomContentType()
+    {
+        $headers = array(&#039;Content-Type&#039; =&gt; &#039;application/vnd.acme.blog-v1+json&#039;);
+
+        $response = new JsonResponse(array(), 200, $headers);
+        $this-&gt;assertSame(&#039;application/vnd.acme.blog-v1+json&#039;, $response-&gt;headers-&gt;get(&#039;Content-Type&#039;));
+    }
+
+    public function testSetJson()
+    {
+        $response = new JsonResponse(&#039;1&#039;, 200, array(), true);
+        $this-&gt;assertEquals(&#039;1&#039;, $response-&gt;getContent());
+
+        $response = new JsonResponse(&#039;[1]&#039;, 200, array(), true);
+        $this-&gt;assertEquals(&#039;[1]&#039;, $response-&gt;getContent());
+
+        $response = new JsonResponse(null, 200, array());
+        $response-&gt;setJson(&#039;true&#039;);
+        $this-&gt;assertEquals(&#039;true&#039;, $response-&gt;getContent());
+    }
+
+    public function testCreate()
+    {
+        $response = JsonResponse::create(array(&#039;foo&#039; =&gt; &#039;bar&#039;), 204);
+
+        $this-&gt;assertInstanceOf(&#039;Symfony\Component\HttpFoundation\JsonResponse&#039;, $response);
+        $this-&gt;assertEquals(&#039;{&quot;foo&quot;:&quot;bar&quot;}&#039;, $response-&gt;getContent());
+        $this-&gt;assertEquals(204, $response-&gt;getStatusCode());
+    }
+
+    public function testStaticCreateEmptyJsonObject()
+    {
+        $response = JsonResponse::create();
+        $this-&gt;assertInstanceOf(&#039;Symfony\Component\HttpFoundation\JsonResponse&#039;, $response);
+        $this-&gt;assertSame(&#039;{}&#039;, $response-&gt;getContent());
+    }
+
+    public function testStaticCreateJsonArray()
+    {
+        $response = JsonResponse::create(array(0, 1, 2, 3));
+        $this-&gt;assertInstanceOf(&#039;Symfony\Component\HttpFoundation\JsonResponse&#039;, $response);
+        $this-&gt;assertSame(&#039;[0,1,2,3]&#039;, $response-&gt;getContent());
+    }
+
+    public function testStaticCreateJsonObject()
+    {
+        $response = JsonResponse::create(array(&#039;foo&#039; =&gt; &#039;bar&#039;));
+        $this-&gt;assertInstanceOf(&#039;Symfony\Component\HttpFoundation\JsonResponse&#039;, $response);
+        $this-&gt;assertSame(&#039;{&quot;foo&quot;:&quot;bar&quot;}&#039;, $response-&gt;getContent());
+    }
+
+    public function testStaticCreateWithSimpleTypes()
+    {
+        $response = JsonResponse::create(&#039;foo&#039;);
+        $this-&gt;assertInstanceOf(&#039;Symfony\Component\HttpFoundation\JsonResponse&#039;, $response);
+        $this-&gt;assertSame(&#039;&quot;foo&quot;&#039;, $response-&gt;getContent());
+
+        $response = JsonResponse::create(0);
+        $this-&gt;assertInstanceOf(&#039;Symfony\Component\HttpFoundation\JsonResponse&#039;, $response);
+        $this-&gt;assertSame(&#039;0&#039;, $response-&gt;getContent());
+
+        $response = JsonResponse::create(0.1);
+        $this-&gt;assertInstanceOf(&#039;Symfony\Component\HttpFoundation\JsonResponse&#039;, $response);
+        $this-&gt;assertSame(&#039;0.1&#039;, $response-&gt;getContent());
+
+        $response = JsonResponse::create(true);
+        $this-&gt;assertInstanceOf(&#039;Symfony\Component\HttpFoundation\JsonResponse&#039;, $response);
+        $this-&gt;assertSame(&#039;true&#039;, $response-&gt;getContent());
+    }
+
+    public function testStaticCreateWithCustomStatus()
+    {
+        $response = JsonResponse::create(array(), 202);
+        $this-&gt;assertSame(202, $response-&gt;getStatusCode());
+    }
+
+    public function testStaticCreateAddsContentTypeHeader()
+    {
+        $response = JsonResponse::create();
+        $this-&gt;assertSame(&#039;application/json&#039;, $response-&gt;headers-&gt;get(&#039;Content-Type&#039;));
+    }
+
+    public function testStaticCreateWithCustomHeaders()
+    {
+        $response = JsonResponse::create(array(), 200, array(&#039;ETag&#039; =&gt; &#039;foo&#039;));
+        $this-&gt;assertSame(&#039;application/json&#039;, $response-&gt;headers-&gt;get(&#039;Content-Type&#039;));
+        $this-&gt;assertSame(&#039;foo&#039;, $response-&gt;headers-&gt;get(&#039;ETag&#039;));
+    }
+
+    public function testStaticCreateWithCustomContentType()
+    {
+        $headers = array(&#039;Content-Type&#039; =&gt; &#039;application/vnd.acme.blog-v1+json&#039;);
+
+        $response = JsonResponse::create(array(), 200, $headers);
+        $this-&gt;assertSame(&#039;application/vnd.acme.blog-v1+json&#039;, $response-&gt;headers-&gt;get(&#039;Content-Type&#039;));
+    }
+
+    public function testSetCallback()
+    {
+        $response = JsonResponse::create(array(&#039;foo&#039; =&gt; &#039;bar&#039;))-&gt;setCallback(&#039;callback&#039;);
+
+        $this-&gt;assertEquals(&#039;/**/callback({&quot;foo&quot;:&quot;bar&quot;});&#039;, $response-&gt;getContent());
+        $this-&gt;assertEquals(&#039;text/javascript&#039;, $response-&gt;headers-&gt;get(&#039;Content-Type&#039;));
+    }
+
+    public function testJsonEncodeFlags()
+    {
+        $response = new JsonResponse(&#039;&lt;&gt;\&#039;&amp;&quot;&#039;);
+
+        $this-&gt;assertEquals(&#039;&quot;\u003C\u003E\u0027\u0026\u0022&quot;&#039;, $response-&gt;getContent());
+    }
+
+    public function testGetEncodingOptions()
+    {
+        $response = new JsonResponse();
+
+        $this-&gt;assertEquals(JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT, $response-&gt;getEncodingOptions());
+    }
+
+    public function testSetEncodingOptions()
+    {
+        $response = new JsonResponse();
+        $response-&gt;setData(array(array(1, 2, 3)));
+
+        $this-&gt;assertEquals(&#039;[[1,2,3]]&#039;, $response-&gt;getContent());
+
+        $response-&gt;setEncodingOptions(JSON_FORCE_OBJECT);
+
+        $this-&gt;assertEquals(&#039;{&quot;0&quot;:{&quot;0&quot;:1,&quot;1&quot;:2,&quot;2&quot;:3}}&#039;, $response-&gt;getContent());
+    }
+
+    public function testItAcceptsJsonAsString()
+    {
+        $response = JsonResponse::fromJsonString(&#039;{&quot;foo&quot;:&quot;bar&quot;}&#039;);
+        $this-&gt;assertSame(&#039;{&quot;foo&quot;:&quot;bar&quot;}&#039;, $response-&gt;getContent());
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testSetCallbackInvalidIdentifier()
+    {
+        $response = new JsonResponse(&#039;foo&#039;);
+        $response-&gt;setCallback(&#039;+invalid&#039;);
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testSetContent()
+    {
+        JsonResponse::create(&quot;\xB1\x31&quot;);
+    }
+
+    /**
+     * @expectedException \Exception
+     * @expectedExceptionMessage This error is expected
+     */
+    public function testSetContentJsonSerializeError()
+    {
+        if (!interface_exists(&#039;JsonSerializable&#039;, false)) {
+            $this-&gt;markTestSkipped(&#039;JsonSerializable is required.&#039;);
+        }
+
+        $serializable = new JsonSerializableObject();
+
+        JsonResponse::create($serializable);
+    }
+
+    public function testSetComplexCallback()
+    {
+        $response = JsonResponse::create(array(&#039;foo&#039; =&gt; &#039;bar&#039;));
+        $response-&gt;setCallback(&#039;ಠ_ಠ[&quot;foo&quot;].bar[0]&#039;);
+
+        $this-&gt;assertEquals(&#039;/**/ಠ_ಠ[&quot;foo&quot;].bar[0]({&quot;foo&quot;:&quot;bar&quot;});&#039;, $response-&gt;getContent());
+    }
+}
+
+if (interface_exists(&#039;JsonSerializable&#039;, false)) {
+    class JsonSerializableObject implements \JsonSerializable
+    {
+        public function jsonSerialize()
+        {
+            throw new \Exception(&#039;This error is expected&#039;);
+        }
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

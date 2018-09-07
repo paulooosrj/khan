@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Tests\IpUtilsTest | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Tests_IpUtilsTest" data-root-path="../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../Symfony/Component/HttpFoundation/Tests.html">Tests</a></li>
+  
+            <li>IpUtilsTest</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>IpUtilsTest</h1>
+
+    <p>    class
+    <strong>IpUtilsTest</strong>        extends <abbr title="PHPUnit\Framework\TestCase">TestCase</abbr>
+</p>
+
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testIpv4">testIpv4</a>($matches, $remoteAddr, $cidr)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getIpv4Data">getIpv4Data</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testIpv6">testIpv6</a>($matches, $remoteAddr, $cidr)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getIpv6Data">getIpv6Data</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testAnIpv6WithOptionDisabledIpv6">testAnIpv6WithOptionDisabledIpv6</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testInvalidIpAddressesDoNotMatch">testInvalidIpAddressesDoNotMatch</a>($requestIp, $proxyIp)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_invalidIpAddressData">invalidIpAddressData</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.22">22</a>
+                    </div>
+        <div>
+            <h3 id="method_testIpv4"><code class="language-php">testIpv4()</code></h3>
+            <code class="language-php">public testIpv4($matches, $remoteAddr, $cidr)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$matches</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$remoteAddr</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$cidr</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.27">27</a>
+                    </div>
+        <div>
+            <h3 id="method_getIpv4Data"><code class="language-php">getIpv4Data()</code></h3>
+            <code class="language-php">public getIpv4Data()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.48">48</a>
+                    </div>
+        <div>
+            <h3 id="method_testIpv6"><code class="language-php">testIpv6()</code></h3>
+            <code class="language-php">public testIpv6($matches, $remoteAddr, $cidr)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$matches</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$remoteAddr</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$cidr</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.57">57</a>
+                    </div>
+        <div>
+            <h3 id="method_getIpv6Data"><code class="language-php">getIpv6Data()</code></h3>
+            <code class="language-php">public getIpv6Data()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.79">79</a>
+                    </div>
+        <div>
+            <h3 id="method_testAnIpv6WithOptionDisabledIpv6"><code class="language-php">testAnIpv6WithOptionDisabledIpv6()</code></h3>
+            <code class="language-php">public testAnIpv6WithOptionDisabledIpv6()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.91">91</a>
+                    </div>
+        <div>
+            <h3 id="method_testInvalidIpAddressesDoNotMatch"><code class="language-php">testInvalidIpAddressesDoNotMatch()</code></h3>
+            <code class="language-php">public testInvalidIpAddressesDoNotMatch($requestIp, $proxyIp)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$requestIp</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$proxyIp</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.96">96</a>
+                    </div>
+        <div>
+            <h3 id="method_invalidIpAddressData"><code class="language-php">invalidIpAddressData()</code></h3>
+            <code class="language-php">public invalidIpAddressData()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Tests;
+
+use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\IpUtils;
+
+class IpUtilsTest extends TestCase
+{
+    /**
+     * @dataProvider getIpv4Data
+     */
+    public function testIpv4($matches, $remoteAddr, $cidr)
+    {
+        $this-&gt;assertSame($matches, IpUtils::checkIp($remoteAddr, $cidr));
+    }
+
+    public function getIpv4Data()
+    {
+        return array(
+            array(true, &#039;192.168.1.1&#039;, &#039;192.168.1.1&#039;),
+            array(true, &#039;192.168.1.1&#039;, &#039;192.168.1.1/1&#039;),
+            array(true, &#039;192.168.1.1&#039;, &#039;192.168.1.0/24&#039;),
+            array(false, &#039;192.168.1.1&#039;, &#039;1.2.3.4/1&#039;),
+            array(false, &#039;192.168.1.1&#039;, &#039;192.168.1.1/33&#039;), // invalid subnet
+            array(true, &#039;192.168.1.1&#039;, array(&#039;1.2.3.4/1&#039;, &#039;192.168.1.0/24&#039;)),
+            array(true, &#039;192.168.1.1&#039;, array(&#039;192.168.1.0/24&#039;, &#039;1.2.3.4/1&#039;)),
+            array(false, &#039;192.168.1.1&#039;, array(&#039;1.2.3.4/1&#039;, &#039;4.3.2.1/1&#039;)),
+            array(true, &#039;1.2.3.4&#039;, &#039;0.0.0.0/0&#039;),
+            array(true, &#039;1.2.3.4&#039;, &#039;192.168.1.0/0&#039;),
+            array(false, &#039;1.2.3.4&#039;, &#039;256.256.256/0&#039;), // invalid CIDR notation
+            array(false, &#039;an_invalid_ip&#039;, &#039;192.168.1.0/24&#039;),
+        );
+    }
+
+    /**
+     * @dataProvider getIpv6Data
+     */
+    public function testIpv6($matches, $remoteAddr, $cidr)
+    {
+        if (!defined(&#039;AF_INET6&#039;)) {
+            $this-&gt;markTestSkipped(&#039;Only works when PHP is compiled without the option &quot;disable-ipv6&quot;.&#039;);
+        }
+
+        $this-&gt;assertSame($matches, IpUtils::checkIp($remoteAddr, $cidr));
+    }
+
+    public function getIpv6Data()
+    {
+        return array(
+            array(true, &#039;2a01:198:603:0:396e:4789:8e99:890f&#039;, &#039;2a01:198:603:0::/65&#039;),
+            array(false, &#039;2a00:198:603:0:396e:4789:8e99:890f&#039;, &#039;2a01:198:603:0::/65&#039;),
+            array(false, &#039;2a01:198:603:0:396e:4789:8e99:890f&#039;, &#039;::1&#039;),
+            array(true, &#039;0:0:0:0:0:0:0:1&#039;, &#039;::1&#039;),
+            array(false, &#039;0:0:603:0:396e:4789:8e99:0001&#039;, &#039;::1&#039;),
+            array(true, &#039;0:0:603:0:396e:4789:8e99:0001&#039;, &#039;::/0&#039;),
+            array(true, &#039;0:0:603:0:396e:4789:8e99:0001&#039;, &#039;2a01:198:603:0::/0&#039;),
+            array(true, &#039;2a01:198:603:0:396e:4789:8e99:890f&#039;, array(&#039;::1&#039;, &#039;2a01:198:603:0::/65&#039;)),
+            array(true, &#039;2a01:198:603:0:396e:4789:8e99:890f&#039;, array(&#039;2a01:198:603:0::/65&#039;, &#039;::1&#039;)),
+            array(false, &#039;2a01:198:603:0:396e:4789:8e99:890f&#039;, array(&#039;::1&#039;, &#039;1a01:198:603:0::/65&#039;)),
+            array(false, &#039;}__test|O:21:&amp;quot;JDatabaseDriverMysqli&amp;quot;:3:{s:2&#039;, &#039;::1&#039;),
+            array(false, &#039;2a01:198:603:0:396e:4789:8e99:890f&#039;, &#039;unknown&#039;),
+        );
+    }
+
+    /**
+     * @expectedException \RuntimeException
+     * @requires extension sockets
+     */
+    public function testAnIpv6WithOptionDisabledIpv6()
+    {
+        if (defined(&#039;AF_INET6&#039;)) {
+            $this-&gt;markTestSkipped(&#039;Only works when PHP is compiled with the option &quot;disable-ipv6&quot;.&#039;);
+        }
+
+        IpUtils::checkIp(&#039;2a01:198:603:0:396e:4789:8e99:890f&#039;, &#039;2a01:198:603:0::/65&#039;);
+    }
+
+    /**
+     * @dataProvider invalidIpAddressData
+     */
+    public function testInvalidIpAddressesDoNotMatch($requestIp, $proxyIp)
+    {
+        $this-&gt;assertFalse(IpUtils::checkIp4($requestIp, $proxyIp));
+    }
+
+    public function invalidIpAddressData()
+    {
+        return array(
+            &#039;invalid proxy wildcard&#039; =&gt; array(&#039;192.168.20.13&#039;, &#039;*&#039;),
+            &#039;invalid proxy missing netmask&#039; =&gt; array(&#039;192.168.20.13&#039;, &#039;0.0.0.0&#039;),
+            &#039;invalid request IP with invalid proxy wildcard&#039; =&gt; array(&#039;0.0.0.0&#039;, &#039;*&#039;),
+        );
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>App\Khan\Component\Mime\Mime | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:App_Khan_Component_Mime_Mime" data-root-path="../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../App.html">App</a></li>
+                    <li><a href="../../../../App/Khan.html">Khan</a></li>
+                    <li><a href="../../../../App/Khan/Component.html">Component</a></li>
+                    <li><a href="../../../../App/Khan/Component/Mime.html">Mime</a></li>
+  
+            <li>Mime</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>Mime</h1>
+
+    <p>    class
+    <strong>Mime</strong>
+</p>
+
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                    static                </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_get">get</a>($filename)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                    static                </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_get_mime_type">get_mime_type</a>($filename)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.7">7</a>
+                    </div>
+        <div>
+            <h3 id="method_get"><code class="language-php">get()</code></h3>
+            <code class="language-php">public static get($filename)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$filename</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.11">11</a>
+                    </div>
+        <div>
+            <h3 id="method_get_mime_type"><code class="language-php">get_mime_type()</code></h3>
+            <code class="language-php">public static get_mime_type($filename)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$filename</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+	namespace App\Khan\Component\Mime;
+
+	class Mime {
+
+		public static function get($filename){
+			return Mime::get_mime_type($filename);
+		}
+
+		public static function get_mime_type($filename){
+
+		    $ext = pathinfo($filename, PATHINFO_EXTENSION);
+
+		    $mimet = array(
+
+		        &#039;txt&#039; =&gt; &#039;text/plain&#039;,
+		        &#039;htm&#039; =&gt; &#039;text/html&#039;,
+		        &#039;html&#039; =&gt; &#039;text/html&#039;,
+		        &#039;php&#039; =&gt; &#039;text/html&#039;,
+		        &#039;css&#039; =&gt; &#039;text/css&#039;,
+		        &#039;js&#039; =&gt; &#039;application/javascript&#039;,
+		        &#039;json&#039; =&gt; &#039;application/json&#039;,
+		        &#039;xml&#039; =&gt; &#039;application/xml&#039;,
+		        &#039;swf&#039; =&gt; &#039;application/x-shockwave-flash&#039;,
+		        &#039;flv&#039; =&gt; &#039;video/x-flv&#039;,
+
+		        // images
+		        &#039;png&#039; =&gt; &#039;image/png&#039;,
+		        &#039;jpe&#039; =&gt; &#039;image/jpeg&#039;,
+		        &#039;jpeg&#039; =&gt; &#039;image/jpeg&#039;,
+		        &#039;jpg&#039; =&gt; &#039;image/jpeg&#039;,
+		        &#039;gif&#039; =&gt; &#039;image/gif&#039;,
+		        &#039;bmp&#039; =&gt; &#039;image/bmp&#039;,
+		        &#039;ico&#039; =&gt; &#039;image/vnd.microsoft.icon&#039;,
+		        &#039;tiff&#039; =&gt; &#039;image/tiff&#039;,
+		        &#039;tif&#039; =&gt; &#039;image/tiff&#039;,
+		        &#039;svg&#039; =&gt; &#039;image/svg+xml&#039;,
+		        &#039;svgz&#039; =&gt; &#039;image/svg+xml&#039;,
+
+		        // archives
+		        &#039;zip&#039; =&gt; &#039;application/zip&#039;,
+		        &#039;rar&#039; =&gt; &#039;application/x-rar-compressed&#039;,
+		        &#039;exe&#039; =&gt; &#039;application/x-msdownload&#039;,
+		        &#039;msi&#039; =&gt; &#039;application/x-msdownload&#039;,
+		        &#039;cab&#039; =&gt; &#039;application/vnd.ms-cab-compressed&#039;,
+
+		        // audio/video
+		        &#039;mp3&#039; =&gt; &#039;audio/mpeg&#039;,
+		        &#039;qt&#039; =&gt; &#039;video/quicktime&#039;,
+		        &#039;mov&#039; =&gt; &#039;video/quicktime&#039;,
+
+		        // adobe
+		        &#039;pdf&#039; =&gt; &#039;application/pdf&#039;,
+		        &#039;psd&#039; =&gt; &#039;image/vnd.adobe.photoshop&#039;,
+		        &#039;ai&#039; =&gt; &#039;application/postscript&#039;,
+		        &#039;eps&#039; =&gt; &#039;application/postscript&#039;,
+		        &#039;ps&#039; =&gt; &#039;application/postscript&#039;,
+
+		        // ms office
+		        &#039;doc&#039; =&gt; &#039;application/msword&#039;,
+		        &#039;rtf&#039; =&gt; &#039;application/rtf&#039;,
+		        &#039;xls&#039; =&gt; &#039;application/vnd.ms-excel&#039;,
+		        &#039;ppt&#039; =&gt; &#039;application/vnd.ms-powerpoint&#039;,
+		        &#039;docx&#039; =&gt; &#039;application/msword&#039;,
+		        &#039;xlsx&#039; =&gt; &#039;application/vnd.ms-excel&#039;,
+		        &#039;pptx&#039; =&gt; &#039;application/vnd.ms-powerpoint&#039;,
+
+
+		        // open office
+		        &#039;odt&#039; =&gt; &#039;application/vnd.oasis.opendocument.text&#039;,
+		        &#039;ods&#039; =&gt; &#039;application/vnd.oasis.opendocument.spreadsheet&#039;,
+		    );
+
+		    if (isset($mimet[$ext])) {
+		        return $mimet[$ext];
+		    } else {
+		        return &#039;application/octet-stream&#039;;
+		    }
+		}
+
+	}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

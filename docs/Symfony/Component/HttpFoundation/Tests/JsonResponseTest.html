@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Tests\JsonResponseTest | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Tests_JsonResponseTest" data-root-path="../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../Symfony/Component/HttpFoundation/Tests.html">Tests</a></li>
+  
+            <li>JsonResponseTest</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>JsonResponseTest</h1>
+
+    <p>    class
+    <strong>JsonResponseTest</strong>        extends <abbr title="PHPUnit\Framework\TestCase">TestCase</abbr>
+</p>
+
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testConstructorEmptyCreatesJsonObject">testConstructorEmptyCreatesJsonObject</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testConstructorWithArrayCreatesJsonArray">testConstructorWithArrayCreatesJsonArray</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testConstructorWithAssocArrayCreatesJsonObject">testConstructorWithAssocArrayCreatesJsonObject</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testConstructorWithSimpleTypes">testConstructorWithSimpleTypes</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testConstructorWithCustomStatus">testConstructorWithCustomStatus</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testConstructorAddsContentTypeHeader">testConstructorAddsContentTypeHeader</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testConstructorWithCustomHeaders">testConstructorWithCustomHeaders</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testConstructorWithCustomContentType">testConstructorWithCustomContentType</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testSetJson">testSetJson</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testCreate">testCreate</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testStaticCreateEmptyJsonObject">testStaticCreateEmptyJsonObject</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testStaticCreateJsonArray">testStaticCreateJsonArray</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testStaticCreateJsonObject">testStaticCreateJsonObject</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testStaticCreateWithSimpleTypes">testStaticCreateWithSimpleTypes</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testStaticCreateWithCustomStatus">testStaticCreateWithCustomStatus</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testStaticCreateAddsContentTypeHeader">testStaticCreateAddsContentTypeHeader</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testStaticCreateWithCustomHeaders">testStaticCreateWithCustomHeaders</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testStaticCreateWithCustomContentType">testStaticCreateWithCustomContentType</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testSetCallback">testSetCallback</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testJsonEncodeFlags">testJsonEncodeFlags</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetEncodingOptions">testGetEncodingOptions</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testSetEncodingOptions">testSetEncodingOptions</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testItAcceptsJsonAsString">testItAcceptsJsonAsString</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testSetCallbackInvalidIdentifier">testSetCallbackInvalidIdentifier</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testSetContent">testSetContent</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testSetContentJsonSerializeError">testSetContentJsonSerializeError</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testSetComplexCallback">testSetComplexCallback</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.19">19</a>
+                    </div>
+        <div>
+            <h3 id="method_testConstructorEmptyCreatesJsonObject"><code class="language-php">testConstructorEmptyCreatesJsonObject()</code></h3>
+            <code class="language-php">public testConstructorEmptyCreatesJsonObject()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.25">25</a>
+                    </div>
+        <div>
+            <h3 id="method_testConstructorWithArrayCreatesJsonArray"><code class="language-php">testConstructorWithArrayCreatesJsonArray()</code></h3>
+            <code class="language-php">public testConstructorWithArrayCreatesJsonArray()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.31">31</a>
+                    </div>
+        <div>
+            <h3 id="method_testConstructorWithAssocArrayCreatesJsonObject"><code class="language-php">testConstructorWithAssocArrayCreatesJsonObject()</code></h3>
+            <code class="language-php">public testConstructorWithAssocArrayCreatesJsonObject()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.37">37</a>
+                    </div>
+        <div>
+            <h3 id="method_testConstructorWithSimpleTypes"><code class="language-php">testConstructorWithSimpleTypes()</code></h3>
+            <code class="language-php">public testConstructorWithSimpleTypes()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.52">52</a>
+                    </div>
+        <div>
+            <h3 id="method_testConstructorWithCustomStatus"><code class="language-php">testConstructorWithCustomStatus()</code></h3>
+            <code class="language-php">public testConstructorWithCustomStatus()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.58">58</a>
+                    </div>
+        <div>
+            <h3 id="method_testConstructorAddsContentTypeHeader"><code class="language-php">testConstructorAddsContentTypeHeader()</code></h3>
+            <code class="language-php">public testConstructorAddsContentTypeHeader()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.64">64</a>
+                    </div>
+        <div>
+            <h3 id="method_testConstructorWithCustomHeaders"><code class="language-php">testConstructorWithCustomHeaders()</code></h3>
+            <code class="language-php">public testConstructorWithCustomHeaders()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.71">71</a>
+                    </div>
+        <div>
+            <h3 id="method_testConstructorWithCustomContentType"><code class="language-php">testConstructorWithCustomContentType()</code></h3>
+            <code class="language-php">public testConstructorWithCustomContentType()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.79">79</a>
+                    </div>
+        <div>
+            <h3 id="method_testSetJson"><code class="language-php">testSetJson()</code></h3>
+            <code class="language-php">public testSetJson()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.92">92</a>
+                    </div>
+        <div>
+            <h3 id="method_testCreate"><code class="language-php">testCreate()</code></h3>
+            <code class="language-php">public testCreate()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.101">101</a>
+                    </div>
+        <div>
+            <h3 id="method_testStaticCreateEmptyJsonObject"><code class="language-php">testStaticCreateEmptyJsonObject()</code></h3>
+            <code class="language-php">public testStaticCreateEmptyJsonObject()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.108">108</a>
+                    </div>
+        <div>
+            <h3 id="method_testStaticCreateJsonArray"><code class="language-php">testStaticCreateJsonArray()</code></h3>
+            <code class="language-php">public testStaticCreateJsonArray()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.115">115</a>
+                    </div>
+        <div>
+            <h3 id="method_testStaticCreateJsonObject"><code class="language-php">testStaticCreateJsonObject()</code></h3>
+            <code class="language-php">public testStaticCreateJsonObject()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.122">122</a>
+                    </div>
+        <div>
+            <h3 id="method_testStaticCreateWithSimpleTypes"><code class="language-php">testStaticCreateWithSimpleTypes()</code></h3>
+            <code class="language-php">public testStaticCreateWithSimpleTypes()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.141">141</a>
+                    </div>
+        <div>
+            <h3 id="method_testStaticCreateWithCustomStatus"><code class="language-php">testStaticCreateWithCustomStatus()</code></h3>
+            <code class="language-php">public testStaticCreateWithCustomStatus()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.147">147</a>
+                    </div>
+        <div>
+            <h3 id="method_testStaticCreateAddsContentTypeHeader"><code class="language-php">testStaticCreateAddsContentTypeHeader()</code></h3>
+            <code class="language-php">public testStaticCreateAddsContentTypeHeader()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.153">153</a>
+                    </div>
+        <div>
+            <h3 id="method_testStaticCreateWithCustomHeaders"><code class="language-php">testStaticCreateWithCustomHeaders()</code></h3>
+            <code class="language-php">public testStaticCreateWithCustomHeaders()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.160">160</a>
+                    </div>
+        <div>
+            <h3 id="method_testStaticCreateWithCustomContentType"><code class="language-php">testStaticCreateWithCustomContentType()</code></h3>
+            <code class="language-php">public testStaticCreateWithCustomContentType()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.168">168</a>
+                    </div>
+        <div>
+            <h3 id="method_testSetCallback"><code class="language-php">testSetCallback()</code></h3>
+            <code class="language-php">public testSetCallback()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.176">176</a>
+                    </div>
+        <div>
+            <h3 id="method_testJsonEncodeFlags"><code class="language-php">testJsonEncodeFlags()</code></h3>
+            <code class="language-php">public testJsonEncodeFlags()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.183">183</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetEncodingOptions"><code class="language-php">testGetEncodingOptions()</code></h3>
+            <code class="language-php">public testGetEncodingOptions()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.190">190</a>
+                    </div>
+        <div>
+            <h3 id="method_testSetEncodingOptions"><code class="language-php">testSetEncodingOptions()</code></h3>
+            <code class="language-php">public testSetEncodingOptions()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.202">202</a>
+                    </div>
+        <div>
+            <h3 id="method_testItAcceptsJsonAsString"><code class="language-php">testItAcceptsJsonAsString()</code></h3>
+            <code class="language-php">public testItAcceptsJsonAsString()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.211">211</a>
+                    </div>
+        <div>
+            <h3 id="method_testSetCallbackInvalidIdentifier"><code class="language-php">testSetCallbackInvalidIdentifier()</code></h3>
+            <code class="language-php">public testSetCallbackInvalidIdentifier()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.220">220</a>
+                    </div>
+        <div>
+            <h3 id="method_testSetContent"><code class="language-php">testSetContent()</code></h3>
+            <code class="language-php">public testSetContent()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.229">229</a>
+                    </div>
+        <div>
+            <h3 id="method_testSetContentJsonSerializeError"><code class="language-php">testSetContentJsonSerializeError()</code></h3>
+            <code class="language-php">public testSetContentJsonSerializeError()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.240">240</a>
+                    </div>
+        <div>
+            <h3 id="method_testSetComplexCallback"><code class="language-php">testSetComplexCallback()</code></h3>
+            <code class="language-php">public testSetComplexCallback()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Tests;
+
+use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\JsonResponse;
+
+class JsonResponseTest extends TestCase
+{
+    public function testConstructorEmptyCreatesJsonObject()
+    {
+        $response = new JsonResponse();
+        $this-&gt;assertSame(&#039;{}&#039;, $response-&gt;getContent());
+    }
+
+    public function testConstructorWithArrayCreatesJsonArray()
+    {
+        $response = new JsonResponse(array(0, 1, 2, 3));
+        $this-&gt;assertSame(&#039;[0,1,2,3]&#039;, $response-&gt;getContent());
+    }
+
+    public function testConstructorWithAssocArrayCreatesJsonObject()
+    {
+        $response = new JsonResponse(array(&#039;foo&#039; =&gt; &#039;bar&#039;));
+        $this-&gt;assertSame(&#039;{&quot;foo&quot;:&quot;bar&quot;}&#039;, $response-&gt;getContent());
+    }
+
+    public function testConstructorWithSimpleTypes()
+    {
+        $response = new JsonResponse(&#039;foo&#039;);
+        $this-&gt;assertSame(&#039;&quot;foo&quot;&#039;, $response-&gt;getContent());
+
+        $response = new JsonResponse(0);
+        $this-&gt;assertSame(&#039;0&#039;, $response-&gt;getContent());
+
+        $response = new JsonResponse(0.1);
+        $this-&gt;assertSame(&#039;0.1&#039;, $response-&gt;getContent());
+
+        $response = new JsonResponse(true);
+        $this-&gt;assertSame(&#039;true&#039;, $response-&gt;getContent());
+    }
+
+    public function testConstructorWithCustomStatus()
+    {
+        $response = new JsonResponse(array(), 202);
+        $this-&gt;assertSame(202, $response-&gt;getStatusCode());
+    }
+
+    public function testConstructorAddsContentTypeHeader()
+    {
+        $response = new JsonResponse();
+        $this-&gt;assertSame(&#039;application/json&#039;, $response-&gt;headers-&gt;get(&#039;Content-Type&#039;));
+    }
+
+    public function testConstructorWithCustomHeaders()
+    {
+        $response = new JsonResponse(array(), 200, array(&#039;ETag&#039; =&gt; &#039;foo&#039;));
+        $this-&gt;assertSame(&#039;application/json&#039;, $response-&gt;headers-&gt;get(&#039;Content-Type&#039;));
+        $this-&gt;assertSame(&#039;foo&#039;, $response-&gt;headers-&gt;get(&#039;ETag&#039;));
+    }
+
+    public function testConstructorWithCustomContentType()
+    {
+        $headers = array(&#039;Content-Type&#039; =&gt; &#039;application/vnd.acme.blog-v1+json&#039;);
+
+        $response = new JsonResponse(array(), 200, $headers);
+        $this-&gt;assertSame(&#039;application/vnd.acme.blog-v1+json&#039;, $response-&gt;headers-&gt;get(&#039;Content-Type&#039;));
+    }
+
+    public function testSetJson()
+    {
+        $response = new JsonResponse(&#039;1&#039;, 200, array(), true);
+        $this-&gt;assertEquals(&#039;1&#039;, $response-&gt;getContent());
+
+        $response = new JsonResponse(&#039;[1]&#039;, 200, array(), true);
+        $this-&gt;assertEquals(&#039;[1]&#039;, $response-&gt;getContent());
+
+        $response = new JsonResponse(null, 200, array());
+        $response-&gt;setJson(&#039;true&#039;);
+        $this-&gt;assertEquals(&#039;true&#039;, $response-&gt;getContent());
+    }
+
+    public function testCreate()
+    {
+        $response = JsonResponse::create(array(&#039;foo&#039; =&gt; &#039;bar&#039;), 204);
+
+        $this-&gt;assertInstanceOf(&#039;Symfony\Component\HttpFoundation\JsonResponse&#039;, $response);
+        $this-&gt;assertEquals(&#039;{&quot;foo&quot;:&quot;bar&quot;}&#039;, $response-&gt;getContent());
+        $this-&gt;assertEquals(204, $response-&gt;getStatusCode());
+    }
+
+    public function testStaticCreateEmptyJsonObject()
+    {
+        $response = JsonResponse::create();
+        $this-&gt;assertInstanceOf(&#039;Symfony\Component\HttpFoundation\JsonResponse&#039;, $response);
+        $this-&gt;assertSame(&#039;{}&#039;, $response-&gt;getContent());
+    }
+
+    public function testStaticCreateJsonArray()
+    {
+        $response = JsonResponse::create(array(0, 1, 2, 3));
+        $this-&gt;assertInstanceOf(&#039;Symfony\Component\HttpFoundation\JsonResponse&#039;, $response);
+        $this-&gt;assertSame(&#039;[0,1,2,3]&#039;, $response-&gt;getContent());
+    }
+
+    public function testStaticCreateJsonObject()
+    {
+        $response = JsonResponse::create(array(&#039;foo&#039; =&gt; &#039;bar&#039;));
+        $this-&gt;assertInstanceOf(&#039;Symfony\Component\HttpFoundation\JsonResponse&#039;, $response);
+        $this-&gt;assertSame(&#039;{&quot;foo&quot;:&quot;bar&quot;}&#039;, $response-&gt;getContent());
+    }
+
+    public function testStaticCreateWithSimpleTypes()
+    {
+        $response = JsonResponse::create(&#039;foo&#039;);
+        $this-&gt;assertInstanceOf(&#039;Symfony\Component\HttpFoundation\JsonResponse&#039;, $response);
+        $this-&gt;assertSame(&#039;&quot;foo&quot;&#039;, $response-&gt;getContent());
+
+        $response = JsonResponse::create(0);
+        $this-&gt;assertInstanceOf(&#039;Symfony\Component\HttpFoundation\JsonResponse&#039;, $response);
+        $this-&gt;assertSame(&#039;0&#039;, $response-&gt;getContent());
+
+        $response = JsonResponse::create(0.1);
+        $this-&gt;assertInstanceOf(&#039;Symfony\Component\HttpFoundation\JsonResponse&#039;, $response);
+        $this-&gt;assertSame(&#039;0.1&#039;, $response-&gt;getContent());
+
+        $response = JsonResponse::create(true);
+        $this-&gt;assertInstanceOf(&#039;Symfony\Component\HttpFoundation\JsonResponse&#039;, $response);
+        $this-&gt;assertSame(&#039;true&#039;, $response-&gt;getContent());
+    }
+
+    public function testStaticCreateWithCustomStatus()
+    {
+        $response = JsonResponse::create(array(), 202);
+        $this-&gt;assertSame(202, $response-&gt;getStatusCode());
+    }
+
+    public function testStaticCreateAddsContentTypeHeader()
+    {
+        $response = JsonResponse::create();
+        $this-&gt;assertSame(&#039;application/json&#039;, $response-&gt;headers-&gt;get(&#039;Content-Type&#039;));
+    }
+
+    public function testStaticCreateWithCustomHeaders()
+    {
+        $response = JsonResponse::create(array(), 200, array(&#039;ETag&#039; =&gt; &#039;foo&#039;));
+        $this-&gt;assertSame(&#039;application/json&#039;, $response-&gt;headers-&gt;get(&#039;Content-Type&#039;));
+        $this-&gt;assertSame(&#039;foo&#039;, $response-&gt;headers-&gt;get(&#039;ETag&#039;));
+    }
+
+    public function testStaticCreateWithCustomContentType()
+    {
+        $headers = array(&#039;Content-Type&#039; =&gt; &#039;application/vnd.acme.blog-v1+json&#039;);
+
+        $response = JsonResponse::create(array(), 200, $headers);
+        $this-&gt;assertSame(&#039;application/vnd.acme.blog-v1+json&#039;, $response-&gt;headers-&gt;get(&#039;Content-Type&#039;));
+    }
+
+    public function testSetCallback()
+    {
+        $response = JsonResponse::create(array(&#039;foo&#039; =&gt; &#039;bar&#039;))-&gt;setCallback(&#039;callback&#039;);
+
+        $this-&gt;assertEquals(&#039;/**/callback({&quot;foo&quot;:&quot;bar&quot;});&#039;, $response-&gt;getContent());
+        $this-&gt;assertEquals(&#039;text/javascript&#039;, $response-&gt;headers-&gt;get(&#039;Content-Type&#039;));
+    }
+
+    public function testJsonEncodeFlags()
+    {
+        $response = new JsonResponse(&#039;&lt;&gt;\&#039;&amp;&quot;&#039;);
+
+        $this-&gt;assertEquals(&#039;&quot;\u003C\u003E\u0027\u0026\u0022&quot;&#039;, $response-&gt;getContent());
+    }
+
+    public function testGetEncodingOptions()
+    {
+        $response = new JsonResponse();
+
+        $this-&gt;assertEquals(JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT, $response-&gt;getEncodingOptions());
+    }
+
+    public function testSetEncodingOptions()
+    {
+        $response = new JsonResponse();
+        $response-&gt;setData(array(array(1, 2, 3)));
+
+        $this-&gt;assertEquals(&#039;[[1,2,3]]&#039;, $response-&gt;getContent());
+
+        $response-&gt;setEncodingOptions(JSON_FORCE_OBJECT);
+
+        $this-&gt;assertEquals(&#039;{&quot;0&quot;:{&quot;0&quot;:1,&quot;1&quot;:2,&quot;2&quot;:3}}&#039;, $response-&gt;getContent());
+    }
+
+    public function testItAcceptsJsonAsString()
+    {
+        $response = JsonResponse::fromJsonString(&#039;{&quot;foo&quot;:&quot;bar&quot;}&#039;);
+        $this-&gt;assertSame(&#039;{&quot;foo&quot;:&quot;bar&quot;}&#039;, $response-&gt;getContent());
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testSetCallbackInvalidIdentifier()
+    {
+        $response = new JsonResponse(&#039;foo&#039;);
+        $response-&gt;setCallback(&#039;+invalid&#039;);
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testSetContent()
+    {
+        JsonResponse::create(&quot;\xB1\x31&quot;);
+    }
+
+    /**
+     * @expectedException \Exception
+     * @expectedExceptionMessage This error is expected
+     */
+    public function testSetContentJsonSerializeError()
+    {
+        if (!interface_exists(&#039;JsonSerializable&#039;, false)) {
+            $this-&gt;markTestSkipped(&#039;JsonSerializable is required.&#039;);
+        }
+
+        $serializable = new JsonSerializableObject();
+
+        JsonResponse::create($serializable);
+    }
+
+    public function testSetComplexCallback()
+    {
+        $response = JsonResponse::create(array(&#039;foo&#039; =&gt; &#039;bar&#039;));
+        $response-&gt;setCallback(&#039;ಠ_ಠ[&quot;foo&quot;].bar[0]&#039;);
+
+        $this-&gt;assertEquals(&#039;/**/ಠ_ಠ[&quot;foo&quot;].bar[0]({&quot;foo&quot;:&quot;bar&quot;});&#039;, $response-&gt;getContent());
+    }
+}
+
+if (interface_exists(&#039;JsonSerializable&#039;, false)) {
+    class JsonSerializableObject implements \JsonSerializable
+    {
+        public function jsonSerialize()
+        {
+            throw new \Exception(&#039;This error is expected&#039;);
+        }
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Session_Storage_NativeSessionStorage" data-root-path="../../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../../Symfony/Component/HttpFoundation/Session.html">Session</a></li>
+                    <li><a href="../../../../../Symfony/Component/HttpFoundation/Session/Storage.html">Storage</a></li>
+  
+            <li>NativeSessionStorage</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>NativeSessionStorage</h1>
+
+    <p>    class
+    <strong>NativeSessionStorage</strong>        implements
+        <a href="../../../../../Symfony/Component/HttpFoundation/Session/Storage/SessionStorageInterface.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\SessionStorageInterface">SessionStorageInterface</abbr></a>
+</p>
+
+            <p>This provides a base class for session attribute storage.</p>            
+    
+    
+            <h2>Properties</h2>
+
+            <table class="table">
+                    <tr>
+                <td id="property_bags">
+                    <code class="language-php">                    protected                                        <a href="../../../../../Symfony/Component/HttpFoundation/Session/SessionBagInterface.html"><abbr title="Symfony\Component\HttpFoundation\Session\SessionBagInterface">SessionBagInterface</abbr></a>[]</code>
+                </td>
+                <td><code class="language-php">$bags</code></td>
+                <td></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td id="property_started">
+                    <code class="language-php">                    protected                                        bool</code>
+                </td>
+                <td><code class="language-php">$started</code></td>
+                <td></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td id="property_closed">
+                    <code class="language-php">                    protected                                        bool</code>
+                </td>
+                <td><code class="language-php">$closed</code></td>
+                <td></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td id="property_saveHandler">
+                    <code class="language-php">                    protected                                        <a href="../../../../../Symfony/Component/HttpFoundation/Session/Storage/Proxy/AbstractProxy.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Proxy\AbstractProxy">AbstractProxy</abbr></a>|<a target="_blank" href="http://php.net/SessionHandlerInterface"><abbr title="SessionHandlerInterface">SessionHandlerInterface</abbr></a></code>
+                </td>
+                <td><code class="language-php">$saveHandler</code></td>
+                <td></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td id="property_metadataBag">
+                    <code class="language-php">                    protected                                        <a href="../../../../../Symfony/Component/HttpFoundation/Session/Storage/MetadataBag.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">MetadataBag</abbr></a></code>
+                </td>
+                <td><code class="language-php">$metadataBag</code></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method___construct">__construct</a>(array $options = array(), <a target="_blank" href="http://php.net/SessionHandlerInterface"><abbr title="SessionHandlerInterface">SessionHandlerInterface</abbr></a>|null $handler = null, <a href="../../../../../Symfony/Component/HttpFoundation/Session/Storage/MetadataBag.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">MetadataBag</abbr></a> $metaBag = null)</code>
+            </td>
+            <td>
+                                    Depending on how you want the storage driver to behave you probably
+want to override this constructor entirely.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><a href="../../../../../Symfony/Component/HttpFoundation/Session/Storage/Proxy/AbstractProxy.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Proxy\AbstractProxy">AbstractProxy</abbr></a>|<a target="_blank" href="http://php.net/SessionHandlerInterface"><abbr title="SessionHandlerInterface">SessionHandlerInterface</abbr></a></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getSaveHandler">getSaveHandler</a>()</code>
+            </td>
+            <td>
+                                    Gets the save handler instance.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_start">start</a>()</code>
+            </td>
+            <td>
+                                    Starts the session.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getId">getId</a>()</code>
+            </td>
+            <td>
+                                    Returns the session ID.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setId">setId</a>(string $id)</code>
+            </td>
+            <td>
+                                    Sets the session ID.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">mixed</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getName">getName</a>()</code>
+            </td>
+            <td>
+                                    Returns the session name.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setName">setName</a>(string $name)</code>
+            </td>
+            <td>
+                                    Sets the session name.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_regenerate">regenerate</a>(bool $destroy = false, int $lifetime = null)</code>
+            </td>
+            <td>
+                                    Regenerates id that represents this storage.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_save">save</a>()</code>
+            </td>
+            <td>
+                                    Force the session to be saved and closed.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_clear">clear</a>()</code>
+            </td>
+            <td>
+                                    Clear all session data in memory.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_registerBag">registerBag</a>(<a href="../../../../../Symfony/Component/HttpFoundation/Session/SessionBagInterface.html"><abbr title="Symfony\Component\HttpFoundation\Session\SessionBagInterface">SessionBagInterface</abbr></a> $bag)</code>
+            </td>
+            <td>
+                                    Registers a SessionBagInterface for use.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><a href="../../../../../Symfony/Component/HttpFoundation/Session/SessionBagInterface.html"><abbr title="Symfony\Component\HttpFoundation\Session\SessionBagInterface">SessionBagInterface</abbr></a></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getBag">getBag</a>(string $name)</code>
+            </td>
+            <td>
+                                    Gets a SessionBagInterface by name.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setMetadataBag">setMetadataBag</a>(<a href="../../../../../Symfony/Component/HttpFoundation/Session/Storage/MetadataBag.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">MetadataBag</abbr></a> $metaBag = null)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><a href="../../../../../Symfony/Component/HttpFoundation/Session/Storage/MetadataBag.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">MetadataBag</abbr></a></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getMetadataBag">getMetadataBag</a>()</code>
+            </td>
+            <td>
+                                    Gets the MetadataBag.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_isStarted">isStarted</a>()</code>
+            </td>
+            <td>
+                                    Checks if the session is started.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setOptions">setOptions</a>(array $options)</code>
+            </td>
+            <td>
+                                    Sets session.* ini variables.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setSaveHandler">setSaveHandler</a>(<a target="_blank" href="http://php.net/SessionHandlerInterface"><abbr title="SessionHandlerInterface">SessionHandlerInterface</abbr></a>|null $saveHandler = null)</code>
+            </td>
+            <td>
+                                    Registers session save handler as a PHP session handler.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_loadSession">loadSession</a>(array $session = null)</code>
+            </td>
+            <td>
+                                    Load the session with attributes.            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.97">97</a>
+                    </div>
+        <div>
+            <h3 id="method___construct"><code class="language-php">__construct()</code></h3>
+            <code class="language-php">public __construct(array $options = array(), <a target="_blank" href="http://php.net/SessionHandlerInterface"><abbr title="SessionHandlerInterface">SessionHandlerInterface</abbr></a>|null $handler = null, <a href="../../../../../Symfony/Component/HttpFoundation/Session/Storage/MetadataBag.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">MetadataBag</abbr></a> $metaBag = null)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Depending on how you want the storage driver to behave you probably
+want to override this constructor entirely.</p>                    <p>List of options for $options array with their defaults.</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$options</code></td>
+                <td>Session configuration options</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php"><a target="_blank" href="http://php.net/SessionHandlerInterface"><abbr title="SessionHandlerInterface">SessionHandlerInterface</abbr></a>|null</code></td>
+                <td><code class="language-php">$handler</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><code class="language-php"><a href="../../../../../Symfony/Component/HttpFoundation/Session/Storage/MetadataBag.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">MetadataBag</abbr></a></code></td>
+                <td><code class="language-php">$metaBag</code></td>
+                <td>MetadataBag</td>
+            </tr>
+            </table>
+
+        
+        
+        
+                    <h4>See also</h4>
+
+                <table class="table">
+                    <tr>
+                <td>http://php.net/session.configuration</td>
+                <td>for options
+but we omit &#039;session.&#039; from the beginning of the keys for convenience.
+
+(&quot;auto_start&quot;, is not supported as it tells PHP to start a session before
+PHP starts to execute user-land code. Setting during runtime has no effect).
+
+cache_limiter, &quot;&quot; (use &quot;0&quot; to prevent headers from being sent entirely).
+cache_expire, &quot;0&quot;
+cookie_domain, &quot;&quot;
+cookie_httponly, &quot;&quot;
+cookie_lifetime, &quot;0&quot;
+cookie_path, &quot;/&quot;
+cookie_secure, &quot;&quot;
+gc_divisor, &quot;100&quot;
+gc_maxlifetime, &quot;1440&quot;
+gc_probability, &quot;1&quot;
+lazy_write, &quot;1&quot;
+name, &quot;PHPSESSID&quot;
+referer_check, &quot;&quot;
+serialize_handler, &quot;php&quot;
+use_strict_mode, &quot;0&quot;
+use_cookies, &quot;1&quot;
+use_only_cookies, &quot;1&quot;
+use_trans_sid, &quot;0&quot;
+upload_progress.enabled, &quot;1&quot;
+upload_progress.cleanup, &quot;1&quot;
+upload_progress.prefix, &quot;upload_progress_&quot;
+upload_progress.name, &quot;PHP_SESSION_UPLOAD_PROGRESS&quot;
+upload_progress.freq, &quot;1%&quot;
+upload_progress.min-freq, &quot;1&quot;
+url_rewriter.tags, &quot;a=href,area=href,frame=src,form=,fieldset=&quot;
+sid_length, &quot;32&quot;
+sid_bits_per_character, &quot;5&quot;
+trans_sid_hosts, $_SERVER[&#039;HTTP_HOST&#039;]
+trans_sid_tags, &quot;a=href,area=href,frame=src,form=&quot;</td>
+            </tr>
+            </table>
+
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.119">119</a>
+                    </div>
+        <div>
+            <h3 id="method_getSaveHandler"><code class="language-php">getSaveHandler()</code></h3>
+            <code class="language-php">public <a href="../../../../../Symfony/Component/HttpFoundation/Session/Storage/Proxy/AbstractProxy.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Proxy\AbstractProxy">AbstractProxy</abbr></a>|<a target="_blank" href="http://php.net/SessionHandlerInterface"><abbr title="SessionHandlerInterface">SessionHandlerInterface</abbr></a>&nbsp;getSaveHandler()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the save handler instance.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><a href="../../../../../Symfony/Component/HttpFoundation/Session/Storage/Proxy/AbstractProxy.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Proxy\AbstractProxy">AbstractProxy</abbr></a>|<a target="_blank" href="http://php.net/SessionHandlerInterface"><abbr title="SessionHandlerInterface">SessionHandlerInterface</abbr></a></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.127">127</a>
+                    </div>
+        <div>
+            <h3 id="method_start"><code class="language-php">start()</code></h3>
+            <code class="language-php">public bool&nbsp;start()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Starts the session.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td>True if started</td>
+        </tr>
+    </table>
+
+        
+                    <h4>Exceptions</h4>
+
+                <table class="table">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/RuntimeException"><abbr title="RuntimeException">RuntimeException</abbr></a></td>
+                <td>if something goes wrong starting the session</td>
+            </tr>
+            </table>
+
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.154">154</a>
+                    </div>
+        <div>
+            <h3 id="method_getId"><code class="language-php">getId()</code></h3>
+            <code class="language-php">public string&nbsp;getId()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the session ID.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>The session ID or empty</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.162">162</a>
+                    </div>
+        <div>
+            <h3 id="method_setId"><code class="language-php">setId()</code></h3>
+            <code class="language-php">public setId(string $id)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets the session ID.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$id</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.170">170</a>
+                    </div>
+        <div>
+            <h3 id="method_getName"><code class="language-php">getName()</code></h3>
+            <code class="language-php">public mixed&nbsp;getName()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the session name.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">mixed</code></td>
+            <td>The session name</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.178">178</a>
+                    </div>
+        <div>
+            <h3 id="method_setName"><code class="language-php">setName()</code></h3>
+            <code class="language-php">public setName(string $name)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets the session name.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$name</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.186">186</a>
+                    </div>
+        <div>
+            <h3 id="method_regenerate"><code class="language-php">regenerate()</code></h3>
+            <code class="language-php">public bool&nbsp;regenerate(bool $destroy = false, int $lifetime = null)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Regenerates id that represents this storage.</p>                    <p>This method must invoke session_regenerate_id($destroy) unless
+this interface is used for a storage object designed for unit
+or functional testing where a real PHP session would interfere
+with testing.</p>
+
+<p>Note regenerate+destroy should not clear the session data in memory
+only delete the session data from persistent storage.</p>
+
+<p>Care: When regenerating the session ID no locking is involved in PHP's
+session design. See https://bugs.php.net/bug.php?id=61470 for a discussion.
+So you must make sure the regenerated session is saved BEFORE sending the
+headers with the new ID. Symfony's HttpKernel offers a listener for this.
+See Symfony\Component\HttpKernel\EventListener\SaveSessionListener.
+Otherwise session data could get lost again for concurrent requests with the
+new ID. One result could be that you get logged out after just logging in.</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">bool</code></td>
+                <td><code class="language-php">$destroy</code></td>
+                <td>Destroy session when regenerating?</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">int</code></td>
+                <td><code class="language-php">$lifetime</code></td>
+                <td>Sets the cookie lifetime for the session cookie. A null value
+                      will leave the system settings unchanged, 0 sets the cookie
+                      to expire with browser session. Time is in seconds, and is
+                      not a Unix timestamp.</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td>True if session regenerated, false if error</td>
+        </tr>
+    </table>
+
+        
+                    <h4>Exceptions</h4>
+
+                <table class="table">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/RuntimeException"><abbr title="RuntimeException">RuntimeException</abbr></a></td>
+                <td>If an error occurs while regenerating this storage</td>
+            </tr>
+            </table>
+
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.217">217</a>
+                    </div>
+        <div>
+            <h3 id="method_save"><code class="language-php">save()</code></h3>
+            <code class="language-php">public save()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Force the session to be saved and closed.</p>                    <p>This method must invoke session_write_close() unless this interface is
+used for a storage object design for unit or functional testing where
+a real PHP session would interfere with testing, in which case
+it should actually persist the session data if required.</p>            </div>
+                
+        
+                    <h4>Exceptions</h4>
+
+                <table class="table">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/RuntimeException"><abbr title="RuntimeException">RuntimeException</abbr></a></td>
+                <td>if the session is saved without being started, or if the session
+                          is already closed</td>
+            </tr>
+            </table>
+
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.261">261</a>
+                    </div>
+        <div>
+            <h3 id="method_clear"><code class="language-php">clear()</code></h3>
+            <code class="language-php">public clear()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Clear all session data in memory.</p>                                </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.278">278</a>
+                    </div>
+        <div>
+            <h3 id="method_registerBag"><code class="language-php">registerBag()</code></h3>
+            <code class="language-php">public registerBag(<a href="../../../../../Symfony/Component/HttpFoundation/Session/SessionBagInterface.html"><abbr title="Symfony\Component\HttpFoundation\Session\SessionBagInterface">SessionBagInterface</abbr></a> $bag)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Registers a SessionBagInterface for use.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php"><a href="../../../../../Symfony/Component/HttpFoundation/Session/SessionBagInterface.html"><abbr title="Symfony\Component\HttpFoundation\Session\SessionBagInterface">SessionBagInterface</abbr></a></code></td>
+                <td><code class="language-php">$bag</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.290">290</a>
+                    </div>
+        <div>
+            <h3 id="method_getBag"><code class="language-php">getBag()</code></h3>
+            <code class="language-php">public <a href="../../../../../Symfony/Component/HttpFoundation/Session/SessionBagInterface.html"><abbr title="Symfony\Component\HttpFoundation\Session\SessionBagInterface">SessionBagInterface</abbr></a>&nbsp;getBag(string $name)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets a SessionBagInterface by name.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$name</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><a href="../../../../../Symfony/Component/HttpFoundation/Session/SessionBagInterface.html"><abbr title="Symfony\Component\HttpFoundation\Session\SessionBagInterface">SessionBagInterface</abbr></a></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+                    <h4>Exceptions</h4>
+
+                <table class="table">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException"><abbr title="InvalidArgumentException">InvalidArgumentException</abbr></a></td>
+                <td>If the bag does not exist</td>
+            </tr>
+            </table>
+
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.305">305</a>
+                    </div>
+        <div>
+            <h3 id="method_setMetadataBag"><code class="language-php">setMetadataBag()</code></h3>
+            <code class="language-php">public setMetadataBag(<a href="../../../../../Symfony/Component/HttpFoundation/Session/Storage/MetadataBag.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">MetadataBag</abbr></a> $metaBag = null)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php"><a href="../../../../../Symfony/Component/HttpFoundation/Session/Storage/MetadataBag.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">MetadataBag</abbr></a></code></td>
+                <td><code class="language-php">$metaBag</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.319">319</a>
+                    </div>
+        <div>
+            <h3 id="method_getMetadataBag"><code class="language-php">getMetadataBag()</code></h3>
+            <code class="language-php">public <a href="../../../../../Symfony/Component/HttpFoundation/Session/Storage/MetadataBag.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">MetadataBag</abbr></a>&nbsp;getMetadataBag()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the MetadataBag.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><a href="../../../../../Symfony/Component/HttpFoundation/Session/Storage/MetadataBag.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">MetadataBag</abbr></a></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.327">327</a>
+                    </div>
+        <div>
+            <h3 id="method_isStarted"><code class="language-php">isStarted()</code></h3>
+            <code class="language-php">public bool&nbsp;isStarted()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Checks if the session is started.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td>True if started, false otherwise</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.342">342</a>
+                    </div>
+        <div>
+            <h3 id="method_setOptions"><code class="language-php">setOptions()</code></h3>
+            <code class="language-php">public setOptions(array $options)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets session.* ini variables.</p>                    <p>For convenience we omit 'session.' from the beginning of the keys.
+Explicitly ignores other ini keys.</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$options</code></td>
+                <td>Session ini directives array(key => value)</td>
+            </tr>
+            </table>
+
+        
+        
+        
+                    <h4>See also</h4>
+
+                <table class="table">
+                    <tr>
+                <td>http://php.net/session.configuration</td>
+                <td></td>
+            </tr>
+            </table>
+
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.389">389</a>
+                    </div>
+        <div>
+            <h3 id="method_setSaveHandler"><code class="language-php">setSaveHandler()</code></h3>
+            <code class="language-php">public setSaveHandler(<a target="_blank" href="http://php.net/SessionHandlerInterface"><abbr title="SessionHandlerInterface">SessionHandlerInterface</abbr></a>|null $saveHandler = null)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Registers session save handler as a PHP session handler.</p>                    <p>To use internal PHP session save handlers, override this method using ini_set with
+session.save_handler and session.save_path e.g.</p>
+
+<pre><code>ini_set('session.save_handler', 'files');
+ini_set('session.save_path', '/tmp');
+</code></pre>
+
+<p>or pass in a \SessionHandler instance which configures session.save_handler in the
+constructor, for a template see NativeFileSessionHandler or use handlers in
+composer package drak/native-session</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php"><a target="_blank" href="http://php.net/SessionHandlerInterface"><abbr title="SessionHandlerInterface">SessionHandlerInterface</abbr></a>|null</code></td>
+                <td><code class="language-php">$saveHandler</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+                    <h4>Exceptions</h4>
+
+                <table class="table">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException"><abbr title="InvalidArgumentException">InvalidArgumentException</abbr></a></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>See also</h4>
+
+                <table class="table">
+                    <tr>
+                <td>http://php.net/session-set-save-handler</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>http://php.net/sessionhandlerinterface</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>http://php.net/sessionhandler</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>http://github.com/drak/NativeSession</td>
+                <td></td>
+            </tr>
+            </table>
+
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.424">424</a>
+                    </div>
+        <div>
+            <h3 id="method_loadSession"><code class="language-php">loadSession()</code></h3>
+            <code class="language-php">protected loadSession(array $session = null)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Load the session with attributes.</p>                    <p>After starting the session, PHP retrieves the session from whatever handlers
+are set to (either PHP's internal, or a custom save handler set with session_set_save_handler()).
+PHP takes the return value from the read() handler, unserializes it
+and populates $_SESSION with the result automatically.</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$session</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Session\Storage;
+
+use Symfony\Component\HttpFoundation\Session\SessionBagInterface;
+use Symfony\Component\HttpFoundation\Session\Storage\Handler\StrictSessionHandler;
+use Symfony\Component\HttpFoundation\Session\Storage\Proxy\AbstractProxy;
+use Symfony\Component\HttpFoundation\Session\Storage\Proxy\SessionHandlerProxy;
+
+/**
+ * This provides a base class for session attribute storage.
+ *
+ * @author Drak &lt;drak@zikula.org&gt;
+ */
+class NativeSessionStorage implements SessionStorageInterface
+{
+    /**
+     * @var SessionBagInterface[]
+     */
+    protected $bags = array();
+
+    /**
+     * @var bool
+     */
+    protected $started = false;
+
+    /**
+     * @var bool
+     */
+    protected $closed = false;
+
+    /**
+     * @var AbstractProxy|\SessionHandlerInterface
+     */
+    protected $saveHandler;
+
+    /**
+     * @var MetadataBag
+     */
+    protected $metadataBag;
+
+    /**
+     * Depending on how you want the storage driver to behave you probably
+     * want to override this constructor entirely.
+     *
+     * List of options for $options array with their defaults.
+     *
+     * @see http://php.net/session.configuration for options
+     * but we omit &#039;session.&#039; from the beginning of the keys for convenience.
+     *
+     * (&quot;auto_start&quot;, is not supported as it tells PHP to start a session before
+     * PHP starts to execute user-land code. Setting during runtime has no effect).
+     *
+     * cache_limiter, &quot;&quot; (use &quot;0&quot; to prevent headers from being sent entirely).
+     * cache_expire, &quot;0&quot;
+     * cookie_domain, &quot;&quot;
+     * cookie_httponly, &quot;&quot;
+     * cookie_lifetime, &quot;0&quot;
+     * cookie_path, &quot;/&quot;
+     * cookie_secure, &quot;&quot;
+     * gc_divisor, &quot;100&quot;
+     * gc_maxlifetime, &quot;1440&quot;
+     * gc_probability, &quot;1&quot;
+     * lazy_write, &quot;1&quot;
+     * name, &quot;PHPSESSID&quot;
+     * referer_check, &quot;&quot;
+     * serialize_handler, &quot;php&quot;
+     * use_strict_mode, &quot;0&quot;
+     * use_cookies, &quot;1&quot;
+     * use_only_cookies, &quot;1&quot;
+     * use_trans_sid, &quot;0&quot;
+     * upload_progress.enabled, &quot;1&quot;
+     * upload_progress.cleanup, &quot;1&quot;
+     * upload_progress.prefix, &quot;upload_progress_&quot;
+     * upload_progress.name, &quot;PHP_SESSION_UPLOAD_PROGRESS&quot;
+     * upload_progress.freq, &quot;1%&quot;
+     * upload_progress.min-freq, &quot;1&quot;
+     * url_rewriter.tags, &quot;a=href,area=href,frame=src,form=,fieldset=&quot;
+     * sid_length, &quot;32&quot;
+     * sid_bits_per_character, &quot;5&quot;
+     * trans_sid_hosts, $_SERVER[&#039;HTTP_HOST&#039;]
+     * trans_sid_tags, &quot;a=href,area=href,frame=src,form=&quot;
+     *
+     * @param array                         $options Session configuration options
+     * @param \SessionHandlerInterface|null $handler
+     * @param MetadataBag                   $metaBag MetadataBag
+     */
+    public function __construct(array $options = array(), $handler = null, MetadataBag $metaBag = null)
+    {
+        $options += array(
+            &#039;cache_limiter&#039; =&gt; &#039;&#039;,
+            &#039;cache_expire&#039; =&gt; 0,
+            &#039;use_cookies&#039; =&gt; 1,
+            &#039;lazy_write&#039; =&gt; 1,
+            &#039;use_strict_mode&#039; =&gt; 1,
+        );
+
+        session_register_shutdown();
+
+        $this-&gt;setMetadataBag($metaBag);
+        $this-&gt;setOptions($options);
+        $this-&gt;setSaveHandler($handler);
+    }
+
+    /**
+     * Gets the save handler instance.
+     *
+     * @return AbstractProxy|\SessionHandlerInterface
+     */
+    public function getSaveHandler()
+    {
+        return $this-&gt;saveHandler;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function start()
+    {
+        if ($this-&gt;started) {
+            return true;
+        }
+
+        if (\PHP_SESSION_ACTIVE === session_status()) {
+            throw new \RuntimeException(&#039;Failed to start the session: already started by PHP.&#039;);
+        }
+
+        if (ini_get(&#039;session.use_cookies&#039;) &amp;&amp; headers_sent($file, $line)) {
+            throw new \RuntimeException(sprintf(&#039;Failed to start the session because headers have already been sent by &quot;%s&quot; at line %d.&#039;, $file, $line));
+        }
+
+        // ok to try and start the session
+        if (!session_start()) {
+            throw new \RuntimeException(&#039;Failed to start the session&#039;);
+        }
+
+        $this-&gt;loadSession();
+
+        return true;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getId()
+    {
+        return $this-&gt;saveHandler-&gt;getId();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setId($id)
+    {
+        $this-&gt;saveHandler-&gt;setId($id);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getName()
+    {
+        return $this-&gt;saveHandler-&gt;getName();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setName($name)
+    {
+        $this-&gt;saveHandler-&gt;setName($name);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function regenerate($destroy = false, $lifetime = null)
+    {
+        // Cannot regenerate the session ID for non-active sessions.
+        if (\PHP_SESSION_ACTIVE !== session_status()) {
+            return false;
+        }
+
+        if (headers_sent()) {
+            return false;
+        }
+
+        if (null !== $lifetime) {
+            ini_set(&#039;session.cookie_lifetime&#039;, $lifetime);
+        }
+
+        if ($destroy) {
+            $this-&gt;metadataBag-&gt;stampNew();
+        }
+
+        $isRegenerated = session_regenerate_id($destroy);
+
+        // The reference to $_SESSION in session bags is lost in PHP7 and we need to re-create it.
+        // @see https://bugs.php.net/bug.php?id=70013
+        $this-&gt;loadSession();
+
+        return $isRegenerated;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function save()
+    {
+        $session = $_SESSION;
+
+        foreach ($this-&gt;bags as $bag) {
+            if (empty($_SESSION[$key = $bag-&gt;getStorageKey()])) {
+                unset($_SESSION[$key]);
+            }
+        }
+        if (array($key = $this-&gt;metadataBag-&gt;getStorageKey()) === array_keys($_SESSION)) {
+            unset($_SESSION[$key]);
+        }
+
+        // Register custom error handler to catch a possible failure warning during session write
+        set_error_handler(function ($errno, $errstr, $errfile, $errline) {
+            throw new \ErrorException($errstr, $errno, E_WARNING, $errfile, $errline);
+        }, E_WARNING);
+
+        try {
+            $e = null;
+            session_write_close();
+        } catch (\ErrorException $e) {
+        } finally {
+            restore_error_handler();
+            $_SESSION = $session;
+        }
+        if (null !== $e) {
+            // The default PHP error message is not very helpful, as it does not give any information on the current save handler.
+            // Therefore, we catch this error and trigger a warning with a better error message
+            $handler = $this-&gt;getSaveHandler();
+            if ($handler instanceof SessionHandlerProxy) {
+                $handler = $handler-&gt;getHandler();
+            }
+
+            trigger_error(sprintf(&#039;session_write_close(): Failed to write session data with %s handler&#039;, get_class($handler)), E_USER_WARNING);
+        }
+
+        $this-&gt;closed = true;
+        $this-&gt;started = false;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function clear()
+    {
+        // clear out the bags
+        foreach ($this-&gt;bags as $bag) {
+            $bag-&gt;clear();
+        }
+
+        // clear out the session
+        $_SESSION = array();
+
+        // reconnect the bags to the session
+        $this-&gt;loadSession();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function registerBag(SessionBagInterface $bag)
+    {
+        if ($this-&gt;started) {
+            throw new \LogicException(&#039;Cannot register a bag when the session is already started.&#039;);
+        }
+
+        $this-&gt;bags[$bag-&gt;getName()] = $bag;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getBag($name)
+    {
+        if (!isset($this-&gt;bags[$name])) {
+            throw new \InvalidArgumentException(sprintf(&#039;The SessionBagInterface %s is not registered.&#039;, $name));
+        }
+
+        if (!$this-&gt;started &amp;&amp; $this-&gt;saveHandler-&gt;isActive()) {
+            $this-&gt;loadSession();
+        } elseif (!$this-&gt;started) {
+            $this-&gt;start();
+        }
+
+        return $this-&gt;bags[$name];
+    }
+
+    public function setMetadataBag(MetadataBag $metaBag = null)
+    {
+        if (null === $metaBag) {
+            $metaBag = new MetadataBag();
+        }
+
+        $this-&gt;metadataBag = $metaBag;
+    }
+
+    /**
+     * Gets the MetadataBag.
+     *
+     * @return MetadataBag
+     */
+    public function getMetadataBag()
+    {
+        return $this-&gt;metadataBag;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isStarted()
+    {
+        return $this-&gt;started;
+    }
+
+    /**
+     * Sets session.* ini variables.
+     *
+     * For convenience we omit &#039;session.&#039; from the beginning of the keys.
+     * Explicitly ignores other ini keys.
+     *
+     * @param array $options Session ini directives array(key =&gt; value)
+     *
+     * @see http://php.net/session.configuration
+     */
+    public function setOptions(array $options)
+    {
+        if (headers_sent() || \PHP_SESSION_ACTIVE === session_status()) {
+            return;
+        }
+
+        $validOptions = array_flip(array(
+            &#039;cache_limiter&#039;, &#039;cache_expire&#039;, &#039;cookie_domain&#039;, &#039;cookie_httponly&#039;,
+            &#039;cookie_lifetime&#039;, &#039;cookie_path&#039;, &#039;cookie_secure&#039;,
+            &#039;gc_divisor&#039;, &#039;gc_maxlifetime&#039;, &#039;gc_probability&#039;,
+            &#039;lazy_write&#039;, &#039;name&#039;, &#039;referer_check&#039;,
+            &#039;serialize_handler&#039;, &#039;use_strict_mode&#039;, &#039;use_cookies&#039;,
+            &#039;use_only_cookies&#039;, &#039;use_trans_sid&#039;, &#039;upload_progress.enabled&#039;,
+            &#039;upload_progress.cleanup&#039;, &#039;upload_progress.prefix&#039;, &#039;upload_progress.name&#039;,
+            &#039;upload_progress.freq&#039;, &#039;upload_progress.min-freq&#039;, &#039;url_rewriter.tags&#039;,
+            &#039;sid_length&#039;, &#039;sid_bits_per_character&#039;, &#039;trans_sid_hosts&#039;, &#039;trans_sid_tags&#039;,
+        ));
+
+        foreach ($options as $key =&gt; $value) {
+            if (isset($validOptions[$key])) {
+                ini_set(&#039;session.&#039;.$key, $value);
+            }
+        }
+    }
+
+    /**
+     * Registers session save handler as a PHP session handler.
+     *
+     * To use internal PHP session save handlers, override this method using ini_set with
+     * session.save_handler and session.save_path e.g.
+     *
+     *     ini_set(&#039;session.save_handler&#039;, &#039;files&#039;);
+     *     ini_set(&#039;session.save_path&#039;, &#039;/tmp&#039;);
+     *
+     * or pass in a \SessionHandler instance which configures session.save_handler in the
+     * constructor, for a template see NativeFileSessionHandler or use handlers in
+     * composer package drak/native-session
+     *
+     * @see http://php.net/session-set-save-handler
+     * @see http://php.net/sessionhandlerinterface
+     * @see http://php.net/sessionhandler
+     * @see http://github.com/drak/NativeSession
+     *
+     * @param \SessionHandlerInterface|null $saveHandler
+     *
+     * @throws \InvalidArgumentException
+     */
+    public function setSaveHandler($saveHandler = null)
+    {
+        if (!$saveHandler instanceof AbstractProxy &amp;&amp;
+            !$saveHandler instanceof \SessionHandlerInterface &amp;&amp;
+            null !== $saveHandler) {
+            throw new \InvalidArgumentException(&#039;Must be instance of AbstractProxy; implement \SessionHandlerInterface; or be null.&#039;);
+        }
+
+        // Wrap $saveHandler in proxy and prevent double wrapping of proxy
+        if (!$saveHandler instanceof AbstractProxy &amp;&amp; $saveHandler instanceof \SessionHandlerInterface) {
+            $saveHandler = new SessionHandlerProxy($saveHandler);
+        } elseif (!$saveHandler instanceof AbstractProxy) {
+            $saveHandler = new SessionHandlerProxy(new StrictSessionHandler(new \SessionHandler()));
+        }
+        $this-&gt;saveHandler = $saveHandler;
+
+        if (headers_sent() || \PHP_SESSION_ACTIVE === session_status()) {
+            return;
+        }
+
+        if ($this-&gt;saveHandler instanceof SessionHandlerProxy) {
+            session_set_save_handler($this-&gt;saveHandler-&gt;getHandler(), false);
+        } elseif ($this-&gt;saveHandler instanceof \SessionHandlerInterface) {
+            session_set_save_handler($this-&gt;saveHandler, false);
+        }
+    }
+
+    /**
+     * Load the session with attributes.
+     *
+     * After starting the session, PHP retrieves the session from whatever handlers
+     * are set to (either PHP&#039;s internal, or a custom save handler set with session_set_save_handler()).
+     * PHP takes the return value from the read() handler, unserializes it
+     * and populates $_SESSION with the result automatically.
+     */
+    protected function loadSession(array &amp;$session = null)
+    {
+        if (null === $session) {
+            $session = &amp;$_SESSION;
+        }
+
+        $bags = array_merge($this-&gt;bags, array($this-&gt;metadataBag));
+
+        foreach ($bags as $bag) {
+            $key = $bag-&gt;getStorageKey();
+            $session[$key] = isset($session[$key]) ? $session[$key] : array();
+            $bag-&gt;initialize($session[$key]);
+        }
+
+        $this-&gt;started = true;
+        $this-&gt;closed = false;
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

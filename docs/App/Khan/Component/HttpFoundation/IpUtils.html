@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>App\Khan\Component\HttpFoundation\IpUtils | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:App_Khan_Component_HttpFoundation_IpUtils" data-root-path="../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../App.html">App</a></li>
+                    <li><a href="../../../../App/Khan.html">Khan</a></li>
+                    <li><a href="../../../../App/Khan/Component.html">Component</a></li>
+                    <li><a href="../../../../App/Khan/Component/HttpFoundation.html">HttpFoundation</a></li>
+  
+            <li>IpUtils</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>IpUtils</h1>
+
+    <p>    class
+    <strong>IpUtils</strong>
+</p>
+
+            <p>Http utility functions.</p>            
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                    static                </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_checkIp">checkIp</a>(string $requestIp, string|array $ips)</code>
+            </td>
+            <td>
+                                    Checks if an IPv4 or IPv6 address is contained in the list of given IPs or subnets.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                    static                </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_checkIp4">checkIp4</a>(string $requestIp, string $ip)</code>
+            </td>
+            <td>
+                                    Compares two IPv4 addresses.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                    static                </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_checkIp6">checkIp6</a>(string $requestIp, string $ip)</code>
+            </td>
+            <td>
+                                    Compares two IPv6 addresses.            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.38">38</a>
+                    </div>
+        <div>
+            <h3 id="method_checkIp"><code class="language-php">checkIp()</code></h3>
+            <code class="language-php">public static bool&nbsp;checkIp(string $requestIp, string|array $ips)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Checks if an IPv4 or IPv6 address is contained in the list of given IPs or subnets.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$requestIp</code></td>
+                <td>IP to check</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string|array</code></td>
+                <td><code class="language-php">$ips</code></td>
+                <td>List of IPs or subnets (can be a string if only a single one)</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td>Whether the IP is valid</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.64">64</a>
+                    </div>
+        <div>
+            <h3 id="method_checkIp4"><code class="language-php">checkIp4()</code></h3>
+            <code class="language-php">public static bool&nbsp;checkIp4(string $requestIp, string $ip)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Compares two IPv4 addresses.</p>                    <p>In case a subnet is given, it checks if it contains the request IP.</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$requestIp</code></td>
+                <td>IPv4 address to check</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$ip</code></td>
+                <td>IPv4 address or subnet in CIDR notation</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td>Whether the request IP matches the IP, or whether the request IP is within the CIDR subnet</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.112">112</a>
+                    </div>
+        <div>
+            <h3 id="method_checkIp6"><code class="language-php">checkIp6()</code></h3>
+            <code class="language-php">public static bool&nbsp;checkIp6(string $requestIp, string $ip)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Compares two IPv6 addresses.</p>                    <p>In case a subnet is given, it checks if it contains the request IP.</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$requestIp</code></td>
+                <td>IPv6 address to check</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$ip</code></td>
+                <td>IPv6 address or subnet in CIDR notation</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td>Whether the IP is valid</td>
+        </tr>
+    </table>
+
+        
+                    <h4>Exceptions</h4>
+
+                <table class="table">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/RuntimeException"><abbr title="RuntimeException">RuntimeException</abbr></a></td>
+                <td>When IPV6 support is not enabled</td>
+            </tr>
+            </table>
+
+        
+                    <h4>See also</h4>
+
+                <table class="table">
+                    <tr>
+                <td>https://github.com/dsp/v6tools</td>
+                <td></td>
+            </tr>
+            </table>
+
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace App\Khan\Component\HttpFoundation;
+
+/**
+ * Http utility functions.
+ *
+ * @author Fabien Potencier &lt;fabien@symfony.com&gt;
+ */
+class IpUtils
+{
+    private static $checkedIps = array();
+
+    /**
+     * This class should not be instantiated.
+     */
+    private function __construct()
+    {
+    }
+
+    /**
+     * Checks if an IPv4 or IPv6 address is contained in the list of given IPs or subnets.
+     *
+     * @param string       $requestIp IP to check
+     * @param string|array $ips       List of IPs or subnets (can be a string if only a single one)
+     *
+     * @return bool Whether the IP is valid
+     */
+    public static function checkIp($requestIp, $ips)
+    {
+        if (!is_array($ips)) {
+            $ips = array($ips);
+        }
+
+        $method = substr_count($requestIp, &#039;:&#039;) &gt; 1 ? &#039;checkIp6&#039; : &#039;checkIp4&#039;;
+
+        foreach ($ips as $ip) {
+            if (self::$method($requestIp, $ip)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Compares two IPv4 addresses.
+     * In case a subnet is given, it checks if it contains the request IP.
+     *
+     * @param string $requestIp IPv4 address to check
+     * @param string $ip        IPv4 address or subnet in CIDR notation
+     *
+     * @return bool Whether the request IP matches the IP, or whether the request IP is within the CIDR subnet
+     */
+    public static function checkIp4($requestIp, $ip)
+    {
+        $cacheKey = $requestIp.&#039;-&#039;.$ip;
+        if (isset(self::$checkedIps[$cacheKey])) {
+            return self::$checkedIps[$cacheKey];
+        }
+
+        if (!filter_var($requestIp, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) {
+            return self::$checkedIps[$cacheKey] = false;
+        }
+
+        if (false !== strpos($ip, &#039;/&#039;)) {
+            list($address, $netmask) = explode(&#039;/&#039;, $ip, 2);
+
+            if (&#039;0&#039; === $netmask) {
+                return self::$checkedIps[$cacheKey] = filter_var($address, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4);
+            }
+
+            if ($netmask &lt; 0 || $netmask &gt; 32) {
+                return self::$checkedIps[$cacheKey] = false;
+            }
+        } else {
+            $address = $ip;
+            $netmask = 32;
+        }
+
+        if (false === ip2long($address)) {
+            return self::$checkedIps[$cacheKey] = false;
+        }
+
+        return self::$checkedIps[$cacheKey] = 0 === substr_compare(sprintf(&#039;%032b&#039;, ip2long($requestIp)), sprintf(&#039;%032b&#039;, ip2long($address)), 0, $netmask);
+    }
+
+    /**
+     * Compares two IPv6 addresses.
+     * In case a subnet is given, it checks if it contains the request IP.
+     *
+     * @author David Soria Parra &lt;dsp at php dot net&gt;
+     *
+     * @see https://github.com/dsp/v6tools
+     *
+     * @param string $requestIp IPv6 address to check
+     * @param string $ip        IPv6 address or subnet in CIDR notation
+     *
+     * @return bool Whether the IP is valid
+     *
+     * @throws \RuntimeException When IPV6 support is not enabled
+     */
+    public static function checkIp6($requestIp, $ip)
+    {
+        $cacheKey = $requestIp.&#039;-&#039;.$ip;
+        if (isset(self::$checkedIps[$cacheKey])) {
+            return self::$checkedIps[$cacheKey];
+        }
+
+        if (!((extension_loaded(&#039;sockets&#039;) &amp;&amp; defined(&#039;AF_INET6&#039;)) || @inet_pton(&#039;::1&#039;))) {
+            throw new \RuntimeException(&#039;Unable to check Ipv6. Check that PHP was not compiled with option &quot;disable-ipv6&quot;.&#039;);
+        }
+
+        if (false !== strpos($ip, &#039;/&#039;)) {
+            list($address, $netmask) = explode(&#039;/&#039;, $ip, 2);
+
+            if (&#039;0&#039; === $netmask) {
+                return (bool) unpack(&#039;n*&#039;, @inet_pton($address));
+            }
+
+            if ($netmask &lt; 1 || $netmask &gt; 128) {
+                return self::$checkedIps[$cacheKey] = false;
+            }
+        } else {
+            $address = $ip;
+            $netmask = 128;
+        }
+
+        $bytesAddr = unpack(&#039;n*&#039;, @inet_pton($address));
+        $bytesTest = unpack(&#039;n*&#039;, @inet_pton($requestIp));
+
+        if (!$bytesAddr || !$bytesTest) {
+            return self::$checkedIps[$cacheKey] = false;
+        }
+
+        for ($i = 1, $ceil = ceil($netmask / 16); $i &lt;= $ceil; ++$i) {
+            $left = $netmask - 16 * ($i - 1);
+            $left = ($left &lt;= 16) ? $left : 16;
+            $mask = ~(0xffff &gt;&gt; $left) &amp; 0xffff;
+            if (($bytesAddr[$i] &amp; $mask) != ($bytesTest[$i] &amp; $mask)) {
+                return self::$checkedIps[$cacheKey] = false;
+            }
+        }
+
+        return self::$checkedIps[$cacheKey] = true;
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

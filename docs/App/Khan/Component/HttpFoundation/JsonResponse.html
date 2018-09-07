@@ -1,0 +1,3637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>App\Khan\Component\HttpFoundation\JsonResponse | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:App_Khan_Component_HttpFoundation_JsonResponse" data-root-path="../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../App.html">App</a></li>
+                    <li><a href="../../../../App/Khan.html">Khan</a></li>
+                    <li><a href="../../../../App/Khan/Component.html">Component</a></li>
+                    <li><a href="../../../../App/Khan/Component/HttpFoundation.html">HttpFoundation</a></li>
+  
+            <li>JsonResponse</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>JsonResponse</h1>
+
+    <p>    class
+    <strong>JsonResponse</strong>        extends <a href="../../../../App/Khan/Component/HttpFoundation/Response.html"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a>
+</p>
+
+            <p>Response represents an HTTP response in JSON format.</p>        <p>Note that this class does not force the returned JSON content to be an
+object. It is however recommended that you do return an object as it
+protects yourself against XSSI and JSON-JavaScript Hijacking.</p>    
+    
+            <h2>Constants</h2>
+
+            <table class="table">
+                    <tr>
+                <td><code class="language-php">HTTP_CONTINUE =  100;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_SWITCHING_PROTOCOLS =  101;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_PROCESSING =  102;            // RFC2518</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_OK =  200;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_CREATED =  201;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_ACCEPTED =  202;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_NON_AUTHORITATIVE_INFORMATION =  203;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_NO_CONTENT =  204;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_RESET_CONTENT =  205;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_PARTIAL_CONTENT =  206;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_MULTI_STATUS =  207;          // RFC4918</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_ALREADY_REPORTED =  208;      // RFC5842</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_IM_USED =  226;               // RFC3229</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_MULTIPLE_CHOICES =  300;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_MOVED_PERMANENTLY =  301;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_FOUND =  302;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_SEE_OTHER =  303;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_NOT_MODIFIED =  304;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_USE_PROXY =  305;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_RESERVED =  306;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_TEMPORARY_REDIRECT =  307;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_PERMANENTLY_REDIRECT =  308;  // RFC7238</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_BAD_REQUEST =  400;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_UNAUTHORIZED =  401;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_PAYMENT_REQUIRED =  402;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_FORBIDDEN =  403;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_NOT_FOUND =  404;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_METHOD_NOT_ALLOWED =  405;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_NOT_ACCEPTABLE =  406;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_PROXY_AUTHENTICATION_REQUIRED =  407;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_REQUEST_TIMEOUT =  408;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_CONFLICT =  409;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_GONE =  410;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_LENGTH_REQUIRED =  411;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_PRECONDITION_FAILED =  412;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_REQUEST_ENTITY_TOO_LARGE =  413;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_REQUEST_URI_TOO_LONG =  414;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_UNSUPPORTED_MEDIA_TYPE =  415;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_REQUESTED_RANGE_NOT_SATISFIABLE =  416;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_EXPECTATION_FAILED =  417;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_I_AM_A_TEAPOT =  418;                                               // RFC2324</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_MISDIRECTED_REQUEST =  421;                                         // RFC7540</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_UNPROCESSABLE_ENTITY =  422;                                        // RFC4918</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_LOCKED =  423;                                                      // RFC4918</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_FAILED_DEPENDENCY =  424;                                           // RFC4918</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_RESERVED_FOR_WEBDAV_ADVANCED_COLLECTIONS_EXPIRED_PROPOSAL =  425;   // RFC2817</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_UPGRADE_REQUIRED =  426;                                            // RFC2817</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_PRECONDITION_REQUIRED =  428;                                       // RFC6585</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_TOO_MANY_REQUESTS =  429;                                           // RFC6585</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_REQUEST_HEADER_FIELDS_TOO_LARGE =  431;                             // RFC6585</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_UNAVAILABLE_FOR_LEGAL_REASONS =  451;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_INTERNAL_SERVER_ERROR =  500;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_NOT_IMPLEMENTED =  501;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_BAD_GATEWAY =  502;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_SERVICE_UNAVAILABLE =  503;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_GATEWAY_TIMEOUT =  504;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_VERSION_NOT_SUPPORTED =  505;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_VARIANT_ALSO_NEGOTIATES_EXPERIMENTAL =  506;                        // RFC2295</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_INSUFFICIENT_STORAGE =  507;                                        // RFC4918</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_LOOP_DETECTED =  508;                                               // RFC5842</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_NOT_EXTENDED =  510;                                                // RFC2774</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">HTTP_NETWORK_AUTHENTICATION_REQUIRED =  511;                             // RFC6585</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">DEFAULT_ENCODING_OPTIONS =  15;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+            </table>
+
+    
+            <h2>Properties</h2>
+
+            <table class="table">
+                    <tr>
+                <td id="property_headers">
+                    <code class="language-php">                                                            <abbr title="Symfony\Component\HttpFoundation\ResponseHeaderBag">ResponseHeaderBag</abbr></code>
+                </td>
+                <td><code class="language-php">$headers</code></td>
+                <td></td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#property_headers"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_content">
+                    <code class="language-php">                    protected                                        string</code>
+                </td>
+                <td><code class="language-php">$content</code></td>
+                <td></td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#property_content"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_version">
+                    <code class="language-php">                    protected                                        string</code>
+                </td>
+                <td><code class="language-php">$version</code></td>
+                <td></td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#property_version"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_statusCode">
+                    <code class="language-php">                    protected                                        int</code>
+                </td>
+                <td><code class="language-php">$statusCode</code></td>
+                <td></td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#property_statusCode"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_statusText">
+                    <code class="language-php">                    protected                                        string</code>
+                </td>
+                <td><code class="language-php">$statusText</code></td>
+                <td></td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#property_statusText"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_charset">
+                    <code class="language-php">                    protected                                        string</code>
+                </td>
+                <td><code class="language-php">$charset</code></td>
+                <td></td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#property_charset"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_statusTexts">
+                    <code class="language-php">static                                                            array</code>
+                </td>
+                <td><code class="language-php">$statusTexts</code></td>
+                <td>Status codes translation table.</td>
+                <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#property_statusTexts"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_data">
+                    <code class="language-php">                    protected                                        </code>
+                </td>
+                <td><code class="language-php">$data</code></td>
+                <td></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td id="property_callback">
+                    <code class="language-php">                    protected                                        </code>
+                </td>
+                <td><code class="language-php">$callback</code></td>
+                <td></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td id="property_encodingOptions">
+                    <code class="language-php">                    protected                                        </code>
+                </td>
+                <td><code class="language-php">$encodingOptions</code></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method___construct">__construct</a>(mixed $data = null, $status = 200, array $headers = array(), bool $json = false)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                    static                </code>
+            </td>
+            <td class="text-right"><code class="language-php"><a href="../../../../App/Khan/Component/HttpFoundation/Response.html"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></code></td>
+            <td>
+                <code class="language-php"><a href="#method_create">create</a>(mixed $data = null, int $status = 200, array $headers = array())</code>
+            </td>
+            <td>
+                                    Factory method for chainability.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method___toString">__toString</a>()</code>
+            </td>
+            <td>
+                                    Returns the Response as an HTTP string.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method___toString"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method___clone">__clone</a>()</code>
+            </td>
+            <td>
+                                    Clones the current Response instance.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method___clone"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_prepare">prepare</a>(<a href="../../../../App/Khan/Component/HttpFoundation/Request.html"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> $request)</code>
+            </td>
+            <td>
+                                    Prepares the Response before it is sent to the client.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_prepare"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_sendHeaders">sendHeaders</a>()</code>
+            </td>
+            <td>
+                                    Sends HTTP headers.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_sendHeaders"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_sendContent">sendContent</a>()</code>
+            </td>
+            <td>
+                                    Sends content for the current web response.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_sendContent"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_send">send</a>()</code>
+            </td>
+            <td>
+                                    Sends HTTP headers and content.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_send"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setContent">setContent</a>(mixed $content)</code>
+            </td>
+            <td>
+                                    Sets the response content.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setContent"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getContent">getContent</a>()</code>
+            </td>
+            <td>
+                                    Gets the current response content.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_getContent"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setProtocolVersion">setProtocolVersion</a>($version)</code>
+            </td>
+            <td>
+                                    Sets the HTTP protocol version (1.0 or 1.1).            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setProtocolVersion"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getProtocolVersion">getProtocolVersion</a>()</code>
+            </td>
+            <td>
+                                    Gets the HTTP protocol version.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_getProtocolVersion"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setStatusCode">setStatusCode</a>($code, $text = null)</code>
+            </td>
+            <td>
+                                    Sets the response status code.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setStatusCode"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getStatusCode">getStatusCode</a>()</code>
+            </td>
+            <td>
+                                    Retrieves the status code for the current web response.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_getStatusCode"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setCharset">setCharset</a>($charset)</code>
+            </td>
+            <td>
+                                    Sets the response charset.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setCharset"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getCharset">getCharset</a>()</code>
+            </td>
+            <td>
+                                    Retrieves the response charset.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_getCharset"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_isCacheable">isCacheable</a>()</code>
+            </td>
+            <td>
+                                    Returns true if the response may safely be kept in a shared (surrogate) cache.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isCacheable"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_isFresh">isFresh</a>()</code>
+            </td>
+            <td>
+                                    Returns true if the response is "fresh".            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isFresh"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_isValidateable">isValidateable</a>()</code>
+            </td>
+            <td>
+                                    Returns true if the response includes headers that can be used to validate
+the response with the origin server using a conditional GET request.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isValidateable"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setPrivate">setPrivate</a>()</code>
+            </td>
+            <td>
+                                    Marks the response as "private".            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setPrivate"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setPublic">setPublic</a>()</code>
+            </td>
+            <td>
+                                    Marks the response as "public".            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setPublic"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setImmutable">setImmutable</a>($immutable = true)</code>
+            </td>
+            <td>
+                                    Marks the response as "immutable".            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setImmutable"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_isImmutable">isImmutable</a>()</code>
+            </td>
+            <td>
+                                    Returns true if the response is marked as "immutable".            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isImmutable"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_mustRevalidate">mustRevalidate</a>()</code>
+            </td>
+            <td>
+                                    Returns true if the response must be revalidated by caches.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_mustRevalidate"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getDate">getDate</a>()</code>
+            </td>
+            <td>
+                                    Returns the Date header as a DateTime instance.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_getDate"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setDate">setDate</a>(<a target="_blank" href="http://php.net/DateTimeInterface"><abbr title="DateTimeInterface">DateTimeInterface</abbr></a> $date)</code>
+            </td>
+            <td>
+                                    Sets the Date header.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setDate"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getAge">getAge</a>()</code>
+            </td>
+            <td>
+                                    Returns the age of the response in seconds.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_getAge"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_expire">expire</a>()</code>
+            </td>
+            <td>
+                                    Marks the response stale by setting the Age header to be equal to the maximum age of the response.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_expire"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getExpires">getExpires</a>()</code>
+            </td>
+            <td>
+                                    Returns the value of the Expires header as a DateTime instance.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_getExpires"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setExpires">setExpires</a>(<a target="_blank" href="http://php.net/DateTimeInterface"><abbr title="DateTimeInterface">DateTimeInterface</abbr></a> $date = null)</code>
+            </td>
+            <td>
+                                    Sets the Expires HTTP header with a DateTime instance.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setExpires"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getMaxAge">getMaxAge</a>()</code>
+            </td>
+            <td>
+                                    Returns the number of seconds after the time specified in the response's Date
+header when the response should no longer be considered fresh.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_getMaxAge"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setMaxAge">setMaxAge</a>($value)</code>
+            </td>
+            <td>
+                                    Sets the number of seconds after which the response should no longer be considered fresh.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setMaxAge"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setSharedMaxAge">setSharedMaxAge</a>($value)</code>
+            </td>
+            <td>
+                                    Sets the number of seconds after which the response should no longer be considered fresh by shared caches.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setSharedMaxAge"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getTtl">getTtl</a>()</code>
+            </td>
+            <td>
+                                    Returns the response's time-to-live in seconds.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_getTtl"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setTtl">setTtl</a>($seconds)</code>
+            </td>
+            <td>
+                                    Sets the response's time-to-live for shared caches in seconds.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setTtl"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setClientTtl">setClientTtl</a>($seconds)</code>
+            </td>
+            <td>
+                                    Sets the response's time-to-live for private/client caches in seconds.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setClientTtl"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getLastModified">getLastModified</a>()</code>
+            </td>
+            <td>
+                                    Returns the Last-Modified HTTP header as a DateTime instance.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_getLastModified"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setLastModified">setLastModified</a>(<a target="_blank" href="http://php.net/DateTimeInterface"><abbr title="DateTimeInterface">DateTimeInterface</abbr></a> $date = null)</code>
+            </td>
+            <td>
+                                    Sets the Last-Modified HTTP header with a DateTime instance.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setLastModified"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getEtag">getEtag</a>()</code>
+            </td>
+            <td>
+                                    Returns the literal value of the ETag HTTP header.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_getEtag"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setEtag">setEtag</a>(string|null $etag = null, bool $weak = false)</code>
+            </td>
+            <td>
+                                    Sets the ETag value.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setEtag"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setCache">setCache</a>($options)</code>
+            </td>
+            <td>
+                                    Sets the response's cache headers (validation and/or expiration).            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setCache"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setNotModified">setNotModified</a>()</code>
+            </td>
+            <td>
+                                    Modifies the response so that it conforms to the rules defined for a 304 status code.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setNotModified"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_hasVary">hasVary</a>()</code>
+            </td>
+            <td>
+                                    Returns true if the response includes a Vary header.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_hasVary"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getVary">getVary</a>()</code>
+            </td>
+            <td>
+                                    Returns an array of header names given in the Vary header.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_getVary"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setVary">setVary</a>(string|array $headers, bool $replace = true)</code>
+            </td>
+            <td>
+                                    Sets the Vary header.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setVary"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_isNotModified">isNotModified</a>(<a href="../../../../App/Khan/Component/HttpFoundation/Request.html"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> $request)</code>
+            </td>
+            <td>
+                                    Determines if the Response validators (ETag, Last-Modified) match
+a conditional value specified in the Request.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isNotModified"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_isInvalid">isInvalid</a>()</code>
+            </td>
+            <td>
+                                    Is response invalid?            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isInvalid"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_isInformational">isInformational</a>()</code>
+            </td>
+            <td>
+                                    Is response informative?            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isInformational"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_isSuccessful">isSuccessful</a>()</code>
+            </td>
+            <td>
+                                    Is response successful?            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isSuccessful"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_isRedirection">isRedirection</a>()</code>
+            </td>
+            <td>
+                                    Is the response a redirect?            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isRedirection"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_isClientError">isClientError</a>()</code>
+            </td>
+            <td>
+                                    Is there a client error?            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isClientError"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_isServerError">isServerError</a>()</code>
+            </td>
+            <td>
+                                    Was there a server side error?            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isServerError"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_isOk">isOk</a>()</code>
+            </td>
+            <td>
+                                    Is the response OK?            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isOk"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_isForbidden">isForbidden</a>()</code>
+            </td>
+            <td>
+                                    Is the response forbidden?            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isForbidden"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_isNotFound">isNotFound</a>()</code>
+            </td>
+            <td>
+                                    Is the response a not found error?            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isNotFound"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_isRedirect">isRedirect</a>($location = null)</code>
+            </td>
+            <td>
+                                    Is the response a redirect of some form?            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isRedirect"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_isEmpty">isEmpty</a>()</code>
+            </td>
+            <td>
+                                    Is the response empty?            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isEmpty"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                    static                </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_closeOutputBuffers">closeOutputBuffers</a>($targetLevel, $flush)</code>
+            </td>
+            <td>
+                                    Cleans or flushes output buffers up to target level.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_closeOutputBuffers"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_ensureIEOverSSLCompatibility">ensureIEOverSSLCompatibility</a>(<a href="../../../../App/Khan/Component/HttpFoundation/Request.html"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> $request)</code>
+            </td>
+            <td>
+                                    Checks if we need to remove Cache-Control for SSL encrypted downloads when using IE &lt; 9.            </td>
+            <td><small>from&nbsp;<a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_ensureIEOverSSLCompatibility"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                    static                </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_fromJsonString">fromJsonString</a>($data = null, $status = 200, $headers = array())</code>
+            </td>
+            <td>
+                                    Make easier the creation of JsonResponse from raw json.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setCallback">setCallback</a>(string|null $callback = null)</code>
+            </td>
+            <td>
+                                    Sets the JSONP callback.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setJson">setJson</a>(string $json)</code>
+            </td>
+            <td>
+                                    Sets a raw string containing a JSON document to be sent.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setData">setData</a>(mixed $data = array())</code>
+            </td>
+            <td>
+                                    Sets the data to be sent as JSON.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">int</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getEncodingOptions">getEncodingOptions</a>()</code>
+            </td>
+            <td>
+                                    Returns options used while encoding data to JSON.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setEncodingOptions">setEncodingOptions</a>(int $encodingOptions)</code>
+            </td>
+            <td>
+                                    Sets options used while encoding data to JSON.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_update">update</a>()</code>
+            </td>
+            <td>
+                                    Updates the content and headers according to the JSON data and callback.            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.42">42</a>
+                    </div>
+        <div>
+            <h3 id="method___construct"><code class="language-php">__construct()</code></h3>
+            <code class="language-php">public __construct(mixed $data = null, $status = 200, array $headers = array(), bool $json = false)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">mixed</code></td>
+                <td><code class="language-php">$data</code></td>
+                <td>The response data</td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$status</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$headers</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">bool</code></td>
+                <td><code class="language-php">$json</code></td>
+                <td>If the data is already a JSON string</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.67">67</a>
+                    </div>
+        <div>
+            <h3 id="method_create"><code class="language-php">create()</code></h3>
+            <code class="language-php">public static <a href="../../../../App/Khan/Component/HttpFoundation/Response.html"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a>&nbsp;create(mixed $data = null, int $status = 200, array $headers = array())</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Factory method for chainability.</p>                    <p>Example:</p>
+
+<pre><code>return JsonResponse::create($data, 200)
+    -&gt;setSharedMaxAge(300);
+</code></pre>
+</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">mixed</code></td>
+                <td><code class="language-php">$data</code></td>
+                <td>The json response data</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">int</code></td>
+                <td><code class="language-php">$status</code></td>
+                <td>The response status code</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$headers</code></td>
+                <td>An array of response headers</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><a href="../../../../App/Khan/Component/HttpFoundation/Response.html"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method___toString"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 231
+                    </div>
+        <div>
+            <h3 id="method___toString"><code class="language-php">__toString()</code></h3>
+            <code class="language-php">public string&nbsp;__toString()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the Response as an HTTP string.</p>                    <p>The string representation of the Response is the same as the
+one that will be sent to the client only if the prepare() method
+has been called before.</p>            </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>The Response as an HTTP string</td>
+        </tr>
+    </table>
+
+        
+        
+                    <h4>See also</h4>
+
+                <table class="table">
+                    <tr>
+                <td>prepare()</td>
+                <td></td>
+            </tr>
+            </table>
+
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method___clone"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 242
+                    </div>
+        <div>
+            <h3 id="method___clone"><code class="language-php">__clone()</code></h3>
+            <code class="language-php">public __clone()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Clones the current Response instance.</p>                                </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_prepare"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 256
+                    </div>
+        <div>
+            <h3 id="method_prepare"><code class="language-php">prepare()</code></h3>
+            <code class="language-php">public <abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr>&nbsp;prepare(<a href="../../../../App/Khan/Component/HttpFoundation/Request.html"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> $request)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Prepares the Response before it is sent to the client.</p>                    <p>This method tweaks the Response to ensure that it is
+compliant with RFC 2616. Most of the changes are based on
+the Request that is "associated" with this Response.</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php"><a href="../../../../App/Khan/Component/HttpFoundation/Request.html"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></code></td>
+                <td><code class="language-php">$request</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_sendHeaders"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 318
+                    </div>
+        <div>
+            <h3 id="method_sendHeaders"><code class="language-php">sendHeaders()</code></h3>
+            <code class="language-php">public <abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr>&nbsp;sendHeaders()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sends HTTP headers.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_sendContent"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 352
+                    </div>
+        <div>
+            <h3 id="method_sendContent"><code class="language-php">sendContent()</code></h3>
+            <code class="language-php">public <abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr>&nbsp;sendContent()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sends content for the current web response.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_send"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 364
+                    </div>
+        <div>
+            <h3 id="method_send"><code class="language-php">send()</code></h3>
+            <code class="language-php">public <abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr>&nbsp;send()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sends HTTP headers and content.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setContent"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 389
+                    </div>
+        <div>
+            <h3 id="method_setContent"><code class="language-php">setContent()</code></h3>
+            <code class="language-php">public <abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr>&nbsp;setContent(mixed $content)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets the response content.</p>                    <p>Valid types are strings, numbers, null, and objects that implement a __toString() method.</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">mixed</code></td>
+                <td><code class="language-php">$content</code></td>
+                <td>Content that can be cast to string</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+                    <h4>Exceptions</h4>
+
+                <table class="table">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/UnexpectedValueException"><abbr title="UnexpectedValueException">UnexpectedValueException</abbr></a></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_getContent"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 405
+                    </div>
+        <div>
+            <h3 id="method_getContent"><code class="language-php">getContent()</code></h3>
+            <code class="language-php">public string&nbsp;getContent()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the current response content.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>Content</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setProtocolVersion"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 417
+                    </div>
+        <div>
+            <h3 id="method_setProtocolVersion"><code class="language-php">setProtocolVersion()</code></h3>
+            <code class="language-php">public <abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr>&nbsp;setProtocolVersion($version)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets the HTTP protocol version (1.0 or 1.1).</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$version</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_getProtocolVersion"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 429
+                    </div>
+        <div>
+            <h3 id="method_getProtocolVersion"><code class="language-php">getProtocolVersion()</code></h3>
+            <code class="language-php">public getProtocolVersion()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the HTTP protocol version.</p>                                </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setStatusCode"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 446
+                    </div>
+        <div>
+            <h3 id="method_setStatusCode"><code class="language-php">setStatusCode()</code></h3>
+            <code class="language-php">public <abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr>&nbsp;setStatusCode($code, $text = null)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets the response status code.</p>                    <p>If the status text is null it will be automatically populated for the known
+status codes and left empty otherwise.</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$code</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$text</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+                    <h4>Exceptions</h4>
+
+                <table class="table">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException"><abbr title="InvalidArgumentException">InvalidArgumentException</abbr></a></td>
+                <td>When the HTTP status code is not valid</td>
+            </tr>
+            </table>
+
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_getStatusCode"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 475
+                    </div>
+        <div>
+            <h3 id="method_getStatusCode"><code class="language-php">getStatusCode()</code></h3>
+            <code class="language-php">public getStatusCode()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Retrieves the status code for the current web response.</p>                                </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setCharset"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 487
+                    </div>
+        <div>
+            <h3 id="method_setCharset"><code class="language-php">setCharset()</code></h3>
+            <code class="language-php">public <abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr>&nbsp;setCharset($charset)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets the response charset.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$charset</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_getCharset"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 499
+                    </div>
+        <div>
+            <h3 id="method_getCharset"><code class="language-php">getCharset()</code></h3>
+            <code class="language-php">public getCharset()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Retrieves the response charset.</p>                                </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isCacheable"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 521
+                    </div>
+        <div>
+            <h3 id="method_isCacheable"><code class="language-php">isCacheable()</code></h3>
+            <code class="language-php">public isCacheable()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns true if the response may safely be kept in a shared (surrogate) cache.</p>                    <p>Responses marked "private" with an explicit Cache-Control directive are
+considered uncacheable.</p>
+
+<p>Responses with neither a freshness lifetime (Expires, max-age) nor cache
+validator (Last-Modified, ETag) are considered uncacheable because there is
+no way to tell when or how to remove them from the cache.</p>
+
+<p>Note that RFC 7231 and RFC 7234 possibly allow for a more permissive implementation,
+for example "status codes that are defined as cacheable by default [...]
+can be reused by a cache with heuristic expiration unless otherwise indicated"
+(https://tools.ietf.org/html/rfc7231#section-6.1)</p>            </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isFresh"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 543
+                    </div>
+        <div>
+            <h3 id="method_isFresh"><code class="language-php">isFresh()</code></h3>
+            <code class="language-php">public isFresh()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns true if the response is "fresh".</p>                    <p>Fresh responses may be served from cache without any interaction with the
+origin. A response is considered fresh when it includes a Cache-Control/max-age
+indicator or Expires header and the calculated age is less than the freshness lifetime.</p>            </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isValidateable"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 554
+                    </div>
+        <div>
+            <h3 id="method_isValidateable"><code class="language-php">isValidateable()</code></h3>
+            <code class="language-php">public isValidateable()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns true if the response includes headers that can be used to validate
+the response with the origin server using a conditional GET request.</p>                                </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setPrivate"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 568
+                    </div>
+        <div>
+            <h3 id="method_setPrivate"><code class="language-php">setPrivate()</code></h3>
+            <code class="language-php">public <abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr>&nbsp;setPrivate()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Marks the response as "private".</p>                    <p>It makes the response ineligible for serving other clients.</p>            </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setPublic"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 585
+                    </div>
+        <div>
+            <h3 id="method_setPublic"><code class="language-php">setPublic()</code></h3>
+            <code class="language-php">public <abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr>&nbsp;setPublic()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Marks the response as "public".</p>                    <p>It makes the response eligible for serving other clients.</p>            </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setImmutable"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 600
+                    </div>
+        <div>
+            <h3 id="method_setImmutable"><code class="language-php">setImmutable()</code></h3>
+            <code class="language-php">public <abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr>&nbsp;setImmutable($immutable = true)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Marks the response as "immutable".</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$immutable</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isImmutable"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 616
+                    </div>
+        <div>
+            <h3 id="method_isImmutable"><code class="language-php">isImmutable()</code></h3>
+            <code class="language-php">public isImmutable()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns true if the response is marked as "immutable".</p>                                </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_mustRevalidate"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 631
+                    </div>
+        <div>
+            <h3 id="method_mustRevalidate"><code class="language-php">mustRevalidate()</code></h3>
+            <code class="language-php">public mustRevalidate()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns true if the response must be revalidated by caches.</p>                    <p>This method indicates that the response must not be served stale by a
+cache in any circumstance without first revalidating with the origin.
+When present, the TTL of the response should not be overridden to be
+greater than the value provided by the origin.</p>            </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_getDate"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 643
+                    </div>
+        <div>
+            <h3 id="method_getDate"><code class="language-php">getDate()</code></h3>
+            <code class="language-php">public getDate()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the Date header as a DateTime instance.</p>                                </div>
+                
+        
+                    <h4>Exceptions</h4>
+
+                <table class="table">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/RuntimeException"><abbr title="RuntimeException">RuntimeException</abbr></a></td>
+                <td>When the header is not parseable</td>
+            </tr>
+            </table>
+
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setDate"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 655
+                    </div>
+        <div>
+            <h3 id="method_setDate"><code class="language-php">setDate()</code></h3>
+            <code class="language-php">public <abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr>&nbsp;setDate(<a target="_blank" href="http://php.net/DateTimeInterface"><abbr title="DateTimeInterface">DateTimeInterface</abbr></a> $date)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets the Date header.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php"><a target="_blank" href="http://php.net/DateTimeInterface"><abbr title="DateTimeInterface">DateTimeInterface</abbr></a></code></td>
+                <td><code class="language-php">$date</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_getAge"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 672
+                    </div>
+        <div>
+            <h3 id="method_getAge"><code class="language-php">getAge()</code></h3>
+            <code class="language-php">public getAge()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the age of the response in seconds.</p>                                </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_expire"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 686
+                    </div>
+        <div>
+            <h3 id="method_expire"><code class="language-php">expire()</code></h3>
+            <code class="language-php">public <abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr>&nbsp;expire()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Marks the response stale by setting the Age header to be equal to the maximum age of the response.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_getExpires"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 700
+                    </div>
+        <div>
+            <h3 id="method_getExpires"><code class="language-php">getExpires()</code></h3>
+            <code class="language-php">public getExpires()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the value of the Expires header as a DateTime instance.</p>                                </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setExpires"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 719
+                    </div>
+        <div>
+            <h3 id="method_setExpires"><code class="language-php">setExpires()</code></h3>
+            <code class="language-php">public <abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr>&nbsp;setExpires(<a target="_blank" href="http://php.net/DateTimeInterface"><abbr title="DateTimeInterface">DateTimeInterface</abbr></a> $date = null)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets the Expires HTTP header with a DateTime instance.</p>                    <p>Passing null as value will remove the header.</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php"><a target="_blank" href="http://php.net/DateTimeInterface"><abbr title="DateTimeInterface">DateTimeInterface</abbr></a></code></td>
+                <td><code class="language-php">$date</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_getMaxAge"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 746
+                    </div>
+        <div>
+            <h3 id="method_getMaxAge"><code class="language-php">getMaxAge()</code></h3>
+            <code class="language-php">public getMaxAge()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the number of seconds after the time specified in the response's Date
+header when the response should no longer be considered fresh.</p>                    <p>First, it checks for a s-maxage directive, then a max-age directive, and then it falls
+back on an expires header. It returns null when no maximum age can be established.</p>            </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setMaxAge"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 772
+                    </div>
+        <div>
+            <h3 id="method_setMaxAge"><code class="language-php">setMaxAge()</code></h3>
+            <code class="language-php">public <abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr>&nbsp;setMaxAge($value)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets the number of seconds after which the response should no longer be considered fresh.</p>                    <p>This methods sets the Cache-Control max-age directive.</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$value</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setSharedMaxAge"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 788
+                    </div>
+        <div>
+            <h3 id="method_setSharedMaxAge"><code class="language-php">setSharedMaxAge()</code></h3>
+            <code class="language-php">public <abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr>&nbsp;setSharedMaxAge($value)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets the number of seconds after which the response should no longer be considered fresh by shared caches.</p>                    <p>This methods sets the Cache-Control s-maxage directive.</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$value</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_getTtl"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 806
+                    </div>
+        <div>
+            <h3 id="method_getTtl"><code class="language-php">getTtl()</code></h3>
+            <code class="language-php">public getTtl()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the response's time-to-live in seconds.</p>                    <p>It returns null when no freshness information is present in the response.</p>
+
+<p>When the responses TTL is &lt;= 0, the response may not be served from cache without first
+revalidating with the origin.</p>            </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setTtl"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 822
+                    </div>
+        <div>
+            <h3 id="method_setTtl"><code class="language-php">setTtl()</code></h3>
+            <code class="language-php">public <abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr>&nbsp;setTtl($seconds)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets the response's time-to-live for shared caches in seconds.</p>                    <p>This method adjusts the Cache-Control/s-maxage directive.</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$seconds</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setClientTtl"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 838
+                    </div>
+        <div>
+            <h3 id="method_setClientTtl"><code class="language-php">setClientTtl()</code></h3>
+            <code class="language-php">public <abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr>&nbsp;setClientTtl($seconds)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets the response's time-to-live for private/client caches in seconds.</p>                    <p>This method adjusts the Cache-Control/max-age directive.</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$seconds</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_getLastModified"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 852
+                    </div>
+        <div>
+            <h3 id="method_getLastModified"><code class="language-php">getLastModified()</code></h3>
+            <code class="language-php">public getLastModified()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the Last-Modified HTTP header as a DateTime instance.</p>                                </div>
+                
+        
+                    <h4>Exceptions</h4>
+
+                <table class="table">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/RuntimeException"><abbr title="RuntimeException">RuntimeException</abbr></a></td>
+                <td>When the HTTP header is not parseable</td>
+            </tr>
+            </table>
+
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setLastModified"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 866
+                    </div>
+        <div>
+            <h3 id="method_setLastModified"><code class="language-php">setLastModified()</code></h3>
+            <code class="language-php">public <abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr>&nbsp;setLastModified(<a target="_blank" href="http://php.net/DateTimeInterface"><abbr title="DateTimeInterface">DateTimeInterface</abbr></a> $date = null)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets the Last-Modified HTTP header with a DateTime instance.</p>                    <p>Passing null as value will remove the header.</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php"><a target="_blank" href="http://php.net/DateTimeInterface"><abbr title="DateTimeInterface">DateTimeInterface</abbr></a></code></td>
+                <td><code class="language-php">$date</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_getEtag"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 889
+                    </div>
+        <div>
+            <h3 id="method_getEtag"><code class="language-php">getEtag()</code></h3>
+            <code class="language-php">public getEtag()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the literal value of the ETag HTTP header.</p>                                </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setEtag"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 904
+                    </div>
+        <div>
+            <h3 id="method_setEtag"><code class="language-php">setEtag()</code></h3>
+            <code class="language-php">public <abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr>&nbsp;setEtag(string|null $etag = null, bool $weak = false)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets the ETag value.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string|null</code></td>
+                <td><code class="language-php">$etag</code></td>
+                <td>The ETag unique identifier or null to remove the header</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">bool</code></td>
+                <td><code class="language-php">$weak</code></td>
+                <td>Whether you want a weak ETag or not</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setCache"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 930
+                    </div>
+        <div>
+            <h3 id="method_setCache"><code class="language-php">setCache()</code></h3>
+            <code class="language-php">public <abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr>&nbsp;setCache($options)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets the response's cache headers (validation and/or expiration).</p>                    <p>Available options are: etag, last_modified, max_age, s_maxage, private, public and immutable.</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$options</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+                    <h4>Exceptions</h4>
+
+                <table class="table">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException"><abbr title="InvalidArgumentException">InvalidArgumentException</abbr></a></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setNotModified"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 987
+                    </div>
+        <div>
+            <h3 id="method_setNotModified"><code class="language-php">setNotModified()</code></h3>
+            <code class="language-php">public <abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr>&nbsp;setNotModified()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Modifies the response so that it conforms to the rules defined for a 304 status code.</p>                    <p>This sets the status, removes the body, and discards any headers
+that MUST NOT be included in 304 responses.</p>            </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+                    <h4>See also</h4>
+
+                <table class="table">
+                    <tr>
+                <td>http://tools.ietf.org/html/rfc2616#section-10.3.5</td>
+                <td></td>
+            </tr>
+            </table>
+
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_hasVary"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 1005
+                    </div>
+        <div>
+            <h3 id="method_hasVary"><code class="language-php">hasVary()</code></h3>
+            <code class="language-php">public hasVary()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns true if the response includes a Vary header.</p>                                </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_getVary"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 1015
+                    </div>
+        <div>
+            <h3 id="method_getVary"><code class="language-php">getVary()</code></h3>
+            <code class="language-php">public getVary()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns an array of header names given in the Vary header.</p>                                </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_setVary"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 1039
+                    </div>
+        <div>
+            <h3 id="method_setVary"><code class="language-php">setVary()</code></h3>
+            <code class="language-php">public <abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr>&nbsp;setVary(string|array $headers, bool $replace = true)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets the Vary header.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string|array</code></td>
+                <td><code class="language-php">$headers</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">bool</code></td>
+                <td><code class="language-php">$replace</code></td>
+                <td>Whether to replace the actual value or not (true by default)</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isNotModified"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 1057
+                    </div>
+        <div>
+            <h3 id="method_isNotModified"><code class="language-php">isNotModified()</code></h3>
+            <code class="language-php">public bool&nbsp;isNotModified(<a href="../../../../App/Khan/Component/HttpFoundation/Request.html"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> $request)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Determines if the Response validators (ETag, Last-Modified) match
+a conditional value specified in the Request.</p>                    <p>If the Response is not modified, it sets the status code to 304 and
+removes the actual content by calling the setNotModified() method.</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php"><a href="../../../../App/Khan/Component/HttpFoundation/Request.html"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></code></td>
+                <td><code class="language-php">$request</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td>true if the Response validators match the Request, false otherwise</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isInvalid"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 1089
+                    </div>
+        <div>
+            <h3 id="method_isInvalid"><code class="language-php">isInvalid()</code></h3>
+            <code class="language-php">public isInvalid()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Is response invalid?</p>                                </div>
+                
+        
+        
+                    <h4>See also</h4>
+
+                <table class="table">
+                    <tr>
+                <td>http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html</td>
+                <td></td>
+            </tr>
+            </table>
+
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isInformational"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 1099
+                    </div>
+        <div>
+            <h3 id="method_isInformational"><code class="language-php">isInformational()</code></h3>
+            <code class="language-php">public isInformational()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Is response informative?</p>                                </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isSuccessful"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 1109
+                    </div>
+        <div>
+            <h3 id="method_isSuccessful"><code class="language-php">isSuccessful()</code></h3>
+            <code class="language-php">public isSuccessful()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Is response successful?</p>                                </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isRedirection"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 1119
+                    </div>
+        <div>
+            <h3 id="method_isRedirection"><code class="language-php">isRedirection()</code></h3>
+            <code class="language-php">public isRedirection()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Is the response a redirect?</p>                                </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isClientError"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 1129
+                    </div>
+        <div>
+            <h3 id="method_isClientError"><code class="language-php">isClientError()</code></h3>
+            <code class="language-php">public isClientError()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Is there a client error?</p>                                </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isServerError"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 1139
+                    </div>
+        <div>
+            <h3 id="method_isServerError"><code class="language-php">isServerError()</code></h3>
+            <code class="language-php">public isServerError()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Was there a server side error?</p>                                </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isOk"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 1149
+                    </div>
+        <div>
+            <h3 id="method_isOk"><code class="language-php">isOk()</code></h3>
+            <code class="language-php">public isOk()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Is the response OK?</p>                                </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isForbidden"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 1159
+                    </div>
+        <div>
+            <h3 id="method_isForbidden"><code class="language-php">isForbidden()</code></h3>
+            <code class="language-php">public isForbidden()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Is the response forbidden?</p>                                </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isNotFound"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 1169
+                    </div>
+        <div>
+            <h3 id="method_isNotFound"><code class="language-php">isNotFound()</code></h3>
+            <code class="language-php">public isNotFound()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Is the response a not found error?</p>                                </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isRedirect"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 1179
+                    </div>
+        <div>
+            <h3 id="method_isRedirect"><code class="language-php">isRedirect()</code></h3>
+            <code class="language-php">public isRedirect($location = null)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Is the response a redirect of some form?</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$location</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_isEmpty"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 1189
+                    </div>
+        <div>
+            <h3 id="method_isEmpty"><code class="language-php">isEmpty()</code></h3>
+            <code class="language-php">public isEmpty()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Is the response empty?</p>                                </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_closeOutputBuffers"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 1201
+                    </div>
+        <div>
+            <h3 id="method_closeOutputBuffers"><code class="language-php">closeOutputBuffers()</code></h3>
+            <code class="language-php">public static closeOutputBuffers($targetLevel, $flush)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Cleans or flushes output buffers up to target level.</p>                    <p>Resulting level can be greater than target level if a non-removable buffer has been encountered.</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$targetLevel</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$flush</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../App/Khan/Component/HttpFoundation/Response.html#method_ensureIEOverSSLCompatibility"><abbr title="App\Khan\Component\HttpFoundation\Response">Response</abbr></a> at line 1223
+                    </div>
+        <div>
+            <h3 id="method_ensureIEOverSSLCompatibility"><code class="language-php">ensureIEOverSSLCompatibility()</code></h3>
+            <code class="language-php">protected ensureIEOverSSLCompatibility(<a href="../../../../App/Khan/Component/HttpFoundation/Request.html"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> $request)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Checks if we need to remove Cache-Control for SSL encrypted downloads when using IE &lt; 9.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php"><a href="../../../../App/Khan/Component/HttpFoundation/Request.html"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></code></td>
+                <td><code class="language-php">$request</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+                    <h4>See also</h4>
+
+                <table class="table">
+                    <tr>
+                <td>http://support.microsoft.com/kb/323308</td>
+                <td></td>
+            </tr>
+            </table>
+
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.75">75</a>
+                    </div>
+        <div>
+            <h3 id="method_fromJsonString"><code class="language-php">fromJsonString()</code></h3>
+            <code class="language-php">public static fromJsonString($data = null, $status = 200, $headers = array())</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Make easier the creation of JsonResponse from raw json.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$data</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$status</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$headers</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.89">89</a>
+                    </div>
+        <div>
+            <h3 id="method_setCallback"><code class="language-php">setCallback()</code></h3>
+            <code class="language-php">public <abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr>&nbsp;setCallback(string|null $callback = null)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets the JSONP callback.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string|null</code></td>
+                <td><code class="language-php">$callback</code></td>
+                <td>The JSONP callback or null to use none</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+                    <h4>Exceptions</h4>
+
+                <table class="table">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException"><abbr title="InvalidArgumentException">InvalidArgumentException</abbr></a></td>
+                <td>When the callback name is not valid</td>
+            </tr>
+            </table>
+
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.124">124</a>
+                    </div>
+        <div>
+            <h3 id="method_setJson"><code class="language-php">setJson()</code></h3>
+            <code class="language-php">public <abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr>&nbsp;setJson(string $json)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets a raw string containing a JSON document to be sent.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$json</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+                    <h4>Exceptions</h4>
+
+                <table class="table">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException"><abbr title="InvalidArgumentException">InvalidArgumentException</abbr></a></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.140">140</a>
+                    </div>
+        <div>
+            <h3 id="method_setData"><code class="language-php">setData()</code></h3>
+            <code class="language-php">public <abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr>&nbsp;setData(mixed $data = array())</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets the data to be sent as JSON.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">mixed</code></td>
+                <td><code class="language-php">$data</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+                    <h4>Exceptions</h4>
+
+                <table class="table">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException"><abbr title="InvalidArgumentException">InvalidArgumentException</abbr></a></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.163">163</a>
+                    </div>
+        <div>
+            <h3 id="method_getEncodingOptions"><code class="language-php">getEncodingOptions()</code></h3>
+            <code class="language-php">public int&nbsp;getEncodingOptions()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns options used while encoding data to JSON.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">int</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.175">175</a>
+                    </div>
+        <div>
+            <h3 id="method_setEncodingOptions"><code class="language-php">setEncodingOptions()</code></h3>
+            <code class="language-php">public <abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr>&nbsp;setEncodingOptions(int $encodingOptions)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets options used while encoding data to JSON.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">int</code></td>
+                <td><code class="language-php">$encodingOptions</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.187">187</a>
+                    </div>
+        <div>
+            <h3 id="method_update"><code class="language-php">update()</code></h3>
+            <code class="language-php">protected <abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr>&nbsp;update()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Updates the content and headers according to the JSON data and callback.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace App\Khan\Component\HttpFoundation;
+
+/**
+ * Response represents an HTTP response in JSON format.
+ *
+ * Note that this class does not force the returned JSON content to be an
+ * object. It is however recommended that you do return an object as it
+ * protects yourself against XSSI and JSON-JavaScript Hijacking.
+ *
+ * @see https://www.owasp.org/index.php/OWASP_AJAX_Security_Guidelines#Always_return_JSON_with_an_Object_on_the_outside
+ *
+ * @author Igor Wiedler &lt;igor@wiedler.ch&gt;
+ */
+class JsonResponse extends Response
+{
+    protected $data;
+    protected $callback;
+
+    // Encode &lt;, &gt;, &#039;, &amp;, and &quot; characters in the JSON, making it also safe to be embedded into HTML.
+    // 15 === JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT
+    const DEFAULT_ENCODING_OPTIONS = 15;
+
+    protected $encodingOptions = self::DEFAULT_ENCODING_OPTIONS;
+
+    /**
+     * @param mixed $data    The response data
+     * @param int   $status  The response status code
+     * @param array $headers An array of response headers
+     * @param bool  $json    If the data is already a JSON string
+     */
+    public function __construct($data = null, int $status = 200, array $headers = array(), bool $json = false)
+    {
+        parent::__construct(&#039;&#039;, $status, $headers);
+
+        if (null === $data) {
+            $data = new \ArrayObject();
+        }
+
+        $json ? $this-&gt;setJson($data) : $this-&gt;setData($data);
+    }
+
+    /**
+     * Factory method for chainability.
+     *
+     * Example:
+     *
+     *     return JsonResponse::create($data, 200)
+     *         -&gt;setSharedMaxAge(300);
+     *
+     * @param mixed $data    The json response data
+     * @param int   $status  The response status code
+     * @param array $headers An array of response headers
+     *
+     * @return static
+     */
+    public static function create($data = null, $status = 200, $headers = array())
+    {
+        return new static($data, $status, $headers);
+    }
+
+    /**
+     * Make easier the creation of JsonResponse from raw json.
+     */
+    public static function fromJsonString($data = null, $status = 200, $headers = array())
+    {
+        return new static($data, $status, $headers, true);
+    }
+
+    /**
+     * Sets the JSONP callback.
+     *
+     * @param string|null $callback The JSONP callback or null to use none
+     *
+     * @return $this
+     *
+     * @throws \InvalidArgumentException When the callback name is not valid
+     */
+    public function setCallback($callback = null)
+    {
+        if (null !== $callback) {
+            // partially taken from http://www.geekality.net/2011/08/03/valid-javascript-identifier/
+            // partially taken from https://github.com/willdurand/JsonpCallbackValidator
+            //      JsonpCallbackValidator is released under the MIT License. See https://github.com/willdurand/JsonpCallbackValidator/blob/v1.1.0/LICENSE for details.
+            //      (c) William Durand &lt;william.durand1@gmail.com&gt;
+            $pattern = &#039;/^[$_\p{L}][$_\p{L}\p{Mn}\p{Mc}\p{Nd}\p{Pc}\x{200C}\x{200D}]*(?:\[(?:&quot;(?:\\\.|[^&quot;\\\])*&quot;|\&#039;(?:\\\.|[^\&#039;\\\])*\&#039;|\d+)\])*?$/u&#039;;
+            $reserved = array(
+                &#039;break&#039;, &#039;do&#039;, &#039;instanceof&#039;, &#039;typeof&#039;, &#039;case&#039;, &#039;else&#039;, &#039;new&#039;, &#039;var&#039;, &#039;catch&#039;, &#039;finally&#039;, &#039;return&#039;, &#039;void&#039;, &#039;continue&#039;, &#039;for&#039;, &#039;switch&#039;, &#039;while&#039;,
+                &#039;debugger&#039;, &#039;function&#039;, &#039;this&#039;, &#039;with&#039;, &#039;default&#039;, &#039;if&#039;, &#039;throw&#039;, &#039;delete&#039;, &#039;in&#039;, &#039;try&#039;, &#039;class&#039;, &#039;enum&#039;, &#039;extends&#039;, &#039;super&#039;,  &#039;const&#039;, &#039;export&#039;,
+                &#039;import&#039;, &#039;implements&#039;, &#039;let&#039;, &#039;private&#039;, &#039;public&#039;, &#039;yield&#039;, &#039;interface&#039;, &#039;package&#039;, &#039;protected&#039;, &#039;static&#039;, &#039;null&#039;, &#039;true&#039;, &#039;false&#039;,
+            );
+            $parts = explode(&#039;.&#039;, $callback);
+            foreach ($parts as $part) {
+                if (!preg_match($pattern, $part) || in_array($part, $reserved, true)) {
+                    throw new \InvalidArgumentException(&#039;The callback name is not valid.&#039;);
+                }
+            }
+        }
+
+        $this-&gt;callback = $callback;
+
+        return $this-&gt;update();
+    }
+
+    /**
+     * Sets a raw string containing a JSON document to be sent.
+     *
+     * @param string $json
+     *
+     * @return $this
+     *
+     * @throws \InvalidArgumentException
+     */
+    public function setJson($json)
+    {
+        $this-&gt;data = $json;
+
+        return $this-&gt;update();
+    }
+
+    /**
+     * Sets the data to be sent as JSON.
+     *
+     * @param mixed $data
+     *
+     * @return $this
+     *
+     * @throws \InvalidArgumentException
+     */
+    public function setData($data = array())
+    {
+        try {
+            $data = json_encode($data, $this-&gt;encodingOptions);
+        } catch (\Exception $e) {
+            if (&#039;Exception&#039; === get_class($e) &amp;&amp; 0 === strpos($e-&gt;getMessage(), &#039;Failed calling &#039;)) {
+                throw $e-&gt;getPrevious() ?: $e;
+            }
+            throw $e;
+        }
+
+        if (JSON_ERROR_NONE !== json_last_error()) {
+            throw new \InvalidArgumentException(json_last_error_msg());
+        }
+
+        return $this-&gt;setJson($data);
+    }
+
+    /**
+     * Returns options used while encoding data to JSON.
+     *
+     * @return int
+     */
+    public function getEncodingOptions()
+    {
+        return $this-&gt;encodingOptions;
+    }
+
+    /**
+     * Sets options used while encoding data to JSON.
+     *
+     * @param int $encodingOptions
+     *
+     * @return $this
+     */
+    public function setEncodingOptions($encodingOptions)
+    {
+        $this-&gt;encodingOptions = (int) $encodingOptions;
+
+        return $this-&gt;setData(json_decode($this-&gt;data));
+    }
+
+    /**
+     * Updates the content and headers according to the JSON data and callback.
+     *
+     * @return $this
+     */
+    protected function update()
+    {
+        if (null !== $this-&gt;callback) {
+            // Not using application/javascript for compatibility reasons with older browsers.
+            $this-&gt;headers-&gt;set(&#039;Content-Type&#039;, &#039;text/javascript&#039;);
+
+            return $this-&gt;setContent(sprintf(&#039;/**/%s(%s);&#039;, $this-&gt;callback, $this-&gt;data));
+        }
+
+        // Only set the header when there is none or when it equals &#039;text/javascript&#039; (from a previous update with callback)
+        // in order to not overwrite a custom definition.
+        if (!$this-&gt;headers-&gt;has(&#039;Content-Type&#039;) || &#039;text/javascript&#039; === $this-&gt;headers-&gt;get(&#039;Content-Type&#039;)) {
+            $this-&gt;headers-&gt;set(&#039;Content-Type&#039;, &#039;application/json&#039;);
+        }
+
+        return $this-&gt;setContent($this-&gt;data);
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

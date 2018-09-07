@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Session\Storage\Handler | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="namespace" data-name="namespace:Symfony_Component_HttpFoundation_Session_Storage_Handler" data-root-path="../../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../../search.html">Search</a></li>
+      </ul>
+        <ol class="breadcrumb">
+                          <li><a href="../../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../../Symfony/Component/HttpFoundation/Session.html">Session</a></li>
+                    <li><a href="../../../../../Symfony/Component/HttpFoundation/Session/Storage.html">Storage</a></li>
+                    <li><a href="../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler.html">Handler</a></li>
+  
+  </ol>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+        <h1>Symfony\Component\HttpFoundation\Session\Storage\Handler</h1>
+
+  
+      <h2>Classes</h2>
+    <table class="table">
+                            <tr>
+          <td><div class="circle circle-n">N</div></td>
+          <td colspan="2"><h3>Symfony\Component\HttpFoundation\Session\Storage\Handler</h3></td>
+        </tr>
+        <tr>
+      <td><div class="circle circle-c">C</div></td>
+      <td><a href="../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler">AbstractSessionHandler</abbr></a></td>
+      <td>This abstract session handler provides a generic implementation
+of the PHP 7.0 SessionUpdateTimestampHandlerInterface,
+enabling strict and lazy session handling.</td>
+    </tr>
+                          <tr>
+      <td><div class="circle circle-c">C</div></td>
+      <td><a href="../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/MemcachedSessionHandler.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\MemcachedSessionHandler">MemcachedSessionHandler</abbr></a></td>
+      <td>Memcached based session storage handler based on the Memcached class
+provided by the PHP memcached extension.</td>
+    </tr>
+                          <tr>
+      <td><div class="circle circle-c">C</div></td>
+      <td><a href="../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/MigratingSessionHandler.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\MigratingSessionHandler">MigratingSessionHandler</abbr></a></td>
+      <td>Migrating session handler for migrating from one handler to another. It reads
+from the current handler and writes both the current and new ones.</td>
+    </tr>
+                          <tr>
+      <td><div class="circle circle-c">C</div></td>
+      <td><a href="../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/MongoDbSessionHandler.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\MongoDbSessionHandler">MongoDbSessionHandler</abbr></a></td>
+      <td>Session handler using the mongodb/mongodb package and MongoDB driver extension.</td>
+    </tr>
+                          <tr>
+      <td><div class="circle circle-c">C</div></td>
+      <td><a href="../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/NativeFileSessionHandler.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler">NativeFileSessionHandler</abbr></a></td>
+      <td>Native session handler using PHP's built in file storage.</td>
+    </tr>
+                          <tr>
+      <td><div class="circle circle-c">C</div></td>
+      <td><a href="../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/NullSessionHandler.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\NullSessionHandler">NullSessionHandler</abbr></a></td>
+      <td>Can be used in unit testing or in a situations where persisted sessions are not desired.</td>
+    </tr>
+                          <tr>
+      <td><div class="circle circle-c">C</div></td>
+      <td><a href="../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/PdoSessionHandler.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler">PdoSessionHandler</abbr></a></td>
+      <td>Session handler using a PDO connection to read and write data.</td>
+    </tr>
+                          <tr>
+      <td><div class="circle circle-c">C</div></td>
+      <td><a href="../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/RedisSessionHandler.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\RedisSessionHandler">RedisSessionHandler</abbr></a></td>
+      <td>Redis based session storage handler based on the Redis class
+provided by the PHP redis extension.</td>
+    </tr>
+                          <tr>
+      <td><div class="circle circle-c">C</div></td>
+      <td><a href="../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/StrictSessionHandler.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\StrictSessionHandler">StrictSessionHandler</abbr></a></td>
+      <td>Adds basic <code>SessionUpdateTimestampHandlerInterface</code> behaviors to another <code>SessionHandlerInterface</code>.</td>
+    </tr>
+            </table>
+  
+  
+  
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

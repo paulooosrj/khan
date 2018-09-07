@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\PredisClusterSessionHandlerTest | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Tests_Session_Storage_Handler_PredisClusterSessionHandlerTest" data-root-path="../../../../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../../../../Symfony/Component/HttpFoundation/Tests.html">Tests</a></li>
+                    <li><a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session.html">Session</a></li>
+                    <li><a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage.html">Storage</a></li>
+                    <li><a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler.html">Handler</a></li>
+  
+            <li>PredisClusterSessionHandlerTest</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>PredisClusterSessionHandlerTest</h1>
+
+    <p>    class
+    <strong>PredisClusterSessionHandlerTest</strong>        extends <a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a>
+</p>
+
+    
+    
+            <h2>Constants</h2>
+
+            <table class="table">
+                    <tr>
+                <td><code class="language-php">PREFIX =  &#039;prefix_&#039;;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+            </table>
+
+    
+            <h2>Properties</h2>
+
+            <table class="table">
+                    <tr>
+                <td id="property_storage">
+                    <code class="language-php">                    protected                                        <a href="../../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/RedisSessionHandler.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\RedisSessionHandler">RedisSessionHandler</abbr></a></code>
+                </td>
+                <td><code class="language-php">$storage</code></td>
+                <td></td>
+                <td><small>from&nbsp;<a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#property_storage"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_redisClient">
+                    <code class="language-php">                    protected                                        <abbr title="Redis">Redis</abbr>|<abbr title="RedisArray">RedisArray</abbr>|<abbr title="RedisCluster">RedisCluster</abbr>|<abbr title="Predis\Client">Client</abbr></code>
+                </td>
+                <td><code class="language-php">$redisClient</code></td>
+                <td></td>
+                <td><small>from&nbsp;<a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#property_redisClient"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td id="property_validator">
+                    <code class="language-php">                    protected                                        <abbr title="Redis">Redis</abbr></code>
+                </td>
+                <td><code class="language-php">$validator</code></td>
+                <td></td>
+                <td><small>from&nbsp;<a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#property_validator"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a></small></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="Redis">Redis</abbr>|<abbr title="RedisArray">RedisArray</abbr>|<abbr title="RedisCluster">RedisCluster</abbr>|<abbr title="Predis\Client">Client</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_createRedisClient">createRedisClient</a>(string $host)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setUp">setUp</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td><small>from&nbsp;<a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_setUp"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_tearDown">tearDown</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td><small>from&nbsp;<a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_tearDown"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testOpenSession">testOpenSession</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td><small>from&nbsp;<a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_testOpenSession"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testCloseSession">testCloseSession</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td><small>from&nbsp;<a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_testCloseSession"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testReadSession">testReadSession</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td><small>from&nbsp;<a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_testReadSession"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testWriteSession">testWriteSession</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td><small>from&nbsp;<a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_testWriteSession"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testUseSessionGcMaxLifetimeAsTimeToLive">testUseSessionGcMaxLifetimeAsTimeToLive</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td><small>from&nbsp;<a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_testUseSessionGcMaxLifetimeAsTimeToLive"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testDestroySession">testDestroySession</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td><small>from&nbsp;<a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_testDestroySession"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGcSession">testGcSession</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td><small>from&nbsp;<a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_testGcSession"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testUpdateTimestamp">testUpdateTimestamp</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td><small>from&nbsp;<a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_testUpdateTimestamp"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testSupportedParam">testSupportedParam</a>(array $options, bool $supported)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td><small>from&nbsp;<a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_testSupportedParam"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">array</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getOptionFixtures">getOptionFixtures</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td><small>from&nbsp;<a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_getOptionFixtures"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setFixture">setFixture</a>($key, $value, $ttl = null)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td><small>from&nbsp;<a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_setFixture"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getFixture">getFixture</a>($key)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td><small>from&nbsp;<a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_getFixture"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_hasFixture">hasFixture</a>($key)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td><small>from&nbsp;<a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_hasFixture"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">int</code></td>
+            <td>
+                <code class="language-php"><a href="#method_fixtureTtl">fixtureTtl</a>($key)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td><small>from&nbsp;<a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_fixtureTtl"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a></small></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.18">18</a>
+                    </div>
+        <div>
+            <h3 id="method_createRedisClient"><code class="language-php">createRedisClient()</code></h3>
+            <code class="language-php">protected <abbr title="Redis">Redis</abbr>|<abbr title="RedisArray">RedisArray</abbr>|<abbr title="RedisCluster">RedisCluster</abbr>|<abbr title="Predis\Client">Client</abbr>&nbsp;createRedisClient(string $host)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$host</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="Redis">Redis</abbr>|<abbr title="RedisArray">RedisArray</abbr>|<abbr title="RedisCluster">RedisCluster</abbr>|<abbr title="Predis\Client">Client</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_setUp"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a> at line 45
+                    </div>
+        <div>
+            <h3 id="method_setUp"><code class="language-php">setUp()</code></h3>
+            <code class="language-php">protected setUp()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_tearDown"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a> at line 65
+                    </div>
+        <div>
+            <h3 id="method_tearDown"><code class="language-php">tearDown()</code></h3>
+            <code class="language-php">protected tearDown()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_testOpenSession"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a> at line 73
+                    </div>
+        <div>
+            <h3 id="method_testOpenSession"><code class="language-php">testOpenSession()</code></h3>
+            <code class="language-php">public testOpenSession()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_testCloseSession"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a> at line 78
+                    </div>
+        <div>
+            <h3 id="method_testCloseSession"><code class="language-php">testCloseSession()</code></h3>
+            <code class="language-php">public testCloseSession()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_testReadSession"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a> at line 83
+                    </div>
+        <div>
+            <h3 id="method_testReadSession"><code class="language-php">testReadSession()</code></h3>
+            <code class="language-php">public testReadSession()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_testWriteSession"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a> at line 92
+                    </div>
+        <div>
+            <h3 id="method_testWriteSession"><code class="language-php">testWriteSession()</code></h3>
+            <code class="language-php">public testWriteSession()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_testUseSessionGcMaxLifetimeAsTimeToLive"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a> at line 100
+                    </div>
+        <div>
+            <h3 id="method_testUseSessionGcMaxLifetimeAsTimeToLive"><code class="language-php">testUseSessionGcMaxLifetimeAsTimeToLive()</code></h3>
+            <code class="language-php">public testUseSessionGcMaxLifetimeAsTimeToLive()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_testDestroySession"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a> at line 109
+                    </div>
+        <div>
+            <h3 id="method_testDestroySession"><code class="language-php">testDestroySession()</code></h3>
+            <code class="language-php">public testDestroySession()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_testGcSession"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a> at line 118
+                    </div>
+        <div>
+            <h3 id="method_testGcSession"><code class="language-php">testGcSession()</code></h3>
+            <code class="language-php">public testGcSession()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_testUpdateTimestamp"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a> at line 123
+                    </div>
+        <div>
+            <h3 id="method_testUpdateTimestamp"><code class="language-php">testUpdateTimestamp()</code></h3>
+            <code class="language-php">public testUpdateTimestamp()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_testSupportedParam"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a> at line 136
+                    </div>
+        <div>
+            <h3 id="method_testSupportedParam"><code class="language-php">testSupportedParam()</code></h3>
+            <code class="language-php">public testSupportedParam(array $options, bool $supported)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$options</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">bool</code></td>
+                <td><code class="language-php">$supported</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_getOptionFixtures"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a> at line 146
+                    </div>
+        <div>
+            <h3 id="method_getOptionFixtures"><code class="language-php">getOptionFixtures()</code></h3>
+            <code class="language-php">public array&nbsp;getOptionFixtures()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">array</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_setFixture"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a> at line 154
+                    </div>
+        <div>
+            <h3 id="method_setFixture"><code class="language-php">setFixture()</code></h3>
+            <code class="language-php">protected setFixture($key, $value, $ttl = null)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$key</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$value</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$ttl</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_getFixture"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a> at line 163
+                    </div>
+        <div>
+            <h3 id="method_getFixture"><code class="language-php">getFixture()</code></h3>
+            <code class="language-php">protected getFixture($key)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$key</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_hasFixture"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a> at line 168
+                    </div>
+        <div>
+            <h3 id="method_hasFixture"><code class="language-php">hasFixture()</code></h3>
+            <code class="language-php">protected bool&nbsp;hasFixture($key)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$key</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler/AbstractRedisSessionHandlerTestCase.html#method_fixtureTtl"><abbr title="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\AbstractRedisSessionHandlerTestCase">AbstractRedisSessionHandlerTestCase</abbr></a> at line 173
+                    </div>
+        <div>
+            <h3 id="method_fixtureTtl"><code class="language-php">fixtureTtl()</code></h3>
+            <code class="language-php">protected int&nbsp;fixtureTtl($key)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$key</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">int</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler;
+
+use Predis\Client;
+
+class PredisClusterSessionHandlerTest extends AbstractRedisSessionHandlerTestCase
+{
+    protected function createRedisClient(string $host): Client
+    {
+        return  new Client(array(array(&#039;host&#039; =&gt; $host)));
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

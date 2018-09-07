@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Tests\ResponseHeaderBagTest | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Tests_ResponseHeaderBagTest" data-root-path="../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../Symfony/Component/HttpFoundation/Tests.html">Tests</a></li>
+  
+            <li>ResponseHeaderBagTest</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>ResponseHeaderBagTest</h1>
+
+    <p>    class
+    <strong>ResponseHeaderBagTest</strong>        extends <abbr title="PHPUnit\Framework\TestCase">TestCase</abbr>
+</p>
+
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testAllPreserveCase">testAllPreserveCase</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testCacheControlHeader">testCacheControlHeader</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testCacheControlClone">testCacheControlClone</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testToStringIncludesCookieHeaders">testToStringIncludesCookieHeaders</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testClearCookieSecureNotHttpOnly">testClearCookieSecureNotHttpOnly</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testReplace">testReplace</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testReplaceWithRemove">testReplaceWithRemove</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testCookiesWithSameNames">testCookiesWithSameNames</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testRemoveCookie">testRemoveCookie</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testRemoveCookieWithNullRemove">testRemoveCookieWithNullRemove</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testSetCookieHeader">testSetCookieHeader</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetCookiesWithInvalidArgument">testGetCookiesWithInvalidArgument</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testMakeDispositionInvalidDisposition">testMakeDispositionInvalidDisposition</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testMakeDisposition">testMakeDisposition</a>($disposition, $filename, $filenameFallback, $expected)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testToStringDoesntMessUpHeaders">testToStringDoesntMessUpHeaders</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_provideMakeDisposition">provideMakeDisposition</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testMakeDispositionFail">testMakeDispositionFail</a>($disposition, $filename)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_provideMakeDispositionFail">provideMakeDispositionFail</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testDateHeaderAddedOnCreation">testDateHeaderAddedOnCreation</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testDateHeaderCanBeSetOnCreation">testDateHeaderCanBeSetOnCreation</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testDateHeaderWillBeRecreatedWhenRemoved">testDateHeaderWillBeRecreatedWhenRemoved</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testDateHeaderWillBeRecreatedWhenHeadersAreReplaced">testDateHeaderWillBeRecreatedWhenHeadersAreReplaced</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.23">23</a>
+                    </div>
+        <div>
+            <h3 id="method_testAllPreserveCase"><code class="language-php">testAllPreserveCase()</code></h3>
+            <code class="language-php">public testAllPreserveCase()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.43">43</a>
+                    </div>
+        <div>
+            <h3 id="method_testCacheControlHeader"><code class="language-php">testCacheControlHeader()</code></h3>
+            <code class="language-php">public testCacheControlHeader()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.102">102</a>
+                    </div>
+        <div>
+            <h3 id="method_testCacheControlClone"><code class="language-php">testCacheControlClone()</code></h3>
+            <code class="language-php">public testCacheControlClone()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.110">110</a>
+                    </div>
+        <div>
+            <h3 id="method_testToStringIncludesCookieHeaders"><code class="language-php">testToStringIncludesCookieHeaders()</code></h3>
+            <code class="language-php">public testToStringIncludesCookieHeaders()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.122">122</a>
+                    </div>
+        <div>
+            <h3 id="method_testClearCookieSecureNotHttpOnly"><code class="language-php">testClearCookieSecureNotHttpOnly()</code></h3>
+            <code class="language-php">public testClearCookieSecureNotHttpOnly()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.131">131</a>
+                    </div>
+        <div>
+            <h3 id="method_testReplace"><code class="language-php">testReplace()</code></h3>
+            <code class="language-php">public testReplace()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.142">142</a>
+                    </div>
+        <div>
+            <h3 id="method_testReplaceWithRemove"><code class="language-php">testReplaceWithRemove()</code></h3>
+            <code class="language-php">public testReplaceWithRemove()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.154">154</a>
+                    </div>
+        <div>
+            <h3 id="method_testCookiesWithSameNames"><code class="language-php">testCookiesWithSameNames()</code></h3>
+            <code class="language-php">public testCookiesWithSameNames()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.184">184</a>
+                    </div>
+        <div>
+            <h3 id="method_testRemoveCookie"><code class="language-php">testRemoveCookie()</code></h3>
+            <code class="language-php">public testRemoveCookie()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.209">209</a>
+                    </div>
+        <div>
+            <h3 id="method_testRemoveCookieWithNullRemove"><code class="language-php">testRemoveCookieWithNullRemove()</code></h3>
+            <code class="language-php">public testRemoveCookieWithNullRemove()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.227">227</a>
+                    </div>
+        <div>
+            <h3 id="method_testSetCookieHeader"><code class="language-php">testSetCookieHeader()</code></h3>
+            <code class="language-php">public testSetCookieHeader()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.246">246</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetCookiesWithInvalidArgument"><code class="language-php">testGetCookiesWithInvalidArgument()</code></h3>
+            <code class="language-php">public testGetCookiesWithInvalidArgument()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.256">256</a>
+                    </div>
+        <div>
+            <h3 id="method_testMakeDispositionInvalidDisposition"><code class="language-php">testMakeDispositionInvalidDisposition()</code></h3>
+            <code class="language-php">public testMakeDispositionInvalidDisposition()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.266">266</a>
+                    </div>
+        <div>
+            <h3 id="method_testMakeDisposition"><code class="language-php">testMakeDisposition()</code></h3>
+            <code class="language-php">public testMakeDisposition($disposition, $filename, $filenameFallback, $expected)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$disposition</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$filename</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$filenameFallback</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$expected</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.273">273</a>
+                    </div>
+        <div>
+            <h3 id="method_testToStringDoesntMessUpHeaders"><code class="language-php">testToStringDoesntMessUpHeaders()</code></h3>
+            <code class="language-php">public testToStringDoesntMessUpHeaders()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.287">287</a>
+                    </div>
+        <div>
+            <h3 id="method_provideMakeDisposition"><code class="language-php">provideMakeDisposition()</code></h3>
+            <code class="language-php">public provideMakeDisposition()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.303">303</a>
+                    </div>
+        <div>
+            <h3 id="method_testMakeDispositionFail"><code class="language-php">testMakeDispositionFail()</code></h3>
+            <code class="language-php">public testMakeDispositionFail($disposition, $filename)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$disposition</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$filename</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.310">310</a>
+                    </div>
+        <div>
+            <h3 id="method_provideMakeDispositionFail"><code class="language-php">provideMakeDispositionFail()</code></h3>
+            <code class="language-php">public provideMakeDispositionFail()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.322">322</a>
+                    </div>
+        <div>
+            <h3 id="method_testDateHeaderAddedOnCreation"><code class="language-php">testDateHeaderAddedOnCreation()</code></h3>
+            <code class="language-php">public testDateHeaderAddedOnCreation()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.332">332</a>
+                    </div>
+        <div>
+            <h3 id="method_testDateHeaderCanBeSetOnCreation"><code class="language-php">testDateHeaderCanBeSetOnCreation()</code></h3>
+            <code class="language-php">public testDateHeaderCanBeSetOnCreation()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.340">340</a>
+                    </div>
+        <div>
+            <h3 id="method_testDateHeaderWillBeRecreatedWhenRemoved"><code class="language-php">testDateHeaderWillBeRecreatedWhenRemoved()</code></h3>
+            <code class="language-php">public testDateHeaderWillBeRecreatedWhenRemoved()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.351">351</a>
+                    </div>
+        <div>
+            <h3 id="method_testDateHeaderWillBeRecreatedWhenHeadersAreReplaced"><code class="language-php">testDateHeaderWillBeRecreatedWhenHeadersAreReplaced()</code></h3>
+            <code class="language-php">public testDateHeaderWillBeRecreatedWhenHeadersAreReplaced()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Tests;
+
+use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\ResponseHeaderBag;
+use Symfony\Component\HttpFoundation\Cookie;
+
+/**
+ * @group time-sensitive
+ */
+class ResponseHeaderBagTest extends TestCase
+{
+    public function testAllPreserveCase()
+    {
+        $headers = array(
+            &#039;fOo&#039; =&gt; &#039;BAR&#039;,
+            &#039;ETag&#039; =&gt; &#039;xyzzy&#039;,
+            &#039;Content-MD5&#039; =&gt; &#039;Q2hlY2sgSW50ZWdyaXR5IQ==&#039;,
+            &#039;P3P&#039; =&gt; &#039;CP=&quot;CAO PSA OUR&quot;&#039;,
+            &#039;WWW-Authenticate&#039; =&gt; &#039;Basic realm=&quot;WallyWorld&quot;&#039;,
+            &#039;X-UA-Compatible&#039; =&gt; &#039;IE=edge,chrome=1&#039;,
+            &#039;X-XSS-Protection&#039; =&gt; &#039;1; mode=block&#039;,
+        );
+
+        $bag = new ResponseHeaderBag($headers);
+        $allPreservedCase = $bag-&gt;allPreserveCase();
+
+        foreach (array_keys($headers) as $headerName) {
+            $this-&gt;assertArrayHasKey($headerName, $allPreservedCase, &#039;-&gt;allPreserveCase() gets all input keys in original case&#039;);
+        }
+    }
+
+    public function testCacheControlHeader()
+    {
+        $bag = new ResponseHeaderBag(array());
+        $this-&gt;assertEquals(&#039;no-cache, private&#039;, $bag-&gt;get(&#039;Cache-Control&#039;));
+        $this-&gt;assertTrue($bag-&gt;hasCacheControlDirective(&#039;no-cache&#039;));
+
+        $bag = new ResponseHeaderBag(array(&#039;Cache-Control&#039; =&gt; &#039;public&#039;));
+        $this-&gt;assertEquals(&#039;public&#039;, $bag-&gt;get(&#039;Cache-Control&#039;));
+        $this-&gt;assertTrue($bag-&gt;hasCacheControlDirective(&#039;public&#039;));
+
+        $bag = new ResponseHeaderBag(array(&#039;ETag&#039; =&gt; &#039;abcde&#039;));
+        $this-&gt;assertEquals(&#039;private, must-revalidate&#039;, $bag-&gt;get(&#039;Cache-Control&#039;));
+        $this-&gt;assertTrue($bag-&gt;hasCacheControlDirective(&#039;private&#039;));
+        $this-&gt;assertTrue($bag-&gt;hasCacheControlDirective(&#039;must-revalidate&#039;));
+        $this-&gt;assertFalse($bag-&gt;hasCacheControlDirective(&#039;max-age&#039;));
+
+        $bag = new ResponseHeaderBag(array(&#039;Expires&#039; =&gt; &#039;Wed, 16 Feb 2011 14:17:43 GMT&#039;));
+        $this-&gt;assertEquals(&#039;private, must-revalidate&#039;, $bag-&gt;get(&#039;Cache-Control&#039;));
+
+        $bag = new ResponseHeaderBag(array(
+            &#039;Expires&#039; =&gt; &#039;Wed, 16 Feb 2011 14:17:43 GMT&#039;,
+            &#039;Cache-Control&#039; =&gt; &#039;max-age=3600&#039;,
+        ));
+        $this-&gt;assertEquals(&#039;max-age=3600, private&#039;, $bag-&gt;get(&#039;Cache-Control&#039;));
+
+        $bag = new ResponseHeaderBag(array(&#039;Last-Modified&#039; =&gt; &#039;abcde&#039;));
+        $this-&gt;assertEquals(&#039;private, must-revalidate&#039;, $bag-&gt;get(&#039;Cache-Control&#039;));
+
+        $bag = new ResponseHeaderBag(array(&#039;Etag&#039; =&gt; &#039;abcde&#039;, &#039;Last-Modified&#039; =&gt; &#039;abcde&#039;));
+        $this-&gt;assertEquals(&#039;private, must-revalidate&#039;, $bag-&gt;get(&#039;Cache-Control&#039;));
+
+        $bag = new ResponseHeaderBag(array(&#039;cache-control&#039; =&gt; &#039;max-age=100&#039;));
+        $this-&gt;assertEquals(&#039;max-age=100, private&#039;, $bag-&gt;get(&#039;Cache-Control&#039;));
+
+        $bag = new ResponseHeaderBag(array(&#039;cache-control&#039; =&gt; &#039;s-maxage=100&#039;));
+        $this-&gt;assertEquals(&#039;s-maxage=100&#039;, $bag-&gt;get(&#039;Cache-Control&#039;));
+
+        $bag = new ResponseHeaderBag(array(&#039;cache-control&#039; =&gt; &#039;private, max-age=100&#039;));
+        $this-&gt;assertEquals(&#039;max-age=100, private&#039;, $bag-&gt;get(&#039;Cache-Control&#039;));
+
+        $bag = new ResponseHeaderBag(array(&#039;cache-control&#039; =&gt; &#039;public, max-age=100&#039;));
+        $this-&gt;assertEquals(&#039;max-age=100, public&#039;, $bag-&gt;get(&#039;Cache-Control&#039;));
+
+        $bag = new ResponseHeaderBag();
+        $bag-&gt;set(&#039;Last-Modified&#039;, &#039;abcde&#039;);
+        $this-&gt;assertEquals(&#039;private, must-revalidate&#039;, $bag-&gt;get(&#039;Cache-Control&#039;));
+
+        $bag = new ResponseHeaderBag();
+        $bag-&gt;set(&#039;Cache-Control&#039;, array(&#039;public&#039;, &#039;must-revalidate&#039;));
+        $this-&gt;assertCount(1, $bag-&gt;get(&#039;Cache-Control&#039;, null, false));
+        $this-&gt;assertEquals(&#039;must-revalidate, public&#039;, $bag-&gt;get(&#039;Cache-Control&#039;));
+
+        $bag = new ResponseHeaderBag();
+        $bag-&gt;set(&#039;Cache-Control&#039;, &#039;public&#039;);
+        $bag-&gt;set(&#039;Cache-Control&#039;, &#039;must-revalidate&#039;, false);
+        $this-&gt;assertCount(1, $bag-&gt;get(&#039;Cache-Control&#039;, null, false));
+        $this-&gt;assertEquals(&#039;must-revalidate, public&#039;, $bag-&gt;get(&#039;Cache-Control&#039;));
+    }
+
+    public function testCacheControlClone()
+    {
+        $headers = array(&#039;foo&#039; =&gt; &#039;bar&#039;);
+        $bag1 = new ResponseHeaderBag($headers);
+        $bag2 = new ResponseHeaderBag($bag1-&gt;allPreserveCase());
+        $this-&gt;assertEquals($bag1-&gt;allPreserveCase(), $bag2-&gt;allPreserveCase());
+    }
+
+    public function testToStringIncludesCookieHeaders()
+    {
+        $bag = new ResponseHeaderBag(array());
+        $bag-&gt;setCookie(new Cookie(&#039;foo&#039;, &#039;bar&#039;));
+
+        $this-&gt;assertSetCookieHeader(&#039;foo=bar; path=/; httponly&#039;, $bag);
+
+        $bag-&gt;clearCookie(&#039;foo&#039;);
+
+        $this-&gt;assertSetCookieHeader(&#039;foo=deleted; expires=&#039;.gmdate(&#039;D, d-M-Y H:i:s T&#039;, time() - 31536001).&#039;; max-age=-31536001; path=/; httponly&#039;, $bag);
+    }
+
+    public function testClearCookieSecureNotHttpOnly()
+    {
+        $bag = new ResponseHeaderBag(array());
+
+        $bag-&gt;clearCookie(&#039;foo&#039;, &#039;/&#039;, null, true, false);
+
+        $this-&gt;assertSetCookieHeader(&#039;foo=deleted; expires=&#039;.gmdate(&#039;D, d-M-Y H:i:s T&#039;, time() - 31536001).&#039;; max-age=-31536001; path=/; secure&#039;, $bag);
+    }
+
+    public function testReplace()
+    {
+        $bag = new ResponseHeaderBag(array());
+        $this-&gt;assertEquals(&#039;no-cache, private&#039;, $bag-&gt;get(&#039;Cache-Control&#039;));
+        $this-&gt;assertTrue($bag-&gt;hasCacheControlDirective(&#039;no-cache&#039;));
+
+        $bag-&gt;replace(array(&#039;Cache-Control&#039; =&gt; &#039;public&#039;));
+        $this-&gt;assertEquals(&#039;public&#039;, $bag-&gt;get(&#039;Cache-Control&#039;));
+        $this-&gt;assertTrue($bag-&gt;hasCacheControlDirective(&#039;public&#039;));
+    }
+
+    public function testReplaceWithRemove()
+    {
+        $bag = new ResponseHeaderBag(array());
+        $this-&gt;assertEquals(&#039;no-cache, private&#039;, $bag-&gt;get(&#039;Cache-Control&#039;));
+        $this-&gt;assertTrue($bag-&gt;hasCacheControlDirective(&#039;no-cache&#039;));
+
+        $bag-&gt;remove(&#039;Cache-Control&#039;);
+        $bag-&gt;replace(array());
+        $this-&gt;assertEquals(&#039;no-cache, private&#039;, $bag-&gt;get(&#039;Cache-Control&#039;));
+        $this-&gt;assertTrue($bag-&gt;hasCacheControlDirective(&#039;no-cache&#039;));
+    }
+
+    public function testCookiesWithSameNames()
+    {
+        $bag = new ResponseHeaderBag();
+        $bag-&gt;setCookie(new Cookie(&#039;foo&#039;, &#039;bar&#039;, 0, &#039;/path/foo&#039;, &#039;foo.bar&#039;));
+        $bag-&gt;setCookie(new Cookie(&#039;foo&#039;, &#039;bar&#039;, 0, &#039;/path/bar&#039;, &#039;foo.bar&#039;));
+        $bag-&gt;setCookie(new Cookie(&#039;foo&#039;, &#039;bar&#039;, 0, &#039;/path/bar&#039;, &#039;bar.foo&#039;));
+        $bag-&gt;setCookie(new Cookie(&#039;foo&#039;, &#039;bar&#039;));
+
+        $this-&gt;assertCount(4, $bag-&gt;getCookies());
+        $this-&gt;assertEquals(&#039;foo=bar; path=/path/foo; domain=foo.bar; httponly&#039;, $bag-&gt;get(&#039;set-cookie&#039;));
+        $this-&gt;assertEquals(array(
+            &#039;foo=bar; path=/path/foo; domain=foo.bar; httponly&#039;,
+            &#039;foo=bar; path=/path/bar; domain=foo.bar; httponly&#039;,
+            &#039;foo=bar; path=/path/bar; domain=bar.foo; httponly&#039;,
+            &#039;foo=bar; path=/; httponly&#039;,
+        ), $bag-&gt;get(&#039;set-cookie&#039;, null, false));
+
+        $this-&gt;assertSetCookieHeader(&#039;foo=bar; path=/path/foo; domain=foo.bar; httponly&#039;, $bag);
+        $this-&gt;assertSetCookieHeader(&#039;foo=bar; path=/path/bar; domain=foo.bar; httponly&#039;, $bag);
+        $this-&gt;assertSetCookieHeader(&#039;foo=bar; path=/path/bar; domain=bar.foo; httponly&#039;, $bag);
+        $this-&gt;assertSetCookieHeader(&#039;foo=bar; path=/; httponly&#039;, $bag);
+
+        $cookies = $bag-&gt;getCookies(ResponseHeaderBag::COOKIES_ARRAY);
+
+        $this-&gt;assertArrayHasKey(&#039;foo&#039;, $cookies[&#039;foo.bar&#039;][&#039;/path/foo&#039;]);
+        $this-&gt;assertArrayHasKey(&#039;foo&#039;, $cookies[&#039;foo.bar&#039;][&#039;/path/bar&#039;]);
+        $this-&gt;assertArrayHasKey(&#039;foo&#039;, $cookies[&#039;bar.foo&#039;][&#039;/path/bar&#039;]);
+        $this-&gt;assertArrayHasKey(&#039;foo&#039;, $cookies[&#039;&#039;][&#039;/&#039;]);
+    }
+
+    public function testRemoveCookie()
+    {
+        $bag = new ResponseHeaderBag();
+        $this-&gt;assertFalse($bag-&gt;has(&#039;set-cookie&#039;));
+
+        $bag-&gt;setCookie(new Cookie(&#039;foo&#039;, &#039;bar&#039;, 0, &#039;/path/foo&#039;, &#039;foo.bar&#039;));
+        $bag-&gt;setCookie(new Cookie(&#039;bar&#039;, &#039;foo&#039;, 0, &#039;/path/bar&#039;, &#039;foo.bar&#039;));
+        $this-&gt;assertTrue($bag-&gt;has(&#039;set-cookie&#039;));
+
+        $cookies = $bag-&gt;getCookies(ResponseHeaderBag::COOKIES_ARRAY);
+        $this-&gt;assertArrayHasKey(&#039;/path/foo&#039;, $cookies[&#039;foo.bar&#039;]);
+
+        $bag-&gt;removeCookie(&#039;foo&#039;, &#039;/path/foo&#039;, &#039;foo.bar&#039;);
+        $this-&gt;assertTrue($bag-&gt;has(&#039;set-cookie&#039;));
+
+        $cookies = $bag-&gt;getCookies(ResponseHeaderBag::COOKIES_ARRAY);
+        $this-&gt;assertArrayNotHasKey(&#039;/path/foo&#039;, $cookies[&#039;foo.bar&#039;]);
+
+        $bag-&gt;removeCookie(&#039;bar&#039;, &#039;/path/bar&#039;, &#039;foo.bar&#039;);
+        $this-&gt;assertFalse($bag-&gt;has(&#039;set-cookie&#039;));
+
+        $cookies = $bag-&gt;getCookies(ResponseHeaderBag::COOKIES_ARRAY);
+        $this-&gt;assertArrayNotHasKey(&#039;foo.bar&#039;, $cookies);
+    }
+
+    public function testRemoveCookieWithNullRemove()
+    {
+        $bag = new ResponseHeaderBag();
+        $bag-&gt;setCookie(new Cookie(&#039;foo&#039;, &#039;bar&#039;, 0));
+        $bag-&gt;setCookie(new Cookie(&#039;bar&#039;, &#039;foo&#039;, 0));
+
+        $cookies = $bag-&gt;getCookies(ResponseHeaderBag::COOKIES_ARRAY);
+        $this-&gt;assertArrayHasKey(&#039;/&#039;, $cookies[&#039;&#039;]);
+
+        $bag-&gt;removeCookie(&#039;foo&#039;, null);
+        $cookies = $bag-&gt;getCookies(ResponseHeaderBag::COOKIES_ARRAY);
+        $this-&gt;assertArrayNotHasKey(&#039;foo&#039;, $cookies[&#039;&#039;][&#039;/&#039;]);
+
+        $bag-&gt;removeCookie(&#039;bar&#039;, null);
+        $cookies = $bag-&gt;getCookies(ResponseHeaderBag::COOKIES_ARRAY);
+        $this-&gt;assertFalse(isset($cookies[&#039;&#039;][&#039;/&#039;][&#039;bar&#039;]));
+    }
+
+    public function testSetCookieHeader()
+    {
+        $bag = new ResponseHeaderBag();
+        $bag-&gt;set(&#039;set-cookie&#039;, &#039;foo=bar&#039;);
+        $this-&gt;assertEquals(array(new Cookie(&#039;foo&#039;, &#039;bar&#039;, 0, &#039;/&#039;, null, false, false, true)), $bag-&gt;getCookies());
+
+        $bag-&gt;set(&#039;set-cookie&#039;, &#039;foo2=bar2&#039;, false);
+        $this-&gt;assertEquals(array(
+            new Cookie(&#039;foo&#039;, &#039;bar&#039;, 0, &#039;/&#039;, null, false, false, true),
+            new Cookie(&#039;foo2&#039;, &#039;bar2&#039;, 0, &#039;/&#039;, null, false, false, true),
+        ), $bag-&gt;getCookies());
+
+        $bag-&gt;remove(&#039;set-cookie&#039;);
+        $this-&gt;assertEquals(array(), $bag-&gt;getCookies());
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testGetCookiesWithInvalidArgument()
+    {
+        $bag = new ResponseHeaderBag();
+
+        $bag-&gt;getCookies(&#039;invalid_argument&#039;);
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testMakeDispositionInvalidDisposition()
+    {
+        $headers = new ResponseHeaderBag();
+
+        $headers-&gt;makeDisposition(&#039;invalid&#039;, &#039;foo.html&#039;);
+    }
+
+    /**
+     * @dataProvider provideMakeDisposition
+     */
+    public function testMakeDisposition($disposition, $filename, $filenameFallback, $expected)
+    {
+        $headers = new ResponseHeaderBag();
+
+        $this-&gt;assertEquals($expected, $headers-&gt;makeDisposition($disposition, $filename, $filenameFallback));
+    }
+
+    public function testToStringDoesntMessUpHeaders()
+    {
+        $headers = new ResponseHeaderBag();
+
+        $headers-&gt;set(&#039;Location&#039;, &#039;http://www.symfony.com&#039;);
+        $headers-&gt;set(&#039;Content-type&#039;, &#039;text/html&#039;);
+
+        (string) $headers;
+
+        $allHeaders = $headers-&gt;allPreserveCase();
+        $this-&gt;assertEquals(array(&#039;http://www.symfony.com&#039;), $allHeaders[&#039;Location&#039;]);
+        $this-&gt;assertEquals(array(&#039;text/html&#039;), $allHeaders[&#039;Content-type&#039;]);
+    }
+
+    public function provideMakeDisposition()
+    {
+        return array(
+            array(&#039;attachment&#039;, &#039;foo.html&#039;, &#039;foo.html&#039;, &#039;attachment; filename=&quot;foo.html&quot;&#039;),
+            array(&#039;attachment&#039;, &#039;foo.html&#039;, &#039;&#039;, &#039;attachment; filename=&quot;foo.html&quot;&#039;),
+            array(&#039;attachment&#039;, &#039;foo bar.html&#039;, &#039;&#039;, &#039;attachment; filename=&quot;foo bar.html&quot;&#039;),
+            array(&#039;attachment&#039;, &#039;foo &quot;bar&quot;.html&#039;, &#039;&#039;, &#039;attachment; filename=&quot;foo \\&quot;bar\\&quot;.html&quot;&#039;),
+            array(&#039;attachment&#039;, &#039;foo%20bar.html&#039;, &#039;foo bar.html&#039;, &#039;attachment; filename=&quot;foo bar.html&quot;; filename*=utf-8\&#039;\&#039;foo%2520bar.html&#039;),
+            array(&#039;attachment&#039;, &#039;föö.html&#039;, &#039;foo.html&#039;, &#039;attachment; filename=&quot;foo.html&quot;; filename*=utf-8\&#039;\&#039;f%C3%B6%C3%B6.html&#039;),
+        );
+    }
+
+    /**
+     * @dataProvider provideMakeDispositionFail
+     * @expectedException \InvalidArgumentException
+     */
+    public function testMakeDispositionFail($disposition, $filename)
+    {
+        $headers = new ResponseHeaderBag();
+
+        $headers-&gt;makeDisposition($disposition, $filename);
+    }
+
+    public function provideMakeDispositionFail()
+    {
+        return array(
+            array(&#039;attachment&#039;, &#039;foo%20bar.html&#039;),
+            array(&#039;attachment&#039;, &#039;foo/bar.html&#039;),
+            array(&#039;attachment&#039;, &#039;/foo.html&#039;),
+            array(&#039;attachment&#039;, &#039;foo\bar.html&#039;),
+            array(&#039;attachment&#039;, &#039;\foo.html&#039;),
+            array(&#039;attachment&#039;, &#039;föö.html&#039;),
+        );
+    }
+
+    public function testDateHeaderAddedOnCreation()
+    {
+        $now = time();
+
+        $bag = new ResponseHeaderBag();
+        $this-&gt;assertTrue($bag-&gt;has(&#039;Date&#039;));
+
+        $this-&gt;assertEquals($now, $bag-&gt;getDate(&#039;Date&#039;)-&gt;getTimestamp());
+    }
+
+    public function testDateHeaderCanBeSetOnCreation()
+    {
+        $someDate = &#039;Thu, 23 Mar 2017 09:15:12 GMT&#039;;
+        $bag = new ResponseHeaderBag(array(&#039;Date&#039; =&gt; $someDate));
+
+        $this-&gt;assertEquals($someDate, $bag-&gt;get(&#039;Date&#039;));
+    }
+
+    public function testDateHeaderWillBeRecreatedWhenRemoved()
+    {
+        $someDate = &#039;Thu, 23 Mar 2017 09:15:12 GMT&#039;;
+        $bag = new ResponseHeaderBag(array(&#039;Date&#039; =&gt; $someDate));
+        $bag-&gt;remove(&#039;Date&#039;);
+
+        // a (new) Date header is still present
+        $this-&gt;assertTrue($bag-&gt;has(&#039;Date&#039;));
+        $this-&gt;assertNotEquals($someDate, $bag-&gt;get(&#039;Date&#039;));
+    }
+
+    public function testDateHeaderWillBeRecreatedWhenHeadersAreReplaced()
+    {
+        $bag = new ResponseHeaderBag();
+        $bag-&gt;replace(array());
+
+        $this-&gt;assertTrue($bag-&gt;has(&#039;Date&#039;));
+    }
+
+    private function assertSetCookieHeader($expected, ResponseHeaderBag $actual)
+    {
+        $this-&gt;assertRegExp(&#039;#^Set-Cookie:\s+&#039;.preg_quote($expected, &#039;#&#039;).&#039;$#m&#039;, str_replace(&quot;\r\n&quot;, &quot;\n&quot;, (string) $actual));
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

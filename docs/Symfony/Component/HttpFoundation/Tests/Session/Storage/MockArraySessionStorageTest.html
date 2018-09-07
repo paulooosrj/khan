@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Tests\Session\Storage\MockArraySessionStorageTest | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Tests_Session_Storage_MockArraySessionStorageTest" data-root-path="../../../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation/Tests.html">Tests</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation/Tests/Session.html">Session</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage.html">Storage</a></li>
+  
+            <li>MockArraySessionStorageTest</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>MockArraySessionStorageTest</h1>
+
+    <p>    class
+    <strong>MockArraySessionStorageTest</strong>        extends <abbr title="PHPUnit\Framework\TestCase">TestCase</abbr>
+</p>
+
+            <p>Test class for MockArraySessionStorage.</p>            
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setUp">setUp</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_tearDown">tearDown</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testStart">testStart</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testRegenerate">testRegenerate</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetId">testGetId</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testClearClearsBags">testClearClearsBags</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testClearStartsSession">testClearStartsSession</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testClearWithNoBagsStartsSession">testClearWithNoBagsStartsSession</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testUnstartedSave">testUnstartedSave</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.43">43</a>
+                    </div>
+        <div>
+            <h3 id="method_setUp"><code class="language-php">setUp()</code></h3>
+            <code class="language-php">protected setUp()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.59">59</a>
+                    </div>
+        <div>
+            <h3 id="method_tearDown"><code class="language-php">tearDown()</code></h3>
+            <code class="language-php">protected tearDown()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.67">67</a>
+                    </div>
+        <div>
+            <h3 id="method_testStart"><code class="language-php">testStart()</code></h3>
+            <code class="language-php">public testStart()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.77">77</a>
+                    </div>
+        <div>
+            <h3 id="method_testRegenerate"><code class="language-php">testRegenerate()</code></h3>
+            <code class="language-php">public testRegenerate()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.93">93</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetId"><code class="language-php">testGetId()</code></h3>
+            <code class="language-php">public testGetId()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.100">100</a>
+                    </div>
+        <div>
+            <h3 id="method_testClearClearsBags"><code class="language-php">testClearClearsBags()</code></h3>
+            <code class="language-php">public testClearClearsBags()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.108">108</a>
+                    </div>
+        <div>
+            <h3 id="method_testClearStartsSession"><code class="language-php">testClearStartsSession()</code></h3>
+            <code class="language-php">public testClearStartsSession()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.115">115</a>
+                    </div>
+        <div>
+            <h3 id="method_testClearWithNoBagsStartsSession"><code class="language-php">testClearWithNoBagsStartsSession()</code></h3>
+            <code class="language-php">public testClearWithNoBagsStartsSession()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.127">127</a>
+                    </div>
+        <div>
+            <h3 id="method_testUnstartedSave"><code class="language-php">testUnstartedSave()</code></h3>
+            <code class="language-php">public testUnstartedSave()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Tests\Session\Storage;
+
+use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage;
+use Symfony\Component\HttpFoundation\Session\Attribute\AttributeBag;
+use Symfony\Component\HttpFoundation\Session\Flash\FlashBag;
+
+/**
+ * Test class for MockArraySessionStorage.
+ *
+ * @author Drak &lt;drak@zikula.org&gt;
+ */
+class MockArraySessionStorageTest extends TestCase
+{
+    /**
+     * @var MockArraySessionStorage
+     */
+    private $storage;
+
+    /**
+     * @var AttributeBag
+     */
+    private $attributes;
+
+    /**
+     * @var FlashBag
+     */
+    private $flashes;
+
+    private $data;
+
+    protected function setUp()
+    {
+        $this-&gt;attributes = new AttributeBag();
+        $this-&gt;flashes = new FlashBag();
+
+        $this-&gt;data = array(
+            $this-&gt;attributes-&gt;getStorageKey() =&gt; array(&#039;foo&#039; =&gt; &#039;bar&#039;),
+            $this-&gt;flashes-&gt;getStorageKey() =&gt; array(&#039;notice&#039; =&gt; &#039;hello&#039;),
+            );
+
+        $this-&gt;storage = new MockArraySessionStorage();
+        $this-&gt;storage-&gt;registerBag($this-&gt;flashes);
+        $this-&gt;storage-&gt;registerBag($this-&gt;attributes);
+        $this-&gt;storage-&gt;setSessionData($this-&gt;data);
+    }
+
+    protected function tearDown()
+    {
+        $this-&gt;data = null;
+        $this-&gt;flashes = null;
+        $this-&gt;attributes = null;
+        $this-&gt;storage = null;
+    }
+
+    public function testStart()
+    {
+        $this-&gt;assertEquals(&#039;&#039;, $this-&gt;storage-&gt;getId());
+        $this-&gt;storage-&gt;start();
+        $id = $this-&gt;storage-&gt;getId();
+        $this-&gt;assertNotEquals(&#039;&#039;, $id);
+        $this-&gt;storage-&gt;start();
+        $this-&gt;assertEquals($id, $this-&gt;storage-&gt;getId());
+    }
+
+    public function testRegenerate()
+    {
+        $this-&gt;storage-&gt;start();
+        $id = $this-&gt;storage-&gt;getId();
+        $this-&gt;storage-&gt;regenerate();
+        $this-&gt;assertNotEquals($id, $this-&gt;storage-&gt;getId());
+        $this-&gt;assertEquals(array(&#039;foo&#039; =&gt; &#039;bar&#039;), $this-&gt;storage-&gt;getBag(&#039;attributes&#039;)-&gt;all());
+        $this-&gt;assertEquals(array(&#039;notice&#039; =&gt; &#039;hello&#039;), $this-&gt;storage-&gt;getBag(&#039;flashes&#039;)-&gt;peekAll());
+
+        $id = $this-&gt;storage-&gt;getId();
+        $this-&gt;storage-&gt;regenerate(true);
+        $this-&gt;assertNotEquals($id, $this-&gt;storage-&gt;getId());
+        $this-&gt;assertEquals(array(&#039;foo&#039; =&gt; &#039;bar&#039;), $this-&gt;storage-&gt;getBag(&#039;attributes&#039;)-&gt;all());
+        $this-&gt;assertEquals(array(&#039;notice&#039; =&gt; &#039;hello&#039;), $this-&gt;storage-&gt;getBag(&#039;flashes&#039;)-&gt;peekAll());
+    }
+
+    public function testGetId()
+    {
+        $this-&gt;assertEquals(&#039;&#039;, $this-&gt;storage-&gt;getId());
+        $this-&gt;storage-&gt;start();
+        $this-&gt;assertNotEquals(&#039;&#039;, $this-&gt;storage-&gt;getId());
+    }
+
+    public function testClearClearsBags()
+    {
+        $this-&gt;storage-&gt;clear();
+
+        $this-&gt;assertSame(array(), $this-&gt;storage-&gt;getBag(&#039;attributes&#039;)-&gt;all());
+        $this-&gt;assertSame(array(), $this-&gt;storage-&gt;getBag(&#039;flashes&#039;)-&gt;peekAll());
+    }
+
+    public function testClearStartsSession()
+    {
+        $this-&gt;storage-&gt;clear();
+
+        $this-&gt;assertTrue($this-&gt;storage-&gt;isStarted());
+    }
+
+    public function testClearWithNoBagsStartsSession()
+    {
+        $storage = new MockArraySessionStorage();
+
+        $storage-&gt;clear();
+
+        $this-&gt;assertTrue($storage-&gt;isStarted());
+    }
+
+    /**
+     * @expectedException \RuntimeException
+     */
+    public function testUnstartedSave()
+    {
+        $this-&gt;storage-&gt;save();
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

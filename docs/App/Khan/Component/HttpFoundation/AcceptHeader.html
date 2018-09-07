@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>App\Khan\Component\HttpFoundation\AcceptHeader | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:App_Khan_Component_HttpFoundation_AcceptHeader" data-root-path="../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../App.html">App</a></li>
+                    <li><a href="../../../../App/Khan.html">Khan</a></li>
+                    <li><a href="../../../../App/Khan/Component.html">Component</a></li>
+                    <li><a href="../../../../App/Khan/Component/HttpFoundation.html">HttpFoundation</a></li>
+  
+            <li>AcceptHeader</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>AcceptHeader</h1>
+
+    <p>    class
+    <strong>AcceptHeader</strong>
+</p>
+
+            <p>Represents an Accept-* header.</p>        <p>An accept header is compound with a list of items,
+sorted by descending quality.</p>    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method___construct">__construct</a>(array $items)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                    static                </code>
+            </td>
+            <td class="text-right"><code class="language-php"><a href="../../../../App/Khan/Component/HttpFoundation/AcceptHeader.html"><abbr title="App\Khan\Component\HttpFoundation\AcceptHeader">AcceptHeader</abbr></a></code></td>
+            <td>
+                <code class="language-php"><a href="#method_fromString">fromString</a>(string $headerValue)</code>
+            </td>
+            <td>
+                                    Builds an AcceptHeader instance from a string.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method___toString">__toString</a>()</code>
+            </td>
+            <td>
+                                    Returns header value's string representation.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_has">has</a>(string $value)</code>
+            </td>
+            <td>
+                                    Tests if header has given value.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><a href="../../../../App/Khan/Component/HttpFoundation/AcceptHeaderItem.html"><abbr title="App\Khan\Component\HttpFoundation\AcceptHeaderItem">AcceptHeaderItem</abbr></a>|null</code></td>
+            <td>
+                <code class="language-php"><a href="#method_get">get</a>(string $value)</code>
+            </td>
+            <td>
+                                    Returns given value's item, if exists.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_add">add</a>(<a href="../../../../App/Khan/Component/HttpFoundation/AcceptHeaderItem.html"><abbr title="App\Khan\Component\HttpFoundation\AcceptHeaderItem">AcceptHeaderItem</abbr></a> $item)</code>
+            </td>
+            <td>
+                                    Adds an item.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><a href="../../../../App/Khan/Component/HttpFoundation/AcceptHeaderItem.html"><abbr title="App\Khan\Component\HttpFoundation\AcceptHeaderItem">AcceptHeaderItem</abbr></a>[]</code></td>
+            <td>
+                <code class="language-php"><a href="#method_all">all</a>()</code>
+            </td>
+            <td>
+                                    Returns all items.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><a href="../../../../App/Khan/Component/HttpFoundation/AcceptHeader.html"><abbr title="App\Khan\Component\HttpFoundation\AcceptHeader">AcceptHeader</abbr></a></code></td>
+            <td>
+                <code class="language-php"><a href="#method_filter">filter</a>(string $pattern)</code>
+            </td>
+            <td>
+                                    Filters items on their value using given regex.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><a href="../../../../App/Khan/Component/HttpFoundation/AcceptHeaderItem.html"><abbr title="App\Khan\Component\HttpFoundation\AcceptHeaderItem">AcceptHeaderItem</abbr></a>|null</code></td>
+            <td>
+                <code class="language-php"><a href="#method_first">first</a>()</code>
+            </td>
+            <td>
+                                    Returns first item.            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.37">37</a>
+                    </div>
+        <div>
+            <h3 id="method___construct"><code class="language-php">__construct()</code></h3>
+            <code class="language-php">public __construct(array $items)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$items</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.51">51</a>
+                    </div>
+        <div>
+            <h3 id="method_fromString"><code class="language-php">fromString()</code></h3>
+            <code class="language-php">public static <a href="../../../../App/Khan/Component/HttpFoundation/AcceptHeader.html"><abbr title="App\Khan\Component\HttpFoundation\AcceptHeader">AcceptHeader</abbr></a>&nbsp;fromString(string $headerValue)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Builds an AcceptHeader instance from a string.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$headerValue</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><a href="../../../../App/Khan/Component/HttpFoundation/AcceptHeader.html"><abbr title="App\Khan\Component\HttpFoundation\AcceptHeader">AcceptHeader</abbr></a></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.68">68</a>
+                    </div>
+        <div>
+            <h3 id="method___toString"><code class="language-php">__toString()</code></h3>
+            <code class="language-php">public string&nbsp;__toString()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns header value's string representation.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.80">80</a>
+                    </div>
+        <div>
+            <h3 id="method_has"><code class="language-php">has()</code></h3>
+            <code class="language-php">public bool&nbsp;has(string $value)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Tests if header has given value.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$value</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.92">92</a>
+                    </div>
+        <div>
+            <h3 id="method_get"><code class="language-php">get()</code></h3>
+            <code class="language-php">public <a href="../../../../App/Khan/Component/HttpFoundation/AcceptHeaderItem.html"><abbr title="App\Khan\Component\HttpFoundation\AcceptHeaderItem">AcceptHeaderItem</abbr></a>|null&nbsp;get(string $value)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns given value's item, if exists.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$value</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><a href="../../../../App/Khan/Component/HttpFoundation/AcceptHeaderItem.html"><abbr title="App\Khan\Component\HttpFoundation\AcceptHeaderItem">AcceptHeaderItem</abbr></a>|null</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.102">102</a>
+                    </div>
+        <div>
+            <h3 id="method_add"><code class="language-php">add()</code></h3>
+            <code class="language-php">public <abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr>&nbsp;add(<a href="../../../../App/Khan/Component/HttpFoundation/AcceptHeaderItem.html"><abbr title="App\Khan\Component\HttpFoundation\AcceptHeaderItem">AcceptHeaderItem</abbr></a> $item)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Adds an item.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php"><a href="../../../../App/Khan/Component/HttpFoundation/AcceptHeaderItem.html"><abbr title="App\Khan\Component\HttpFoundation\AcceptHeaderItem">AcceptHeaderItem</abbr></a></code></td>
+                <td><code class="language-php">$item</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="App\Khan\Component\HttpFoundation\$this">$this</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.115">115</a>
+                    </div>
+        <div>
+            <h3 id="method_all"><code class="language-php">all()</code></h3>
+            <code class="language-php">public <a href="../../../../App/Khan/Component/HttpFoundation/AcceptHeaderItem.html"><abbr title="App\Khan\Component\HttpFoundation\AcceptHeaderItem">AcceptHeaderItem</abbr></a>[]&nbsp;all()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns all items.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><a href="../../../../App/Khan/Component/HttpFoundation/AcceptHeaderItem.html"><abbr title="App\Khan\Component\HttpFoundation\AcceptHeaderItem">AcceptHeaderItem</abbr></a>[]</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.129">129</a>
+                    </div>
+        <div>
+            <h3 id="method_filter"><code class="language-php">filter()</code></h3>
+            <code class="language-php">public <a href="../../../../App/Khan/Component/HttpFoundation/AcceptHeader.html"><abbr title="App\Khan\Component\HttpFoundation\AcceptHeader">AcceptHeader</abbr></a>&nbsp;filter(string $pattern)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Filters items on their value using given regex.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$pattern</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><a href="../../../../App/Khan/Component/HttpFoundation/AcceptHeader.html"><abbr title="App\Khan\Component\HttpFoundation\AcceptHeader">AcceptHeader</abbr></a></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.141">141</a>
+                    </div>
+        <div>
+            <h3 id="method_first"><code class="language-php">first()</code></h3>
+            <code class="language-php">public <a href="../../../../App/Khan/Component/HttpFoundation/AcceptHeaderItem.html"><abbr title="App\Khan\Component\HttpFoundation\AcceptHeaderItem">AcceptHeaderItem</abbr></a>|null&nbsp;first()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns first item.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><a href="../../../../App/Khan/Component/HttpFoundation/AcceptHeaderItem.html"><abbr title="App\Khan\Component\HttpFoundation\AcceptHeaderItem">AcceptHeaderItem</abbr></a>|null</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace App\Khan\Component\HttpFoundation;
+
+/**
+ * Represents an Accept-* header.
+ *
+ * An accept header is compound with a list of items,
+ * sorted by descending quality.
+ *
+ * @author Jean-François Simon &lt;contact@jfsimon.fr&gt;
+ */
+class AcceptHeader
+{
+    /**
+     * @var AcceptHeaderItem[]
+     */
+    private $items = array();
+
+    /**
+     * @var bool
+     */
+    private $sorted = true;
+
+    /**
+     * @param AcceptHeaderItem[] $items
+     */
+    public function __construct(array $items)
+    {
+        foreach ($items as $item) {
+            $this-&gt;add($item);
+        }
+    }
+
+    /**
+     * Builds an AcceptHeader instance from a string.
+     *
+     * @param string $headerValue
+     *
+     * @return self
+     */
+    public static function fromString($headerValue)
+    {
+        $index = 0;
+
+        return new self(array_map(function ($itemValue) use (&amp;$index) {
+            $item = AcceptHeaderItem::fromString($itemValue);
+            $item-&gt;setIndex($index++);
+
+            return $item;
+        }, preg_split(&#039;/\s*(?:,*(&quot;[^&quot;]+&quot;),*|,*(\&#039;[^\&#039;]+\&#039;),*|,+)\s*/&#039;, $headerValue, 0, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE)));
+    }
+
+    /**
+     * Returns header value&#039;s string representation.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return implode(&#039;,&#039;, $this-&gt;items);
+    }
+
+    /**
+     * Tests if header has given value.
+     *
+     * @param string $value
+     *
+     * @return bool
+     */
+    public function has($value)
+    {
+        return isset($this-&gt;items[$value]);
+    }
+
+    /**
+     * Returns given value&#039;s item, if exists.
+     *
+     * @param string $value
+     *
+     * @return AcceptHeaderItem|null
+     */
+    public function get($value)
+    {
+        return $this-&gt;items[$value] ?? $this-&gt;items[explode(&#039;/&#039;, $value)[0].&#039;/*&#039;] ?? $this-&gt;items[&#039;*/*&#039;] ?? $this-&gt;items[&#039;*&#039;] ?? null;
+    }
+
+    /**
+     * Adds an item.
+     *
+     * @return $this
+     */
+    public function add(AcceptHeaderItem $item)
+    {
+        $this-&gt;items[$item-&gt;getValue()] = $item;
+        $this-&gt;sorted = false;
+
+        return $this;
+    }
+
+    /**
+     * Returns all items.
+     *
+     * @return AcceptHeaderItem[]
+     */
+    public function all()
+    {
+        $this-&gt;sort();
+
+        return $this-&gt;items;
+    }
+
+    /**
+     * Filters items on their value using given regex.
+     *
+     * @param string $pattern
+     *
+     * @return self
+     */
+    public function filter($pattern)
+    {
+        return new self(array_filter($this-&gt;items, function (AcceptHeaderItem $item) use ($pattern) {
+            return preg_match($pattern, $item-&gt;getValue());
+        }));
+    }
+
+    /**
+     * Returns first item.
+     *
+     * @return AcceptHeaderItem|null
+     */
+    public function first()
+    {
+        $this-&gt;sort();
+
+        return !empty($this-&gt;items) ? reset($this-&gt;items) : null;
+    }
+
+    /**
+     * Sorts items by descending quality.
+     */
+    private function sort()
+    {
+        if (!$this-&gt;sorted) {
+            uasort($this-&gt;items, function (AcceptHeaderItem $a, AcceptHeaderItem $b) {
+                $qA = $a-&gt;getQuality();
+                $qB = $b-&gt;getQuality();
+
+                if ($qA === $qB) {
+                    return $a-&gt;getIndex() &gt; $b-&gt;getIndex() ? 1 : -1;
+                }
+
+                return $qA &gt; $qB ? -1 : 1;
+            });
+
+            $this-&gt;sorted = true;
+        }
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

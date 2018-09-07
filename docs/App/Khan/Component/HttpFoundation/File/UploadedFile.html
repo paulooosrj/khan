@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>App\Khan\Component\HttpFoundation\File\UploadedFile | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:App_Khan_Component_HttpFoundation_File_UploadedFile" data-root-path="../../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../../App.html">App</a></li>
+                    <li><a href="../../../../../App/Khan.html">Khan</a></li>
+                    <li><a href="../../../../../App/Khan/Component.html">Component</a></li>
+                    <li><a href="../../../../../App/Khan/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../../App/Khan/Component/HttpFoundation/File.html">File</a></li>
+  
+            <li>UploadedFile</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>UploadedFile</h1>
+
+    <p>    class
+    <strong>UploadedFile</strong>        extends <a href="../../../../../App/Khan/Component/HttpFoundation/File/File.html"><abbr title="App\Khan\Component\HttpFoundation\File\File">File</abbr></a>
+</p>
+
+            <p>A file uploaded through a form.</p>            
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method___construct">__construct</a>(string $path, string $originalName, string $mimeType = null, int $error = null, bool $test = false)</code>
+            </td>
+            <td>
+                                    Accepts the information of the uploaded file as provided by the PHP global $_FILES.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string|null</code></td>
+            <td>
+                <code class="language-php"><a href="#method_guessExtension">guessExtension</a>()</code>
+            </td>
+            <td>
+                                    Returns the extension based on the mime type.            </td>
+            <td><small>from&nbsp;<a href="../../../../../App/Khan/Component/HttpFoundation/File/File.html#method_guessExtension"><abbr title="App\Khan\Component\HttpFoundation\File\File">File</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string|null</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getMimeType">getMimeType</a>()</code>
+            </td>
+            <td>
+                                    Returns the mime type of the file.            </td>
+            <td><small>from&nbsp;<a href="../../../../../App/Khan/Component/HttpFoundation/File/File.html#method_getMimeType"><abbr title="App\Khan\Component\HttpFoundation\File\File">File</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><a href="../../../../../App/Khan/Component/HttpFoundation/File/File.html"><abbr title="App\Khan\Component\HttpFoundation\File\File">File</abbr></a></code></td>
+            <td>
+                <code class="language-php"><a href="#method_move">move</a>(string $directory, string $name = null)</code>
+            </td>
+            <td>
+                                    Moves the file to a new location.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getTargetFile">getTargetFile</a>($directory, $name = null)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td><small>from&nbsp;<a href="../../../../../App/Khan/Component/HttpFoundation/File/File.html#method_getTargetFile"><abbr title="App\Khan\Component\HttpFoundation\File\File">File</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getName">getName</a>(string $name)</code>
+            </td>
+            <td>
+                                    Returns locale independent base name of the given path.            </td>
+            <td><small>from&nbsp;<a href="../../../../../App/Khan/Component/HttpFoundation/File/File.html#method_getName"><abbr title="App\Khan\Component\HttpFoundation\File\File">File</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string|null</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getClientOriginalName">getClientOriginalName</a>()</code>
+            </td>
+            <td>
+                                    Returns the original file name.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getClientOriginalExtension">getClientOriginalExtension</a>()</code>
+            </td>
+            <td>
+                                    Returns the original file extension.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string|null</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getClientMimeType">getClientMimeType</a>()</code>
+            </td>
+            <td>
+                                    Returns the file mime type.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string|null</code></td>
+            <td>
+                <code class="language-php"><a href="#method_guessClientExtension">guessClientExtension</a>()</code>
+            </td>
+            <td>
+                                    Returns the extension based on the client mime type.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">int|null</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getClientSize">getClientSize</a>()</code>
+            </td>
+            <td>
+                                    Returns the file size.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">int</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getError">getError</a>()</code>
+            </td>
+            <td>
+                                    Returns the upload error.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_isValid">isValid</a>()</code>
+            </td>
+            <td>
+                                    Returns whether the file was uploaded successfully.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                    static                </code>
+            </td>
+            <td class="text-right"><code class="language-php">int</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getMaxFilesize">getMaxFilesize</a>()</code>
+            </td>
+            <td>
+                                    Returns the maximum size of an uploaded file as configured in php.ini.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getErrorMessage">getErrorMessage</a>()</code>
+            </td>
+            <td>
+                                    Returns an informative upload error message.            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.63">63</a>
+                    </div>
+        <div>
+            <h3 id="method___construct"><code class="language-php">__construct()</code></h3>
+            <code class="language-php">public __construct(string $path, string $originalName, string $mimeType = null, int $error = null, bool $test = false)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Accepts the information of the uploaded file as provided by the PHP global $_FILES.</p>                    <p>The file object is only created when the uploaded file is valid (i.e. when the
+isValid() method returns true). Otherwise the only methods that could be called
+on an UploadedFile instance are:</p>
+
+<ul>
+<li>getClientOriginalName,</li>
+<li>getClientMimeType,</li>
+<li>isValid,</li>
+<li>getError.</li>
+</ul>
+
+<p>Calling any other method on an non-valid instance will cause an unpredictable result.</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$path</code></td>
+                <td>The path to the file</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$originalName</code></td>
+                <td>The original file name of the uploaded file</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$mimeType</code></td>
+                <td>The type of the file as provided by PHP; null defaults to application/octet-stream</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">int</code></td>
+                <td><code class="language-php">$error</code></td>
+                <td>The error constant of the upload (one of PHP's UPLOAD_ERR_XXX constants); null defaults to UPLOAD_ERR_OK</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">bool</code></td>
+                <td><code class="language-php">$test</code></td>
+                <td>Whether the test mode is active
+                                 Local files are used in test mode hence the code should not enforce HTTP uploads</td>
+            </tr>
+            </table>
+
+        
+        
+                    <h4>Exceptions</h4>
+
+                <table class="table">
+                    <tr>
+                <td><abbr title="App\Khan\Component\HttpFoundation\File\Exception\FileException">FileException</abbr></td>
+                <td>If file_uploads is disabled</td>
+            </tr>
+                    <tr>
+                <td><abbr title="App\Khan\Component\HttpFoundation\File\Exception\FileNotFoundException">FileNotFoundException</abbr></td>
+                <td>If the file does not exist</td>
+            </tr>
+            </table>
+
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../App/Khan/Component/HttpFoundation/File/File.html#method_guessExtension"><abbr title="App\Khan\Component\HttpFoundation\File\File">File</abbr></a> at line 56
+                    </div>
+        <div>
+            <h3 id="method_guessExtension"><code class="language-php">guessExtension()</code></h3>
+            <code class="language-php">public string|null&nbsp;guessExtension()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the extension based on the mime type.</p>                    <p>If the mime type is unknown, returns null.</p>
+
+<p>This method uses the mime type as guessed by getMimeType()
+to guess the file extension.</p>            </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string|null</code></td>
+            <td>The guessed extension or null if it cannot be guessed</td>
+        </tr>
+    </table>
+
+        
+        
+                    <h4>See also</h4>
+
+                <table class="table">
+                    <tr>
+                <td>ExtensionGuesser</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>getMimeType()</td>
+                <td></td>
+            </tr>
+            </table>
+
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../App/Khan/Component/HttpFoundation/File/File.html#method_getMimeType"><abbr title="App\Khan\Component\HttpFoundation\File\File">File</abbr></a> at line 75
+                    </div>
+        <div>
+            <h3 id="method_getMimeType"><code class="language-php">getMimeType()</code></h3>
+            <code class="language-php">public string|null&nbsp;getMimeType()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the mime type of the file.</p>                    <p>The mime type is guessed using a MimeTypeGuesser instance, which uses finfo(),
+mime_content_type() and the system binary "file" (in this order), depending on
+which of those are available.</p>            </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string|null</code></td>
+            <td>The guessed mime type (e.g. "application/pdf")</td>
+        </tr>
+    </table>
+
+        
+        
+                    <h4>See also</h4>
+
+                <table class="table">
+                    <tr>
+                <td>MimeTypeGuesser</td>
+                <td></td>
+            </tr>
+            </table>
+
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.201">201</a>
+                    </div>
+        <div>
+            <h3 id="method_move"><code class="language-php">move()</code></h3>
+            <code class="language-php">public <a href="../../../../../App/Khan/Component/HttpFoundation/File/File.html"><abbr title="App\Khan\Component\HttpFoundation\File\File">File</abbr></a>&nbsp;move(string $directory, string $name = null)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Moves the file to a new location.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$directory</code></td>
+                <td>The destination folder</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$name</code></td>
+                <td>The new file name</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><a href="../../../../../App/Khan/Component/HttpFoundation/File/File.html"><abbr title="App\Khan\Component\HttpFoundation\File\File">File</abbr></a></code></td>
+            <td>A File object representing the new file</td>
+        </tr>
+    </table>
+
+        
+                    <h4>Exceptions</h4>
+
+                <table class="table">
+                    <tr>
+                <td><abbr title="App\Khan\Component\HttpFoundation\File\Exception\FileException">FileException</abbr></td>
+                <td>if, for any reason, the file could not have been moved</td>
+            </tr>
+            </table>
+
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../App/Khan/Component/HttpFoundation/File/File.html#method_getTargetFile"><abbr title="App\Khan\Component\HttpFoundation\File\File">File</abbr></a> at line 106
+                    </div>
+        <div>
+            <h3 id="method_getTargetFile"><code class="language-php">getTargetFile()</code></h3>
+            <code class="language-php">protected getTargetFile($directory, $name = null)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$directory</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$name</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../App/Khan/Component/HttpFoundation/File/File.html#method_getName"><abbr title="App\Khan\Component\HttpFoundation\File\File">File</abbr></a> at line 128
+                    </div>
+        <div>
+            <h3 id="method_getName"><code class="language-php">getName()</code></h3>
+            <code class="language-php">protected string&nbsp;getName(string $name)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns locale independent base name of the given path.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$name</code></td>
+                <td>The new file name</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>containing</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.88">88</a>
+                    </div>
+        <div>
+            <h3 id="method_getClientOriginalName"><code class="language-php">getClientOriginalName()</code></h3>
+            <code class="language-php">public string|null&nbsp;getClientOriginalName()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the original file name.</p>                    <p>It is extracted from the request from which the file has been uploaded.
+Then it should not be considered as a safe value.</p>            </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string|null</code></td>
+            <td>The original name</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.101">101</a>
+                    </div>
+        <div>
+            <h3 id="method_getClientOriginalExtension"><code class="language-php">getClientOriginalExtension()</code></h3>
+            <code class="language-php">public string&nbsp;getClientOriginalExtension()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the original file extension.</p>                    <p>It is extracted from the original file name that was uploaded.
+Then it should not be considered as a safe value.</p>            </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>The extension</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.119">119</a>
+                    </div>
+        <div>
+            <h3 id="method_getClientMimeType"><code class="language-php">getClientMimeType()</code></h3>
+            <code class="language-php">public string|null&nbsp;getClientMimeType()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the file mime type.</p>                    <p>The client mime type is extracted from the request from which the file
+was uploaded, so it should not be considered as a safe value.</p>
+
+<p>For a trusted mime type, use getMimeType() instead (which guesses the mime
+type based on the file content).</p>            </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string|null</code></td>
+            <td>The mime type</td>
+        </tr>
+    </table>
+
+        
+        
+                    <h4>See also</h4>
+
+                <table class="table">
+                    <tr>
+                <td>getMimeType()</td>
+                <td></td>
+            </tr>
+            </table>
+
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.141">141</a>
+                    </div>
+        <div>
+            <h3 id="method_guessClientExtension"><code class="language-php">guessClientExtension()</code></h3>
+            <code class="language-php">public string|null&nbsp;guessClientExtension()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the extension based on the client mime type.</p>                    <p>If the mime type is unknown, returns null.</p>
+
+<p>This method uses the mime type as guessed by getClientMimeType()
+to guess the file extension. As such, the extension returned
+by this method cannot be trusted.</p>
+
+<p>For a trusted extension, use guessExtension() instead (which guesses
+the extension based on the guessed mime type for the file).</p>            </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string|null</code></td>
+            <td>The guessed extension or null if it cannot be guessed</td>
+        </tr>
+    </table>
+
+        
+        
+                    <h4>See also</h4>
+
+                <table class="table">
+                    <tr>
+                <td>guessExtension()</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>getClientMimeType()</td>
+                <td></td>
+            </tr>
+            </table>
+
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.159">159</a>
+                    </div>
+        <div>
+            <h3 id="method_getClientSize"><code class="language-php">getClientSize()</code></h3>
+            <code class="language-php">public int|null&nbsp;getClientSize()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the file size.</p>                    <p>It is extracted from the request from which the file has been uploaded.
+Then it should not be considered as a safe value.</p>            </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">int|null</code></td>
+            <td>The file sizes</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.174">174</a>
+                    </div>
+        <div>
+            <h3 id="method_getError"><code class="language-php">getError()</code></h3>
+            <code class="language-php">public int&nbsp;getError()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the upload error.</p>                    <p>If the upload was successful, the constant UPLOAD_ERR_OK is returned.
+Otherwise one of the other UPLOAD_ERR_XXX constants is returned.</p>            </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">int</code></td>
+            <td>The upload error</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.184">184</a>
+                    </div>
+        <div>
+            <h3 id="method_isValid"><code class="language-php">isValid()</code></h3>
+            <code class="language-php">public bool&nbsp;isValid()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns whether the file was uploaded successfully.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td>True if the file has been uploaded with HTTP and no error occurred</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.245">245</a>
+                    </div>
+        <div>
+            <h3 id="method_getMaxFilesize"><code class="language-php">getMaxFilesize()</code></h3>
+            <code class="language-php">public static int&nbsp;getMaxFilesize()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the maximum size of an uploaded file as configured in php.ini.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">int</code></td>
+            <td>The maximum size of an uploaded file in bytes</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.280">280</a>
+                    </div>
+        <div>
+            <h3 id="method_getErrorMessage"><code class="language-php">getErrorMessage()</code></h3>
+            <code class="language-php">public string&nbsp;getErrorMessage()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns an informative upload error message.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>The error message regarding the specified error code</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace App\Khan\Component\HttpFoundation\File;
+
+use App\Khan\Component\HttpFoundation\File\Exception\CannotWriteFileException;
+use App\Khan\Component\HttpFoundation\File\Exception\ExtensionFileException;
+use App\Khan\Component\HttpFoundation\File\Exception\FileException;
+use App\Khan\Component\HttpFoundation\File\Exception\FileNotFoundException;
+use App\Khan\Component\HttpFoundation\File\Exception\FormSizeFileException;
+use App\Khan\Component\HttpFoundation\File\Exception\IniSizeFileException;
+use App\Khan\Component\HttpFoundation\File\Exception\NoFileException;
+use App\Khan\Component\HttpFoundation\File\Exception\NoTmpDirFileException;
+use App\Khan\Component\HttpFoundation\File\Exception\PartialFileException;
+use App\Khan\Component\HttpFoundation\File\MimeType\ExtensionGuesser;
+
+/**
+ * A file uploaded through a form.
+ *
+ * @author Bernhard Schussek &lt;bschussek@gmail.com&gt;
+ * @author Florian Eckerstorfer &lt;florian@eckerstorfer.org&gt;
+ * @author Fabien Potencier &lt;fabien@symfony.com&gt;
+ */
+class UploadedFile extends File
+{
+    private $test = false;
+    private $originalName;
+    private $mimeType;
+    private $error;
+
+    /**
+     * Accepts the information of the uploaded file as provided by the PHP global $_FILES.
+     *
+     * The file object is only created when the uploaded file is valid (i.e. when the
+     * isValid() method returns true). Otherwise the only methods that could be called
+     * on an UploadedFile instance are:
+     *
+     *   * getClientOriginalName,
+     *   * getClientMimeType,
+     *   * isValid,
+     *   * getError.
+     *
+     * Calling any other method on an non-valid instance will cause an unpredictable result.
+     *
+     * @param string      $path         The full temporary path to the file
+     * @param string      $originalName The original file name of the uploaded file
+     * @param string|null $mimeType     The type of the file as provided by PHP; null defaults to application/octet-stream
+     * @param int|null    $error        The error constant of the upload (one of PHP&#039;s UPLOAD_ERR_XXX constants); null defaults to UPLOAD_ERR_OK
+     * @param bool        $test         Whether the test mode is active
+     *                                  Local files are used in test mode hence the code should not enforce HTTP uploads
+     *
+     * @throws FileException         If file_uploads is disabled
+     * @throws FileNotFoundException If the file does not exist
+     */
+    public function __construct(string $path, string $originalName, string $mimeType = null, int $error = null, $test = false)
+    {
+        $this-&gt;originalName = $this-&gt;getName($originalName);
+        $this-&gt;mimeType = $mimeType ?: &#039;application/octet-stream&#039;;
+
+        if (4 &lt; func_num_args() ? !is_bool($test) : null !== $error &amp;&amp; @filesize($path) === $error) {
+            @trigger_error(sprintf(&#039;Passing a size as 4th argument to the constructor of &quot;%s&quot; is deprecated since Symfony 4.1.&#039;, __CLASS__), E_USER_DEPRECATED);
+            $error = $test;
+            $test = 5 &lt; func_num_args() ? func_get_arg(5) : false;
+        }
+
+        $this-&gt;error = $error ?: UPLOAD_ERR_OK;
+        $this-&gt;test = $test;
+
+        parent::__construct($path, UPLOAD_ERR_OK === $this-&gt;error);
+    }
+
+    /**
+     * Returns the original file name.
+     *
+     * It is extracted from the request from which the file has been uploaded.
+     * Then it should not be considered as a safe value.
+     *
+     * @return string|null The original name
+     */
+    public function getClientOriginalName()
+    {
+        return $this-&gt;originalName;
+    }
+
+    /**
+     * Returns the original file extension.
+     *
+     * It is extracted from the original file name that was uploaded.
+     * Then it should not be considered as a safe value.
+     *
+     * @return string The extension
+     */
+    public function getClientOriginalExtension()
+    {
+        return pathinfo($this-&gt;originalName, PATHINFO_EXTENSION);
+    }
+
+    /**
+     * Returns the file mime type.
+     *
+     * The client mime type is extracted from the request from which the file
+     * was uploaded, so it should not be considered as a safe value.
+     *
+     * For a trusted mime type, use getMimeType() instead (which guesses the mime
+     * type based on the file content).
+     *
+     * @return string|null The mime type
+     *
+     * @see getMimeType()
+     */
+    public function getClientMimeType()
+    {
+        return $this-&gt;mimeType;
+    }
+
+    /**
+     * Returns the extension based on the client mime type.
+     *
+     * If the mime type is unknown, returns null.
+     *
+     * This method uses the mime type as guessed by getClientMimeType()
+     * to guess the file extension. As such, the extension returned
+     * by this method cannot be trusted.
+     *
+     * For a trusted extension, use guessExtension() instead (which guesses
+     * the extension based on the guessed mime type for the file).
+     *
+     * @return string|null The guessed extension or null if it cannot be guessed
+     *
+     * @see guessExtension()
+     * @see getClientMimeType()
+     */
+    public function guessClientExtension()
+    {
+        $type = $this-&gt;getClientMimeType();
+        $guesser = ExtensionGuesser::getInstance();
+
+        return $guesser-&gt;guess($type);
+    }
+
+    /**
+     * Returns the file size.
+     *
+     * It is extracted from the request from which the file has been uploaded.
+     * Then it should not be considered as a safe value.
+     *
+     * @deprecated since Symfony 4.1, use getSize() instead.
+     *
+     * @return int|null The file sizes
+     */
+    public function getClientSize()
+    {
+        @trigger_error(sprintf(&#039;&quot;%s&quot; is deprecated since Symfony 4.1. Use getSize() instead.&#039;, __METHOD__), E_USER_DEPRECATED);
+
+        return $this-&gt;getSize();
+    }
+
+    /**
+     * Returns the upload error.
+     *
+     * If the upload was successful, the constant UPLOAD_ERR_OK is returned.
+     * Otherwise one of the other UPLOAD_ERR_XXX constants is returned.
+     *
+     * @return int The upload error
+     */
+    public function getError()
+    {
+        return $this-&gt;error;
+    }
+
+    /**
+     * Returns whether the file was uploaded successfully.
+     *
+     * @return bool True if the file has been uploaded with HTTP and no error occurred
+     */
+    public function isValid()
+    {
+        $isOk = UPLOAD_ERR_OK === $this-&gt;error;
+
+        return $this-&gt;test ? $isOk : $isOk &amp;&amp; is_uploaded_file($this-&gt;getPathname());
+    }
+
+    /**
+     * Moves the file to a new location.
+     *
+     * @param string $directory The destination folder
+     * @param string $name      The new file name
+     *
+     * @return File A File object representing the new file
+     *
+     * @throws FileException if, for any reason, the file could not have been moved
+     */
+    public function move($directory, $name = null)
+    {
+        if ($this-&gt;isValid()) {
+            if ($this-&gt;test) {
+                return parent::move($directory, $name);
+            }
+
+            $target = $this-&gt;getTargetFile($directory, $name);
+
+            if (!@move_uploaded_file($this-&gt;getPathname(), $target)) {
+                $error = error_get_last();
+                throw new FileException(sprintf(&#039;Could not move the file &quot;%s&quot; to &quot;%s&quot; (%s)&#039;, $this-&gt;getPathname(), $target, strip_tags($error[&#039;message&#039;])));
+            }
+
+            @chmod($target, 0666 &amp; ~umask());
+
+            return $target;
+        }
+
+        switch ($this-&gt;error) {
+            case UPLOAD_ERR_INI_SIZE:
+                throw new IniSizeFileException($this-&gt;getErrorMessage());
+            case UPLOAD_ERR_FORM_SIZE:
+                throw new FormSizeFileException($this-&gt;getErrorMessage());
+            case UPLOAD_ERR_PARTIAL:
+                throw new PartialFileException($this-&gt;getErrorMessage());
+            case UPLOAD_ERR_NO_FILE:
+                throw new NoFileException($this-&gt;getErrorMessage());
+            case UPLOAD_ERR_CANT_WRITE:
+                throw new CannotWriteFileException($this-&gt;getErrorMessage());
+            case UPLOAD_ERR_NO_TMP_DIR:
+                throw new NoTmpDirFileException($this-&gt;getErrorMessage());
+            case UPLOAD_ERR_EXTENSION:
+                throw new ExtensionFileException($this-&gt;getErrorMessage());
+        }
+
+        throw new FileException($this-&gt;getErrorMessage());
+    }
+
+    /**
+     * Returns the maximum size of an uploaded file as configured in php.ini.
+     *
+     * @return int The maximum size of an uploaded file in bytes
+     */
+    public static function getMaxFilesize()
+    {
+        $iniMax = strtolower(ini_get(&#039;upload_max_filesize&#039;));
+
+        if (&#039;&#039; === $iniMax) {
+            return PHP_INT_MAX;
+        }
+
+        $max = ltrim($iniMax, &#039;+&#039;);
+        if (0 === strpos($max, &#039;0x&#039;)) {
+            $max = intval($max, 16);
+        } elseif (0 === strpos($max, &#039;0&#039;)) {
+            $max = intval($max, 8);
+        } else {
+            $max = (int) $max;
+        }
+
+        switch (substr($iniMax, -1)) {
+            case &#039;t&#039;: $max *= 1024;
+            // no break
+            case &#039;g&#039;: $max *= 1024;
+            // no break
+            case &#039;m&#039;: $max *= 1024;
+            // no break
+            case &#039;k&#039;: $max *= 1024;
+        }
+
+        return $max;
+    }
+
+    /**
+     * Returns an informative upload error message.
+     *
+     * @return string The error message regarding the specified error code
+     */
+    public function getErrorMessage()
+    {
+        static $errors = array(
+            UPLOAD_ERR_INI_SIZE =&gt; &#039;The file &quot;%s&quot; exceeds your upload_max_filesize ini directive (limit is %d KiB).&#039;,
+            UPLOAD_ERR_FORM_SIZE =&gt; &#039;The file &quot;%s&quot; exceeds the upload limit defined in your form.&#039;,
+            UPLOAD_ERR_PARTIAL =&gt; &#039;The file &quot;%s&quot; was only partially uploaded.&#039;,
+            UPLOAD_ERR_NO_FILE =&gt; &#039;No file was uploaded.&#039;,
+            UPLOAD_ERR_CANT_WRITE =&gt; &#039;The file &quot;%s&quot; could not be written on disk.&#039;,
+            UPLOAD_ERR_NO_TMP_DIR =&gt; &#039;File could not be uploaded: missing temporary directory.&#039;,
+            UPLOAD_ERR_EXTENSION =&gt; &#039;File upload was stopped by a PHP extension.&#039;,
+        );
+
+        $errorCode = $this-&gt;error;
+        $maxFilesize = UPLOAD_ERR_INI_SIZE === $errorCode ? self::getMaxFilesize() / 1024 : 0;
+        $message = isset($errors[$errorCode]) ? $errors[$errorCode] : &#039;The file &quot;%s&quot; was not uploaded due to an unknown error.&#039;;
+
+        return sprintf($message, $this-&gt;getClientOriginalName(), $maxFilesize);
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

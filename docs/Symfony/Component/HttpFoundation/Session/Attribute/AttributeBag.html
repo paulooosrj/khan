@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Session\Attribute\AttributeBag | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Session_Attribute_AttributeBag" data-root-path="../../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../../Symfony/Component/HttpFoundation/Session.html">Session</a></li>
+                    <li><a href="../../../../../Symfony/Component/HttpFoundation/Session/Attribute.html">Attribute</a></li>
+  
+            <li>AttributeBag</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>AttributeBag</h1>
+
+    <p>    class
+    <strong>AttributeBag</strong>        implements
+        <a href="../../../../../Symfony/Component/HttpFoundation/Session/Attribute/AttributeBagInterface.html"><abbr title="Symfony\Component\HttpFoundation\Session\Attribute\AttributeBagInterface">AttributeBagInterface</abbr></a>, <a target="_blank" href="http://php.net/IteratorAggregate"><abbr title="IteratorAggregate">IteratorAggregate</abbr></a>, <a target="_blank" href="http://php.net/Countable"><abbr title="Countable">Countable</abbr></a>
+</p>
+
+            <p>This class relates to session attribute storage.</p>            
+    
+    
+            <h2>Properties</h2>
+
+            <table class="table">
+                    <tr>
+                <td id="property_attributes">
+                    <code class="language-php">                    protected                                        </code>
+                </td>
+                <td><code class="language-php">$attributes</code></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method___construct">__construct</a>(string $storageKey = &#039;_sf2_attributes&#039;)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getName">getName</a>()</code>
+            </td>
+            <td>
+                                    Gets this bag's name.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setName">setName</a>($name)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_initialize">initialize</a>(array $attributes)</code>
+            </td>
+            <td>
+                                    Initializes the Bag.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getStorageKey">getStorageKey</a>()</code>
+            </td>
+            <td>
+                                    Gets the storage key for this bag.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_has">has</a>(string $name)</code>
+            </td>
+            <td>
+                                    Checks if an attribute is defined.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">mixed</code></td>
+            <td>
+                <code class="language-php"><a href="#method_get">get</a>(string $name, mixed $default = null)</code>
+            </td>
+            <td>
+                                    Returns an attribute.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_set">set</a>(string $name, mixed $value)</code>
+            </td>
+            <td>
+                                    Sets an attribute.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">array</code></td>
+            <td>
+                <code class="language-php"><a href="#method_all">all</a>()</code>
+            </td>
+            <td>
+                                    Returns attributes.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_replace">replace</a>(array $attributes)</code>
+            </td>
+            <td>
+                                    Sets attributes.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">mixed</code></td>
+            <td>
+                <code class="language-php"><a href="#method_remove">remove</a>(string $name)</code>
+            </td>
+            <td>
+                                    Removes an attribute.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">mixed</code></td>
+            <td>
+                <code class="language-php"><a href="#method_clear">clear</a>()</code>
+            </td>
+            <td>
+                                    Clears out data from bag.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><a target="_blank" href="http://php.net/ArrayIterator"><abbr title="ArrayIterator">ArrayIterator</abbr></a></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getIterator">getIterator</a>()</code>
+            </td>
+            <td>
+                                    Returns an iterator for attributes.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">int</code></td>
+            <td>
+                <code class="language-php"><a href="#method_count">count</a>()</code>
+            </td>
+            <td>
+                                    Returns the number of attributes.            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.27">27</a>
+                    </div>
+        <div>
+            <h3 id="method___construct"><code class="language-php">__construct()</code></h3>
+            <code class="language-php">public __construct(string $storageKey = &#039;_sf2_attributes&#039;)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$storageKey</code></td>
+                <td>The key used to store attributes in the session</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.35">35</a>
+                    </div>
+        <div>
+            <h3 id="method_getName"><code class="language-php">getName()</code></h3>
+            <code class="language-php">public string&nbsp;getName()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets this bag's name.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.40">40</a>
+                    </div>
+        <div>
+            <h3 id="method_setName"><code class="language-php">setName()</code></h3>
+            <code class="language-php">public setName($name)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$name</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.48">48</a>
+                    </div>
+        <div>
+            <h3 id="method_initialize"><code class="language-php">initialize()</code></h3>
+            <code class="language-php">public initialize(array $attributes)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Initializes the Bag.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$attributes</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.56">56</a>
+                    </div>
+        <div>
+            <h3 id="method_getStorageKey"><code class="language-php">getStorageKey()</code></h3>
+            <code class="language-php">public string&nbsp;getStorageKey()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the storage key for this bag.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.64">64</a>
+                    </div>
+        <div>
+            <h3 id="method_has"><code class="language-php">has()</code></h3>
+            <code class="language-php">public bool&nbsp;has(string $name)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Checks if an attribute is defined.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$name</code></td>
+                <td>The attribute name</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td>true if the attribute is defined, false otherwise</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.72">72</a>
+                    </div>
+        <div>
+            <h3 id="method_get"><code class="language-php">get()</code></h3>
+            <code class="language-php">public mixed&nbsp;get(string $name, mixed $default = null)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns an attribute.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$name</code></td>
+                <td>The attribute name</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">mixed</code></td>
+                <td><code class="language-php">$default</code></td>
+                <td>The default value if not found</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">mixed</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.80">80</a>
+                    </div>
+        <div>
+            <h3 id="method_set"><code class="language-php">set()</code></h3>
+            <code class="language-php">public set(string $name, mixed $value)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets an attribute.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$name</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">mixed</code></td>
+                <td><code class="language-php">$value</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.88">88</a>
+                    </div>
+        <div>
+            <h3 id="method_all"><code class="language-php">all()</code></h3>
+            <code class="language-php">public array&nbsp;all()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns attributes.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">array</code></td>
+            <td>Attributes</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.96">96</a>
+                    </div>
+        <div>
+            <h3 id="method_replace"><code class="language-php">replace()</code></h3>
+            <code class="language-php">public replace(array $attributes)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets attributes.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$attributes</code></td>
+                <td>Attributes</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.107">107</a>
+                    </div>
+        <div>
+            <h3 id="method_remove"><code class="language-php">remove()</code></h3>
+            <code class="language-php">public mixed&nbsp;remove(string $name)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Removes an attribute.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$name</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">mixed</code></td>
+            <td>The removed value or null when it does not exist</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.121">121</a>
+                    </div>
+        <div>
+            <h3 id="method_clear"><code class="language-php">clear()</code></h3>
+            <code class="language-php">public mixed&nbsp;clear()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Clears out data from bag.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">mixed</code></td>
+            <td>Whatever data was contained</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.134">134</a>
+                    </div>
+        <div>
+            <h3 id="method_getIterator"><code class="language-php">getIterator()</code></h3>
+            <code class="language-php">public <a target="_blank" href="http://php.net/ArrayIterator"><abbr title="ArrayIterator">ArrayIterator</abbr></a>&nbsp;getIterator()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns an iterator for attributes.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><a target="_blank" href="http://php.net/ArrayIterator"><abbr title="ArrayIterator">ArrayIterator</abbr></a></code></td>
+            <td>An \ArrayIterator instance</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.144">144</a>
+                    </div>
+        <div>
+            <h3 id="method_count"><code class="language-php">count()</code></h3>
+            <code class="language-php">public int&nbsp;count()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the number of attributes.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">int</code></td>
+            <td>The number of attributes</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Session\Attribute;
+
+/**
+ * This class relates to session attribute storage.
+ */
+class AttributeBag implements AttributeBagInterface, \IteratorAggregate, \Countable
+{
+    private $name = &#039;attributes&#039;;
+    private $storageKey;
+
+    protected $attributes = array();
+
+    /**
+     * @param string $storageKey The key used to store attributes in the session
+     */
+    public function __construct(string $storageKey = &#039;_sf2_attributes&#039;)
+    {
+        $this-&gt;storageKey = $storageKey;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getName()
+    {
+        return $this-&gt;name;
+    }
+
+    public function setName($name)
+    {
+        $this-&gt;name = $name;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function initialize(array &amp;$attributes)
+    {
+        $this-&gt;attributes = &amp;$attributes;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getStorageKey()
+    {
+        return $this-&gt;storageKey;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function has($name)
+    {
+        return array_key_exists($name, $this-&gt;attributes);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function get($name, $default = null)
+    {
+        return array_key_exists($name, $this-&gt;attributes) ? $this-&gt;attributes[$name] : $default;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function set($name, $value)
+    {
+        $this-&gt;attributes[$name] = $value;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function all()
+    {
+        return $this-&gt;attributes;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function replace(array $attributes)
+    {
+        $this-&gt;attributes = array();
+        foreach ($attributes as $key =&gt; $value) {
+            $this-&gt;set($key, $value);
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function remove($name)
+    {
+        $retval = null;
+        if (array_key_exists($name, $this-&gt;attributes)) {
+            $retval = $this-&gt;attributes[$name];
+            unset($this-&gt;attributes[$name]);
+        }
+
+        return $retval;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function clear()
+    {
+        $return = $this-&gt;attributes;
+        $this-&gt;attributes = array();
+
+        return $return;
+    }
+
+    /**
+     * Returns an iterator for attributes.
+     *
+     * @return \ArrayIterator An \ArrayIterator instance
+     */
+    public function getIterator()
+    {
+        return new \ArrayIterator($this-&gt;attributes);
+    }
+
+    /**
+     * Returns the number of attributes.
+     *
+     * @return int The number of attributes
+     */
+    public function count()
+    {
+        return count($this-&gt;attributes);
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

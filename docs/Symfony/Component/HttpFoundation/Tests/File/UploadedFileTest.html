@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Tests\File\UploadedFileTest | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Tests_File_UploadedFileTest" data-root-path="../../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../../Symfony/Component/HttpFoundation/Tests.html">Tests</a></li>
+                    <li><a href="../../../../../Symfony/Component/HttpFoundation/Tests/File.html">File</a></li>
+  
+            <li>UploadedFileTest</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>UploadedFileTest</h1>
+
+    <p>    class
+    <strong>UploadedFileTest</strong>        extends <abbr title="PHPUnit\Framework\TestCase">TestCase</abbr>
+</p>
+
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setUp">setUp</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testConstructWhenFileNotExists">testConstructWhenFileNotExists</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testFileUploadsWithNoMimeType">testFileUploadsWithNoMimeType</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testFileUploadsWithUnknownMimeType">testFileUploadsWithUnknownMimeType</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGuessClientExtension">testGuessClientExtension</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGuessClientExtensionWithIncorrectMimeType">testGuessClientExtensionWithIncorrectMimeType</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testErrorIsOkByDefault">testErrorIsOkByDefault</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetClientOriginalName">testGetClientOriginalName</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetClientOriginalExtension">testGetClientOriginalExtension</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testMoveLocalFileIsNotAllowed">testMoveLocalFileIsNotAllowed</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_failedUploadedFile">failedUploadedFile</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testMoveFailed">testMoveFailed</a>(<abbr title="Symfony\Component\HttpFoundation\File\UploadedFile">UploadedFile</abbr> $file)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testMoveLocalFileIsAllowedInTestMode">testMoveLocalFileIsAllowedInTestMode</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetClientOriginalNameSanitizeFilename">testGetClientOriginalNameSanitizeFilename</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetSize">testGetSize</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testConstructDeprecatedSize">testConstructDeprecatedSize</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testConstructDeprecatedSizeWhenPassingOnlyThe4Needed">testConstructDeprecatedSizeWhenPassingOnlyThe4Needed</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetExtension">testGetExtension</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testIsValid">testIsValid</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testIsInvalidOnUploadError">testIsInvalidOnUploadError</a>($error)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_uploadedFileErrorProvider">uploadedFileErrorProvider</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testIsInvalidIfNotHttpUpload">testIsInvalidIfNotHttpUpload</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.27">27</a>
+                    </div>
+        <div>
+            <h3 id="method_setUp"><code class="language-php">setUp()</code></h3>
+            <code class="language-php">protected setUp()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.34">34</a>
+                    </div>
+        <div>
+            <h3 id="method_testConstructWhenFileNotExists"><code class="language-php">testConstructWhenFileNotExists()</code></h3>
+            <code class="language-php">public testConstructWhenFileNotExists()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.45">45</a>
+                    </div>
+        <div>
+            <h3 id="method_testFileUploadsWithNoMimeType"><code class="language-php">testFileUploadsWithNoMimeType()</code></h3>
+            <code class="language-php">public testFileUploadsWithNoMimeType()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.61">61</a>
+                    </div>
+        <div>
+            <h3 id="method_testFileUploadsWithUnknownMimeType"><code class="language-php">testFileUploadsWithUnknownMimeType()</code></h3>
+            <code class="language-php">public testFileUploadsWithUnknownMimeType()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.73">73</a>
+                    </div>
+        <div>
+            <h3 id="method_testGuessClientExtension"><code class="language-php">testGuessClientExtension()</code></h3>
+            <code class="language-php">public testGuessClientExtension()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.85">85</a>
+                    </div>
+        <div>
+            <h3 id="method_testGuessClientExtensionWithIncorrectMimeType"><code class="language-php">testGuessClientExtensionWithIncorrectMimeType()</code></h3>
+            <code class="language-php">public testGuessClientExtensionWithIncorrectMimeType()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.97">97</a>
+                    </div>
+        <div>
+            <h3 id="method_testErrorIsOkByDefault"><code class="language-php">testErrorIsOkByDefault()</code></h3>
+            <code class="language-php">public testErrorIsOkByDefault()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.109">109</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetClientOriginalName"><code class="language-php">testGetClientOriginalName()</code></h3>
+            <code class="language-php">public testGetClientOriginalName()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.121">121</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetClientOriginalExtension"><code class="language-php">testGetClientOriginalExtension()</code></h3>
+            <code class="language-php">public testGetClientOriginalExtension()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.136">136</a>
+                    </div>
+        <div>
+            <h3 id="method_testMoveLocalFileIsNotAllowed"><code class="language-php">testMoveLocalFileIsNotAllowed()</code></h3>
+            <code class="language-php">public testMoveLocalFileIsNotAllowed()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.148">148</a>
+                    </div>
+        <div>
+            <h3 id="method_failedUploadedFile"><code class="language-php">failedUploadedFile()</code></h3>
+            <code class="language-php">public failedUploadedFile()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.163">163</a>
+                    </div>
+        <div>
+            <h3 id="method_testMoveFailed"><code class="language-php">testMoveFailed()</code></h3>
+            <code class="language-php">public testMoveFailed(<abbr title="Symfony\Component\HttpFoundation\File\UploadedFile">UploadedFile</abbr> $file)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php"><abbr title="Symfony\Component\HttpFoundation\File\UploadedFile">UploadedFile</abbr></code></td>
+                <td><code class="language-php">$file</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.196">196</a>
+                    </div>
+        <div>
+            <h3 id="method_testMoveLocalFileIsAllowedInTestMode"><code class="language-php">testMoveLocalFileIsAllowedInTestMode()</code></h3>
+            <code class="language-php">public testMoveLocalFileIsAllowedInTestMode()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.222">222</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetClientOriginalNameSanitizeFilename"><code class="language-php">testGetClientOriginalNameSanitizeFilename()</code></h3>
+            <code class="language-php">public testGetClientOriginalNameSanitizeFilename()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.233">233</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetSize"><code class="language-php">testGetSize()</code></h3>
+            <code class="language-php">public testGetSize()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.256">256</a>
+                    </div>
+        <div>
+            <h3 id="method_testConstructDeprecatedSize"><code class="language-php">testConstructDeprecatedSize()</code></h3>
+            <code class="language-php">public testConstructDeprecatedSize()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.274">274</a>
+                    </div>
+        <div>
+            <h3 id="method_testConstructDeprecatedSizeWhenPassingOnlyThe4Needed"><code class="language-php">testConstructDeprecatedSizeWhenPassingOnlyThe4Needed()</code></h3>
+            <code class="language-php">public testConstructDeprecatedSizeWhenPassingOnlyThe4Needed()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.286">286</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetExtension"><code class="language-php">testGetExtension()</code></h3>
+            <code class="language-php">public testGetExtension()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.296">296</a>
+                    </div>
+        <div>
+            <h3 id="method_testIsValid"><code class="language-php">testIsValid()</code></h3>
+            <code class="language-php">public testIsValid()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.312">312</a>
+                    </div>
+        <div>
+            <h3 id="method_testIsInvalidOnUploadError"><code class="language-php">testIsInvalidOnUploadError()</code></h3>
+            <code class="language-php">public testIsInvalidOnUploadError($error)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$error</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.324">324</a>
+                    </div>
+        <div>
+            <h3 id="method_uploadedFileErrorProvider"><code class="language-php">uploadedFileErrorProvider()</code></h3>
+            <code class="language-php">public uploadedFileErrorProvider()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.335">335</a>
+                    </div>
+        <div>
+            <h3 id="method_testIsInvalidIfNotHttpUpload"><code class="language-php">testIsInvalidIfNotHttpUpload()</code></h3>
+            <code class="language-php">public testIsInvalidIfNotHttpUpload()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Tests\File;
+
+use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\File\Exception\CannotWriteFileException;
+use Symfony\Component\HttpFoundation\File\Exception\ExtensionFileException;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\HttpFoundation\File\Exception\FormSizeFileException;
+use Symfony\Component\HttpFoundation\File\Exception\IniSizeFileException;
+use Symfony\Component\HttpFoundation\File\Exception\NoFileException;
+use Symfony\Component\HttpFoundation\File\Exception\NoTmpDirFileException;
+use Symfony\Component\HttpFoundation\File\Exception\PartialFileException;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+
+class UploadedFileTest extends TestCase
+{
+    protected function setUp()
+    {
+        if (!ini_get(&#039;file_uploads&#039;)) {
+            $this-&gt;markTestSkipped(&#039;file_uploads is disabled in php.ini&#039;);
+        }
+    }
+
+    public function testConstructWhenFileNotExists()
+    {
+        $this-&gt;{method_exists($this, $_ = &#039;expectException&#039;) ? $_ : &#039;setExpectedException&#039;}(&#039;Symfony\Component\HttpFoundation\File\Exception\FileNotFoundException&#039;);
+
+        new UploadedFile(
+            __DIR__.&#039;/Fixtures/not_here&#039;,
+            &#039;original.gif&#039;,
+            null
+        );
+    }
+
+    public function testFileUploadsWithNoMimeType()
+    {
+        $file = new UploadedFile(
+            __DIR__.&#039;/Fixtures/test.gif&#039;,
+            &#039;original.gif&#039;,
+            null,
+            UPLOAD_ERR_OK
+        );
+
+        $this-&gt;assertEquals(&#039;application/octet-stream&#039;, $file-&gt;getClientMimeType());
+
+        if (extension_loaded(&#039;fileinfo&#039;)) {
+            $this-&gt;assertEquals(&#039;image/gif&#039;, $file-&gt;getMimeType());
+        }
+    }
+
+    public function testFileUploadsWithUnknownMimeType()
+    {
+        $file = new UploadedFile(
+            __DIR__.&#039;/Fixtures/.unknownextension&#039;,
+            &#039;original.gif&#039;,
+            null,
+            UPLOAD_ERR_OK
+        );
+
+        $this-&gt;assertEquals(&#039;application/octet-stream&#039;, $file-&gt;getClientMimeType());
+    }
+
+    public function testGuessClientExtension()
+    {
+        $file = new UploadedFile(
+            __DIR__.&#039;/Fixtures/test.gif&#039;,
+            &#039;original.gif&#039;,
+            &#039;image/gif&#039;,
+            null
+        );
+
+        $this-&gt;assertEquals(&#039;gif&#039;, $file-&gt;guessClientExtension());
+    }
+
+    public function testGuessClientExtensionWithIncorrectMimeType()
+    {
+        $file = new UploadedFile(
+            __DIR__.&#039;/Fixtures/test.gif&#039;,
+            &#039;original.gif&#039;,
+            &#039;image/jpeg&#039;,
+            null
+        );
+
+        $this-&gt;assertEquals(&#039;jpeg&#039;, $file-&gt;guessClientExtension());
+    }
+
+    public function testErrorIsOkByDefault()
+    {
+        $file = new UploadedFile(
+            __DIR__.&#039;/Fixtures/test.gif&#039;,
+            &#039;original.gif&#039;,
+            &#039;image/gif&#039;,
+            null
+        );
+
+        $this-&gt;assertEquals(UPLOAD_ERR_OK, $file-&gt;getError());
+    }
+
+    public function testGetClientOriginalName()
+    {
+        $file = new UploadedFile(
+            __DIR__.&#039;/Fixtures/test.gif&#039;,
+            &#039;original.gif&#039;,
+            &#039;image/gif&#039;,
+            null
+        );
+
+        $this-&gt;assertEquals(&#039;original.gif&#039;, $file-&gt;getClientOriginalName());
+    }
+
+    public function testGetClientOriginalExtension()
+    {
+        $file = new UploadedFile(
+            __DIR__.&#039;/Fixtures/test.gif&#039;,
+            &#039;original.gif&#039;,
+            &#039;image/gif&#039;,
+            null
+        );
+
+        $this-&gt;assertEquals(&#039;gif&#039;, $file-&gt;getClientOriginalExtension());
+    }
+
+    /**
+     * @expectedException \Symfony\Component\HttpFoundation\File\Exception\FileException
+     */
+    public function testMoveLocalFileIsNotAllowed()
+    {
+        $file = new UploadedFile(
+            __DIR__.&#039;/Fixtures/test.gif&#039;,
+            &#039;original.gif&#039;,
+            &#039;image/gif&#039;,
+            UPLOAD_ERR_OK
+        );
+
+        $movedFile = $file-&gt;move(__DIR__.&#039;/Fixtures/directory&#039;);
+    }
+
+    public function failedUploadedFile()
+    {
+        foreach (array(UPLOAD_ERR_INI_SIZE, UPLOAD_ERR_FORM_SIZE, UPLOAD_ERR_PARTIAL, UPLOAD_ERR_NO_FILE, UPLOAD_ERR_CANT_WRITE, UPLOAD_ERR_NO_TMP_DIR, UPLOAD_ERR_EXTENSION, -1) as $error) {
+            yield array(new UploadedFile(
+                __DIR__.&#039;/Fixtures/test.gif&#039;,
+                &#039;original.gif&#039;,
+                &#039;image/gif&#039;,
+                $error
+            ));
+        }
+    }
+
+    /**
+     * @dataProvider failedUploadedFile
+     */
+    public function testMoveFailed(UploadedFile $file)
+    {
+        switch ($file-&gt;getError()) {
+            case UPLOAD_ERR_INI_SIZE:
+                $exceptionClass = IniSizeFileException::class;
+                break;
+            case UPLOAD_ERR_FORM_SIZE:
+                $exceptionClass = FormSizeFileException::class;
+                break;
+            case UPLOAD_ERR_PARTIAL:
+                $exceptionClass = PartialFileException::class;
+                break;
+            case UPLOAD_ERR_NO_FILE:
+                $exceptionClass = NoFileException::class;
+                break;
+            case UPLOAD_ERR_CANT_WRITE:
+                $exceptionClass = CannotWriteFileException::class;
+                break;
+            case UPLOAD_ERR_NO_TMP_DIR:
+                $exceptionClass = NoTmpDirFileException::class;
+                break;
+            case UPLOAD_ERR_EXTENSION:
+                $exceptionClass = ExtensionFileException::class;
+                break;
+            default:
+                $exceptionClass = FileException::class;
+        }
+
+        $this-&gt;expectException($exceptionClass);
+
+        $file-&gt;move(__DIR__.&#039;/Fixtures/directory&#039;);
+    }
+
+    public function testMoveLocalFileIsAllowedInTestMode()
+    {
+        $path = __DIR__.&#039;/Fixtures/test.copy.gif&#039;;
+        $targetDir = __DIR__.&#039;/Fixtures/directory&#039;;
+        $targetPath = $targetDir.&#039;/test.copy.gif&#039;;
+        @unlink($path);
+        @unlink($targetPath);
+        copy(__DIR__.&#039;/Fixtures/test.gif&#039;, $path);
+
+        $file = new UploadedFile(
+            $path,
+            &#039;original.gif&#039;,
+            &#039;image/gif&#039;,
+            UPLOAD_ERR_OK,
+            true
+        );
+
+        $movedFile = $file-&gt;move(__DIR__.&#039;/Fixtures/directory&#039;);
+
+        $this-&gt;assertFileExists($targetPath);
+        $this-&gt;assertFileNotExists($path);
+        $this-&gt;assertEquals(realpath($targetPath), $movedFile-&gt;getRealPath());
+
+        @unlink($targetPath);
+    }
+
+    public function testGetClientOriginalNameSanitizeFilename()
+    {
+        $file = new UploadedFile(
+            __DIR__.&#039;/Fixtures/test.gif&#039;,
+            &#039;../../original.gif&#039;,
+            &#039;image/gif&#039;
+        );
+
+        $this-&gt;assertEquals(&#039;original.gif&#039;, $file-&gt;getClientOriginalName());
+    }
+
+    public function testGetSize()
+    {
+        $file = new UploadedFile(
+            __DIR__.&#039;/Fixtures/test.gif&#039;,
+            &#039;original.gif&#039;,
+            &#039;image/gif&#039;
+        );
+
+        $this-&gt;assertEquals(filesize(__DIR__.&#039;/Fixtures/test.gif&#039;), $file-&gt;getSize());
+
+        $file = new UploadedFile(
+            __DIR__.&#039;/Fixtures/test&#039;,
+            &#039;original.gif&#039;,
+            &#039;image/gif&#039;
+        );
+
+        $this-&gt;assertEquals(filesize(__DIR__.&#039;/Fixtures/test&#039;), $file-&gt;getSize());
+    }
+
+    /**
+     * @group legacy
+     * @expectedDeprecation Passing a size as 4th argument to the constructor of &quot;Symfony\Component\HttpFoundation\File\UploadedFile&quot; is deprecated since Symfony 4.1.
+     */
+    public function testConstructDeprecatedSize()
+    {
+        $file = new UploadedFile(
+            __DIR__.&#039;/Fixtures/test.gif&#039;,
+            &#039;original.gif&#039;,
+            &#039;image/gif&#039;,
+            filesize(__DIR__.&#039;/Fixtures/test.gif&#039;),
+            UPLOAD_ERR_OK,
+            false
+        );
+
+        $this-&gt;assertEquals(filesize(__DIR__.&#039;/Fixtures/test.gif&#039;), $file-&gt;getSize());
+    }
+
+    /**
+     * @group legacy
+     * @expectedDeprecation Passing a size as 4th argument to the constructor of &quot;Symfony\Component\HttpFoundation\File\UploadedFile&quot; is deprecated since Symfony 4.1.
+     */
+    public function testConstructDeprecatedSizeWhenPassingOnlyThe4Needed()
+    {
+        $file = new UploadedFile(
+            __DIR__.&#039;/Fixtures/test.gif&#039;,
+            &#039;original.gif&#039;,
+            &#039;image/gif&#039;,
+            filesize(__DIR__.&#039;/Fixtures/test.gif&#039;)
+        );
+
+        $this-&gt;assertEquals(filesize(__DIR__.&#039;/Fixtures/test.gif&#039;), $file-&gt;getSize());
+    }
+
+    public function testGetExtension()
+    {
+        $file = new UploadedFile(
+            __DIR__.&#039;/Fixtures/test.gif&#039;,
+            &#039;original.gif&#039;
+        );
+
+        $this-&gt;assertEquals(&#039;gif&#039;, $file-&gt;getExtension());
+    }
+
+    public function testIsValid()
+    {
+        $file = new UploadedFile(
+            __DIR__.&#039;/Fixtures/test.gif&#039;,
+            &#039;original.gif&#039;,
+            null,
+            UPLOAD_ERR_OK,
+            true
+        );
+
+        $this-&gt;assertTrue($file-&gt;isValid());
+    }
+
+    /**
+     * @dataProvider uploadedFileErrorProvider
+     */
+    public function testIsInvalidOnUploadError($error)
+    {
+        $file = new UploadedFile(
+            __DIR__.&#039;/Fixtures/test.gif&#039;,
+            &#039;original.gif&#039;,
+            null,
+            $error
+        );
+
+        $this-&gt;assertFalse($file-&gt;isValid());
+    }
+
+    public function uploadedFileErrorProvider()
+    {
+        return array(
+            array(UPLOAD_ERR_INI_SIZE),
+            array(UPLOAD_ERR_FORM_SIZE),
+            array(UPLOAD_ERR_PARTIAL),
+            array(UPLOAD_ERR_NO_TMP_DIR),
+            array(UPLOAD_ERR_EXTENSION),
+        );
+    }
+
+    public function testIsInvalidIfNotHttpUpload()
+    {
+        $file = new UploadedFile(
+            __DIR__.&#039;/Fixtures/test.gif&#039;,
+            &#039;original.gif&#039;,
+            null,
+            UPLOAD_ERR_OK
+        );
+
+        $this-&gt;assertFalse($file-&gt;isValid());
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

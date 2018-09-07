@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Tests\FileBagTest | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Tests_FileBagTest" data-root-path="../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../Symfony/Component/HttpFoundation/Tests.html">Tests</a></li>
+  
+            <li>FileBagTest</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>FileBagTest</h1>
+
+    <p>    class
+    <strong>FileBagTest</strong>        extends <abbr title="PHPUnit\Framework\TestCase">TestCase</abbr>
+</p>
+
+            <p>FileBagTest.</p>            
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testFileMustBeAnArrayOrUploadedFile">testFileMustBeAnArrayOrUploadedFile</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testShouldConvertsUploadedFiles">testShouldConvertsUploadedFiles</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testShouldSetEmptyUploadedFilesToNull">testShouldSetEmptyUploadedFilesToNull</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testShouldRemoveEmptyUploadedFilesForMultiUpload">testShouldRemoveEmptyUploadedFilesForMultiUpload</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testShouldNotRemoveEmptyUploadedFilesForAssociativeArray">testShouldNotRemoveEmptyUploadedFilesForAssociativeArray</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testShouldConvertUploadedFilesWithPhpBug">testShouldConvertUploadedFilesWithPhpBug</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testShouldConvertNestedUploadedFilesWithPhpBug">testShouldConvertNestedUploadedFilesWithPhpBug</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testShouldNotConvertNestedUploadedFiles">testShouldNotConvertNestedUploadedFiles</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_createTempFile">createTempFile</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setUp">setUp</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_tearDown">tearDown</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.29">29</a>
+                    </div>
+        <div>
+            <h3 id="method_testFileMustBeAnArrayOrUploadedFile"><code class="language-php">testFileMustBeAnArrayOrUploadedFile()</code></h3>
+            <code class="language-php">public testFileMustBeAnArrayOrUploadedFile()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.34">34</a>
+                    </div>
+        <div>
+            <h3 id="method_testShouldConvertsUploadedFiles"><code class="language-php">testShouldConvertsUploadedFiles()</code></h3>
+            <code class="language-php">public testShouldConvertsUploadedFiles()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.50">50</a>
+                    </div>
+        <div>
+            <h3 id="method_testShouldSetEmptyUploadedFilesToNull"><code class="language-php">testShouldSetEmptyUploadedFilesToNull()</code></h3>
+            <code class="language-php">public testShouldSetEmptyUploadedFilesToNull()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.63">63</a>
+                    </div>
+        <div>
+            <h3 id="method_testShouldRemoveEmptyUploadedFilesForMultiUpload"><code class="language-php">testShouldRemoveEmptyUploadedFilesForMultiUpload()</code></h3>
+            <code class="language-php">public testShouldRemoveEmptyUploadedFilesForMultiUpload()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.76">76</a>
+                    </div>
+        <div>
+            <h3 id="method_testShouldNotRemoveEmptyUploadedFilesForAssociativeArray"><code class="language-php">testShouldNotRemoveEmptyUploadedFilesForAssociativeArray()</code></h3>
+            <code class="language-php">public testShouldNotRemoveEmptyUploadedFilesForAssociativeArray()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.89">89</a>
+                    </div>
+        <div>
+            <h3 id="method_testShouldConvertUploadedFilesWithPhpBug"><code class="language-php">testShouldConvertUploadedFilesWithPhpBug()</code></h3>
+            <code class="language-php">public testShouldConvertUploadedFilesWithPhpBug()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.118">118</a>
+                    </div>
+        <div>
+            <h3 id="method_testShouldConvertNestedUploadedFilesWithPhpBug"><code class="language-php">testShouldConvertNestedUploadedFilesWithPhpBug()</code></h3>
+            <code class="language-php">public testShouldConvertNestedUploadedFilesWithPhpBug()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.147">147</a>
+                    </div>
+        <div>
+            <h3 id="method_testShouldNotConvertNestedUploadedFiles"><code class="language-php">testShouldNotConvertNestedUploadedFiles()</code></h3>
+            <code class="language-php">public testShouldNotConvertNestedUploadedFiles()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.157">157</a>
+                    </div>
+        <div>
+            <h3 id="method_createTempFile"><code class="language-php">createTempFile()</code></h3>
+            <code class="language-php">protected createTempFile()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.165">165</a>
+                    </div>
+        <div>
+            <h3 id="method_setUp"><code class="language-php">setUp()</code></h3>
+            <code class="language-php">protected setUp()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.170">170</a>
+                    </div>
+        <div>
+            <h3 id="method_tearDown"><code class="language-php">tearDown()</code></h3>
+            <code class="language-php">protected tearDown()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Tests;
+
+use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\FileBag;
+
+/**
+ * FileBagTest.
+ *
+ * @author Fabien Potencier &lt;fabien@symfony.com&gt;
+ * @author Bulat Shakirzyanov &lt;mallluhuct@gmail.com&gt;
+ */
+class FileBagTest extends TestCase
+{
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testFileMustBeAnArrayOrUploadedFile()
+    {
+        new FileBag(array(&#039;file&#039; =&gt; &#039;foo&#039;));
+    }
+
+    public function testShouldConvertsUploadedFiles()
+    {
+        $tmpFile = $this-&gt;createTempFile();
+        $file = new UploadedFile($tmpFile, basename($tmpFile), &#039;text/plain&#039;);
+
+        $bag = new FileBag(array(&#039;file&#039; =&gt; array(
+            &#039;name&#039; =&gt; basename($tmpFile),
+            &#039;type&#039; =&gt; &#039;text/plain&#039;,
+            &#039;tmp_name&#039; =&gt; $tmpFile,
+            &#039;error&#039; =&gt; 0,
+            &#039;size&#039; =&gt; null,
+        )));
+
+        $this-&gt;assertEquals($file, $bag-&gt;get(&#039;file&#039;));
+    }
+
+    public function testShouldSetEmptyUploadedFilesToNull()
+    {
+        $bag = new FileBag(array(&#039;file&#039; =&gt; array(
+            &#039;name&#039; =&gt; &#039;&#039;,
+            &#039;type&#039; =&gt; &#039;&#039;,
+            &#039;tmp_name&#039; =&gt; &#039;&#039;,
+            &#039;error&#039; =&gt; UPLOAD_ERR_NO_FILE,
+            &#039;size&#039; =&gt; 0,
+        )));
+
+        $this-&gt;assertNull($bag-&gt;get(&#039;file&#039;));
+    }
+
+    public function testShouldRemoveEmptyUploadedFilesForMultiUpload()
+    {
+        $bag = new FileBag(array(&#039;files&#039; =&gt; array(
+            &#039;name&#039; =&gt; array(&#039;&#039;),
+            &#039;type&#039; =&gt; array(&#039;&#039;),
+            &#039;tmp_name&#039; =&gt; array(&#039;&#039;),
+            &#039;error&#039; =&gt; array(UPLOAD_ERR_NO_FILE),
+            &#039;size&#039; =&gt; array(0),
+        )));
+
+        $this-&gt;assertSame(array(), $bag-&gt;get(&#039;files&#039;));
+    }
+
+    public function testShouldNotRemoveEmptyUploadedFilesForAssociativeArray()
+    {
+        $bag = new FileBag(array(&#039;files&#039; =&gt; array(
+            &#039;name&#039; =&gt; array(&#039;file1&#039; =&gt; &#039;&#039;),
+            &#039;type&#039; =&gt; array(&#039;file1&#039; =&gt; &#039;&#039;),
+            &#039;tmp_name&#039; =&gt; array(&#039;file1&#039; =&gt; &#039;&#039;),
+            &#039;error&#039; =&gt; array(&#039;file1&#039; =&gt; UPLOAD_ERR_NO_FILE),
+            &#039;size&#039; =&gt; array(&#039;file1&#039; =&gt; 0),
+        )));
+
+        $this-&gt;assertSame(array(&#039;file1&#039; =&gt; null), $bag-&gt;get(&#039;files&#039;));
+    }
+
+    public function testShouldConvertUploadedFilesWithPhpBug()
+    {
+        $tmpFile = $this-&gt;createTempFile();
+        $file = new UploadedFile($tmpFile, basename($tmpFile), &#039;text/plain&#039;);
+
+        $bag = new FileBag(array(
+            &#039;child&#039; =&gt; array(
+                &#039;name&#039; =&gt; array(
+                    &#039;file&#039; =&gt; basename($tmpFile),
+                ),
+                &#039;type&#039; =&gt; array(
+                    &#039;file&#039; =&gt; &#039;text/plain&#039;,
+                ),
+                &#039;tmp_name&#039; =&gt; array(
+                    &#039;file&#039; =&gt; $tmpFile,
+                ),
+                &#039;error&#039; =&gt; array(
+                    &#039;file&#039; =&gt; 0,
+                ),
+                &#039;size&#039; =&gt; array(
+                    &#039;file&#039; =&gt; null,
+                ),
+            ),
+        ));
+
+        $files = $bag-&gt;all();
+        $this-&gt;assertEquals($file, $files[&#039;child&#039;][&#039;file&#039;]);
+    }
+
+    public function testShouldConvertNestedUploadedFilesWithPhpBug()
+    {
+        $tmpFile = $this-&gt;createTempFile();
+        $file = new UploadedFile($tmpFile, basename($tmpFile), &#039;text/plain&#039;);
+
+        $bag = new FileBag(array(
+            &#039;child&#039; =&gt; array(
+                &#039;name&#039; =&gt; array(
+                    &#039;sub&#039; =&gt; array(&#039;file&#039; =&gt; basename($tmpFile)),
+                ),
+                &#039;type&#039; =&gt; array(
+                    &#039;sub&#039; =&gt; array(&#039;file&#039; =&gt; &#039;text/plain&#039;),
+                ),
+                &#039;tmp_name&#039; =&gt; array(
+                    &#039;sub&#039; =&gt; array(&#039;file&#039; =&gt; $tmpFile),
+                ),
+                &#039;error&#039; =&gt; array(
+                    &#039;sub&#039; =&gt; array(&#039;file&#039; =&gt; 0),
+                ),
+                &#039;size&#039; =&gt; array(
+                    &#039;sub&#039; =&gt; array(&#039;file&#039; =&gt; null),
+                ),
+            ),
+        ));
+
+        $files = $bag-&gt;all();
+        $this-&gt;assertEquals($file, $files[&#039;child&#039;][&#039;sub&#039;][&#039;file&#039;]);
+    }
+
+    public function testShouldNotConvertNestedUploadedFiles()
+    {
+        $tmpFile = $this-&gt;createTempFile();
+        $file = new UploadedFile($tmpFile, basename($tmpFile), &#039;text/plain&#039;);
+        $bag = new FileBag(array(&#039;image&#039; =&gt; array(&#039;file&#039; =&gt; $file)));
+
+        $files = $bag-&gt;all();
+        $this-&gt;assertEquals($file, $files[&#039;image&#039;][&#039;file&#039;]);
+    }
+
+    protected function createTempFile()
+    {
+        $tempFile = tempnam(sys_get_temp_dir().&#039;/form_test&#039;, &#039;FormTest&#039;);
+        file_put_contents($tempFile, &#039;1&#039;);
+
+        return $tempFile;
+    }
+
+    protected function setUp()
+    {
+        mkdir(sys_get_temp_dir().&#039;/form_test&#039;, 0777, true);
+    }
+
+    protected function tearDown()
+    {
+        foreach (glob(sys_get_temp_dir().&#039;/form_test/*&#039;) as $file) {
+            unlink($file);
+        }
+
+        rmdir(sys_get_temp_dir().&#039;/form_test&#039;);
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

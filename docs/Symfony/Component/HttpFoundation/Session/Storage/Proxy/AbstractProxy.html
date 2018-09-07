@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Session\Storage\Proxy\AbstractProxy | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Session_Storage_Proxy_AbstractProxy" data-root-path="../../../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation/Session.html">Session</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage.html">Storage</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Proxy.html">Proxy</a></li>
+  
+            <li>AbstractProxy</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>AbstractProxy</h1>
+
+    <p>abstract     class
+    <strong>AbstractProxy</strong>
+</p>
+
+    
+    
+    
+            <h2>Properties</h2>
+
+            <table class="table">
+                    <tr>
+                <td id="property_wrapper">
+                    <code class="language-php">                    protected                                        bool</code>
+                </td>
+                <td><code class="language-php">$wrapper</code></td>
+                <td>Flag if handler wraps an internal PHP session handler (using \SessionHandler).</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td id="property_saveHandlerName">
+                    <code class="language-php">                    protected                                        string</code>
+                </td>
+                <td><code class="language-php">$saveHandlerName</code></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getSaveHandlerName">getSaveHandlerName</a>()</code>
+            </td>
+            <td>
+                                    Gets the session.save_handler name.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_isSessionHandlerInterface">isSessionHandlerInterface</a>()</code>
+            </td>
+            <td>
+                                    Is this proxy handler and instance of \SessionHandlerInterface.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_isWrapper">isWrapper</a>()</code>
+            </td>
+            <td>
+                                    Returns true if this handler wraps an internal PHP session save handler using \SessionHandler.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_isActive">isActive</a>()</code>
+            </td>
+            <td>
+                                    Has a session started?            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getId">getId</a>()</code>
+            </td>
+            <td>
+                                    Gets the session ID.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setId">setId</a>(string $id)</code>
+            </td>
+            <td>
+                                    Sets the session ID.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getName">getName</a>()</code>
+            </td>
+            <td>
+                                    Gets the session name.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setName">setName</a>(string $name)</code>
+            </td>
+            <td>
+                                    Sets the session name.            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.36">36</a>
+                    </div>
+        <div>
+            <h3 id="method_getSaveHandlerName"><code class="language-php">getSaveHandlerName()</code></h3>
+            <code class="language-php">public string&nbsp;getSaveHandlerName()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the session.save_handler name.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.46">46</a>
+                    </div>
+        <div>
+            <h3 id="method_isSessionHandlerInterface"><code class="language-php">isSessionHandlerInterface()</code></h3>
+            <code class="language-php">public bool&nbsp;isSessionHandlerInterface()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Is this proxy handler and instance of \SessionHandlerInterface.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.56">56</a>
+                    </div>
+        <div>
+            <h3 id="method_isWrapper"><code class="language-php">isWrapper()</code></h3>
+            <code class="language-php">public bool&nbsp;isWrapper()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns true if this handler wraps an internal PHP session save handler using \SessionHandler.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.66">66</a>
+                    </div>
+        <div>
+            <h3 id="method_isActive"><code class="language-php">isActive()</code></h3>
+            <code class="language-php">public bool&nbsp;isActive()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Has a session started?</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.76">76</a>
+                    </div>
+        <div>
+            <h3 id="method_getId"><code class="language-php">getId()</code></h3>
+            <code class="language-php">public string&nbsp;getId()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the session ID.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.88">88</a>
+                    </div>
+        <div>
+            <h3 id="method_setId"><code class="language-php">setId()</code></h3>
+            <code class="language-php">public setId(string $id)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets the session ID.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$id</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+                    <h4>Exceptions</h4>
+
+                <table class="table">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/LogicException"><abbr title="LogicException">LogicException</abbr></a></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.102">102</a>
+                    </div>
+        <div>
+            <h3 id="method_getName"><code class="language-php">getName()</code></h3>
+            <code class="language-php">public string&nbsp;getName()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the session name.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.114">114</a>
+                    </div>
+        <div>
+            <h3 id="method_setName"><code class="language-php">setName()</code></h3>
+            <code class="language-php">public setName(string $name)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets the session name.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$name</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+                    <h4>Exceptions</h4>
+
+                <table class="table">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/LogicException"><abbr title="LogicException">LogicException</abbr></a></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Session\Storage\Proxy;
+
+/**
+ * @author Drak &lt;drak@zikula.org&gt;
+ */
+abstract class AbstractProxy
+{
+    /**
+     * Flag if handler wraps an internal PHP session handler (using \SessionHandler).
+     *
+     * @var bool
+     */
+    protected $wrapper = false;
+
+    /**
+     * @var string
+     */
+    protected $saveHandlerName;
+
+    /**
+     * Gets the session.save_handler name.
+     *
+     * @return string
+     */
+    public function getSaveHandlerName()
+    {
+        return $this-&gt;saveHandlerName;
+    }
+
+    /**
+     * Is this proxy handler and instance of \SessionHandlerInterface.
+     *
+     * @return bool
+     */
+    public function isSessionHandlerInterface()
+    {
+        return $this instanceof \SessionHandlerInterface;
+    }
+
+    /**
+     * Returns true if this handler wraps an internal PHP session save handler using \SessionHandler.
+     *
+     * @return bool
+     */
+    public function isWrapper()
+    {
+        return $this-&gt;wrapper;
+    }
+
+    /**
+     * Has a session started?
+     *
+     * @return bool
+     */
+    public function isActive()
+    {
+        return \PHP_SESSION_ACTIVE === session_status();
+    }
+
+    /**
+     * Gets the session ID.
+     *
+     * @return string
+     */
+    public function getId()
+    {
+        return session_id();
+    }
+
+    /**
+     * Sets the session ID.
+     *
+     * @param string $id
+     *
+     * @throws \LogicException
+     */
+    public function setId($id)
+    {
+        if ($this-&gt;isActive()) {
+            throw new \LogicException(&#039;Cannot change the ID of an active session&#039;);
+        }
+
+        session_id($id);
+    }
+
+    /**
+     * Gets the session name.
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return session_name();
+    }
+
+    /**
+     * Sets the session name.
+     *
+     * @param string $name
+     *
+     * @throws \LogicException
+     */
+    public function setName($name)
+    {
+        if ($this-&gt;isActive()) {
+            throw new \LogicException(&#039;Cannot change the name of an active session&#039;);
+        }
+
+        session_name($name);
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

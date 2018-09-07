@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Tests\ResponseTestCase | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Tests_ResponseTestCase" data-root-path="../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../Symfony/Component/HttpFoundation/Tests.html">Tests</a></li>
+  
+            <li>ResponseTestCase</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>ResponseTestCase</h1>
+
+    <p>abstract     class
+    <strong>ResponseTestCase</strong>        extends <abbr title="PHPUnit\Framework\TestCase">TestCase</abbr>
+</p>
+
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testNoCacheControlHeaderOnAttachmentUsingHTTPSAndMSIE">testNoCacheControlHeaderOnAttachmentUsingHTTPSAndMSIE</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                        abstract                    protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_provideResponse">provideResponse</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.19">19</a>
+                    </div>
+        <div>
+            <h3 id="method_testNoCacheControlHeaderOnAttachmentUsingHTTPSAndMSIE"><code class="language-php">testNoCacheControlHeaderOnAttachmentUsingHTTPSAndMSIE()</code></h3>
+            <code class="language-php">public testNoCacheControlHeaderOnAttachmentUsingHTTPSAndMSIE()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.88">88</a>
+                    </div>
+        <div>
+            <h3 id="method_provideResponse"><code class="language-php">provideResponse()</code></h3>
+            <code class="language-php">abstract protected provideResponse()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Tests;
+
+use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\Request;
+
+abstract class ResponseTestCase extends TestCase
+{
+    public function testNoCacheControlHeaderOnAttachmentUsingHTTPSAndMSIE()
+    {
+        // Check for HTTPS and IE 8
+        $request = new Request();
+        $request-&gt;server-&gt;set(&#039;HTTPS&#039;, true);
+        $request-&gt;server-&gt;set(&#039;HTTP_USER_AGENT&#039;, &#039;Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/4.0)&#039;);
+
+        $response = $this-&gt;provideResponse();
+        $response-&gt;headers-&gt;set(&#039;Content-Disposition&#039;, &#039;attachment; filename=&quot;fname.ext&quot;&#039;);
+        $response-&gt;prepare($request);
+
+        $this-&gt;assertFalse($response-&gt;headers-&gt;has(&#039;Cache-Control&#039;));
+
+        // Check for IE 10 and HTTPS
+        $request-&gt;server-&gt;set(&#039;HTTP_USER_AGENT&#039;, &#039;Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)&#039;);
+
+        $response = $this-&gt;provideResponse();
+        $response-&gt;headers-&gt;set(&#039;Content-Disposition&#039;, &#039;attachment; filename=&quot;fname.ext&quot;&#039;);
+        $response-&gt;prepare($request);
+
+        $this-&gt;assertTrue($response-&gt;headers-&gt;has(&#039;Cache-Control&#039;));
+
+        // Check for IE 9 and HTTPS
+        $request-&gt;server-&gt;set(&#039;HTTP_USER_AGENT&#039;, &#039;Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 7.1; Trident/5.0)&#039;);
+
+        $response = $this-&gt;provideResponse();
+        $response-&gt;headers-&gt;set(&#039;Content-Disposition&#039;, &#039;attachment; filename=&quot;fname.ext&quot;&#039;);
+        $response-&gt;prepare($request);
+
+        $this-&gt;assertTrue($response-&gt;headers-&gt;has(&#039;Cache-Control&#039;));
+
+        // Check for IE 9 and HTTP
+        $request-&gt;server-&gt;set(&#039;HTTPS&#039;, false);
+
+        $response = $this-&gt;provideResponse();
+        $response-&gt;headers-&gt;set(&#039;Content-Disposition&#039;, &#039;attachment; filename=&quot;fname.ext&quot;&#039;);
+        $response-&gt;prepare($request);
+
+        $this-&gt;assertTrue($response-&gt;headers-&gt;has(&#039;Cache-Control&#039;));
+
+        // Check for IE 8 and HTTP
+        $request-&gt;server-&gt;set(&#039;HTTP_USER_AGENT&#039;, &#039;Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/4.0)&#039;);
+
+        $response = $this-&gt;provideResponse();
+        $response-&gt;headers-&gt;set(&#039;Content-Disposition&#039;, &#039;attachment; filename=&quot;fname.ext&quot;&#039;);
+        $response-&gt;prepare($request);
+
+        $this-&gt;assertTrue($response-&gt;headers-&gt;has(&#039;Cache-Control&#039;));
+
+        // Check for non-IE and HTTPS
+        $request-&gt;server-&gt;set(&#039;HTTPS&#039;, true);
+        $request-&gt;server-&gt;set(&#039;HTTP_USER_AGENT&#039;, &#039;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.60 Safari/537.17&#039;);
+
+        $response = $this-&gt;provideResponse();
+        $response-&gt;headers-&gt;set(&#039;Content-Disposition&#039;, &#039;attachment; filename=&quot;fname.ext&quot;&#039;);
+        $response-&gt;prepare($request);
+
+        $this-&gt;assertTrue($response-&gt;headers-&gt;has(&#039;Cache-Control&#039;));
+
+        // Check for non-IE and HTTP
+        $request-&gt;server-&gt;set(&#039;HTTPS&#039;, false);
+
+        $response = $this-&gt;provideResponse();
+        $response-&gt;headers-&gt;set(&#039;Content-Disposition&#039;, &#039;attachment; filename=&quot;fname.ext&quot;&#039;);
+        $response-&gt;prepare($request);
+
+        $this-&gt;assertTrue($response-&gt;headers-&gt;has(&#039;Cache-Control&#039;));
+    }
+
+    abstract protected function provideResponse();
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

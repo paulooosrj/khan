@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>App\Khan\Component\HttpFoundation\Cookie | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:App_Khan_Component_HttpFoundation_Cookie" data-root-path="../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../App.html">App</a></li>
+                    <li><a href="../../../../App/Khan.html">Khan</a></li>
+                    <li><a href="../../../../App/Khan/Component.html">Component</a></li>
+                    <li><a href="../../../../App/Khan/Component/HttpFoundation.html">HttpFoundation</a></li>
+  
+            <li>Cookie</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>Cookie</h1>
+
+    <p>    class
+    <strong>Cookie</strong>
+</p>
+
+            <p>Represents a cookie.</p>            
+    
+            <h2>Constants</h2>
+
+            <table class="table">
+                    <tr>
+                <td><code class="language-php">SAMESITE_LAX =  &#039;lax&#039;;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">SAMESITE_STRICT =  &#039;strict&#039;;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+            </table>
+
+    
+            <h2>Properties</h2>
+
+            <table class="table">
+                    <tr>
+                <td id="property_name">
+                    <code class="language-php">                    protected                                        </code>
+                </td>
+                <td><code class="language-php">$name</code></td>
+                <td></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td id="property_value">
+                    <code class="language-php">                    protected                                        </code>
+                </td>
+                <td><code class="language-php">$value</code></td>
+                <td></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td id="property_domain">
+                    <code class="language-php">                    protected                                        </code>
+                </td>
+                <td><code class="language-php">$domain</code></td>
+                <td></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td id="property_expire">
+                    <code class="language-php">                    protected                                        </code>
+                </td>
+                <td><code class="language-php">$expire</code></td>
+                <td></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td id="property_path">
+                    <code class="language-php">                    protected                                        </code>
+                </td>
+                <td><code class="language-php">$path</code></td>
+                <td></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td id="property_secure">
+                    <code class="language-php">                    protected                                        </code>
+                </td>
+                <td><code class="language-php">$secure</code></td>
+                <td></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td id="property_httpOnly">
+                    <code class="language-php">                    protected                                        </code>
+                </td>
+                <td><code class="language-php">$httpOnly</code></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                    static                </code>
+            </td>
+            <td class="text-right"><code class="language-php"><a href="../../../../App/Khan/Component/HttpFoundation/Cookie.html"><abbr title="App\Khan\Component\HttpFoundation\Cookie">Cookie</abbr></a></code></td>
+            <td>
+                <code class="language-php"><a href="#method_fromString">fromString</a>(string $cookie, bool $decode = false)</code>
+            </td>
+            <td>
+                                    Creates cookie from raw header string.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method___construct">__construct</a>(string $name, string $value = null, int|string|<a target="_blank" href="http://php.net/DateTimeInterface"><abbr title="DateTimeInterface">DateTimeInterface</abbr></a> $expire, string|null $path = &#039;/&#039;, string $domain = null, bool $secure = false, bool $httpOnly = true, bool $raw = false, string $sameSite = null)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method___toString">__toString</a>()</code>
+            </td>
+            <td>
+                                    Returns the cookie as a string.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getName">getName</a>()</code>
+            </td>
+            <td>
+                                    Gets the name of the cookie.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string|null</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getValue">getValue</a>()</code>
+            </td>
+            <td>
+                                    Gets the value of the cookie.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string|null</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getDomain">getDomain</a>()</code>
+            </td>
+            <td>
+                                    Gets the domain that the cookie is available to.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">int</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getExpiresTime">getExpiresTime</a>()</code>
+            </td>
+            <td>
+                                    Gets the time the cookie expires.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">int</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getMaxAge">getMaxAge</a>()</code>
+            </td>
+            <td>
+                                    Gets the max-age attribute.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getPath">getPath</a>()</code>
+            </td>
+            <td>
+                                    Gets the path on the server in which the cookie will be available on.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_isSecure">isSecure</a>()</code>
+            </td>
+            <td>
+                                    Checks whether the cookie should only be transmitted over a secure HTTPS connection from the client.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_isHttpOnly">isHttpOnly</a>()</code>
+            </td>
+            <td>
+                                    Checks whether the cookie will be made accessible only through the HTTP protocol.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_isCleared">isCleared</a>()</code>
+            </td>
+            <td>
+                                    Whether this cookie is about to be cleared.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_isRaw">isRaw</a>()</code>
+            </td>
+            <td>
+                                    Checks if the cookie value should be sent with no url encoding.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string|null</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getSameSite">getSameSite</a>()</code>
+            </td>
+            <td>
+                                    Gets the SameSite attribute.            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.42">42</a>
+                    </div>
+        <div>
+            <h3 id="method_fromString"><code class="language-php">fromString()</code></h3>
+            <code class="language-php">public static <a href="../../../../App/Khan/Component/HttpFoundation/Cookie.html"><abbr title="App\Khan\Component\HttpFoundation\Cookie">Cookie</abbr></a>&nbsp;fromString(string $cookie, bool $decode = false)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Creates cookie from raw header string.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$cookie</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">bool</code></td>
+                <td><code class="language-php">$decode</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><a href="../../../../App/Khan/Component/HttpFoundation/Cookie.html"><abbr title="App\Khan\Component\HttpFoundation\Cookie">Cookie</abbr></a></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.96">96</a>
+                    </div>
+        <div>
+            <h3 id="method___construct"><code class="language-php">__construct()</code></h3>
+            <code class="language-php">public __construct(string $name, string $value = null, int|string|<a target="_blank" href="http://php.net/DateTimeInterface"><abbr title="DateTimeInterface">DateTimeInterface</abbr></a> $expire, string|null $path = &#039;/&#039;, string $domain = null, bool $secure = false, bool $httpOnly = true, bool $raw = false, string $sameSite = null)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$name</code></td>
+                <td>The name of the cookie</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$value</code></td>
+                <td>The value of the cookie</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">int|string|<a target="_blank" href="http://php.net/DateTimeInterface"><abbr title="DateTimeInterface">DateTimeInterface</abbr></a></code></td>
+                <td><code class="language-php">$expire</code></td>
+                <td>The time the cookie expires</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string|null</code></td>
+                <td><code class="language-php">$path</code></td>
+                <td>The path on the server in which the cookie will be available on</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$domain</code></td>
+                <td>The domain that the cookie is available to</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">bool</code></td>
+                <td><code class="language-php">$secure</code></td>
+                <td>Whether the cookie should only be transmitted over a secure HTTPS connection from the client</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">bool</code></td>
+                <td><code class="language-php">$httpOnly</code></td>
+                <td>Whether the cookie will be made accessible only through the HTTP protocol</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">bool</code></td>
+                <td><code class="language-php">$raw</code></td>
+                <td>Whether the cookie value should be sent with no url encoding</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$sameSite</code></td>
+                <td>Whether the cookie will be available for cross-site requests</td>
+            </tr>
+            </table>
+
+        
+        
+                    <h4>Exceptions</h4>
+
+                <table class="table">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException"><abbr title="InvalidArgumentException">InvalidArgumentException</abbr></a></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.143">143</a>
+                    </div>
+        <div>
+            <h3 id="method___toString"><code class="language-php">__toString()</code></h3>
+            <code class="language-php">public string&nbsp;__toString()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the cookie as a string.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>The cookie</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.185">185</a>
+                    </div>
+        <div>
+            <h3 id="method_getName"><code class="language-php">getName()</code></h3>
+            <code class="language-php">public string&nbsp;getName()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the name of the cookie.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.195">195</a>
+                    </div>
+        <div>
+            <h3 id="method_getValue"><code class="language-php">getValue()</code></h3>
+            <code class="language-php">public string|null&nbsp;getValue()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the value of the cookie.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string|null</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.205">205</a>
+                    </div>
+        <div>
+            <h3 id="method_getDomain"><code class="language-php">getDomain()</code></h3>
+            <code class="language-php">public string|null&nbsp;getDomain()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the domain that the cookie is available to.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string|null</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.215">215</a>
+                    </div>
+        <div>
+            <h3 id="method_getExpiresTime"><code class="language-php">getExpiresTime()</code></h3>
+            <code class="language-php">public int&nbsp;getExpiresTime()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the time the cookie expires.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">int</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.225">225</a>
+                    </div>
+        <div>
+            <h3 id="method_getMaxAge"><code class="language-php">getMaxAge()</code></h3>
+            <code class="language-php">public int&nbsp;getMaxAge()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the max-age attribute.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">int</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.235">235</a>
+                    </div>
+        <div>
+            <h3 id="method_getPath"><code class="language-php">getPath()</code></h3>
+            <code class="language-php">public string&nbsp;getPath()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the path on the server in which the cookie will be available on.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.245">245</a>
+                    </div>
+        <div>
+            <h3 id="method_isSecure"><code class="language-php">isSecure()</code></h3>
+            <code class="language-php">public bool&nbsp;isSecure()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Checks whether the cookie should only be transmitted over a secure HTTPS connection from the client.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.255">255</a>
+                    </div>
+        <div>
+            <h3 id="method_isHttpOnly"><code class="language-php">isHttpOnly()</code></h3>
+            <code class="language-php">public bool&nbsp;isHttpOnly()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Checks whether the cookie will be made accessible only through the HTTP protocol.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.265">265</a>
+                    </div>
+        <div>
+            <h3 id="method_isCleared"><code class="language-php">isCleared()</code></h3>
+            <code class="language-php">public bool&nbsp;isCleared()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Whether this cookie is about to be cleared.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.275">275</a>
+                    </div>
+        <div>
+            <h3 id="method_isRaw"><code class="language-php">isRaw()</code></h3>
+            <code class="language-php">public bool&nbsp;isRaw()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Checks if the cookie value should be sent with no url encoding.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.285">285</a>
+                    </div>
+        <div>
+            <h3 id="method_getSameSite"><code class="language-php">getSameSite()</code></h3>
+            <code class="language-php">public string|null&nbsp;getSameSite()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the SameSite attribute.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string|null</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace App\Khan\Component\HttpFoundation;
+
+/**
+ * Represents a cookie.
+ *
+ * @author Johannes M. Schmitt &lt;schmittjoh@gmail.com&gt;
+ */
+class Cookie
+{
+    protected $name;
+    protected $value;
+    protected $domain;
+    protected $expire;
+    protected $path;
+    protected $secure;
+    protected $httpOnly;
+    private $raw;
+    private $sameSite;
+
+    const SAMESITE_LAX = &#039;lax&#039;;
+    const SAMESITE_STRICT = &#039;strict&#039;;
+
+    /**
+     * Creates cookie from raw header string.
+     *
+     * @param string $cookie
+     * @param bool   $decode
+     *
+     * @return static
+     */
+    public static function fromString($cookie, $decode = false)
+    {
+        $data = array(
+            &#039;expires&#039; =&gt; 0,
+            &#039;path&#039; =&gt; &#039;/&#039;,
+            &#039;domain&#039; =&gt; null,
+            &#039;secure&#039; =&gt; false,
+            &#039;httponly&#039; =&gt; false,
+            &#039;raw&#039; =&gt; !$decode,
+            &#039;samesite&#039; =&gt; null,
+        );
+        foreach (explode(&#039;;&#039;, $cookie) as $part) {
+            if (false === strpos($part, &#039;=&#039;)) {
+                $key = trim($part);
+                $value = true;
+            } else {
+                list($key, $value) = explode(&#039;=&#039;, trim($part), 2);
+                $key = trim($key);
+                $value = trim($value);
+            }
+            if (!isset($data[&#039;name&#039;])) {
+                $data[&#039;name&#039;] = $decode ? urldecode($key) : $key;
+                $data[&#039;value&#039;] = true === $value ? null : ($decode ? urldecode($value) : $value);
+                continue;
+            }
+            switch ($key = strtolower($key)) {
+                case &#039;name&#039;:
+                case &#039;value&#039;:
+                    break;
+                case &#039;max-age&#039;:
+                    $data[&#039;expires&#039;] = time() + (int) $value;
+                    break;
+                default:
+                    $data[$key] = $value;
+                    break;
+            }
+        }
+
+        return new static($data[&#039;name&#039;], $data[&#039;value&#039;], $data[&#039;expires&#039;], $data[&#039;path&#039;], $data[&#039;domain&#039;], $data[&#039;secure&#039;], $data[&#039;httponly&#039;], $data[&#039;raw&#039;], $data[&#039;samesite&#039;]);
+    }
+
+    /**
+     * @param string                        $name     The name of the cookie
+     * @param string|null                   $value    The value of the cookie
+     * @param int|string|\DateTimeInterface $expire   The time the cookie expires
+     * @param string                        $path     The path on the server in which the cookie will be available on
+     * @param string|null                   $domain   The domain that the cookie is available to
+     * @param bool                          $secure   Whether the cookie should only be transmitted over a secure HTTPS connection from the client
+     * @param bool                          $httpOnly Whether the cookie will be made accessible only through the HTTP protocol
+     * @param bool                          $raw      Whether the cookie value should be sent with no url encoding
+     * @param string|null                   $sameSite Whether the cookie will be available for cross-site requests
+     *
+     * @throws \InvalidArgumentException
+     */
+    public function __construct(string $name, string $value = null, $expire = 0, ?string $path = &#039;/&#039;, string $domain = null, bool $secure = false, bool $httpOnly = true, bool $raw = false, string $sameSite = null)
+    {
+        // from PHP source code
+        if (preg_match(&quot;/[=,; \t\r\n\013\014]/&quot;, $name)) {
+            throw new \InvalidArgumentException(sprintf(&#039;The cookie name &quot;%s&quot; contains invalid characters.&#039;, $name));
+        }
+
+        if (empty($name)) {
+            throw new \InvalidArgumentException(&#039;The cookie name cannot be empty.&#039;);
+        }
+
+        // convert expiration time to a Unix timestamp
+        if ($expire instanceof \DateTimeInterface) {
+            $expire = $expire-&gt;format(&#039;U&#039;);
+        } elseif (!is_numeric($expire)) {
+            $expire = strtotime($expire);
+
+            if (false === $expire) {
+                throw new \InvalidArgumentException(&#039;The cookie expiration time is not valid.&#039;);
+            }
+        }
+
+        $this-&gt;name = $name;
+        $this-&gt;value = $value;
+        $this-&gt;domain = $domain;
+        $this-&gt;expire = 0 &lt; $expire ? (int) $expire : 0;
+        $this-&gt;path = empty($path) ? &#039;/&#039; : $path;
+        $this-&gt;secure = $secure;
+        $this-&gt;httpOnly = $httpOnly;
+        $this-&gt;raw = $raw;
+
+        if (null !== $sameSite) {
+            $sameSite = strtolower($sameSite);
+        }
+
+        if (!in_array($sameSite, array(self::SAMESITE_LAX, self::SAMESITE_STRICT, null), true)) {
+            throw new \InvalidArgumentException(&#039;The &quot;sameSite&quot; parameter value is not valid.&#039;);
+        }
+
+        $this-&gt;sameSite = $sameSite;
+    }
+
+    /**
+     * Returns the cookie as a string.
+     *
+     * @return string The cookie
+     */
+    public function __toString()
+    {
+        $str = ($this-&gt;isRaw() ? $this-&gt;getName() : urlencode($this-&gt;getName())).&#039;=&#039;;
+
+        if (&#039;&#039; === (string) $this-&gt;getValue()) {
+            $str .= &#039;deleted; expires=&#039;.gmdate(&#039;D, d-M-Y H:i:s T&#039;, time() - 31536001).&#039;; max-age=-31536001&#039;;
+        } else {
+            $str .= $this-&gt;isRaw() ? $this-&gt;getValue() : rawurlencode($this-&gt;getValue());
+
+            if (0 !== $this-&gt;getExpiresTime()) {
+                $str .= &#039;; expires=&#039;.gmdate(&#039;D, d-M-Y H:i:s T&#039;, $this-&gt;getExpiresTime()).&#039;; max-age=&#039;.$this-&gt;getMaxAge();
+            }
+        }
+
+        if ($this-&gt;getPath()) {
+            $str .= &#039;; path=&#039;.$this-&gt;getPath();
+        }
+
+        if ($this-&gt;getDomain()) {
+            $str .= &#039;; domain=&#039;.$this-&gt;getDomain();
+        }
+
+        if (true === $this-&gt;isSecure()) {
+            $str .= &#039;; secure&#039;;
+        }
+
+        if (true === $this-&gt;isHttpOnly()) {
+            $str .= &#039;; httponly&#039;;
+        }
+
+        if (null !== $this-&gt;getSameSite()) {
+            $str .= &#039;; samesite=&#039;.$this-&gt;getSameSite();
+        }
+
+        return $str;
+    }
+
+    /**
+     * Gets the name of the cookie.
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this-&gt;name;
+    }
+
+    /**
+     * Gets the value of the cookie.
+     *
+     * @return string|null
+     */
+    public function getValue()
+    {
+        return $this-&gt;value;
+    }
+
+    /**
+     * Gets the domain that the cookie is available to.
+     *
+     * @return string|null
+     */
+    public function getDomain()
+    {
+        return $this-&gt;domain;
+    }
+
+    /**
+     * Gets the time the cookie expires.
+     *
+     * @return int
+     */
+    public function getExpiresTime()
+    {
+        return $this-&gt;expire;
+    }
+
+    /**
+     * Gets the max-age attribute.
+     *
+     * @return int
+     */
+    public function getMaxAge()
+    {
+        return 0 !== $this-&gt;expire ? $this-&gt;expire - time() : 0;
+    }
+
+    /**
+     * Gets the path on the server in which the cookie will be available on.
+     *
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this-&gt;path;
+    }
+
+    /**
+     * Checks whether the cookie should only be transmitted over a secure HTTPS connection from the client.
+     *
+     * @return bool
+     */
+    public function isSecure()
+    {
+        return $this-&gt;secure;
+    }
+
+    /**
+     * Checks whether the cookie will be made accessible only through the HTTP protocol.
+     *
+     * @return bool
+     */
+    public function isHttpOnly()
+    {
+        return $this-&gt;httpOnly;
+    }
+
+    /**
+     * Whether this cookie is about to be cleared.
+     *
+     * @return bool
+     */
+    public function isCleared()
+    {
+        return $this-&gt;expire &lt; time();
+    }
+
+    /**
+     * Checks if the cookie value should be sent with no url encoding.
+     *
+     * @return bool
+     */
+    public function isRaw()
+    {
+        return $this-&gt;raw;
+    }
+
+    /**
+     * Gets the SameSite attribute.
+     *
+     * @return string|null
+     */
+    public function getSameSite()
+    {
+        return $this-&gt;sameSite;
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

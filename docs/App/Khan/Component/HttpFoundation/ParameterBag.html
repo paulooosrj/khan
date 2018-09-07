@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>App\Khan\Component\HttpFoundation\ParameterBag | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:App_Khan_Component_HttpFoundation_ParameterBag" data-root-path="../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../App.html">App</a></li>
+                    <li><a href="../../../../App/Khan.html">Khan</a></li>
+                    <li><a href="../../../../App/Khan/Component.html">Component</a></li>
+                    <li><a href="../../../../App/Khan/Component/HttpFoundation.html">HttpFoundation</a></li>
+  
+            <li>ParameterBag</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>ParameterBag</h1>
+
+    <p>    class
+    <strong>ParameterBag</strong>        implements
+        <a target="_blank" href="http://php.net/IteratorAggregate"><abbr title="IteratorAggregate">IteratorAggregate</abbr></a>, <a target="_blank" href="http://php.net/Countable"><abbr title="Countable">Countable</abbr></a>
+</p>
+
+            <p>ParameterBag is a container for key/value pairs.</p>            
+    
+    
+            <h2>Properties</h2>
+
+            <table class="table">
+                    <tr>
+                <td id="property_parameters">
+                    <code class="language-php">                    protected                                        </code>
+                </td>
+                <td><code class="language-php">$parameters</code></td>
+                <td>Parameter storage.</td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method___construct">__construct</a>(array $parameters = array())</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">array</code></td>
+            <td>
+                <code class="language-php"><a href="#method_all">all</a>()</code>
+            </td>
+            <td>
+                                    Returns the parameters.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">array</code></td>
+            <td>
+                <code class="language-php"><a href="#method_keys">keys</a>()</code>
+            </td>
+            <td>
+                                    Returns the parameter keys.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_replace">replace</a>(array $parameters = array())</code>
+            </td>
+            <td>
+                                    Replaces the current parameters by a new set.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_add">add</a>(array $parameters = array())</code>
+            </td>
+            <td>
+                                    Adds parameters.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">mixed</code></td>
+            <td>
+                <code class="language-php"><a href="#method_get">get</a>(string $key, mixed $default = null)</code>
+            </td>
+            <td>
+                                    Returns a parameter by name.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_set">set</a>(string $key, mixed $value)</code>
+            </td>
+            <td>
+                                    Sets a parameter by name.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_has">has</a>(string $key)</code>
+            </td>
+            <td>
+                                    Returns true if the parameter is defined.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_remove">remove</a>(string $key)</code>
+            </td>
+            <td>
+                                    Removes a parameter.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getAlpha">getAlpha</a>(string $key, string $default = &#039;&#039;)</code>
+            </td>
+            <td>
+                                    Returns the alphabetic characters of the parameter value.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getAlnum">getAlnum</a>(string $key, string $default = &#039;&#039;)</code>
+            </td>
+            <td>
+                                    Returns the alphabetic characters and digits of the parameter value.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getDigits">getDigits</a>(string $key, string $default = &#039;&#039;)</code>
+            </td>
+            <td>
+                                    Returns the digits of the parameter value.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">int</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getInt">getInt</a>(string $key, int $default)</code>
+            </td>
+            <td>
+                                    Returns the parameter value converted to integer.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getBoolean">getBoolean</a>(string $key, mixed $default = false)</code>
+            </td>
+            <td>
+                                    Returns the parameter value converted to boolean.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">mixed</code></td>
+            <td>
+                <code class="language-php"><a href="#method_filter">filter</a>(string $key, mixed $default = null, int $filter = FILTER_DEFAULT, mixed $options = array())</code>
+            </td>
+            <td>
+                                    Filter key.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><a target="_blank" href="http://php.net/ArrayIterator"><abbr title="ArrayIterator">ArrayIterator</abbr></a></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getIterator">getIterator</a>()</code>
+            </td>
+            <td>
+                                    Returns an iterator for parameters.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">int</code></td>
+            <td>
+                <code class="language-php"><a href="#method_count">count</a>()</code>
+            </td>
+            <td>
+                                    Returns the number of parameters.            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.29">29</a>
+                    </div>
+        <div>
+            <h3 id="method___construct"><code class="language-php">__construct()</code></h3>
+            <code class="language-php">public __construct(array $parameters = array())</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$parameters</code></td>
+                <td>An array of parameters</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.39">39</a>
+                    </div>
+        <div>
+            <h3 id="method_all"><code class="language-php">all()</code></h3>
+            <code class="language-php">public array&nbsp;all()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the parameters.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">array</code></td>
+            <td>An array of parameters</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.49">49</a>
+                    </div>
+        <div>
+            <h3 id="method_keys"><code class="language-php">keys()</code></h3>
+            <code class="language-php">public array&nbsp;keys()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the parameter keys.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">array</code></td>
+            <td>An array of parameter keys</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.59">59</a>
+                    </div>
+        <div>
+            <h3 id="method_replace"><code class="language-php">replace()</code></h3>
+            <code class="language-php">public replace(array $parameters = array())</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Replaces the current parameters by a new set.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$parameters</code></td>
+                <td>An array of parameters</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.69">69</a>
+                    </div>
+        <div>
+            <h3 id="method_add"><code class="language-php">add()</code></h3>
+            <code class="language-php">public add(array $parameters = array())</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Adds parameters.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$parameters</code></td>
+                <td>An array of parameters</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.82">82</a>
+                    </div>
+        <div>
+            <h3 id="method_get"><code class="language-php">get()</code></h3>
+            <code class="language-php">public mixed&nbsp;get(string $key, mixed $default = null)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns a parameter by name.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>The key</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">mixed</code></td>
+                <td><code class="language-php">$default</code></td>
+                <td>The default value if the parameter key does not exist</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">mixed</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.93">93</a>
+                    </div>
+        <div>
+            <h3 id="method_set"><code class="language-php">set()</code></h3>
+            <code class="language-php">public set(string $key, mixed $value)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets a parameter by name.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>The key</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">mixed</code></td>
+                <td><code class="language-php">$value</code></td>
+                <td>The value</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.105">105</a>
+                    </div>
+        <div>
+            <h3 id="method_has"><code class="language-php">has()</code></h3>
+            <code class="language-php">public bool&nbsp;has(string $key)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns true if the parameter is defined.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>The key</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td>true if the parameter exists, false otherwise</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.115">115</a>
+                    </div>
+        <div>
+            <h3 id="method_remove"><code class="language-php">remove()</code></h3>
+            <code class="language-php">public remove(string $key)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Removes a parameter.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>The key</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.128">128</a>
+                    </div>
+        <div>
+            <h3 id="method_getAlpha"><code class="language-php">getAlpha()</code></h3>
+            <code class="language-php">public string&nbsp;getAlpha(string $key, string $default = &#039;&#039;)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the alphabetic characters of the parameter value.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>The parameter key</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$default</code></td>
+                <td>The default value if the parameter key does not exist</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>The filtered value</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.141">141</a>
+                    </div>
+        <div>
+            <h3 id="method_getAlnum"><code class="language-php">getAlnum()</code></h3>
+            <code class="language-php">public string&nbsp;getAlnum(string $key, string $default = &#039;&#039;)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the alphabetic characters and digits of the parameter value.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>The parameter key</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$default</code></td>
+                <td>The default value if the parameter key does not exist</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>The filtered value</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.154">154</a>
+                    </div>
+        <div>
+            <h3 id="method_getDigits"><code class="language-php">getDigits()</code></h3>
+            <code class="language-php">public string&nbsp;getDigits(string $key, string $default = &#039;&#039;)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the digits of the parameter value.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>The parameter key</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$default</code></td>
+                <td>The default value if the parameter key does not exist</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>The filtered value</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.168">168</a>
+                    </div>
+        <div>
+            <h3 id="method_getInt"><code class="language-php">getInt()</code></h3>
+            <code class="language-php">public int&nbsp;getInt(string $key, int $default)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the parameter value converted to integer.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>The parameter key</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">int</code></td>
+                <td><code class="language-php">$default</code></td>
+                <td>The default value if the parameter key does not exist</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">int</code></td>
+            <td>The filtered value</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.181">181</a>
+                    </div>
+        <div>
+            <h3 id="method_getBoolean"><code class="language-php">getBoolean()</code></h3>
+            <code class="language-php">public bool&nbsp;getBoolean(string $key, mixed $default = false)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the parameter value converted to boolean.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>The parameter key</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">mixed</code></td>
+                <td><code class="language-php">$default</code></td>
+                <td>The default value if the parameter key does not exist</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td>The filtered value</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.198">198</a>
+                    </div>
+        <div>
+            <h3 id="method_filter"><code class="language-php">filter()</code></h3>
+            <code class="language-php">public mixed&nbsp;filter(string $key, mixed $default = null, int $filter = FILTER_DEFAULT, mixed $options = array())</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Filter key.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>Key</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">mixed</code></td>
+                <td><code class="language-php">$default</code></td>
+                <td>Default = null</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">int</code></td>
+                <td><code class="language-php">$filter</code></td>
+                <td>FILTER_* constant</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">mixed</code></td>
+                <td><code class="language-php">$options</code></td>
+                <td>Filter options</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">mixed</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+                    <h4>See also</h4>
+
+                <table class="table">
+                    <tr>
+                <td>http://php.net/manual/en/function.filter-var.php</td>
+                <td></td>
+            </tr>
+            </table>
+
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.220">220</a>
+                    </div>
+        <div>
+            <h3 id="method_getIterator"><code class="language-php">getIterator()</code></h3>
+            <code class="language-php">public <a target="_blank" href="http://php.net/ArrayIterator"><abbr title="ArrayIterator">ArrayIterator</abbr></a>&nbsp;getIterator()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns an iterator for parameters.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><a target="_blank" href="http://php.net/ArrayIterator"><abbr title="ArrayIterator">ArrayIterator</abbr></a></code></td>
+            <td>An \ArrayIterator instance</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.230">230</a>
+                    </div>
+        <div>
+            <h3 id="method_count"><code class="language-php">count()</code></h3>
+            <code class="language-php">public int&nbsp;count()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the number of parameters.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">int</code></td>
+            <td>The number of parameters</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace App\Khan\Component\HttpFoundation;
+
+/**
+ * ParameterBag is a container for key/value pairs.
+ *
+ * @author Fabien Potencier &lt;fabien@symfony.com&gt;
+ */
+class ParameterBag implements \IteratorAggregate, \Countable
+{
+    /**
+     * Parameter storage.
+     */
+    protected $parameters;
+
+    /**
+     * @param array $parameters An array of parameters
+     */
+    public function __construct(array $parameters = array())
+    {
+        $this-&gt;parameters = $parameters;
+    }
+
+    /**
+     * Returns the parameters.
+     *
+     * @return array An array of parameters
+     */
+    public function all()
+    {
+        return $this-&gt;parameters;
+    }
+
+    /**
+     * Returns the parameter keys.
+     *
+     * @return array An array of parameter keys
+     */
+    public function keys()
+    {
+        return array_keys($this-&gt;parameters);
+    }
+
+    /**
+     * Replaces the current parameters by a new set.
+     *
+     * @param array $parameters An array of parameters
+     */
+    public function replace(array $parameters = array())
+    {
+        $this-&gt;parameters = $parameters;
+    }
+
+    /**
+     * Adds parameters.
+     *
+     * @param array $parameters An array of parameters
+     */
+    public function add(array $parameters = array())
+    {
+        $this-&gt;parameters = array_replace($this-&gt;parameters, $parameters);
+    }
+
+    /**
+     * Returns a parameter by name.
+     *
+     * @param string $key     The key
+     * @param mixed  $default The default value if the parameter key does not exist
+     *
+     * @return mixed
+     */
+    public function get($key, $default = null)
+    {
+        return array_key_exists($key, $this-&gt;parameters) ? $this-&gt;parameters[$key] : $default;
+    }
+
+    /**
+     * Sets a parameter by name.
+     *
+     * @param string $key   The key
+     * @param mixed  $value The value
+     */
+    public function set($key, $value)
+    {
+        $this-&gt;parameters[$key] = $value;
+    }
+
+    /**
+     * Returns true if the parameter is defined.
+     *
+     * @param string $key The key
+     *
+     * @return bool true if the parameter exists, false otherwise
+     */
+    public function has($key)
+    {
+        return array_key_exists($key, $this-&gt;parameters);
+    }
+
+    /**
+     * Removes a parameter.
+     *
+     * @param string $key The key
+     */
+    public function remove($key)
+    {
+        unset($this-&gt;parameters[$key]);
+    }
+
+    /**
+     * Returns the alphabetic characters of the parameter value.
+     *
+     * @param string $key     The parameter key
+     * @param string $default The default value if the parameter key does not exist
+     *
+     * @return string The filtered value
+     */
+    public function getAlpha($key, $default = &#039;&#039;)
+    {
+        return preg_replace(&#039;/[^[:alpha:]]/&#039;, &#039;&#039;, $this-&gt;get($key, $default));
+    }
+
+    /**
+     * Returns the alphabetic characters and digits of the parameter value.
+     *
+     * @param string $key     The parameter key
+     * @param string $default The default value if the parameter key does not exist
+     *
+     * @return string The filtered value
+     */
+    public function getAlnum($key, $default = &#039;&#039;)
+    {
+        return preg_replace(&#039;/[^[:alnum:]]/&#039;, &#039;&#039;, $this-&gt;get($key, $default));
+    }
+
+    /**
+     * Returns the digits of the parameter value.
+     *
+     * @param string $key     The parameter key
+     * @param string $default The default value if the parameter key does not exist
+     *
+     * @return string The filtered value
+     */
+    public function getDigits($key, $default = &#039;&#039;)
+    {
+        // we need to remove - and + because they&#039;re allowed in the filter
+        return str_replace(array(&#039;-&#039;, &#039;+&#039;), &#039;&#039;, $this-&gt;filter($key, $default, FILTER_SANITIZE_NUMBER_INT));
+    }
+
+    /**
+     * Returns the parameter value converted to integer.
+     *
+     * @param string $key     The parameter key
+     * @param int    $default The default value if the parameter key does not exist
+     *
+     * @return int The filtered value
+     */
+    public function getInt($key, $default = 0)
+    {
+        return (int) $this-&gt;get($key, $default);
+    }
+
+    /**
+     * Returns the parameter value converted to boolean.
+     *
+     * @param string $key     The parameter key
+     * @param mixed  $default The default value if the parameter key does not exist
+     *
+     * @return bool The filtered value
+     */
+    public function getBoolean($key, $default = false)
+    {
+        return $this-&gt;filter($key, $default, FILTER_VALIDATE_BOOLEAN);
+    }
+
+    /**
+     * Filter key.
+     *
+     * @param string $key     Key
+     * @param mixed  $default Default = null
+     * @param int    $filter  FILTER_* constant
+     * @param mixed  $options Filter options
+     *
+     * @see http://php.net/manual/en/function.filter-var.php
+     *
+     * @return mixed
+     */
+    public function filter($key, $default = null, $filter = FILTER_DEFAULT, $options = array())
+    {
+        $value = $this-&gt;get($key, $default);
+
+        // Always turn $options into an array - this allows filter_var option shortcuts.
+        if (!is_array($options) &amp;&amp; $options) {
+            $options = array(&#039;flags&#039; =&gt; $options);
+        }
+
+        // Add a convenience check for arrays.
+        if (is_array($value) &amp;&amp; !isset($options[&#039;flags&#039;])) {
+            $options[&#039;flags&#039;] = FILTER_REQUIRE_ARRAY;
+        }
+
+        return filter_var($value, $filter, $options);
+    }
+
+    /**
+     * Returns an iterator for parameters.
+     *
+     * @return \ArrayIterator An \ArrayIterator instance
+     */
+    public function getIterator()
+    {
+        return new \ArrayIterator($this-&gt;parameters);
+    }
+
+    /**
+     * Returns the number of parameters.
+     *
+     * @return int The number of parameters
+     */
+    public function count()
+    {
+        return count($this-&gt;parameters);
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

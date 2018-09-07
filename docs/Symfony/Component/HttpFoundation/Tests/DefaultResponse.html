@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Tests\DefaultResponse | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Tests_DefaultResponse" data-root-path="../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../Symfony/Component/HttpFoundation/Tests.html">Tests</a></li>
+  
+            <li>DefaultResponse</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>DefaultResponse</h1>
+
+    <p>    class
+    <strong>DefaultResponse</strong>        extends <abbr title="Symfony\Component\HttpFoundation\Response">Response</abbr>
+</p>
+
+    
+    
+    
+    
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Tests;
+
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+/**
+ * @group time-sensitive
+ */
+class ResponseTest extends ResponseTestCase
+{
+    public function testCreate()
+    {
+        $response = Response::create(&#039;foo&#039;, 301, array(&#039;Foo&#039; =&gt; &#039;bar&#039;));
+
+        $this-&gt;assertInstanceOf(&#039;Symfony\Component\HttpFoundation\Response&#039;, $response);
+        $this-&gt;assertEquals(301, $response-&gt;getStatusCode());
+        $this-&gt;assertEquals(&#039;bar&#039;, $response-&gt;headers-&gt;get(&#039;foo&#039;));
+    }
+
+    public function testToString()
+    {
+        $response = new Response();
+        $response = explode(&quot;\r\n&quot;, $response);
+        $this-&gt;assertEquals(&#039;HTTP/1.0 200 OK&#039;, $response[0]);
+        $this-&gt;assertEquals(&#039;Cache-Control: no-cache, private&#039;, $response[1]);
+    }
+
+    public function testClone()
+    {
+        $response = new Response();
+        $responseClone = clone $response;
+        $this-&gt;assertEquals($response, $responseClone);
+    }
+
+    public function testSendHeaders()
+    {
+        $response = new Response();
+        $headers = $response-&gt;sendHeaders();
+        $this-&gt;assertObjectHasAttribute(&#039;headers&#039;, $headers);
+        $this-&gt;assertObjectHasAttribute(&#039;content&#039;, $headers);
+        $this-&gt;assertObjectHasAttribute(&#039;version&#039;, $headers);
+        $this-&gt;assertObjectHasAttribute(&#039;statusCode&#039;, $headers);
+        $this-&gt;assertObjectHasAttribute(&#039;statusText&#039;, $headers);
+        $this-&gt;assertObjectHasAttribute(&#039;charset&#039;, $headers);
+    }
+
+    public function testSend()
+    {
+        $response = new Response();
+        $responseSend = $response-&gt;send();
+        $this-&gt;assertObjectHasAttribute(&#039;headers&#039;, $responseSend);
+        $this-&gt;assertObjectHasAttribute(&#039;content&#039;, $responseSend);
+        $this-&gt;assertObjectHasAttribute(&#039;version&#039;, $responseSend);
+        $this-&gt;assertObjectHasAttribute(&#039;statusCode&#039;, $responseSend);
+        $this-&gt;assertObjectHasAttribute(&#039;statusText&#039;, $responseSend);
+        $this-&gt;assertObjectHasAttribute(&#039;charset&#039;, $responseSend);
+    }
+
+    public function testGetCharset()
+    {
+        $response = new Response();
+        $charsetOrigin = &#039;UTF-8&#039;;
+        $response-&gt;setCharset($charsetOrigin);
+        $charset = $response-&gt;getCharset();
+        $this-&gt;assertEquals($charsetOrigin, $charset);
+    }
+
+    public function testIsCacheable()
+    {
+        $response = new Response();
+        $this-&gt;assertFalse($response-&gt;isCacheable());
+    }
+
+    public function testIsCacheableWithErrorCode()
+    {
+        $response = new Response(&#039;&#039;, 500);
+        $this-&gt;assertFalse($response-&gt;isCacheable());
+    }
+
+    public function testIsCacheableWithNoStoreDirective()
+    {
+        $response = new Response();
+        $response-&gt;headers-&gt;set(&#039;cache-control&#039;, &#039;private&#039;);
+        $this-&gt;assertFalse($response-&gt;isCacheable());
+    }
+
+    public function testIsCacheableWithSetTtl()
+    {
+        $response = new Response();
+        $response-&gt;setTtl(10);
+        $this-&gt;assertTrue($response-&gt;isCacheable());
+    }
+
+    public function testMustRevalidate()
+    {
+        $response = new Response();
+        $this-&gt;assertFalse($response-&gt;mustRevalidate());
+    }
+
+    public function testMustRevalidateWithMustRevalidateCacheControlHeader()
+    {
+        $response = new Response();
+        $response-&gt;headers-&gt;set(&#039;cache-control&#039;, &#039;must-revalidate&#039;);
+
+        $this-&gt;assertTrue($response-&gt;mustRevalidate());
+    }
+
+    public function testMustRevalidateWithProxyRevalidateCacheControlHeader()
+    {
+        $response = new Response();
+        $response-&gt;headers-&gt;set(&#039;cache-control&#039;, &#039;proxy-revalidate&#039;);
+
+        $this-&gt;assertTrue($response-&gt;mustRevalidate());
+    }
+
+    public function testSetNotModified()
+    {
+        $response = new Response();
+        $modified = $response-&gt;setNotModified();
+        $this-&gt;assertObjectHasAttribute(&#039;headers&#039;, $modified);
+        $this-&gt;assertObjectHasAttribute(&#039;content&#039;, $modified);
+        $this-&gt;assertObjectHasAttribute(&#039;version&#039;, $modified);
+        $this-&gt;assertObjectHasAttribute(&#039;statusCode&#039;, $modified);
+        $this-&gt;assertObjectHasAttribute(&#039;statusText&#039;, $modified);
+        $this-&gt;assertObjectHasAttribute(&#039;charset&#039;, $modified);
+        $this-&gt;assertEquals(304, $modified-&gt;getStatusCode());
+    }
+
+    public function testIsSuccessful()
+    {
+        $response = new Response();
+        $this-&gt;assertTrue($response-&gt;isSuccessful());
+    }
+
+    public function testIsNotModified()
+    {
+        $response = new Response();
+        $modified = $response-&gt;isNotModified(new Request());
+        $this-&gt;assertFalse($modified);
+    }
+
+    public function testIsNotModifiedNotSafe()
+    {
+        $request = Request::create(&#039;/homepage&#039;, &#039;POST&#039;);
+
+        $response = new Response();
+        $this-&gt;assertFalse($response-&gt;isNotModified($request));
+    }
+
+    public function testIsNotModifiedLastModified()
+    {
+        $before = &#039;Sun, 25 Aug 2013 18:32:31 GMT&#039;;
+        $modified = &#039;Sun, 25 Aug 2013 18:33:31 GMT&#039;;
+        $after = &#039;Sun, 25 Aug 2013 19:33:31 GMT&#039;;
+
+        $request = new Request();
+        $request-&gt;headers-&gt;set(&#039;If-Modified-Since&#039;, $modified);
+
+        $response = new Response();
+
+        $response-&gt;headers-&gt;set(&#039;Last-Modified&#039;, $modified);
+        $this-&gt;assertTrue($response-&gt;isNotModified($request));
+
+        $response-&gt;headers-&gt;set(&#039;Last-Modified&#039;, $before);
+        $this-&gt;assertTrue($response-&gt;isNotModified($request));
+
+        $response-&gt;headers-&gt;set(&#039;Last-Modified&#039;, $after);
+        $this-&gt;assertFalse($response-&gt;isNotModified($request));
+
+        $response-&gt;headers-&gt;set(&#039;Last-Modified&#039;, &#039;&#039;);
+        $this-&gt;assertFalse($response-&gt;isNotModified($request));
+    }
+
+    public function testIsNotModifiedEtag()
+    {
+        $etagOne = &#039;randomly_generated_etag&#039;;
+        $etagTwo = &#039;randomly_generated_etag_2&#039;;
+
+        $request = new Request();
+        $request-&gt;headers-&gt;set(&#039;if_none_match&#039;, sprintf(&#039;%s, %s, %s&#039;, $etagOne, $etagTwo, &#039;etagThree&#039;));
+
+        $response = new Response();
+
+        $response-&gt;headers-&gt;set(&#039;ETag&#039;, $etagOne);
+        $this-&gt;assertTrue($response-&gt;isNotModified($request));
+
+        $response-&gt;headers-&gt;set(&#039;ETag&#039;, $etagTwo);
+        $this-&gt;assertTrue($response-&gt;isNotModified($request));
+
+        $response-&gt;headers-&gt;set(&#039;ETag&#039;, &#039;&#039;);
+        $this-&gt;assertFalse($response-&gt;isNotModified($request));
+    }
+
+    public function testIsNotModifiedLastModifiedAndEtag()
+    {
+        $before = &#039;Sun, 25 Aug 2013 18:32:31 GMT&#039;;
+        $modified = &#039;Sun, 25 Aug 2013 18:33:31 GMT&#039;;
+        $after = &#039;Sun, 25 Aug 2013 19:33:31 GMT&#039;;
+        $etag = &#039;randomly_generated_etag&#039;;
+
+        $request = new Request();
+        $request-&gt;headers-&gt;set(&#039;if_none_match&#039;, sprintf(&#039;%s, %s&#039;, $etag, &#039;etagThree&#039;));
+        $request-&gt;headers-&gt;set(&#039;If-Modified-Since&#039;, $modified);
+
+        $response = new Response();
+
+        $response-&gt;headers-&gt;set(&#039;ETag&#039;, $etag);
+        $response-&gt;headers-&gt;set(&#039;Last-Modified&#039;, $after);
+        $this-&gt;assertFalse($response-&gt;isNotModified($request));
+
+        $response-&gt;headers-&gt;set(&#039;ETag&#039;, &#039;non-existent-etag&#039;);
+        $response-&gt;headers-&gt;set(&#039;Last-Modified&#039;, $before);
+        $this-&gt;assertFalse($response-&gt;isNotModified($request));
+
+        $response-&gt;headers-&gt;set(&#039;ETag&#039;, $etag);
+        $response-&gt;headers-&gt;set(&#039;Last-Modified&#039;, $modified);
+        $this-&gt;assertTrue($response-&gt;isNotModified($request));
+    }
+
+    public function testIsNotModifiedIfModifiedSinceAndEtagWithoutLastModified()
+    {
+        $modified = &#039;Sun, 25 Aug 2013 18:33:31 GMT&#039;;
+        $etag = &#039;randomly_generated_etag&#039;;
+
+        $request = new Request();
+        $request-&gt;headers-&gt;set(&#039;if_none_match&#039;, sprintf(&#039;%s, %s&#039;, $etag, &#039;etagThree&#039;));
+        $request-&gt;headers-&gt;set(&#039;If-Modified-Since&#039;, $modified);
+
+        $response = new Response();
+
+        $response-&gt;headers-&gt;set(&#039;ETag&#039;, $etag);
+        $this-&gt;assertTrue($response-&gt;isNotModified($request));
+
+        $response-&gt;headers-&gt;set(&#039;ETag&#039;, &#039;non-existent-etag&#039;);
+        $this-&gt;assertFalse($response-&gt;isNotModified($request));
+    }
+
+    public function testIsValidateable()
+    {
+        $response = new Response(&#039;&#039;, 200, array(&#039;Last-Modified&#039; =&gt; $this-&gt;createDateTimeOneHourAgo()-&gt;format(DATE_RFC2822)));
+        $this-&gt;assertTrue($response-&gt;isValidateable(), &#039;-&gt;isValidateable() returns true if Last-Modified is present&#039;);
+
+        $response = new Response(&#039;&#039;, 200, array(&#039;ETag&#039; =&gt; &#039;&quot;12345&quot;&#039;));
+        $this-&gt;assertTrue($response-&gt;isValidateable(), &#039;-&gt;isValidateable() returns true if ETag is present&#039;);
+
+        $response = new Response();
+        $this-&gt;assertFalse($response-&gt;isValidateable(), &#039;-&gt;isValidateable() returns false when no validator is present&#039;);
+    }
+
+    public function testGetDate()
+    {
+        $oneHourAgo = $this-&gt;createDateTimeOneHourAgo();
+        $response = new Response(&#039;&#039;, 200, array(&#039;Date&#039; =&gt; $oneHourAgo-&gt;format(DATE_RFC2822)));
+        $date = $response-&gt;getDate();
+        $this-&gt;assertEquals($oneHourAgo-&gt;getTimestamp(), $date-&gt;getTimestamp(), &#039;-&gt;getDate() returns the Date header if present&#039;);
+
+        $response = new Response();
+        $date = $response-&gt;getDate();
+        $this-&gt;assertEquals(time(), $date-&gt;getTimestamp(), &#039;-&gt;getDate() returns the current Date if no Date header present&#039;);
+
+        $response = new Response(&#039;&#039;, 200, array(&#039;Date&#039; =&gt; $this-&gt;createDateTimeOneHourAgo()-&gt;format(DATE_RFC2822)));
+        $now = $this-&gt;createDateTimeNow();
+        $response-&gt;headers-&gt;set(&#039;Date&#039;, $now-&gt;format(DATE_RFC2822));
+        $date = $response-&gt;getDate();
+        $this-&gt;assertEquals($now-&gt;getTimestamp(), $date-&gt;getTimestamp(), &#039;-&gt;getDate() returns the date when the header has been modified&#039;);
+
+        $response = new Response(&#039;&#039;, 200);
+        $now = $this-&gt;createDateTimeNow();
+        $response-&gt;headers-&gt;remove(&#039;Date&#039;);
+        $date = $response-&gt;getDate();
+        $this-&gt;assertEquals($now-&gt;getTimestamp(), $date-&gt;getTimestamp(), &#039;-&gt;getDate() returns the current Date when the header has previously been removed&#039;);
+    }
+
+    public function testGetMaxAge()
+    {
+        $response = new Response();
+        $response-&gt;headers-&gt;set(&#039;Cache-Control&#039;, &#039;s-maxage=600, max-age=0&#039;);
+        $this-&gt;assertEquals(600, $response-&gt;getMaxAge(), &#039;-&gt;getMaxAge() uses s-maxage cache control directive when present&#039;);
+
+        $response = new Response();
+        $response-&gt;headers-&gt;set(&#039;Cache-Control&#039;, &#039;max-age=600&#039;);
+        $this-&gt;assertEquals(600, $response-&gt;getMaxAge(), &#039;-&gt;getMaxAge() falls back to max-age when no s-maxage directive present&#039;);
+
+        $response = new Response();
+        $response-&gt;headers-&gt;set(&#039;Cache-Control&#039;, &#039;must-revalidate&#039;);
+        $response-&gt;headers-&gt;set(&#039;Expires&#039;, $this-&gt;createDateTimeOneHourLater()-&gt;format(DATE_RFC2822));
+        $this-&gt;assertEquals(3600, $response-&gt;getMaxAge(), &#039;-&gt;getMaxAge() falls back to Expires when no max-age or s-maxage directive present&#039;);
+
+        $response = new Response();
+        $response-&gt;headers-&gt;set(&#039;Cache-Control&#039;, &#039;must-revalidate&#039;);
+        $response-&gt;headers-&gt;set(&#039;Expires&#039;, -1);
+        $this-&gt;assertLessThanOrEqual(time() - 2*86400, $response-&gt;getExpires()-&gt;format(&#039;U&#039;));
+
+        $response = new Response();
+        $this-&gt;assertNull($response-&gt;getMaxAge(), &#039;-&gt;getMaxAge() returns null if no freshness information available&#039;);
+    }
+
+    public function testSetSharedMaxAge()
+    {
+        $response = new Response();
+        $response-&gt;setSharedMaxAge(20);
+
+        $cacheControl = $response-&gt;headers-&gt;get(&#039;Cache-Control&#039;);
+        $this-&gt;assertEquals(&#039;public, s-maxage=20&#039;, $cacheControl);
+    }
+
+    public function testIsPrivate()
+    {
+        $response = new Response();
+        $response-&gt;headers-&gt;set(&#039;Cache-Control&#039;, &#039;max-age=100&#039;);
+        $response-&gt;setPrivate();
+        $this-&gt;assertEquals(100, $response-&gt;headers-&gt;getCacheControlDirective(&#039;max-age&#039;), &#039;-&gt;isPrivate() adds the private Cache-Control directive when set to true&#039;);
+        $this-&gt;assertTrue($response-&gt;headers-&gt;getCacheControlDirective(&#039;private&#039;), &#039;-&gt;isPrivate() adds the private Cache-Control directive when set to true&#039;);
+
+        $response = new Response();
+        $response-&gt;headers-&gt;set(&#039;Cache-Control&#039;, &#039;public, max-age=100&#039;);
+        $response-&gt;setPrivate();
+        $this-&gt;assertEquals(100, $response-&gt;headers-&gt;getCacheControlDirective(&#039;max-age&#039;), &#039;-&gt;isPrivate() adds the private Cache-Control directive when set to true&#039;);
+        $this-&gt;assertTrue($response-&gt;headers-&gt;getCacheControlDirective(&#039;private&#039;), &#039;-&gt;isPrivate() adds the private Cache-Control directive when set to true&#039;);
+        $this-&gt;assertFalse($response-&gt;headers-&gt;hasCacheControlDirective(&#039;public&#039;), &#039;-&gt;isPrivate() removes the public Cache-Control directive&#039;);
+    }
+
+    public function testExpire()
+    {
+        $response = new Response();
+        $response-&gt;headers-&gt;set(&#039;Cache-Control&#039;, &#039;max-age=100&#039;);
+        $response-&gt;expire();
+        $this-&gt;assertEquals(100, $response-&gt;headers-&gt;get(&#039;Age&#039;), &#039;-&gt;expire() sets the Age to max-age when present&#039;);
+
+        $response = new Response();
+        $response-&gt;headers-&gt;set(&#039;Cache-Control&#039;, &#039;max-age=100, s-maxage=500&#039;);
+        $response-&gt;expire();
+        $this-&gt;assertEquals(500, $response-&gt;headers-&gt;get(&#039;Age&#039;), &#039;-&gt;expire() sets the Age to s-maxage when both max-age and s-maxage are present&#039;);
+
+        $response = new Response();
+        $response-&gt;headers-&gt;set(&#039;Cache-Control&#039;, &#039;max-age=5, s-maxage=500&#039;);
+        $response-&gt;headers-&gt;set(&#039;Age&#039;, &#039;1000&#039;);
+        $response-&gt;expire();
+        $this-&gt;assertEquals(1000, $response-&gt;headers-&gt;get(&#039;Age&#039;), &#039;-&gt;expire() does nothing when the response is already stale/expired&#039;);
+
+        $response = new Response();
+        $response-&gt;expire();
+        $this-&gt;assertFalse($response-&gt;headers-&gt;has(&#039;Age&#039;), &#039;-&gt;expire() does nothing when the response does not include freshness information&#039;);
+
+        $response = new Response();
+        $response-&gt;headers-&gt;set(&#039;Expires&#039;, -1);
+        $response-&gt;expire();
+        $this-&gt;assertNull($response-&gt;headers-&gt;get(&#039;Age&#039;), &#039;-&gt;expire() does not set the Age when the response is expired&#039;);
+    }
+
+    public function testGetTtl()
+    {
+        $response = new Response();
+        $this-&gt;assertNull($response-&gt;getTtl(), &#039;-&gt;getTtl() returns null when no Expires or Cache-Control headers are present&#039;);
+
+        $response = new Response();
+        $response-&gt;headers-&gt;set(&#039;Expires&#039;, $this-&gt;createDateTimeOneHourLater()-&gt;format(DATE_RFC2822));
+        $this-&gt;assertEquals(3600, $response-&gt;getTtl(), &#039;-&gt;getTtl() uses the Expires header when no max-age is present&#039;);
+
+        $response = new Response();
+        $response-&gt;headers-&gt;set(&#039;Expires&#039;, $this-&gt;createDateTimeOneHourAgo()-&gt;format(DATE_RFC2822));
+        $this-&gt;assertLessThan(0, $response-&gt;getTtl(), &#039;-&gt;getTtl() returns negative values when Expires is in past&#039;);
+
+        $response = new Response();
+        $response-&gt;headers-&gt;set(&#039;Expires&#039;, $response-&gt;getDate()-&gt;format(DATE_RFC2822));
+        $response-&gt;headers-&gt;set(&#039;Age&#039;, 0);
+        $this-&gt;assertSame(0, $response-&gt;getTtl(), &#039;-&gt;getTtl() correctly handles zero&#039;);
+
+        $response = new Response();
+        $response-&gt;headers-&gt;set(&#039;Cache-Control&#039;, &#039;max-age=60&#039;);
+        $this-&gt;assertEquals(60, $response-&gt;getTtl(), &#039;-&gt;getTtl() uses Cache-Control max-age when present&#039;);
+    }
+
+    public function testSetClientTtl()
+    {
+        $response = new Response();
+        $response-&gt;setClientTtl(10);
+
+        $this-&gt;assertEquals($response-&gt;getMaxAge(), $response-&gt;getAge() + 10);
+    }
+
+    public function testGetSetProtocolVersion()
+    {
+        $response = new Response();
+
+        $this-&gt;assertEquals(&#039;1.0&#039;, $response-&gt;getProtocolVersion());
+
+        $response-&gt;setProtocolVersion(&#039;1.1&#039;);
+
+        $this-&gt;assertEquals(&#039;1.1&#039;, $response-&gt;getProtocolVersion());
+    }
+
+    public function testGetVary()
+    {
+        $response = new Response();
+        $this-&gt;assertEquals(array(), $response-&gt;getVary(), &#039;-&gt;getVary() returns an empty array if no Vary header is present&#039;);
+
+        $response = new Response();
+        $response-&gt;headers-&gt;set(&#039;Vary&#039;, &#039;Accept-Language&#039;);
+        $this-&gt;assertEquals(array(&#039;Accept-Language&#039;), $response-&gt;getVary(), &#039;-&gt;getVary() parses a single header name value&#039;);
+
+        $response = new Response();
+        $response-&gt;headers-&gt;set(&#039;Vary&#039;, &#039;Accept-Language User-Agent    X-Foo&#039;);
+        $this-&gt;assertEquals(array(&#039;Accept-Language&#039;, &#039;User-Agent&#039;, &#039;X-Foo&#039;), $response-&gt;getVary(), &#039;-&gt;getVary() parses multiple header name values separated by spaces&#039;);
+
+        $response = new Response();
+        $response-&gt;headers-&gt;set(&#039;Vary&#039;, &#039;Accept-Language,User-Agent,    X-Foo&#039;);
+        $this-&gt;assertEquals(array(&#039;Accept-Language&#039;, &#039;User-Agent&#039;, &#039;X-Foo&#039;), $response-&gt;getVary(), &#039;-&gt;getVary() parses multiple header name values separated by commas&#039;);
+
+        $vary = array(&#039;Accept-Language&#039;, &#039;User-Agent&#039;, &#039;X-foo&#039;);
+
+        $response = new Response();
+        $response-&gt;headers-&gt;set(&#039;Vary&#039;, $vary);
+        $this-&gt;assertEquals($vary, $response-&gt;getVary(), &#039;-&gt;getVary() parses multiple header name values in arrays&#039;);
+
+        $response = new Response();
+        $response-&gt;headers-&gt;set(&#039;Vary&#039;, &#039;Accept-Language, User-Agent, X-foo&#039;);
+        $this-&gt;assertEquals($vary, $response-&gt;getVary(), &#039;-&gt;getVary() parses multiple header name values in arrays&#039;);
+    }
+
+    public function testSetVary()
+    {
+        $response = new Response();
+        $response-&gt;setVary(&#039;Accept-Language&#039;);
+        $this-&gt;assertEquals(array(&#039;Accept-Language&#039;), $response-&gt;getVary());
+
+        $response-&gt;setVary(&#039;Accept-Language, User-Agent&#039;);
+        $this-&gt;assertEquals(array(&#039;Accept-Language&#039;, &#039;User-Agent&#039;), $response-&gt;getVary(), &#039;-&gt;setVary() replace the vary header by default&#039;);
+
+        $response-&gt;setVary(&#039;X-Foo&#039;, false);
+        $this-&gt;assertEquals(array(&#039;Accept-Language&#039;, &#039;User-Agent&#039;, &#039;X-Foo&#039;), $response-&gt;getVary(), &#039;-&gt;setVary() doesn\&#039;t wipe out earlier Vary headers if replace is set to false&#039;);
+    }
+
+    public function testDefaultContentType()
+    {
+        $headerMock = $this-&gt;getMockBuilder(&#039;Symfony\Component\HttpFoundation\ResponseHeaderBag&#039;)-&gt;setMethods(array(&#039;set&#039;))-&gt;getMock();
+        $headerMock-&gt;expects($this-&gt;at(0))
+            -&gt;method(&#039;set&#039;)
+            -&gt;with(&#039;Content-Type&#039;, &#039;text/html&#039;);
+        $headerMock-&gt;expects($this-&gt;at(1))
+            -&gt;method(&#039;set&#039;)
+            -&gt;with(&#039;Content-Type&#039;, &#039;text/html; charset=UTF-8&#039;);
+
+        $response = new Response(&#039;foo&#039;);
+        $response-&gt;headers = $headerMock;
+
+        $response-&gt;prepare(new Request());
+    }
+
+    public function testContentTypeCharset()
+    {
+        $response = new Response();
+        $response-&gt;headers-&gt;set(&#039;Content-Type&#039;, &#039;text/css&#039;);
+
+        // force fixContentType() to be called
+        $response-&gt;prepare(new Request());
+
+        $this-&gt;assertEquals(&#039;text/css; charset=UTF-8&#039;, $response-&gt;headers-&gt;get(&#039;Content-Type&#039;));
+    }
+
+    public function testPrepareDoesNothingIfContentTypeIsSet()
+    {
+        $response = new Response(&#039;foo&#039;);
+        $response-&gt;headers-&gt;set(&#039;Content-Type&#039;, &#039;text/plain&#039;);
+
+        $response-&gt;prepare(new Request());
+
+        $this-&gt;assertEquals(&#039;text/plain; charset=UTF-8&#039;, $response-&gt;headers-&gt;get(&#039;content-type&#039;));
+    }
+
+    public function testPrepareDoesNothingIfRequestFormatIsNotDefined()
+    {
+        $response = new Response(&#039;foo&#039;);
+
+        $response-&gt;prepare(new Request());
+
+        $this-&gt;assertEquals(&#039;text/html; charset=UTF-8&#039;, $response-&gt;headers-&gt;get(&#039;content-type&#039;));
+    }
+
+    public function testPrepareSetContentType()
+    {
+        $response = new Response(&#039;foo&#039;);
+        $request = Request::create(&#039;/&#039;);
+        $request-&gt;setRequestFormat(&#039;json&#039;);
+
+        $response-&gt;prepare($request);
+
+        $this-&gt;assertEquals(&#039;application/json&#039;, $response-&gt;headers-&gt;get(&#039;content-type&#039;));
+    }
+
+    public function testPrepareRemovesContentForHeadRequests()
+    {
+        $response = new Response(&#039;foo&#039;);
+        $request = Request::create(&#039;/&#039;, &#039;HEAD&#039;);
+
+        $length = 12345;
+        $response-&gt;headers-&gt;set(&#039;Content-Length&#039;, $length);
+        $response-&gt;prepare($request);
+
+        $this-&gt;assertEquals(&#039;&#039;, $response-&gt;getContent());
+        $this-&gt;assertEquals($length, $response-&gt;headers-&gt;get(&#039;Content-Length&#039;), &#039;Content-Length should be as if it was GET; see RFC2616 14.13&#039;);
+    }
+
+    public function testPrepareRemovesContentForInformationalResponse()
+    {
+        $response = new Response(&#039;foo&#039;);
+        $request = Request::create(&#039;/&#039;);
+
+        $response-&gt;setContent(&#039;content&#039;);
+        $response-&gt;setStatusCode(101);
+        $response-&gt;prepare($request);
+        $this-&gt;assertEquals(&#039;&#039;, $response-&gt;getContent());
+        $this-&gt;assertFalse($response-&gt;headers-&gt;has(&#039;Content-Type&#039;));
+        $this-&gt;assertFalse($response-&gt;headers-&gt;has(&#039;Content-Type&#039;));
+
+        $response-&gt;setContent(&#039;content&#039;);
+        $response-&gt;setStatusCode(304);
+        $response-&gt;prepare($request);
+        $this-&gt;assertEquals(&#039;&#039;, $response-&gt;getContent());
+        $this-&gt;assertFalse($response-&gt;headers-&gt;has(&#039;Content-Type&#039;));
+        $this-&gt;assertFalse($response-&gt;headers-&gt;has(&#039;Content-Length&#039;));
+    }
+
+    public function testPrepareRemovesContentLength()
+    {
+        $response = new Response(&#039;foo&#039;);
+        $request = Request::create(&#039;/&#039;);
+
+        $response-&gt;headers-&gt;set(&#039;Content-Length&#039;, 12345);
+        $response-&gt;prepare($request);
+        $this-&gt;assertEquals(12345, $response-&gt;headers-&gt;get(&#039;Content-Length&#039;));
+
+        $response-&gt;headers-&gt;set(&#039;Transfer-Encoding&#039;, &#039;chunked&#039;);
+        $response-&gt;prepare($request);
+        $this-&gt;assertFalse($response-&gt;headers-&gt;has(&#039;Content-Length&#039;));
+    }
+
+    public function testPrepareSetsPragmaOnHttp10Only()
+    {
+        $request = Request::create(&#039;/&#039;, &#039;GET&#039;);
+        $request-&gt;server-&gt;set(&#039;SERVER_PROTOCOL&#039;, &#039;HTTP/1.0&#039;);
+
+        $response = new Response(&#039;foo&#039;);
+        $response-&gt;prepare($request);
+        $this-&gt;assertEquals(&#039;no-cache&#039;, $response-&gt;headers-&gt;get(&#039;pragma&#039;));
+        $this-&gt;assertEquals(&#039;-1&#039;, $response-&gt;headers-&gt;get(&#039;expires&#039;));
+
+        $request-&gt;server-&gt;set(&#039;SERVER_PROTOCOL&#039;, &#039;HTTP/1.1&#039;);
+        $response = new Response(&#039;foo&#039;);
+        $response-&gt;prepare($request);
+        $this-&gt;assertFalse($response-&gt;headers-&gt;has(&#039;pragma&#039;));
+        $this-&gt;assertFalse($response-&gt;headers-&gt;has(&#039;expires&#039;));
+    }
+
+    public function testSetCache()
+    {
+        $response = new Response();
+        //array(&#039;etag&#039;, &#039;last_modified&#039;, &#039;max_age&#039;, &#039;s_maxage&#039;, &#039;private&#039;, &#039;public&#039;)
+        try {
+            $response-&gt;setCache(array(&#039;wrong option&#039; =&gt; &#039;value&#039;));
+            $this-&gt;fail(&#039;-&gt;setCache() throws an InvalidArgumentException if an option is not supported&#039;);
+        } catch (\Exception $e) {
+            $this-&gt;assertInstanceOf(&#039;InvalidArgumentException&#039;, $e, &#039;-&gt;setCache() throws an InvalidArgumentException if an option is not supported&#039;);
+            $this-&gt;assertContains(&#039;&quot;wrong option&quot;&#039;, $e-&gt;getMessage());
+        }
+
+        $options = array(&#039;etag&#039; =&gt; &#039;&quot;whatever&quot;&#039;);
+        $response-&gt;setCache($options);
+        $this-&gt;assertEquals($response-&gt;getEtag(), &#039;&quot;whatever&quot;&#039;);
+
+        $now = $this-&gt;createDateTimeNow();
+        $options = array(&#039;last_modified&#039; =&gt; $now);
+        $response-&gt;setCache($options);
+        $this-&gt;assertEquals($response-&gt;getLastModified()-&gt;getTimestamp(), $now-&gt;getTimestamp());
+
+        $options = array(&#039;max_age&#039; =&gt; 100);
+        $response-&gt;setCache($options);
+        $this-&gt;assertEquals($response-&gt;getMaxAge(), 100);
+
+        $options = array(&#039;s_maxage&#039; =&gt; 200);
+        $response-&gt;setCache($options);
+        $this-&gt;assertEquals($response-&gt;getMaxAge(), 200);
+
+        $this-&gt;assertTrue($response-&gt;headers-&gt;hasCacheControlDirective(&#039;public&#039;));
+        $this-&gt;assertFalse($response-&gt;headers-&gt;hasCacheControlDirective(&#039;private&#039;));
+
+        $response-&gt;setCache(array(&#039;public&#039; =&gt; true));
+        $this-&gt;assertTrue($response-&gt;headers-&gt;hasCacheControlDirective(&#039;public&#039;));
+        $this-&gt;assertFalse($response-&gt;headers-&gt;hasCacheControlDirective(&#039;private&#039;));
+
+        $response-&gt;setCache(array(&#039;public&#039; =&gt; false));
+        $this-&gt;assertFalse($response-&gt;headers-&gt;hasCacheControlDirective(&#039;public&#039;));
+        $this-&gt;assertTrue($response-&gt;headers-&gt;hasCacheControlDirective(&#039;private&#039;));
+
+        $response-&gt;setCache(array(&#039;private&#039; =&gt; true));
+        $this-&gt;assertFalse($response-&gt;headers-&gt;hasCacheControlDirective(&#039;public&#039;));
+        $this-&gt;assertTrue($response-&gt;headers-&gt;hasCacheControlDirective(&#039;private&#039;));
+
+        $response-&gt;setCache(array(&#039;private&#039; =&gt; false));
+        $this-&gt;assertTrue($response-&gt;headers-&gt;hasCacheControlDirective(&#039;public&#039;));
+        $this-&gt;assertFalse($response-&gt;headers-&gt;hasCacheControlDirective(&#039;private&#039;));
+
+        $response-&gt;setCache(array(&#039;immutable&#039; =&gt; true));
+        $this-&gt;assertTrue($response-&gt;headers-&gt;hasCacheControlDirective(&#039;immutable&#039;));
+
+        $response-&gt;setCache(array(&#039;immutable&#039; =&gt; false));
+        $this-&gt;assertFalse($response-&gt;headers-&gt;hasCacheControlDirective(&#039;immutable&#039;));
+    }
+
+    public function testSendContent()
+    {
+        $response = new Response(&#039;test response rendering&#039;, 200);
+
+        ob_start();
+        $response-&gt;sendContent();
+        $string = ob_get_clean();
+        $this-&gt;assertContains(&#039;test response rendering&#039;, $string);
+    }
+
+    public function testSetPublic()
+    {
+        $response = new Response();
+        $response-&gt;setPublic();
+
+        $this-&gt;assertTrue($response-&gt;headers-&gt;hasCacheControlDirective(&#039;public&#039;));
+        $this-&gt;assertFalse($response-&gt;headers-&gt;hasCacheControlDirective(&#039;private&#039;));
+    }
+
+    public function testSetImmutable()
+    {
+        $response = new Response();
+        $response-&gt;setImmutable();
+
+        $this-&gt;assertTrue($response-&gt;headers-&gt;hasCacheControlDirective(&#039;immutable&#039;));
+    }
+
+    public function testIsImmutable()
+    {
+        $response = new Response();
+        $response-&gt;setImmutable();
+
+        $this-&gt;assertTrue($response-&gt;isImmutable());
+    }
+
+    public function testSetDate()
+    {
+        $response = new Response();
+        $response-&gt;setDate(\DateTime::createFromFormat(\DateTime::ATOM, &#039;2013-01-26T09:21:56+0100&#039;, new \DateTimeZone(&#039;Europe/Berlin&#039;)));
+
+        $this-&gt;assertEquals(&#039;2013-01-26T08:21:56+00:00&#039;, $response-&gt;getDate()-&gt;format(\DateTime::ATOM));
+    }
+
+    public function testSetDateWithImmutable()
+    {
+        $response = new Response();
+        $response-&gt;setDate(\DateTimeImmutable::createFromFormat(\DateTime::ATOM, &#039;2013-01-26T09:21:56+0100&#039;, new \DateTimeZone(&#039;Europe/Berlin&#039;)));
+
+        $this-&gt;assertEquals(&#039;2013-01-26T08:21:56+00:00&#039;, $response-&gt;getDate()-&gt;format(\DateTime::ATOM));
+    }
+
+    public function testSetExpires()
+    {
+        $response = new Response();
+        $response-&gt;setExpires(null);
+
+        $this-&gt;assertNull($response-&gt;getExpires(), &#039;-&gt;setExpires() remove the header when passed null&#039;);
+
+        $now = $this-&gt;createDateTimeNow();
+        $response-&gt;setExpires($now);
+
+        $this-&gt;assertEquals($response-&gt;getExpires()-&gt;getTimestamp(), $now-&gt;getTimestamp());
+    }
+
+    public function testSetExpiresWithImmutable()
+    {
+        $response = new Response();
+
+        $now = $this-&gt;createDateTimeImmutableNow();
+        $response-&gt;setExpires($now);
+
+        $this-&gt;assertEquals($response-&gt;getExpires()-&gt;getTimestamp(), $now-&gt;getTimestamp());
+    }
+
+    public function testSetLastModified()
+    {
+        $response = new Response();
+        $response-&gt;setLastModified($this-&gt;createDateTimeNow());
+        $this-&gt;assertNotNull($response-&gt;getLastModified());
+
+        $response-&gt;setLastModified(null);
+        $this-&gt;assertNull($response-&gt;getLastModified());
+    }
+
+    public function testSetLastModifiedWithImmutable()
+    {
+        $response = new Response();
+        $response-&gt;setLastModified($this-&gt;createDateTimeImmutableNow());
+        $this-&gt;assertNotNull($response-&gt;getLastModified());
+
+        $response-&gt;setLastModified(null);
+        $this-&gt;assertNull($response-&gt;getLastModified());
+    }
+
+    public function testIsInvalid()
+    {
+        $response = new Response();
+
+        try {
+            $response-&gt;setStatusCode(99);
+            $this-&gt;fail();
+        } catch (\InvalidArgumentException $e) {
+            $this-&gt;assertTrue($response-&gt;isInvalid());
+        }
+
+        try {
+            $response-&gt;setStatusCode(650);
+            $this-&gt;fail();
+        } catch (\InvalidArgumentException $e) {
+            $this-&gt;assertTrue($response-&gt;isInvalid());
+        }
+
+        $response = new Response(&#039;&#039;, 200);
+        $this-&gt;assertFalse($response-&gt;isInvalid());
+    }
+
+    /**
+     * @dataProvider getStatusCodeFixtures
+     */
+    public function testSetStatusCode($code, $text, $expectedText)
+    {
+        $response = new Response();
+
+        $response-&gt;setStatusCode($code, $text);
+
+        $statusText = new \ReflectionProperty($response, &#039;statusText&#039;);
+        $statusText-&gt;setAccessible(true);
+
+        $this-&gt;assertEquals($expectedText, $statusText-&gt;getValue($response));
+    }
+
+    public function getStatusCodeFixtures()
+    {
+        return array(
+            array(&#039;200&#039;, null, &#039;OK&#039;),
+            array(&#039;200&#039;, false, &#039;&#039;),
+            array(&#039;200&#039;, &#039;foo&#039;, &#039;foo&#039;),
+            array(&#039;199&#039;, null, &#039;unknown status&#039;),
+            array(&#039;199&#039;, false, &#039;&#039;),
+            array(&#039;199&#039;, &#039;foo&#039;, &#039;foo&#039;),
+        );
+    }
+
+    public function testIsInformational()
+    {
+        $response = new Response(&#039;&#039;, 100);
+        $this-&gt;assertTrue($response-&gt;isInformational());
+
+        $response = new Response(&#039;&#039;, 200);
+        $this-&gt;assertFalse($response-&gt;isInformational());
+    }
+
+    public function testIsRedirectRedirection()
+    {
+        foreach (array(301, 302, 303, 307) as $code) {
+            $response = new Response(&#039;&#039;, $code);
+            $this-&gt;assertTrue($response-&gt;isRedirection());
+            $this-&gt;assertTrue($response-&gt;isRedirect());
+        }
+
+        $response = new Response(&#039;&#039;, 304);
+        $this-&gt;assertTrue($response-&gt;isRedirection());
+        $this-&gt;assertFalse($response-&gt;isRedirect());
+
+        $response = new Response(&#039;&#039;, 200);
+        $this-&gt;assertFalse($response-&gt;isRedirection());
+        $this-&gt;assertFalse($response-&gt;isRedirect());
+
+        $response = new Response(&#039;&#039;, 404);
+        $this-&gt;assertFalse($response-&gt;isRedirection());
+        $this-&gt;assertFalse($response-&gt;isRedirect());
+
+        $response = new Response(&#039;&#039;, 301, array(&#039;Location&#039; =&gt; &#039;/good-uri&#039;));
+        $this-&gt;assertFalse($response-&gt;isRedirect(&#039;/bad-uri&#039;));
+        $this-&gt;assertTrue($response-&gt;isRedirect(&#039;/good-uri&#039;));
+    }
+
+    public function testIsNotFound()
+    {
+        $response = new Response(&#039;&#039;, 404);
+        $this-&gt;assertTrue($response-&gt;isNotFound());
+
+        $response = new Response(&#039;&#039;, 200);
+        $this-&gt;assertFalse($response-&gt;isNotFound());
+    }
+
+    public function testIsEmpty()
+    {
+        foreach (array(204, 304) as $code) {
+            $response = new Response(&#039;&#039;, $code);
+            $this-&gt;assertTrue($response-&gt;isEmpty());
+        }
+
+        $response = new Response(&#039;&#039;, 200);
+        $this-&gt;assertFalse($response-&gt;isEmpty());
+    }
+
+    public function testIsForbidden()
+    {
+        $response = new Response(&#039;&#039;, 403);
+        $this-&gt;assertTrue($response-&gt;isForbidden());
+
+        $response = new Response(&#039;&#039;, 200);
+        $this-&gt;assertFalse($response-&gt;isForbidden());
+    }
+
+    public function testIsOk()
+    {
+        $response = new Response(&#039;&#039;, 200);
+        $this-&gt;assertTrue($response-&gt;isOk());
+
+        $response = new Response(&#039;&#039;, 404);
+        $this-&gt;assertFalse($response-&gt;isOk());
+    }
+
+    public function testIsServerOrClientError()
+    {
+        $response = new Response(&#039;&#039;, 404);
+        $this-&gt;assertTrue($response-&gt;isClientError());
+        $this-&gt;assertFalse($response-&gt;isServerError());
+
+        $response = new Response(&#039;&#039;, 500);
+        $this-&gt;assertFalse($response-&gt;isClientError());
+        $this-&gt;assertTrue($response-&gt;isServerError());
+    }
+
+    public function testHasVary()
+    {
+        $response = new Response();
+        $this-&gt;assertFalse($response-&gt;hasVary());
+
+        $response-&gt;setVary(&#039;User-Agent&#039;);
+        $this-&gt;assertTrue($response-&gt;hasVary());
+    }
+
+    public function testSetEtag()
+    {
+        $response = new Response(&#039;&#039;, 200, array(&#039;ETag&#039; =&gt; &#039;&quot;12345&quot;&#039;));
+        $response-&gt;setEtag();
+
+        $this-&gt;assertNull($response-&gt;headers-&gt;get(&#039;Etag&#039;), &#039;-&gt;setEtag() removes Etags when call with null&#039;);
+    }
+
+    /**
+     * @dataProvider validContentProvider
+     */
+    public function testSetContent($content)
+    {
+        $response = new Response();
+        $response-&gt;setContent($content);
+        $this-&gt;assertEquals((string) $content, $response-&gt;getContent());
+    }
+
+    /**
+     * @expectedException \UnexpectedValueException
+     * @dataProvider invalidContentProvider
+     */
+    public function testSetContentInvalid($content)
+    {
+        $response = new Response();
+        $response-&gt;setContent($content);
+    }
+
+    public function testSettersAreChainable()
+    {
+        $response = new Response();
+
+        $setters = array(
+            &#039;setProtocolVersion&#039; =&gt; &#039;1.0&#039;,
+            &#039;setCharset&#039; =&gt; &#039;UTF-8&#039;,
+            &#039;setPublic&#039; =&gt; null,
+            &#039;setPrivate&#039; =&gt; null,
+            &#039;setDate&#039; =&gt; $this-&gt;createDateTimeNow(),
+            &#039;expire&#039; =&gt; null,
+            &#039;setMaxAge&#039; =&gt; 1,
+            &#039;setSharedMaxAge&#039; =&gt; 1,
+            &#039;setTtl&#039; =&gt; 1,
+            &#039;setClientTtl&#039; =&gt; 1,
+        );
+
+        foreach ($setters as $setter =&gt; $arg) {
+            $this-&gt;assertEquals($response, $response-&gt;{$setter}($arg));
+        }
+    }
+
+    public function testNoDeprecationsAreTriggered()
+    {
+        new DefaultResponse();
+        $this-&gt;getMockBuilder(Response::class)-&gt;getMock();
+
+        // we just need to ensure that subclasses of Response can be created without any deprecations
+        // being triggered if the subclass does not override any final methods
+        $this-&gt;addToAssertionCount(1);
+    }
+
+    public function validContentProvider()
+    {
+        return array(
+            &#039;obj&#039; =&gt; array(new StringableObject()),
+            &#039;string&#039; =&gt; array(&#039;Foo&#039;),
+            &#039;int&#039; =&gt; array(2),
+        );
+    }
+
+    public function invalidContentProvider()
+    {
+        return array(
+            &#039;obj&#039; =&gt; array(new \stdClass()),
+            &#039;array&#039; =&gt; array(array()),
+            &#039;bool&#039; =&gt; array(true, &#039;1&#039;),
+        );
+    }
+
+    protected function createDateTimeOneHourAgo()
+    {
+        return $this-&gt;createDateTimeNow()-&gt;sub(new \DateInterval(&#039;PT1H&#039;));
+    }
+
+    protected function createDateTimeOneHourLater()
+    {
+        return $this-&gt;createDateTimeNow()-&gt;add(new \DateInterval(&#039;PT1H&#039;));
+    }
+
+    protected function createDateTimeNow()
+    {
+        $date = new \DateTime();
+
+        return $date-&gt;setTimestamp(time());
+    }
+
+    protected function createDateTimeImmutableNow()
+    {
+        $date = new \DateTimeImmutable();
+
+        return $date-&gt;setTimestamp(time());
+    }
+
+    protected function provideResponse()
+    {
+        return new Response();
+    }
+
+    /**
+     * @see       http://github.com/zendframework/zend-diactoros for the canonical source repository
+     *
+     * @author    Fábio Pacheco
+     * @copyright Copyright (c) 2015-2016 Zend Technologies USA Inc. (http://www.zend.com)
+     * @license   https://github.com/zendframework/zend-diactoros/blob/master/LICENSE.md New BSD License
+     */
+    public function ianaCodesReasonPhrasesProvider()
+    {
+        if (!in_array(&#039;https&#039;, stream_get_wrappers(), true)) {
+            $this-&gt;markTestSkipped(&#039;The &quot;https&quot; wrapper is not available&#039;);
+        }
+
+        $ianaHttpStatusCodes = new \DOMDocument();
+
+        libxml_set_streams_context(stream_context_create(array(
+            &#039;http&#039; =&gt; array(
+                &#039;method&#039; =&gt; &#039;GET&#039;,
+                &#039;timeout&#039; =&gt; 30,
+            ),
+        )));
+
+        $ianaHttpStatusCodes-&gt;load(&#039;https://www.iana.org/assignments/http-status-codes/http-status-codes.xml&#039;);
+        if (!$ianaHttpStatusCodes-&gt;relaxNGValidate(__DIR__.&#039;/schema/http-status-codes.rng&#039;)) {
+            self::fail(&#039;Invalid IANA\&#039;s HTTP status code list.&#039;);
+        }
+
+        $ianaCodesReasonPhrases = array();
+
+        $xpath = new \DOMXPath($ianaHttpStatusCodes);
+        $xpath-&gt;registerNamespace(&#039;ns&#039;, &#039;http://www.iana.org/assignments&#039;);
+
+        $records = $xpath-&gt;query(&#039;//ns:record&#039;);
+        foreach ($records as $record) {
+            $value = $xpath-&gt;query(&#039;.//ns:value&#039;, $record)-&gt;item(0)-&gt;nodeValue;
+            $description = $xpath-&gt;query(&#039;.//ns:description&#039;, $record)-&gt;item(0)-&gt;nodeValue;
+
+            if (in_array($description, array(&#039;Unassigned&#039;, &#039;(Unused)&#039;), true)) {
+                continue;
+            }
+
+            if (preg_match(&#039;/^([0-9]+)\s*\-\s*([0-9]+)$/&#039;, $value, $matches)) {
+                for ($value = $matches[1]; $value &lt;= $matches[2]; ++$value) {
+                    $ianaCodesReasonPhrases[] = array($value, $description);
+                }
+            } else {
+                $ianaCodesReasonPhrases[] = array($value, $description);
+            }
+        }
+
+        return $ianaCodesReasonPhrases;
+    }
+
+    /**
+     * @dataProvider ianaCodesReasonPhrasesProvider
+     */
+    public function testReasonPhraseDefaultsAgainstIana($code, $reasonPhrase)
+    {
+        $this-&gt;assertEquals($reasonPhrase, Response::$statusTexts[$code]);
+    }
+}
+
+class StringableObject
+{
+    public function __toString()
+    {
+        return &#039;Foo&#039;;
+    }
+}
+
+class DefaultResponse extends Response
+{
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

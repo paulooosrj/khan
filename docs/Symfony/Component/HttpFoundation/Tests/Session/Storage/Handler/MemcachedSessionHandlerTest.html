@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\MemcachedSessionHandlerTest | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Tests_Session_Storage_Handler_MemcachedSessionHandlerTest" data-root-path="../../../../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../../../../Symfony/Component/HttpFoundation/Tests.html">Tests</a></li>
+                    <li><a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session.html">Session</a></li>
+                    <li><a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage.html">Storage</a></li>
+                    <li><a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler.html">Handler</a></li>
+  
+            <li>MemcachedSessionHandlerTest</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>MemcachedSessionHandlerTest</h1>
+
+    <p>    class
+    <strong>MemcachedSessionHandlerTest</strong>        extends <abbr title="PHPUnit\Framework\TestCase">TestCase</abbr>
+</p>
+
+    
+    
+            <h2>Constants</h2>
+
+            <table class="table">
+                    <tr>
+                <td><code class="language-php">PREFIX =  &#039;prefix_&#039;;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">TTL =  1000;</code></td>
+                <td>
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+            </table>
+
+    
+            <h2>Properties</h2>
+
+            <table class="table">
+                    <tr>
+                <td id="property_storage">
+                    <code class="language-php">                    protected                                        <a href="../../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/MemcachedSessionHandler.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\MemcachedSessionHandler">MemcachedSessionHandler</abbr></a></code>
+                </td>
+                <td><code class="language-php">$storage</code></td>
+                <td></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td id="property_memcached">
+                    <code class="language-php">                    protected                                        </code>
+                </td>
+                <td><code class="language-php">$memcached</code></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setUp">setUp</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_tearDown">tearDown</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testOpenSession">testOpenSession</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testCloseSession">testCloseSession</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testReadSession">testReadSession</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testWriteSession">testWriteSession</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testDestroySession">testDestroySession</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGcSession">testGcSession</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testSupportedOptions">testSupportedOptions</a>($options, $supported)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getOptionFixtures">getOptionFixtures</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetConnection">testGetConnection</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.33">33</a>
+                    </div>
+        <div>
+            <h3 id="method_setUp"><code class="language-php">setUp()</code></h3>
+            <code class="language-php">protected setUp()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.48">48</a>
+                    </div>
+        <div>
+            <h3 id="method_tearDown"><code class="language-php">tearDown()</code></h3>
+            <code class="language-php">protected tearDown()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.55">55</a>
+                    </div>
+        <div>
+            <h3 id="method_testOpenSession"><code class="language-php">testOpenSession()</code></h3>
+            <code class="language-php">public testOpenSession()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.60">60</a>
+                    </div>
+        <div>
+            <h3 id="method_testCloseSession"><code class="language-php">testCloseSession()</code></h3>
+            <code class="language-php">public testCloseSession()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.65">65</a>
+                    </div>
+        <div>
+            <h3 id="method_testReadSession"><code class="language-php">testReadSession()</code></h3>
+            <code class="language-php">public testReadSession()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.76">76</a>
+                    </div>
+        <div>
+            <h3 id="method_testWriteSession"><code class="language-php">testWriteSession()</code></h3>
+            <code class="language-php">public testWriteSession()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.88">88</a>
+                    </div>
+        <div>
+            <h3 id="method_testDestroySession"><code class="language-php">testDestroySession()</code></h3>
+            <code class="language-php">public testDestroySession()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.100">100</a>
+                    </div>
+        <div>
+            <h3 id="method_testGcSession"><code class="language-php">testGcSession()</code></h3>
+            <code class="language-php">public testGcSession()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.108">108</a>
+                    </div>
+        <div>
+            <h3 id="method_testSupportedOptions"><code class="language-php">testSupportedOptions()</code></h3>
+            <code class="language-php">public testSupportedOptions($options, $supported)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$options</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$supported</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.118">118</a>
+                    </div>
+        <div>
+            <h3 id="method_getOptionFixtures"><code class="language-php">getOptionFixtures()</code></h3>
+            <code class="language-php">public getOptionFixtures()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.128">128</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetConnection"><code class="language-php">testGetConnection()</code></h3>
+            <code class="language-php">public testGetConnection()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler;
+
+use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\Session\Storage\Handler\MemcachedSessionHandler;
+
+/**
+ * @requires extension memcached
+ * @group time-sensitive
+ */
+class MemcachedSessionHandlerTest extends TestCase
+{
+    const PREFIX = &#039;prefix_&#039;;
+    const TTL = 1000;
+
+    /**
+     * @var MemcachedSessionHandler
+     */
+    protected $storage;
+
+    protected $memcached;
+
+    protected function setUp()
+    {
+        parent::setUp();
+
+        if (version_compare(phpversion(&#039;memcached&#039;), &#039;2.2.0&#039;, &#039;&gt;=&#039;) &amp;&amp; version_compare(phpversion(&#039;memcached&#039;), &#039;3.0.0b1&#039;, &#039;&lt;&#039;)) {
+            $this-&gt;markTestSkipped(&#039;Tests can only be run with memcached extension 2.1.0 or lower, or 3.0.0b1 or higher&#039;);
+        }
+
+        $this-&gt;memcached = $this-&gt;getMockBuilder(&#039;Memcached&#039;)-&gt;getMock();
+        $this-&gt;storage = new MemcachedSessionHandler(
+            $this-&gt;memcached,
+            array(&#039;prefix&#039; =&gt; self::PREFIX, &#039;expiretime&#039; =&gt; self::TTL)
+        );
+    }
+
+    protected function tearDown()
+    {
+        $this-&gt;memcached = null;
+        $this-&gt;storage = null;
+        parent::tearDown();
+    }
+
+    public function testOpenSession()
+    {
+        $this-&gt;assertTrue($this-&gt;storage-&gt;open(&#039;&#039;, &#039;&#039;));
+    }
+
+    public function testCloseSession()
+    {
+        $this-&gt;assertTrue($this-&gt;storage-&gt;close());
+    }
+
+    public function testReadSession()
+    {
+        $this-&gt;memcached
+            -&gt;expects($this-&gt;once())
+            -&gt;method(&#039;get&#039;)
+            -&gt;with(self::PREFIX.&#039;id&#039;)
+        ;
+
+        $this-&gt;assertEquals(&#039;&#039;, $this-&gt;storage-&gt;read(&#039;id&#039;));
+    }
+
+    public function testWriteSession()
+    {
+        $this-&gt;memcached
+            -&gt;expects($this-&gt;once())
+            -&gt;method(&#039;set&#039;)
+            -&gt;with(self::PREFIX.&#039;id&#039;, &#039;data&#039;, $this-&gt;equalTo(time() + self::TTL, 2))
+            -&gt;will($this-&gt;returnValue(true))
+        ;
+
+        $this-&gt;assertTrue($this-&gt;storage-&gt;write(&#039;id&#039;, &#039;data&#039;));
+    }
+
+    public function testDestroySession()
+    {
+        $this-&gt;memcached
+            -&gt;expects($this-&gt;once())
+            -&gt;method(&#039;delete&#039;)
+            -&gt;with(self::PREFIX.&#039;id&#039;)
+            -&gt;will($this-&gt;returnValue(true))
+        ;
+
+        $this-&gt;assertTrue($this-&gt;storage-&gt;destroy(&#039;id&#039;));
+    }
+
+    public function testGcSession()
+    {
+        $this-&gt;assertTrue($this-&gt;storage-&gt;gc(123));
+    }
+
+    /**
+     * @dataProvider getOptionFixtures
+     */
+    public function testSupportedOptions($options, $supported)
+    {
+        try {
+            new MemcachedSessionHandler($this-&gt;memcached, $options);
+            $this-&gt;assertTrue($supported);
+        } catch (\InvalidArgumentException $e) {
+            $this-&gt;assertFalse($supported);
+        }
+    }
+
+    public function getOptionFixtures()
+    {
+        return array(
+            array(array(&#039;prefix&#039; =&gt; &#039;session&#039;), true),
+            array(array(&#039;expiretime&#039; =&gt; 100), true),
+            array(array(&#039;prefix&#039; =&gt; &#039;session&#039;, &#039;expiretime&#039; =&gt; 200), true),
+            array(array(&#039;expiretime&#039; =&gt; 100, &#039;foo&#039; =&gt; &#039;bar&#039;), false),
+        );
+    }
+
+    public function testGetConnection()
+    {
+        $method = new \ReflectionMethod($this-&gt;storage, &#039;getMemcached&#039;);
+        $method-&gt;setAccessible(true);
+
+        $this-&gt;assertInstanceOf(&#039;\Memcached&#039;, $method-&gt;invoke($this-&gt;storage));
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

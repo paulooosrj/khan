@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\MongoDbSessionHandlerTest | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Tests_Session_Storage_Handler_MongoDbSessionHandlerTest" data-root-path="../../../../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../../../../Symfony/Component/HttpFoundation/Tests.html">Tests</a></li>
+                    <li><a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session.html">Session</a></li>
+                    <li><a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage.html">Storage</a></li>
+                    <li><a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler.html">Handler</a></li>
+  
+            <li>MongoDbSessionHandlerTest</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>MongoDbSessionHandlerTest</h1>
+
+    <p>    class
+    <strong>MongoDbSessionHandlerTest</strong>        extends <abbr title="PHPUnit\Framework\TestCase">TestCase</abbr>
+</p>
+
+    
+    
+    
+            <h2>Properties</h2>
+
+            <table class="table">
+                    <tr>
+                <td id="property_options">
+                    <code class="language-php">                                                            </code>
+                </td>
+                <td><code class="language-php">$options</code></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setUp">setUp</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testConstructorShouldThrowExceptionForMissingOptions">testConstructorShouldThrowExceptionForMissingOptions</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testOpenMethodAlwaysReturnTrue">testOpenMethodAlwaysReturnTrue</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testCloseMethodAlwaysReturnTrue">testCloseMethodAlwaysReturnTrue</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testRead">testRead</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testWrite">testWrite</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testReplaceSessionData">testReplaceSessionData</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testDestroy">testDestroy</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGc">testGc</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetConnection">testGetConnection</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.31">31</a>
+                    </div>
+        <div>
+            <h3 id="method_setUp"><code class="language-php">setUp()</code></h3>
+            <code class="language-php">protected setUp()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.58">58</a>
+                    </div>
+        <div>
+            <h3 id="method_testConstructorShouldThrowExceptionForMissingOptions"><code class="language-php">testConstructorShouldThrowExceptionForMissingOptions()</code></h3>
+            <code class="language-php">public testConstructorShouldThrowExceptionForMissingOptions()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.63">63</a>
+                    </div>
+        <div>
+            <h3 id="method_testOpenMethodAlwaysReturnTrue"><code class="language-php">testOpenMethodAlwaysReturnTrue()</code></h3>
+            <code class="language-php">public testOpenMethodAlwaysReturnTrue()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.68">68</a>
+                    </div>
+        <div>
+            <h3 id="method_testCloseMethodAlwaysReturnTrue"><code class="language-php">testCloseMethodAlwaysReturnTrue()</code></h3>
+            <code class="language-php">public testCloseMethodAlwaysReturnTrue()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.73">73</a>
+                    </div>
+        <div>
+            <h3 id="method_testRead"><code class="language-php">testRead()</code></h3>
+            <code class="language-php">public testRead()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.108">108</a>
+                    </div>
+        <div>
+            <h3 id="method_testWrite"><code class="language-php">testWrite()</code></h3>
+            <code class="language-php">public testWrite()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.135">135</a>
+                    </div>
+        <div>
+            <h3 id="method_testReplaceSessionData"><code class="language-php">testReplaceSessionData()</code></h3>
+            <code class="language-php">public testReplaceSessionData()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.158">158</a>
+                    </div>
+        <div>
+            <h3 id="method_testDestroy"><code class="language-php">testDestroy()</code></h3>
+            <code class="language-php">public testDestroy()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.174">174</a>
+                    </div>
+        <div>
+            <h3 id="method_testGc"><code class="language-php">testGc()</code></h3>
+            <code class="language-php">public testGc()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.193">193</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetConnection"><code class="language-php">testGetConnection()</code></h3>
+            <code class="language-php">public testGetConnection()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler;
+
+use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\Session\Storage\Handler\MongoDbSessionHandler;
+
+/**
+ * @author Markus Bachmann &lt;markus.bachmann@bachi.biz&gt;
+ * @group time-sensitive
+ * @requires extension mongodb
+ */
+class MongoDbSessionHandlerTest extends TestCase
+{
+    /**
+     * @var \PHPUnit_Framework_MockObject_MockObject
+     */
+    private $mongo;
+    private $storage;
+    public $options;
+
+    protected function setUp()
+    {
+        parent::setUp();
+
+        if (!class_exists(\MongoDB\Client::class)) {
+            $this-&gt;markTestSkipped(&#039;The mongodb/mongodb package is required.&#039;);
+        }
+
+        $this-&gt;mongo = $this-&gt;getMockBuilder(\MongoDB\Client::class)
+            -&gt;disableOriginalConstructor()
+            -&gt;getMock();
+
+        $this-&gt;options = array(
+            &#039;id_field&#039; =&gt; &#039;_id&#039;,
+            &#039;data_field&#039; =&gt; &#039;data&#039;,
+            &#039;time_field&#039; =&gt; &#039;time&#039;,
+            &#039;expiry_field&#039; =&gt; &#039;expires_at&#039;,
+            &#039;database&#039; =&gt; &#039;sf2-test&#039;,
+            &#039;collection&#039; =&gt; &#039;session-test&#039;,
+        );
+
+        $this-&gt;storage = new MongoDbSessionHandler($this-&gt;mongo, $this-&gt;options);
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testConstructorShouldThrowExceptionForMissingOptions()
+    {
+        new MongoDbSessionHandler($this-&gt;mongo, array());
+    }
+
+    public function testOpenMethodAlwaysReturnTrue()
+    {
+        $this-&gt;assertTrue($this-&gt;storage-&gt;open(&#039;test&#039;, &#039;test&#039;), &#039;The &quot;open&quot; method should always return true&#039;);
+    }
+
+    public function testCloseMethodAlwaysReturnTrue()
+    {
+        $this-&gt;assertTrue($this-&gt;storage-&gt;close(), &#039;The &quot;close&quot; method should always return true&#039;);
+    }
+
+    public function testRead()
+    {
+        $collection = $this-&gt;createMongoCollectionMock();
+
+        $this-&gt;mongo-&gt;expects($this-&gt;once())
+            -&gt;method(&#039;selectCollection&#039;)
+            -&gt;with($this-&gt;options[&#039;database&#039;], $this-&gt;options[&#039;collection&#039;])
+            -&gt;will($this-&gt;returnValue($collection));
+
+        // defining the timeout before the actual method call
+        // allows to test for &quot;greater than&quot; values in the $criteria
+        $testTimeout = time() + 1;
+
+        $collection-&gt;expects($this-&gt;once())
+            -&gt;method(&#039;findOne&#039;)
+            -&gt;will($this-&gt;returnCallback(function ($criteria) use ($testTimeout) {
+                $this-&gt;assertArrayHasKey($this-&gt;options[&#039;id_field&#039;], $criteria);
+                $this-&gt;assertEquals($criteria[$this-&gt;options[&#039;id_field&#039;]], &#039;foo&#039;);
+
+                $this-&gt;assertArrayHasKey($this-&gt;options[&#039;expiry_field&#039;], $criteria);
+                $this-&gt;assertArrayHasKey(&#039;$gte&#039;, $criteria[$this-&gt;options[&#039;expiry_field&#039;]]);
+
+                $this-&gt;assertInstanceOf(\MongoDB\BSON\UTCDateTime::class, $criteria[$this-&gt;options[&#039;expiry_field&#039;]][&#039;$gte&#039;]);
+                $this-&gt;assertGreaterThanOrEqual(round((string) $criteria[$this-&gt;options[&#039;expiry_field&#039;]][&#039;$gte&#039;] / 1000), $testTimeout);
+
+                return array(
+                    $this-&gt;options[&#039;id_field&#039;] =&gt; &#039;foo&#039;,
+                    $this-&gt;options[&#039;expiry_field&#039;] =&gt; new \MongoDB\BSON\UTCDateTime(),
+                    $this-&gt;options[&#039;data_field&#039;] =&gt; new \MongoDB\BSON\Binary(&#039;bar&#039;, \MongoDB\BSON\Binary::TYPE_OLD_BINARY),
+                );
+            }));
+
+        $this-&gt;assertEquals(&#039;bar&#039;, $this-&gt;storage-&gt;read(&#039;foo&#039;));
+    }
+
+    public function testWrite()
+    {
+        $collection = $this-&gt;createMongoCollectionMock();
+
+        $this-&gt;mongo-&gt;expects($this-&gt;once())
+            -&gt;method(&#039;selectCollection&#039;)
+            -&gt;with($this-&gt;options[&#039;database&#039;], $this-&gt;options[&#039;collection&#039;])
+            -&gt;will($this-&gt;returnValue($collection));
+
+        $collection-&gt;expects($this-&gt;once())
+            -&gt;method(&#039;updateOne&#039;)
+            -&gt;will($this-&gt;returnCallback(function ($criteria, $updateData, $options) {
+                $this-&gt;assertEquals(array($this-&gt;options[&#039;id_field&#039;] =&gt; &#039;foo&#039;), $criteria);
+                $this-&gt;assertEquals(array(&#039;upsert&#039; =&gt; true), $options);
+
+                $data = $updateData[&#039;$set&#039;];
+                $expectedExpiry = time() + (int) ini_get(&#039;session.gc_maxlifetime&#039;);
+                $this-&gt;assertInstanceOf(\MongoDB\BSON\Binary::class, $data[$this-&gt;options[&#039;data_field&#039;]]);
+                $this-&gt;assertEquals(&#039;bar&#039;, $data[$this-&gt;options[&#039;data_field&#039;]]-&gt;getData());
+                $this-&gt;assertInstanceOf(\MongoDB\BSON\UTCDateTime::class, $data[$this-&gt;options[&#039;time_field&#039;]]);
+                $this-&gt;assertInstanceOf(\MongoDB\BSON\UTCDateTime::class, $data[$this-&gt;options[&#039;expiry_field&#039;]]);
+                $this-&gt;assertGreaterThanOrEqual($expectedExpiry, round((string) $data[$this-&gt;options[&#039;expiry_field&#039;]] / 1000));
+            }));
+
+        $this-&gt;assertTrue($this-&gt;storage-&gt;write(&#039;foo&#039;, &#039;bar&#039;));
+    }
+
+    public function testReplaceSessionData()
+    {
+        $collection = $this-&gt;createMongoCollectionMock();
+
+        $this-&gt;mongo-&gt;expects($this-&gt;once())
+            -&gt;method(&#039;selectCollection&#039;)
+            -&gt;with($this-&gt;options[&#039;database&#039;], $this-&gt;options[&#039;collection&#039;])
+            -&gt;will($this-&gt;returnValue($collection));
+
+        $data = array();
+
+        $collection-&gt;expects($this-&gt;exactly(2))
+            -&gt;method(&#039;updateOne&#039;)
+            -&gt;will($this-&gt;returnCallback(function ($criteria, $updateData, $options) use (&amp;$data) {
+                $data = $updateData;
+            }));
+
+        $this-&gt;storage-&gt;write(&#039;foo&#039;, &#039;bar&#039;);
+        $this-&gt;storage-&gt;write(&#039;foo&#039;, &#039;foobar&#039;);
+
+        $this-&gt;assertEquals(&#039;foobar&#039;, $data[&#039;$set&#039;][$this-&gt;options[&#039;data_field&#039;]]-&gt;getData());
+    }
+
+    public function testDestroy()
+    {
+        $collection = $this-&gt;createMongoCollectionMock();
+
+        $this-&gt;mongo-&gt;expects($this-&gt;once())
+            -&gt;method(&#039;selectCollection&#039;)
+            -&gt;with($this-&gt;options[&#039;database&#039;], $this-&gt;options[&#039;collection&#039;])
+            -&gt;will($this-&gt;returnValue($collection));
+
+        $collection-&gt;expects($this-&gt;once())
+            -&gt;method(&#039;deleteOne&#039;)
+            -&gt;with(array($this-&gt;options[&#039;id_field&#039;] =&gt; &#039;foo&#039;));
+
+        $this-&gt;assertTrue($this-&gt;storage-&gt;destroy(&#039;foo&#039;));
+    }
+
+    public function testGc()
+    {
+        $collection = $this-&gt;createMongoCollectionMock();
+
+        $this-&gt;mongo-&gt;expects($this-&gt;once())
+            -&gt;method(&#039;selectCollection&#039;)
+            -&gt;with($this-&gt;options[&#039;database&#039;], $this-&gt;options[&#039;collection&#039;])
+            -&gt;will($this-&gt;returnValue($collection));
+
+        $collection-&gt;expects($this-&gt;once())
+            -&gt;method(&#039;deleteMany&#039;)
+            -&gt;will($this-&gt;returnCallback(function ($criteria) {
+                $this-&gt;assertInstanceOf(\MongoDB\BSON\UTCDateTime::class, $criteria[$this-&gt;options[&#039;expiry_field&#039;]][&#039;$lt&#039;]);
+                $this-&gt;assertGreaterThanOrEqual(time() - 1, round((string) $criteria[$this-&gt;options[&#039;expiry_field&#039;]][&#039;$lt&#039;] / 1000));
+            }));
+
+        $this-&gt;assertTrue($this-&gt;storage-&gt;gc(1));
+    }
+
+    public function testGetConnection()
+    {
+        $method = new \ReflectionMethod($this-&gt;storage, &#039;getMongo&#039;);
+        $method-&gt;setAccessible(true);
+
+        $this-&gt;assertInstanceOf(\MongoDB\Client::class, $method-&gt;invoke($this-&gt;storage));
+    }
+
+    private function createMongoCollectionMock()
+    {
+        $collection = $this-&gt;getMockBuilder(\MongoDB\Collection::class)
+            -&gt;disableOriginalConstructor()
+            -&gt;getMock();
+
+        return $collection;
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\File\MimeType\ExtensionGuesser | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_File_MimeType_ExtensionGuesser" data-root-path="../../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../../Symfony/Component/HttpFoundation/File.html">File</a></li>
+                    <li><a href="../../../../../Symfony/Component/HttpFoundation/File/MimeType.html">MimeType</a></li>
+  
+            <li>ExtensionGuesser</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>ExtensionGuesser</h1>
+
+    <p>    class
+    <strong>ExtensionGuesser</strong>        implements
+        <a href="../../../../../Symfony/Component/HttpFoundation/File/MimeType/ExtensionGuesserInterface.html"><abbr title="Symfony\Component\HttpFoundation\File\MimeType\ExtensionGuesserInterface">ExtensionGuesserInterface</abbr></a>
+</p>
+
+            <p>A singleton mime type to file extension guesser.</p>        <p>A default guesser is provided.
+You can register custom guessers by calling the register()
+method on the singleton instance:</p>
+
+<pre><code>$guesser = ExtensionGuesser::getInstance();
+$guesser-&gt;register(new MyCustomExtensionGuesser());
+</code></pre>
+
+<p>The last registered guesser is preferred over previously registered ones.</p>    
+    
+    
+            <h2>Properties</h2>
+
+            <table class="table">
+                    <tr>
+                <td id="property_guessers">
+                    <code class="language-php">                    protected                                        array</code>
+                </td>
+                <td><code class="language-php">$guessers</code></td>
+                <td>All registered ExtensionGuesserInterface instances.</td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                    static                </code>
+            </td>
+            <td class="text-right"><code class="language-php"><a href="../../../../../Symfony/Component/HttpFoundation/File/MimeType/ExtensionGuesser.html"><abbr title="Symfony\Component\HttpFoundation\File\MimeType\ExtensionGuesser">ExtensionGuesser</abbr></a></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getInstance">getInstance</a>()</code>
+            </td>
+            <td>
+                                    Returns the singleton instance.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_register">register</a>(<a href="../../../../../Symfony/Component/HttpFoundation/File/MimeType/ExtensionGuesserInterface.html"><abbr title="Symfony\Component\HttpFoundation\File\MimeType\ExtensionGuesserInterface">ExtensionGuesserInterface</abbr></a> $guesser)</code>
+            </td>
+            <td>
+                                    Registers a new extension guesser.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_guess">guess</a>(string $mimeType)</code>
+            </td>
+            <td>
+                                    Tries to guess the extension.            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.47">47</a>
+                    </div>
+        <div>
+            <h3 id="method_getInstance"><code class="language-php">getInstance()</code></h3>
+            <code class="language-php">public static <a href="../../../../../Symfony/Component/HttpFoundation/File/MimeType/ExtensionGuesser.html"><abbr title="Symfony\Component\HttpFoundation\File\MimeType\ExtensionGuesser">ExtensionGuesser</abbr></a>&nbsp;getInstance()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the singleton instance.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><a href="../../../../../Symfony/Component/HttpFoundation/File/MimeType/ExtensionGuesser.html"><abbr title="Symfony\Component\HttpFoundation\File\MimeType\ExtensionGuesser">ExtensionGuesser</abbr></a></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.69">69</a>
+                    </div>
+        <div>
+            <h3 id="method_register"><code class="language-php">register()</code></h3>
+            <code class="language-php">public register(<a href="../../../../../Symfony/Component/HttpFoundation/File/MimeType/ExtensionGuesserInterface.html"><abbr title="Symfony\Component\HttpFoundation\File\MimeType\ExtensionGuesserInterface">ExtensionGuesserInterface</abbr></a> $guesser)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Registers a new extension guesser.</p>                    <p>When guessing, this guesser is preferred over previously registered ones.</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php"><a href="../../../../../Symfony/Component/HttpFoundation/File/MimeType/ExtensionGuesserInterface.html"><abbr title="Symfony\Component\HttpFoundation\File\MimeType\ExtensionGuesserInterface">ExtensionGuesserInterface</abbr></a></code></td>
+                <td><code class="language-php">$guesser</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.86">86</a>
+                    </div>
+        <div>
+            <h3 id="method_guess"><code class="language-php">guess()</code></h3>
+            <code class="language-php">public string&nbsp;guess(string $mimeType)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Tries to guess the extension.</p>                    <p>The mime type is passed to each registered mime type guesser in reverse order
+of their registration (last registered is queried first). Once a guesser
+returns a value that is not NULL, this method terminates and returns the
+value.</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$mimeType</code></td>
+                <td>The mime type</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>The guessed extension or NULL, if none could be guessed</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\File\MimeType;
+
+/**
+ * A singleton mime type to file extension guesser.
+ *
+ * A default guesser is provided.
+ * You can register custom guessers by calling the register()
+ * method on the singleton instance:
+ *
+ *     $guesser = ExtensionGuesser::getInstance();
+ *     $guesser-&gt;register(new MyCustomExtensionGuesser());
+ *
+ * The last registered guesser is preferred over previously registered ones.
+ */
+class ExtensionGuesser implements ExtensionGuesserInterface
+{
+    /**
+     * The singleton instance.
+     *
+     * @var ExtensionGuesser
+     */
+    private static $instance = null;
+
+    /**
+     * All registered ExtensionGuesserInterface instances.
+     *
+     * @var array
+     */
+    protected $guessers = array();
+
+    /**
+     * Returns the singleton instance.
+     *
+     * @return self
+     */
+    public static function getInstance()
+    {
+        if (null === self::$instance) {
+            self::$instance = new self();
+        }
+
+        return self::$instance;
+    }
+
+    /**
+     * Registers all natively provided extension guessers.
+     */
+    private function __construct()
+    {
+        $this-&gt;register(new MimeTypeExtensionGuesser());
+    }
+
+    /**
+     * Registers a new extension guesser.
+     *
+     * When guessing, this guesser is preferred over previously registered ones.
+     */
+    public function register(ExtensionGuesserInterface $guesser)
+    {
+        array_unshift($this-&gt;guessers, $guesser);
+    }
+
+    /**
+     * Tries to guess the extension.
+     *
+     * The mime type is passed to each registered mime type guesser in reverse order
+     * of their registration (last registered is queried first). Once a guesser
+     * returns a value that is not NULL, this method terminates and returns the
+     * value.
+     *
+     * @param string $mimeType The mime type
+     *
+     * @return string The guessed extension or NULL, if none could be guessed
+     */
+    public function guess($mimeType)
+    {
+        foreach ($this-&gt;guessers as $guesser) {
+            if (null !== $extension = $guesser-&gt;guess($mimeType)) {
+                return $extension;
+            }
+        }
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

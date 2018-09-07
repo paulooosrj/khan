@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\StrictSessionHandlerTest | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Tests_Session_Storage_Handler_StrictSessionHandlerTest" data-root-path="../../../../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../../../../Symfony/Component/HttpFoundation/Tests.html">Tests</a></li>
+                    <li><a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session.html">Session</a></li>
+                    <li><a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage.html">Storage</a></li>
+                    <li><a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler.html">Handler</a></li>
+  
+            <li>StrictSessionHandlerTest</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>StrictSessionHandlerTest</h1>
+
+    <p>    class
+    <strong>StrictSessionHandlerTest</strong>        extends <abbr title="PHPUnit\Framework\TestCase">TestCase</abbr>
+</p>
+
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testOpen">testOpen</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testCloseSession">testCloseSession</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testValidateIdOK">testValidateIdOK</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testValidateIdKO">testValidateIdKO</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testRead">testRead</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testReadWithValidateIdOK">testReadWithValidateIdOK</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testReadWithValidateIdMismatch">testReadWithValidateIdMismatch</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testUpdateTimestamp">testUpdateTimestamp</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testWrite">testWrite</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testWriteEmptyNewSession">testWriteEmptyNewSession</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testWriteEmptyExistingSession">testWriteEmptyExistingSession</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testDestroy">testDestroy</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testDestroyNewSession">testDestroyNewSession</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testDestroyNonEmptyNewSession">testDestroyNonEmptyNewSession</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGc">testGc</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.20">20</a>
+                    </div>
+        <div>
+            <h3 id="method_testOpen"><code class="language-php">testOpen()</code></h3>
+            <code class="language-php">public testOpen()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.32">32</a>
+                    </div>
+        <div>
+            <h3 id="method_testCloseSession"><code class="language-php">testCloseSession()</code></h3>
+            <code class="language-php">public testCloseSession()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.42">42</a>
+                    </div>
+        <div>
+            <h3 id="method_testValidateIdOK"><code class="language-php">testValidateIdOK()</code></h3>
+            <code class="language-php">public testValidateIdOK()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.52">52</a>
+                    </div>
+        <div>
+            <h3 id="method_testValidateIdKO"><code class="language-php">testValidateIdKO()</code></h3>
+            <code class="language-php">public testValidateIdKO()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.62">62</a>
+                    </div>
+        <div>
+            <h3 id="method_testRead"><code class="language-php">testRead()</code></h3>
+            <code class="language-php">public testRead()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.72">72</a>
+                    </div>
+        <div>
+            <h3 id="method_testReadWithValidateIdOK"><code class="language-php">testReadWithValidateIdOK()</code></h3>
+            <code class="language-php">public testReadWithValidateIdOK()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.83">83</a>
+                    </div>
+        <div>
+            <h3 id="method_testReadWithValidateIdMismatch"><code class="language-php">testReadWithValidateIdMismatch()</code></h3>
+            <code class="language-php">public testReadWithValidateIdMismatch()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.95">95</a>
+                    </div>
+        <div>
+            <h3 id="method_testUpdateTimestamp"><code class="language-php">testUpdateTimestamp()</code></h3>
+            <code class="language-php">public testUpdateTimestamp()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.105">105</a>
+                    </div>
+        <div>
+            <h3 id="method_testWrite"><code class="language-php">testWrite()</code></h3>
+            <code class="language-php">public testWrite()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.115">115</a>
+                    </div>
+        <div>
+            <h3 id="method_testWriteEmptyNewSession"><code class="language-php">testWriteEmptyNewSession()</code></h3>
+            <code class="language-php">public testWriteEmptyNewSession()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.129">129</a>
+                    </div>
+        <div>
+            <h3 id="method_testWriteEmptyExistingSession"><code class="language-php">testWriteEmptyExistingSession()</code></h3>
+            <code class="language-php">public testWriteEmptyExistingSession()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.142">142</a>
+                    </div>
+        <div>
+            <h3 id="method_testDestroy"><code class="language-php">testDestroy()</code></h3>
+            <code class="language-php">public testDestroy()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.152">152</a>
+                    </div>
+        <div>
+            <h3 id="method_testDestroyNewSession"><code class="language-php">testDestroyNewSession()</code></h3>
+            <code class="language-php">public testDestroyNewSession()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.164">164</a>
+                    </div>
+        <div>
+            <h3 id="method_testDestroyNonEmptyNewSession"><code class="language-php">testDestroyNonEmptyNewSession()</code></h3>
+            <code class="language-php">public testDestroyNonEmptyNewSession()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.180">180</a>
+                    </div>
+        <div>
+            <h3 id="method_testGc"><code class="language-php">testGc()</code></h3>
+            <code class="language-php">public testGc()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler;
+
+use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler;
+use Symfony\Component\HttpFoundation\Session\Storage\Handler\StrictSessionHandler;
+
+class StrictSessionHandlerTest extends TestCase
+{
+    public function testOpen()
+    {
+        $handler = $this-&gt;getMockBuilder(&#039;SessionHandlerInterface&#039;)-&gt;getMock();
+        $handler-&gt;expects($this-&gt;once())-&gt;method(&#039;open&#039;)
+            -&gt;with(&#039;path&#039;, &#039;name&#039;)-&gt;willReturn(true);
+        $proxy = new StrictSessionHandler($handler);
+
+        $this-&gt;assertInstanceOf(&#039;SessionUpdateTimestampHandlerInterface&#039;, $proxy);
+        $this-&gt;assertInstanceOf(AbstractSessionHandler::class, $proxy);
+        $this-&gt;assertTrue($proxy-&gt;open(&#039;path&#039;, &#039;name&#039;));
+    }
+
+    public function testCloseSession()
+    {
+        $handler = $this-&gt;getMockBuilder(&#039;SessionHandlerInterface&#039;)-&gt;getMock();
+        $handler-&gt;expects($this-&gt;once())-&gt;method(&#039;close&#039;)
+            -&gt;willReturn(true);
+        $proxy = new StrictSessionHandler($handler);
+
+        $this-&gt;assertTrue($proxy-&gt;close());
+    }
+
+    public function testValidateIdOK()
+    {
+        $handler = $this-&gt;getMockBuilder(&#039;SessionHandlerInterface&#039;)-&gt;getMock();
+        $handler-&gt;expects($this-&gt;once())-&gt;method(&#039;read&#039;)
+            -&gt;with(&#039;id&#039;)-&gt;willReturn(&#039;data&#039;);
+        $proxy = new StrictSessionHandler($handler);
+
+        $this-&gt;assertTrue($proxy-&gt;validateId(&#039;id&#039;));
+    }
+
+    public function testValidateIdKO()
+    {
+        $handler = $this-&gt;getMockBuilder(&#039;SessionHandlerInterface&#039;)-&gt;getMock();
+        $handler-&gt;expects($this-&gt;once())-&gt;method(&#039;read&#039;)
+            -&gt;with(&#039;id&#039;)-&gt;willReturn(&#039;&#039;);
+        $proxy = new StrictSessionHandler($handler);
+
+        $this-&gt;assertFalse($proxy-&gt;validateId(&#039;id&#039;));
+    }
+
+    public function testRead()
+    {
+        $handler = $this-&gt;getMockBuilder(&#039;SessionHandlerInterface&#039;)-&gt;getMock();
+        $handler-&gt;expects($this-&gt;once())-&gt;method(&#039;read&#039;)
+            -&gt;with(&#039;id&#039;)-&gt;willReturn(&#039;data&#039;);
+        $proxy = new StrictSessionHandler($handler);
+
+        $this-&gt;assertSame(&#039;data&#039;, $proxy-&gt;read(&#039;id&#039;));
+    }
+
+    public function testReadWithValidateIdOK()
+    {
+        $handler = $this-&gt;getMockBuilder(&#039;SessionHandlerInterface&#039;)-&gt;getMock();
+        $handler-&gt;expects($this-&gt;once())-&gt;method(&#039;read&#039;)
+            -&gt;with(&#039;id&#039;)-&gt;willReturn(&#039;data&#039;);
+        $proxy = new StrictSessionHandler($handler);
+
+        $this-&gt;assertTrue($proxy-&gt;validateId(&#039;id&#039;));
+        $this-&gt;assertSame(&#039;data&#039;, $proxy-&gt;read(&#039;id&#039;));
+    }
+
+    public function testReadWithValidateIdMismatch()
+    {
+        $handler = $this-&gt;getMockBuilder(&#039;SessionHandlerInterface&#039;)-&gt;getMock();
+        $handler-&gt;expects($this-&gt;exactly(2))-&gt;method(&#039;read&#039;)
+            -&gt;withConsecutive(array(&#039;id1&#039;), array(&#039;id2&#039;))
+            -&gt;will($this-&gt;onConsecutiveCalls(&#039;data1&#039;, &#039;data2&#039;));
+        $proxy = new StrictSessionHandler($handler);
+
+        $this-&gt;assertTrue($proxy-&gt;validateId(&#039;id1&#039;));
+        $this-&gt;assertSame(&#039;data2&#039;, $proxy-&gt;read(&#039;id2&#039;));
+    }
+
+    public function testUpdateTimestamp()
+    {
+        $handler = $this-&gt;getMockBuilder(&#039;SessionHandlerInterface&#039;)-&gt;getMock();
+        $handler-&gt;expects($this-&gt;once())-&gt;method(&#039;write&#039;)
+            -&gt;with(&#039;id&#039;, &#039;data&#039;)-&gt;willReturn(true);
+        $proxy = new StrictSessionHandler($handler);
+
+        $this-&gt;assertTrue($proxy-&gt;updateTimestamp(&#039;id&#039;, &#039;data&#039;));
+    }
+
+    public function testWrite()
+    {
+        $handler = $this-&gt;getMockBuilder(&#039;SessionHandlerInterface&#039;)-&gt;getMock();
+        $handler-&gt;expects($this-&gt;once())-&gt;method(&#039;write&#039;)
+            -&gt;with(&#039;id&#039;, &#039;data&#039;)-&gt;willReturn(true);
+        $proxy = new StrictSessionHandler($handler);
+
+        $this-&gt;assertTrue($proxy-&gt;write(&#039;id&#039;, &#039;data&#039;));
+    }
+
+    public function testWriteEmptyNewSession()
+    {
+        $handler = $this-&gt;getMockBuilder(&#039;SessionHandlerInterface&#039;)-&gt;getMock();
+        $handler-&gt;expects($this-&gt;once())-&gt;method(&#039;read&#039;)
+            -&gt;with(&#039;id&#039;)-&gt;willReturn(&#039;&#039;);
+        $handler-&gt;expects($this-&gt;never())-&gt;method(&#039;write&#039;);
+        $handler-&gt;expects($this-&gt;once())-&gt;method(&#039;destroy&#039;)-&gt;willReturn(true);
+        $proxy = new StrictSessionHandler($handler);
+
+        $this-&gt;assertFalse($proxy-&gt;validateId(&#039;id&#039;));
+        $this-&gt;assertSame(&#039;&#039;, $proxy-&gt;read(&#039;id&#039;));
+        $this-&gt;assertTrue($proxy-&gt;write(&#039;id&#039;, &#039;&#039;));
+    }
+
+    public function testWriteEmptyExistingSession()
+    {
+        $handler = $this-&gt;getMockBuilder(&#039;SessionHandlerInterface&#039;)-&gt;getMock();
+        $handler-&gt;expects($this-&gt;once())-&gt;method(&#039;read&#039;)
+            -&gt;with(&#039;id&#039;)-&gt;willReturn(&#039;data&#039;);
+        $handler-&gt;expects($this-&gt;never())-&gt;method(&#039;write&#039;);
+        $handler-&gt;expects($this-&gt;once())-&gt;method(&#039;destroy&#039;)-&gt;willReturn(true);
+        $proxy = new StrictSessionHandler($handler);
+
+        $this-&gt;assertSame(&#039;data&#039;, $proxy-&gt;read(&#039;id&#039;));
+        $this-&gt;assertTrue($proxy-&gt;write(&#039;id&#039;, &#039;&#039;));
+    }
+
+    public function testDestroy()
+    {
+        $handler = $this-&gt;getMockBuilder(&#039;SessionHandlerInterface&#039;)-&gt;getMock();
+        $handler-&gt;expects($this-&gt;once())-&gt;method(&#039;destroy&#039;)
+            -&gt;with(&#039;id&#039;)-&gt;willReturn(true);
+        $proxy = new StrictSessionHandler($handler);
+
+        $this-&gt;assertTrue($proxy-&gt;destroy(&#039;id&#039;));
+    }
+
+    public function testDestroyNewSession()
+    {
+        $handler = $this-&gt;getMockBuilder(&#039;SessionHandlerInterface&#039;)-&gt;getMock();
+        $handler-&gt;expects($this-&gt;once())-&gt;method(&#039;read&#039;)
+            -&gt;with(&#039;id&#039;)-&gt;willReturn(&#039;&#039;);
+        $handler-&gt;expects($this-&gt;once())-&gt;method(&#039;destroy&#039;)-&gt;willReturn(true);
+        $proxy = new StrictSessionHandler($handler);
+
+        $this-&gt;assertSame(&#039;&#039;, $proxy-&gt;read(&#039;id&#039;));
+        $this-&gt;assertTrue($proxy-&gt;destroy(&#039;id&#039;));
+    }
+
+    public function testDestroyNonEmptyNewSession()
+    {
+        $handler = $this-&gt;getMockBuilder(&#039;SessionHandlerInterface&#039;)-&gt;getMock();
+        $handler-&gt;expects($this-&gt;once())-&gt;method(&#039;read&#039;)
+            -&gt;with(&#039;id&#039;)-&gt;willReturn(&#039;&#039;);
+        $handler-&gt;expects($this-&gt;once())-&gt;method(&#039;write&#039;)
+            -&gt;with(&#039;id&#039;, &#039;data&#039;)-&gt;willReturn(true);
+        $handler-&gt;expects($this-&gt;once())-&gt;method(&#039;destroy&#039;)
+            -&gt;with(&#039;id&#039;)-&gt;willReturn(true);
+        $proxy = new StrictSessionHandler($handler);
+
+        $this-&gt;assertSame(&#039;&#039;, $proxy-&gt;read(&#039;id&#039;));
+        $this-&gt;assertTrue($proxy-&gt;write(&#039;id&#039;, &#039;data&#039;));
+        $this-&gt;assertTrue($proxy-&gt;destroy(&#039;id&#039;));
+    }
+
+    public function testGc()
+    {
+        $handler = $this-&gt;getMockBuilder(&#039;SessionHandlerInterface&#039;)-&gt;getMock();
+        $handler-&gt;expects($this-&gt;once())-&gt;method(&#039;gc&#039;)
+            -&gt;with(123)-&gt;willReturn(true);
+        $proxy = new StrictSessionHandler($handler);
+
+        $this-&gt;assertTrue($proxy-&gt;gc(123));
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

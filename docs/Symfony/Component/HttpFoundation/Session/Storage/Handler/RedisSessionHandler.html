@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Session\Storage\Handler\RedisSessionHandler | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Session_Storage_Handler_RedisSessionHandler" data-root-path="../../../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation/Session.html">Session</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage.html">Storage</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler.html">Handler</a></li>
+  
+            <li>RedisSessionHandler</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>RedisSessionHandler</h1>
+
+    <p>    class
+    <strong>RedisSessionHandler</strong>        extends <a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler">AbstractSessionHandler</abbr></a>
+</p>
+
+            <p>Redis based session storage handler based on the Redis class
+provided by the PHP redis extension.</p>            
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_open">open</a>($savePath, $sessionName)</code>
+            </td>
+            <td>
+                                    {@inheritdoc}            </td>
+            <td><small>from&nbsp;<a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.html#method_open"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler">AbstractSessionHandler</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_doRead">doRead</a>(string $sessionId)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_doWrite">doWrite</a>(string $sessionId, string $data)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_doDestroy">doDestroy</a>(string $sessionId)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_validateId">validateId</a>($sessionId)</code>
+            </td>
+            <td>
+                                    {@inheritdoc}            </td>
+            <td><small>from&nbsp;<a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.html#method_validateId"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler">AbstractSessionHandler</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_read">read</a>($sessionId)</code>
+            </td>
+            <td>
+                                    {@inheritdoc}            </td>
+            <td><small>from&nbsp;<a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.html#method_read"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler">AbstractSessionHandler</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_write">write</a>($sessionId, $data)</code>
+            </td>
+            <td>
+                                    {@inheritdoc}            </td>
+            <td><small>from&nbsp;<a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.html#method_write"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler">AbstractSessionHandler</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_destroy">destroy</a>($sessionId)</code>
+            </td>
+            <td>
+                                    {@inheritdoc}            </td>
+            <td><small>from&nbsp;<a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.html#method_destroy"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler">AbstractSessionHandler</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method___construct">__construct</a>(<abbr title="Redis">Redis</abbr>|<abbr title="RedisArray">RedisArray</abbr>|<abbr title="RedisCluster">RedisCluster</abbr>|<abbr title="Predis\Client">Client</abbr> $redis, array $options = array())</code>
+            </td>
+            <td>
+                                    List of available options:
+ * prefix: The prefix to use for the keys in order to avoid collision on the Redis server.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_close">close</a>()</code>
+            </td>
+            <td>
+                                    {@inheritdoc}            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_gc">gc</a>($maxlifetime)</code>
+            </td>
+            <td>
+                                    {@inheritdoc}            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_updateTimestamp">updateTimestamp</a>($sessionId, $data)</code>
+            </td>
+            <td>
+                                    {@inheritdoc}            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.html#method_open"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler">AbstractSessionHandler</abbr></a> at line 32
+                    </div>
+        <div>
+            <h3 id="method_open"><code class="language-php">open()</code></h3>
+            <code class="language-php">public open($savePath, $sessionName)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>{@inheritdoc}</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$savePath</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$sessionName</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.57">57</a>
+                    </div>
+        <div>
+            <h3 id="method_doRead"><code class="language-php">doRead()</code></h3>
+            <code class="language-php">protected string&nbsp;doRead(string $sessionId)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$sessionId</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.65">65</a>
+                    </div>
+        <div>
+            <h3 id="method_doWrite"><code class="language-php">doWrite()</code></h3>
+            <code class="language-php">protected bool&nbsp;doWrite(string $sessionId, string $data)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$sessionId</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$data</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.75">75</a>
+                    </div>
+        <div>
+            <h3 id="method_doDestroy"><code class="language-php">doDestroy()</code></h3>
+            <code class="language-php">protected bool&nbsp;doDestroy(string $sessionId)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$sessionId</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.html#method_validateId"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler">AbstractSessionHandler</abbr></a> at line 67
+                    </div>
+        <div>
+            <h3 id="method_validateId"><code class="language-php">validateId()</code></h3>
+            <code class="language-php">public validateId($sessionId)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>{@inheritdoc}</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$sessionId</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.html#method_read"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler">AbstractSessionHandler</abbr></a> at line 78
+                    </div>
+        <div>
+            <h3 id="method_read"><code class="language-php">read()</code></h3>
+            <code class="language-php">public read($sessionId)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>{@inheritdoc}</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$sessionId</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.html#method_write"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler">AbstractSessionHandler</abbr></a> at line 101
+                    </div>
+        <div>
+            <h3 id="method_write"><code class="language-php">write()</code></h3>
+            <code class="language-php">public write($sessionId, $data)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>{@inheritdoc}</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$sessionId</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$data</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.html#method_destroy"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler">AbstractSessionHandler</abbr></a> at line 118
+                    </div>
+        <div>
+            <h3 id="method_destroy"><code class="language-php">destroy()</code></h3>
+            <code class="language-php">public destroy($sessionId)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>{@inheritdoc}</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$sessionId</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.40">40</a>
+                    </div>
+        <div>
+            <h3 id="method___construct"><code class="language-php">__construct()</code></h3>
+            <code class="language-php">public __construct(<abbr title="Redis">Redis</abbr>|<abbr title="RedisArray">RedisArray</abbr>|<abbr title="RedisCluster">RedisCluster</abbr>|<abbr title="Predis\Client">Client</abbr> $redis, array $options = array())</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>List of available options:
+ * prefix: The prefix to use for the keys in order to avoid collision on the Redis server.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php"><abbr title="Redis">Redis</abbr>|<abbr title="RedisArray">RedisArray</abbr>|<abbr title="RedisCluster">RedisCluster</abbr>|<abbr title="Predis\Client">Client</abbr></code></td>
+                <td><code class="language-php">$redis</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$options</code></td>
+                <td>An associative array of options</td>
+            </tr>
+            </table>
+
+        
+        
+                    <h4>Exceptions</h4>
+
+                <table class="table">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException"><abbr title="InvalidArgumentException">InvalidArgumentException</abbr></a></td>
+                <td>When unsupported client or options are passed</td>
+            </tr>
+            </table>
+
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.85">85</a>
+                    </div>
+        <div>
+            <h3 id="method_close"><code class="language-php">close()</code></h3>
+            <code class="language-php">public bool&nbsp;close()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>{@inheritdoc}</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.93">93</a>
+                    </div>
+        <div>
+            <h3 id="method_gc"><code class="language-php">gc()</code></h3>
+            <code class="language-php">public bool&nbsp;gc($maxlifetime)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>{@inheritdoc}</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$maxlifetime</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.101">101</a>
+                    </div>
+        <div>
+            <h3 id="method_updateTimestamp"><code class="language-php">updateTimestamp()</code></h3>
+            <code class="language-php">public updateTimestamp($sessionId, $data)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>{@inheritdoc}</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$sessionId</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$data</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Session\Storage\Handler;
+
+use Predis\Response\ErrorInterface;
+
+/**
+ * Redis based session storage handler based on the Redis class
+ * provided by the PHP redis extension.
+ *
+ * @author Dalibor Karlović &lt;dalibor@flexolabs.io&gt;
+ */
+class RedisSessionHandler extends AbstractSessionHandler
+{
+    private $redis;
+
+    /**
+     * @var string Key prefix for shared environments
+     */
+    private $prefix;
+
+    /**
+     * List of available options:
+     *  * prefix: The prefix to use for the keys in order to avoid collision on the Redis server.
+     *
+     * @param \Redis|\RedisArray|\RedisCluster|\Predis\Client $redis
+     * @param array                                           $options An associative array of options
+     *
+     * @throws \InvalidArgumentException When unsupported client or options are passed
+     */
+    public function __construct($redis, array $options = array())
+    {
+        if (!$redis instanceof \Redis &amp;&amp; !$redis instanceof \RedisArray &amp;&amp; !$redis instanceof \Predis\Client &amp;&amp; !$redis instanceof RedisProxy) {
+            throw new \InvalidArgumentException(sprintf(&#039;%s() expects parameter 1 to be Redis, RedisArray, RedisCluster or Predis\Client, %s given&#039;, __METHOD__, is_object($redis) ? get_class($redis) : gettype($redis)));
+        }
+
+        if ($diff = array_diff(array_keys($options), array(&#039;prefix&#039;))) {
+            throw new \InvalidArgumentException(sprintf(&#039;The following options are not supported &quot;%s&quot;&#039;, implode(&#039;, &#039;, $diff)));
+        }
+
+        $this-&gt;redis = $redis;
+        $this-&gt;prefix = $options[&#039;prefix&#039;] ?? &#039;sf_s&#039;;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function doRead($sessionId): string
+    {
+        return $this-&gt;redis-&gt;get($this-&gt;prefix.$sessionId) ?: &#039;&#039;;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function doWrite($sessionId, $data): bool
+    {
+        $result = $this-&gt;redis-&gt;setEx($this-&gt;prefix.$sessionId, (int) ini_get(&#039;session.gc_maxlifetime&#039;), $data);
+
+        return $result &amp;&amp; !$result instanceof ErrorInterface;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function doDestroy($sessionId): bool
+    {
+        $this-&gt;redis-&gt;del($this-&gt;prefix.$sessionId);
+
+        return true;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function close(): bool
+    {
+        return true;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function gc($maxlifetime): bool
+    {
+        return true;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function updateTimestamp($sessionId, $data)
+    {
+        return $this-&gt;redis-&gt;expire($this-&gt;prefix.$sessionId, (int) ini_get(&#039;session.gc_maxlifetime&#039;));
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

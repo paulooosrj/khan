@@ -1,0 +1,1721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Session_Storage_Handler_PdoSessionHandler" data-root-path="../../../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation/Session.html">Session</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage.html">Storage</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler.html">Handler</a></li>
+  
+            <li>PdoSessionHandler</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>PdoSessionHandler</h1>
+
+    <p>    class
+    <strong>PdoSessionHandler</strong>        extends <a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler">AbstractSessionHandler</abbr></a>
+</p>
+
+            <p>Session handler using a PDO connection to read and write data.</p>        <p>It works with MySQL, PostgreSQL, Oracle, SQL Server and SQLite and implements
+different locking strategies to handle concurrent access to the same session.
+Locking is necessary to prevent loss of data due to race conditions and to keep
+the session data consistent between read() and write(). With locking, requests
+for the same session will wait until the other one finished writing. For this
+reason it's best practice to close a session as early as possible to improve
+concurrency. PHPs internal files session handler also implements locking.</p>
+
+<p>Attention: Since SQLite does not support row level locks but locks the whole database,
+it means only one session can be accessed at a time. Even different sessions would wait
+for another to finish. So saving session in SQLite should only be considered for
+development or prototypes.</p>
+
+<p>Session data is a binary string that can contain non-printable characters like the null byte.
+For this reason it must be saved in a binary column in the database like BLOB in MySQL.
+Saving it in a character column could corrupt the data. You can use createTable()
+to initialize a correctly defined table.</p>    
+    
+            <h2>Constants</h2>
+
+            <table class="table">
+                    <tr>
+                <td><code class="language-php">LOCK_NONE =  0;</code></td>
+                <td>
+                    <p><em>No locking is done. This means sessions are prone to loss of data due to
+race conditions of concurrent requests to the same session. The last session
+write will win in this case. It might be useful when you implement your own
+logic to deal with this like an optimistic approach.</em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">LOCK_ADVISORY =  1;</code></td>
+                <td>
+                    <p><em>Creates an application-level lock on a session. The disadvantage is that the
+lock is not enforced by the database and thus other, unaware parts of the
+application could still concurrently modify the session. The advantage is it
+does not require a transaction.</em></p>
+                    <p>This mode is not available for SQLite and not yet implemented for oci and sqlsrv.</p>
+                </td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">LOCK_TRANSACTIONAL =  2;</code></td>
+                <td>
+                    <p><em>Issues a real row lock. Since it uses a transaction between opening and
+closing a session, you have to be careful when you use same database connection
+that you also use for your application logic. This mode is the default because
+it's the only reliable solution across DBMSs.</em></p>
+                    <p></p>
+                </td>
+            </tr>
+            </table>
+
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_open">open</a>($savePath, $sessionName)</code>
+            </td>
+            <td>
+                                    {@inheritdoc}            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_doRead">doRead</a>(string $sessionId)</code>
+            </td>
+            <td>
+                                    Reads the session data in respect to the different locking strategies.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_doWrite">doWrite</a>(string $sessionId, string $data)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_doDestroy">doDestroy</a>(string $sessionId)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_validateId">validateId</a>($sessionId)</code>
+            </td>
+            <td>
+                                    {@inheritdoc}            </td>
+            <td><small>from&nbsp;<a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.html#method_validateId"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler">AbstractSessionHandler</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_read">read</a>($sessionId)</code>
+            </td>
+            <td>
+                                    {@inheritdoc}            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_write">write</a>($sessionId, $data)</code>
+            </td>
+            <td>
+                                    {@inheritdoc}            </td>
+            <td><small>from&nbsp;<a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.html#method_write"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler">AbstractSessionHandler</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_destroy">destroy</a>($sessionId)</code>
+            </td>
+            <td>
+                                    {@inheritdoc}            </td>
+            <td><small>from&nbsp;<a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.html#method_destroy"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler">AbstractSessionHandler</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method___construct">__construct</a>(<a target="_blank" href="http://php.net/PDO"><abbr title="PDO">PDO</abbr></a>|string|null $pdoOrDsn = null, array $options = array())</code>
+            </td>
+            <td>
+                                    You can either pass an existing database connection as PDO instance or
+pass a DSN string that will be used to lazy-connect to the database
+when the session is actually used. Furthermore it's possible to pass null
+which will then use the session.save_path ini setting as PDO DSN parameter.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_createTable">createTable</a>()</code>
+            </td>
+            <td>
+                                    Creates the table to store sessions which can be called once for setup.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_isSessionExpired">isSessionExpired</a>()</code>
+            </td>
+            <td>
+                                    Returns true when the current session exists but expired according to session.gc_maxlifetime.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_gc">gc</a>($maxlifetime)</code>
+            </td>
+            <td>
+                                    {@inheritdoc}            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_updateTimestamp">updateTimestamp</a>($sessionId, $data)</code>
+            </td>
+            <td>
+                                    {@inheritdoc}            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_close">close</a>()</code>
+            </td>
+            <td>
+                                    {@inheritdoc}            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><a target="_blank" href="http://php.net/PDO"><abbr title="PDO">PDO</abbr></a></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getConnection">getConnection</a>()</code>
+            </td>
+            <td>
+                                    Return a PDO instance.            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.263">263</a>
+                    </div>
+        <div>
+            <h3 id="method_open"><code class="language-php">open()</code></h3>
+            <code class="language-php">public open($savePath, $sessionName)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>{@inheritdoc}</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$savePath</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$sessionName</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.610">610</a>
+                    </div>
+        <div>
+            <h3 id="method_doRead"><code class="language-php">doRead()</code></h3>
+            <code class="language-php">protected string&nbsp;doRead(string $sessionId)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Reads the session data in respect to the different locking strategies.</p>                    <p>We need to make sure we do not return session data that is already considered garbage according
+to the session.gc_maxlifetime setting because gc() is called after read() and only sometimes.</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$sessionId</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.324">324</a>
+                    </div>
+        <div>
+            <h3 id="method_doWrite"><code class="language-php">doWrite()</code></h3>
+            <code class="language-php">protected bool&nbsp;doWrite(string $sessionId, string $data)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$sessionId</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$data</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.303">303</a>
+                    </div>
+        <div>
+            <h3 id="method_doDestroy"><code class="language-php">doDestroy()</code></h3>
+            <code class="language-php">protected bool&nbsp;doDestroy(string $sessionId)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$sessionId</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.html#method_validateId"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler">AbstractSessionHandler</abbr></a> at line 67
+                    </div>
+        <div>
+            <h3 id="method_validateId"><code class="language-php">validateId()</code></h3>
+            <code class="language-php">public validateId($sessionId)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>{@inheritdoc}</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$sessionId</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.277">277</a>
+                    </div>
+        <div>
+            <h3 id="method_read"><code class="language-php">read()</code></h3>
+            <code class="language-php">public read($sessionId)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>{@inheritdoc}</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$sessionId</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.html#method_write"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler">AbstractSessionHandler</abbr></a> at line 101
+                    </div>
+        <div>
+            <h3 id="method_write"><code class="language-php">write()</code></h3>
+            <code class="language-php">public write($sessionId, $data)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>{@inheritdoc}</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$sessionId</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$data</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.html#method_destroy"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler">AbstractSessionHandler</abbr></a> at line 118
+                    </div>
+        <div>
+            <h3 id="method_destroy"><code class="language-php">destroy()</code></h3>
+            <code class="language-php">public destroy($sessionId)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>{@inheritdoc}</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$sessionId</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.172">172</a>
+                    </div>
+        <div>
+            <h3 id="method___construct"><code class="language-php">__construct()</code></h3>
+            <code class="language-php">public __construct(<a target="_blank" href="http://php.net/PDO"><abbr title="PDO">PDO</abbr></a>|string|null $pdoOrDsn = null, array $options = array())</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>You can either pass an existing database connection as PDO instance or
+pass a DSN string that will be used to lazy-connect to the database
+when the session is actually used. Furthermore it's possible to pass null
+which will then use the session.save_path ini setting as PDO DSN parameter.</p>                    <p>List of available options:
+ * db_table: The name of the table [default: sessions]
+ * db_id_col: The column where to store the session id [default: sess_id]
+ * db_data_col: The column where to store the session data [default: sess_data]
+ * db_lifetime_col: The column where to store the lifetime [default: sess_lifetime]
+ * db_time_col: The column where to store the timestamp [default: sess_time]
+ * db_username: The username when lazy-connect [default: '']
+ * db_password: The password when lazy-connect [default: '']
+ * db_connection_options: An array of driver-specific connection options [default: array()]
+ * lock_mode: The strategy for locking, see constants [default: LOCK_TRANSACTIONAL]</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php"><a target="_blank" href="http://php.net/PDO"><abbr title="PDO">PDO</abbr></a>|string|null</code></td>
+                <td><code class="language-php">$pdoOrDsn</code></td>
+                <td>A \PDO instance or DSN string or URL string or null</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$options</code></td>
+                <td>An associative array of options</td>
+            </tr>
+            </table>
+
+        
+        
+                    <h4>Exceptions</h4>
+
+                <table class="table">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException"><abbr title="InvalidArgumentException">InvalidArgumentException</abbr></a></td>
+                <td>When PDO error mode is not PDO::ERRMODE_EXCEPTION</td>
+            </tr>
+            </table>
+
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.209">209</a>
+                    </div>
+        <div>
+            <h3 id="method_createTable"><code class="language-php">createTable()</code></h3>
+            <code class="language-php">public createTable()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Creates the table to store sessions which can be called once for setup.</p>                    <p>Session ID is saved in a column of maximum length 128 because that is enough even
+for a 512 bit configured session.hash_function like Whirlpool. Session data is
+saved in a BLOB. One could also use a shorter inlined varbinary column
+if one was sure the data fits into it.</p>            </div>
+                
+        
+                    <h4>Exceptions</h4>
+
+                <table class="table">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/PDOException"><abbr title="PDOException">PDOException</abbr></a></td>
+                <td>When the table already exists</td>
+            </tr>
+                    <tr>
+                <td><a target="_blank" href="http://php.net/DomainException"><abbr title="DomainException">DomainException</abbr></a></td>
+                <td>When an unsupported PDO driver is used</td>
+            </tr>
+            </table>
+
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.255">255</a>
+                    </div>
+        <div>
+            <h3 id="method_isSessionExpired"><code class="language-php">isSessionExpired()</code></h3>
+            <code class="language-php">public bool&nbsp;isSessionExpired()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns true when the current session exists but expired according to session.gc_maxlifetime.</p>                    <p>Can be used to distinguish between a new session and one that expired due to inactivity.</p>            </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td>Whether current session expired</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.291">291</a>
+                    </div>
+        <div>
+            <h3 id="method_gc"><code class="language-php">gc()</code></h3>
+            <code class="language-php">public gc($maxlifetime)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>{@inheritdoc}</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$maxlifetime</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.370">370</a>
+                    </div>
+        <div>
+            <h3 id="method_updateTimestamp"><code class="language-php">updateTimestamp()</code></h3>
+            <code class="language-php">public updateTimestamp($sessionId, $data)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>{@inheritdoc}</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$sessionId</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$data</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.394">394</a>
+                    </div>
+        <div>
+            <h3 id="method_close"><code class="language-php">close()</code></h3>
+            <code class="language-php">public close()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>{@inheritdoc}</p>                                </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.888">888</a>
+                    </div>
+        <div>
+            <h3 id="method_getConnection"><code class="language-php">getConnection()</code></h3>
+            <code class="language-php">protected <a target="_blank" href="http://php.net/PDO"><abbr title="PDO">PDO</abbr></a>&nbsp;getConnection()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Return a PDO instance.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><a target="_blank" href="http://php.net/PDO"><abbr title="PDO">PDO</abbr></a></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Session\Storage\Handler;
+
+/**
+ * Session handler using a PDO connection to read and write data.
+ *
+ * It works with MySQL, PostgreSQL, Oracle, SQL Server and SQLite and implements
+ * different locking strategies to handle concurrent access to the same session.
+ * Locking is necessary to prevent loss of data due to race conditions and to keep
+ * the session data consistent between read() and write(). With locking, requests
+ * for the same session will wait until the other one finished writing. For this
+ * reason it&#039;s best practice to close a session as early as possible to improve
+ * concurrency. PHPs internal files session handler also implements locking.
+ *
+ * Attention: Since SQLite does not support row level locks but locks the whole database,
+ * it means only one session can be accessed at a time. Even different sessions would wait
+ * for another to finish. So saving session in SQLite should only be considered for
+ * development or prototypes.
+ *
+ * Session data is a binary string that can contain non-printable characters like the null byte.
+ * For this reason it must be saved in a binary column in the database like BLOB in MySQL.
+ * Saving it in a character column could corrupt the data. You can use createTable()
+ * to initialize a correctly defined table.
+ *
+ * @see http://php.net/sessionhandlerinterface
+ *
+ * @author Fabien Potencier &lt;fabien@symfony.com&gt;
+ * @author Michael Williams &lt;michael.williams@funsational.com&gt;
+ * @author Tobias Schultze &lt;http://tobion.de&gt;
+ */
+class PdoSessionHandler extends AbstractSessionHandler
+{
+    /**
+     * No locking is done. This means sessions are prone to loss of data due to
+     * race conditions of concurrent requests to the same session. The last session
+     * write will win in this case. It might be useful when you implement your own
+     * logic to deal with this like an optimistic approach.
+     */
+    const LOCK_NONE = 0;
+
+    /**
+     * Creates an application-level lock on a session. The disadvantage is that the
+     * lock is not enforced by the database and thus other, unaware parts of the
+     * application could still concurrently modify the session. The advantage is it
+     * does not require a transaction.
+     * This mode is not available for SQLite and not yet implemented for oci and sqlsrv.
+     */
+    const LOCK_ADVISORY = 1;
+
+    /**
+     * Issues a real row lock. Since it uses a transaction between opening and
+     * closing a session, you have to be careful when you use same database connection
+     * that you also use for your application logic. This mode is the default because
+     * it&#039;s the only reliable solution across DBMSs.
+     */
+    const LOCK_TRANSACTIONAL = 2;
+
+    /**
+     * @var \PDO|null PDO instance or null when not connected yet
+     */
+    private $pdo;
+
+    /**
+     * @var string|null|false DSN string or null for session.save_path or false when lazy connection disabled
+     */
+    private $dsn = false;
+
+    /**
+     * @var string Database driver
+     */
+    private $driver;
+
+    /**
+     * @var string Table name
+     */
+    private $table = &#039;sessions&#039;;
+
+    /**
+     * @var string Column for session id
+     */
+    private $idCol = &#039;sess_id&#039;;
+
+    /**
+     * @var string Column for session data
+     */
+    private $dataCol = &#039;sess_data&#039;;
+
+    /**
+     * @var string Column for lifetime
+     */
+    private $lifetimeCol = &#039;sess_lifetime&#039;;
+
+    /**
+     * @var string Column for timestamp
+     */
+    private $timeCol = &#039;sess_time&#039;;
+
+    /**
+     * @var string Username when lazy-connect
+     */
+    private $username = &#039;&#039;;
+
+    /**
+     * @var string Password when lazy-connect
+     */
+    private $password = &#039;&#039;;
+
+    /**
+     * @var array Connection options when lazy-connect
+     */
+    private $connectionOptions = array();
+
+    /**
+     * @var int The strategy for locking, see constants
+     */
+    private $lockMode = self::LOCK_TRANSACTIONAL;
+
+    /**
+     * It&#039;s an array to support multiple reads before closing which is manual, non-standard usage.
+     *
+     * @var \PDOStatement[] An array of statements to release advisory locks
+     */
+    private $unlockStatements = array();
+
+    /**
+     * @var bool True when the current session exists but expired according to session.gc_maxlifetime
+     */
+    private $sessionExpired = false;
+
+    /**
+     * @var bool Whether a transaction is active
+     */
+    private $inTransaction = false;
+
+    /**
+     * @var bool Whether gc() has been called
+     */
+    private $gcCalled = false;
+
+    /**
+     * You can either pass an existing database connection as PDO instance or
+     * pass a DSN string that will be used to lazy-connect to the database
+     * when the session is actually used. Furthermore it&#039;s possible to pass null
+     * which will then use the session.save_path ini setting as PDO DSN parameter.
+     *
+     * List of available options:
+     *  * db_table: The name of the table [default: sessions]
+     *  * db_id_col: The column where to store the session id [default: sess_id]
+     *  * db_data_col: The column where to store the session data [default: sess_data]
+     *  * db_lifetime_col: The column where to store the lifetime [default: sess_lifetime]
+     *  * db_time_col: The column where to store the timestamp [default: sess_time]
+     *  * db_username: The username when lazy-connect [default: &#039;&#039;]
+     *  * db_password: The password when lazy-connect [default: &#039;&#039;]
+     *  * db_connection_options: An array of driver-specific connection options [default: array()]
+     *  * lock_mode: The strategy for locking, see constants [default: LOCK_TRANSACTIONAL]
+     *
+     * @param \PDO|string|null $pdoOrDsn A \PDO instance or DSN string or URL string or null
+     * @param array            $options  An associative array of options
+     *
+     * @throws \InvalidArgumentException When PDO error mode is not PDO::ERRMODE_EXCEPTION
+     */
+    public function __construct($pdoOrDsn = null, array $options = array())
+    {
+        if ($pdoOrDsn instanceof \PDO) {
+            if (\PDO::ERRMODE_EXCEPTION !== $pdoOrDsn-&gt;getAttribute(\PDO::ATTR_ERRMODE)) {
+                throw new \InvalidArgumentException(sprintf(&#039;&quot;%s&quot; requires PDO error mode attribute be set to throw Exceptions (i.e. $pdo-&gt;setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION))&#039;, __CLASS__));
+            }
+
+            $this-&gt;pdo = $pdoOrDsn;
+            $this-&gt;driver = $this-&gt;pdo-&gt;getAttribute(\PDO::ATTR_DRIVER_NAME);
+        } elseif (is_string($pdoOrDsn) &amp;&amp; false !== strpos($pdoOrDsn, &#039;://&#039;)) {
+            $this-&gt;dsn = $this-&gt;buildDsnFromUrl($pdoOrDsn);
+        } else {
+            $this-&gt;dsn = $pdoOrDsn;
+        }
+
+        $this-&gt;table = isset($options[&#039;db_table&#039;]) ? $options[&#039;db_table&#039;] : $this-&gt;table;
+        $this-&gt;idCol = isset($options[&#039;db_id_col&#039;]) ? $options[&#039;db_id_col&#039;] : $this-&gt;idCol;
+        $this-&gt;dataCol = isset($options[&#039;db_data_col&#039;]) ? $options[&#039;db_data_col&#039;] : $this-&gt;dataCol;
+        $this-&gt;lifetimeCol = isset($options[&#039;db_lifetime_col&#039;]) ? $options[&#039;db_lifetime_col&#039;] : $this-&gt;lifetimeCol;
+        $this-&gt;timeCol = isset($options[&#039;db_time_col&#039;]) ? $options[&#039;db_time_col&#039;] : $this-&gt;timeCol;
+        $this-&gt;username = isset($options[&#039;db_username&#039;]) ? $options[&#039;db_username&#039;] : $this-&gt;username;
+        $this-&gt;password = isset($options[&#039;db_password&#039;]) ? $options[&#039;db_password&#039;] : $this-&gt;password;
+        $this-&gt;connectionOptions = isset($options[&#039;db_connection_options&#039;]) ? $options[&#039;db_connection_options&#039;] : $this-&gt;connectionOptions;
+        $this-&gt;lockMode = isset($options[&#039;lock_mode&#039;]) ? $options[&#039;lock_mode&#039;] : $this-&gt;lockMode;
+    }
+
+    /**
+     * Creates the table to store sessions which can be called once for setup.
+     *
+     * Session ID is saved in a column of maximum length 128 because that is enough even
+     * for a 512 bit configured session.hash_function like Whirlpool. Session data is
+     * saved in a BLOB. One could also use a shorter inlined varbinary column
+     * if one was sure the data fits into it.
+     *
+     * @throws \PDOException    When the table already exists
+     * @throws \DomainException When an unsupported PDO driver is used
+     */
+    public function createTable()
+    {
+        // connect if we are not yet
+        $this-&gt;getConnection();
+
+        switch ($this-&gt;driver) {
+            case &#039;mysql&#039;:
+                // We use varbinary for the ID column because it prevents unwanted conversions:
+                // - character set conversions between server and client
+                // - trailing space removal
+                // - case-insensitivity
+                // - language processing like é == e
+                $sql = &quot;CREATE TABLE $this-&gt;table ($this-&gt;idCol VARBINARY(128) NOT NULL PRIMARY KEY, $this-&gt;dataCol BLOB NOT NULL, $this-&gt;lifetimeCol MEDIUMINT NOT NULL, $this-&gt;timeCol INTEGER UNSIGNED NOT NULL) COLLATE utf8_bin, ENGINE = InnoDB&quot;;
+                break;
+            case &#039;sqlite&#039;:
+                $sql = &quot;CREATE TABLE $this-&gt;table ($this-&gt;idCol TEXT NOT NULL PRIMARY KEY, $this-&gt;dataCol BLOB NOT NULL, $this-&gt;lifetimeCol INTEGER NOT NULL, $this-&gt;timeCol INTEGER NOT NULL)&quot;;
+                break;
+            case &#039;pgsql&#039;:
+                $sql = &quot;CREATE TABLE $this-&gt;table ($this-&gt;idCol VARCHAR(128) NOT NULL PRIMARY KEY, $this-&gt;dataCol BYTEA NOT NULL, $this-&gt;lifetimeCol INTEGER NOT NULL, $this-&gt;timeCol INTEGER NOT NULL)&quot;;
+                break;
+            case &#039;oci&#039;:
+                $sql = &quot;CREATE TABLE $this-&gt;table ($this-&gt;idCol VARCHAR2(128) NOT NULL PRIMARY KEY, $this-&gt;dataCol BLOB NOT NULL, $this-&gt;lifetimeCol INTEGER NOT NULL, $this-&gt;timeCol INTEGER NOT NULL)&quot;;
+                break;
+            case &#039;sqlsrv&#039;:
+                $sql = &quot;CREATE TABLE $this-&gt;table ($this-&gt;idCol VARCHAR(128) NOT NULL PRIMARY KEY, $this-&gt;dataCol VARBINARY(MAX) NOT NULL, $this-&gt;lifetimeCol INTEGER NOT NULL, $this-&gt;timeCol INTEGER NOT NULL)&quot;;
+                break;
+            default:
+                throw new \DomainException(sprintf(&#039;Creating the session table is currently not implemented for PDO driver &quot;%s&quot;.&#039;, $this-&gt;driver));
+        }
+
+        try {
+            $this-&gt;pdo-&gt;exec($sql);
+        } catch (\PDOException $e) {
+            $this-&gt;rollback();
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Returns true when the current session exists but expired according to session.gc_maxlifetime.
+     *
+     * Can be used to distinguish between a new session and one that expired due to inactivity.
+     *
+     * @return bool Whether current session expired
+     */
+    public function isSessionExpired()
+    {
+        return $this-&gt;sessionExpired;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function open($savePath, $sessionName)
+    {
+        $this-&gt;sessionExpired = false;
+
+        if (null === $this-&gt;pdo) {
+            $this-&gt;connect($this-&gt;dsn ?: $savePath);
+        }
+
+        return parent::open($savePath, $sessionName);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function read($sessionId)
+    {
+        try {
+            return parent::read($sessionId);
+        } catch (\PDOException $e) {
+            $this-&gt;rollback();
+
+            throw $e;
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function gc($maxlifetime)
+    {
+        // We delay gc() to close() so that it is executed outside the transactional and blocking read-write process.
+        // This way, pruning expired sessions does not block them from being started while the current session is used.
+        $this-&gt;gcCalled = true;
+
+        return true;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function doDestroy($sessionId)
+    {
+        // delete the record associated with this id
+        $sql = &quot;DELETE FROM $this-&gt;table WHERE $this-&gt;idCol = :id&quot;;
+
+        try {
+            $stmt = $this-&gt;pdo-&gt;prepare($sql);
+            $stmt-&gt;bindParam(&#039;:id&#039;, $sessionId, \PDO::PARAM_STR);
+            $stmt-&gt;execute();
+        } catch (\PDOException $e) {
+            $this-&gt;rollback();
+
+            throw $e;
+        }
+
+        return true;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function doWrite($sessionId, $data)
+    {
+        $maxlifetime = (int) ini_get(&#039;session.gc_maxlifetime&#039;);
+
+        try {
+            // We use a single MERGE SQL query when supported by the database.
+            $mergeStmt = $this-&gt;getMergeStatement($sessionId, $data, $maxlifetime);
+            if (null !== $mergeStmt) {
+                $mergeStmt-&gt;execute();
+
+                return true;
+            }
+
+            $updateStmt = $this-&gt;getUpdateStatement($sessionId, $data, $maxlifetime);
+            $updateStmt-&gt;execute();
+
+            // When MERGE is not supported, like in Postgres &lt; 9.5, we have to use this approach that can result in
+            // duplicate key errors when the same session is written simultaneously (given the LOCK_NONE behavior).
+            // We can just catch such an error and re-execute the update. This is similar to a serializable
+            // transaction with retry logic on serialization failures but without the overhead and without possible
+            // false positives due to longer gap locking.
+            if (!$updateStmt-&gt;rowCount()) {
+                try {
+                    $insertStmt = $this-&gt;getInsertStatement($sessionId, $data, $maxlifetime);
+                    $insertStmt-&gt;execute();
+                } catch (\PDOException $e) {
+                    // Handle integrity violation SQLSTATE 23000 (or a subclass like 23505 in Postgres) for duplicate keys
+                    if (0 === strpos($e-&gt;getCode(), &#039;23&#039;)) {
+                        $updateStmt-&gt;execute();
+                    } else {
+                        throw $e;
+                    }
+                }
+            }
+        } catch (\PDOException $e) {
+            $this-&gt;rollback();
+
+            throw $e;
+        }
+
+        return true;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function updateTimestamp($sessionId, $data)
+    {
+        $maxlifetime = (int) ini_get(&#039;session.gc_maxlifetime&#039;);
+
+        try {
+            $updateStmt = $this-&gt;pdo-&gt;prepare(
+                &quot;UPDATE $this-&gt;table SET $this-&gt;lifetimeCol = :lifetime, $this-&gt;timeCol = :time WHERE $this-&gt;idCol = :id&quot;
+            );
+            $updateStmt-&gt;bindParam(&#039;:id&#039;, $sessionId, \PDO::PARAM_STR);
+            $updateStmt-&gt;bindParam(&#039;:lifetime&#039;, $maxlifetime, \PDO::PARAM_INT);
+            $updateStmt-&gt;bindValue(&#039;:time&#039;, time(), \PDO::PARAM_INT);
+            $updateStmt-&gt;execute();
+        } catch (\PDOException $e) {
+            $this-&gt;rollback();
+
+            throw $e;
+        }
+
+        return true;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function close()
+    {
+        $this-&gt;commit();
+
+        while ($unlockStmt = array_shift($this-&gt;unlockStatements)) {
+            $unlockStmt-&gt;execute();
+        }
+
+        if ($this-&gt;gcCalled) {
+            $this-&gt;gcCalled = false;
+
+            // delete the session records that have expired
+            if (&#039;mysql&#039; === $this-&gt;driver) {
+                $sql = &quot;DELETE FROM $this-&gt;table WHERE $this-&gt;lifetimeCol + $this-&gt;timeCol &lt; :time&quot;;
+            } else {
+                $sql = &quot;DELETE FROM $this-&gt;table WHERE $this-&gt;lifetimeCol &lt; :time - $this-&gt;timeCol&quot;;
+            }
+
+            $stmt = $this-&gt;pdo-&gt;prepare($sql);
+            $stmt-&gt;bindValue(&#039;:time&#039;, time(), \PDO::PARAM_INT);
+            $stmt-&gt;execute();
+        }
+
+        if (false !== $this-&gt;dsn) {
+            $this-&gt;pdo = null; // only close lazy-connection
+        }
+
+        return true;
+    }
+
+    /**
+     * Lazy-connects to the database.
+     *
+     * @param string $dsn DSN string
+     */
+    private function connect($dsn)
+    {
+        $this-&gt;pdo = new \PDO($dsn, $this-&gt;username, $this-&gt;password, $this-&gt;connectionOptions);
+        $this-&gt;pdo-&gt;setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+        $this-&gt;driver = $this-&gt;pdo-&gt;getAttribute(\PDO::ATTR_DRIVER_NAME);
+    }
+
+    /**
+     * Builds a PDO DSN from a URL-like connection string.
+     *
+     * @param string $dsnOrUrl
+     *
+     * @return string
+     *
+     * @todo implement missing support for oci DSN (which look totally different from other PDO ones)
+     */
+    private function buildDsnFromUrl($dsnOrUrl)
+    {
+        // (pdo_)?sqlite3?:///... =&gt; (pdo_)?sqlite3?://localhost/... or else the URL will be invalid
+        $url = preg_replace(&#039;#^((?:pdo_)?sqlite3?):///#&#039;, &#039;$1://localhost/&#039;, $dsnOrUrl);
+
+        $params = parse_url($url);
+
+        if (false === $params) {
+            return $dsnOrUrl; // If the URL is not valid, let&#039;s assume it might be a DSN already.
+        }
+
+        $params = array_map(&#039;rawurldecode&#039;, $params);
+
+        // Override the default username and password. Values passed through options will still win over these in the constructor.
+        if (isset($params[&#039;user&#039;])) {
+            $this-&gt;username = $params[&#039;user&#039;];
+        }
+
+        if (isset($params[&#039;pass&#039;])) {
+            $this-&gt;password = $params[&#039;pass&#039;];
+        }
+
+        if (!isset($params[&#039;scheme&#039;])) {
+            throw new \InvalidArgumentException(&#039;URLs without scheme are not supported to configure the PdoSessionHandler&#039;);
+        }
+
+        $driverAliasMap = array(
+            &#039;mssql&#039; =&gt; &#039;sqlsrv&#039;,
+            &#039;mysql2&#039; =&gt; &#039;mysql&#039;, // Amazon RDS, for some weird reason
+            &#039;postgres&#039; =&gt; &#039;pgsql&#039;,
+            &#039;postgresql&#039; =&gt; &#039;pgsql&#039;,
+            &#039;sqlite3&#039; =&gt; &#039;sqlite&#039;,
+        );
+
+        $driver = isset($driverAliasMap[$params[&#039;scheme&#039;]]) ? $driverAliasMap[$params[&#039;scheme&#039;]] : $params[&#039;scheme&#039;];
+
+        // Doctrine DBAL supports passing its internal pdo_* driver names directly too (allowing both dashes and underscores). This allows supporting the same here.
+        if (0 === strpos($driver, &#039;pdo_&#039;) || 0 === strpos($driver, &#039;pdo-&#039;)) {
+            $driver = substr($driver, 4);
+        }
+
+        switch ($driver) {
+            case &#039;mysql&#039;:
+            case &#039;pgsql&#039;:
+                $dsn = $driver.&#039;:&#039;;
+
+                if (isset($params[&#039;host&#039;]) &amp;&amp; &#039;&#039; !== $params[&#039;host&#039;]) {
+                    $dsn .= &#039;host=&#039;.$params[&#039;host&#039;].&#039;;&#039;;
+                }
+
+                if (isset($params[&#039;port&#039;]) &amp;&amp; &#039;&#039; !== $params[&#039;port&#039;]) {
+                    $dsn .= &#039;port=&#039;.$params[&#039;port&#039;].&#039;;&#039;;
+                }
+
+                if (isset($params[&#039;path&#039;])) {
+                    $dbName = substr($params[&#039;path&#039;], 1); // Remove the leading slash
+                    $dsn .= &#039;dbname=&#039;.$dbName.&#039;;&#039;;
+                }
+
+                return $dsn;
+
+            case &#039;sqlite&#039;:
+                return &#039;sqlite:&#039;.substr($params[&#039;path&#039;], 1);
+
+            case &#039;sqlsrv&#039;:
+                $dsn = &#039;sqlsrv:server=&#039;;
+
+                if (isset($params[&#039;host&#039;])) {
+                    $dsn .= $params[&#039;host&#039;];
+                }
+
+                if (isset($params[&#039;port&#039;]) &amp;&amp; &#039;&#039; !== $params[&#039;port&#039;]) {
+                    $dsn .= &#039;,&#039;.$params[&#039;port&#039;];
+                }
+
+                if (isset($params[&#039;path&#039;])) {
+                    $dbName = substr($params[&#039;path&#039;], 1); // Remove the leading slash
+                    $dsn .= &#039;;Database=&#039;.$dbName;
+                }
+
+                return $dsn;
+
+            default:
+                throw new \InvalidArgumentException(sprintf(&#039;The scheme &quot;%s&quot; is not supported by the PdoSessionHandler URL configuration. Pass a PDO DSN directly.&#039;, $params[&#039;scheme&#039;]));
+        }
+    }
+
+    /**
+     * Helper method to begin a transaction.
+     *
+     * Since SQLite does not support row level locks, we have to acquire a reserved lock
+     * on the database immediately. Because of https://bugs.php.net/42766 we have to create
+     * such a transaction manually which also means we cannot use PDO::commit or
+     * PDO::rollback or PDO::inTransaction for SQLite.
+     *
+     * Also MySQLs default isolation, REPEATABLE READ, causes deadlock for different sessions
+     * due to http://www.mysqlperformanceblog.com/2013/12/12/one-more-innodb-gap-lock-to-avoid/ .
+     * So we change it to READ COMMITTED.
+     */
+    private function beginTransaction()
+    {
+        if (!$this-&gt;inTransaction) {
+            if (&#039;sqlite&#039; === $this-&gt;driver) {
+                $this-&gt;pdo-&gt;exec(&#039;BEGIN IMMEDIATE TRANSACTION&#039;);
+            } else {
+                if (&#039;mysql&#039; === $this-&gt;driver) {
+                    $this-&gt;pdo-&gt;exec(&#039;SET TRANSACTION ISOLATION LEVEL READ COMMITTED&#039;);
+                }
+                $this-&gt;pdo-&gt;beginTransaction();
+            }
+            $this-&gt;inTransaction = true;
+        }
+    }
+
+    /**
+     * Helper method to commit a transaction.
+     */
+    private function commit()
+    {
+        if ($this-&gt;inTransaction) {
+            try {
+                // commit read-write transaction which also releases the lock
+                if (&#039;sqlite&#039; === $this-&gt;driver) {
+                    $this-&gt;pdo-&gt;exec(&#039;COMMIT&#039;);
+                } else {
+                    $this-&gt;pdo-&gt;commit();
+                }
+                $this-&gt;inTransaction = false;
+            } catch (\PDOException $e) {
+                $this-&gt;rollback();
+
+                throw $e;
+            }
+        }
+    }
+
+    /**
+     * Helper method to rollback a transaction.
+     */
+    private function rollback()
+    {
+        // We only need to rollback if we are in a transaction. Otherwise the resulting
+        // error would hide the real problem why rollback was called. We might not be
+        // in a transaction when not using the transactional locking behavior or when
+        // two callbacks (e.g. destroy and write) are invoked that both fail.
+        if ($this-&gt;inTransaction) {
+            if (&#039;sqlite&#039; === $this-&gt;driver) {
+                $this-&gt;pdo-&gt;exec(&#039;ROLLBACK&#039;);
+            } else {
+                $this-&gt;pdo-&gt;rollBack();
+            }
+            $this-&gt;inTransaction = false;
+        }
+    }
+
+    /**
+     * Reads the session data in respect to the different locking strategies.
+     *
+     * We need to make sure we do not return session data that is already considered garbage according
+     * to the session.gc_maxlifetime setting because gc() is called after read() and only sometimes.
+     *
+     * @param string $sessionId Session ID
+     *
+     * @return string The session data
+     */
+    protected function doRead($sessionId)
+    {
+        if (self::LOCK_ADVISORY === $this-&gt;lockMode) {
+            $this-&gt;unlockStatements[] = $this-&gt;doAdvisoryLock($sessionId);
+        }
+
+        $selectSql = $this-&gt;getSelectSql();
+        $selectStmt = $this-&gt;pdo-&gt;prepare($selectSql);
+        $selectStmt-&gt;bindParam(&#039;:id&#039;, $sessionId, \PDO::PARAM_STR);
+
+        do {
+            $selectStmt-&gt;execute();
+            $sessionRows = $selectStmt-&gt;fetchAll(\PDO::FETCH_NUM);
+
+            if ($sessionRows) {
+                if ($sessionRows[0][1] + $sessionRows[0][2] &lt; time()) {
+                    $this-&gt;sessionExpired = true;
+
+                    return &#039;&#039;;
+                }
+
+                return is_resource($sessionRows[0][0]) ? stream_get_contents($sessionRows[0][0]) : $sessionRows[0][0];
+            }
+
+            if (!ini_get(&#039;session.use_strict_mode&#039;) &amp;&amp; self::LOCK_TRANSACTIONAL === $this-&gt;lockMode &amp;&amp; &#039;sqlite&#039; !== $this-&gt;driver) {
+                // In strict mode, session fixation is not possible: new sessions always start with a unique
+                // random id, so that concurrency is not possible and this code path can be skipped.
+                // Exclusive-reading of non-existent rows does not block, so we need to do an insert to block
+                // until other connections to the session are committed.
+                try {
+                    $insertStmt = $this-&gt;getInsertStatement($sessionId, &#039;&#039;, 0);
+                    $insertStmt-&gt;execute();
+                } catch (\PDOException $e) {
+                    // Catch duplicate key error because other connection created the session already.
+                    // It would only not be the case when the other connection destroyed the session.
+                    if (0 === strpos($e-&gt;getCode(), &#039;23&#039;)) {
+                        // Retrieve finished session data written by concurrent connection by restarting the loop.
+                        // We have to start a new transaction as a failed query will mark the current transaction as
+                        // aborted in PostgreSQL and disallow further queries within it.
+                        $this-&gt;rollback();
+                        $this-&gt;beginTransaction();
+                        continue;
+                    }
+
+                    throw $e;
+                }
+            }
+
+            return &#039;&#039;;
+        } while (true);
+    }
+
+    /**
+     * Executes an application-level lock on the database.
+     *
+     * @return \PDOStatement The statement that needs to be executed later to release the lock
+     *
+     * @throws \DomainException When an unsupported PDO driver is used
+     *
+     * @todo implement missing advisory locks
+     *       - for oci using DBMS_LOCK.REQUEST
+     *       - for sqlsrv using sp_getapplock with LockOwner = Session
+     */
+    private function doAdvisoryLock(string $sessionId)
+    {
+        switch ($this-&gt;driver) {
+            case &#039;mysql&#039;:
+                // should we handle the return value? 0 on timeout, null on error
+                // we use a timeout of 50 seconds which is also the default for innodb_lock_wait_timeout
+                $stmt = $this-&gt;pdo-&gt;prepare(&#039;SELECT GET_LOCK(:key, 50)&#039;);
+                $stmt-&gt;bindValue(&#039;:key&#039;, $sessionId, \PDO::PARAM_STR);
+                $stmt-&gt;execute();
+
+                $releaseStmt = $this-&gt;pdo-&gt;prepare(&#039;DO RELEASE_LOCK(:key)&#039;);
+                $releaseStmt-&gt;bindValue(&#039;:key&#039;, $sessionId, \PDO::PARAM_STR);
+
+                return $releaseStmt;
+            case &#039;pgsql&#039;:
+                // Obtaining an exclusive session level advisory lock requires an integer key.
+                // When session.sid_bits_per_character &gt; 4, the session id can contain non-hex-characters.
+                // So we cannot just use hexdec().
+                if (4 === \PHP_INT_SIZE) {
+                    $sessionInt1 = $this-&gt;convertStringToInt($sessionId);
+                    $sessionInt2 = $this-&gt;convertStringToInt(substr($sessionId, 4, 4));
+
+                    $stmt = $this-&gt;pdo-&gt;prepare(&#039;SELECT pg_advisory_lock(:key1, :key2)&#039;);
+                    $stmt-&gt;bindValue(&#039;:key1&#039;, $sessionInt1, \PDO::PARAM_INT);
+                    $stmt-&gt;bindValue(&#039;:key2&#039;, $sessionInt2, \PDO::PARAM_INT);
+                    $stmt-&gt;execute();
+
+                    $releaseStmt = $this-&gt;pdo-&gt;prepare(&#039;SELECT pg_advisory_unlock(:key1, :key2)&#039;);
+                    $releaseStmt-&gt;bindValue(&#039;:key1&#039;, $sessionInt1, \PDO::PARAM_INT);
+                    $releaseStmt-&gt;bindValue(&#039;:key2&#039;, $sessionInt2, \PDO::PARAM_INT);
+                } else {
+                    $sessionBigInt = $this-&gt;convertStringToInt($sessionId);
+
+                    $stmt = $this-&gt;pdo-&gt;prepare(&#039;SELECT pg_advisory_lock(:key)&#039;);
+                    $stmt-&gt;bindValue(&#039;:key&#039;, $sessionBigInt, \PDO::PARAM_INT);
+                    $stmt-&gt;execute();
+
+                    $releaseStmt = $this-&gt;pdo-&gt;prepare(&#039;SELECT pg_advisory_unlock(:key)&#039;);
+                    $releaseStmt-&gt;bindValue(&#039;:key&#039;, $sessionBigInt, \PDO::PARAM_INT);
+                }
+
+                return $releaseStmt;
+            case &#039;sqlite&#039;:
+                throw new \DomainException(&#039;SQLite does not support advisory locks.&#039;);
+            default:
+                throw new \DomainException(sprintf(&#039;Advisory locks are currently not implemented for PDO driver &quot;%s&quot;.&#039;, $this-&gt;driver));
+        }
+    }
+
+    /**
+     * Encodes the first 4 (when PHP_INT_SIZE == 4) or 8 characters of the string as an integer.
+     *
+     * Keep in mind, PHP integers are signed.
+     */
+    private function convertStringToInt(string $string): int
+    {
+        if (4 === \PHP_INT_SIZE) {
+            return (ord($string[3]) &lt;&lt; 24) + (ord($string[2]) &lt;&lt; 16) + (ord($string[1]) &lt;&lt; 8) + ord($string[0]);
+        }
+
+        $int1 = (ord($string[7]) &lt;&lt; 24) + (ord($string[6]) &lt;&lt; 16) + (ord($string[5]) &lt;&lt; 8) + ord($string[4]);
+        $int2 = (ord($string[3]) &lt;&lt; 24) + (ord($string[2]) &lt;&lt; 16) + (ord($string[1]) &lt;&lt; 8) + ord($string[0]);
+
+        return $int2 + ($int1 &lt;&lt; 32);
+    }
+
+    /**
+     * Return a locking or nonlocking SQL query to read session information.
+     *
+     * @throws \DomainException When an unsupported PDO driver is used
+     */
+    private function getSelectSql(): string
+    {
+        if (self::LOCK_TRANSACTIONAL === $this-&gt;lockMode) {
+            $this-&gt;beginTransaction();
+
+            switch ($this-&gt;driver) {
+                case &#039;mysql&#039;:
+                case &#039;oci&#039;:
+                case &#039;pgsql&#039;:
+                    return &quot;SELECT $this-&gt;dataCol, $this-&gt;lifetimeCol, $this-&gt;timeCol FROM $this-&gt;table WHERE $this-&gt;idCol = :id FOR UPDATE&quot;;
+                case &#039;sqlsrv&#039;:
+                    return &quot;SELECT $this-&gt;dataCol, $this-&gt;lifetimeCol, $this-&gt;timeCol FROM $this-&gt;table WITH (UPDLOCK, ROWLOCK) WHERE $this-&gt;idCol = :id&quot;;
+                case &#039;sqlite&#039;:
+                    // we already locked when starting transaction
+                    break;
+                default:
+                    throw new \DomainException(sprintf(&#039;Transactional locks are currently not implemented for PDO driver &quot;%s&quot;.&#039;, $this-&gt;driver));
+            }
+        }
+
+        return &quot;SELECT $this-&gt;dataCol, $this-&gt;lifetimeCol, $this-&gt;timeCol FROM $this-&gt;table WHERE $this-&gt;idCol = :id&quot;;
+    }
+
+    /**
+     * Returns an insert statement supported by the database for writing session data.
+     *
+     * @param string $sessionId   Session ID
+     * @param string $sessionData Encoded session data
+     * @param int    $maxlifetime session.gc_maxlifetime
+     *
+     * @return \PDOStatement The insert statement
+     */
+    private function getInsertStatement($sessionId, $sessionData, $maxlifetime)
+    {
+        switch ($this-&gt;driver) {
+            case &#039;oci&#039;:
+                $data = fopen(&#039;php://memory&#039;, &#039;r+&#039;);
+                fwrite($data, $sessionData);
+                rewind($data);
+                $sql = &quot;INSERT INTO $this-&gt;table ($this-&gt;idCol, $this-&gt;dataCol, $this-&gt;lifetimeCol, $this-&gt;timeCol) VALUES (:id, EMPTY_BLOB(), :lifetime, :time) RETURNING $this-&gt;dataCol into :data&quot;;
+                break;
+            default:
+                $data = $sessionData;
+                $sql = &quot;INSERT INTO $this-&gt;table ($this-&gt;idCol, $this-&gt;dataCol, $this-&gt;lifetimeCol, $this-&gt;timeCol) VALUES (:id, :data, :lifetime, :time)&quot;;
+                break;
+        }
+
+        $stmt = $this-&gt;pdo-&gt;prepare($sql);
+        $stmt-&gt;bindParam(&#039;:id&#039;, $sessionId, \PDO::PARAM_STR);
+        $stmt-&gt;bindParam(&#039;:data&#039;, $data, \PDO::PARAM_LOB);
+        $stmt-&gt;bindParam(&#039;:lifetime&#039;, $maxlifetime, \PDO::PARAM_INT);
+        $stmt-&gt;bindValue(&#039;:time&#039;, time(), \PDO::PARAM_INT);
+
+        return $stmt;
+    }
+
+    /**
+     * Returns an update statement supported by the database for writing session data.
+     *
+     * @param string $sessionId   Session ID
+     * @param string $sessionData Encoded session data
+     * @param int    $maxlifetime session.gc_maxlifetime
+     *
+     * @return \PDOStatement The update statement
+     */
+    private function getUpdateStatement($sessionId, $sessionData, $maxlifetime)
+    {
+        switch ($this-&gt;driver) {
+            case &#039;oci&#039;:
+                $data = fopen(&#039;php://memory&#039;, &#039;r+&#039;);
+                fwrite($data, $sessionData);
+                rewind($data);
+                $sql = &quot;UPDATE $this-&gt;table SET $this-&gt;dataCol = EMPTY_BLOB(), $this-&gt;lifetimeCol = :lifetime, $this-&gt;timeCol = :time WHERE $this-&gt;idCol = :id RETURNING $this-&gt;dataCol into :data&quot;;
+                break;
+            default:
+                $data = $sessionData;
+                $sql = &quot;UPDATE $this-&gt;table SET $this-&gt;dataCol = :data, $this-&gt;lifetimeCol = :lifetime, $this-&gt;timeCol = :time WHERE $this-&gt;idCol = :id&quot;;
+                break;
+        }
+
+        $stmt = $this-&gt;pdo-&gt;prepare($sql);
+        $stmt-&gt;bindParam(&#039;:id&#039;, $sessionId, \PDO::PARAM_STR);
+        $stmt-&gt;bindParam(&#039;:data&#039;, $data, \PDO::PARAM_LOB);
+        $stmt-&gt;bindParam(&#039;:lifetime&#039;, $maxlifetime, \PDO::PARAM_INT);
+        $stmt-&gt;bindValue(&#039;:time&#039;, time(), \PDO::PARAM_INT);
+
+        return $stmt;
+    }
+
+    /**
+     * Returns a merge/upsert (i.e. insert or update) statement when supported by the database for writing session data.
+     */
+    private function getMergeStatement(string $sessionId, string $data, int$maxlifetime): ?\PDOStatement
+    {
+        switch (true) {
+            case &#039;mysql&#039; === $this-&gt;driver:
+                $mergeSql = &quot;INSERT INTO $this-&gt;table ($this-&gt;idCol, $this-&gt;dataCol, $this-&gt;lifetimeCol, $this-&gt;timeCol) VALUES (:id, :data, :lifetime, :time) &quot;.
+                    &quot;ON DUPLICATE KEY UPDATE $this-&gt;dataCol = VALUES($this-&gt;dataCol), $this-&gt;lifetimeCol = VALUES($this-&gt;lifetimeCol), $this-&gt;timeCol = VALUES($this-&gt;timeCol)&quot;;
+                break;
+            case &#039;sqlsrv&#039; === $this-&gt;driver &amp;&amp; version_compare($this-&gt;pdo-&gt;getAttribute(\PDO::ATTR_SERVER_VERSION), &#039;10&#039;, &#039;&gt;=&#039;):
+                // MERGE is only available since SQL Server 2008 and must be terminated by semicolon
+                // It also requires HOLDLOCK according to http://weblogs.sqlteam.com/dang/archive/2009/01/31/UPSERT-Race-Condition-With-MERGE.aspx
+                $mergeSql = &quot;MERGE INTO $this-&gt;table WITH (HOLDLOCK) USING (SELECT 1 AS dummy) AS src ON ($this-&gt;idCol = ?) &quot;.
+                    &quot;WHEN NOT MATCHED THEN INSERT ($this-&gt;idCol, $this-&gt;dataCol, $this-&gt;lifetimeCol, $this-&gt;timeCol) VALUES (?, ?, ?, ?) &quot;.
+                    &quot;WHEN MATCHED THEN UPDATE SET $this-&gt;dataCol = ?, $this-&gt;lifetimeCol = ?, $this-&gt;timeCol = ?;&quot;;
+                break;
+            case &#039;sqlite&#039; === $this-&gt;driver:
+                $mergeSql = &quot;INSERT OR REPLACE INTO $this-&gt;table ($this-&gt;idCol, $this-&gt;dataCol, $this-&gt;lifetimeCol, $this-&gt;timeCol) VALUES (:id, :data, :lifetime, :time)&quot;;
+                break;
+            case &#039;pgsql&#039; === $this-&gt;driver &amp;&amp; version_compare($this-&gt;pdo-&gt;getAttribute(\PDO::ATTR_SERVER_VERSION), &#039;9.5&#039;, &#039;&gt;=&#039;):
+                $mergeSql = &quot;INSERT INTO $this-&gt;table ($this-&gt;idCol, $this-&gt;dataCol, $this-&gt;lifetimeCol, $this-&gt;timeCol) VALUES (:id, :data, :lifetime, :time) &quot;.
+                    &quot;ON CONFLICT ($this-&gt;idCol) DO UPDATE SET ($this-&gt;dataCol, $this-&gt;lifetimeCol, $this-&gt;timeCol) = (EXCLUDED.$this-&gt;dataCol, EXCLUDED.$this-&gt;lifetimeCol, EXCLUDED.$this-&gt;timeCol)&quot;;
+                break;
+            default:
+                // MERGE is not supported with LOBs: http://www.oracle.com/technetwork/articles/fuecks-lobs-095315.html
+                return null;
+        }
+
+        $mergeStmt = $this-&gt;pdo-&gt;prepare($mergeSql);
+
+        if (&#039;sqlsrv&#039; === $this-&gt;driver) {
+            $mergeStmt-&gt;bindParam(1, $sessionId, \PDO::PARAM_STR);
+            $mergeStmt-&gt;bindParam(2, $sessionId, \PDO::PARAM_STR);
+            $mergeStmt-&gt;bindParam(3, $data, \PDO::PARAM_LOB);
+            $mergeStmt-&gt;bindParam(4, $maxlifetime, \PDO::PARAM_INT);
+            $mergeStmt-&gt;bindValue(5, time(), \PDO::PARAM_INT);
+            $mergeStmt-&gt;bindParam(6, $data, \PDO::PARAM_LOB);
+            $mergeStmt-&gt;bindParam(7, $maxlifetime, \PDO::PARAM_INT);
+            $mergeStmt-&gt;bindValue(8, time(), \PDO::PARAM_INT);
+        } else {
+            $mergeStmt-&gt;bindParam(&#039;:id&#039;, $sessionId, \PDO::PARAM_STR);
+            $mergeStmt-&gt;bindParam(&#039;:data&#039;, $data, \PDO::PARAM_LOB);
+            $mergeStmt-&gt;bindParam(&#039;:lifetime&#039;, $maxlifetime, \PDO::PARAM_INT);
+            $mergeStmt-&gt;bindValue(&#039;:time&#039;, time(), \PDO::PARAM_INT);
+        }
+
+        return $mergeStmt;
+    }
+
+    /**
+     * Return a PDO instance.
+     *
+     * @return \PDO
+     */
+    protected function getConnection()
+    {
+        if (null === $this-&gt;pdo) {
+            $this-&gt;connect($this-&gt;dsn ?: ini_get(&#039;session.save_path&#039;));
+        }
+
+        return $this-&gt;pdo;
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

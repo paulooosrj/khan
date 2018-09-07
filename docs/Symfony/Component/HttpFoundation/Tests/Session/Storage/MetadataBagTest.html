@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Tests\Session\Storage\MetadataBagTest | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Tests_Session_Storage_MetadataBagTest" data-root-path="../../../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation/Tests.html">Tests</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation/Tests/Session.html">Session</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage.html">Storage</a></li>
+  
+            <li>MetadataBagTest</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>MetadataBagTest</h1>
+
+    <p>    class
+    <strong>MetadataBagTest</strong>        extends <abbr title="PHPUnit\Framework\TestCase">TestCase</abbr>
+</p>
+
+            <p>Test class for MetadataBag.</p>            
+    
+    
+            <h2>Properties</h2>
+
+            <table class="table">
+                    <tr>
+                <td id="property_bag">
+                    <code class="language-php">                    protected                                        <a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/MetadataBag.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">MetadataBag</abbr></a></code>
+                </td>
+                <td><code class="language-php">$bag</code></td>
+                <td></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td id="property_array">
+                    <code class="language-php">                    protected                                        </code>
+                </td>
+                <td><code class="language-php">$array</code></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setUp">setUp</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_tearDown">tearDown</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testInitialize">testInitialize</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetSetName">testGetSetName</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetStorageKey">testGetStorageKey</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetLifetime">testGetLifetime</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetCreated">testGetCreated</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetLastUsed">testGetLastUsed</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testClear">testClear</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testSkipLastUsedUpdate">testSkipLastUsedUpdate</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testDoesNotSkipLastUsedUpdate">testDoesNotSkipLastUsedUpdate</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.31">31</a>
+                    </div>
+        <div>
+            <h3 id="method_setUp"><code class="language-php">setUp()</code></h3>
+            <code class="language-php">protected setUp()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.39">39</a>
+                    </div>
+        <div>
+            <h3 id="method_tearDown"><code class="language-php">tearDown()</code></h3>
+            <code class="language-php">protected tearDown()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.46">46</a>
+                    </div>
+        <div>
+            <h3 id="method_testInitialize"><code class="language-php">testInitialize()</code></h3>
+            <code class="language-php">public testInitialize()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.70">70</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetSetName"><code class="language-php">testGetSetName()</code></h3>
+            <code class="language-php">public testGetSetName()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.77">77</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetStorageKey"><code class="language-php">testGetStorageKey()</code></h3>
+            <code class="language-php">public testGetStorageKey()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.82">82</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetLifetime"><code class="language-php">testGetLifetime()</code></h3>
+            <code class="language-php">public testGetLifetime()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.90">90</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetCreated"><code class="language-php">testGetCreated()</code></h3>
+            <code class="language-php">public testGetCreated()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.95">95</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetLastUsed"><code class="language-php">testGetLastUsed()</code></h3>
+            <code class="language-php">public testGetLastUsed()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.100">100</a>
+                    </div>
+        <div>
+            <h3 id="method_testClear"><code class="language-php">testClear()</code></h3>
+            <code class="language-php">public testClear()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.108">108</a>
+                    </div>
+        <div>
+            <h3 id="method_testSkipLastUsedUpdate"><code class="language-php">testSkipLastUsedUpdate()</code></h3>
+            <code class="language-php">public testSkipLastUsedUpdate()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.124">124</a>
+                    </div>
+        <div>
+            <h3 id="method_testDoesNotSkipLastUsedUpdate"><code class="language-php">testDoesNotSkipLastUsedUpdate()</code></h3>
+            <code class="language-php">public testDoesNotSkipLastUsedUpdate()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Tests\Session\Storage;
+
+use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\Session\Storage\MetadataBag;
+
+/**
+ * Test class for MetadataBag.
+ *
+ * @group time-sensitive
+ */
+class MetadataBagTest extends TestCase
+{
+    /**
+     * @var MetadataBag
+     */
+    protected $bag;
+
+    protected $array = array();
+
+    protected function setUp()
+    {
+        parent::setUp();
+        $this-&gt;bag = new MetadataBag();
+        $this-&gt;array = array(MetadataBag::CREATED =&gt; 1234567, MetadataBag::UPDATED =&gt; 12345678, MetadataBag::LIFETIME =&gt; 0);
+        $this-&gt;bag-&gt;initialize($this-&gt;array);
+    }
+
+    protected function tearDown()
+    {
+        $this-&gt;array = array();
+        $this-&gt;bag = null;
+        parent::tearDown();
+    }
+
+    public function testInitialize()
+    {
+        $sessionMetadata = array();
+
+        $bag1 = new MetadataBag();
+        $bag1-&gt;initialize($sessionMetadata);
+        $this-&gt;assertGreaterThanOrEqual(time(), $bag1-&gt;getCreated());
+        $this-&gt;assertEquals($bag1-&gt;getCreated(), $bag1-&gt;getLastUsed());
+
+        sleep(1);
+        $bag2 = new MetadataBag();
+        $bag2-&gt;initialize($sessionMetadata);
+        $this-&gt;assertEquals($bag1-&gt;getCreated(), $bag2-&gt;getCreated());
+        $this-&gt;assertEquals($bag1-&gt;getLastUsed(), $bag2-&gt;getLastUsed());
+        $this-&gt;assertEquals($bag2-&gt;getCreated(), $bag2-&gt;getLastUsed());
+
+        sleep(1);
+        $bag3 = new MetadataBag();
+        $bag3-&gt;initialize($sessionMetadata);
+        $this-&gt;assertEquals($bag1-&gt;getCreated(), $bag3-&gt;getCreated());
+        $this-&gt;assertGreaterThan($bag2-&gt;getLastUsed(), $bag3-&gt;getLastUsed());
+        $this-&gt;assertNotEquals($bag3-&gt;getCreated(), $bag3-&gt;getLastUsed());
+    }
+
+    public function testGetSetName()
+    {
+        $this-&gt;assertEquals(&#039;__metadata&#039;, $this-&gt;bag-&gt;getName());
+        $this-&gt;bag-&gt;setName(&#039;foo&#039;);
+        $this-&gt;assertEquals(&#039;foo&#039;, $this-&gt;bag-&gt;getName());
+    }
+
+    public function testGetStorageKey()
+    {
+        $this-&gt;assertEquals(&#039;_sf2_meta&#039;, $this-&gt;bag-&gt;getStorageKey());
+    }
+
+    public function testGetLifetime()
+    {
+        $bag = new MetadataBag();
+        $array = array(MetadataBag::CREATED =&gt; 1234567, MetadataBag::UPDATED =&gt; 12345678, MetadataBag::LIFETIME =&gt; 1000);
+        $bag-&gt;initialize($array);
+        $this-&gt;assertEquals(1000, $bag-&gt;getLifetime());
+    }
+
+    public function testGetCreated()
+    {
+        $this-&gt;assertEquals(1234567, $this-&gt;bag-&gt;getCreated());
+    }
+
+    public function testGetLastUsed()
+    {
+        $this-&gt;assertLessThanOrEqual(time(), $this-&gt;bag-&gt;getLastUsed());
+    }
+
+    public function testClear()
+    {
+        $this-&gt;bag-&gt;clear();
+
+        // the clear method has no side effects, we just want to ensure it doesn&#039;t trigger any exceptions
+        $this-&gt;addToAssertionCount(1);
+    }
+
+    public function testSkipLastUsedUpdate()
+    {
+        $bag = new MetadataBag(&#039;&#039;, 30);
+        $timeStamp = time();
+
+        $created = $timeStamp - 15;
+        $sessionMetadata = array(
+            MetadataBag::CREATED =&gt; $created,
+            MetadataBag::UPDATED =&gt; $created,
+            MetadataBag::LIFETIME =&gt; 1000,
+        );
+        $bag-&gt;initialize($sessionMetadata);
+
+        $this-&gt;assertEquals($created, $sessionMetadata[MetadataBag::UPDATED]);
+    }
+
+    public function testDoesNotSkipLastUsedUpdate()
+    {
+        $bag = new MetadataBag(&#039;&#039;, 30);
+        $timeStamp = time();
+
+        $created = $timeStamp - 45;
+        $sessionMetadata = array(
+            MetadataBag::CREATED =&gt; $created,
+            MetadataBag::UPDATED =&gt; $created,
+            MetadataBag::LIFETIME =&gt; 1000,
+        );
+        $bag-&gt;initialize($sessionMetadata);
+
+        $this-&gt;assertEquals($timeStamp, $sessionMetadata[MetadataBag::UPDATED]);
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

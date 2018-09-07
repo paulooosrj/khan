@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Tests\ServerBagTest | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Tests_ServerBagTest" data-root-path="../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../Symfony/Component/HttpFoundation/Tests.html">Tests</a></li>
+  
+            <li>ServerBagTest</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>ServerBagTest</h1>
+
+    <p>    class
+    <strong>ServerBagTest</strong>        extends <abbr title="PHPUnit\Framework\TestCase">TestCase</abbr>
+</p>
+
+            <p>ServerBagTest.</p>            
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testShouldExtractHeadersFromServerArray">testShouldExtractHeadersFromServerArray</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testHttpPasswordIsOptional">testHttpPasswordIsOptional</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testHttpBasicAuthWithPhpCgi">testHttpBasicAuthWithPhpCgi</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testHttpBasicAuthWithPhpCgiBogus">testHttpBasicAuthWithPhpCgiBogus</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testHttpBasicAuthWithPhpCgiRedirect">testHttpBasicAuthWithPhpCgiRedirect</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testHttpBasicAuthWithPhpCgiEmptyPassword">testHttpBasicAuthWithPhpCgiEmptyPassword</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testHttpDigestAuthWithPhpCgi">testHttpDigestAuthWithPhpCgi</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testHttpDigestAuthWithPhpCgiBogus">testHttpDigestAuthWithPhpCgiBogus</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testHttpDigestAuthWithPhpCgiRedirect">testHttpDigestAuthWithPhpCgiRedirect</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testOAuthBearerAuth">testOAuthBearerAuth</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testOAuthBearerAuthWithRedirect">testOAuthBearerAuthWithRedirect</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testItDoesNotOverwriteTheAuthorizationHeaderIfItIsAlreadySet">testItDoesNotOverwriteTheAuthorizationHeaderIfItIsAlreadySet</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.24">24</a>
+                    </div>
+        <div>
+            <h3 id="method_testShouldExtractHeadersFromServerArray"><code class="language-php">testShouldExtractHeadersFromServerArray()</code></h3>
+            <code class="language-php">public testShouldExtractHeadersFromServerArray()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.49">49</a>
+                    </div>
+        <div>
+            <h3 id="method_testHttpPasswordIsOptional"><code class="language-php">testHttpPasswordIsOptional()</code></h3>
+            <code class="language-php">public testHttpPasswordIsOptional()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.60">60</a>
+                    </div>
+        <div>
+            <h3 id="method_testHttpBasicAuthWithPhpCgi"><code class="language-php">testHttpBasicAuthWithPhpCgi()</code></h3>
+            <code class="language-php">public testHttpBasicAuthWithPhpCgi()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.71">71</a>
+                    </div>
+        <div>
+            <h3 id="method_testHttpBasicAuthWithPhpCgiBogus"><code class="language-php">testHttpBasicAuthWithPhpCgiBogus()</code></h3>
+            <code class="language-php">public testHttpBasicAuthWithPhpCgiBogus()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.81">81</a>
+                    </div>
+        <div>
+            <h3 id="method_testHttpBasicAuthWithPhpCgiRedirect"><code class="language-php">testHttpBasicAuthWithPhpCgiRedirect()</code></h3>
+            <code class="language-php">public testHttpBasicAuthWithPhpCgiRedirect()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.92">92</a>
+                    </div>
+        <div>
+            <h3 id="method_testHttpBasicAuthWithPhpCgiEmptyPassword"><code class="language-php">testHttpBasicAuthWithPhpCgiEmptyPassword()</code></h3>
+            <code class="language-php">public testHttpBasicAuthWithPhpCgiEmptyPassword()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.103">103</a>
+                    </div>
+        <div>
+            <h3 id="method_testHttpDigestAuthWithPhpCgi"><code class="language-php">testHttpDigestAuthWithPhpCgi()</code></h3>
+            <code class="language-php">public testHttpDigestAuthWithPhpCgi()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.114">114</a>
+                    </div>
+        <div>
+            <h3 id="method_testHttpDigestAuthWithPhpCgiBogus"><code class="language-php">testHttpDigestAuthWithPhpCgiBogus()</code></h3>
+            <code class="language-php">public testHttpDigestAuthWithPhpCgiBogus()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.125">125</a>
+                    </div>
+        <div>
+            <h3 id="method_testHttpDigestAuthWithPhpCgiRedirect"><code class="language-php">testHttpDigestAuthWithPhpCgiRedirect()</code></h3>
+            <code class="language-php">public testHttpDigestAuthWithPhpCgiRedirect()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.136">136</a>
+                    </div>
+        <div>
+            <h3 id="method_testOAuthBearerAuth"><code class="language-php">testOAuthBearerAuth()</code></h3>
+            <code class="language-php">public testOAuthBearerAuth()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.146">146</a>
+                    </div>
+        <div>
+            <h3 id="method_testOAuthBearerAuthWithRedirect"><code class="language-php">testOAuthBearerAuthWithRedirect()</code></h3>
+            <code class="language-php">public testOAuthBearerAuthWithRedirect()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.159">159</a>
+                    </div>
+        <div>
+            <h3 id="method_testItDoesNotOverwriteTheAuthorizationHeaderIfItIsAlreadySet"><code class="language-php">testItDoesNotOverwriteTheAuthorizationHeaderIfItIsAlreadySet()</code></h3>
+            <code class="language-php">public testItDoesNotOverwriteTheAuthorizationHeaderIfItIsAlreadySet()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+                    <h4>See also</h4>
+
+                <table class="table">
+                    <tr>
+                <td>https://github.com/symfony/symfony/issues/17345</td>
+                <td></td>
+            </tr>
+            </table>
+
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Tests;
+
+use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\ServerBag;
+
+/**
+ * ServerBagTest.
+ *
+ * @author Bulat Shakirzyanov &lt;mallluhuct@gmail.com&gt;
+ */
+class ServerBagTest extends TestCase
+{
+    public function testShouldExtractHeadersFromServerArray()
+    {
+        $server = array(
+            &#039;SOME_SERVER_VARIABLE&#039; =&gt; &#039;value&#039;,
+            &#039;SOME_SERVER_VARIABLE2&#039; =&gt; &#039;value&#039;,
+            &#039;ROOT&#039; =&gt; &#039;value&#039;,
+            &#039;HTTP_CONTENT_TYPE&#039; =&gt; &#039;text/html&#039;,
+            &#039;HTTP_CONTENT_LENGTH&#039; =&gt; &#039;0&#039;,
+            &#039;HTTP_ETAG&#039; =&gt; &#039;asdf&#039;,
+            &#039;PHP_AUTH_USER&#039; =&gt; &#039;foo&#039;,
+            &#039;PHP_AUTH_PW&#039; =&gt; &#039;bar&#039;,
+        );
+
+        $bag = new ServerBag($server);
+
+        $this-&gt;assertEquals(array(
+            &#039;CONTENT_TYPE&#039; =&gt; &#039;text/html&#039;,
+            &#039;CONTENT_LENGTH&#039; =&gt; &#039;0&#039;,
+            &#039;ETAG&#039; =&gt; &#039;asdf&#039;,
+            &#039;AUTHORIZATION&#039; =&gt; &#039;Basic &#039;.base64_encode(&#039;foo:bar&#039;),
+            &#039;PHP_AUTH_USER&#039; =&gt; &#039;foo&#039;,
+            &#039;PHP_AUTH_PW&#039; =&gt; &#039;bar&#039;,
+        ), $bag-&gt;getHeaders());
+    }
+
+    public function testHttpPasswordIsOptional()
+    {
+        $bag = new ServerBag(array(&#039;PHP_AUTH_USER&#039; =&gt; &#039;foo&#039;));
+
+        $this-&gt;assertEquals(array(
+            &#039;AUTHORIZATION&#039; =&gt; &#039;Basic &#039;.base64_encode(&#039;foo:&#039;),
+            &#039;PHP_AUTH_USER&#039; =&gt; &#039;foo&#039;,
+            &#039;PHP_AUTH_PW&#039; =&gt; &#039;&#039;,
+        ), $bag-&gt;getHeaders());
+    }
+
+    public function testHttpBasicAuthWithPhpCgi()
+    {
+        $bag = new ServerBag(array(&#039;HTTP_AUTHORIZATION&#039; =&gt; &#039;Basic &#039;.base64_encode(&#039;foo:bar&#039;)));
+
+        $this-&gt;assertEquals(array(
+            &#039;AUTHORIZATION&#039; =&gt; &#039;Basic &#039;.base64_encode(&#039;foo:bar&#039;),
+            &#039;PHP_AUTH_USER&#039; =&gt; &#039;foo&#039;,
+            &#039;PHP_AUTH_PW&#039; =&gt; &#039;bar&#039;,
+        ), $bag-&gt;getHeaders());
+    }
+
+    public function testHttpBasicAuthWithPhpCgiBogus()
+    {
+        $bag = new ServerBag(array(&#039;HTTP_AUTHORIZATION&#039; =&gt; &#039;Basic_&#039;.base64_encode(&#039;foo:bar&#039;)));
+
+        // Username and passwords should not be set as the header is bogus
+        $headers = $bag-&gt;getHeaders();
+        $this-&gt;assertArrayNotHasKey(&#039;PHP_AUTH_USER&#039;, $headers);
+        $this-&gt;assertArrayNotHasKey(&#039;PHP_AUTH_PW&#039;, $headers);
+    }
+
+    public function testHttpBasicAuthWithPhpCgiRedirect()
+    {
+        $bag = new ServerBag(array(&#039;REDIRECT_HTTP_AUTHORIZATION&#039; =&gt; &#039;Basic &#039;.base64_encode(&#039;username:pass:word&#039;)));
+
+        $this-&gt;assertEquals(array(
+            &#039;AUTHORIZATION&#039; =&gt; &#039;Basic &#039;.base64_encode(&#039;username:pass:word&#039;),
+            &#039;PHP_AUTH_USER&#039; =&gt; &#039;username&#039;,
+            &#039;PHP_AUTH_PW&#039; =&gt; &#039;pass:word&#039;,
+        ), $bag-&gt;getHeaders());
+    }
+
+    public function testHttpBasicAuthWithPhpCgiEmptyPassword()
+    {
+        $bag = new ServerBag(array(&#039;HTTP_AUTHORIZATION&#039; =&gt; &#039;Basic &#039;.base64_encode(&#039;foo:&#039;)));
+
+        $this-&gt;assertEquals(array(
+            &#039;AUTHORIZATION&#039; =&gt; &#039;Basic &#039;.base64_encode(&#039;foo:&#039;),
+            &#039;PHP_AUTH_USER&#039; =&gt; &#039;foo&#039;,
+            &#039;PHP_AUTH_PW&#039; =&gt; &#039;&#039;,
+        ), $bag-&gt;getHeaders());
+    }
+
+    public function testHttpDigestAuthWithPhpCgi()
+    {
+        $digest = &#039;Digest username=&quot;foo&quot;, realm=&quot;acme&quot;, nonce=&quot;&#039;.md5(&#039;secret&#039;).&#039;&quot;, uri=&quot;/protected, qop=&quot;auth&quot;&#039;;
+        $bag = new ServerBag(array(&#039;HTTP_AUTHORIZATION&#039; =&gt; $digest));
+
+        $this-&gt;assertEquals(array(
+            &#039;AUTHORIZATION&#039; =&gt; $digest,
+            &#039;PHP_AUTH_DIGEST&#039; =&gt; $digest,
+        ), $bag-&gt;getHeaders());
+    }
+
+    public function testHttpDigestAuthWithPhpCgiBogus()
+    {
+        $digest = &#039;Digest_username=&quot;foo&quot;, realm=&quot;acme&quot;, nonce=&quot;&#039;.md5(&#039;secret&#039;).&#039;&quot;, uri=&quot;/protected, qop=&quot;auth&quot;&#039;;
+        $bag = new ServerBag(array(&#039;HTTP_AUTHORIZATION&#039; =&gt; $digest));
+
+        // Username and passwords should not be set as the header is bogus
+        $headers = $bag-&gt;getHeaders();
+        $this-&gt;assertArrayNotHasKey(&#039;PHP_AUTH_USER&#039;, $headers);
+        $this-&gt;assertArrayNotHasKey(&#039;PHP_AUTH_PW&#039;, $headers);
+    }
+
+    public function testHttpDigestAuthWithPhpCgiRedirect()
+    {
+        $digest = &#039;Digest username=&quot;foo&quot;, realm=&quot;acme&quot;, nonce=&quot;&#039;.md5(&#039;secret&#039;).&#039;&quot;, uri=&quot;/protected, qop=&quot;auth&quot;&#039;;
+        $bag = new ServerBag(array(&#039;REDIRECT_HTTP_AUTHORIZATION&#039; =&gt; $digest));
+
+        $this-&gt;assertEquals(array(
+            &#039;AUTHORIZATION&#039; =&gt; $digest,
+            &#039;PHP_AUTH_DIGEST&#039; =&gt; $digest,
+        ), $bag-&gt;getHeaders());
+    }
+
+    public function testOAuthBearerAuth()
+    {
+        $headerContent = &#039;Bearer L-yLEOr9zhmUYRkzN1jwwxwQ-PBNiKDc8dgfB4hTfvo&#039;;
+        $bag = new ServerBag(array(&#039;HTTP_AUTHORIZATION&#039; =&gt; $headerContent));
+
+        $this-&gt;assertEquals(array(
+            &#039;AUTHORIZATION&#039; =&gt; $headerContent,
+        ), $bag-&gt;getHeaders());
+    }
+
+    public function testOAuthBearerAuthWithRedirect()
+    {
+        $headerContent = &#039;Bearer L-yLEOr9zhmUYRkzN1jwwxwQ-PBNiKDc8dgfB4hTfvo&#039;;
+        $bag = new ServerBag(array(&#039;REDIRECT_HTTP_AUTHORIZATION&#039; =&gt; $headerContent));
+
+        $this-&gt;assertEquals(array(
+            &#039;AUTHORIZATION&#039; =&gt; $headerContent,
+        ), $bag-&gt;getHeaders());
+    }
+
+    /**
+     * @see https://github.com/symfony/symfony/issues/17345
+     */
+    public function testItDoesNotOverwriteTheAuthorizationHeaderIfItIsAlreadySet()
+    {
+        $headerContent = &#039;Bearer L-yLEOr9zhmUYRkzN1jwwxwQ-PBNiKDc8dgfB4hTfvo&#039;;
+        $bag = new ServerBag(array(&#039;PHP_AUTH_USER&#039; =&gt; &#039;foo&#039;, &#039;HTTP_AUTHORIZATION&#039; =&gt; $headerContent));
+
+        $this-&gt;assertEquals(array(
+            &#039;AUTHORIZATION&#039; =&gt; $headerContent,
+            &#039;PHP_AUTH_USER&#039; =&gt; &#039;foo&#039;,
+            &#039;PHP_AUTH_PW&#039; =&gt; &#039;&#039;,
+        ), $bag-&gt;getHeaders());
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

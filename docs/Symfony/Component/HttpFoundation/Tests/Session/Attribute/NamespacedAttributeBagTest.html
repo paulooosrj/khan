@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Tests\Session\Attribute\NamespacedAttributeBagTest | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Tests_Session_Attribute_NamespacedAttributeBagTest" data-root-path="../../../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation/Tests.html">Tests</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation/Tests/Session.html">Session</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Attribute.html">Attribute</a></li>
+  
+            <li>NamespacedAttributeBagTest</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>NamespacedAttributeBagTest</h1>
+
+    <p>    class
+    <strong>NamespacedAttributeBagTest</strong>        extends <abbr title="PHPUnit\Framework\TestCase">TestCase</abbr>
+</p>
+
+            <p>Tests NamespacedAttributeBag.</p>            
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setUp">setUp</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_tearDown">tearDown</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testInitialize">testInitialize</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetStorageKey">testGetStorageKey</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testHas">testHas</a>($key, $value, $exists)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGet">testGet</a>($key, $value, $expected)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetDefaults">testGetDefaults</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testSet">testSet</a>($key, $value, $expected)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testAll">testAll</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testReplace">testReplace</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testRemove">testRemove</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testRemoveExistingNamespacedAttribute">testRemoveExistingNamespacedAttribute</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testRemoveNonexistingNamespacedAttribute">testRemoveNonexistingNamespacedAttribute</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testClear">testClear</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_attributesProvider">attributesProvider</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.31">31</a>
+                    </div>
+        <div>
+            <h3 id="method_setUp"><code class="language-php">setUp()</code></h3>
+            <code class="language-php">protected setUp()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.52">52</a>
+                    </div>
+        <div>
+            <h3 id="method_tearDown"><code class="language-php">tearDown()</code></h3>
+            <code class="language-php">protected tearDown()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.58">58</a>
+                    </div>
+        <div>
+            <h3 id="method_testInitialize"><code class="language-php">testInitialize()</code></h3>
+            <code class="language-php">public testInitialize()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.70">70</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetStorageKey"><code class="language-php">testGetStorageKey()</code></h3>
+            <code class="language-php">public testGetStorageKey()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.80">80</a>
+                    </div>
+        <div>
+            <h3 id="method_testHas"><code class="language-php">testHas()</code></h3>
+            <code class="language-php">public testHas($key, $value, $exists)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$key</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$value</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$exists</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.88">88</a>
+                    </div>
+        <div>
+            <h3 id="method_testGet"><code class="language-php">testGet()</code></h3>
+            <code class="language-php">public testGet($key, $value, $expected)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$key</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$value</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$expected</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.93">93</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetDefaults"><code class="language-php">testGetDefaults()</code></h3>
+            <code class="language-php">public testGetDefaults()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.102">102</a>
+                    </div>
+        <div>
+            <h3 id="method_testSet"><code class="language-php">testSet()</code></h3>
+            <code class="language-php">public testSet($key, $value, $expected)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$key</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$value</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$expected</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.108">108</a>
+                    </div>
+        <div>
+            <h3 id="method_testAll"><code class="language-php">testAll()</code></h3>
+            <code class="language-php">public testAll()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.118">118</a>
+                    </div>
+        <div>
+            <h3 id="method_testReplace"><code class="language-php">testReplace()</code></h3>
+            <code class="language-php">public testReplace()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.130">130</a>
+                    </div>
+        <div>
+            <h3 id="method_testRemove"><code class="language-php">testRemove()</code></h3>
+            <code class="language-php">public testRemove()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.145">145</a>
+                    </div>
+        <div>
+            <h3 id="method_testRemoveExistingNamespacedAttribute"><code class="language-php">testRemoveExistingNamespacedAttribute()</code></h3>
+            <code class="language-php">public testRemoveExistingNamespacedAttribute()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.150">150</a>
+                    </div>
+        <div>
+            <h3 id="method_testRemoveNonexistingNamespacedAttribute"><code class="language-php">testRemoveNonexistingNamespacedAttribute()</code></h3>
+            <code class="language-php">public testRemoveNonexistingNamespacedAttribute()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.155">155</a>
+                    </div>
+        <div>
+            <h3 id="method_testClear"><code class="language-php">testClear()</code></h3>
+            <code class="language-php">public testClear()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.161">161</a>
+                    </div>
+        <div>
+            <h3 id="method_attributesProvider"><code class="language-php">attributesProvider()</code></h3>
+            <code class="language-php">public attributesProvider()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Tests\Session\Attribute;
+
+use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\Session\Attribute\NamespacedAttributeBag;
+
+/**
+ * Tests NamespacedAttributeBag.
+ *
+ * @author Drak &lt;drak@zikula.org&gt;
+ */
+class NamespacedAttributeBagTest extends TestCase
+{
+    private $array = array();
+
+    /**
+     * @var NamespacedAttributeBag
+     */
+    private $bag;
+
+    protected function setUp()
+    {
+        $this-&gt;array = array(
+            &#039;hello&#039; =&gt; &#039;world&#039;,
+            &#039;always&#039; =&gt; &#039;be happy&#039;,
+            &#039;user.login&#039; =&gt; &#039;drak&#039;,
+            &#039;csrf.token&#039; =&gt; array(
+                &#039;a&#039; =&gt; &#039;1234&#039;,
+                &#039;b&#039; =&gt; &#039;4321&#039;,
+            ),
+            &#039;category&#039; =&gt; array(
+                &#039;fishing&#039; =&gt; array(
+                    &#039;first&#039; =&gt; &#039;cod&#039;,
+                    &#039;second&#039; =&gt; &#039;sole&#039;,
+                ),
+            ),
+        );
+        $this-&gt;bag = new NamespacedAttributeBag(&#039;_sf2&#039;, &#039;/&#039;);
+        $this-&gt;bag-&gt;initialize($this-&gt;array);
+    }
+
+    protected function tearDown()
+    {
+        $this-&gt;bag = null;
+        $this-&gt;array = array();
+    }
+
+    public function testInitialize()
+    {
+        $bag = new NamespacedAttributeBag();
+        $bag-&gt;initialize($this-&gt;array);
+        $this-&gt;assertEquals($this-&gt;array, $this-&gt;bag-&gt;all());
+        $array = array(&#039;should&#039; =&gt; &#039;not stick&#039;);
+        $bag-&gt;initialize($array);
+
+        // should have remained the same
+        $this-&gt;assertEquals($this-&gt;array, $this-&gt;bag-&gt;all());
+    }
+
+    public function testGetStorageKey()
+    {
+        $this-&gt;assertEquals(&#039;_sf2&#039;, $this-&gt;bag-&gt;getStorageKey());
+        $attributeBag = new NamespacedAttributeBag(&#039;test&#039;);
+        $this-&gt;assertEquals(&#039;test&#039;, $attributeBag-&gt;getStorageKey());
+    }
+
+    /**
+     * @dataProvider attributesProvider
+     */
+    public function testHas($key, $value, $exists)
+    {
+        $this-&gt;assertEquals($exists, $this-&gt;bag-&gt;has($key));
+    }
+
+    /**
+     * @dataProvider attributesProvider
+     */
+    public function testGet($key, $value, $expected)
+    {
+        $this-&gt;assertEquals($value, $this-&gt;bag-&gt;get($key));
+    }
+
+    public function testGetDefaults()
+    {
+        $this-&gt;assertNull($this-&gt;bag-&gt;get(&#039;user2.login&#039;));
+        $this-&gt;assertEquals(&#039;default&#039;, $this-&gt;bag-&gt;get(&#039;user2.login&#039;, &#039;default&#039;));
+    }
+
+    /**
+     * @dataProvider attributesProvider
+     */
+    public function testSet($key, $value, $expected)
+    {
+        $this-&gt;bag-&gt;set($key, $value);
+        $this-&gt;assertEquals($value, $this-&gt;bag-&gt;get($key));
+    }
+
+    public function testAll()
+    {
+        $this-&gt;assertEquals($this-&gt;array, $this-&gt;bag-&gt;all());
+
+        $this-&gt;bag-&gt;set(&#039;hello&#039;, &#039;fabien&#039;);
+        $array = $this-&gt;array;
+        $array[&#039;hello&#039;] = &#039;fabien&#039;;
+        $this-&gt;assertEquals($array, $this-&gt;bag-&gt;all());
+    }
+
+    public function testReplace()
+    {
+        $array = array();
+        $array[&#039;name&#039;] = &#039;jack&#039;;
+        $array[&#039;foo.bar&#039;] = &#039;beep&#039;;
+        $this-&gt;bag-&gt;replace($array);
+        $this-&gt;assertEquals($array, $this-&gt;bag-&gt;all());
+        $this-&gt;assertNull($this-&gt;bag-&gt;get(&#039;hello&#039;));
+        $this-&gt;assertNull($this-&gt;bag-&gt;get(&#039;always&#039;));
+        $this-&gt;assertNull($this-&gt;bag-&gt;get(&#039;user.login&#039;));
+    }
+
+    public function testRemove()
+    {
+        $this-&gt;assertEquals(&#039;world&#039;, $this-&gt;bag-&gt;get(&#039;hello&#039;));
+        $this-&gt;bag-&gt;remove(&#039;hello&#039;);
+        $this-&gt;assertNull($this-&gt;bag-&gt;get(&#039;hello&#039;));
+
+        $this-&gt;assertEquals(&#039;be happy&#039;, $this-&gt;bag-&gt;get(&#039;always&#039;));
+        $this-&gt;bag-&gt;remove(&#039;always&#039;);
+        $this-&gt;assertNull($this-&gt;bag-&gt;get(&#039;always&#039;));
+
+        $this-&gt;assertEquals(&#039;drak&#039;, $this-&gt;bag-&gt;get(&#039;user.login&#039;));
+        $this-&gt;bag-&gt;remove(&#039;user.login&#039;);
+        $this-&gt;assertNull($this-&gt;bag-&gt;get(&#039;user.login&#039;));
+    }
+
+    public function testRemoveExistingNamespacedAttribute()
+    {
+        $this-&gt;assertSame(&#039;cod&#039;, $this-&gt;bag-&gt;remove(&#039;category/fishing/first&#039;));
+    }
+
+    public function testRemoveNonexistingNamespacedAttribute()
+    {
+        $this-&gt;assertNull($this-&gt;bag-&gt;remove(&#039;foo/bar/baz&#039;));
+    }
+
+    public function testClear()
+    {
+        $this-&gt;bag-&gt;clear();
+        $this-&gt;assertEquals(array(), $this-&gt;bag-&gt;all());
+    }
+
+    public function attributesProvider()
+    {
+        return array(
+            array(&#039;hello&#039;, &#039;world&#039;, true),
+            array(&#039;always&#039;, &#039;be happy&#039;, true),
+            array(&#039;user.login&#039;, &#039;drak&#039;, true),
+            array(&#039;csrf.token&#039;, array(&#039;a&#039; =&gt; &#039;1234&#039;, &#039;b&#039; =&gt; &#039;4321&#039;), true),
+            array(&#039;csrf.token/a&#039;, &#039;1234&#039;, true),
+            array(&#039;csrf.token/b&#039;, &#039;4321&#039;, true),
+            array(&#039;category&#039;, array(&#039;fishing&#039; =&gt; array(&#039;first&#039; =&gt; &#039;cod&#039;, &#039;second&#039; =&gt; &#039;sole&#039;)), true),
+            array(&#039;category/fishing&#039;, array(&#039;first&#039; =&gt; &#039;cod&#039;, &#039;second&#039; =&gt; &#039;sole&#039;), true),
+            array(&#039;category/fishing/missing/first&#039;, null, false),
+            array(&#039;category/fishing/first&#039;, &#039;cod&#039;, true),
+            array(&#039;category/fishing/second&#039;, &#039;sole&#039;, true),
+            array(&#039;category/fishing/missing/second&#039;, null, false),
+            array(&#039;user2.login&#039;, null, false),
+            array(&#039;never&#039;, null, false),
+            array(&#039;bye&#039;, null, false),
+            array(&#039;bye/for/now&#039;, null, false),
+        );
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

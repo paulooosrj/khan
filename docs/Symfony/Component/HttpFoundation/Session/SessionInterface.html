@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Session\SessionInterface | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Session_SessionInterface" data-root-path="../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../Symfony/Component/HttpFoundation/Session.html">Session</a></li>
+  
+            <li>SessionInterface</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>SessionInterface</h1>
+
+    <p>    interface
+    <strong>SessionInterface</strong>
+</p>
+
+            <p>Interface for the session.</p>            
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_start">start</a>()</code>
+            </td>
+            <td>
+                                    Starts the session storage.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getId">getId</a>()</code>
+            </td>
+            <td>
+                                    Returns the session ID.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setId">setId</a>(string $id)</code>
+            </td>
+            <td>
+                                    Sets the session ID.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">mixed</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getName">getName</a>()</code>
+            </td>
+            <td>
+                                    Returns the session name.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setName">setName</a>(string $name)</code>
+            </td>
+            <td>
+                                    Sets the session name.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_invalidate">invalidate</a>(int $lifetime = null)</code>
+            </td>
+            <td>
+                                    Invalidates the current session.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_migrate">migrate</a>(bool $destroy = false, int $lifetime = null)</code>
+            </td>
+            <td>
+                                    Migrates the current session to a new session id while maintaining all
+session attributes.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_save">save</a>()</code>
+            </td>
+            <td>
+                                    Force the session to be saved and closed.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_has">has</a>(string $name)</code>
+            </td>
+            <td>
+                                    Checks if an attribute is defined.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">mixed</code></td>
+            <td>
+                <code class="language-php"><a href="#method_get">get</a>(string $name, mixed $default = null)</code>
+            </td>
+            <td>
+                                    Returns an attribute.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_set">set</a>(string $name, mixed $value)</code>
+            </td>
+            <td>
+                                    Sets an attribute.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">array</code></td>
+            <td>
+                <code class="language-php"><a href="#method_all">all</a>()</code>
+            </td>
+            <td>
+                                    Returns attributes.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_replace">replace</a>(array $attributes)</code>
+            </td>
+            <td>
+                                    Sets attributes.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">mixed</code></td>
+            <td>
+                <code class="language-php"><a href="#method_remove">remove</a>(string $name)</code>
+            </td>
+            <td>
+                                    Removes an attribute.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_clear">clear</a>()</code>
+            </td>
+            <td>
+                                    Clears all attributes.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_isStarted">isStarted</a>()</code>
+            </td>
+            <td>
+                                    Checks if the session was started.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_registerBag">registerBag</a>(<a href="../../../../Symfony/Component/HttpFoundation/Session/SessionBagInterface.html"><abbr title="Symfony\Component\HttpFoundation\Session\SessionBagInterface">SessionBagInterface</abbr></a> $bag)</code>
+            </td>
+            <td>
+                                    Registers a SessionBagInterface with the session.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><a href="../../../../Symfony/Component/HttpFoundation/Session/SessionBagInterface.html"><abbr title="Symfony\Component\HttpFoundation\Session\SessionBagInterface">SessionBagInterface</abbr></a></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getBag">getBag</a>(string $name)</code>
+            </td>
+            <td>
+                                    Gets a bag instance by name.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><a href="../../../../Symfony/Component/HttpFoundation/Session/Storage/MetadataBag.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">MetadataBag</abbr></a></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getMetadataBag">getMetadataBag</a>()</code>
+            </td>
+            <td>
+                                    Gets session meta.            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.30">30</a>
+                    </div>
+        <div>
+            <h3 id="method_start"><code class="language-php">start()</code></h3>
+            <code class="language-php">public bool&nbsp;start()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Starts the session storage.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td>True if session started</td>
+        </tr>
+    </table>
+
+        
+                    <h4>Exceptions</h4>
+
+                <table class="table">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/RuntimeException"><abbr title="RuntimeException">RuntimeException</abbr></a></td>
+                <td>if session fails to start</td>
+            </tr>
+            </table>
+
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.37">37</a>
+                    </div>
+        <div>
+            <h3 id="method_getId"><code class="language-php">getId()</code></h3>
+            <code class="language-php">public string&nbsp;getId()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the session ID.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>The session ID</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.44">44</a>
+                    </div>
+        <div>
+            <h3 id="method_setId"><code class="language-php">setId()</code></h3>
+            <code class="language-php">public setId(string $id)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets the session ID.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$id</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.51">51</a>
+                    </div>
+        <div>
+            <h3 id="method_getName"><code class="language-php">getName()</code></h3>
+            <code class="language-php">public mixed&nbsp;getName()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the session name.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">mixed</code></td>
+            <td>The session name</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.58">58</a>
+                    </div>
+        <div>
+            <h3 id="method_setName"><code class="language-php">setName()</code></h3>
+            <code class="language-php">public setName(string $name)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets the session name.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$name</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.73">73</a>
+                    </div>
+        <div>
+            <h3 id="method_invalidate"><code class="language-php">invalidate()</code></h3>
+            <code class="language-php">public bool&nbsp;invalidate(int $lifetime = null)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Invalidates the current session.</p>                    <p>Clears all session attributes and flashes and regenerates the
+session and deletes the old session from persistence.</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">int</code></td>
+                <td><code class="language-php">$lifetime</code></td>
+                <td>Sets the cookie lifetime for the session cookie. A null value
+                     will leave the system settings unchanged, 0 sets the cookie
+                     to expire with browser session. Time is in seconds, and is
+                     not a Unix timestamp.</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td>True if session invalidated, false if error</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.87">87</a>
+                    </div>
+        <div>
+            <h3 id="method_migrate"><code class="language-php">migrate()</code></h3>
+            <code class="language-php">public bool&nbsp;migrate(bool $destroy = false, int $lifetime = null)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Migrates the current session to a new session id while maintaining all
+session attributes.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">bool</code></td>
+                <td><code class="language-php">$destroy</code></td>
+                <td>Whether to delete the old session or leave it to garbage collection</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">int</code></td>
+                <td><code class="language-php">$lifetime</code></td>
+                <td>Sets the cookie lifetime for the session cookie. A null value
+                      will leave the system settings unchanged, 0 sets the cookie
+                      to expire with browser session. Time is in seconds, and is
+                      not a Unix timestamp.</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td>True if session migrated, false if error</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.96">96</a>
+                    </div>
+        <div>
+            <h3 id="method_save"><code class="language-php">save()</code></h3>
+            <code class="language-php">public save()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Force the session to be saved and closed.</p>                    <p>This method is generally not required for real sessions as
+the session will be automatically saved at the end of
+code execution.</p>            </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.105">105</a>
+                    </div>
+        <div>
+            <h3 id="method_has"><code class="language-php">has()</code></h3>
+            <code class="language-php">public bool&nbsp;has(string $name)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Checks if an attribute is defined.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$name</code></td>
+                <td>The attribute name</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td>true if the attribute is defined, false otherwise</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.115">115</a>
+                    </div>
+        <div>
+            <h3 id="method_get"><code class="language-php">get()</code></h3>
+            <code class="language-php">public mixed&nbsp;get(string $name, mixed $default = null)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns an attribute.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$name</code></td>
+                <td>The attribute name</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">mixed</code></td>
+                <td><code class="language-php">$default</code></td>
+                <td>The default value if not found</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">mixed</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.123">123</a>
+                    </div>
+        <div>
+            <h3 id="method_set"><code class="language-php">set()</code></h3>
+            <code class="language-php">public set(string $name, mixed $value)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets an attribute.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$name</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">mixed</code></td>
+                <td><code class="language-php">$value</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.130">130</a>
+                    </div>
+        <div>
+            <h3 id="method_all"><code class="language-php">all()</code></h3>
+            <code class="language-php">public array&nbsp;all()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns attributes.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">array</code></td>
+            <td>Attributes</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.137">137</a>
+                    </div>
+        <div>
+            <h3 id="method_replace"><code class="language-php">replace()</code></h3>
+            <code class="language-php">public replace(array $attributes)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets attributes.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$attributes</code></td>
+                <td>Attributes</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.146">146</a>
+                    </div>
+        <div>
+            <h3 id="method_remove"><code class="language-php">remove()</code></h3>
+            <code class="language-php">public mixed&nbsp;remove(string $name)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Removes an attribute.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$name</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">mixed</code></td>
+            <td>The removed value or null when it does not exist</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.151">151</a>
+                    </div>
+        <div>
+            <h3 id="method_clear"><code class="language-php">clear()</code></h3>
+            <code class="language-php">public clear()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Clears all attributes.</p>                                </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.158">158</a>
+                    </div>
+        <div>
+            <h3 id="method_isStarted"><code class="language-php">isStarted()</code></h3>
+            <code class="language-php">public bool&nbsp;isStarted()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Checks if the session was started.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.163">163</a>
+                    </div>
+        <div>
+            <h3 id="method_registerBag"><code class="language-php">registerBag()</code></h3>
+            <code class="language-php">public registerBag(<a href="../../../../Symfony/Component/HttpFoundation/Session/SessionBagInterface.html"><abbr title="Symfony\Component\HttpFoundation\Session\SessionBagInterface">SessionBagInterface</abbr></a> $bag)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Registers a SessionBagInterface with the session.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php"><a href="../../../../Symfony/Component/HttpFoundation/Session/SessionBagInterface.html"><abbr title="Symfony\Component\HttpFoundation\Session\SessionBagInterface">SessionBagInterface</abbr></a></code></td>
+                <td><code class="language-php">$bag</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.172">172</a>
+                    </div>
+        <div>
+            <h3 id="method_getBag"><code class="language-php">getBag()</code></h3>
+            <code class="language-php">public <a href="../../../../Symfony/Component/HttpFoundation/Session/SessionBagInterface.html"><abbr title="Symfony\Component\HttpFoundation\Session\SessionBagInterface">SessionBagInterface</abbr></a>&nbsp;getBag(string $name)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets a bag instance by name.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$name</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><a href="../../../../Symfony/Component/HttpFoundation/Session/SessionBagInterface.html"><abbr title="Symfony\Component\HttpFoundation\Session\SessionBagInterface">SessionBagInterface</abbr></a></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.179">179</a>
+                    </div>
+        <div>
+            <h3 id="method_getMetadataBag"><code class="language-php">getMetadataBag()</code></h3>
+            <code class="language-php">public <a href="../../../../Symfony/Component/HttpFoundation/Session/Storage/MetadataBag.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">MetadataBag</abbr></a>&nbsp;getMetadataBag()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets session meta.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><a href="../../../../Symfony/Component/HttpFoundation/Session/Storage/MetadataBag.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">MetadataBag</abbr></a></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Session;
+
+use Symfony\Component\HttpFoundation\Session\Storage\MetadataBag;
+
+/**
+ * Interface for the session.
+ *
+ * @author Drak &lt;drak@zikula.org&gt;
+ */
+interface SessionInterface
+{
+    /**
+     * Starts the session storage.
+     *
+     * @return bool True if session started
+     *
+     * @throws \RuntimeException if session fails to start
+     */
+    public function start();
+
+    /**
+     * Returns the session ID.
+     *
+     * @return string The session ID
+     */
+    public function getId();
+
+    /**
+     * Sets the session ID.
+     *
+     * @param string $id
+     */
+    public function setId($id);
+
+    /**
+     * Returns the session name.
+     *
+     * @return mixed The session name
+     */
+    public function getName();
+
+    /**
+     * Sets the session name.
+     *
+     * @param string $name
+     */
+    public function setName($name);
+
+    /**
+     * Invalidates the current session.
+     *
+     * Clears all session attributes and flashes and regenerates the
+     * session and deletes the old session from persistence.
+     *
+     * @param int $lifetime Sets the cookie lifetime for the session cookie. A null value
+     *                      will leave the system settings unchanged, 0 sets the cookie
+     *                      to expire with browser session. Time is in seconds, and is
+     *                      not a Unix timestamp.
+     *
+     * @return bool True if session invalidated, false if error
+     */
+    public function invalidate($lifetime = null);
+
+    /**
+     * Migrates the current session to a new session id while maintaining all
+     * session attributes.
+     *
+     * @param bool $destroy  Whether to delete the old session or leave it to garbage collection
+     * @param int  $lifetime Sets the cookie lifetime for the session cookie. A null value
+     *                       will leave the system settings unchanged, 0 sets the cookie
+     *                       to expire with browser session. Time is in seconds, and is
+     *                       not a Unix timestamp.
+     *
+     * @return bool True if session migrated, false if error
+     */
+    public function migrate($destroy = false, $lifetime = null);
+
+    /**
+     * Force the session to be saved and closed.
+     *
+     * This method is generally not required for real sessions as
+     * the session will be automatically saved at the end of
+     * code execution.
+     */
+    public function save();
+
+    /**
+     * Checks if an attribute is defined.
+     *
+     * @param string $name The attribute name
+     *
+     * @return bool true if the attribute is defined, false otherwise
+     */
+    public function has($name);
+
+    /**
+     * Returns an attribute.
+     *
+     * @param string $name    The attribute name
+     * @param mixed  $default The default value if not found
+     *
+     * @return mixed
+     */
+    public function get($name, $default = null);
+
+    /**
+     * Sets an attribute.
+     *
+     * @param string $name
+     * @param mixed  $value
+     */
+    public function set($name, $value);
+
+    /**
+     * Returns attributes.
+     *
+     * @return array Attributes
+     */
+    public function all();
+
+    /**
+     * Sets attributes.
+     *
+     * @param array $attributes Attributes
+     */
+    public function replace(array $attributes);
+
+    /**
+     * Removes an attribute.
+     *
+     * @param string $name
+     *
+     * @return mixed The removed value or null when it does not exist
+     */
+    public function remove($name);
+
+    /**
+     * Clears all attributes.
+     */
+    public function clear();
+
+    /**
+     * Checks if the session was started.
+     *
+     * @return bool
+     */
+    public function isStarted();
+
+    /**
+     * Registers a SessionBagInterface with the session.
+     */
+    public function registerBag(SessionBagInterface $bag);
+
+    /**
+     * Gets a bag instance by name.
+     *
+     * @param string $name
+     *
+     * @return SessionBagInterface
+     */
+    public function getBag($name);
+
+    /**
+     * Gets session meta.
+     *
+     * @return MetadataBag
+     */
+    public function getMetadataBag();
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

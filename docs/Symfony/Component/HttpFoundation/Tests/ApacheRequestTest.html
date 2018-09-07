@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Tests\ApacheRequestTest | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Tests_ApacheRequestTest" data-root-path="../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../Symfony/Component/HttpFoundation/Tests.html">Tests</a></li>
+  
+            <li>ApacheRequestTest</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>ApacheRequestTest</h1>
+
+    <p>    class
+    <strong>ApacheRequestTest</strong>        extends <abbr title="PHPUnit\Framework\TestCase">TestCase</abbr>
+</p>
+
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testUriMethods">testUriMethods</a>($server, $expectedRequestUri, $expectedBaseUrl, $expectedPathInfo)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_provideServerVars">provideServerVars</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.22">22</a>
+                    </div>
+        <div>
+            <h3 id="method_testUriMethods"><code class="language-php">testUriMethods()</code></h3>
+            <code class="language-php">public testUriMethods($server, $expectedRequestUri, $expectedBaseUrl, $expectedPathInfo)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$server</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$expectedRequestUri</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$expectedBaseUrl</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$expectedPathInfo</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.32">32</a>
+                    </div>
+        <div>
+            <h3 id="method_provideServerVars"><code class="language-php">provideServerVars()</code></h3>
+            <code class="language-php">public provideServerVars()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Tests;
+
+use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\ApacheRequest;
+
+class ApacheRequestTest extends TestCase
+{
+    /**
+     * @dataProvider provideServerVars
+     */
+    public function testUriMethods($server, $expectedRequestUri, $expectedBaseUrl, $expectedPathInfo)
+    {
+        $request = new ApacheRequest();
+        $request-&gt;server-&gt;replace($server);
+
+        $this-&gt;assertEquals($expectedRequestUri, $request-&gt;getRequestUri(), &#039;-&gt;getRequestUri() is correct&#039;);
+        $this-&gt;assertEquals($expectedBaseUrl, $request-&gt;getBaseUrl(), &#039;-&gt;getBaseUrl() is correct&#039;);
+        $this-&gt;assertEquals($expectedPathInfo, $request-&gt;getPathInfo(), &#039;-&gt;getPathInfo() is correct&#039;);
+    }
+
+    public function provideServerVars()
+    {
+        return array(
+            array(
+                array(
+                    &#039;REQUEST_URI&#039; =&gt; &#039;/foo/app_dev.php/bar&#039;,
+                    &#039;SCRIPT_NAME&#039; =&gt; &#039;/foo/app_dev.php&#039;,
+                    &#039;PATH_INFO&#039; =&gt; &#039;/bar&#039;,
+                ),
+                &#039;/foo/app_dev.php/bar&#039;,
+                &#039;/foo/app_dev.php&#039;,
+                &#039;/bar&#039;,
+            ),
+            array(
+                array(
+                    &#039;REQUEST_URI&#039; =&gt; &#039;/foo/bar&#039;,
+                    &#039;SCRIPT_NAME&#039; =&gt; &#039;/foo/app_dev.php&#039;,
+                ),
+                &#039;/foo/bar&#039;,
+                &#039;/foo&#039;,
+                &#039;/bar&#039;,
+            ),
+            array(
+                array(
+                    &#039;REQUEST_URI&#039; =&gt; &#039;/app_dev.php/foo/bar&#039;,
+                    &#039;SCRIPT_NAME&#039; =&gt; &#039;/app_dev.php&#039;,
+                    &#039;PATH_INFO&#039; =&gt; &#039;/foo/bar&#039;,
+                ),
+                &#039;/app_dev.php/foo/bar&#039;,
+                &#039;/app_dev.php&#039;,
+                &#039;/foo/bar&#039;,
+            ),
+            array(
+                array(
+                    &#039;REQUEST_URI&#039; =&gt; &#039;/foo/bar&#039;,
+                    &#039;SCRIPT_NAME&#039; =&gt; &#039;/app_dev.php&#039;,
+                ),
+                &#039;/foo/bar&#039;,
+                &#039;&#039;,
+                &#039;/foo/bar&#039;,
+            ),
+            array(
+                array(
+                    &#039;REQUEST_URI&#039; =&gt; &#039;/app_dev.php&#039;,
+                    &#039;SCRIPT_NAME&#039; =&gt; &#039;/app_dev.php&#039;,
+                ),
+                &#039;/app_dev.php&#039;,
+                &#039;/app_dev.php&#039;,
+                &#039;/&#039;,
+            ),
+            array(
+                array(
+                    &#039;REQUEST_URI&#039; =&gt; &#039;/&#039;,
+                    &#039;SCRIPT_NAME&#039; =&gt; &#039;/app_dev.php&#039;,
+                ),
+                &#039;/&#039;,
+                &#039;&#039;,
+                &#039;/&#039;,
+            ),
+        );
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

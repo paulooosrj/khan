@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Tests\Session\Storage\Proxy\SessionHandlerProxyTest | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Tests_Session_Storage_Proxy_SessionHandlerProxyTest" data-root-path="../../../../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../../../../Symfony/Component/HttpFoundation/Tests.html">Tests</a></li>
+                    <li><a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session.html">Session</a></li>
+                    <li><a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage.html">Storage</a></li>
+                    <li><a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Proxy.html">Proxy</a></li>
+  
+            <li>SessionHandlerProxyTest</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>SessionHandlerProxyTest</h1>
+
+    <p>    class
+    <strong>SessionHandlerProxyTest</strong>        extends <abbr title="PHPUnit\Framework\TestCase">TestCase</abbr>
+</p>
+
+            <p>Tests for SessionHandlerProxy class.</p>            
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setUp">setUp</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_tearDown">tearDown</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testOpenTrue">testOpenTrue</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testOpenFalse">testOpenFalse</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testClose">testClose</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testCloseFalse">testCloseFalse</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testRead">testRead</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testWrite">testWrite</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testDestroy">testDestroy</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGc">testGc</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.37">37</a>
+                    </div>
+        <div>
+            <h3 id="method_setUp"><code class="language-php">setUp()</code></h3>
+            <code class="language-php">protected setUp()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.43">43</a>
+                    </div>
+        <div>
+            <h3 id="method_tearDown"><code class="language-php">tearDown()</code></h3>
+            <code class="language-php">protected tearDown()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.49">49</a>
+                    </div>
+        <div>
+            <h3 id="method_testOpenTrue"><code class="language-php">testOpenTrue()</code></h3>
+            <code class="language-php">public testOpenTrue()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.60">60</a>
+                    </div>
+        <div>
+            <h3 id="method_testOpenFalse"><code class="language-php">testOpenFalse()</code></h3>
+            <code class="language-php">public testOpenFalse()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.71">71</a>
+                    </div>
+        <div>
+            <h3 id="method_testClose"><code class="language-php">testClose()</code></h3>
+            <code class="language-php">public testClose()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.82">82</a>
+                    </div>
+        <div>
+            <h3 id="method_testCloseFalse"><code class="language-php">testCloseFalse()</code></h3>
+            <code class="language-php">public testCloseFalse()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.93">93</a>
+                    </div>
+        <div>
+            <h3 id="method_testRead"><code class="language-php">testRead()</code></h3>
+            <code class="language-php">public testRead()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.101">101</a>
+                    </div>
+        <div>
+            <h3 id="method_testWrite"><code class="language-php">testWrite()</code></h3>
+            <code class="language-php">public testWrite()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.109">109</a>
+                    </div>
+        <div>
+            <h3 id="method_testDestroy"><code class="language-php">testDestroy()</code></h3>
+            <code class="language-php">public testDestroy()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.117">117</a>
+                    </div>
+        <div>
+            <h3 id="method_testGc"><code class="language-php">testGc()</code></h3>
+            <code class="language-php">public testGc()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Tests\Session\Storage\Proxy;
+
+use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\Session\Storage\Proxy\SessionHandlerProxy;
+
+/**
+ * Tests for SessionHandlerProxy class.
+ *
+ * @author Drak &lt;drak@zikula.org&gt;
+ *
+ * @runTestsInSeparateProcesses
+ * @preserveGlobalState disabled
+ */
+class SessionHandlerProxyTest extends TestCase
+{
+    /**
+     * @var \PHPUnit_Framework_MockObject_Matcher
+     */
+    private $mock;
+
+    /**
+     * @var SessionHandlerProxy
+     */
+    private $proxy;
+
+    protected function setUp()
+    {
+        $this-&gt;mock = $this-&gt;getMockBuilder(&#039;SessionHandlerInterface&#039;)-&gt;getMock();
+        $this-&gt;proxy = new SessionHandlerProxy($this-&gt;mock);
+    }
+
+    protected function tearDown()
+    {
+        $this-&gt;mock = null;
+        $this-&gt;proxy = null;
+    }
+
+    public function testOpenTrue()
+    {
+        $this-&gt;mock-&gt;expects($this-&gt;once())
+            -&gt;method(&#039;open&#039;)
+            -&gt;will($this-&gt;returnValue(true));
+
+        $this-&gt;assertFalse($this-&gt;proxy-&gt;isActive());
+        $this-&gt;proxy-&gt;open(&#039;name&#039;, &#039;id&#039;);
+        $this-&gt;assertFalse($this-&gt;proxy-&gt;isActive());
+    }
+
+    public function testOpenFalse()
+    {
+        $this-&gt;mock-&gt;expects($this-&gt;once())
+            -&gt;method(&#039;open&#039;)
+            -&gt;will($this-&gt;returnValue(false));
+
+        $this-&gt;assertFalse($this-&gt;proxy-&gt;isActive());
+        $this-&gt;proxy-&gt;open(&#039;name&#039;, &#039;id&#039;);
+        $this-&gt;assertFalse($this-&gt;proxy-&gt;isActive());
+    }
+
+    public function testClose()
+    {
+        $this-&gt;mock-&gt;expects($this-&gt;once())
+            -&gt;method(&#039;close&#039;)
+            -&gt;will($this-&gt;returnValue(true));
+
+        $this-&gt;assertFalse($this-&gt;proxy-&gt;isActive());
+        $this-&gt;proxy-&gt;close();
+        $this-&gt;assertFalse($this-&gt;proxy-&gt;isActive());
+    }
+
+    public function testCloseFalse()
+    {
+        $this-&gt;mock-&gt;expects($this-&gt;once())
+            -&gt;method(&#039;close&#039;)
+            -&gt;will($this-&gt;returnValue(false));
+
+        $this-&gt;assertFalse($this-&gt;proxy-&gt;isActive());
+        $this-&gt;proxy-&gt;close();
+        $this-&gt;assertFalse($this-&gt;proxy-&gt;isActive());
+    }
+
+    public function testRead()
+    {
+        $this-&gt;mock-&gt;expects($this-&gt;once())
+            -&gt;method(&#039;read&#039;);
+
+        $this-&gt;proxy-&gt;read(&#039;id&#039;);
+    }
+
+    public function testWrite()
+    {
+        $this-&gt;mock-&gt;expects($this-&gt;once())
+            -&gt;method(&#039;write&#039;);
+
+        $this-&gt;proxy-&gt;write(&#039;id&#039;, &#039;data&#039;);
+    }
+
+    public function testDestroy()
+    {
+        $this-&gt;mock-&gt;expects($this-&gt;once())
+            -&gt;method(&#039;destroy&#039;);
+
+        $this-&gt;proxy-&gt;destroy(&#039;id&#039;);
+    }
+
+    public function testGc()
+    {
+        $this-&gt;mock-&gt;expects($this-&gt;once())
+            -&gt;method(&#039;gc&#039;);
+
+        $this-&gt;proxy-&gt;gc(86400);
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

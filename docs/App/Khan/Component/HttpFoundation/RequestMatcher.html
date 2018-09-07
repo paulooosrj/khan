@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>App\Khan\Component\HttpFoundation\RequestMatcher | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:App_Khan_Component_HttpFoundation_RequestMatcher" data-root-path="../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../App.html">App</a></li>
+                    <li><a href="../../../../App/Khan.html">Khan</a></li>
+                    <li><a href="../../../../App/Khan/Component.html">Component</a></li>
+                    <li><a href="../../../../App/Khan/Component/HttpFoundation.html">HttpFoundation</a></li>
+  
+            <li>RequestMatcher</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>RequestMatcher</h1>
+
+    <p>    class
+    <strong>RequestMatcher</strong>        implements
+        <a href="../../../../App/Khan/Component/HttpFoundation/RequestMatcherInterface.html"><abbr title="App\Khan\Component\HttpFoundation\RequestMatcherInterface">RequestMatcherInterface</abbr></a>
+</p>
+
+            <p>RequestMatcher compares a pre-defined set of checks against a Request instance.</p>            
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method___construct">__construct</a>(string $path = null, string $host = null, string|string[]|null $methods = null, string|string[]|null $ips = null, array $attributes = array(), string|string[]|null $schemes = null)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_matchScheme">matchScheme</a>(string|string[]|null $scheme)</code>
+            </td>
+            <td>
+                                    Adds a check for the HTTP scheme.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_matchHost">matchHost</a>(string|null $regexp)</code>
+            </td>
+            <td>
+                                    Adds a check for the URL host name.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_matchPath">matchPath</a>(string|null $regexp)</code>
+            </td>
+            <td>
+                                    Adds a check for the URL path info.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_matchIp">matchIp</a>(string $ip)</code>
+            </td>
+            <td>
+                                    Adds a check for the client IP.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_matchIps">matchIps</a>(string|string[]|null $ips)</code>
+            </td>
+            <td>
+                                    Adds a check for the client IP.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_matchMethod">matchMethod</a>(string|string[]|null $method)</code>
+            </td>
+            <td>
+                                    Adds a check for the HTTP method.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_matchAttribute">matchAttribute</a>(string $key, string $regexp)</code>
+            </td>
+            <td>
+                                    Adds a check for request attribute.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_matches">matches</a>(<a href="../../../../App/Khan/Component/HttpFoundation/Request.html"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> $request)</code>
+            </td>
+            <td>
+                                    Decides whether the rule(s) implemented by the strategy matches the supplied request.            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.59">59</a>
+                    </div>
+        <div>
+            <h3 id="method___construct"><code class="language-php">__construct()</code></h3>
+            <code class="language-php">public __construct(string $path = null, string $host = null, string|string[]|null $methods = null, string|string[]|null $ips = null, array $attributes = array(), string|string[]|null $schemes = null)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$path</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$host</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string|string[]|null</code></td>
+                <td><code class="language-php">$methods</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string|string[]|null</code></td>
+                <td><code class="language-php">$ips</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$attributes</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string|string[]|null</code></td>
+                <td><code class="language-php">$schemes</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.77">77</a>
+                    </div>
+        <div>
+            <h3 id="method_matchScheme"><code class="language-php">matchScheme()</code></h3>
+            <code class="language-php">public matchScheme(string|string[]|null $scheme)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Adds a check for the HTTP scheme.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string|string[]|null</code></td>
+                <td><code class="language-php">$scheme</code></td>
+                <td>An HTTP scheme or an array of HTTP schemes</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.87">87</a>
+                    </div>
+        <div>
+            <h3 id="method_matchHost"><code class="language-php">matchHost()</code></h3>
+            <code class="language-php">public matchHost(string|null $regexp)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Adds a check for the URL host name.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string|null</code></td>
+                <td><code class="language-php">$regexp</code></td>
+                <td>A Regexp</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.97">97</a>
+                    </div>
+        <div>
+            <h3 id="method_matchPath"><code class="language-php">matchPath()</code></h3>
+            <code class="language-php">public matchPath(string|null $regexp)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Adds a check for the URL path info.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string|null</code></td>
+                <td><code class="language-php">$regexp</code></td>
+                <td>A Regexp</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.107">107</a>
+                    </div>
+        <div>
+            <h3 id="method_matchIp"><code class="language-php">matchIp()</code></h3>
+            <code class="language-php">public matchIp(string $ip)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Adds a check for the client IP.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$ip</code></td>
+                <td>A specific IP address or a range specified using IP/netmask like 192.168.1.0/24</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.117">117</a>
+                    </div>
+        <div>
+            <h3 id="method_matchIps"><code class="language-php">matchIps()</code></h3>
+            <code class="language-php">public matchIps(string|string[]|null $ips)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Adds a check for the client IP.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string|string[]|null</code></td>
+                <td><code class="language-php">$ips</code></td>
+                <td>A specific IP address or a range specified using IP/netmask like 192.168.1.0/24</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.127">127</a>
+                    </div>
+        <div>
+            <h3 id="method_matchMethod"><code class="language-php">matchMethod()</code></h3>
+            <code class="language-php">public matchMethod(string|string[]|null $method)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Adds a check for the HTTP method.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string|string[]|null</code></td>
+                <td><code class="language-php">$method</code></td>
+                <td>An HTTP method or an array of HTTP methods</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.138">138</a>
+                    </div>
+        <div>
+            <h3 id="method_matchAttribute"><code class="language-php">matchAttribute()</code></h3>
+            <code class="language-php">public matchAttribute(string $key, string $regexp)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Adds a check for request attribute.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>The request attribute name</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$regexp</code></td>
+                <td>A Regexp</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.146">146</a>
+                    </div>
+        <div>
+            <h3 id="method_matches"><code class="language-php">matches()</code></h3>
+            <code class="language-php">public bool&nbsp;matches(<a href="../../../../App/Khan/Component/HttpFoundation/Request.html"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a> $request)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Decides whether the rule(s) implemented by the strategy matches the supplied request.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php"><a href="../../../../App/Khan/Component/HttpFoundation/Request.html"><abbr title="App\Khan\Component\HttpFoundation\Request">Request</abbr></a></code></td>
+                <td><code class="language-php">$request</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td>true if the request matches, false otherwise</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace App\Khan\Component\HttpFoundation;
+
+/**
+ * RequestMatcher compares a pre-defined set of checks against a Request instance.
+ *
+ * @author Fabien Potencier &lt;fabien@symfony.com&gt;
+ */
+class RequestMatcher implements RequestMatcherInterface
+{
+    /**
+     * @var string|null
+     */
+    private $path;
+
+    /**
+     * @var string|null
+     */
+    private $host;
+
+    /**
+     * @var string[]
+     */
+    private $methods = array();
+
+    /**
+     * @var string[]
+     */
+    private $ips = array();
+
+    /**
+     * @var array
+     */
+    private $attributes = array();
+
+    /**
+     * @var string[]
+     */
+    private $schemes = array();
+
+    /**
+     * @param string|null          $path
+     * @param string|null          $host
+     * @param string|string[]|null $methods
+     * @param string|string[]|null $ips
+     * @param array                $attributes
+     * @param string|string[]|null $schemes
+     */
+    public function __construct(string $path = null, string $host = null, $methods = null, $ips = null, array $attributes = array(), $schemes = null)
+    {
+        $this-&gt;matchPath($path);
+        $this-&gt;matchHost($host);
+        $this-&gt;matchMethod($methods);
+        $this-&gt;matchIps($ips);
+        $this-&gt;matchScheme($schemes);
+
+        foreach ($attributes as $k =&gt; $v) {
+            $this-&gt;matchAttribute($k, $v);
+        }
+    }
+
+    /**
+     * Adds a check for the HTTP scheme.
+     *
+     * @param string|string[]|null $scheme An HTTP scheme or an array of HTTP schemes
+     */
+    public function matchScheme($scheme)
+    {
+        $this-&gt;schemes = null !== $scheme ? array_map(&#039;strtolower&#039;, (array) $scheme) : array();
+    }
+
+    /**
+     * Adds a check for the URL host name.
+     *
+     * @param string|null $regexp A Regexp
+     */
+    public function matchHost($regexp)
+    {
+        $this-&gt;host = $regexp;
+    }
+
+    /**
+     * Adds a check for the URL path info.
+     *
+     * @param string|null $regexp A Regexp
+     */
+    public function matchPath($regexp)
+    {
+        $this-&gt;path = $regexp;
+    }
+
+    /**
+     * Adds a check for the client IP.
+     *
+     * @param string $ip A specific IP address or a range specified using IP/netmask like 192.168.1.0/24
+     */
+    public function matchIp($ip)
+    {
+        $this-&gt;matchIps($ip);
+    }
+
+    /**
+     * Adds a check for the client IP.
+     *
+     * @param string|string[]|null $ips A specific IP address or a range specified using IP/netmask like 192.168.1.0/24
+     */
+    public function matchIps($ips)
+    {
+        $this-&gt;ips = null !== $ips ? (array) $ips : array();
+    }
+
+    /**
+     * Adds a check for the HTTP method.
+     *
+     * @param string|string[]|null $method An HTTP method or an array of HTTP methods
+     */
+    public function matchMethod($method)
+    {
+        $this-&gt;methods = null !== $method ? array_map(&#039;strtoupper&#039;, (array) $method) : array();
+    }
+
+    /**
+     * Adds a check for request attribute.
+     *
+     * @param string $key    The request attribute name
+     * @param string $regexp A Regexp
+     */
+    public function matchAttribute($key, $regexp)
+    {
+        $this-&gt;attributes[$key] = $regexp;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function matches(Request $request)
+    {
+        if ($this-&gt;schemes &amp;&amp; !in_array($request-&gt;getScheme(), $this-&gt;schemes, true)) {
+            return false;
+        }
+
+        if ($this-&gt;methods &amp;&amp; !in_array($request-&gt;getMethod(), $this-&gt;methods, true)) {
+            return false;
+        }
+
+        foreach ($this-&gt;attributes as $key =&gt; $pattern) {
+            if (!preg_match(&#039;{&#039;.$pattern.&#039;}&#039;, $request-&gt;attributes-&gt;get($key))) {
+                return false;
+            }
+        }
+
+        if (null !== $this-&gt;path &amp;&amp; !preg_match(&#039;{&#039;.$this-&gt;path.&#039;}&#039;, rawurldecode($request-&gt;getPathInfo()))) {
+            return false;
+        }
+
+        if (null !== $this-&gt;host &amp;&amp; !preg_match(&#039;{&#039;.$this-&gt;host.&#039;}i&#039;, $request-&gt;getHost())) {
+            return false;
+        }
+
+        if (IpUtils::checkIp($request-&gt;getClientIp(), $this-&gt;ips)) {
+            return true;
+        }
+
+        // Note to future implementors: add additional checks above the
+        // foreach above or else your check might not be run!
+        return 0 === count($this-&gt;ips);
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

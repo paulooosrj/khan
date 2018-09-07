@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Session_Storage_Handler_NativeFileSessionHandler" data-root-path="../../../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation/Session.html">Session</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage.html">Storage</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler.html">Handler</a></li>
+  
+            <li>NativeFileSessionHandler</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>NativeFileSessionHandler</h1>
+
+    <p>    class
+    <strong>NativeFileSessionHandler</strong>        extends <a target="_blank" href="http://php.net/SessionHandler"><abbr title="SessionHandler">SessionHandler</abbr></a>
+</p>
+
+            <p>Native session handler using PHP's built in file storage.</p>            
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method___construct">__construct</a>(string $savePath = null)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.31">31</a>
+                    </div>
+        <div>
+            <h3 id="method___construct"><code class="language-php">__construct()</code></h3>
+            <code class="language-php">public __construct(string $savePath = null)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$savePath</code></td>
+                <td>Path of directory to save session files
+                        Default null will leave setting as defined by PHP.
+                        '/path', 'N;/path', or 'N;octal-mode;/path</td>
+            </tr>
+            </table>
+
+        
+        
+                    <h4>Exceptions</h4>
+
+                <table class="table">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException"><abbr title="InvalidArgumentException">InvalidArgumentException</abbr></a></td>
+                <td>On invalid $savePath</td>
+            </tr>
+                    <tr>
+                <td><a target="_blank" href="http://php.net/RuntimeException"><abbr title="RuntimeException">RuntimeException</abbr></a></td>
+                <td>When failing to create the save directory</td>
+            </tr>
+            </table>
+
+        
+                    <h4>See also</h4>
+
+                <table class="table">
+                    <tr>
+                <td>http://php.net/session.configuration.php#ini.session.save-path</td>
+                <td>for further details.</td>
+            </tr>
+            </table>
+
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Session\Storage\Handler;
+
+/**
+ * Native session handler using PHP&#039;s built in file storage.
+ *
+ * @author Drak &lt;drak@zikula.org&gt;
+ */
+class NativeFileSessionHandler extends \SessionHandler
+{
+    /**
+     * @param string $savePath Path of directory to save session files
+     *                         Default null will leave setting as defined by PHP.
+     *                         &#039;/path&#039;, &#039;N;/path&#039;, or &#039;N;octal-mode;/path
+     *
+     * @see http://php.net/session.configuration.php#ini.session.save-path for further details.
+     *
+     * @throws \InvalidArgumentException On invalid $savePath
+     * @throws \RuntimeException         When failing to create the save directory
+     */
+    public function __construct(string $savePath = null)
+    {
+        if (null === $savePath) {
+            $savePath = ini_get(&#039;session.save_path&#039;);
+        }
+
+        $baseDir = $savePath;
+
+        if ($count = substr_count($savePath, &#039;;&#039;)) {
+            if ($count &gt; 2) {
+                throw new \InvalidArgumentException(sprintf(&#039;Invalid argument $savePath \&#039;%s\&#039;&#039;, $savePath));
+            }
+
+            // characters after last &#039;;&#039; are the path
+            $baseDir = ltrim(strrchr($savePath, &#039;;&#039;), &#039;;&#039;);
+        }
+
+        if ($baseDir &amp;&amp; !is_dir($baseDir) &amp;&amp; !@mkdir($baseDir, 0777, true) &amp;&amp; !is_dir($baseDir)) {
+            throw new \RuntimeException(sprintf(&#039;Session Storage was not able to create directory &quot;%s&quot;&#039;, $baseDir));
+        }
+
+        ini_set(&#039;session.save_path&#039;, $savePath);
+        ini_set(&#039;session.save_handler&#039;, &#039;files&#039;);
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

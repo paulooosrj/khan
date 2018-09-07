@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Session_Flash_FlashBagInterface" data-root-path="../../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../../Symfony/Component/HttpFoundation/Session.html">Session</a></li>
+                    <li><a href="../../../../../Symfony/Component/HttpFoundation/Session/Flash.html">Flash</a></li>
+  
+            <li>FlashBagInterface</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>FlashBagInterface</h1>
+
+    <p>    interface
+    <strong>FlashBagInterface</strong>        implements
+        <a href="../../../../../Symfony/Component/HttpFoundation/Session/SessionBagInterface.html"><abbr title="Symfony\Component\HttpFoundation\Session\SessionBagInterface">SessionBagInterface</abbr></a>
+</p>
+
+            <p>FlashBagInterface.</p>            
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getName">getName</a>()</code>
+            </td>
+            <td>
+                                    Gets this bag's name.            </td>
+            <td><small>from&nbsp;<a href="../../../../../Symfony/Component/HttpFoundation/Session/SessionBagInterface.html#method_getName"><abbr title="Symfony\Component\HttpFoundation\Session\SessionBagInterface">SessionBagInterface</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_initialize">initialize</a>(array $array)</code>
+            </td>
+            <td>
+                                    Initializes the Bag.            </td>
+            <td><small>from&nbsp;<a href="../../../../../Symfony/Component/HttpFoundation/Session/SessionBagInterface.html#method_initialize"><abbr title="Symfony\Component\HttpFoundation\Session\SessionBagInterface">SessionBagInterface</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getStorageKey">getStorageKey</a>()</code>
+            </td>
+            <td>
+                                    Gets the storage key for this bag.            </td>
+            <td><small>from&nbsp;<a href="../../../../../Symfony/Component/HttpFoundation/Session/SessionBagInterface.html#method_getStorageKey"><abbr title="Symfony\Component\HttpFoundation\Session\SessionBagInterface">SessionBagInterface</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">mixed</code></td>
+            <td>
+                <code class="language-php"><a href="#method_clear">clear</a>()</code>
+            </td>
+            <td>
+                                    Clears out data from bag.            </td>
+            <td><small>from&nbsp;<a href="../../../../../Symfony/Component/HttpFoundation/Session/SessionBagInterface.html#method_clear"><abbr title="Symfony\Component\HttpFoundation\Session\SessionBagInterface">SessionBagInterface</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_add">add</a>(string $type, string $message)</code>
+            </td>
+            <td>
+                                    Adds a flash message for type.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_set">set</a>(string $type, string|array $message)</code>
+            </td>
+            <td>
+                                    Registers a message for a given type.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">array</code></td>
+            <td>
+                <code class="language-php"><a href="#method_peek">peek</a>(string $type, array $default = array())</code>
+            </td>
+            <td>
+                                    Gets flash messages for a given type.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">array</code></td>
+            <td>
+                <code class="language-php"><a href="#method_peekAll">peekAll</a>()</code>
+            </td>
+            <td>
+                                    Gets all flash messages.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">array</code></td>
+            <td>
+                <code class="language-php"><a href="#method_get">get</a>(string $type, array $default = array())</code>
+            </td>
+            <td>
+                                    Gets and clears flash from the stack.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">array</code></td>
+            <td>
+                <code class="language-php"><a href="#method_all">all</a>()</code>
+            </td>
+            <td>
+                                    Gets and clears flashes from the stack.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setAll">setAll</a>(array $messages)</code>
+            </td>
+            <td>
+                                    Sets all flash messages.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_has">has</a>(string $type)</code>
+            </td>
+            <td>
+                                    Has flash messages for a given type?            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">array</code></td>
+            <td>
+                <code class="language-php"><a href="#method_keys">keys</a>()</code>
+            </td>
+            <td>
+                                    Returns a list of all defined types.            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../Symfony/Component/HttpFoundation/Session/SessionBagInterface.html#method_getName"><abbr title="Symfony\Component\HttpFoundation\Session\SessionBagInterface">SessionBagInterface</abbr></a> at line 26
+                    </div>
+        <div>
+            <h3 id="method_getName"><code class="language-php">getName()</code></h3>
+            <code class="language-php">public string&nbsp;getName()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets this bag's name.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../Symfony/Component/HttpFoundation/Session/SessionBagInterface.html#method_initialize"><abbr title="Symfony\Component\HttpFoundation\Session\SessionBagInterface">SessionBagInterface</abbr></a> at line 31
+                    </div>
+        <div>
+            <h3 id="method_initialize"><code class="language-php">initialize()</code></h3>
+            <code class="language-php">public initialize(array $array)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Initializes the Bag.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$array</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../Symfony/Component/HttpFoundation/Session/SessionBagInterface.html#method_getStorageKey"><abbr title="Symfony\Component\HttpFoundation\Session\SessionBagInterface">SessionBagInterface</abbr></a> at line 38
+                    </div>
+        <div>
+            <h3 id="method_getStorageKey"><code class="language-php">getStorageKey()</code></h3>
+            <code class="language-php">public string&nbsp;getStorageKey()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets the storage key for this bag.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../Symfony/Component/HttpFoundation/Session/SessionBagInterface.html#method_clear"><abbr title="Symfony\Component\HttpFoundation\Session\SessionBagInterface">SessionBagInterface</abbr></a> at line 45
+                    </div>
+        <div>
+            <h3 id="method_clear"><code class="language-php">clear()</code></h3>
+            <code class="language-php">public mixed&nbsp;clear()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Clears out data from bag.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">mixed</code></td>
+            <td>Whatever data was contained</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.29">29</a>
+                    </div>
+        <div>
+            <h3 id="method_add"><code class="language-php">add()</code></h3>
+            <code class="language-php">public add(string $type, string $message)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Adds a flash message for type.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$type</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$message</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.37">37</a>
+                    </div>
+        <div>
+            <h3 id="method_set"><code class="language-php">set()</code></h3>
+            <code class="language-php">public set(string $type, string|array $message)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Registers a message for a given type.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$type</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string|array</code></td>
+                <td><code class="language-php">$message</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.47">47</a>
+                    </div>
+        <div>
+            <h3 id="method_peek"><code class="language-php">peek()</code></h3>
+            <code class="language-php">public array&nbsp;peek(string $type, array $default = array())</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets flash messages for a given type.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$type</code></td>
+                <td>Message category type</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$default</code></td>
+                <td>Default value if $type does not exist</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">array</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.54">54</a>
+                    </div>
+        <div>
+            <h3 id="method_peekAll"><code class="language-php">peekAll()</code></h3>
+            <code class="language-php">public array&nbsp;peekAll()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets all flash messages.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">array</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.64">64</a>
+                    </div>
+        <div>
+            <h3 id="method_get"><code class="language-php">get()</code></h3>
+            <code class="language-php">public array&nbsp;get(string $type, array $default = array())</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets and clears flash from the stack.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$type</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$default</code></td>
+                <td>Default value if $type does not exist</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">array</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.71">71</a>
+                    </div>
+        <div>
+            <h3 id="method_all"><code class="language-php">all()</code></h3>
+            <code class="language-php">public array&nbsp;all()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Gets and clears flashes from the stack.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">array</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.76">76</a>
+                    </div>
+        <div>
+            <h3 id="method_setAll"><code class="language-php">setAll()</code></h3>
+            <code class="language-php">public setAll(array $messages)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets all flash messages.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$messages</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.85">85</a>
+                    </div>
+        <div>
+            <h3 id="method_has"><code class="language-php">has()</code></h3>
+            <code class="language-php">public bool&nbsp;has(string $type)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Has flash messages for a given type?</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$type</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.92">92</a>
+                    </div>
+        <div>
+            <h3 id="method_keys"><code class="language-php">keys()</code></h3>
+            <code class="language-php">public array&nbsp;keys()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns a list of all defined types.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">array</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Session\Flash;
+
+use Symfony\Component\HttpFoundation\Session\SessionBagInterface;
+
+/**
+ * FlashBagInterface.
+ *
+ * @author Drak &lt;drak@zikula.org&gt;
+ */
+interface FlashBagInterface extends SessionBagInterface
+{
+    /**
+     * Adds a flash message for type.
+     *
+     * @param string $type
+     * @param string $message
+     */
+    public function add($type, $message);
+
+    /**
+     * Registers a message for a given type.
+     *
+     * @param string       $type
+     * @param string|array $message
+     */
+    public function set($type, $message);
+
+    /**
+     * Gets flash messages for a given type.
+     *
+     * @param string $type    Message category type
+     * @param array  $default Default value if $type does not exist
+     *
+     * @return array
+     */
+    public function peek($type, array $default = array());
+
+    /**
+     * Gets all flash messages.
+     *
+     * @return array
+     */
+    public function peekAll();
+
+    /**
+     * Gets and clears flash from the stack.
+     *
+     * @param string $type
+     * @param array  $default Default value if $type does not exist
+     *
+     * @return array
+     */
+    public function get($type, array $default = array());
+
+    /**
+     * Gets and clears flashes from the stack.
+     *
+     * @return array
+     */
+    public function all();
+
+    /**
+     * Sets all flash messages.
+     */
+    public function setAll(array $messages);
+
+    /**
+     * Has flash messages for a given type?
+     *
+     * @param string $type
+     *
+     * @return bool
+     */
+    public function has($type);
+
+    /**
+     * Returns a list of all defined types.
+     *
+     * @return array
+     */
+    public function keys();
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

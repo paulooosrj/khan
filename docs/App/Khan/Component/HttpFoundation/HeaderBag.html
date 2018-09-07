@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>App\Khan\Component\HttpFoundation\HeaderBag | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:App_Khan_Component_HttpFoundation_HeaderBag" data-root-path="../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../App.html">App</a></li>
+                    <li><a href="../../../../App/Khan.html">Khan</a></li>
+                    <li><a href="../../../../App/Khan/Component.html">Component</a></li>
+                    <li><a href="../../../../App/Khan/Component/HttpFoundation.html">HttpFoundation</a></li>
+  
+            <li>HeaderBag</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>HeaderBag</h1>
+
+    <p>    class
+    <strong>HeaderBag</strong>        implements
+        <a target="_blank" href="http://php.net/IteratorAggregate"><abbr title="IteratorAggregate">IteratorAggregate</abbr></a>, <a target="_blank" href="http://php.net/Countable"><abbr title="Countable">Countable</abbr></a>
+</p>
+
+            <p>HeaderBag is a container for HTTP headers.</p>            
+    
+    
+            <h2>Properties</h2>
+
+            <table class="table">
+                    <tr>
+                <td id="property_headers">
+                    <code class="language-php">                    protected                                        </code>
+                </td>
+                <td><code class="language-php">$headers</code></td>
+                <td></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td id="property_cacheControl">
+                    <code class="language-php">                    protected                                        </code>
+                </td>
+                <td><code class="language-php">$cacheControl</code></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method___construct">__construct</a>(array $headers = array())</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method___toString">__toString</a>()</code>
+            </td>
+            <td>
+                                    Returns the headers as a string.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">array</code></td>
+            <td>
+                <code class="language-php"><a href="#method_all">all</a>()</code>
+            </td>
+            <td>
+                                    Returns the headers.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">array</code></td>
+            <td>
+                <code class="language-php"><a href="#method_keys">keys</a>()</code>
+            </td>
+            <td>
+                                    Returns the parameter keys.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_replace">replace</a>(array $headers = array())</code>
+            </td>
+            <td>
+                                    Replaces the current HTTP headers by a new set.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_add">add</a>(array $headers)</code>
+            </td>
+            <td>
+                                    Adds new headers the current HTTP headers set.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string|string[]</code></td>
+            <td>
+                <code class="language-php"><a href="#method_get">get</a>(string $key, string|string[] $default = null, bool $first = true)</code>
+            </td>
+            <td>
+                                    Returns a header value by name.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_set">set</a>(string $key, string|string[] $values, bool $replace = true)</code>
+            </td>
+            <td>
+                                    Sets a header by name.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_has">has</a>(string $key)</code>
+            </td>
+            <td>
+                                    Returns true if the HTTP header is defined.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_contains">contains</a>(string $key, string $value)</code>
+            </td>
+            <td>
+                                    Returns true if the given HTTP header contains the given value.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_remove">remove</a>(string $key)</code>
+            </td>
+            <td>
+                                    Removes a header.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">null|<a target="_blank" href="http://php.net/DateTime"><abbr title="DateTime">DateTime</abbr></a></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getDate">getDate</a>(string $key, <a target="_blank" href="http://php.net/DateTime"><abbr title="DateTime">DateTime</abbr></a> $default = null)</code>
+            </td>
+            <td>
+                                    Returns the HTTP header value converted to a date.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_addCacheControlDirective">addCacheControlDirective</a>(string $key, mixed $value = true)</code>
+            </td>
+            <td>
+                                    Adds a custom Cache-Control directive.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_hasCacheControlDirective">hasCacheControlDirective</a>(string $key)</code>
+            </td>
+            <td>
+                                    Returns true if the Cache-Control directive is defined.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">mixed|null</code></td>
+            <td>
+                <code class="language-php"><a href="#method_getCacheControlDirective">getCacheControlDirective</a>(string $key)</code>
+            </td>
+            <td>
+                                    Returns a Cache-Control directive value by name.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_removeCacheControlDirective">removeCacheControlDirective</a>(string $key)</code>
+            </td>
+            <td>
+                                    Removes a Cache-Control directive.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><a target="_blank" href="http://php.net/ArrayIterator"><abbr title="ArrayIterator">ArrayIterator</abbr></a></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getIterator">getIterator</a>()</code>
+            </td>
+            <td>
+                                    Returns an iterator for headers.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">int</code></td>
+            <td>
+                <code class="language-php"><a href="#method_count">count</a>()</code>
+            </td>
+            <td>
+                                    Returns the number of headers.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getCacheControlHeader">getCacheControlHeader</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">array</code></td>
+            <td>
+                <code class="language-php"><a href="#method_parseCacheControl">parseCacheControl</a>(string $header)</code>
+            </td>
+            <td>
+                                    Parses a Cache-Control HTTP header.            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.27">27</a>
+                    </div>
+        <div>
+            <h3 id="method___construct"><code class="language-php">__construct()</code></h3>
+            <code class="language-php">public __construct(array $headers = array())</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$headers</code></td>
+                <td>An array of HTTP headers</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.39">39</a>
+                    </div>
+        <div>
+            <h3 id="method___toString"><code class="language-php">__toString()</code></h3>
+            <code class="language-php">public string&nbsp;__toString()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the headers as a string.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>The headers</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.63">63</a>
+                    </div>
+        <div>
+            <h3 id="method_all"><code class="language-php">all()</code></h3>
+            <code class="language-php">public array&nbsp;all()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the headers.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">array</code></td>
+            <td>An array of headers</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.73">73</a>
+                    </div>
+        <div>
+            <h3 id="method_keys"><code class="language-php">keys()</code></h3>
+            <code class="language-php">public array&nbsp;keys()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the parameter keys.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">array</code></td>
+            <td>An array of parameter keys</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.83">83</a>
+                    </div>
+        <div>
+            <h3 id="method_replace"><code class="language-php">replace()</code></h3>
+            <code class="language-php">public replace(array $headers = array())</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Replaces the current HTTP headers by a new set.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$headers</code></td>
+                <td>An array of HTTP headers</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.94">94</a>
+                    </div>
+        <div>
+            <h3 id="method_add"><code class="language-php">add()</code></h3>
+            <code class="language-php">public add(array $headers)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Adds new headers the current HTTP headers set.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$headers</code></td>
+                <td>An array of HTTP headers</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.110">110</a>
+                    </div>
+        <div>
+            <h3 id="method_get"><code class="language-php">get()</code></h3>
+            <code class="language-php">public string|string[]&nbsp;get(string $key, string|string[] $default = null, bool $first = true)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns a header value by name.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>The header name</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string|string[]</code></td>
+                <td><code class="language-php">$default</code></td>
+                <td>The default value</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">bool</code></td>
+                <td><code class="language-php">$first</code></td>
+                <td>Whether to return the first value or all header values</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string|string[]</code></td>
+            <td>The first header value or default value if $first is true, an array of values otherwise</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.137">137</a>
+                    </div>
+        <div>
+            <h3 id="method_set"><code class="language-php">set()</code></h3>
+            <code class="language-php">public set(string $key, string|string[] $values, bool $replace = true)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Sets a header by name.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>The key</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string|string[]</code></td>
+                <td><code class="language-php">$values</code></td>
+                <td>The value or an array of values</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">bool</code></td>
+                <td><code class="language-php">$replace</code></td>
+                <td>Whether to replace the actual value or not (true by default)</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.169">169</a>
+                    </div>
+        <div>
+            <h3 id="method_has"><code class="language-php">has()</code></h3>
+            <code class="language-php">public bool&nbsp;has(string $key)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns true if the HTTP header is defined.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>The HTTP header</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td>true if the parameter exists, false otherwise</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.182">182</a>
+                    </div>
+        <div>
+            <h3 id="method_contains"><code class="language-php">contains()</code></h3>
+            <code class="language-php">public bool&nbsp;contains(string $key, string $value)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns true if the given HTTP header contains the given value.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>The HTTP header name</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$value</code></td>
+                <td>The HTTP value</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td>true if the value is contained in the header, false otherwise</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.192">192</a>
+                    </div>
+        <div>
+            <h3 id="method_remove"><code class="language-php">remove()</code></h3>
+            <code class="language-php">public remove(string $key)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Removes a header.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>The HTTP header name</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.213">213</a>
+                    </div>
+        <div>
+            <h3 id="method_getDate"><code class="language-php">getDate()</code></h3>
+            <code class="language-php">public null|<a target="_blank" href="http://php.net/DateTime"><abbr title="DateTime">DateTime</abbr></a>&nbsp;getDate(string $key, <a target="_blank" href="http://php.net/DateTime"><abbr title="DateTime">DateTime</abbr></a> $default = null)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the HTTP header value converted to a date.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>The parameter key</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php"><a target="_blank" href="http://php.net/DateTime"><abbr title="DateTime">DateTime</abbr></a></code></td>
+                <td><code class="language-php">$default</code></td>
+                <td>The default value</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">null|<a target="_blank" href="http://php.net/DateTime"><abbr title="DateTime">DateTime</abbr></a></code></td>
+            <td>The parsed DateTime or the default value if the header does not exist</td>
+        </tr>
+    </table>
+
+        
+                    <h4>Exceptions</h4>
+
+                <table class="table">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/RuntimeException"><abbr title="RuntimeException">RuntimeException</abbr></a></td>
+                <td>When the HTTP header is not parseable</td>
+            </tr>
+            </table>
+
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.232">232</a>
+                    </div>
+        <div>
+            <h3 id="method_addCacheControlDirective"><code class="language-php">addCacheControlDirective()</code></h3>
+            <code class="language-php">public addCacheControlDirective(string $key, mixed $value = true)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Adds a custom Cache-Control directive.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>The Cache-Control directive name</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">mixed</code></td>
+                <td><code class="language-php">$value</code></td>
+                <td>The Cache-Control directive value</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.246">246</a>
+                    </div>
+        <div>
+            <h3 id="method_hasCacheControlDirective"><code class="language-php">hasCacheControlDirective()</code></h3>
+            <code class="language-php">public bool&nbsp;hasCacheControlDirective(string $key)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns true if the Cache-Control directive is defined.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>The Cache-Control directive</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td>true if the directive exists, false otherwise</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.258">258</a>
+                    </div>
+        <div>
+            <h3 id="method_getCacheControlDirective"><code class="language-php">getCacheControlDirective()</code></h3>
+            <code class="language-php">public mixed|null&nbsp;getCacheControlDirective(string $key)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns a Cache-Control directive value by name.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>The directive name</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">mixed|null</code></td>
+            <td>The directive value if defined, null otherwise</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.268">268</a>
+                    </div>
+        <div>
+            <h3 id="method_removeCacheControlDirective"><code class="language-php">removeCacheControlDirective()</code></h3>
+            <code class="language-php">public removeCacheControlDirective(string $key)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Removes a Cache-Control directive.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$key</code></td>
+                <td>The Cache-Control directive</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.280">280</a>
+                    </div>
+        <div>
+            <h3 id="method_getIterator"><code class="language-php">getIterator()</code></h3>
+            <code class="language-php">public <a target="_blank" href="http://php.net/ArrayIterator"><abbr title="ArrayIterator">ArrayIterator</abbr></a>&nbsp;getIterator()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns an iterator for headers.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><a target="_blank" href="http://php.net/ArrayIterator"><abbr title="ArrayIterator">ArrayIterator</abbr></a></code></td>
+            <td>An \ArrayIterator instance</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.290">290</a>
+                    </div>
+        <div>
+            <h3 id="method_count"><code class="language-php">count()</code></h3>
+            <code class="language-php">public int&nbsp;count()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns the number of headers.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">int</code></td>
+            <td>The number of headers</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.295">295</a>
+                    </div>
+        <div>
+            <h3 id="method_getCacheControlHeader"><code class="language-php">getCacheControlHeader()</code></h3>
+            <code class="language-php">protected getCacheControlHeader()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.321">321</a>
+                    </div>
+        <div>
+            <h3 id="method_parseCacheControl"><code class="language-php">parseCacheControl()</code></h3>
+            <code class="language-php">protected array&nbsp;parseCacheControl(string $header)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Parses a Cache-Control HTTP header.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$header</code></td>
+                <td>The value of the Cache-Control HTTP header</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">array</code></td>
+            <td>An array representing the attribute values</td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace App\Khan\Component\HttpFoundation;
+
+/**
+ * HeaderBag is a container for HTTP headers.
+ *
+ * @author Fabien Potencier &lt;fabien@symfony.com&gt;
+ */
+class HeaderBag implements \IteratorAggregate, \Countable
+{
+    protected $headers = array();
+    protected $cacheControl = array();
+
+    /**
+     * @param array $headers An array of HTTP headers
+     */
+    public function __construct(array $headers = array())
+    {
+        foreach ($headers as $key =&gt; $values) {
+            $this-&gt;set($key, $values);
+        }
+    }
+
+    /**
+     * Returns the headers as a string.
+     *
+     * @return string The headers
+     */
+    public function __toString()
+    {
+        if (!$headers = $this-&gt;all()) {
+            return &#039;&#039;;
+        }
+
+        ksort($headers);
+        $max = max(array_map(&#039;strlen&#039;, array_keys($headers))) + 1;
+        $content = &#039;&#039;;
+        foreach ($headers as $name =&gt; $values) {
+            $name = ucwords($name, &#039;-&#039;);
+            foreach ($values as $value) {
+                $content .= sprintf(&quot;%-{$max}s %s\r\n&quot;, $name.&#039;:&#039;, $value);
+            }
+        }
+
+        return $content;
+    }
+
+    /**
+     * Returns the headers.
+     *
+     * @return array An array of headers
+     */
+    public function all()
+    {
+        return $this-&gt;headers;
+    }
+
+    /**
+     * Returns the parameter keys.
+     *
+     * @return array An array of parameter keys
+     */
+    public function keys()
+    {
+        return array_keys($this-&gt;all());
+    }
+
+    /**
+     * Replaces the current HTTP headers by a new set.
+     *
+     * @param array $headers An array of HTTP headers
+     */
+    public function replace(array $headers = array())
+    {
+        $this-&gt;headers = array();
+        $this-&gt;add($headers);
+    }
+
+    /**
+     * Adds new headers the current HTTP headers set.
+     *
+     * @param array $headers An array of HTTP headers
+     */
+    public function add(array $headers)
+    {
+        foreach ($headers as $key =&gt; $values) {
+            $this-&gt;set($key, $values);
+        }
+    }
+
+    /**
+     * Returns a header value by name.
+     *
+     * @param string          $key     The header name
+     * @param string|string[] $default The default value
+     * @param bool            $first   Whether to return the first value or all header values
+     *
+     * @return string|string[] The first header value or default value if $first is true, an array of values otherwise
+     */
+    public function get($key, $default = null, $first = true)
+    {
+        $key = str_replace(&#039;_&#039;, &#039;-&#039;, strtolower($key));
+        $headers = $this-&gt;all();
+
+        if (!array_key_exists($key, $headers)) {
+            if (null === $default) {
+                return $first ? null : array();
+            }
+
+            return $first ? $default : array($default);
+        }
+
+        if ($first) {
+            return \count($headers[$key]) ? $headers[$key][0] : $default;
+        }
+
+        return $headers[$key];
+    }
+
+    /**
+     * Sets a header by name.
+     *
+     * @param string          $key     The key
+     * @param string|string[] $values  The value or an array of values
+     * @param bool            $replace Whether to replace the actual value or not (true by default)
+     */
+    public function set($key, $values, $replace = true)
+    {
+        $key = str_replace(&#039;_&#039;, &#039;-&#039;, strtolower($key));
+
+        if (\is_array($values)) {
+            $values = array_values($values);
+
+            if (true === $replace || !isset($this-&gt;headers[$key])) {
+                $this-&gt;headers[$key] = $values;
+            } else {
+                $this-&gt;headers[$key] = array_merge($this-&gt;headers[$key], $values);
+            }
+        } else {
+            if (true === $replace || !isset($this-&gt;headers[$key])) {
+                $this-&gt;headers[$key] = array($values);
+            } else {
+                $this-&gt;headers[$key][] = $values;
+            }
+        }
+
+        if (&#039;cache-control&#039; === $key) {
+            $this-&gt;cacheControl = $this-&gt;parseCacheControl(implode(&#039;, &#039;, $this-&gt;headers[$key]));
+        }
+    }
+
+    /**
+     * Returns true if the HTTP header is defined.
+     *
+     * @param string $key The HTTP header
+     *
+     * @return bool true if the parameter exists, false otherwise
+     */
+    public function has($key)
+    {
+        return array_key_exists(str_replace(&#039;_&#039;, &#039;-&#039;, strtolower($key)), $this-&gt;all());
+    }
+
+    /**
+     * Returns true if the given HTTP header contains the given value.
+     *
+     * @param string $key   The HTTP header name
+     * @param string $value The HTTP value
+     *
+     * @return bool true if the value is contained in the header, false otherwise
+     */
+    public function contains($key, $value)
+    {
+        return in_array($value, $this-&gt;get($key, null, false));
+    }
+
+    /**
+     * Removes a header.
+     *
+     * @param string $key The HTTP header name
+     */
+    public function remove($key)
+    {
+        $key = str_replace(&#039;_&#039;, &#039;-&#039;, strtolower($key));
+
+        unset($this-&gt;headers[$key]);
+
+        if (&#039;cache-control&#039; === $key) {
+            $this-&gt;cacheControl = array();
+        }
+    }
+
+    /**
+     * Returns the HTTP header value converted to a date.
+     *
+     * @param string    $key     The parameter key
+     * @param \DateTime $default The default value
+     *
+     * @return null|\DateTime The parsed DateTime or the default value if the header does not exist
+     *
+     * @throws \RuntimeException When the HTTP header is not parseable
+     */
+    public function getDate($key, \DateTime $default = null)
+    {
+        if (null === $value = $this-&gt;get($key)) {
+            return $default;
+        }
+
+        if (false === $date = \DateTime::createFromFormat(DATE_RFC2822, $value)) {
+            throw new \RuntimeException(sprintf(&#039;The %s HTTP header is not parseable (%s).&#039;, $key, $value));
+        }
+
+        return $date;
+    }
+
+    /**
+     * Adds a custom Cache-Control directive.
+     *
+     * @param string $key   The Cache-Control directive name
+     * @param mixed  $value The Cache-Control directive value
+     */
+    public function addCacheControlDirective($key, $value = true)
+    {
+        $this-&gt;cacheControl[$key] = $value;
+
+        $this-&gt;set(&#039;Cache-Control&#039;, $this-&gt;getCacheControlHeader());
+    }
+
+    /**
+     * Returns true if the Cache-Control directive is defined.
+     *
+     * @param string $key The Cache-Control directive
+     *
+     * @return bool true if the directive exists, false otherwise
+     */
+    public function hasCacheControlDirective($key)
+    {
+        return array_key_exists($key, $this-&gt;cacheControl);
+    }
+
+    /**
+     * Returns a Cache-Control directive value by name.
+     *
+     * @param string $key The directive name
+     *
+     * @return mixed|null The directive value if defined, null otherwise
+     */
+    public function getCacheControlDirective($key)
+    {
+        return array_key_exists($key, $this-&gt;cacheControl) ? $this-&gt;cacheControl[$key] : null;
+    }
+
+    /**
+     * Removes a Cache-Control directive.
+     *
+     * @param string $key The Cache-Control directive
+     */
+    public function removeCacheControlDirective($key)
+    {
+        unset($this-&gt;cacheControl[$key]);
+
+        $this-&gt;set(&#039;Cache-Control&#039;, $this-&gt;getCacheControlHeader());
+    }
+
+    /**
+     * Returns an iterator for headers.
+     *
+     * @return \ArrayIterator An \ArrayIterator instance
+     */
+    public function getIterator()
+    {
+        return new \ArrayIterator($this-&gt;headers);
+    }
+
+    /**
+     * Returns the number of headers.
+     *
+     * @return int The number of headers
+     */
+    public function count()
+    {
+        return count($this-&gt;headers);
+    }
+
+    protected function getCacheControlHeader()
+    {
+        $parts = array();
+        ksort($this-&gt;cacheControl);
+        foreach ($this-&gt;cacheControl as $key =&gt; $value) {
+            if (true === $value) {
+                $parts[] = $key;
+            } else {
+                if (preg_match(&#039;#[^a-zA-Z0-9._-]#&#039;, $value)) {
+                    $value = &#039;&quot;&#039;.$value.&#039;&quot;&#039;;
+                }
+
+                $parts[] = &quot;$key=$value&quot;;
+            }
+        }
+
+        return implode(&#039;, &#039;, $parts);
+    }
+
+    /**
+     * Parses a Cache-Control HTTP header.
+     *
+     * @param string $header The value of the Cache-Control HTTP header
+     *
+     * @return array An array representing the attribute values
+     */
+    protected function parseCacheControl($header)
+    {
+        $cacheControl = array();
+        preg_match_all(&#039;#([a-zA-Z][a-zA-Z_-]*)\s*(?:=(?:&quot;([^&quot;]*)&quot;|([^ \t&quot;,;]*)))?#&#039;, $header, $matches, PREG_SET_ORDER);
+        foreach ($matches as $match) {
+            $cacheControl[strtolower($match[1])] = isset($match[3]) ? $match[3] : (isset($match[2]) ? $match[2] : true);
+        }
+
+        return $cacheControl;
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

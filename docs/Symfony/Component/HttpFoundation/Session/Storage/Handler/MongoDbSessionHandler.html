@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Session\Storage\Handler\MongoDbSessionHandler | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Session_Storage_Handler_MongoDbSessionHandler" data-root-path="../../../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation/Session.html">Session</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage.html">Storage</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler.html">Handler</a></li>
+  
+            <li>MongoDbSessionHandler</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>MongoDbSessionHandler</h1>
+
+    <p>    class
+    <strong>MongoDbSessionHandler</strong>        extends <a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler">AbstractSessionHandler</abbr></a>
+</p>
+
+            <p>Session handler using the mongodb/mongodb package and MongoDB driver extension.</p>            
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_open">open</a>($savePath, $sessionName)</code>
+            </td>
+            <td>
+                                    {@inheritdoc}            </td>
+            <td><small>from&nbsp;<a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.html#method_open"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler">AbstractSessionHandler</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_doRead">doRead</a>(string $sessionId)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_doWrite">doWrite</a>(string $sessionId, string $data)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_doDestroy">doDestroy</a>(string $sessionId)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_validateId">validateId</a>($sessionId)</code>
+            </td>
+            <td>
+                                    {@inheritdoc}            </td>
+            <td><small>from&nbsp;<a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.html#method_validateId"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler">AbstractSessionHandler</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_read">read</a>($sessionId)</code>
+            </td>
+            <td>
+                                    {@inheritdoc}            </td>
+            <td><small>from&nbsp;<a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.html#method_read"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler">AbstractSessionHandler</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_write">write</a>($sessionId, $data)</code>
+            </td>
+            <td>
+                                    {@inheritdoc}            </td>
+            <td><small>from&nbsp;<a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.html#method_write"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler">AbstractSessionHandler</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_destroy">destroy</a>($sessionId)</code>
+            </td>
+            <td>
+                                    {@inheritdoc}            </td>
+            <td><small>from&nbsp;<a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.html#method_destroy"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler">AbstractSessionHandler</abbr></a></small></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method___construct">__construct</a>(<abbr title="MongoDB\Client">Client</abbr> $mongo, array $options)</code>
+            </td>
+            <td>
+                                    Constructor.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_close">close</a>()</code>
+            </td>
+            <td>
+                                    {@inheritdoc}            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_gc">gc</a>($maxlifetime)</code>
+            </td>
+            <td>
+                                    {@inheritdoc}            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_updateTimestamp">updateTimestamp</a>($sessionId, $data)</code>
+            </td>
+            <td>
+                                    {@inheritdoc}            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><abbr title="MongoDB\Client">Client</abbr></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getMongo">getMongo</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.html#method_open"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler">AbstractSessionHandler</abbr></a> at line 32
+                    </div>
+        <div>
+            <h3 id="method_open"><code class="language-php">open()</code></h3>
+            <code class="language-php">public open($savePath, $sessionName)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>{@inheritdoc}</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$savePath</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$sessionName</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.169">169</a>
+                    </div>
+        <div>
+            <h3 id="method_doRead"><code class="language-php">doRead()</code></h3>
+            <code class="language-php">protected string&nbsp;doRead(string $sessionId)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$sessionId</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.120">120</a>
+                    </div>
+        <div>
+            <h3 id="method_doWrite"><code class="language-php">doWrite()</code></h3>
+            <code class="language-php">protected bool&nbsp;doWrite(string $sessionId, string $data)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$sessionId</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$data</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.96">96</a>
+                    </div>
+        <div>
+            <h3 id="method_doDestroy"><code class="language-php">doDestroy()</code></h3>
+            <code class="language-php">protected bool&nbsp;doDestroy(string $sessionId)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$sessionId</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.html#method_validateId"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler">AbstractSessionHandler</abbr></a> at line 67
+                    </div>
+        <div>
+            <h3 id="method_validateId"><code class="language-php">validateId()</code></h3>
+            <code class="language-php">public validateId($sessionId)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>{@inheritdoc}</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$sessionId</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.html#method_read"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler">AbstractSessionHandler</abbr></a> at line 78
+                    </div>
+        <div>
+            <h3 id="method_read"><code class="language-php">read()</code></h3>
+            <code class="language-php">public read($sessionId)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>{@inheritdoc}</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$sessionId</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.html#method_write"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler">AbstractSessionHandler</abbr></a> at line 101
+                    </div>
+        <div>
+            <h3 id="method_write"><code class="language-php">write()</code></h3>
+            <code class="language-php">public write($sessionId, $data)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>{@inheritdoc}</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$sessionId</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$data</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            in <a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/Handler/AbstractSessionHandler.html#method_destroy"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\Handler\AbstractSessionHandler">AbstractSessionHandler</abbr></a> at line 118
+                    </div>
+        <div>
+            <h3 id="method_destroy"><code class="language-php">destroy()</code></h3>
+            <code class="language-php">public destroy($sessionId)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>{@inheritdoc}</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$sessionId</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.69">69</a>
+                    </div>
+        <div>
+            <h3 id="method___construct"><code class="language-php">__construct()</code></h3>
+            <code class="language-php">public __construct(<abbr title="MongoDB\Client">Client</abbr> $mongo, array $options)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Constructor.</p>                    <p>List of available options:
+ * database: The name of the database [required]
+ * collection: The name of the collection [required]
+ * id_field: The field name for storing the session id [default: _id]
+ * data_field: The field name for storing the session data [default: data]
+ * time_field: The field name for storing the timestamp [default: time]
+ * expiry_field: The field name for storing the expiry-timestamp [default: expires_at].</p>
+
+<p>It is strongly recommended to put an index on the <code>expiry_field</code> for
+garbage-collection. Alternatively it's possible to automatically expire
+the sessions in the database as described below:</p>
+
+<p>A TTL collections can be used on MongoDB 2.2+ to cleanup expired sessions
+automatically. Such an index can for example look like this:</p>
+
+<pre><code>db.&lt;session-collection&gt;.ensureIndex(
+    { "&lt;expiry-field&gt;": 1 },
+    { "expireAfterSeconds": 0 }
+)
+</code></pre>
+
+<p>More details on: http://docs.mongodb.org/manual/tutorial/expire-data/</p>
+
+<p>If you use such an index, you can drop <code>gc_probability</code> to 0 since
+no garbage-collection is required.</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php"><abbr title="MongoDB\Client">Client</abbr></code></td>
+                <td><code class="language-php">$mongo</code></td>
+                <td>A MongoDB\Client instance</td>
+            </tr>
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$options</code></td>
+                <td>An associative array of field options</td>
+            </tr>
+            </table>
+
+        
+        
+                    <h4>Exceptions</h4>
+
+                <table class="table">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/InvalidArgumentException"><abbr title="InvalidArgumentException">InvalidArgumentException</abbr></a></td>
+                <td>When "database" or "collection" not provided</td>
+            </tr>
+            </table>
+
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.88">88</a>
+                    </div>
+        <div>
+            <h3 id="method_close"><code class="language-php">close()</code></h3>
+            <code class="language-php">public close()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>{@inheritdoc}</p>                                </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.108">108</a>
+                    </div>
+        <div>
+            <h3 id="method_gc"><code class="language-php">gc()</code></h3>
+            <code class="language-php">public gc($maxlifetime)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>{@inheritdoc}</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$maxlifetime</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.142">142</a>
+                    </div>
+        <div>
+            <h3 id="method_updateTimestamp"><code class="language-php">updateTimestamp()</code></h3>
+            <code class="language-php">public updateTimestamp($sessionId, $data)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>{@inheritdoc}</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$sessionId</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$data</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.198">198</a>
+                    </div>
+        <div>
+            <h3 id="method_getMongo"><code class="language-php">getMongo()</code></h3>
+            <code class="language-php">protected <abbr title="MongoDB\Client">Client</abbr>&nbsp;getMongo()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><abbr title="MongoDB\Client">Client</abbr></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Session\Storage\Handler;
+
+/**
+ * Session handler using the mongodb/mongodb package and MongoDB driver extension.
+ *
+ * @author Markus Bachmann &lt;markus.bachmann@bachi.biz&gt;
+ *
+ * @see https://packagist.org/packages/mongodb/mongodb
+ * @see http://php.net/manual/en/set.mongodb.php
+ */
+class MongoDbSessionHandler extends AbstractSessionHandler
+{
+    private $mongo;
+
+    /**
+     * @var \MongoCollection
+     */
+    private $collection;
+
+    /**
+     * @var array
+     */
+    private $options;
+
+    /**
+     * Constructor.
+     *
+     * List of available options:
+     *  * database: The name of the database [required]
+     *  * collection: The name of the collection [required]
+     *  * id_field: The field name for storing the session id [default: _id]
+     *  * data_field: The field name for storing the session data [default: data]
+     *  * time_field: The field name for storing the timestamp [default: time]
+     *  * expiry_field: The field name for storing the expiry-timestamp [default: expires_at].
+     *
+     * It is strongly recommended to put an index on the `expiry_field` for
+     * garbage-collection. Alternatively it&#039;s possible to automatically expire
+     * the sessions in the database as described below:
+     *
+     * A TTL collections can be used on MongoDB 2.2+ to cleanup expired sessions
+     * automatically. Such an index can for example look like this:
+     *
+     *     db.&lt;session-collection&gt;.ensureIndex(
+     *         { &quot;&lt;expiry-field&gt;&quot;: 1 },
+     *         { &quot;expireAfterSeconds&quot;: 0 }
+     *     )
+     *
+     * More details on: http://docs.mongodb.org/manual/tutorial/expire-data/
+     *
+     * If you use such an index, you can drop `gc_probability` to 0 since
+     * no garbage-collection is required.
+     *
+     * @param \MongoDB\Client $mongo   A MongoDB\Client instance
+     * @param array           $options An associative array of field options
+     *
+     * @throws \InvalidArgumentException When &quot;database&quot; or &quot;collection&quot; not provided
+     */
+    public function __construct(\MongoDB\Client $mongo, array $options)
+    {
+        if (!isset($options[&#039;database&#039;]) || !isset($options[&#039;collection&#039;])) {
+            throw new \InvalidArgumentException(&#039;You must provide the &quot;database&quot; and &quot;collection&quot; option for MongoDBSessionHandler&#039;);
+        }
+
+        $this-&gt;mongo = $mongo;
+
+        $this-&gt;options = array_merge(array(
+            &#039;id_field&#039; =&gt; &#039;_id&#039;,
+            &#039;data_field&#039; =&gt; &#039;data&#039;,
+            &#039;time_field&#039; =&gt; &#039;time&#039;,
+            &#039;expiry_field&#039; =&gt; &#039;expires_at&#039;,
+        ), $options);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function close()
+    {
+        return true;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function doDestroy($sessionId)
+    {
+        $this-&gt;getCollection()-&gt;deleteOne(array(
+            $this-&gt;options[&#039;id_field&#039;] =&gt; $sessionId,
+        ));
+
+        return true;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function gc($maxlifetime)
+    {
+        $this-&gt;getCollection()-&gt;deleteMany(array(
+            $this-&gt;options[&#039;expiry_field&#039;] =&gt; array(&#039;$lt&#039; =&gt; new \MongoDB\BSON\UTCDateTime()),
+        ));
+
+        return true;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function doWrite($sessionId, $data)
+    {
+        $expiry = new \MongoDB\BSON\UTCDateTime((time() + (int) ini_get(&#039;session.gc_maxlifetime&#039;)) * 1000);
+
+        $fields = array(
+            $this-&gt;options[&#039;time_field&#039;] =&gt; new \MongoDB\BSON\UTCDateTime(),
+            $this-&gt;options[&#039;expiry_field&#039;] =&gt; $expiry,
+            $this-&gt;options[&#039;data_field&#039;] =&gt; new \MongoDB\BSON\Binary($data, \MongoDB\BSON\Binary::TYPE_OLD_BINARY),
+        );
+
+        $this-&gt;getCollection()-&gt;updateOne(
+            array($this-&gt;options[&#039;id_field&#039;] =&gt; $sessionId),
+            array(&#039;$set&#039; =&gt; $fields),
+            array(&#039;upsert&#039; =&gt; true)
+        );
+
+        return true;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function updateTimestamp($sessionId, $data)
+    {
+        $expiry = new \MongoDB\BSON\UTCDateTime((time() + (int) ini_get(&#039;session.gc_maxlifetime&#039;)) * 1000);
+
+        if ($this-&gt;mongo instanceof \MongoDB\Client) {
+            $methodName = &#039;updateOne&#039;;
+            $options = array();
+        } else {
+            $methodName = &#039;update&#039;;
+            $options = array(&#039;multiple&#039; =&gt; false);
+        }
+
+        $this-&gt;getCollection()-&gt;$methodName(
+            array($this-&gt;options[&#039;id_field&#039;] =&gt; $sessionId),
+            array(&#039;$set&#039; =&gt; array(
+                $this-&gt;options[&#039;time_field&#039;] =&gt; new \MongoDB\BSON\UTCDateTime(),
+                $this-&gt;options[&#039;expiry_field&#039;] =&gt; $expiry,
+            )),
+            $options
+        );
+
+        return true;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function doRead($sessionId)
+    {
+        $dbData = $this-&gt;getCollection()-&gt;findOne(array(
+            $this-&gt;options[&#039;id_field&#039;] =&gt; $sessionId,
+            $this-&gt;options[&#039;expiry_field&#039;] =&gt; array(&#039;$gte&#039; =&gt; new \MongoDB\BSON\UTCDateTime()),
+        ));
+
+        if (null === $dbData) {
+            return &#039;&#039;;
+        }
+
+        return $dbData[$this-&gt;options[&#039;data_field&#039;]]-&gt;getData();
+    }
+
+    /**
+     * @return \MongoCollection
+     */
+    private function getCollection()
+    {
+        if (null === $this-&gt;collection) {
+            $this-&gt;collection = $this-&gt;mongo-&gt;selectCollection($this-&gt;options[&#039;database&#039;], $this-&gt;options[&#039;collection&#039;]);
+        }
+
+        return $this-&gt;collection;
+    }
+
+    /**
+     * @return \MongoDB\Client
+     */
+    protected function getMongo()
+    {
+        return $this-&gt;mongo;
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

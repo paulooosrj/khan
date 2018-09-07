@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Command\MakeCommand | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Command_MakeCommand" data-root-path="../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../classes.html">Classes</a></li>
+                  <li><a href="../namespaces.html">Namespaces</a></li>
+                <li><a href="../interfaces.html">Interfaces</a></li>
+        <li><a href="../traits.html">Traits</a></li>
+        <li><a href="../doc-index.html">Index</a></li>
+        <li><a href="../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../Command.html">Command</a></li>
+  
+            <li>MakeCommand</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>MakeCommand</h1>
+
+    <p>    class
+    <strong>MakeCommand</strong>        extends <abbr title="Symfony\Component\Console\Command\Command">Command</abbr>
+</p>
+
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_move">move</a>($folder, $file, $dest)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_makeStrategy">makeStrategy</a>($strategy, $folder)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_createDatabase">createDatabase</a>($input, $output)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_createTable">createTable</a>($input, $output)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_chatCreate">chatCreate</a>($input, $output)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_create">create</a>($input, $output)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_configure">configure</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_execute">execute</a>(<abbr title="Symfony\Component\Console\Input\InputInterface">InputInterface</abbr> $input, <abbr title="Symfony\Component\Console\Output\OutputInterface">OutputInterface</abbr> $output)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.16">16</a>
+                    </div>
+        <div>
+            <h3 id="method_move"><code class="language-php">move()</code></h3>
+            <code class="language-php">public move($folder, $file, $dest)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$folder</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$file</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$dest</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.26">26</a>
+                    </div>
+        <div>
+            <h3 id="method_makeStrategy"><code class="language-php">makeStrategy()</code></h3>
+            <code class="language-php">public makeStrategy($strategy, $folder)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$strategy</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$folder</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.35">35</a>
+                    </div>
+        <div>
+            <h3 id="method_createDatabase"><code class="language-php">createDatabase()</code></h3>
+            <code class="language-php">public createDatabase($input, $output)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$input</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$output</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.49">49</a>
+                    </div>
+        <div>
+            <h3 id="method_createTable"><code class="language-php">createTable()</code></h3>
+            <code class="language-php">public createTable($input, $output)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$input</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$output</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.63">63</a>
+                    </div>
+        <div>
+            <h3 id="method_chatCreate"><code class="language-php">chatCreate()</code></h3>
+            <code class="language-php">public chatCreate($input, $output)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$input</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$output</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.74">74</a>
+                    </div>
+        <div>
+            <h3 id="method_create"><code class="language-php">create()</code></h3>
+            <code class="language-php">public create($input, $output)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$input</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$output</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.97">97</a>
+                    </div>
+        <div>
+            <h3 id="method_configure"><code class="language-php">configure()</code></h3>
+            <code class="language-php">protected configure()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.106">106</a>
+                    </div>
+        <div>
+            <h3 id="method_execute"><code class="language-php">execute()</code></h3>
+            <code class="language-php">protected execute(<abbr title="Symfony\Component\Console\Input\InputInterface">InputInterface</abbr> $input, <abbr title="Symfony\Component\Console\Output\OutputInterface">OutputInterface</abbr> $output)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php"><abbr title="Symfony\Component\Console\Input\InputInterface">InputInterface</abbr></code></td>
+                <td><code class="language-php">$input</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><code class="language-php"><abbr title="Symfony\Component\Console\Output\OutputInterface">OutputInterface</abbr></code></td>
+                <td><code class="language-php">$output</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+	namespace Command;
+
+	set_time_limit(0); 
+
+	use Symfony\Component\Console\Command\Command as Comando;
+	use Symfony\Component\Console\Input\InputInterface;
+	use Symfony\Component\Console\Output\OutputInterface;
+	use Symfony\Component\Console\Input\InputArgument;
+	use App\Khan\Component\Hooks\Hooks as Hooks;
+	use Command\KhanCommand as KhanCommand;
+
+	class MakeCommand extends Comando {
+
+		public function move($folder, $file, $dest){
+			
+			$file = __DIR__ . &#039;/&#039; . &#039;storage/&#039; . $folder . &#039;/&#039; . $file;
+			try {
+				copy($file, $dest);
+			} catch (Exception $e) {
+				die($e-&gt;getMessage());
+			}
+		}
+
+		public function makeStrategy($strategy, $folder){
+			$strategyOrigin = ROOT_FOLDER . &#039;/config/strategy.php&#039;;
+			$make2 = Hooks::write($strategyOrigin, 
+					Hooks::replace($strategyOrigin, [
+						&quot;// newStrategy&quot; =&gt; &quot;,&#039;$strategy&#039; =&gt; &#039;StrategysAuth\\&quot;.$folder.&quot;&#039;
+		// newStrategy&quot;
+			]));
+		}
+
+		public function createDatabase($input, $output){
+			try {
+
+				$conn = new \PDO(&quot;mysql:host={$_ENV[&#039;DB_HOST&#039;]}&quot;, $_ENV[&#039;DB_USERNAME&#039;], $_ENV[&#039;DB_PASSWORD&#039;]);
+			    $conn-&gt;setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+			    $sql = &quot;CREATE DATABASE IF NOT EXISTS {$_ENV[&#039;DB_DATABASE&#039;]}&quot;;
+			    $conn-&gt;exec($sql);
+			    $output-&gt;writeln(&quot;Database create success!!&quot;);
+
+			} catch (Exception $e) {
+				echo &quot;&quot;;
+			}
+		}
+
+		public function createTable($input, $output){
+			try {
+
+				$conn = new \PDO(&quot;mysql:host={$_ENV[&#039;DB_HOST&#039;]};dbname={$_ENV[&#039;DB_DATABASE&#039;]}&quot;, $_ENV[&#039;DB_USERNAME&#039;], $_ENV[&#039;DB_PASSWORD&#039;]);
+			    $conn-&gt;setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+				$sql = &quot;CREATE TABLE IF NOT EXISTS `login` ( `id` INT(11) NOT NULL AUTO_INCREMENT, `email` VARCHAR(50) NOT NULL, `password` VARCHAR(50) NOT NULL, `name` VARCHAR(20) NOT NULL, PRIMARY KEY (`id`) ) COLLATE=&#039;utf8_general_ci&#039; ENGINE=InnoDB AUTO_INCREMENT=13;&quot;;
+				$conn-&gt;exec($sql);
+				$output-&gt;writeln(&quot;Table create success!!&quot;);
+
+			} catch (Exception $e) {
+				echo &quot;&quot;;
+			}
+		}
+
+		public function chatCreate($input, $output){
+			// Move Routes
+			// $this-&gt;move(&#039;chat&#039;, &#039;chat.php&#039;, &#039;routes/chat.php&#039;);
+      $file = __DIR__ . &#039;/&#039; . &#039;storage/chat/chat.php&#039;;
+      $maked = Hooks::append(&#039;config/router.php&#039;, Hooks::read($file)); 
+			// Move Views
+			$this-&gt;move(&#039;chat&#039;, &#039;index.html&#039;, &#039;resources/views/index.html&#039;);
+			$this-&gt;move(&#039;chat&#039;, &#039;chat.html&#039;, &#039;resources/views/chat.html&#039;);
+			$output-&gt;writeln(&quot;Chat create success!!&quot;);
+		}
+
+		public function create($input, $output){
+			// Create database
+			$this-&gt;createDatabase($input, $output);
+			$this-&gt;createTable($input, $output);
+			// Move Routes
+			// $this-&gt;move(&#039;auth&#039;, &#039;auth.php&#039;, &#039;routes/auth.php&#039;);
+      $file = __DIR__ . &#039;/&#039; . &#039;storage/auth/auth.php&#039;;
+      $maked = Hooks::append(&#039;config/router.php&#039;, Hooks::read($file));
+			// Move Views
+			$this-&gt;move(&#039;auth&#039;, &#039;index.html&#039;, &#039;resources/views/index.html&#039;);
+			$this-&gt;move(&#039;auth&#039;, &#039;login.html&#039;, &#039;resources/views/login.html&#039;);
+			$this-&gt;move(&#039;auth&#039;, &#039;painel.html&#039;, &#039;resources/views/painel.html&#039;);
+			$this-&gt;move(&#039;auth&#039;, &#039;register.html&#039;, &#039;resources/views/register.html&#039;);
+			// Move Controllers
+			$this-&gt;move(&#039;auth&#039;, &#039;AuthController.php&#039;, &#039;app/AuthController.php&#039;);
+			// Move Middlewares
+			$this-&gt;move(&#039;auth&#039;, &#039;CheckLogin.php&#039;, &#039;middlewares/CheckLogin.php&#039;);
+			// move Strategy
+			$this-&gt;move(&#039;auth&#039;, &#039;AuthStrategy.php&#039;, &#039;config/strategy/AuthStrategy.php&#039;);
+			// config strategys
+			$this-&gt;makeStrategy(&#039;auth&#039;, &#039;AuthStrategy&#039;);
+		}
+
+	    protected function configure(){
+
+	        $this-&gt;setName(&#039;make&#039;)
+	             -&gt;addArgument(&#039;type&#039;, InputArgument::OPTIONAL, &#039;Qual o make deseja gerar?&#039;)
+        		 -&gt;setDescription(&#039;New system predefined.&#039;)
+        		 -&gt;setHelp(&#039;System predefined in khan...&#039;);
+
+	    }
+
+	    protected function execute(InputInterface $input, OutputInterface $output){
+	    		
+	    	$make = ($input-&gt;getArgument(&#039;type&#039;)) ? $input-&gt;getArgument(&#039;type&#039;) : false;
+
+	    	if($make &amp;&amp; $make === &quot;auth&quot;){
+
+	    		$dotenv = new \Dotenv\Dotenv(&#039;.&#039;);
+				$dotenv-&gt;load();
+	    		$this-&gt;create($input, $output);
+
+	    	}
+	    	elseif ($make &amp;&amp; $make === &quot;chat&quot;) {
+	    		
+	    		$this-&gt;chatCreate($input, $output);
+
+	    	}
+	    	else{
+
+	    		$output-&gt;writeln(&#039;&lt;fg=red&gt;Error to make&lt;/&gt;&#039;);
+
+	    	}
+
+	    }
+
+	}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

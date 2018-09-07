@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Command\ModelCommand | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Command_ModelCommand" data-root-path="../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../classes.html">Classes</a></li>
+                  <li><a href="../namespaces.html">Namespaces</a></li>
+                <li><a href="../interfaces.html">Interfaces</a></li>
+        <li><a href="../traits.html">Traits</a></li>
+        <li><a href="../doc-index.html">Index</a></li>
+        <li><a href="../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../Command.html">Command</a></li>
+  
+            <li>ModelCommand</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>ModelCommand</h1>
+
+    <p>    class
+    <strong>ModelCommand</strong>        extends <abbr title="Symfony\Component\Console\Command\Command">Command</abbr>
+</p>
+
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_configure">configure</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_execute">execute</a>(<abbr title="Symfony\Component\Console\Input\InputInterface">InputInterface</abbr> $input, <abbr title="Symfony\Component\Console\Output\OutputInterface">OutputInterface</abbr> $output)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.16">16</a>
+                    </div>
+        <div>
+            <h3 id="method_configure"><code class="language-php">configure()</code></h3>
+            <code class="language-php">protected configure()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.25">25</a>
+                    </div>
+        <div>
+            <h3 id="method_execute"><code class="language-php">execute()</code></h3>
+            <code class="language-php">protected execute(<abbr title="Symfony\Component\Console\Input\InputInterface">InputInterface</abbr> $input, <abbr title="Symfony\Component\Console\Output\OutputInterface">OutputInterface</abbr> $output)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php"><abbr title="Symfony\Component\Console\Input\InputInterface">InputInterface</abbr></code></td>
+                <td><code class="language-php">$input</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><code class="language-php"><abbr title="Symfony\Component\Console\Output\OutputInterface">OutputInterface</abbr></code></td>
+                <td><code class="language-php">$output</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+	namespace Command;
+
+	set_time_limit(0); 
+
+	use Symfony\Component\Console\Command\Command as Comando;
+	use Symfony\Component\Console\Input\InputInterface;
+	use Symfony\Component\Console\Output\OutputInterface;
+	use Symfony\Component\Console\Input\InputArgument;
+	use App\Khan\Component\Hooks\Hooks as Hooks;
+	use Command\KhanCommand as KhanCommand;
+
+	class ModelCommand extends Comando {
+
+	    protected function configure(){
+
+	        $this-&gt;setName(&#039;model&#039;)
+	             -&gt;addArgument(&#039;model-name&#039;, InputArgument::OPTIONAL, &#039;Qual o nome do model?&#039;)
+        		 -&gt;setDescription(&#039;New model.&#039;)
+        		 -&gt;setHelp(&#039;New model in project...&#039;);
+
+	    }
+
+	    protected function execute(InputInterface $input, OutputInterface $output){
+	    		
+	    	$model = ($input-&gt;getArgument(&#039;model-name&#039;)) ? $input-&gt;getArgument(&#039;model-name&#039;) : false;
+	    	$botLearning = Bot\Bot::init(&#039;models&#039;);
+			$modelUses = $botLearning::loadUses();
+
+	    	if($model){
+
+	    		$folder = &quot;app/models/{$model}.php&quot;;
+	    		$folderOrigin = __DIR__. &quot;/storage/model/model.php&quot;;
+
+	    		$make = Hooks::create($folder, Hooks::replace($folderOrigin, [
+					&quot;modelName&quot; =&gt; $model,
+					&quot;usedss&quot; =&gt; array_reduce($modelUses, function($ant, $atual){
+						return $ant . &quot;\n	use $atual;&quot;;
+					}, &quot;&quot;)
+				]));
+
+	    		if($make){
+
+	    			$output-&gt;writeln(&#039;&lt;info&gt;Model &#039;.$model.&#039; foi criado com sucesso!!&lt;/info&gt;&#039;);
+
+				}
+
+	    	}else{
+
+	    		$output-&gt;writeln(&#039;&lt;fg=red&gt;Error to create model&lt;/&gt;&#039;);
+
+	    	}
+
+	    }
+
+	}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

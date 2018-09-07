@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\File\MimeType\FileBinaryMimeTypeGuesser | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_File_MimeType_FileBinaryMimeTypeGuesser" data-root-path="../../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../../Symfony/Component/HttpFoundation/File.html">File</a></li>
+                    <li><a href="../../../../../Symfony/Component/HttpFoundation/File/MimeType.html">MimeType</a></li>
+  
+            <li>FileBinaryMimeTypeGuesser</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>FileBinaryMimeTypeGuesser</h1>
+
+    <p>    class
+    <strong>FileBinaryMimeTypeGuesser</strong>        implements
+        <a href="../../../../../Symfony/Component/HttpFoundation/File/MimeType/MimeTypeGuesserInterface.html"><abbr title="Symfony\Component\HttpFoundation\File\MimeType\MimeTypeGuesserInterface">MimeTypeGuesserInterface</abbr></a>
+</p>
+
+            <p>Guesses the mime type with the binary "file" (only available on *nix).</p>            
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method___construct">__construct</a>(string $cmd = &#039;file -b --mime %s 2&gt;/dev/null&#039;)</code>
+            </td>
+            <td>
+                                    The $cmd pattern must contain a "%s" string that will be replaced
+with the file name to guess.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                    static                </code>
+            </td>
+            <td class="text-right"><code class="language-php">bool</code></td>
+            <td>
+                <code class="language-php"><a href="#method_isSupported">isSupported</a>()</code>
+            </td>
+            <td>
+                                    Returns whether this guesser is supported on the current OS.            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php">string</code></td>
+            <td>
+                <code class="language-php"><a href="#method_guess">guess</a>(string $path)</code>
+            </td>
+            <td>
+                                    Guesses the mime type of the file with the given path.            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.34">34</a>
+                    </div>
+        <div>
+            <h3 id="method___construct"><code class="language-php">__construct()</code></h3>
+            <code class="language-php">public __construct(string $cmd = &#039;file -b --mime %s 2&gt;/dev/null&#039;)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>The $cmd pattern must contain a "%s" string that will be replaced
+with the file name to guess.</p>                    <p>The command output must start with the mime type of the file.</p>            </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$cmd</code></td>
+                <td>The command to run to get the mime type of a file</td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.44">44</a>
+                    </div>
+        <div>
+            <h3 id="method_isSupported"><code class="language-php">isSupported()</code></h3>
+            <code class="language-php">public static bool&nbsp;isSupported()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Returns whether this guesser is supported on the current OS.</p>                                </div>
+                
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">bool</code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.66">66</a>
+                    </div>
+        <div>
+            <h3 id="method_guess"><code class="language-php">guess()</code></h3>
+            <code class="language-php">public string&nbsp;guess(string $path)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Guesses the mime type of the file with the given path.</p>                                </div>
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">string</code></td>
+                <td><code class="language-php">$path</code></td>
+                <td>The path to the file</td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php">string</code></td>
+            <td>The mime type or NULL, if none could be guessed</td>
+        </tr>
+    </table>
+
+        
+                    <h4>Exceptions</h4>
+
+                <table class="table">
+                    <tr>
+                <td><a href="../../../../../Symfony/Component/HttpFoundation/File/Exception/FileNotFoundException.html"><abbr title="Symfony\Component\HttpFoundation\File\Exception\FileNotFoundException">FileNotFoundException</abbr></a></td>
+                <td>If the file does not exist</td>
+            </tr>
+                    <tr>
+                <td><a href="../../../../../Symfony/Component/HttpFoundation/File/Exception/AccessDeniedException.html"><abbr title="Symfony\Component\HttpFoundation\File\Exception\AccessDeniedException">AccessDeniedException</abbr></a></td>
+                <td>If the file could not be read</td>
+            </tr>
+            </table>
+
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\File\MimeType;
+
+use Symfony\Component\HttpFoundation\File\Exception\FileNotFoundException;
+use Symfony\Component\HttpFoundation\File\Exception\AccessDeniedException;
+
+/**
+ * Guesses the mime type with the binary &quot;file&quot; (only available on *nix).
+ *
+ * @author Bernhard Schussek &lt;bschussek@gmail.com&gt;
+ */
+class FileBinaryMimeTypeGuesser implements MimeTypeGuesserInterface
+{
+    private $cmd;
+
+    /**
+     * The $cmd pattern must contain a &quot;%s&quot; string that will be replaced
+     * with the file name to guess.
+     *
+     * The command output must start with the mime type of the file.
+     *
+     * @param string $cmd The command to run to get the mime type of a file
+     */
+    public function __construct(string $cmd = &#039;file -b --mime %s 2&gt;/dev/null&#039;)
+    {
+        $this-&gt;cmd = $cmd;
+    }
+
+    /**
+     * Returns whether this guesser is supported on the current OS.
+     *
+     * @return bool
+     */
+    public static function isSupported()
+    {
+        static $supported = null;
+
+        if (null !== $supported) {
+            return $supported;
+        }
+
+        if (&#039;\\&#039; === DIRECTORY_SEPARATOR || !function_exists(&#039;passthru&#039;) || !function_exists(&#039;escapeshellarg&#039;)) {
+            return $supported = false;
+        }
+
+        ob_start();
+        passthru(&#039;command -v file&#039;, $exitStatus);
+        $binPath = trim(ob_get_clean());
+
+        return $supported = 0 === $exitStatus &amp;&amp; &#039;&#039; !== $binPath;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function guess($path)
+    {
+        if (!is_file($path)) {
+            throw new FileNotFoundException($path);
+        }
+
+        if (!is_readable($path)) {
+            throw new AccessDeniedException($path);
+        }
+
+        if (!self::isSupported()) {
+            return;
+        }
+
+        ob_start();
+
+        // need to use --mime instead of -i. see #6641
+        passthru(sprintf($this-&gt;cmd, escapeshellarg($path)), $return);
+        if ($return &gt; 0) {
+            ob_end_clean();
+
+            return;
+        }
+
+        $type = trim(ob_get_clean());
+
+        if (!preg_match(&#039;#^([a-z0-9\-]+/[a-z0-9\-\.]+)#i&#039;, $type, $match)) {
+            // it&#039;s not a type, but an error message
+            return;
+        }
+
+        return $match[1];
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

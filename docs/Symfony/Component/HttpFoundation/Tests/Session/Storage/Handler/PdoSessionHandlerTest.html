@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\PdoSessionHandlerTest | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Tests_Session_Storage_Handler_PdoSessionHandlerTest" data-root-path="../../../../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../../../../Symfony/Component/HttpFoundation/Tests.html">Tests</a></li>
+                    <li><a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session.html">Session</a></li>
+                    <li><a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage.html">Storage</a></li>
+                    <li><a href="../../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage/Handler.html">Handler</a></li>
+  
+            <li>PdoSessionHandlerTest</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>PdoSessionHandlerTest</h1>
+
+    <p>    class
+    <strong>PdoSessionHandlerTest</strong>        extends <abbr title="PHPUnit\Framework\TestCase">TestCase</abbr>
+</p>
+
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_tearDown">tearDown</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getPersistentSqliteDsn">getPersistentSqliteDsn</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getMemorySqlitePdo">getMemorySqlitePdo</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testWrongPdoErrMode">testWrongPdoErrMode</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testInexistentTable">testInexistentTable</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testCreateTableTwice">testCreateTableTwice</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testWithLazyDsnConnection">testWithLazyDsnConnection</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testWithLazySavePathConnection">testWithLazySavePathConnection</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testReadWriteReadWithNullByte">testReadWriteReadWithNullByte</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testReadConvertsStreamToString">testReadConvertsStreamToString</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testReadLockedConvertsStreamToString">testReadLockedConvertsStreamToString</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testReadingRequiresExactlySameId">testReadingRequiresExactlySameId</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testWriteDifferentSessionIdThanRead">testWriteDifferentSessionIdThanRead</a>()</code>
+            </td>
+            <td>
+                                    Simulates session_regenerate_id(true) which will require an INSERT or UPDATE (replace).            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testWrongUsageStillWorks">testWrongUsageStillWorks</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testSessionDestroy">testSessionDestroy</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testSessionGC">testSessionGC</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetConnection">testGetConnection</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetConnectionConnectsIfNeeded">testGetConnectionConnectsIfNeeded</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testUrlDsn">testUrlDsn</a>($url, $expectedDsn, $expectedUser = null, $expectedPassword = null)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_provideUrlDsnPairs">provideUrlDsnPairs</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.25">25</a>
+                    </div>
+        <div>
+            <h3 id="method_tearDown"><code class="language-php">tearDown()</code></h3>
+            <code class="language-php">protected tearDown()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.34">34</a>
+                    </div>
+        <div>
+            <h3 id="method_getPersistentSqliteDsn"><code class="language-php">getPersistentSqliteDsn()</code></h3>
+            <code class="language-php">protected getPersistentSqliteDsn()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.41">41</a>
+                    </div>
+        <div>
+            <h3 id="method_getMemorySqlitePdo"><code class="language-php">getMemorySqlitePdo()</code></h3>
+            <code class="language-php">protected getMemorySqlitePdo()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.54">54</a>
+                    </div>
+        <div>
+            <h3 id="method_testWrongPdoErrMode"><code class="language-php">testWrongPdoErrMode()</code></h3>
+            <code class="language-php">public testWrongPdoErrMode()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.65">65</a>
+                    </div>
+        <div>
+            <h3 id="method_testInexistentTable"><code class="language-php">testInexistentTable()</code></h3>
+            <code class="language-php">public testInexistentTable()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.77">77</a>
+                    </div>
+        <div>
+            <h3 id="method_testCreateTableTwice"><code class="language-php">testCreateTableTwice()</code></h3>
+            <code class="language-php">public testCreateTableTwice()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.83">83</a>
+                    </div>
+        <div>
+            <h3 id="method_testWithLazyDsnConnection"><code class="language-php">testWithLazyDsnConnection()</code></h3>
+            <code class="language-php">public testWithLazyDsnConnection()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.101">101</a>
+                    </div>
+        <div>
+            <h3 id="method_testWithLazySavePathConnection"><code class="language-php">testWithLazySavePathConnection()</code></h3>
+            <code class="language-php">public testWithLazySavePathConnection()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.120">120</a>
+                    </div>
+        <div>
+            <h3 id="method_testReadWriteReadWithNullByte"><code class="language-php">testReadWriteReadWithNullByte()</code></h3>
+            <code class="language-php">public testReadWriteReadWithNullByte()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.137">137</a>
+                    </div>
+        <div>
+            <h3 id="method_testReadConvertsStreamToString"><code class="language-php">testReadConvertsStreamToString()</code></h3>
+            <code class="language-php">public testReadConvertsStreamToString()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.154">154</a>
+                    </div>
+        <div>
+            <h3 id="method_testReadLockedConvertsStreamToString"><code class="language-php">testReadLockedConvertsStreamToString()</code></h3>
+            <code class="language-php">public testReadLockedConvertsStreamToString()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.188">188</a>
+                    </div>
+        <div>
+            <h3 id="method_testReadingRequiresExactlySameId"><code class="language-php">testReadingRequiresExactlySameId()</code></h3>
+            <code class="language-php">public testReadingRequiresExactlySameId()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.213">213</a>
+                    </div>
+        <div>
+            <h3 id="method_testWriteDifferentSessionIdThanRead"><code class="language-php">testWriteDifferentSessionIdThanRead()</code></h3>
+            <code class="language-php">public testWriteDifferentSessionIdThanRead()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                    <div>
+                                    <p>Simulates session_regenerate_id(true) which will require an INSERT or UPDATE (replace).</p>                                </div>
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.229">229</a>
+                    </div>
+        <div>
+            <h3 id="method_testWrongUsageStillWorks"><code class="language-php">testWrongUsageStillWorks()</code></h3>
+            <code class="language-php">public testWrongUsageStillWorks()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.245">245</a>
+                    </div>
+        <div>
+            <h3 id="method_testSessionDestroy"><code class="language-php">testSessionDestroy()</code></h3>
+            <code class="language-php">public testSessionDestroy()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.271">271</a>
+                    </div>
+        <div>
+            <h3 id="method_testSessionGC"><code class="language-php">testSessionGC()</code></h3>
+            <code class="language-php">public testSessionGC()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.300">300</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetConnection"><code class="language-php">testGetConnection()</code></h3>
+            <code class="language-php">public testGetConnection()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.310">310</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetConnectionConnectsIfNeeded"><code class="language-php">testGetConnectionConnectsIfNeeded()</code></h3>
+            <code class="language-php">public testGetConnectionConnectsIfNeeded()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.323">323</a>
+                    </div>
+        <div>
+            <h3 id="method_testUrlDsn"><code class="language-php">testUrlDsn()</code></h3>
+            <code class="language-php">public testUrlDsn($url, $expectedDsn, $expectedUser = null, $expectedPassword = null)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$url</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$expectedDsn</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$expectedUser</code></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$expectedPassword</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.338">338</a>
+                    </div>
+        <div>
+            <h3 id="method_provideUrlDsnPairs"><code class="language-php">provideUrlDsnPairs()</code></h3>
+            <code class="language-php">public provideUrlDsnPairs()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler;
+
+use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler;
+
+/**
+ * @requires extension pdo_sqlite
+ * @group time-sensitive
+ */
+class PdoSessionHandlerTest extends TestCase
+{
+    private $dbFile;
+
+    protected function tearDown()
+    {
+        // make sure the temporary database file is deleted when it has been created (even when a test fails)
+        if ($this-&gt;dbFile) {
+            @unlink($this-&gt;dbFile);
+        }
+        parent::tearDown();
+    }
+
+    protected function getPersistentSqliteDsn()
+    {
+        $this-&gt;dbFile = tempnam(sys_get_temp_dir(), &#039;sf2_sqlite_sessions&#039;);
+
+        return &#039;sqlite:&#039;.$this-&gt;dbFile;
+    }
+
+    protected function getMemorySqlitePdo()
+    {
+        $pdo = new \PDO(&#039;sqlite::memory:&#039;);
+        $pdo-&gt;setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+        $storage = new PdoSessionHandler($pdo);
+        $storage-&gt;createTable();
+
+        return $pdo;
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testWrongPdoErrMode()
+    {
+        $pdo = $this-&gt;getMemorySqlitePdo();
+        $pdo-&gt;setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_SILENT);
+
+        $storage = new PdoSessionHandler($pdo);
+    }
+
+    /**
+     * @expectedException \RuntimeException
+     */
+    public function testInexistentTable()
+    {
+        $storage = new PdoSessionHandler($this-&gt;getMemorySqlitePdo(), array(&#039;db_table&#039; =&gt; &#039;inexistent_table&#039;));
+        $storage-&gt;open(&#039;&#039;, &#039;sid&#039;);
+        $storage-&gt;read(&#039;id&#039;);
+        $storage-&gt;write(&#039;id&#039;, &#039;data&#039;);
+        $storage-&gt;close();
+    }
+
+    /**
+     * @expectedException \RuntimeException
+     */
+    public function testCreateTableTwice()
+    {
+        $storage = new PdoSessionHandler($this-&gt;getMemorySqlitePdo());
+        $storage-&gt;createTable();
+    }
+
+    public function testWithLazyDsnConnection()
+    {
+        $dsn = $this-&gt;getPersistentSqliteDsn();
+
+        $storage = new PdoSessionHandler($dsn);
+        $storage-&gt;createTable();
+        $storage-&gt;open(&#039;&#039;, &#039;sid&#039;);
+        $data = $storage-&gt;read(&#039;id&#039;);
+        $storage-&gt;write(&#039;id&#039;, &#039;data&#039;);
+        $storage-&gt;close();
+        $this-&gt;assertSame(&#039;&#039;, $data, &#039;New session returns empty string data&#039;);
+
+        $storage-&gt;open(&#039;&#039;, &#039;sid&#039;);
+        $data = $storage-&gt;read(&#039;id&#039;);
+        $storage-&gt;close();
+        $this-&gt;assertSame(&#039;data&#039;, $data, &#039;Written value can be read back correctly&#039;);
+    }
+
+    public function testWithLazySavePathConnection()
+    {
+        $dsn = $this-&gt;getPersistentSqliteDsn();
+
+        // Open is called with what ini_set(&#039;session.save_path&#039;, $dsn) would mean
+        $storage = new PdoSessionHandler(null);
+        $storage-&gt;open($dsn, &#039;sid&#039;);
+        $storage-&gt;createTable();
+        $data = $storage-&gt;read(&#039;id&#039;);
+        $storage-&gt;write(&#039;id&#039;, &#039;data&#039;);
+        $storage-&gt;close();
+        $this-&gt;assertSame(&#039;&#039;, $data, &#039;New session returns empty string data&#039;);
+
+        $storage-&gt;open($dsn, &#039;sid&#039;);
+        $data = $storage-&gt;read(&#039;id&#039;);
+        $storage-&gt;close();
+        $this-&gt;assertSame(&#039;data&#039;, $data, &#039;Written value can be read back correctly&#039;);
+    }
+
+    public function testReadWriteReadWithNullByte()
+    {
+        $sessionData = &#039;da&#039;.&quot;\0&quot;.&#039;ta&#039;;
+
+        $storage = new PdoSessionHandler($this-&gt;getMemorySqlitePdo());
+        $storage-&gt;open(&#039;&#039;, &#039;sid&#039;);
+        $readData = $storage-&gt;read(&#039;id&#039;);
+        $storage-&gt;write(&#039;id&#039;, $sessionData);
+        $storage-&gt;close();
+        $this-&gt;assertSame(&#039;&#039;, $readData, &#039;New session returns empty string data&#039;);
+
+        $storage-&gt;open(&#039;&#039;, &#039;sid&#039;);
+        $readData = $storage-&gt;read(&#039;id&#039;);
+        $storage-&gt;close();
+        $this-&gt;assertSame($sessionData, $readData, &#039;Written value can be read back correctly&#039;);
+    }
+
+    public function testReadConvertsStreamToString()
+    {
+        $pdo = new MockPdo(&#039;pgsql&#039;);
+        $pdo-&gt;prepareResult = $this-&gt;getMockBuilder(&#039;PDOStatement&#039;)-&gt;getMock();
+
+        $content = &#039;foobar&#039;;
+        $stream = $this-&gt;createStream($content);
+
+        $pdo-&gt;prepareResult-&gt;expects($this-&gt;once())-&gt;method(&#039;fetchAll&#039;)
+            -&gt;will($this-&gt;returnValue(array(array($stream, 42, time()))));
+
+        $storage = new PdoSessionHandler($pdo);
+        $result = $storage-&gt;read(&#039;foo&#039;);
+
+        $this-&gt;assertSame($content, $result);
+    }
+
+    public function testReadLockedConvertsStreamToString()
+    {
+        if (ini_get(&#039;session.use_strict_mode&#039;)) {
+            $this-&gt;markTestSkipped(&#039;Strict mode needs no locking for new sessions.&#039;);
+        }
+
+        $pdo = new MockPdo(&#039;pgsql&#039;);
+        $selectStmt = $this-&gt;getMockBuilder(&#039;PDOStatement&#039;)-&gt;getMock();
+        $insertStmt = $this-&gt;getMockBuilder(&#039;PDOStatement&#039;)-&gt;getMock();
+
+        $pdo-&gt;prepareResult = function ($statement) use ($selectStmt, $insertStmt) {
+            return 0 === strpos($statement, &#039;INSERT&#039;) ? $insertStmt : $selectStmt;
+        };
+
+        $content = &#039;foobar&#039;;
+        $stream = $this-&gt;createStream($content);
+        $exception = null;
+
+        $selectStmt-&gt;expects($this-&gt;atLeast(2))-&gt;method(&#039;fetchAll&#039;)
+            -&gt;will($this-&gt;returnCallback(function () use (&amp;$exception, $stream) {
+                return $exception ? array(array($stream, 42, time())) : array();
+            }));
+
+        $insertStmt-&gt;expects($this-&gt;once())-&gt;method(&#039;execute&#039;)
+            -&gt;will($this-&gt;returnCallback(function () use (&amp;$exception) {
+                throw $exception = new \PDOException(&#039;&#039;, &#039;23&#039;);
+            }));
+
+        $storage = new PdoSessionHandler($pdo);
+        $result = $storage-&gt;read(&#039;foo&#039;);
+
+        $this-&gt;assertSame($content, $result);
+    }
+
+    public function testReadingRequiresExactlySameId()
+    {
+        $storage = new PdoSessionHandler($this-&gt;getMemorySqlitePdo());
+        $storage-&gt;open(&#039;&#039;, &#039;sid&#039;);
+        $storage-&gt;write(&#039;id&#039;, &#039;data&#039;);
+        $storage-&gt;write(&#039;test&#039;, &#039;data&#039;);
+        $storage-&gt;write(&#039;space &#039;, &#039;data&#039;);
+        $storage-&gt;close();
+
+        $storage-&gt;open(&#039;&#039;, &#039;sid&#039;);
+        $readDataCaseSensitive = $storage-&gt;read(&#039;ID&#039;);
+        $readDataNoCharFolding = $storage-&gt;read(&#039;tést&#039;);
+        $readDataKeepSpace = $storage-&gt;read(&#039;space &#039;);
+        $readDataExtraSpace = $storage-&gt;read(&#039;space  &#039;);
+        $storage-&gt;close();
+
+        $this-&gt;assertSame(&#039;&#039;, $readDataCaseSensitive, &#039;Retrieval by ID should be case-sensitive (collation setting)&#039;);
+        $this-&gt;assertSame(&#039;&#039;, $readDataNoCharFolding, &#039;Retrieval by ID should not do character folding (collation setting)&#039;);
+        $this-&gt;assertSame(&#039;data&#039;, $readDataKeepSpace, &#039;Retrieval by ID requires spaces as-is&#039;);
+        $this-&gt;assertSame(&#039;&#039;, $readDataExtraSpace, &#039;Retrieval by ID requires spaces as-is&#039;);
+    }
+
+    /**
+     * Simulates session_regenerate_id(true) which will require an INSERT or UPDATE (replace).
+     */
+    public function testWriteDifferentSessionIdThanRead()
+    {
+        $storage = new PdoSessionHandler($this-&gt;getMemorySqlitePdo());
+        $storage-&gt;open(&#039;&#039;, &#039;sid&#039;);
+        $storage-&gt;read(&#039;id&#039;);
+        $storage-&gt;destroy(&#039;id&#039;);
+        $storage-&gt;write(&#039;new_id&#039;, &#039;data_of_new_session_id&#039;);
+        $storage-&gt;close();
+
+        $storage-&gt;open(&#039;&#039;, &#039;sid&#039;);
+        $data = $storage-&gt;read(&#039;new_id&#039;);
+        $storage-&gt;close();
+
+        $this-&gt;assertSame(&#039;data_of_new_session_id&#039;, $data, &#039;Data of regenerated session id is available&#039;);
+    }
+
+    public function testWrongUsageStillWorks()
+    {
+        // wrong method sequence that should no happen, but still works
+        $storage = new PdoSessionHandler($this-&gt;getMemorySqlitePdo());
+        $storage-&gt;write(&#039;id&#039;, &#039;data&#039;);
+        $storage-&gt;write(&#039;other_id&#039;, &#039;other_data&#039;);
+        $storage-&gt;destroy(&#039;inexistent&#039;);
+        $storage-&gt;open(&#039;&#039;, &#039;sid&#039;);
+        $data = $storage-&gt;read(&#039;id&#039;);
+        $otherData = $storage-&gt;read(&#039;other_id&#039;);
+        $storage-&gt;close();
+
+        $this-&gt;assertSame(&#039;data&#039;, $data);
+        $this-&gt;assertSame(&#039;other_data&#039;, $otherData);
+    }
+
+    public function testSessionDestroy()
+    {
+        $pdo = $this-&gt;getMemorySqlitePdo();
+        $storage = new PdoSessionHandler($pdo);
+
+        $storage-&gt;open(&#039;&#039;, &#039;sid&#039;);
+        $storage-&gt;read(&#039;id&#039;);
+        $storage-&gt;write(&#039;id&#039;, &#039;data&#039;);
+        $storage-&gt;close();
+        $this-&gt;assertEquals(1, $pdo-&gt;query(&#039;SELECT COUNT(*) FROM sessions&#039;)-&gt;fetchColumn());
+
+        $storage-&gt;open(&#039;&#039;, &#039;sid&#039;);
+        $storage-&gt;read(&#039;id&#039;);
+        $storage-&gt;destroy(&#039;id&#039;);
+        $storage-&gt;close();
+        $this-&gt;assertEquals(0, $pdo-&gt;query(&#039;SELECT COUNT(*) FROM sessions&#039;)-&gt;fetchColumn());
+
+        $storage-&gt;open(&#039;&#039;, &#039;sid&#039;);
+        $data = $storage-&gt;read(&#039;id&#039;);
+        $storage-&gt;close();
+        $this-&gt;assertSame(&#039;&#039;, $data, &#039;Destroyed session returns empty string&#039;);
+    }
+
+    /**
+     * @runInSeparateProcess
+     */
+    public function testSessionGC()
+    {
+        $previousLifeTime = ini_set(&#039;session.gc_maxlifetime&#039;, 1000);
+        $pdo = $this-&gt;getMemorySqlitePdo();
+        $storage = new PdoSessionHandler($pdo);
+
+        $storage-&gt;open(&#039;&#039;, &#039;sid&#039;);
+        $storage-&gt;read(&#039;id&#039;);
+        $storage-&gt;write(&#039;id&#039;, &#039;data&#039;);
+        $storage-&gt;close();
+
+        $storage-&gt;open(&#039;&#039;, &#039;sid&#039;);
+        $storage-&gt;read(&#039;gc_id&#039;);
+        ini_set(&#039;session.gc_maxlifetime&#039;, -1); // test that you can set lifetime of a session after it has been read
+        $storage-&gt;write(&#039;gc_id&#039;, &#039;data&#039;);
+        $storage-&gt;close();
+        $this-&gt;assertEquals(2, $pdo-&gt;query(&#039;SELECT COUNT(*) FROM sessions&#039;)-&gt;fetchColumn(), &#039;No session pruned because gc not called&#039;);
+
+        $storage-&gt;open(&#039;&#039;, &#039;sid&#039;);
+        $data = $storage-&gt;read(&#039;gc_id&#039;);
+        $storage-&gt;gc(-1);
+        $storage-&gt;close();
+
+        ini_set(&#039;session.gc_maxlifetime&#039;, $previousLifeTime);
+
+        $this-&gt;assertSame(&#039;&#039;, $data, &#039;Session already considered garbage, so not returning data even if it is not pruned yet&#039;);
+        $this-&gt;assertEquals(1, $pdo-&gt;query(&#039;SELECT COUNT(*) FROM sessions&#039;)-&gt;fetchColumn(), &#039;Expired session is pruned&#039;);
+    }
+
+    public function testGetConnection()
+    {
+        $storage = new PdoSessionHandler($this-&gt;getMemorySqlitePdo());
+
+        $method = new \ReflectionMethod($storage, &#039;getConnection&#039;);
+        $method-&gt;setAccessible(true);
+
+        $this-&gt;assertInstanceOf(&#039;\PDO&#039;, $method-&gt;invoke($storage));
+    }
+
+    public function testGetConnectionConnectsIfNeeded()
+    {
+        $storage = new PdoSessionHandler(&#039;sqlite::memory:&#039;);
+
+        $method = new \ReflectionMethod($storage, &#039;getConnection&#039;);
+        $method-&gt;setAccessible(true);
+
+        $this-&gt;assertInstanceOf(&#039;\PDO&#039;, $method-&gt;invoke($storage));
+    }
+
+    /**
+     * @dataProvider provideUrlDsnPairs
+     */
+    public function testUrlDsn($url, $expectedDsn, $expectedUser = null, $expectedPassword = null)
+    {
+        $storage = new PdoSessionHandler($url);
+
+        $this-&gt;assertAttributeEquals($expectedDsn, &#039;dsn&#039;, $storage);
+
+        if (null !== $expectedUser) {
+            $this-&gt;assertAttributeEquals($expectedUser, &#039;username&#039;, $storage);
+        }
+
+        if (null !== $expectedPassword) {
+            $this-&gt;assertAttributeEquals($expectedPassword, &#039;password&#039;, $storage);
+        }
+    }
+
+    public function provideUrlDsnPairs()
+    {
+        yield array(&#039;mysql://localhost/test&#039;, &#039;mysql:host=localhost;dbname=test;&#039;);
+        yield array(&#039;mysql://localhost:56/test&#039;, &#039;mysql:host=localhost;port=56;dbname=test;&#039;);
+        yield array(&#039;mysql2://root:pwd@localhost/test&#039;, &#039;mysql:host=localhost;dbname=test;&#039;, &#039;root&#039;, &#039;pwd&#039;);
+        yield array(&#039;postgres://localhost/test&#039;, &#039;pgsql:host=localhost;dbname=test;&#039;);
+        yield array(&#039;postgresql://localhost:5634/test&#039;, &#039;pgsql:host=localhost;port=5634;dbname=test;&#039;);
+        yield array(&#039;postgres://root:pwd@localhost/test&#039;, &#039;pgsql:host=localhost;dbname=test;&#039;, &#039;root&#039;, &#039;pwd&#039;);
+        yield &#039;sqlite relative path&#039; =&gt; array(&#039;sqlite://localhost/tmp/test&#039;, &#039;sqlite:tmp/test&#039;);
+        yield &#039;sqlite absolute path&#039; =&gt; array(&#039;sqlite://localhost//tmp/test&#039;, &#039;sqlite:/tmp/test&#039;);
+        yield &#039;sqlite relative path without host&#039; =&gt; array(&#039;sqlite:///tmp/test&#039;, &#039;sqlite:tmp/test&#039;);
+        yield &#039;sqlite absolute path without host&#039; =&gt; array(&#039;sqlite3:////tmp/test&#039;, &#039;sqlite:/tmp/test&#039;);
+        yield array(&#039;sqlite://localhost/:memory:&#039;, &#039;sqlite::memory:&#039;);
+        yield array(&#039;mssql://localhost/test&#039;, &#039;sqlsrv:server=localhost;Database=test&#039;);
+        yield array(&#039;mssql://localhost:56/test&#039;, &#039;sqlsrv:server=localhost,56;Database=test&#039;);
+    }
+
+    private function createStream($content)
+    {
+        $stream = tmpfile();
+        fwrite($stream, $content);
+        fseek($stream, 0);
+
+        return $stream;
+    }
+}
+
+class MockPdo extends \PDO
+{
+    public $prepareResult;
+    private $driverName;
+    private $errorMode;
+
+    public function __construct($driverName = null, $errorMode = null)
+    {
+        $this-&gt;driverName = $driverName;
+        $this-&gt;errorMode = null !== $errorMode ?: \PDO::ERRMODE_EXCEPTION;
+    }
+
+    public function getAttribute($attribute)
+    {
+        if (\PDO::ATTR_ERRMODE === $attribute) {
+            return $this-&gt;errorMode;
+        }
+
+        if (\PDO::ATTR_DRIVER_NAME === $attribute) {
+            return $this-&gt;driverName;
+        }
+
+        return parent::getAttribute($attribute);
+    }
+
+    public function prepare($statement, $driverOptions = array())
+    {
+        return is_callable($this-&gt;prepareResult)
+            ? call_user_func($this-&gt;prepareResult, $statement, $driverOptions)
+            : $this-&gt;prepareResult;
+    }
+
+    public function beginTransaction()
+    {
+    }
+
+    public function rollBack()
+    {
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Tests\Session\Storage\NativeSessionStorageTest | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Tests_Session_Storage_NativeSessionStorageTest" data-root-path="../../../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation/Tests.html">Tests</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation/Tests/Session.html">Session</a></li>
+                    <li><a href="../../../../../../Symfony/Component/HttpFoundation/Tests/Session/Storage.html">Storage</a></li>
+  
+            <li>NativeSessionStorageTest</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>NativeSessionStorageTest</h1>
+
+    <p>    class
+    <strong>NativeSessionStorageTest</strong>        extends <abbr title="PHPUnit\Framework\TestCase">TestCase</abbr>
+</p>
+
+            <p>Test class for NativeSessionStorage.</p>            
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_setUp">setUp</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_tearDown">tearDown</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            protected                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"><a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/NativeSessionStorage.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage">NativeSessionStorage</abbr></a></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getStorage">getStorage</a>(array $options = array())</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testBag">testBag</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testRegisterBagException">testRegisterBagException</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testRegisterBagForAStartedSessionThrowsException">testRegisterBagForAStartedSessionThrowsException</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetId">testGetId</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testRegenerate">testRegenerate</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testRegenerateDestroy">testRegenerateDestroy</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testSessionGlobalIsUpToDateAfterIdRegeneration">testSessionGlobalIsUpToDateAfterIdRegeneration</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testRegenerationFailureDoesNotFlagStorageAsStarted">testRegenerationFailureDoesNotFlagStorageAsStarted</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testDefaultSessionCacheLimiter">testDefaultSessionCacheLimiter</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testExplicitSessionCacheLimiter">testExplicitSessionCacheLimiter</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testCookieOptions">testCookieOptions</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testSetSaveHandlerException">testSetSaveHandlerException</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testSetSaveHandler">testSetSaveHandler</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testStarted">testStarted</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testRestart">testRestart</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testCanCreateNativeSessionStorageWhenSessionAlreadyStarted">testCanCreateNativeSessionStorageWhenSessionAlreadyStarted</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testSetSessionOptionsOnceSessionStartedIsIgnored">testSetSessionOptionsOnceSessionStartedIsIgnored</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetBagsOnceSessionStartedIsIgnored">testGetBagsOnceSessionStartedIsIgnored</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.36">36</a>
+                    </div>
+        <div>
+            <h3 id="method_setUp"><code class="language-php">setUp()</code></h3>
+            <code class="language-php">protected setUp()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.45">45</a>
+                    </div>
+        <div>
+            <h3 id="method_tearDown"><code class="language-php">tearDown()</code></h3>
+            <code class="language-php">protected tearDown()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.59">59</a>
+                    </div>
+        <div>
+            <h3 id="method_getStorage"><code class="language-php">getStorage()</code></h3>
+            <code class="language-php">protected <a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/NativeSessionStorage.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage">NativeSessionStorage</abbr></a>&nbsp;getStorage(array $options = array())</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td><code class="language-php">array</code></td>
+                <td><code class="language-php">$options</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+                    <h4>Return Value</h4>
+
+                <table class="table">
+        <tr>
+            <td><code class="language-php"><a href="../../../../../../Symfony/Component/HttpFoundation/Session/Storage/NativeSessionStorage.html"><abbr title="Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage">NativeSessionStorage</abbr></a></code></td>
+            <td></td>
+        </tr>
+    </table>
+
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.67">67</a>
+                    </div>
+        <div>
+            <h3 id="method_testBag"><code class="language-php">testBag()</code></h3>
+            <code class="language-php">public testBag()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.78">78</a>
+                    </div>
+        <div>
+            <h3 id="method_testRegisterBagException"><code class="language-php">testRegisterBagException()</code></h3>
+            <code class="language-php">public testRegisterBagException()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.87">87</a>
+                    </div>
+        <div>
+            <h3 id="method_testRegisterBagForAStartedSessionThrowsException"><code class="language-php">testRegisterBagForAStartedSessionThrowsException()</code></h3>
+            <code class="language-php">public testRegisterBagForAStartedSessionThrowsException()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.94">94</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetId"><code class="language-php">testGetId()</code></h3>
+            <code class="language-php">public testGetId()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.108">108</a>
+                    </div>
+        <div>
+            <h3 id="method_testRegenerate"><code class="language-php">testRegenerate()</code></h3>
+            <code class="language-php">public testRegenerate()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.119">119</a>
+                    </div>
+        <div>
+            <h3 id="method_testRegenerateDestroy"><code class="language-php">testRegenerateDestroy()</code></h3>
+            <code class="language-php">public testRegenerateDestroy()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.130">130</a>
+                    </div>
+        <div>
+            <h3 id="method_testSessionGlobalIsUpToDateAfterIdRegeneration"><code class="language-php">testSessionGlobalIsUpToDateAfterIdRegeneration()</code></h3>
+            <code class="language-php">public testSessionGlobalIsUpToDateAfterIdRegeneration()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.141">141</a>
+                    </div>
+        <div>
+            <h3 id="method_testRegenerationFailureDoesNotFlagStorageAsStarted"><code class="language-php">testRegenerationFailureDoesNotFlagStorageAsStarted()</code></h3>
+            <code class="language-php">public testRegenerationFailureDoesNotFlagStorageAsStarted()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.148">148</a>
+                    </div>
+        <div>
+            <h3 id="method_testDefaultSessionCacheLimiter"><code class="language-php">testDefaultSessionCacheLimiter()</code></h3>
+            <code class="language-php">public testDefaultSessionCacheLimiter()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.156">156</a>
+                    </div>
+        <div>
+            <h3 id="method_testExplicitSessionCacheLimiter"><code class="language-php">testExplicitSessionCacheLimiter()</code></h3>
+            <code class="language-php">public testExplicitSessionCacheLimiter()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.164">164</a>
+                    </div>
+        <div>
+            <h3 id="method_testCookieOptions"><code class="language-php">testCookieOptions()</code></h3>
+            <code class="language-php">public testCookieOptions()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.188">188</a>
+                    </div>
+        <div>
+            <h3 id="method_testSetSaveHandlerException"><code class="language-php">testSetSaveHandlerException()</code></h3>
+            <code class="language-php">public testSetSaveHandlerException()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.194">194</a>
+                    </div>
+        <div>
+            <h3 id="method_testSetSaveHandler"><code class="language-php">testSetSaveHandler()</code></h3>
+            <code class="language-php">public testSetSaveHandler()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.215">215</a>
+                    </div>
+        <div>
+            <h3 id="method_testStarted"><code class="language-php">testStarted()</code></h3>
+            <code class="language-php">public testStarted()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.234">234</a>
+                    </div>
+        <div>
+            <h3 id="method_testRestart"><code class="language-php">testRestart()</code></h3>
+            <code class="language-php">public testRestart()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.246">246</a>
+                    </div>
+        <div>
+            <h3 id="method_testCanCreateNativeSessionStorageWhenSessionAlreadyStarted"><code class="language-php">testCanCreateNativeSessionStorageWhenSessionAlreadyStarted()</code></h3>
+            <code class="language-php">public testCanCreateNativeSessionStorageWhenSessionAlreadyStarted()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.255">255</a>
+                    </div>
+        <div>
+            <h3 id="method_testSetSessionOptionsOnceSessionStartedIsIgnored"><code class="language-php">testSetSessionOptionsOnceSessionStartedIsIgnored()</code></h3>
+            <code class="language-php">public testSetSessionOptionsOnceSessionStartedIsIgnored()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.266">266</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetBagsOnceSessionStartedIsIgnored"><code class="language-php">testGetBagsOnceSessionStartedIsIgnored()</code></h3>
+            <code class="language-php">public testGetBagsOnceSessionStartedIsIgnored()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Tests\Session\Storage;
+
+use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\Session\Attribute\AttributeBag;
+use Symfony\Component\HttpFoundation\Session\Flash\FlashBag;
+use Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler;
+use Symfony\Component\HttpFoundation\Session\Storage\Handler\NullSessionHandler;
+use Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage;
+use Symfony\Component\HttpFoundation\Session\Storage\Proxy\SessionHandlerProxy;
+
+/**
+ * Test class for NativeSessionStorage.
+ *
+ * @author Drak &lt;drak@zikula.org&gt;
+ *
+ * These tests require separate processes.
+ *
+ * @runTestsInSeparateProcesses
+ * @preserveGlobalState disabled
+ */
+class NativeSessionStorageTest extends TestCase
+{
+    private $savePath;
+
+    protected function setUp()
+    {
+        $this-&gt;iniSet(&#039;session.save_handler&#039;, &#039;files&#039;);
+        $this-&gt;iniSet(&#039;session.save_path&#039;, $this-&gt;savePath = sys_get_temp_dir().&#039;/sf2test&#039;);
+        if (!is_dir($this-&gt;savePath)) {
+            mkdir($this-&gt;savePath);
+        }
+    }
+
+    protected function tearDown()
+    {
+        session_write_close();
+        array_map(&#039;unlink&#039;, glob($this-&gt;savePath.&#039;/*&#039;));
+        if (is_dir($this-&gt;savePath)) {
+            rmdir($this-&gt;savePath);
+        }
+
+        $this-&gt;savePath = null;
+    }
+
+    /**
+     * @return NativeSessionStorage
+     */
+    protected function getStorage(array $options = array())
+    {
+        $storage = new NativeSessionStorage($options);
+        $storage-&gt;registerBag(new AttributeBag());
+
+        return $storage;
+    }
+
+    public function testBag()
+    {
+        $storage = $this-&gt;getStorage();
+        $bag = new FlashBag();
+        $storage-&gt;registerBag($bag);
+        $this-&gt;assertSame($bag, $storage-&gt;getBag($bag-&gt;getName()));
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testRegisterBagException()
+    {
+        $storage = $this-&gt;getStorage();
+        $storage-&gt;getBag(&#039;non_existing&#039;);
+    }
+
+    /**
+     * @expectedException \LogicException
+     */
+    public function testRegisterBagForAStartedSessionThrowsException()
+    {
+        $storage = $this-&gt;getStorage();
+        $storage-&gt;start();
+        $storage-&gt;registerBag(new AttributeBag());
+    }
+
+    public function testGetId()
+    {
+        $storage = $this-&gt;getStorage();
+        $this-&gt;assertSame(&#039;&#039;, $storage-&gt;getId(), &#039;Empty ID before starting session&#039;);
+
+        $storage-&gt;start();
+        $id = $storage-&gt;getId();
+        $this-&gt;assertInternalType(&#039;string&#039;, $id);
+        $this-&gt;assertNotSame(&#039;&#039;, $id);
+
+        $storage-&gt;save();
+        $this-&gt;assertSame($id, $storage-&gt;getId(), &#039;ID stays after saving session&#039;);
+    }
+
+    public function testRegenerate()
+    {
+        $storage = $this-&gt;getStorage();
+        $storage-&gt;start();
+        $id = $storage-&gt;getId();
+        $storage-&gt;getBag(&#039;attributes&#039;)-&gt;set(&#039;lucky&#039;, 7);
+        $storage-&gt;regenerate();
+        $this-&gt;assertNotEquals($id, $storage-&gt;getId());
+        $this-&gt;assertEquals(7, $storage-&gt;getBag(&#039;attributes&#039;)-&gt;get(&#039;lucky&#039;));
+    }
+
+    public function testRegenerateDestroy()
+    {
+        $storage = $this-&gt;getStorage();
+        $storage-&gt;start();
+        $id = $storage-&gt;getId();
+        $storage-&gt;getBag(&#039;attributes&#039;)-&gt;set(&#039;legs&#039;, 11);
+        $storage-&gt;regenerate(true);
+        $this-&gt;assertNotEquals($id, $storage-&gt;getId());
+        $this-&gt;assertEquals(11, $storage-&gt;getBag(&#039;attributes&#039;)-&gt;get(&#039;legs&#039;));
+    }
+
+    public function testSessionGlobalIsUpToDateAfterIdRegeneration()
+    {
+        $storage = $this-&gt;getStorage();
+        $storage-&gt;start();
+        $storage-&gt;getBag(&#039;attributes&#039;)-&gt;set(&#039;lucky&#039;, 7);
+        $storage-&gt;regenerate();
+        $storage-&gt;getBag(&#039;attributes&#039;)-&gt;set(&#039;lucky&#039;, 42);
+
+        $this-&gt;assertEquals(42, $_SESSION[&#039;_sf2_attributes&#039;][&#039;lucky&#039;]);
+    }
+
+    public function testRegenerationFailureDoesNotFlagStorageAsStarted()
+    {
+        $storage = $this-&gt;getStorage();
+        $this-&gt;assertFalse($storage-&gt;regenerate());
+        $this-&gt;assertFalse($storage-&gt;isStarted());
+    }
+
+    public function testDefaultSessionCacheLimiter()
+    {
+        $this-&gt;iniSet(&#039;session.cache_limiter&#039;, &#039;nocache&#039;);
+
+        $storage = new NativeSessionStorage();
+        $this-&gt;assertEquals(&#039;&#039;, ini_get(&#039;session.cache_limiter&#039;));
+    }
+
+    public function testExplicitSessionCacheLimiter()
+    {
+        $this-&gt;iniSet(&#039;session.cache_limiter&#039;, &#039;nocache&#039;);
+
+        $storage = new NativeSessionStorage(array(&#039;cache_limiter&#039; =&gt; &#039;public&#039;));
+        $this-&gt;assertEquals(&#039;public&#039;, ini_get(&#039;session.cache_limiter&#039;));
+    }
+
+    public function testCookieOptions()
+    {
+        $options = array(
+            &#039;cookie_lifetime&#039; =&gt; 123456,
+            &#039;cookie_path&#039; =&gt; &#039;/my/cookie/path&#039;,
+            &#039;cookie_domain&#039; =&gt; &#039;symfony.example.com&#039;,
+            &#039;cookie_secure&#039; =&gt; true,
+            &#039;cookie_httponly&#039; =&gt; false,
+        );
+
+        $this-&gt;getStorage($options);
+        $temp = session_get_cookie_params();
+        $gco = array();
+
+        foreach ($temp as $key =&gt; $value) {
+            $gco[&#039;cookie_&#039;.$key] = $value;
+        }
+
+        $this-&gt;assertEquals($options, $gco);
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testSetSaveHandlerException()
+    {
+        $storage = $this-&gt;getStorage();
+        $storage-&gt;setSaveHandler(new \stdClass());
+    }
+
+    public function testSetSaveHandler()
+    {
+        $this-&gt;iniSet(&#039;session.save_handler&#039;, &#039;files&#039;);
+        $storage = $this-&gt;getStorage();
+        $storage-&gt;setSaveHandler();
+        $this-&gt;assertInstanceOf(&#039;Symfony\Component\HttpFoundation\Session\Storage\Proxy\SessionHandlerProxy&#039;, $storage-&gt;getSaveHandler());
+        $storage-&gt;setSaveHandler(null);
+        $this-&gt;assertInstanceOf(&#039;Symfony\Component\HttpFoundation\Session\Storage\Proxy\SessionHandlerProxy&#039;, $storage-&gt;getSaveHandler());
+        $storage-&gt;setSaveHandler(new SessionHandlerProxy(new NativeFileSessionHandler()));
+        $this-&gt;assertInstanceOf(&#039;Symfony\Component\HttpFoundation\Session\Storage\Proxy\SessionHandlerProxy&#039;, $storage-&gt;getSaveHandler());
+        $storage-&gt;setSaveHandler(new NativeFileSessionHandler());
+        $this-&gt;assertInstanceOf(&#039;Symfony\Component\HttpFoundation\Session\Storage\Proxy\SessionHandlerProxy&#039;, $storage-&gt;getSaveHandler());
+        $storage-&gt;setSaveHandler(new SessionHandlerProxy(new NullSessionHandler()));
+        $this-&gt;assertInstanceOf(&#039;Symfony\Component\HttpFoundation\Session\Storage\Proxy\SessionHandlerProxy&#039;, $storage-&gt;getSaveHandler());
+        $storage-&gt;setSaveHandler(new NullSessionHandler());
+        $this-&gt;assertInstanceOf(&#039;Symfony\Component\HttpFoundation\Session\Storage\Proxy\SessionHandlerProxy&#039;, $storage-&gt;getSaveHandler());
+    }
+
+    /**
+     * @expectedException \RuntimeException
+     */
+    public function testStarted()
+    {
+        $storage = $this-&gt;getStorage();
+
+        $this-&gt;assertFalse($storage-&gt;getSaveHandler()-&gt;isActive());
+        $this-&gt;assertFalse($storage-&gt;isStarted());
+
+        session_start();
+        $this-&gt;assertTrue(isset($_SESSION));
+        $this-&gt;assertTrue($storage-&gt;getSaveHandler()-&gt;isActive());
+
+        // PHP session might have started, but the storage driver has not, so false is correct here
+        $this-&gt;assertFalse($storage-&gt;isStarted());
+
+        $key = $storage-&gt;getMetadataBag()-&gt;getStorageKey();
+        $this-&gt;assertArrayNotHasKey($key, $_SESSION);
+        $storage-&gt;start();
+    }
+
+    public function testRestart()
+    {
+        $storage = $this-&gt;getStorage();
+        $storage-&gt;start();
+        $id = $storage-&gt;getId();
+        $storage-&gt;getBag(&#039;attributes&#039;)-&gt;set(&#039;lucky&#039;, 7);
+        $storage-&gt;save();
+        $storage-&gt;start();
+        $this-&gt;assertSame($id, $storage-&gt;getId(), &#039;Same session ID after restarting&#039;);
+        $this-&gt;assertSame(7, $storage-&gt;getBag(&#039;attributes&#039;)-&gt;get(&#039;lucky&#039;), &#039;Data still available&#039;);
+    }
+
+    public function testCanCreateNativeSessionStorageWhenSessionAlreadyStarted()
+    {
+        session_start();
+        $this-&gt;getStorage();
+
+        // Assert no exception has been thrown by `getStorage()`
+        $this-&gt;addToAssertionCount(1);
+    }
+
+    public function testSetSessionOptionsOnceSessionStartedIsIgnored()
+    {
+        session_start();
+        $this-&gt;getStorage(array(
+            &#039;name&#039; =&gt; &#039;something-else&#039;,
+        ));
+
+        // Assert no exception has been thrown by `getStorage()`
+        $this-&gt;addToAssertionCount(1);
+    }
+
+    public function testGetBagsOnceSessionStartedIsIgnored()
+    {
+        session_start();
+        $bag = new AttributeBag();
+        $bag-&gt;setName(&#039;flashes&#039;);
+
+        $storage = $this-&gt;getStorage();
+        $storage-&gt;registerBag($bag);
+
+        $this-&gt;assertEquals($storage-&gt;getBag(&#039;flashes&#039;), $bag);
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

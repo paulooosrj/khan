@@ -5,8 +5,8 @@
 	 */
 	
 	return [
-		"Container" => "App\Khan\Component\Container\ServiceContainer::create",
-		"Router" => "App\Khan\Component\Router\Router\Router::create",
-		"DB" => "App\Khan\Component\DB\DB::getConn",
-		"Strategy" => "App\Khan\Component\Strategy\Strategy::create"
+		"Container" => "App\Khan\Component\Container\ServiceContainer",
+		"Router" => "App\Khan\Component\Router\Router\Router",
+		"DB" => "App\Khan\Component\DB\DB",
+		"Strategy" => "App\Khan\Component\Strategy\Strategy"
 	];

@@ -1,0 +1,2333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Tests\RequestContentProxy | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Tests_RequestContentProxy" data-root-path="../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../Symfony/Component/HttpFoundation/Tests.html">Tests</a></li>
+  
+            <li>RequestContentProxy</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>RequestContentProxy</h1>
+
+    <p>    class
+    <strong>RequestContentProxy</strong>        extends <abbr title="Symfony\Component\HttpFoundation\Request">Request</abbr>
+</p>
+
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_getContent">getContent</a>($asResource = false)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.2193">2193</a>
+                    </div>
+        <div>
+            <h3 id="method_getContent"><code class="language-php">getContent()</code></h3>
+            <code class="language-php">public getContent($asResource = false)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$asResource</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Tests;
+
+use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\Exception\SuspiciousOperationException;
+use Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage;
+use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\HttpFoundation\Request;
+
+class RequestTest extends TestCase
+{
+    protected function tearDown()
+    {
+        // reset
+        Request::setTrustedProxies(array(), -1);
+    }
+
+    public function testInitialize()
+    {
+        $request = new Request();
+
+        $request-&gt;initialize(array(&#039;foo&#039; =&gt; &#039;bar&#039;));
+        $this-&gt;assertEquals(&#039;bar&#039;, $request-&gt;query-&gt;get(&#039;foo&#039;), &#039;-&gt;initialize() takes an array of query parameters as its first argument&#039;);
+
+        $request-&gt;initialize(array(), array(&#039;foo&#039; =&gt; &#039;bar&#039;));
+        $this-&gt;assertEquals(&#039;bar&#039;, $request-&gt;request-&gt;get(&#039;foo&#039;), &#039;-&gt;initialize() takes an array of request parameters as its second argument&#039;);
+
+        $request-&gt;initialize(array(), array(), array(&#039;foo&#039; =&gt; &#039;bar&#039;));
+        $this-&gt;assertEquals(&#039;bar&#039;, $request-&gt;attributes-&gt;get(&#039;foo&#039;), &#039;-&gt;initialize() takes an array of attributes as its third argument&#039;);
+
+        $request-&gt;initialize(array(), array(), array(), array(), array(), array(&#039;HTTP_FOO&#039; =&gt; &#039;bar&#039;));
+        $this-&gt;assertEquals(&#039;bar&#039;, $request-&gt;headers-&gt;get(&#039;FOO&#039;), &#039;-&gt;initialize() takes an array of HTTP headers as its sixth argument&#039;);
+    }
+
+    public function testGetLocale()
+    {
+        $request = new Request();
+        $request-&gt;setLocale(&#039;pl&#039;);
+        $locale = $request-&gt;getLocale();
+        $this-&gt;assertEquals(&#039;pl&#039;, $locale);
+    }
+
+    public function testGetUser()
+    {
+        $request = Request::create(&#039;http://user:password@test.com&#039;);
+        $user = $request-&gt;getUser();
+
+        $this-&gt;assertEquals(&#039;user&#039;, $user);
+    }
+
+    public function testGetPassword()
+    {
+        $request = Request::create(&#039;http://user:password@test.com&#039;);
+        $password = $request-&gt;getPassword();
+
+        $this-&gt;assertEquals(&#039;password&#039;, $password);
+    }
+
+    public function testIsNoCache()
+    {
+        $request = new Request();
+        $isNoCache = $request-&gt;isNoCache();
+
+        $this-&gt;assertFalse($isNoCache);
+    }
+
+    public function testGetContentType()
+    {
+        $request = new Request();
+        $contentType = $request-&gt;getContentType();
+
+        $this-&gt;assertNull($contentType);
+    }
+
+    public function testSetDefaultLocale()
+    {
+        $request = new Request();
+        $request-&gt;setDefaultLocale(&#039;pl&#039;);
+        $locale = $request-&gt;getLocale();
+
+        $this-&gt;assertEquals(&#039;pl&#039;, $locale);
+    }
+
+    public function testCreate()
+    {
+        $request = Request::create(&#039;http://test.com/foo?bar=baz&#039;);
+        $this-&gt;assertEquals(&#039;http://test.com/foo?bar=baz&#039;, $request-&gt;getUri());
+        $this-&gt;assertEquals(&#039;/foo&#039;, $request-&gt;getPathInfo());
+        $this-&gt;assertEquals(&#039;bar=baz&#039;, $request-&gt;getQueryString());
+        $this-&gt;assertEquals(80, $request-&gt;getPort());
+        $this-&gt;assertEquals(&#039;test.com&#039;, $request-&gt;getHttpHost());
+        $this-&gt;assertFalse($request-&gt;isSecure());
+
+        $request = Request::create(&#039;http://test.com/foo&#039;, &#039;GET&#039;, array(&#039;bar&#039; =&gt; &#039;baz&#039;));
+        $this-&gt;assertEquals(&#039;http://test.com/foo?bar=baz&#039;, $request-&gt;getUri());
+        $this-&gt;assertEquals(&#039;/foo&#039;, $request-&gt;getPathInfo());
+        $this-&gt;assertEquals(&#039;bar=baz&#039;, $request-&gt;getQueryString());
+        $this-&gt;assertEquals(80, $request-&gt;getPort());
+        $this-&gt;assertEquals(&#039;test.com&#039;, $request-&gt;getHttpHost());
+        $this-&gt;assertFalse($request-&gt;isSecure());
+
+        $request = Request::create(&#039;http://test.com/foo?bar=foo&#039;, &#039;GET&#039;, array(&#039;bar&#039; =&gt; &#039;baz&#039;));
+        $this-&gt;assertEquals(&#039;http://test.com/foo?bar=baz&#039;, $request-&gt;getUri());
+        $this-&gt;assertEquals(&#039;/foo&#039;, $request-&gt;getPathInfo());
+        $this-&gt;assertEquals(&#039;bar=baz&#039;, $request-&gt;getQueryString());
+        $this-&gt;assertEquals(80, $request-&gt;getPort());
+        $this-&gt;assertEquals(&#039;test.com&#039;, $request-&gt;getHttpHost());
+        $this-&gt;assertFalse($request-&gt;isSecure());
+
+        $request = Request::create(&#039;https://test.com/foo?bar=baz&#039;);
+        $this-&gt;assertEquals(&#039;https://test.com/foo?bar=baz&#039;, $request-&gt;getUri());
+        $this-&gt;assertEquals(&#039;/foo&#039;, $request-&gt;getPathInfo());
+        $this-&gt;assertEquals(&#039;bar=baz&#039;, $request-&gt;getQueryString());
+        $this-&gt;assertEquals(443, $request-&gt;getPort());
+        $this-&gt;assertEquals(&#039;test.com&#039;, $request-&gt;getHttpHost());
+        $this-&gt;assertTrue($request-&gt;isSecure());
+
+        $request = Request::create(&#039;test.com:90/foo&#039;);
+        $this-&gt;assertEquals(&#039;http://test.com:90/foo&#039;, $request-&gt;getUri());
+        $this-&gt;assertEquals(&#039;/foo&#039;, $request-&gt;getPathInfo());
+        $this-&gt;assertEquals(&#039;test.com&#039;, $request-&gt;getHost());
+        $this-&gt;assertEquals(&#039;test.com:90&#039;, $request-&gt;getHttpHost());
+        $this-&gt;assertEquals(90, $request-&gt;getPort());
+        $this-&gt;assertFalse($request-&gt;isSecure());
+
+        $request = Request::create(&#039;https://test.com:90/foo&#039;);
+        $this-&gt;assertEquals(&#039;https://test.com:90/foo&#039;, $request-&gt;getUri());
+        $this-&gt;assertEquals(&#039;/foo&#039;, $request-&gt;getPathInfo());
+        $this-&gt;assertEquals(&#039;test.com&#039;, $request-&gt;getHost());
+        $this-&gt;assertEquals(&#039;test.com:90&#039;, $request-&gt;getHttpHost());
+        $this-&gt;assertEquals(90, $request-&gt;getPort());
+        $this-&gt;assertTrue($request-&gt;isSecure());
+
+        $request = Request::create(&#039;https://127.0.0.1:90/foo&#039;);
+        $this-&gt;assertEquals(&#039;https://127.0.0.1:90/foo&#039;, $request-&gt;getUri());
+        $this-&gt;assertEquals(&#039;/foo&#039;, $request-&gt;getPathInfo());
+        $this-&gt;assertEquals(&#039;127.0.0.1&#039;, $request-&gt;getHost());
+        $this-&gt;assertEquals(&#039;127.0.0.1:90&#039;, $request-&gt;getHttpHost());
+        $this-&gt;assertEquals(90, $request-&gt;getPort());
+        $this-&gt;assertTrue($request-&gt;isSecure());
+
+        $request = Request::create(&#039;https://[::1]:90/foo&#039;);
+        $this-&gt;assertEquals(&#039;https://[::1]:90/foo&#039;, $request-&gt;getUri());
+        $this-&gt;assertEquals(&#039;/foo&#039;, $request-&gt;getPathInfo());
+        $this-&gt;assertEquals(&#039;[::1]&#039;, $request-&gt;getHost());
+        $this-&gt;assertEquals(&#039;[::1]:90&#039;, $request-&gt;getHttpHost());
+        $this-&gt;assertEquals(90, $request-&gt;getPort());
+        $this-&gt;assertTrue($request-&gt;isSecure());
+
+        $request = Request::create(&#039;https://[::1]/foo&#039;);
+        $this-&gt;assertEquals(&#039;https://[::1]/foo&#039;, $request-&gt;getUri());
+        $this-&gt;assertEquals(&#039;/foo&#039;, $request-&gt;getPathInfo());
+        $this-&gt;assertEquals(&#039;[::1]&#039;, $request-&gt;getHost());
+        $this-&gt;assertEquals(&#039;[::1]&#039;, $request-&gt;getHttpHost());
+        $this-&gt;assertEquals(443, $request-&gt;getPort());
+        $this-&gt;assertTrue($request-&gt;isSecure());
+
+        $json = &#039;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;echo&quot;,&quot;id&quot;:7,&quot;params&quot;:[&quot;Hello World&quot;]}&#039;;
+        $request = Request::create(&#039;http://example.com/jsonrpc&#039;, &#039;POST&#039;, array(), array(), array(), array(), $json);
+        $this-&gt;assertEquals($json, $request-&gt;getContent());
+        $this-&gt;assertFalse($request-&gt;isSecure());
+
+        $request = Request::create(&#039;http://test.com&#039;);
+        $this-&gt;assertEquals(&#039;http://test.com/&#039;, $request-&gt;getUri());
+        $this-&gt;assertEquals(&#039;/&#039;, $request-&gt;getPathInfo());
+        $this-&gt;assertEquals(&#039;&#039;, $request-&gt;getQueryString());
+        $this-&gt;assertEquals(80, $request-&gt;getPort());
+        $this-&gt;assertEquals(&#039;test.com&#039;, $request-&gt;getHttpHost());
+        $this-&gt;assertFalse($request-&gt;isSecure());
+
+        $request = Request::create(&#039;http://test.com?test=1&#039;);
+        $this-&gt;assertEquals(&#039;http://test.com/?test=1&#039;, $request-&gt;getUri());
+        $this-&gt;assertEquals(&#039;/&#039;, $request-&gt;getPathInfo());
+        $this-&gt;assertEquals(&#039;test=1&#039;, $request-&gt;getQueryString());
+        $this-&gt;assertEquals(80, $request-&gt;getPort());
+        $this-&gt;assertEquals(&#039;test.com&#039;, $request-&gt;getHttpHost());
+        $this-&gt;assertFalse($request-&gt;isSecure());
+
+        $request = Request::create(&#039;http://test.com:90/?test=1&#039;);
+        $this-&gt;assertEquals(&#039;http://test.com:90/?test=1&#039;, $request-&gt;getUri());
+        $this-&gt;assertEquals(&#039;/&#039;, $request-&gt;getPathInfo());
+        $this-&gt;assertEquals(&#039;test=1&#039;, $request-&gt;getQueryString());
+        $this-&gt;assertEquals(90, $request-&gt;getPort());
+        $this-&gt;assertEquals(&#039;test.com:90&#039;, $request-&gt;getHttpHost());
+        $this-&gt;assertFalse($request-&gt;isSecure());
+
+        $request = Request::create(&#039;http://username:password@test.com&#039;);
+        $this-&gt;assertEquals(&#039;http://test.com/&#039;, $request-&gt;getUri());
+        $this-&gt;assertEquals(&#039;/&#039;, $request-&gt;getPathInfo());
+        $this-&gt;assertEquals(&#039;&#039;, $request-&gt;getQueryString());
+        $this-&gt;assertEquals(80, $request-&gt;getPort());
+        $this-&gt;assertEquals(&#039;test.com&#039;, $request-&gt;getHttpHost());
+        $this-&gt;assertEquals(&#039;username&#039;, $request-&gt;getUser());
+        $this-&gt;assertEquals(&#039;password&#039;, $request-&gt;getPassword());
+        $this-&gt;assertFalse($request-&gt;isSecure());
+
+        $request = Request::create(&#039;http://username@test.com&#039;);
+        $this-&gt;assertEquals(&#039;http://test.com/&#039;, $request-&gt;getUri());
+        $this-&gt;assertEquals(&#039;/&#039;, $request-&gt;getPathInfo());
+        $this-&gt;assertEquals(&#039;&#039;, $request-&gt;getQueryString());
+        $this-&gt;assertEquals(80, $request-&gt;getPort());
+        $this-&gt;assertEquals(&#039;test.com&#039;, $request-&gt;getHttpHost());
+        $this-&gt;assertEquals(&#039;username&#039;, $request-&gt;getUser());
+        $this-&gt;assertSame(&#039;&#039;, $request-&gt;getPassword());
+        $this-&gt;assertFalse($request-&gt;isSecure());
+
+        $request = Request::create(&#039;http://test.com/?foo&#039;);
+        $this-&gt;assertEquals(&#039;/?foo&#039;, $request-&gt;getRequestUri());
+        $this-&gt;assertEquals(array(&#039;foo&#039; =&gt; &#039;&#039;), $request-&gt;query-&gt;all());
+
+        // assume rewrite rule: (.*) --&gt; app/app.php; app/ is a symlink to a symfony web/ directory
+        $request = Request::create(&#039;http://test.com/apparthotel-1234&#039;, &#039;GET&#039;, array(), array(), array(),
+            array(
+                &#039;DOCUMENT_ROOT&#039; =&gt; &#039;/var/www/www.test.com&#039;,
+                &#039;SCRIPT_FILENAME&#039; =&gt; &#039;/var/www/www.test.com/app/app.php&#039;,
+                &#039;SCRIPT_NAME&#039; =&gt; &#039;/app/app.php&#039;,
+                &#039;PHP_SELF&#039; =&gt; &#039;/app/app.php/apparthotel-1234&#039;,
+            ));
+        $this-&gt;assertEquals(&#039;http://test.com/apparthotel-1234&#039;, $request-&gt;getUri());
+        $this-&gt;assertEquals(&#039;/apparthotel-1234&#039;, $request-&gt;getPathInfo());
+        $this-&gt;assertEquals(&#039;&#039;, $request-&gt;getQueryString());
+        $this-&gt;assertEquals(80, $request-&gt;getPort());
+        $this-&gt;assertEquals(&#039;test.com&#039;, $request-&gt;getHttpHost());
+        $this-&gt;assertFalse($request-&gt;isSecure());
+    }
+
+    public function testCreateCheckPrecedence()
+    {
+        // server is used by default
+        $request = Request::create(&#039;/&#039;, &#039;DELETE&#039;, array(), array(), array(), array(
+            &#039;HTTP_HOST&#039; =&gt; &#039;example.com&#039;,
+            &#039;HTTPS&#039; =&gt; &#039;on&#039;,
+            &#039;SERVER_PORT&#039; =&gt; 443,
+            &#039;PHP_AUTH_USER&#039; =&gt; &#039;fabien&#039;,
+            &#039;PHP_AUTH_PW&#039; =&gt; &#039;pa$$&#039;,
+            &#039;QUERY_STRING&#039; =&gt; &#039;foo=bar&#039;,
+            &#039;CONTENT_TYPE&#039; =&gt; &#039;application/json&#039;,
+        ));
+        $this-&gt;assertEquals(&#039;example.com&#039;, $request-&gt;getHost());
+        $this-&gt;assertEquals(443, $request-&gt;getPort());
+        $this-&gt;assertTrue($request-&gt;isSecure());
+        $this-&gt;assertEquals(&#039;fabien&#039;, $request-&gt;getUser());
+        $this-&gt;assertEquals(&#039;pa$$&#039;, $request-&gt;getPassword());
+        $this-&gt;assertEquals(&#039;&#039;, $request-&gt;getQueryString());
+        $this-&gt;assertEquals(&#039;application/json&#039;, $request-&gt;headers-&gt;get(&#039;CONTENT_TYPE&#039;));
+
+        // URI has precedence over server
+        $request = Request::create(&#039;http://thomas:pokemon@example.net:8080/?foo=bar&#039;, &#039;GET&#039;, array(), array(), array(), array(
+            &#039;HTTP_HOST&#039; =&gt; &#039;example.com&#039;,
+            &#039;HTTPS&#039; =&gt; &#039;on&#039;,
+            &#039;SERVER_PORT&#039; =&gt; 443,
+        ));
+        $this-&gt;assertEquals(&#039;example.net&#039;, $request-&gt;getHost());
+        $this-&gt;assertEquals(8080, $request-&gt;getPort());
+        $this-&gt;assertFalse($request-&gt;isSecure());
+        $this-&gt;assertEquals(&#039;thomas&#039;, $request-&gt;getUser());
+        $this-&gt;assertEquals(&#039;pokemon&#039;, $request-&gt;getPassword());
+        $this-&gt;assertEquals(&#039;foo=bar&#039;, $request-&gt;getQueryString());
+    }
+
+    public function testDuplicate()
+    {
+        $request = new Request(array(&#039;foo&#039; =&gt; &#039;bar&#039;), array(&#039;foo&#039; =&gt; &#039;bar&#039;), array(&#039;foo&#039; =&gt; &#039;bar&#039;), array(), array(), array(&#039;HTTP_FOO&#039; =&gt; &#039;bar&#039;));
+        $dup = $request-&gt;duplicate();
+
+        $this-&gt;assertEquals($request-&gt;query-&gt;all(), $dup-&gt;query-&gt;all(), &#039;-&gt;duplicate() duplicates a request an copy the current query parameters&#039;);
+        $this-&gt;assertEquals($request-&gt;request-&gt;all(), $dup-&gt;request-&gt;all(), &#039;-&gt;duplicate() duplicates a request an copy the current request parameters&#039;);
+        $this-&gt;assertEquals($request-&gt;attributes-&gt;all(), $dup-&gt;attributes-&gt;all(), &#039;-&gt;duplicate() duplicates a request an copy the current attributes&#039;);
+        $this-&gt;assertEquals($request-&gt;headers-&gt;all(), $dup-&gt;headers-&gt;all(), &#039;-&gt;duplicate() duplicates a request an copy the current HTTP headers&#039;);
+
+        $dup = $request-&gt;duplicate(array(&#039;foo&#039; =&gt; &#039;foobar&#039;), array(&#039;foo&#039; =&gt; &#039;foobar&#039;), array(&#039;foo&#039; =&gt; &#039;foobar&#039;), array(), array(), array(&#039;HTTP_FOO&#039; =&gt; &#039;foobar&#039;));
+
+        $this-&gt;assertEquals(array(&#039;foo&#039; =&gt; &#039;foobar&#039;), $dup-&gt;query-&gt;all(), &#039;-&gt;duplicate() overrides the query parameters if provided&#039;);
+        $this-&gt;assertEquals(array(&#039;foo&#039; =&gt; &#039;foobar&#039;), $dup-&gt;request-&gt;all(), &#039;-&gt;duplicate() overrides the request parameters if provided&#039;);
+        $this-&gt;assertEquals(array(&#039;foo&#039; =&gt; &#039;foobar&#039;), $dup-&gt;attributes-&gt;all(), &#039;-&gt;duplicate() overrides the attributes if provided&#039;);
+        $this-&gt;assertEquals(array(&#039;foo&#039; =&gt; array(&#039;foobar&#039;)), $dup-&gt;headers-&gt;all(), &#039;-&gt;duplicate() overrides the HTTP header if provided&#039;);
+    }
+
+    public function testDuplicateWithFormat()
+    {
+        $request = new Request(array(), array(), array(&#039;_format&#039; =&gt; &#039;json&#039;));
+        $dup = $request-&gt;duplicate();
+
+        $this-&gt;assertEquals(&#039;json&#039;, $dup-&gt;getRequestFormat());
+        $this-&gt;assertEquals(&#039;json&#039;, $dup-&gt;attributes-&gt;get(&#039;_format&#039;));
+
+        $request = new Request();
+        $request-&gt;setRequestFormat(&#039;xml&#039;);
+        $dup = $request-&gt;duplicate();
+
+        $this-&gt;assertEquals(&#039;xml&#039;, $dup-&gt;getRequestFormat());
+    }
+
+    /**
+     * @dataProvider getFormatToMimeTypeMapProviderWithAdditionalNullFormat
+     */
+    public function testGetFormatFromMimeType($format, $mimeTypes)
+    {
+        $request = new Request();
+        foreach ($mimeTypes as $mime) {
+            $this-&gt;assertEquals($format, $request-&gt;getFormat($mime));
+        }
+        $request-&gt;setFormat($format, $mimeTypes);
+        foreach ($mimeTypes as $mime) {
+            $this-&gt;assertEquals($format, $request-&gt;getFormat($mime));
+
+            if (null !== $format) {
+                $this-&gt;assertEquals($mimeTypes[0], $request-&gt;getMimeType($format));
+            }
+        }
+    }
+
+    public function getFormatToMimeTypeMapProviderWithAdditionalNullFormat()
+    {
+        return array_merge(
+            array(array(null, array(null, &#039;unexistent-mime-type&#039;))),
+            $this-&gt;getFormatToMimeTypeMapProvider()
+        );
+    }
+
+    public function testGetFormatFromMimeTypeWithParameters()
+    {
+        $request = new Request();
+        $this-&gt;assertEquals(&#039;json&#039;, $request-&gt;getFormat(&#039;application/json; charset=utf-8&#039;));
+    }
+
+    /**
+     * @dataProvider getFormatToMimeTypeMapProvider
+     */
+    public function testGetMimeTypeFromFormat($format, $mimeTypes)
+    {
+        $request = new Request();
+        $this-&gt;assertEquals($mimeTypes[0], $request-&gt;getMimeType($format));
+    }
+
+    /**
+     * @dataProvider getFormatToMimeTypeMapProvider
+     */
+    public function testGetMimeTypesFromFormat($format, $mimeTypes)
+    {
+        $this-&gt;assertEquals($mimeTypes, Request::getMimeTypes($format));
+    }
+
+    public function testGetMimeTypesFromInexistentFormat()
+    {
+        $request = new Request();
+        $this-&gt;assertNull($request-&gt;getMimeType(&#039;foo&#039;));
+        $this-&gt;assertEquals(array(), Request::getMimeTypes(&#039;foo&#039;));
+    }
+
+    public function testGetFormatWithCustomMimeType()
+    {
+        $request = new Request();
+        $request-&gt;setFormat(&#039;custom&#039;, &#039;application/vnd.foo.api;myversion=2.3&#039;);
+        $this-&gt;assertEquals(&#039;custom&#039;, $request-&gt;getFormat(&#039;application/vnd.foo.api;myversion=2.3&#039;));
+    }
+
+    public function getFormatToMimeTypeMapProvider()
+    {
+        return array(
+            array(&#039;txt&#039;, array(&#039;text/plain&#039;)),
+            array(&#039;js&#039;, array(&#039;application/javascript&#039;, &#039;application/x-javascript&#039;, &#039;text/javascript&#039;)),
+            array(&#039;css&#039;, array(&#039;text/css&#039;)),
+            array(&#039;json&#039;, array(&#039;application/json&#039;, &#039;application/x-json&#039;)),
+            array(&#039;jsonld&#039;, array(&#039;application/ld+json&#039;)),
+            array(&#039;xml&#039;, array(&#039;text/xml&#039;, &#039;application/xml&#039;, &#039;application/x-xml&#039;)),
+            array(&#039;rdf&#039;, array(&#039;application/rdf+xml&#039;)),
+            array(&#039;atom&#039;, array(&#039;application/atom+xml&#039;)),
+        );
+    }
+
+    public function testGetUri()
+    {
+        $server = array();
+
+        // Standard Request on non default PORT
+        // http://host:8080/index.php/path/info?query=string
+
+        $server[&#039;HTTP_HOST&#039;] = &#039;host:8080&#039;;
+        $server[&#039;SERVER_NAME&#039;] = &#039;servername&#039;;
+        $server[&#039;SERVER_PORT&#039;] = &#039;8080&#039;;
+
+        $server[&#039;QUERY_STRING&#039;] = &#039;query=string&#039;;
+        $server[&#039;REQUEST_URI&#039;] = &#039;/index.php/path/info?query=string&#039;;
+        $server[&#039;SCRIPT_NAME&#039;] = &#039;/index.php&#039;;
+        $server[&#039;PATH_INFO&#039;] = &#039;/path/info&#039;;
+        $server[&#039;PATH_TRANSLATED&#039;] = &#039;redirect:/index.php/path/info&#039;;
+        $server[&#039;PHP_SELF&#039;] = &#039;/index_dev.php/path/info&#039;;
+        $server[&#039;SCRIPT_FILENAME&#039;] = &#039;/some/where/index.php&#039;;
+
+        $request = new Request();
+
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+
+        $this-&gt;assertEquals(&#039;http://host:8080/index.php/path/info?query=string&#039;, $request-&gt;getUri(), &#039;-&gt;getUri() with non default port&#039;);
+
+        // Use std port number
+        $server[&#039;HTTP_HOST&#039;] = &#039;host&#039;;
+        $server[&#039;SERVER_NAME&#039;] = &#039;servername&#039;;
+        $server[&#039;SERVER_PORT&#039;] = &#039;80&#039;;
+
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+
+        $this-&gt;assertEquals(&#039;http://host/index.php/path/info?query=string&#039;, $request-&gt;getUri(), &#039;-&gt;getUri() with default port&#039;);
+
+        // Without HOST HEADER
+        unset($server[&#039;HTTP_HOST&#039;]);
+        $server[&#039;SERVER_NAME&#039;] = &#039;servername&#039;;
+        $server[&#039;SERVER_PORT&#039;] = &#039;80&#039;;
+
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+
+        $this-&gt;assertEquals(&#039;http://servername/index.php/path/info?query=string&#039;, $request-&gt;getUri(), &#039;-&gt;getUri() with default port without HOST_HEADER&#039;);
+
+        // Request with URL REWRITING (hide index.php)
+        //   RewriteCond %{REQUEST_FILENAME} !-f
+        //   RewriteRule ^(.*)$ index.php [QSA,L]
+        // http://host:8080/path/info?query=string
+        $server = array();
+        $server[&#039;HTTP_HOST&#039;] = &#039;host:8080&#039;;
+        $server[&#039;SERVER_NAME&#039;] = &#039;servername&#039;;
+        $server[&#039;SERVER_PORT&#039;] = &#039;8080&#039;;
+
+        $server[&#039;REDIRECT_QUERY_STRING&#039;] = &#039;query=string&#039;;
+        $server[&#039;REDIRECT_URL&#039;] = &#039;/path/info&#039;;
+        $server[&#039;SCRIPT_NAME&#039;] = &#039;/index.php&#039;;
+        $server[&#039;QUERY_STRING&#039;] = &#039;query=string&#039;;
+        $server[&#039;REQUEST_URI&#039;] = &#039;/path/info?toto=test&amp;1=1&#039;;
+        $server[&#039;SCRIPT_NAME&#039;] = &#039;/index.php&#039;;
+        $server[&#039;PHP_SELF&#039;] = &#039;/index.php&#039;;
+        $server[&#039;SCRIPT_FILENAME&#039;] = &#039;/some/where/index.php&#039;;
+
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+        $this-&gt;assertEquals(&#039;http://host:8080/path/info?query=string&#039;, $request-&gt;getUri(), &#039;-&gt;getUri() with rewrite&#039;);
+
+        // Use std port number
+        //  http://host/path/info?query=string
+        $server[&#039;HTTP_HOST&#039;] = &#039;host&#039;;
+        $server[&#039;SERVER_NAME&#039;] = &#039;servername&#039;;
+        $server[&#039;SERVER_PORT&#039;] = &#039;80&#039;;
+
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+
+        $this-&gt;assertEquals(&#039;http://host/path/info?query=string&#039;, $request-&gt;getUri(), &#039;-&gt;getUri() with rewrite and default port&#039;);
+
+        // Without HOST HEADER
+        unset($server[&#039;HTTP_HOST&#039;]);
+        $server[&#039;SERVER_NAME&#039;] = &#039;servername&#039;;
+        $server[&#039;SERVER_PORT&#039;] = &#039;80&#039;;
+
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+
+        $this-&gt;assertEquals(&#039;http://servername/path/info?query=string&#039;, $request-&gt;getUri(), &#039;-&gt;getUri() with rewrite, default port without HOST_HEADER&#039;);
+
+        // With encoded characters
+
+        $server = array(
+            &#039;HTTP_HOST&#039; =&gt; &#039;host:8080&#039;,
+            &#039;SERVER_NAME&#039; =&gt; &#039;servername&#039;,
+            &#039;SERVER_PORT&#039; =&gt; &#039;8080&#039;,
+            &#039;QUERY_STRING&#039; =&gt; &#039;query=string&#039;,
+            &#039;REQUEST_URI&#039; =&gt; &#039;/ba%20se/index_dev.php/foo%20bar/in+fo?query=string&#039;,
+            &#039;SCRIPT_NAME&#039; =&gt; &#039;/ba se/index_dev.php&#039;,
+            &#039;PATH_TRANSLATED&#039; =&gt; &#039;redirect:/index.php/foo bar/in+fo&#039;,
+            &#039;PHP_SELF&#039; =&gt; &#039;/ba se/index_dev.php/path/info&#039;,
+            &#039;SCRIPT_FILENAME&#039; =&gt; &#039;/some/where/ba se/index_dev.php&#039;,
+        );
+
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+
+        $this-&gt;assertEquals(
+            &#039;http://host:8080/ba%20se/index_dev.php/foo%20bar/in+fo?query=string&#039;,
+            $request-&gt;getUri()
+        );
+
+        // with user info
+
+        $server[&#039;PHP_AUTH_USER&#039;] = &#039;fabien&#039;;
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+        $this-&gt;assertEquals(&#039;http://host:8080/ba%20se/index_dev.php/foo%20bar/in+fo?query=string&#039;, $request-&gt;getUri());
+
+        $server[&#039;PHP_AUTH_PW&#039;] = &#039;symfony&#039;;
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+        $this-&gt;assertEquals(&#039;http://host:8080/ba%20se/index_dev.php/foo%20bar/in+fo?query=string&#039;, $request-&gt;getUri());
+    }
+
+    public function testGetUriForPath()
+    {
+        $request = Request::create(&#039;http://test.com/foo?bar=baz&#039;);
+        $this-&gt;assertEquals(&#039;http://test.com/some/path&#039;, $request-&gt;getUriForPath(&#039;/some/path&#039;));
+
+        $request = Request::create(&#039;http://test.com:90/foo?bar=baz&#039;);
+        $this-&gt;assertEquals(&#039;http://test.com:90/some/path&#039;, $request-&gt;getUriForPath(&#039;/some/path&#039;));
+
+        $request = Request::create(&#039;https://test.com/foo?bar=baz&#039;);
+        $this-&gt;assertEquals(&#039;https://test.com/some/path&#039;, $request-&gt;getUriForPath(&#039;/some/path&#039;));
+
+        $request = Request::create(&#039;https://test.com:90/foo?bar=baz&#039;);
+        $this-&gt;assertEquals(&#039;https://test.com:90/some/path&#039;, $request-&gt;getUriForPath(&#039;/some/path&#039;));
+
+        $server = array();
+
+        // Standard Request on non default PORT
+        // http://host:8080/index.php/path/info?query=string
+
+        $server[&#039;HTTP_HOST&#039;] = &#039;host:8080&#039;;
+        $server[&#039;SERVER_NAME&#039;] = &#039;servername&#039;;
+        $server[&#039;SERVER_PORT&#039;] = &#039;8080&#039;;
+
+        $server[&#039;QUERY_STRING&#039;] = &#039;query=string&#039;;
+        $server[&#039;REQUEST_URI&#039;] = &#039;/index.php/path/info?query=string&#039;;
+        $server[&#039;SCRIPT_NAME&#039;] = &#039;/index.php&#039;;
+        $server[&#039;PATH_INFO&#039;] = &#039;/path/info&#039;;
+        $server[&#039;PATH_TRANSLATED&#039;] = &#039;redirect:/index.php/path/info&#039;;
+        $server[&#039;PHP_SELF&#039;] = &#039;/index_dev.php/path/info&#039;;
+        $server[&#039;SCRIPT_FILENAME&#039;] = &#039;/some/where/index.php&#039;;
+
+        $request = new Request();
+
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+
+        $this-&gt;assertEquals(&#039;http://host:8080/index.php/some/path&#039;, $request-&gt;getUriForPath(&#039;/some/path&#039;), &#039;-&gt;getUriForPath() with non default port&#039;);
+
+        // Use std port number
+        $server[&#039;HTTP_HOST&#039;] = &#039;host&#039;;
+        $server[&#039;SERVER_NAME&#039;] = &#039;servername&#039;;
+        $server[&#039;SERVER_PORT&#039;] = &#039;80&#039;;
+
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+
+        $this-&gt;assertEquals(&#039;http://host/index.php/some/path&#039;, $request-&gt;getUriForPath(&#039;/some/path&#039;), &#039;-&gt;getUriForPath() with default port&#039;);
+
+        // Without HOST HEADER
+        unset($server[&#039;HTTP_HOST&#039;]);
+        $server[&#039;SERVER_NAME&#039;] = &#039;servername&#039;;
+        $server[&#039;SERVER_PORT&#039;] = &#039;80&#039;;
+
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+
+        $this-&gt;assertEquals(&#039;http://servername/index.php/some/path&#039;, $request-&gt;getUriForPath(&#039;/some/path&#039;), &#039;-&gt;getUriForPath() with default port without HOST_HEADER&#039;);
+
+        // Request with URL REWRITING (hide index.php)
+        //   RewriteCond %{REQUEST_FILENAME} !-f
+        //   RewriteRule ^(.*)$ index.php [QSA,L]
+        // http://host:8080/path/info?query=string
+        $server = array();
+        $server[&#039;HTTP_HOST&#039;] = &#039;host:8080&#039;;
+        $server[&#039;SERVER_NAME&#039;] = &#039;servername&#039;;
+        $server[&#039;SERVER_PORT&#039;] = &#039;8080&#039;;
+
+        $server[&#039;REDIRECT_QUERY_STRING&#039;] = &#039;query=string&#039;;
+        $server[&#039;REDIRECT_URL&#039;] = &#039;/path/info&#039;;
+        $server[&#039;SCRIPT_NAME&#039;] = &#039;/index.php&#039;;
+        $server[&#039;QUERY_STRING&#039;] = &#039;query=string&#039;;
+        $server[&#039;REQUEST_URI&#039;] = &#039;/path/info?toto=test&amp;1=1&#039;;
+        $server[&#039;SCRIPT_NAME&#039;] = &#039;/index.php&#039;;
+        $server[&#039;PHP_SELF&#039;] = &#039;/index.php&#039;;
+        $server[&#039;SCRIPT_FILENAME&#039;] = &#039;/some/where/index.php&#039;;
+
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+        $this-&gt;assertEquals(&#039;http://host:8080/some/path&#039;, $request-&gt;getUriForPath(&#039;/some/path&#039;), &#039;-&gt;getUri() with rewrite&#039;);
+
+        // Use std port number
+        //  http://host/path/info?query=string
+        $server[&#039;HTTP_HOST&#039;] = &#039;host&#039;;
+        $server[&#039;SERVER_NAME&#039;] = &#039;servername&#039;;
+        $server[&#039;SERVER_PORT&#039;] = &#039;80&#039;;
+
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+
+        $this-&gt;assertEquals(&#039;http://host/some/path&#039;, $request-&gt;getUriForPath(&#039;/some/path&#039;), &#039;-&gt;getUriForPath() with rewrite and default port&#039;);
+
+        // Without HOST HEADER
+        unset($server[&#039;HTTP_HOST&#039;]);
+        $server[&#039;SERVER_NAME&#039;] = &#039;servername&#039;;
+        $server[&#039;SERVER_PORT&#039;] = &#039;80&#039;;
+
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+
+        $this-&gt;assertEquals(&#039;http://servername/some/path&#039;, $request-&gt;getUriForPath(&#039;/some/path&#039;), &#039;-&gt;getUriForPath() with rewrite, default port without HOST_HEADER&#039;);
+        $this-&gt;assertEquals(&#039;servername&#039;, $request-&gt;getHttpHost());
+
+        // with user info
+
+        $server[&#039;PHP_AUTH_USER&#039;] = &#039;fabien&#039;;
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+        $this-&gt;assertEquals(&#039;http://servername/some/path&#039;, $request-&gt;getUriForPath(&#039;/some/path&#039;));
+
+        $server[&#039;PHP_AUTH_PW&#039;] = &#039;symfony&#039;;
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+        $this-&gt;assertEquals(&#039;http://servername/some/path&#039;, $request-&gt;getUriForPath(&#039;/some/path&#039;));
+    }
+
+    /**
+     * @dataProvider getRelativeUriForPathData()
+     */
+    public function testGetRelativeUriForPath($expected, $pathinfo, $path)
+    {
+        $this-&gt;assertEquals($expected, Request::create($pathinfo)-&gt;getRelativeUriForPath($path));
+    }
+
+    public function getRelativeUriForPathData()
+    {
+        return array(
+            array(&#039;me.png&#039;, &#039;/foo&#039;, &#039;/me.png&#039;),
+            array(&#039;../me.png&#039;, &#039;/foo/bar&#039;, &#039;/me.png&#039;),
+            array(&#039;me.png&#039;, &#039;/foo/bar&#039;, &#039;/foo/me.png&#039;),
+            array(&#039;../baz/me.png&#039;, &#039;/foo/bar/b&#039;, &#039;/foo/baz/me.png&#039;),
+            array(&#039;../../fooz/baz/me.png&#039;, &#039;/foo/bar/b&#039;, &#039;/fooz/baz/me.png&#039;),
+            array(&#039;baz/me.png&#039;, &#039;/foo/bar/b&#039;, &#039;baz/me.png&#039;),
+        );
+    }
+
+    public function testGetUserInfo()
+    {
+        $request = new Request();
+
+        $server = array(&#039;PHP_AUTH_USER&#039; =&gt; &#039;fabien&#039;);
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+        $this-&gt;assertEquals(&#039;fabien&#039;, $request-&gt;getUserInfo());
+
+        $server[&#039;PHP_AUTH_USER&#039;] = &#039;0&#039;;
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+        $this-&gt;assertEquals(&#039;0&#039;, $request-&gt;getUserInfo());
+
+        $server[&#039;PHP_AUTH_PW&#039;] = &#039;0&#039;;
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+        $this-&gt;assertEquals(&#039;0:0&#039;, $request-&gt;getUserInfo());
+    }
+
+    public function testGetSchemeAndHttpHost()
+    {
+        $request = new Request();
+
+        $server = array();
+        $server[&#039;SERVER_NAME&#039;] = &#039;servername&#039;;
+        $server[&#039;SERVER_PORT&#039;] = &#039;90&#039;;
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+        $this-&gt;assertEquals(&#039;http://servername:90&#039;, $request-&gt;getSchemeAndHttpHost());
+
+        $server[&#039;PHP_AUTH_USER&#039;] = &#039;fabien&#039;;
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+        $this-&gt;assertEquals(&#039;http://servername:90&#039;, $request-&gt;getSchemeAndHttpHost());
+
+        $server[&#039;PHP_AUTH_USER&#039;] = &#039;0&#039;;
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+        $this-&gt;assertEquals(&#039;http://servername:90&#039;, $request-&gt;getSchemeAndHttpHost());
+
+        $server[&#039;PHP_AUTH_PW&#039;] = &#039;0&#039;;
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+        $this-&gt;assertEquals(&#039;http://servername:90&#039;, $request-&gt;getSchemeAndHttpHost());
+    }
+
+    /**
+     * @dataProvider getQueryStringNormalizationData
+     */
+    public function testGetQueryString($query, $expectedQuery, $msg)
+    {
+        $request = new Request();
+
+        $request-&gt;server-&gt;set(&#039;QUERY_STRING&#039;, $query);
+        $this-&gt;assertSame($expectedQuery, $request-&gt;getQueryString(), $msg);
+    }
+
+    public function getQueryStringNormalizationData()
+    {
+        return array(
+            array(&#039;foo&#039;, &#039;foo=&#039;, &#039;works with valueless parameters&#039;),
+            array(&#039;foo=&#039;, &#039;foo=&#039;, &#039;includes a dangling equal sign&#039;),
+            array(&#039;bar=&amp;foo=bar&#039;, &#039;bar=&amp;foo=bar&#039;, &#039;-&gt;works with empty parameters&#039;),
+            array(&#039;foo=bar&amp;bar=&#039;, &#039;bar=&amp;foo=bar&#039;, &#039;sorts keys alphabetically&#039;),
+
+            // GET parameters, that are submitted from a HTML form, encode spaces as &quot;+&quot; by default (as defined in enctype application/x-www-form-urlencoded).
+            // PHP also converts &quot;+&quot; to spaces when filling the global _GET or when using the function parse_str.
+            array(&#039;him=John%20Doe&amp;her=Jane+Doe&#039;, &#039;her=Jane%20Doe&amp;him=John%20Doe&#039;, &#039;normalizes spaces in both encodings &quot;%20&quot; and &quot;+&quot;&#039;),
+
+            array(&#039;foo[]=1&amp;foo[]=2&#039;, &#039;foo%5B0%5D=1&amp;foo%5B1%5D=2&#039;, &#039;allows array notation&#039;),
+            array(&#039;foo=1&amp;foo=2&#039;, &#039;foo=2&#039;, &#039;merges repeated parameters&#039;),
+            array(&#039;pa%3Dram=foo%26bar%3Dbaz&amp;test=test&#039;, &#039;pa%3Dram=foo%26bar%3Dbaz&amp;test=test&#039;, &#039;works with encoded delimiters&#039;),
+            array(&#039;0&#039;, &#039;0=&#039;, &#039;allows &quot;0&quot;&#039;),
+            array(&#039;Jane Doe&amp;John%20Doe&#039;, &#039;Jane_Doe=&amp;John_Doe=&#039;, &#039;normalizes encoding in keys&#039;),
+            array(&#039;her=Jane Doe&amp;him=John%20Doe&#039;, &#039;her=Jane%20Doe&amp;him=John%20Doe&#039;, &#039;normalizes encoding in values&#039;),
+            array(&#039;foo=bar&amp;&amp;&amp;test&amp;&amp;&#039;, &#039;foo=bar&amp;test=&#039;, &#039;removes unneeded delimiters&#039;),
+            array(&#039;formula=e=m*c^2&#039;, &#039;formula=e%3Dm%2Ac%5E2&#039;, &#039;correctly treats only the first &quot;=&quot; as delimiter and the next as value&#039;),
+
+            // Ignore pairs with empty key, even if there was a value, e.g. &quot;=value&quot;, as such nameless values cannot be retrieved anyway.
+            // PHP also does not include them when building _GET.
+            array(&#039;foo=bar&amp;=a=b&amp;=x=y&#039;, &#039;foo=bar&#039;, &#039;removes params with empty key&#039;),
+
+            // Don&#039;t reorder nested query string keys
+            array(&#039;foo[]=Z&amp;foo[]=A&#039;, &#039;foo%5B0%5D=Z&amp;foo%5B1%5D=A&#039;, &#039;keeps order of values&#039;),
+            array(&#039;foo[Z]=B&amp;foo[A]=B&#039;, &#039;foo%5BZ%5D=B&amp;foo%5BA%5D=B&#039;, &#039;keeps order of keys&#039;),
+
+            array(&#039;utf8=✓&#039;, &#039;utf8=%E2%9C%93&#039;, &#039;encodes UTF-8&#039;),
+        );
+    }
+
+    public function testGetQueryStringReturnsNull()
+    {
+        $request = new Request();
+
+        $this-&gt;assertNull($request-&gt;getQueryString(), &#039;-&gt;getQueryString() returns null for non-existent query string&#039;);
+
+        $request-&gt;server-&gt;set(&#039;QUERY_STRING&#039;, &#039;&#039;);
+        $this-&gt;assertNull($request-&gt;getQueryString(), &#039;-&gt;getQueryString() returns null for empty query string&#039;);
+    }
+
+    public function testGetHost()
+    {
+        $request = new Request();
+
+        $request-&gt;initialize(array(&#039;foo&#039; =&gt; &#039;bar&#039;));
+        $this-&gt;assertEquals(&#039;&#039;, $request-&gt;getHost(), &#039;-&gt;getHost() return empty string if not initialized&#039;);
+
+        $request-&gt;initialize(array(), array(), array(), array(), array(), array(&#039;HTTP_HOST&#039; =&gt; &#039;www.example.com&#039;));
+        $this-&gt;assertEquals(&#039;www.example.com&#039;, $request-&gt;getHost(), &#039;-&gt;getHost() from Host Header&#039;);
+
+        // Host header with port number
+        $request-&gt;initialize(array(), array(), array(), array(), array(), array(&#039;HTTP_HOST&#039; =&gt; &#039;www.example.com:8080&#039;));
+        $this-&gt;assertEquals(&#039;www.example.com&#039;, $request-&gt;getHost(), &#039;-&gt;getHost() from Host Header with port number&#039;);
+
+        // Server values
+        $request-&gt;initialize(array(), array(), array(), array(), array(), array(&#039;SERVER_NAME&#039; =&gt; &#039;www.example.com&#039;));
+        $this-&gt;assertEquals(&#039;www.example.com&#039;, $request-&gt;getHost(), &#039;-&gt;getHost() from server name&#039;);
+
+        $request-&gt;initialize(array(), array(), array(), array(), array(), array(&#039;SERVER_NAME&#039; =&gt; &#039;www.example.com&#039;, &#039;HTTP_HOST&#039; =&gt; &#039;www.host.com&#039;));
+        $this-&gt;assertEquals(&#039;www.host.com&#039;, $request-&gt;getHost(), &#039;-&gt;getHost() value from Host header has priority over SERVER_NAME &#039;);
+    }
+
+    public function testGetPort()
+    {
+        $request = Request::create(&#039;http://example.com&#039;, &#039;GET&#039;, array(), array(), array(), array(
+            &#039;HTTP_X_FORWARDED_PROTO&#039; =&gt; &#039;https&#039;,
+            &#039;HTTP_X_FORWARDED_PORT&#039; =&gt; &#039;443&#039;,
+        ));
+        $port = $request-&gt;getPort();
+
+        $this-&gt;assertEquals(80, $port, &#039;Without trusted proxies FORWARDED_PROTO and FORWARDED_PORT are ignored.&#039;);
+
+        Request::setTrustedProxies(array(&#039;1.1.1.1&#039;), Request::HEADER_X_FORWARDED_ALL);
+        $request = Request::create(&#039;http://example.com&#039;, &#039;GET&#039;, array(), array(), array(), array(
+            &#039;HTTP_X_FORWARDED_PROTO&#039; =&gt; &#039;https&#039;,
+            &#039;HTTP_X_FORWARDED_PORT&#039; =&gt; &#039;8443&#039;,
+        ));
+        $this-&gt;assertEquals(80, $request-&gt;getPort(), &#039;With PROTO and PORT on untrusted connection server value takes precedence.&#039;);
+        $request-&gt;server-&gt;set(&#039;REMOTE_ADDR&#039;, &#039;1.1.1.1&#039;);
+        $this-&gt;assertEquals(8443, $request-&gt;getPort(), &#039;With PROTO and PORT set PORT takes precedence.&#039;);
+
+        $request = Request::create(&#039;http://example.com&#039;, &#039;GET&#039;, array(), array(), array(), array(
+            &#039;HTTP_X_FORWARDED_PROTO&#039; =&gt; &#039;https&#039;,
+        ));
+        $this-&gt;assertEquals(80, $request-&gt;getPort(), &#039;With only PROTO set getPort() ignores trusted headers on untrusted connection.&#039;);
+        $request-&gt;server-&gt;set(&#039;REMOTE_ADDR&#039;, &#039;1.1.1.1&#039;);
+        $this-&gt;assertEquals(443, $request-&gt;getPort(), &#039;With only PROTO set getPort() defaults to 443.&#039;);
+
+        $request = Request::create(&#039;http://example.com&#039;, &#039;GET&#039;, array(), array(), array(), array(
+            &#039;HTTP_X_FORWARDED_PROTO&#039; =&gt; &#039;http&#039;,
+        ));
+        $this-&gt;assertEquals(80, $request-&gt;getPort(), &#039;If X_FORWARDED_PROTO is set to HTTP getPort() ignores trusted headers on untrusted connection.&#039;);
+        $request-&gt;server-&gt;set(&#039;REMOTE_ADDR&#039;, &#039;1.1.1.1&#039;);
+        $this-&gt;assertEquals(80, $request-&gt;getPort(), &#039;If X_FORWARDED_PROTO is set to HTTP getPort() returns port of the original request.&#039;);
+
+        $request = Request::create(&#039;http://example.com&#039;, &#039;GET&#039;, array(), array(), array(), array(
+            &#039;HTTP_X_FORWARDED_PROTO&#039; =&gt; &#039;On&#039;,
+        ));
+        $this-&gt;assertEquals(80, $request-&gt;getPort(), &#039;With only PROTO set and value is On, getPort() ignores trusted headers on untrusted connection.&#039;);
+        $request-&gt;server-&gt;set(&#039;REMOTE_ADDR&#039;, &#039;1.1.1.1&#039;);
+        $this-&gt;assertEquals(443, $request-&gt;getPort(), &#039;With only PROTO set and value is On, getPort() defaults to 443.&#039;);
+
+        $request = Request::create(&#039;http://example.com&#039;, &#039;GET&#039;, array(), array(), array(), array(
+            &#039;HTTP_X_FORWARDED_PROTO&#039; =&gt; &#039;1&#039;,
+        ));
+        $this-&gt;assertEquals(80, $request-&gt;getPort(), &#039;With only PROTO set and value is 1, getPort() ignores trusted headers on untrusted connection.&#039;);
+        $request-&gt;server-&gt;set(&#039;REMOTE_ADDR&#039;, &#039;1.1.1.1&#039;);
+        $this-&gt;assertEquals(443, $request-&gt;getPort(), &#039;With only PROTO set and value is 1, getPort() defaults to 443.&#039;);
+
+        $request = Request::create(&#039;http://example.com&#039;, &#039;GET&#039;, array(), array(), array(), array(
+            &#039;HTTP_X_FORWARDED_PROTO&#039; =&gt; &#039;something-else&#039;,
+        ));
+        $port = $request-&gt;getPort();
+        $this-&gt;assertEquals(80, $port, &#039;With only PROTO set and value is not recognized, getPort() defaults to 80.&#039;);
+    }
+
+    /**
+     * @expectedException \RuntimeException
+     */
+    public function testGetHostWithFakeHttpHostValue()
+    {
+        $request = new Request();
+        $request-&gt;initialize(array(), array(), array(), array(), array(), array(&#039;HTTP_HOST&#039; =&gt; &#039;www.host.com?query=string&#039;));
+        $request-&gt;getHost();
+    }
+
+    public function testGetSetMethod()
+    {
+        $request = new Request();
+
+        $this-&gt;assertEquals(&#039;GET&#039;, $request-&gt;getMethod(), &#039;-&gt;getMethod() returns GET if no method is defined&#039;);
+
+        $request-&gt;setMethod(&#039;get&#039;);
+        $this-&gt;assertEquals(&#039;GET&#039;, $request-&gt;getMethod(), &#039;-&gt;getMethod() returns an uppercased string&#039;);
+
+        $request-&gt;setMethod(&#039;PURGE&#039;);
+        $this-&gt;assertEquals(&#039;PURGE&#039;, $request-&gt;getMethod(), &#039;-&gt;getMethod() returns the method even if it is not a standard one&#039;);
+
+        $request-&gt;setMethod(&#039;POST&#039;);
+        $this-&gt;assertEquals(&#039;POST&#039;, $request-&gt;getMethod(), &#039;-&gt;getMethod() returns the method POST if no _method is defined&#039;);
+
+        $request-&gt;setMethod(&#039;POST&#039;);
+        $request-&gt;request-&gt;set(&#039;_method&#039;, &#039;purge&#039;);
+        $this-&gt;assertEquals(&#039;POST&#039;, $request-&gt;getMethod(), &#039;-&gt;getMethod() does not return the method from _method if defined and POST but support not enabled&#039;);
+
+        $request = new Request();
+        $request-&gt;setMethod(&#039;POST&#039;);
+        $request-&gt;request-&gt;set(&#039;_method&#039;, &#039;purge&#039;);
+
+        $this-&gt;assertFalse(Request::getHttpMethodParameterOverride(), &#039;httpMethodParameterOverride should be disabled by default&#039;);
+
+        Request::enableHttpMethodParameterOverride();
+
+        $this-&gt;assertTrue(Request::getHttpMethodParameterOverride(), &#039;httpMethodParameterOverride should be enabled now but it is not&#039;);
+
+        $this-&gt;assertEquals(&#039;PURGE&#039;, $request-&gt;getMethod(), &#039;-&gt;getMethod() returns the method from _method if defined and POST&#039;);
+        $this-&gt;disableHttpMethodParameterOverride();
+
+        $request = new Request();
+        $request-&gt;setMethod(&#039;POST&#039;);
+        $request-&gt;query-&gt;set(&#039;_method&#039;, &#039;purge&#039;);
+        $this-&gt;assertEquals(&#039;POST&#039;, $request-&gt;getMethod(), &#039;-&gt;getMethod() does not return the method from _method if defined and POST but support not enabled&#039;);
+
+        $request = new Request();
+        $request-&gt;setMethod(&#039;POST&#039;);
+        $request-&gt;query-&gt;set(&#039;_method&#039;, &#039;purge&#039;);
+        Request::enableHttpMethodParameterOverride();
+        $this-&gt;assertEquals(&#039;PURGE&#039;, $request-&gt;getMethod(), &#039;-&gt;getMethod() returns the method from _method if defined and POST&#039;);
+        $this-&gt;disableHttpMethodParameterOverride();
+
+        $request = new Request();
+        $request-&gt;setMethod(&#039;POST&#039;);
+        $request-&gt;headers-&gt;set(&#039;X-HTTP-METHOD-OVERRIDE&#039;, &#039;delete&#039;);
+        $this-&gt;assertEquals(&#039;DELETE&#039;, $request-&gt;getMethod(), &#039;-&gt;getMethod() returns the method from X-HTTP-Method-Override even though _method is set if defined and POST&#039;);
+
+        $request = new Request();
+        $request-&gt;setMethod(&#039;POST&#039;);
+        $request-&gt;headers-&gt;set(&#039;X-HTTP-METHOD-OVERRIDE&#039;, &#039;delete&#039;);
+        $this-&gt;assertEquals(&#039;DELETE&#039;, $request-&gt;getMethod(), &#039;-&gt;getMethod() returns the method from X-HTTP-Method-Override if defined and POST&#039;);
+    }
+
+    /**
+     * @dataProvider getClientIpsProvider
+     */
+    public function testGetClientIp($expected, $remoteAddr, $httpForwardedFor, $trustedProxies)
+    {
+        $request = $this-&gt;getRequestInstanceForClientIpTests($remoteAddr, $httpForwardedFor, $trustedProxies);
+
+        $this-&gt;assertEquals($expected[0], $request-&gt;getClientIp());
+    }
+
+    /**
+     * @dataProvider getClientIpsProvider
+     */
+    public function testGetClientIps($expected, $remoteAddr, $httpForwardedFor, $trustedProxies)
+    {
+        $request = $this-&gt;getRequestInstanceForClientIpTests($remoteAddr, $httpForwardedFor, $trustedProxies);
+
+        $this-&gt;assertEquals($expected, $request-&gt;getClientIps());
+    }
+
+    /**
+     * @dataProvider getClientIpsForwardedProvider
+     */
+    public function testGetClientIpsForwarded($expected, $remoteAddr, $httpForwarded, $trustedProxies)
+    {
+        $request = $this-&gt;getRequestInstanceForClientIpsForwardedTests($remoteAddr, $httpForwarded, $trustedProxies);
+
+        $this-&gt;assertEquals($expected, $request-&gt;getClientIps());
+    }
+
+    public function getClientIpsForwardedProvider()
+    {
+        //              $expected                                  $remoteAddr  $httpForwarded                                       $trustedProxies
+        return array(
+            array(array(&#039;127.0.0.1&#039;),                              &#039;127.0.0.1&#039;, &#039;for=&quot;_gazonk&quot;&#039;,                                      null),
+            array(array(&#039;127.0.0.1&#039;),                              &#039;127.0.0.1&#039;, &#039;for=&quot;_gazonk&quot;&#039;,                                      array(&#039;127.0.0.1&#039;)),
+            array(array(&#039;88.88.88.88&#039;),                            &#039;127.0.0.1&#039;, &#039;for=&quot;88.88.88.88:80&quot;&#039;,                               array(&#039;127.0.0.1&#039;)),
+            array(array(&#039;192.0.2.60&#039;),                             &#039;::1&#039;,       &#039;for=192.0.2.60;proto=http;by=203.0.113.43&#039;,          array(&#039;::1&#039;)),
+            array(array(&#039;2620:0:1cfe:face:b00c::3&#039;, &#039;192.0.2.43&#039;), &#039;::1&#039;,       &#039;for=192.0.2.43, for=2620:0:1cfe:face:b00c::3&#039;,       array(&#039;::1&#039;)),
+            array(array(&#039;2001:db8:cafe::17&#039;),                      &#039;::1&#039;,       &#039;for=&quot;[2001:db8:cafe::17]:4711&#039;,                      array(&#039;::1&#039;)),
+        );
+    }
+
+    public function getClientIpsProvider()
+    {
+        //        $expected                   $remoteAddr                $httpForwardedFor            $trustedProxies
+        return array(
+            // simple IPv4
+            array(array(&#039;88.88.88.88&#039;),              &#039;88.88.88.88&#039;,              null,                        null),
+            // trust the IPv4 remote addr
+            array(array(&#039;88.88.88.88&#039;),              &#039;88.88.88.88&#039;,              null,                        array(&#039;88.88.88.88&#039;)),
+
+            // simple IPv6
+            array(array(&#039;::1&#039;),                      &#039;::1&#039;,                      null,                        null),
+            // trust the IPv6 remote addr
+            array(array(&#039;::1&#039;),                      &#039;::1&#039;,                      null,                        array(&#039;::1&#039;)),
+
+            // forwarded for with remote IPv4 addr not trusted
+            array(array(&#039;127.0.0.1&#039;),                &#039;127.0.0.1&#039;,                &#039;88.88.88.88&#039;,               null),
+            // forwarded for with remote IPv4 addr trusted
+            array(array(&#039;88.88.88.88&#039;),              &#039;127.0.0.1&#039;,                &#039;88.88.88.88&#039;,               array(&#039;127.0.0.1&#039;)),
+            // forwarded for with remote IPv4 and all FF addrs trusted
+            array(array(&#039;88.88.88.88&#039;),              &#039;127.0.0.1&#039;,                &#039;88.88.88.88&#039;,               array(&#039;127.0.0.1&#039;, &#039;88.88.88.88&#039;)),
+            // forwarded for with remote IPv4 range trusted
+            array(array(&#039;88.88.88.88&#039;),              &#039;123.45.67.89&#039;,             &#039;88.88.88.88&#039;,               array(&#039;123.45.67.0/24&#039;)),
+
+            // forwarded for with remote IPv6 addr not trusted
+            array(array(&#039;1620:0:1cfe:face:b00c::3&#039;), &#039;1620:0:1cfe:face:b00c::3&#039;, &#039;2620:0:1cfe:face:b00c::3&#039;,  null),
+            // forwarded for with remote IPv6 addr trusted
+            array(array(&#039;2620:0:1cfe:face:b00c::3&#039;), &#039;1620:0:1cfe:face:b00c::3&#039;, &#039;2620:0:1cfe:face:b00c::3&#039;,  array(&#039;1620:0:1cfe:face:b00c::3&#039;)),
+            // forwarded for with remote IPv6 range trusted
+            array(array(&#039;88.88.88.88&#039;),              &#039;2a01:198:603:0:396e:4789:8e99:890f&#039;, &#039;88.88.88.88&#039;,     array(&#039;2a01:198:603:0::/65&#039;)),
+
+            // multiple forwarded for with remote IPv4 addr trusted
+            array(array(&#039;88.88.88.88&#039;, &#039;87.65.43.21&#039;, &#039;127.0.0.1&#039;), &#039;123.45.67.89&#039;, &#039;127.0.0.1, 87.65.43.21, 88.88.88.88&#039;, array(&#039;123.45.67.89&#039;)),
+            // multiple forwarded for with remote IPv4 addr and some reverse proxies trusted
+            array(array(&#039;87.65.43.21&#039;, &#039;127.0.0.1&#039;), &#039;123.45.67.89&#039;,             &#039;127.0.0.1, 87.65.43.21, 88.88.88.88&#039;, array(&#039;123.45.67.89&#039;, &#039;88.88.88.88&#039;)),
+            // multiple forwarded for with remote IPv4 addr and some reverse proxies trusted but in the middle
+            array(array(&#039;88.88.88.88&#039;, &#039;127.0.0.1&#039;), &#039;123.45.67.89&#039;,             &#039;127.0.0.1, 87.65.43.21, 88.88.88.88&#039;, array(&#039;123.45.67.89&#039;, &#039;87.65.43.21&#039;)),
+            // multiple forwarded for with remote IPv4 addr and all reverse proxies trusted
+            array(array(&#039;127.0.0.1&#039;),                &#039;123.45.67.89&#039;,             &#039;127.0.0.1, 87.65.43.21, 88.88.88.88&#039;, array(&#039;123.45.67.89&#039;, &#039;87.65.43.21&#039;, &#039;88.88.88.88&#039;, &#039;127.0.0.1&#039;)),
+
+            // multiple forwarded for with remote IPv6 addr trusted
+            array(array(&#039;2620:0:1cfe:face:b00c::3&#039;, &#039;3620:0:1cfe:face:b00c::3&#039;), &#039;1620:0:1cfe:face:b00c::3&#039;, &#039;3620:0:1cfe:face:b00c::3,2620:0:1cfe:face:b00c::3&#039;, array(&#039;1620:0:1cfe:face:b00c::3&#039;)),
+            // multiple forwarded for with remote IPv6 addr and some reverse proxies trusted
+            array(array(&#039;3620:0:1cfe:face:b00c::3&#039;), &#039;1620:0:1cfe:face:b00c::3&#039;, &#039;3620:0:1cfe:face:b00c::3,2620:0:1cfe:face:b00c::3&#039;, array(&#039;1620:0:1cfe:face:b00c::3&#039;, &#039;2620:0:1cfe:face:b00c::3&#039;)),
+            // multiple forwarded for with remote IPv4 addr and some reverse proxies trusted but in the middle
+            array(array(&#039;2620:0:1cfe:face:b00c::3&#039;, &#039;4620:0:1cfe:face:b00c::3&#039;), &#039;1620:0:1cfe:face:b00c::3&#039;, &#039;4620:0:1cfe:face:b00c::3,3620:0:1cfe:face:b00c::3,2620:0:1cfe:face:b00c::3&#039;, array(&#039;1620:0:1cfe:face:b00c::3&#039;, &#039;3620:0:1cfe:face:b00c::3&#039;)),
+
+            // client IP with port
+            array(array(&#039;88.88.88.88&#039;), &#039;127.0.0.1&#039;, &#039;88.88.88.88:12345, 127.0.0.1&#039;, array(&#039;127.0.0.1&#039;)),
+
+            // invalid forwarded IP is ignored
+            array(array(&#039;88.88.88.88&#039;), &#039;127.0.0.1&#039;, &#039;unknown,88.88.88.88&#039;, array(&#039;127.0.0.1&#039;)),
+            array(array(&#039;88.88.88.88&#039;), &#039;127.0.0.1&#039;, &#039;}__test|O:21:&amp;quot;JDatabaseDriverMysqli&amp;quot;:3:{s:2,88.88.88.88&#039;, array(&#039;127.0.0.1&#039;)),
+        );
+    }
+
+    /**
+     * @expectedException \Symfony\Component\HttpFoundation\Exception\ConflictingHeadersException
+     * @dataProvider getClientIpsWithConflictingHeadersProvider
+     */
+    public function testGetClientIpsWithConflictingHeaders($httpForwarded, $httpXForwardedFor)
+    {
+        $request = new Request();
+
+        $server = array(
+            &#039;REMOTE_ADDR&#039; =&gt; &#039;88.88.88.88&#039;,
+            &#039;HTTP_FORWARDED&#039; =&gt; $httpForwarded,
+            &#039;HTTP_X_FORWARDED_FOR&#039; =&gt; $httpXForwardedFor,
+        );
+
+        Request::setTrustedProxies(array(&#039;88.88.88.88&#039;), Request::HEADER_X_FORWARDED_ALL | Request::HEADER_FORWARDED);
+
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+
+        $request-&gt;getClientIps();
+    }
+
+    /**
+     * @dataProvider getClientIpsWithConflictingHeadersProvider
+     */
+    public function testGetClientIpsOnlyXHttpForwardedForTrusted($httpForwarded, $httpXForwardedFor)
+    {
+        $request = new Request();
+
+        $server = array(
+            &#039;REMOTE_ADDR&#039; =&gt; &#039;88.88.88.88&#039;,
+            &#039;HTTP_FORWARDED&#039; =&gt; $httpForwarded,
+            &#039;HTTP_X_FORWARDED_FOR&#039; =&gt; $httpXForwardedFor,
+        );
+
+        Request::setTrustedProxies(array(&#039;88.88.88.88&#039;), Request::HEADER_X_FORWARDED_FOR);
+
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+
+        $this-&gt;assertSame(array_reverse(explode(&#039;,&#039;, $httpXForwardedFor)), $request-&gt;getClientIps());
+    }
+
+    public function getClientIpsWithConflictingHeadersProvider()
+    {
+        //        $httpForwarded                   $httpXForwardedFor
+        return array(
+            array(&#039;for=87.65.43.21&#039;,                 &#039;192.0.2.60&#039;),
+            array(&#039;for=87.65.43.21, for=192.0.2.60&#039;, &#039;192.0.2.60&#039;),
+            array(&#039;for=192.0.2.60&#039;,                  &#039;192.0.2.60,87.65.43.21&#039;),
+            array(&#039;for=&quot;::face&quot;, for=192.0.2.60&#039;,    &#039;192.0.2.60,192.0.2.43&#039;),
+            array(&#039;for=87.65.43.21, for=192.0.2.60&#039;, &#039;192.0.2.60,87.65.43.21&#039;),
+        );
+    }
+
+    /**
+     * @dataProvider getClientIpsWithAgreeingHeadersProvider
+     */
+    public function testGetClientIpsWithAgreeingHeaders($httpForwarded, $httpXForwardedFor, $expectedIps)
+    {
+        $request = new Request();
+
+        $server = array(
+            &#039;REMOTE_ADDR&#039; =&gt; &#039;88.88.88.88&#039;,
+            &#039;HTTP_FORWARDED&#039; =&gt; $httpForwarded,
+            &#039;HTTP_X_FORWARDED_FOR&#039; =&gt; $httpXForwardedFor,
+        );
+
+        Request::setTrustedProxies(array(&#039;88.88.88.88&#039;), Request::HEADER_X_FORWARDED_ALL);
+
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+
+        $clientIps = $request-&gt;getClientIps();
+
+        $this-&gt;assertSame($expectedIps, $clientIps);
+    }
+
+    public function getClientIpsWithAgreeingHeadersProvider()
+    {
+        //        $httpForwarded                               $httpXForwardedFor
+        return array(
+            array(&#039;for=&quot;192.0.2.60&quot;&#039;,                          &#039;192.0.2.60&#039;,             array(&#039;192.0.2.60&#039;)),
+            array(&#039;for=192.0.2.60, for=87.65.43.21&#039;,           &#039;192.0.2.60,87.65.43.21&#039;, array(&#039;87.65.43.21&#039;, &#039;192.0.2.60&#039;)),
+            array(&#039;for=&quot;[::face]&quot;, for=192.0.2.60&#039;,            &#039;::face,192.0.2.60&#039;,      array(&#039;192.0.2.60&#039;, &#039;::face&#039;)),
+            array(&#039;for=&quot;192.0.2.60:80&quot;&#039;,                       &#039;192.0.2.60&#039;,             array(&#039;192.0.2.60&#039;)),
+            array(&#039;for=192.0.2.60;proto=http;by=203.0.113.43&#039;, &#039;192.0.2.60&#039;,             array(&#039;192.0.2.60&#039;)),
+            array(&#039;for=&quot;[2001:db8:cafe::17]:4711&quot;&#039;,            &#039;2001:db8:cafe::17&#039;,      array(&#039;2001:db8:cafe::17&#039;)),
+        );
+    }
+
+    public function testGetContentWorksTwiceInDefaultMode()
+    {
+        $req = new Request();
+        $this-&gt;assertEquals(&#039;&#039;, $req-&gt;getContent());
+        $this-&gt;assertEquals(&#039;&#039;, $req-&gt;getContent());
+    }
+
+    public function testGetContentReturnsResource()
+    {
+        $req = new Request();
+        $retval = $req-&gt;getContent(true);
+        $this-&gt;assertInternalType(&#039;resource&#039;, $retval);
+        $this-&gt;assertEquals(&#039;&#039;, fread($retval, 1));
+        $this-&gt;assertTrue(feof($retval));
+    }
+
+    public function testGetContentReturnsResourceWhenContentSetInConstructor()
+    {
+        $req = new Request(array(), array(), array(), array(), array(), array(), &#039;MyContent&#039;);
+        $resource = $req-&gt;getContent(true);
+
+        $this-&gt;assertInternalType(&#039;resource&#039;, $resource);
+        $this-&gt;assertEquals(&#039;MyContent&#039;, stream_get_contents($resource));
+    }
+
+    public function testContentAsResource()
+    {
+        $resource = fopen(&#039;php://memory&#039;, &#039;r+&#039;);
+        fwrite($resource, &#039;My other content&#039;);
+        rewind($resource);
+
+        $req = new Request(array(), array(), array(), array(), array(), array(), $resource);
+        $this-&gt;assertEquals(&#039;My other content&#039;, stream_get_contents($req-&gt;getContent(true)));
+        $this-&gt;assertEquals(&#039;My other content&#039;, $req-&gt;getContent());
+    }
+
+    public function getContentCantBeCalledTwiceWithResourcesProvider()
+    {
+        return array(
+            &#039;Resource then fetch&#039; =&gt; array(true, false),
+            &#039;Resource then resource&#039; =&gt; array(true, true),
+        );
+    }
+
+    /**
+     * @dataProvider getContentCanBeCalledTwiceWithResourcesProvider
+     */
+    public function testGetContentCanBeCalledTwiceWithResources($first, $second)
+    {
+        $req = new Request();
+        $a = $req-&gt;getContent($first);
+        $b = $req-&gt;getContent($second);
+
+        if ($first) {
+            $a = stream_get_contents($a);
+        }
+
+        if ($second) {
+            $b = stream_get_contents($b);
+        }
+
+        $this-&gt;assertSame($a, $b);
+    }
+
+    public function getContentCanBeCalledTwiceWithResourcesProvider()
+    {
+        return array(
+            &#039;Fetch then fetch&#039; =&gt; array(false, false),
+            &#039;Fetch then resource&#039; =&gt; array(false, true),
+            &#039;Resource then fetch&#039; =&gt; array(true, false),
+            &#039;Resource then resource&#039; =&gt; array(true, true),
+        );
+    }
+
+    public function provideOverloadedMethods()
+    {
+        return array(
+            array(&#039;PUT&#039;),
+            array(&#039;DELETE&#039;),
+            array(&#039;PATCH&#039;),
+            array(&#039;put&#039;),
+            array(&#039;delete&#039;),
+            array(&#039;patch&#039;),
+        );
+    }
+
+    /**
+     * @dataProvider provideOverloadedMethods
+     */
+    public function testCreateFromGlobals($method)
+    {
+        $normalizedMethod = strtoupper($method);
+
+        $_GET[&#039;foo1&#039;] = &#039;bar1&#039;;
+        $_POST[&#039;foo2&#039;] = &#039;bar2&#039;;
+        $_COOKIE[&#039;foo3&#039;] = &#039;bar3&#039;;
+        $_FILES[&#039;foo4&#039;] = array(&#039;bar4&#039;);
+        $_SERVER[&#039;foo5&#039;] = &#039;bar5&#039;;
+
+        $request = Request::createFromGlobals();
+        $this-&gt;assertEquals(&#039;bar1&#039;, $request-&gt;query-&gt;get(&#039;foo1&#039;), &#039;::fromGlobals() uses values from $_GET&#039;);
+        $this-&gt;assertEquals(&#039;bar2&#039;, $request-&gt;request-&gt;get(&#039;foo2&#039;), &#039;::fromGlobals() uses values from $_POST&#039;);
+        $this-&gt;assertEquals(&#039;bar3&#039;, $request-&gt;cookies-&gt;get(&#039;foo3&#039;), &#039;::fromGlobals() uses values from $_COOKIE&#039;);
+        $this-&gt;assertEquals(array(&#039;bar4&#039;), $request-&gt;files-&gt;get(&#039;foo4&#039;), &#039;::fromGlobals() uses values from $_FILES&#039;);
+        $this-&gt;assertEquals(&#039;bar5&#039;, $request-&gt;server-&gt;get(&#039;foo5&#039;), &#039;::fromGlobals() uses values from $_SERVER&#039;);
+
+        unset($_GET[&#039;foo1&#039;], $_POST[&#039;foo2&#039;], $_COOKIE[&#039;foo3&#039;], $_FILES[&#039;foo4&#039;], $_SERVER[&#039;foo5&#039;]);
+
+        $_SERVER[&#039;REQUEST_METHOD&#039;] = $method;
+        $_SERVER[&#039;CONTENT_TYPE&#039;] = &#039;application/x-www-form-urlencoded&#039;;
+        $request = RequestContentProxy::createFromGlobals();
+        $this-&gt;assertEquals($normalizedMethod, $request-&gt;getMethod());
+        $this-&gt;assertEquals(&#039;mycontent&#039;, $request-&gt;request-&gt;get(&#039;content&#039;));
+
+        unset($_SERVER[&#039;REQUEST_METHOD&#039;], $_SERVER[&#039;CONTENT_TYPE&#039;]);
+
+        Request::createFromGlobals();
+        Request::enableHttpMethodParameterOverride();
+        $_POST[&#039;_method&#039;] = $method;
+        $_POST[&#039;foo6&#039;] = &#039;bar6&#039;;
+        $_SERVER[&#039;REQUEST_METHOD&#039;] = &#039;PoSt&#039;;
+        $request = Request::createFromGlobals();
+        $this-&gt;assertEquals($normalizedMethod, $request-&gt;getMethod());
+        $this-&gt;assertEquals(&#039;POST&#039;, $request-&gt;getRealMethod());
+        $this-&gt;assertEquals(&#039;bar6&#039;, $request-&gt;request-&gt;get(&#039;foo6&#039;));
+
+        unset($_POST[&#039;_method&#039;], $_POST[&#039;foo6&#039;], $_SERVER[&#039;REQUEST_METHOD&#039;]);
+        $this-&gt;disableHttpMethodParameterOverride();
+    }
+
+    public function testOverrideGlobals()
+    {
+        $request = new Request();
+        $request-&gt;initialize(array(&#039;foo&#039; =&gt; &#039;bar&#039;));
+
+        // as the Request::overrideGlobals really work, it erase $_SERVER, so we must backup it
+        $server = $_SERVER;
+
+        $request-&gt;overrideGlobals();
+
+        $this-&gt;assertEquals(array(&#039;foo&#039; =&gt; &#039;bar&#039;), $_GET);
+
+        $request-&gt;initialize(array(), array(&#039;foo&#039; =&gt; &#039;bar&#039;));
+        $request-&gt;overrideGlobals();
+
+        $this-&gt;assertEquals(array(&#039;foo&#039; =&gt; &#039;bar&#039;), $_POST);
+
+        $this-&gt;assertArrayNotHasKey(&#039;HTTP_X_FORWARDED_PROTO&#039;, $_SERVER);
+
+        $request-&gt;headers-&gt;set(&#039;X_FORWARDED_PROTO&#039;, &#039;https&#039;);
+
+        Request::setTrustedProxies(array(&#039;1.1.1.1&#039;), Request::HEADER_X_FORWARDED_ALL);
+        $this-&gt;assertFalse($request-&gt;isSecure());
+        $request-&gt;server-&gt;set(&#039;REMOTE_ADDR&#039;, &#039;1.1.1.1&#039;);
+        $this-&gt;assertTrue($request-&gt;isSecure());
+
+        $request-&gt;overrideGlobals();
+
+        $this-&gt;assertArrayHasKey(&#039;HTTP_X_FORWARDED_PROTO&#039;, $_SERVER);
+
+        $request-&gt;headers-&gt;set(&#039;CONTENT_TYPE&#039;, &#039;multipart/form-data&#039;);
+        $request-&gt;headers-&gt;set(&#039;CONTENT_LENGTH&#039;, 12345);
+
+        $request-&gt;overrideGlobals();
+
+        $this-&gt;assertArrayHasKey(&#039;CONTENT_TYPE&#039;, $_SERVER);
+        $this-&gt;assertArrayHasKey(&#039;CONTENT_LENGTH&#039;, $_SERVER);
+
+        $request-&gt;initialize(array(&#039;foo&#039; =&gt; &#039;bar&#039;, &#039;baz&#039; =&gt; &#039;foo&#039;));
+        $request-&gt;query-&gt;remove(&#039;baz&#039;);
+
+        $request-&gt;overrideGlobals();
+
+        $this-&gt;assertEquals(array(&#039;foo&#039; =&gt; &#039;bar&#039;), $_GET);
+        $this-&gt;assertEquals(&#039;foo=bar&#039;, $_SERVER[&#039;QUERY_STRING&#039;]);
+        $this-&gt;assertEquals(&#039;foo=bar&#039;, $request-&gt;server-&gt;get(&#039;QUERY_STRING&#039;));
+
+        // restore initial $_SERVER array
+        $_SERVER = $server;
+    }
+
+    public function testGetScriptName()
+    {
+        $request = new Request();
+        $this-&gt;assertEquals(&#039;&#039;, $request-&gt;getScriptName());
+
+        $server = array();
+        $server[&#039;SCRIPT_NAME&#039;] = &#039;/index.php&#039;;
+
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+
+        $this-&gt;assertEquals(&#039;/index.php&#039;, $request-&gt;getScriptName());
+
+        $server = array();
+        $server[&#039;ORIG_SCRIPT_NAME&#039;] = &#039;/frontend.php&#039;;
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+
+        $this-&gt;assertEquals(&#039;/frontend.php&#039;, $request-&gt;getScriptName());
+
+        $server = array();
+        $server[&#039;SCRIPT_NAME&#039;] = &#039;/index.php&#039;;
+        $server[&#039;ORIG_SCRIPT_NAME&#039;] = &#039;/frontend.php&#039;;
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+
+        $this-&gt;assertEquals(&#039;/index.php&#039;, $request-&gt;getScriptName());
+    }
+
+    public function testGetBasePath()
+    {
+        $request = new Request();
+        $this-&gt;assertEquals(&#039;&#039;, $request-&gt;getBasePath());
+
+        $server = array();
+        $server[&#039;SCRIPT_FILENAME&#039;] = &#039;/some/where/index.php&#039;;
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+        $this-&gt;assertEquals(&#039;&#039;, $request-&gt;getBasePath());
+
+        $server = array();
+        $server[&#039;SCRIPT_FILENAME&#039;] = &#039;/some/where/index.php&#039;;
+        $server[&#039;SCRIPT_NAME&#039;] = &#039;/index.php&#039;;
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+
+        $this-&gt;assertEquals(&#039;&#039;, $request-&gt;getBasePath());
+
+        $server = array();
+        $server[&#039;SCRIPT_FILENAME&#039;] = &#039;/some/where/index.php&#039;;
+        $server[&#039;PHP_SELF&#039;] = &#039;/index.php&#039;;
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+
+        $this-&gt;assertEquals(&#039;&#039;, $request-&gt;getBasePath());
+
+        $server = array();
+        $server[&#039;SCRIPT_FILENAME&#039;] = &#039;/some/where/index.php&#039;;
+        $server[&#039;ORIG_SCRIPT_NAME&#039;] = &#039;/index.php&#039;;
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+
+        $this-&gt;assertEquals(&#039;&#039;, $request-&gt;getBasePath());
+    }
+
+    public function testGetPathInfo()
+    {
+        $request = new Request();
+        $this-&gt;assertEquals(&#039;/&#039;, $request-&gt;getPathInfo());
+
+        $server = array();
+        $server[&#039;REQUEST_URI&#039;] = &#039;/path/info&#039;;
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+
+        $this-&gt;assertEquals(&#039;/path/info&#039;, $request-&gt;getPathInfo());
+
+        $server = array();
+        $server[&#039;REQUEST_URI&#039;] = &#039;/path%20test/info&#039;;
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+
+        $this-&gt;assertEquals(&#039;/path%20test/info&#039;, $request-&gt;getPathInfo());
+
+        $server = array();
+        $server[&#039;REQUEST_URI&#039;] = &#039;?a=b&#039;;
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+
+        $this-&gt;assertEquals(&#039;/&#039;, $request-&gt;getPathInfo());
+    }
+
+    public function testGetParameterPrecedence()
+    {
+        $request = new Request();
+        $request-&gt;attributes-&gt;set(&#039;foo&#039;, &#039;attr&#039;);
+        $request-&gt;query-&gt;set(&#039;foo&#039;, &#039;query&#039;);
+        $request-&gt;request-&gt;set(&#039;foo&#039;, &#039;body&#039;);
+
+        $this-&gt;assertSame(&#039;attr&#039;, $request-&gt;get(&#039;foo&#039;));
+
+        $request-&gt;attributes-&gt;remove(&#039;foo&#039;);
+        $this-&gt;assertSame(&#039;query&#039;, $request-&gt;get(&#039;foo&#039;));
+
+        $request-&gt;query-&gt;remove(&#039;foo&#039;);
+        $this-&gt;assertSame(&#039;body&#039;, $request-&gt;get(&#039;foo&#039;));
+
+        $request-&gt;request-&gt;remove(&#039;foo&#039;);
+        $this-&gt;assertNull($request-&gt;get(&#039;foo&#039;));
+    }
+
+    public function testGetPreferredLanguage()
+    {
+        $request = new Request();
+        $this-&gt;assertNull($request-&gt;getPreferredLanguage());
+        $this-&gt;assertNull($request-&gt;getPreferredLanguage(array()));
+        $this-&gt;assertEquals(&#039;fr&#039;, $request-&gt;getPreferredLanguage(array(&#039;fr&#039;)));
+        $this-&gt;assertEquals(&#039;fr&#039;, $request-&gt;getPreferredLanguage(array(&#039;fr&#039;, &#039;en&#039;)));
+        $this-&gt;assertEquals(&#039;en&#039;, $request-&gt;getPreferredLanguage(array(&#039;en&#039;, &#039;fr&#039;)));
+        $this-&gt;assertEquals(&#039;fr-ch&#039;, $request-&gt;getPreferredLanguage(array(&#039;fr-ch&#039;, &#039;fr-fr&#039;)));
+
+        $request = new Request();
+        $request-&gt;headers-&gt;set(&#039;Accept-language&#039;, &#039;zh, en-us; q=0.8, en; q=0.6&#039;);
+        $this-&gt;assertEquals(&#039;en&#039;, $request-&gt;getPreferredLanguage(array(&#039;en&#039;, &#039;en-us&#039;)));
+
+        $request = new Request();
+        $request-&gt;headers-&gt;set(&#039;Accept-language&#039;, &#039;zh, en-us; q=0.8, en; q=0.6&#039;);
+        $this-&gt;assertEquals(&#039;en&#039;, $request-&gt;getPreferredLanguage(array(&#039;fr&#039;, &#039;en&#039;)));
+
+        $request = new Request();
+        $request-&gt;headers-&gt;set(&#039;Accept-language&#039;, &#039;zh, en-us; q=0.8&#039;);
+        $this-&gt;assertEquals(&#039;en&#039;, $request-&gt;getPreferredLanguage(array(&#039;fr&#039;, &#039;en&#039;)));
+
+        $request = new Request();
+        $request-&gt;headers-&gt;set(&#039;Accept-language&#039;, &#039;zh, en-us; q=0.8, fr-fr; q=0.6, fr; q=0.5&#039;);
+        $this-&gt;assertEquals(&#039;en&#039;, $request-&gt;getPreferredLanguage(array(&#039;fr&#039;, &#039;en&#039;)));
+    }
+
+    public function testIsXmlHttpRequest()
+    {
+        $request = new Request();
+        $this-&gt;assertFalse($request-&gt;isXmlHttpRequest());
+
+        $request-&gt;headers-&gt;set(&#039;X-Requested-With&#039;, &#039;XMLHttpRequest&#039;);
+        $this-&gt;assertTrue($request-&gt;isXmlHttpRequest());
+
+        $request-&gt;headers-&gt;remove(&#039;X-Requested-With&#039;);
+        $this-&gt;assertFalse($request-&gt;isXmlHttpRequest());
+    }
+
+    /**
+     * @requires extension intl
+     */
+    public function testIntlLocale()
+    {
+        $request = new Request();
+
+        $request-&gt;setDefaultLocale(&#039;fr&#039;);
+        $this-&gt;assertEquals(&#039;fr&#039;, $request-&gt;getLocale());
+        $this-&gt;assertEquals(&#039;fr&#039;, \Locale::getDefault());
+
+        $request-&gt;setLocale(&#039;en&#039;);
+        $this-&gt;assertEquals(&#039;en&#039;, $request-&gt;getLocale());
+        $this-&gt;assertEquals(&#039;en&#039;, \Locale::getDefault());
+
+        $request-&gt;setDefaultLocale(&#039;de&#039;);
+        $this-&gt;assertEquals(&#039;en&#039;, $request-&gt;getLocale());
+        $this-&gt;assertEquals(&#039;en&#039;, \Locale::getDefault());
+    }
+
+    public function testGetCharsets()
+    {
+        $request = new Request();
+        $this-&gt;assertEquals(array(), $request-&gt;getCharsets());
+        $request-&gt;headers-&gt;set(&#039;Accept-Charset&#039;, &#039;ISO-8859-1, US-ASCII, UTF-8; q=0.8, ISO-10646-UCS-2; q=0.6&#039;);
+        $this-&gt;assertEquals(array(), $request-&gt;getCharsets()); // testing caching
+
+        $request = new Request();
+        $request-&gt;headers-&gt;set(&#039;Accept-Charset&#039;, &#039;ISO-8859-1, US-ASCII, UTF-8; q=0.8, ISO-10646-UCS-2; q=0.6&#039;);
+        $this-&gt;assertEquals(array(&#039;ISO-8859-1&#039;, &#039;US-ASCII&#039;, &#039;UTF-8&#039;, &#039;ISO-10646-UCS-2&#039;), $request-&gt;getCharsets());
+
+        $request = new Request();
+        $request-&gt;headers-&gt;set(&#039;Accept-Charset&#039;, &#039;ISO-8859-1,utf-8;q=0.7,*;q=0.7&#039;);
+        $this-&gt;assertEquals(array(&#039;ISO-8859-1&#039;, &#039;utf-8&#039;, &#039;*&#039;), $request-&gt;getCharsets());
+    }
+
+    public function testGetEncodings()
+    {
+        $request = new Request();
+        $this-&gt;assertEquals(array(), $request-&gt;getEncodings());
+        $request-&gt;headers-&gt;set(&#039;Accept-Encoding&#039;, &#039;gzip,deflate,sdch&#039;);
+        $this-&gt;assertEquals(array(), $request-&gt;getEncodings()); // testing caching
+
+        $request = new Request();
+        $request-&gt;headers-&gt;set(&#039;Accept-Encoding&#039;, &#039;gzip,deflate,sdch&#039;);
+        $this-&gt;assertEquals(array(&#039;gzip&#039;, &#039;deflate&#039;, &#039;sdch&#039;), $request-&gt;getEncodings());
+
+        $request = new Request();
+        $request-&gt;headers-&gt;set(&#039;Accept-Encoding&#039;, &#039;gzip;q=0.4,deflate;q=0.9,compress;q=0.7&#039;);
+        $this-&gt;assertEquals(array(&#039;deflate&#039;, &#039;compress&#039;, &#039;gzip&#039;), $request-&gt;getEncodings());
+    }
+
+    public function testGetAcceptableContentTypes()
+    {
+        $request = new Request();
+        $this-&gt;assertEquals(array(), $request-&gt;getAcceptableContentTypes());
+        $request-&gt;headers-&gt;set(&#039;Accept&#039;, &#039;application/vnd.wap.wmlscriptc, text/vnd.wap.wml, application/vnd.wap.xhtml+xml, application/xhtml+xml, text/html, multipart/mixed, */*&#039;);
+        $this-&gt;assertEquals(array(), $request-&gt;getAcceptableContentTypes()); // testing caching
+
+        $request = new Request();
+        $request-&gt;headers-&gt;set(&#039;Accept&#039;, &#039;application/vnd.wap.wmlscriptc, text/vnd.wap.wml, application/vnd.wap.xhtml+xml, application/xhtml+xml, text/html, multipart/mixed, */*&#039;);
+        $this-&gt;assertEquals(array(&#039;application/vnd.wap.wmlscriptc&#039;, &#039;text/vnd.wap.wml&#039;, &#039;application/vnd.wap.xhtml+xml&#039;, &#039;application/xhtml+xml&#039;, &#039;text/html&#039;, &#039;multipart/mixed&#039;, &#039;*/*&#039;), $request-&gt;getAcceptableContentTypes());
+    }
+
+    public function testGetLanguages()
+    {
+        $request = new Request();
+        $this-&gt;assertEquals(array(), $request-&gt;getLanguages());
+
+        $request = new Request();
+        $request-&gt;headers-&gt;set(&#039;Accept-language&#039;, &#039;zh, en-us; q=0.8, en; q=0.6&#039;);
+        $this-&gt;assertEquals(array(&#039;zh&#039;, &#039;en_US&#039;, &#039;en&#039;), $request-&gt;getLanguages());
+        $this-&gt;assertEquals(array(&#039;zh&#039;, &#039;en_US&#039;, &#039;en&#039;), $request-&gt;getLanguages());
+
+        $request = new Request();
+        $request-&gt;headers-&gt;set(&#039;Accept-language&#039;, &#039;zh, en-us; q=0.6, en; q=0.8&#039;);
+        $this-&gt;assertEquals(array(&#039;zh&#039;, &#039;en&#039;, &#039;en_US&#039;), $request-&gt;getLanguages()); // Test out of order qvalues
+
+        $request = new Request();
+        $request-&gt;headers-&gt;set(&#039;Accept-language&#039;, &#039;zh, en, en-us&#039;);
+        $this-&gt;assertEquals(array(&#039;zh&#039;, &#039;en&#039;, &#039;en_US&#039;), $request-&gt;getLanguages()); // Test equal weighting without qvalues
+
+        $request = new Request();
+        $request-&gt;headers-&gt;set(&#039;Accept-language&#039;, &#039;zh; q=0.6, en, en-us; q=0.6&#039;);
+        $this-&gt;assertEquals(array(&#039;en&#039;, &#039;zh&#039;, &#039;en_US&#039;), $request-&gt;getLanguages()); // Test equal weighting with qvalues
+
+        $request = new Request();
+        $request-&gt;headers-&gt;set(&#039;Accept-language&#039;, &#039;zh, i-cherokee; q=0.6&#039;);
+        $this-&gt;assertEquals(array(&#039;zh&#039;, &#039;cherokee&#039;), $request-&gt;getLanguages());
+    }
+
+    public function testGetRequestFormat()
+    {
+        $request = new Request();
+        $this-&gt;assertEquals(&#039;html&#039;, $request-&gt;getRequestFormat());
+
+        // Ensure that setting different default values over time is possible,
+        // aka. setRequestFormat determines the state.
+        $this-&gt;assertEquals(&#039;json&#039;, $request-&gt;getRequestFormat(&#039;json&#039;));
+        $this-&gt;assertEquals(&#039;html&#039;, $request-&gt;getRequestFormat(&#039;html&#039;));
+
+        $request = new Request();
+        $this-&gt;assertNull($request-&gt;getRequestFormat(null));
+
+        $request = new Request();
+        $this-&gt;assertNull($request-&gt;setRequestFormat(&#039;foo&#039;));
+        $this-&gt;assertEquals(&#039;foo&#039;, $request-&gt;getRequestFormat(null));
+
+        $request = new Request(array(&#039;_format&#039; =&gt; &#039;foo&#039;));
+        $this-&gt;assertEquals(&#039;html&#039;, $request-&gt;getRequestFormat());
+    }
+
+    public function testHasSession()
+    {
+        $request = new Request();
+
+        $this-&gt;assertFalse($request-&gt;hasSession());
+        $request-&gt;setSession(new Session(new MockArraySessionStorage()));
+        $this-&gt;assertTrue($request-&gt;hasSession());
+    }
+
+    public function testGetSession()
+    {
+        $request = new Request();
+
+        $request-&gt;setSession(new Session(new MockArraySessionStorage()));
+        $this-&gt;assertTrue($request-&gt;hasSession());
+
+        $session = $request-&gt;getSession();
+        $this-&gt;assertObjectHasAttribute(&#039;storage&#039;, $session);
+        $this-&gt;assertObjectHasAttribute(&#039;flashName&#039;, $session);
+        $this-&gt;assertObjectHasAttribute(&#039;attributeName&#039;, $session);
+    }
+
+    /**
+     * @group legacy
+     * @expectedDeprecation Calling &quot;Symfony\Component\HttpFoundation\Request::getSession()&quot; when no session has been set is deprecated since Symfony 4.1 and will throw an exception in 5.0. Use &quot;hasSession()&quot; instead.
+     */
+    public function testGetSessionNullable()
+    {
+        (new Request())-&gt;getSession();
+    }
+
+    public function testHasPreviousSession()
+    {
+        $request = new Request();
+
+        $this-&gt;assertFalse($request-&gt;hasPreviousSession());
+        $request-&gt;cookies-&gt;set(&#039;MOCKSESSID&#039;, &#039;foo&#039;);
+        $this-&gt;assertFalse($request-&gt;hasPreviousSession());
+        $request-&gt;setSession(new Session(new MockArraySessionStorage()));
+        $this-&gt;assertTrue($request-&gt;hasPreviousSession());
+    }
+
+    public function testToString()
+    {
+        $request = new Request();
+
+        $request-&gt;headers-&gt;set(&#039;Accept-language&#039;, &#039;zh, en-us; q=0.8, en; q=0.6&#039;);
+        $request-&gt;cookies-&gt;set(&#039;Foo&#039;, &#039;Bar&#039;);
+
+        $asString = (string) $request;
+
+        $this-&gt;assertContains(&#039;Accept-Language: zh, en-us; q=0.8, en; q=0.6&#039;, $asString);
+        $this-&gt;assertContains(&#039;Cookie: Foo=Bar&#039;, $asString);
+
+        $request-&gt;cookies-&gt;set(&#039;Another&#039;, &#039;Cookie&#039;);
+
+        $asString = (string) $request;
+
+        $this-&gt;assertContains(&#039;Cookie: Foo=Bar; Another=Cookie&#039;, $asString);
+    }
+
+    public function testIsMethod()
+    {
+        $request = new Request();
+        $request-&gt;setMethod(&#039;POST&#039;);
+        $this-&gt;assertTrue($request-&gt;isMethod(&#039;POST&#039;));
+        $this-&gt;assertTrue($request-&gt;isMethod(&#039;post&#039;));
+        $this-&gt;assertFalse($request-&gt;isMethod(&#039;GET&#039;));
+        $this-&gt;assertFalse($request-&gt;isMethod(&#039;get&#039;));
+
+        $request-&gt;setMethod(&#039;GET&#039;);
+        $this-&gt;assertTrue($request-&gt;isMethod(&#039;GET&#039;));
+        $this-&gt;assertTrue($request-&gt;isMethod(&#039;get&#039;));
+        $this-&gt;assertFalse($request-&gt;isMethod(&#039;POST&#039;));
+        $this-&gt;assertFalse($request-&gt;isMethod(&#039;post&#039;));
+    }
+
+    /**
+     * @dataProvider getBaseUrlData
+     */
+    public function testGetBaseUrl($uri, $server, $expectedBaseUrl, $expectedPathInfo)
+    {
+        $request = Request::create($uri, &#039;GET&#039;, array(), array(), array(), $server);
+
+        $this-&gt;assertSame($expectedBaseUrl, $request-&gt;getBaseUrl(), &#039;baseUrl&#039;);
+        $this-&gt;assertSame($expectedPathInfo, $request-&gt;getPathInfo(), &#039;pathInfo&#039;);
+    }
+
+    public function getBaseUrlData()
+    {
+        return array(
+            array(
+                &#039;/fruit/strawberry/1234index.php/blah&#039;,
+                array(
+                    &#039;SCRIPT_FILENAME&#039; =&gt; &#039;E:/Sites/cc-new/public_html/fruit/index.php&#039;,
+                    &#039;SCRIPT_NAME&#039; =&gt; &#039;/fruit/index.php&#039;,
+                    &#039;PHP_SELF&#039; =&gt; &#039;/fruit/index.php&#039;,
+                ),
+                &#039;/fruit&#039;,
+                &#039;/strawberry/1234index.php/blah&#039;,
+            ),
+            array(
+                &#039;/fruit/strawberry/1234index.php/blah&#039;,
+                array(
+                    &#039;SCRIPT_FILENAME&#039; =&gt; &#039;E:/Sites/cc-new/public_html/index.php&#039;,
+                    &#039;SCRIPT_NAME&#039; =&gt; &#039;/index.php&#039;,
+                    &#039;PHP_SELF&#039; =&gt; &#039;/index.php&#039;,
+                ),
+                &#039;&#039;,
+                &#039;/fruit/strawberry/1234index.php/blah&#039;,
+            ),
+            array(
+                &#039;/foo%20bar/&#039;,
+                array(
+                    &#039;SCRIPT_FILENAME&#039; =&gt; &#039;/home/John Doe/public_html/foo bar/app.php&#039;,
+                    &#039;SCRIPT_NAME&#039; =&gt; &#039;/foo bar/app.php&#039;,
+                    &#039;PHP_SELF&#039; =&gt; &#039;/foo bar/app.php&#039;,
+                ),
+                &#039;/foo%20bar&#039;,
+                &#039;/&#039;,
+            ),
+            array(
+                &#039;/foo%20bar/home&#039;,
+                array(
+                    &#039;SCRIPT_FILENAME&#039; =&gt; &#039;/home/John Doe/public_html/foo bar/app.php&#039;,
+                    &#039;SCRIPT_NAME&#039; =&gt; &#039;/foo bar/app.php&#039;,
+                    &#039;PHP_SELF&#039; =&gt; &#039;/foo bar/app.php&#039;,
+                ),
+                &#039;/foo%20bar&#039;,
+                &#039;/home&#039;,
+            ),
+            array(
+                &#039;/foo%20bar/app.php/home&#039;,
+                array(
+                    &#039;SCRIPT_FILENAME&#039; =&gt; &#039;/home/John Doe/public_html/foo bar/app.php&#039;,
+                    &#039;SCRIPT_NAME&#039; =&gt; &#039;/foo bar/app.php&#039;,
+                    &#039;PHP_SELF&#039; =&gt; &#039;/foo bar/app.php&#039;,
+                ),
+                &#039;/foo%20bar/app.php&#039;,
+                &#039;/home&#039;,
+            ),
+            array(
+                &#039;/foo%20bar/app.php/home%3Dbaz&#039;,
+                array(
+                    &#039;SCRIPT_FILENAME&#039; =&gt; &#039;/home/John Doe/public_html/foo bar/app.php&#039;,
+                    &#039;SCRIPT_NAME&#039; =&gt; &#039;/foo bar/app.php&#039;,
+                    &#039;PHP_SELF&#039; =&gt; &#039;/foo bar/app.php&#039;,
+                ),
+                &#039;/foo%20bar/app.php&#039;,
+                &#039;/home%3Dbaz&#039;,
+            ),
+            array(
+                &#039;/foo/bar+baz&#039;,
+                array(
+                    &#039;SCRIPT_FILENAME&#039; =&gt; &#039;/home/John Doe/public_html/foo/app.php&#039;,
+                    &#039;SCRIPT_NAME&#039; =&gt; &#039;/foo/app.php&#039;,
+                    &#039;PHP_SELF&#039; =&gt; &#039;/foo/app.php&#039;,
+                ),
+                &#039;/foo&#039;,
+                &#039;/bar+baz&#039;,
+            ),
+        );
+    }
+
+    /**
+     * @dataProvider urlencodedStringPrefixData
+     */
+    public function testUrlencodedStringPrefix($string, $prefix, $expect)
+    {
+        $request = new Request();
+
+        $me = new \ReflectionMethod($request, &#039;getUrlencodedPrefix&#039;);
+        $me-&gt;setAccessible(true);
+
+        $this-&gt;assertSame($expect, $me-&gt;invoke($request, $string, $prefix));
+    }
+
+    public function urlencodedStringPrefixData()
+    {
+        return array(
+            array(&#039;foo&#039;, &#039;foo&#039;, &#039;foo&#039;),
+            array(&#039;fo%6f&#039;, &#039;foo&#039;, &#039;fo%6f&#039;),
+            array(&#039;foo/bar&#039;, &#039;foo&#039;, &#039;foo&#039;),
+            array(&#039;fo%6f/bar&#039;, &#039;foo&#039;, &#039;fo%6f&#039;),
+            array(&#039;f%6f%6f/bar&#039;, &#039;foo&#039;, &#039;f%6f%6f&#039;),
+            array(&#039;%66%6F%6F/bar&#039;, &#039;foo&#039;, &#039;%66%6F%6F&#039;),
+            array(&#039;fo+o/bar&#039;, &#039;fo+o&#039;, &#039;fo+o&#039;),
+            array(&#039;fo%2Bo/bar&#039;, &#039;fo+o&#039;, &#039;fo%2Bo&#039;),
+        );
+    }
+
+    private function disableHttpMethodParameterOverride()
+    {
+        $class = new \ReflectionClass(&#039;Symfony\\Component\\HttpFoundation\\Request&#039;);
+        $property = $class-&gt;getProperty(&#039;httpMethodParameterOverride&#039;);
+        $property-&gt;setAccessible(true);
+        $property-&gt;setValue(false);
+    }
+
+    private function getRequestInstanceForClientIpTests($remoteAddr, $httpForwardedFor, $trustedProxies)
+    {
+        $request = new Request();
+
+        $server = array(&#039;REMOTE_ADDR&#039; =&gt; $remoteAddr);
+        if (null !== $httpForwardedFor) {
+            $server[&#039;HTTP_X_FORWARDED_FOR&#039;] = $httpForwardedFor;
+        }
+
+        if ($trustedProxies) {
+            Request::setTrustedProxies($trustedProxies, Request::HEADER_X_FORWARDED_ALL);
+        }
+
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+
+        return $request;
+    }
+
+    private function getRequestInstanceForClientIpsForwardedTests($remoteAddr, $httpForwarded, $trustedProxies)
+    {
+        $request = new Request();
+
+        $server = array(&#039;REMOTE_ADDR&#039; =&gt; $remoteAddr);
+
+        if (null !== $httpForwarded) {
+            $server[&#039;HTTP_FORWARDED&#039;] = $httpForwarded;
+        }
+
+        if ($trustedProxies) {
+            Request::setTrustedProxies($trustedProxies, Request::HEADER_FORWARDED);
+        }
+
+        $request-&gt;initialize(array(), array(), array(), array(), array(), $server);
+
+        return $request;
+    }
+
+    public function testTrustedProxiesXForwardedFor()
+    {
+        $request = Request::create(&#039;http://example.com/&#039;);
+        $request-&gt;server-&gt;set(&#039;REMOTE_ADDR&#039;, &#039;3.3.3.3&#039;);
+        $request-&gt;headers-&gt;set(&#039;X_FORWARDED_FOR&#039;, &#039;1.1.1.1, 2.2.2.2&#039;);
+        $request-&gt;headers-&gt;set(&#039;X_FORWARDED_HOST&#039;, &#039;foo.example.com:1234, real.example.com:8080&#039;);
+        $request-&gt;headers-&gt;set(&#039;X_FORWARDED_PROTO&#039;, &#039;https&#039;);
+        $request-&gt;headers-&gt;set(&#039;X_FORWARDED_PORT&#039;, 443);
+
+        // no trusted proxies
+        $this-&gt;assertEquals(&#039;3.3.3.3&#039;, $request-&gt;getClientIp());
+        $this-&gt;assertEquals(&#039;example.com&#039;, $request-&gt;getHost());
+        $this-&gt;assertEquals(80, $request-&gt;getPort());
+        $this-&gt;assertFalse($request-&gt;isSecure());
+
+        // disabling proxy trusting
+        Request::setTrustedProxies(array(), Request::HEADER_X_FORWARDED_ALL);
+        $this-&gt;assertEquals(&#039;3.3.3.3&#039;, $request-&gt;getClientIp());
+        $this-&gt;assertEquals(&#039;example.com&#039;, $request-&gt;getHost());
+        $this-&gt;assertEquals(80, $request-&gt;getPort());
+        $this-&gt;assertFalse($request-&gt;isSecure());
+
+        // request is forwarded by a non-trusted proxy
+        Request::setTrustedProxies(array(&#039;2.2.2.2&#039;), Request::HEADER_X_FORWARDED_ALL);
+        $this-&gt;assertEquals(&#039;3.3.3.3&#039;, $request-&gt;getClientIp());
+        $this-&gt;assertEquals(&#039;example.com&#039;, $request-&gt;getHost());
+        $this-&gt;assertEquals(80, $request-&gt;getPort());
+        $this-&gt;assertFalse($request-&gt;isSecure());
+
+        // trusted proxy via setTrustedProxies()
+        Request::setTrustedProxies(array(&#039;3.3.3.3&#039;, &#039;2.2.2.2&#039;), Request::HEADER_X_FORWARDED_ALL);
+        $this-&gt;assertEquals(&#039;1.1.1.1&#039;, $request-&gt;getClientIp());
+        $this-&gt;assertEquals(&#039;foo.example.com&#039;, $request-&gt;getHost());
+        $this-&gt;assertEquals(443, $request-&gt;getPort());
+        $this-&gt;assertTrue($request-&gt;isSecure());
+
+        // trusted proxy via setTrustedProxies()
+        Request::setTrustedProxies(array(&#039;3.3.3.4&#039;, &#039;2.2.2.2&#039;), Request::HEADER_X_FORWARDED_ALL);
+        $this-&gt;assertEquals(&#039;3.3.3.3&#039;, $request-&gt;getClientIp());
+        $this-&gt;assertEquals(&#039;example.com&#039;, $request-&gt;getHost());
+        $this-&gt;assertEquals(80, $request-&gt;getPort());
+        $this-&gt;assertFalse($request-&gt;isSecure());
+
+        // check various X_FORWARDED_PROTO header values
+        Request::setTrustedProxies(array(&#039;3.3.3.3&#039;, &#039;2.2.2.2&#039;), Request::HEADER_X_FORWARDED_ALL);
+        $request-&gt;headers-&gt;set(&#039;X_FORWARDED_PROTO&#039;, &#039;ssl&#039;);
+        $this-&gt;assertTrue($request-&gt;isSecure());
+
+        $request-&gt;headers-&gt;set(&#039;X_FORWARDED_PROTO&#039;, &#039;https, http&#039;);
+        $this-&gt;assertTrue($request-&gt;isSecure());
+    }
+
+    public function testTrustedProxiesForwarded()
+    {
+        $request = Request::create(&#039;http://example.com/&#039;);
+        $request-&gt;server-&gt;set(&#039;REMOTE_ADDR&#039;, &#039;3.3.3.3&#039;);
+        $request-&gt;headers-&gt;set(&#039;FORWARDED&#039;, &#039;for=1.1.1.1, host=foo.example.com:8080, proto=https, for=2.2.2.2, host=real.example.com:8080&#039;);
+
+        // no trusted proxies
+        $this-&gt;assertEquals(&#039;3.3.3.3&#039;, $request-&gt;getClientIp());
+        $this-&gt;assertEquals(&#039;example.com&#039;, $request-&gt;getHost());
+        $this-&gt;assertEquals(80, $request-&gt;getPort());
+        $this-&gt;assertFalse($request-&gt;isSecure());
+
+        // disabling proxy trusting
+        Request::setTrustedProxies(array(), Request::HEADER_FORWARDED);
+        $this-&gt;assertEquals(&#039;3.3.3.3&#039;, $request-&gt;getClientIp());
+        $this-&gt;assertEquals(&#039;example.com&#039;, $request-&gt;getHost());
+        $this-&gt;assertEquals(80, $request-&gt;getPort());
+        $this-&gt;assertFalse($request-&gt;isSecure());
+
+        // request is forwarded by a non-trusted proxy
+        Request::setTrustedProxies(array(&#039;2.2.2.2&#039;), Request::HEADER_FORWARDED);
+        $this-&gt;assertEquals(&#039;3.3.3.3&#039;, $request-&gt;getClientIp());
+        $this-&gt;assertEquals(&#039;example.com&#039;, $request-&gt;getHost());
+        $this-&gt;assertEquals(80, $request-&gt;getPort());
+        $this-&gt;assertFalse($request-&gt;isSecure());
+
+        // trusted proxy via setTrustedProxies()
+        Request::setTrustedProxies(array(&#039;3.3.3.3&#039;, &#039;2.2.2.2&#039;), Request::HEADER_FORWARDED);
+        $this-&gt;assertEquals(&#039;1.1.1.1&#039;, $request-&gt;getClientIp());
+        $this-&gt;assertEquals(&#039;foo.example.com&#039;, $request-&gt;getHost());
+        $this-&gt;assertEquals(8080, $request-&gt;getPort());
+        $this-&gt;assertTrue($request-&gt;isSecure());
+
+        // trusted proxy via setTrustedProxies()
+        Request::setTrustedProxies(array(&#039;3.3.3.4&#039;, &#039;2.2.2.2&#039;), Request::HEADER_FORWARDED);
+        $this-&gt;assertEquals(&#039;3.3.3.3&#039;, $request-&gt;getClientIp());
+        $this-&gt;assertEquals(&#039;example.com&#039;, $request-&gt;getHost());
+        $this-&gt;assertEquals(80, $request-&gt;getPort());
+        $this-&gt;assertFalse($request-&gt;isSecure());
+
+        // check various X_FORWARDED_PROTO header values
+        Request::setTrustedProxies(array(&#039;3.3.3.3&#039;, &#039;2.2.2.2&#039;), Request::HEADER_FORWARDED);
+        $request-&gt;headers-&gt;set(&#039;FORWARDED&#039;, &#039;proto=ssl&#039;);
+        $this-&gt;assertTrue($request-&gt;isSecure());
+
+        $request-&gt;headers-&gt;set(&#039;FORWARDED&#039;, &#039;proto=https, proto=http&#039;);
+        $this-&gt;assertTrue($request-&gt;isSecure());
+    }
+
+    /**
+     * @dataProvider iisRequestUriProvider
+     */
+    public function testIISRequestUri($headers, $server, $expectedRequestUri)
+    {
+        $request = new Request();
+        $request-&gt;headers-&gt;replace($headers);
+        $request-&gt;server-&gt;replace($server);
+
+        $this-&gt;assertEquals($expectedRequestUri, $request-&gt;getRequestUri(), &#039;-&gt;getRequestUri() is correct&#039;);
+
+        $subRequestUri = &#039;/bar/foo&#039;;
+        $subRequest = Request::create($subRequestUri, &#039;get&#039;, array(), array(), array(), $request-&gt;server-&gt;all());
+        $this-&gt;assertEquals($subRequestUri, $subRequest-&gt;getRequestUri(), &#039;-&gt;getRequestUri() is correct in sub request&#039;);
+    }
+
+    public function iisRequestUriProvider()
+    {
+        return array(
+            array(
+                array(
+                    &#039;X_ORIGINAL_URL&#039; =&gt; &#039;/foo/bar&#039;,
+                ),
+                array(),
+                &#039;/foo/bar&#039;,
+            ),
+            array(
+                array(
+                    &#039;X_REWRITE_URL&#039; =&gt; &#039;/foo/bar&#039;,
+                ),
+                array(),
+                &#039;/foo/bar&#039;,
+            ),
+            array(
+                array(),
+                array(
+                    &#039;IIS_WasUrlRewritten&#039; =&gt; &#039;1&#039;,
+                    &#039;UNENCODED_URL&#039; =&gt; &#039;/foo/bar&#039;,
+                ),
+                &#039;/foo/bar&#039;,
+            ),
+            array(
+                array(
+                    &#039;X_ORIGINAL_URL&#039; =&gt; &#039;/foo/bar&#039;,
+                ),
+                array(
+                    &#039;HTTP_X_ORIGINAL_URL&#039; =&gt; &#039;/foo/bar&#039;,
+                ),
+                &#039;/foo/bar&#039;,
+            ),
+            array(
+                array(
+                    &#039;X_ORIGINAL_URL&#039; =&gt; &#039;/foo/bar&#039;,
+                ),
+                array(
+                    &#039;IIS_WasUrlRewritten&#039; =&gt; &#039;1&#039;,
+                    &#039;UNENCODED_URL&#039; =&gt; &#039;/foo/bar&#039;,
+                ),
+                &#039;/foo/bar&#039;,
+            ),
+            array(
+                array(
+                    &#039;X_ORIGINAL_URL&#039; =&gt; &#039;/foo/bar&#039;,
+                ),
+                array(
+                    &#039;HTTP_X_ORIGINAL_URL&#039; =&gt; &#039;/foo/bar&#039;,
+                    &#039;IIS_WasUrlRewritten&#039; =&gt; &#039;1&#039;,
+                    &#039;UNENCODED_URL&#039; =&gt; &#039;/foo/bar&#039;,
+                ),
+                &#039;/foo/bar&#039;,
+            ),
+            array(
+                array(),
+                array(
+                    &#039;ORIG_PATH_INFO&#039; =&gt; &#039;/foo/bar&#039;,
+                ),
+                &#039;/foo/bar&#039;,
+            ),
+            array(
+                array(),
+                array(
+                    &#039;ORIG_PATH_INFO&#039; =&gt; &#039;/foo/bar&#039;,
+                    &#039;QUERY_STRING&#039; =&gt; &#039;foo=bar&#039;,
+                ),
+                &#039;/foo/bar?foo=bar&#039;,
+            ),
+        );
+    }
+
+    public function testTrustedHosts()
+    {
+        // create a request
+        $request = Request::create(&#039;/&#039;);
+
+        // no trusted host set -&gt; no host check
+        $request-&gt;headers-&gt;set(&#039;host&#039;, &#039;evil.com&#039;);
+        $this-&gt;assertEquals(&#039;evil.com&#039;, $request-&gt;getHost());
+
+        // add a trusted domain and all its subdomains
+        Request::setTrustedHosts(array(&#039;^([a-z]{9}\.)?trusted\.com$&#039;));
+
+        // untrusted host
+        $request-&gt;headers-&gt;set(&#039;host&#039;, &#039;evil.com&#039;);
+        try {
+            $request-&gt;getHost();
+            $this-&gt;fail(&#039;Request::getHost() should throw an exception when host is not trusted.&#039;);
+        } catch (SuspiciousOperationException $e) {
+            $this-&gt;assertEquals(&#039;Untrusted Host &quot;evil.com&quot;.&#039;, $e-&gt;getMessage());
+        }
+
+        // trusted hosts
+        $request-&gt;headers-&gt;set(&#039;host&#039;, &#039;trusted.com&#039;);
+        $this-&gt;assertEquals(&#039;trusted.com&#039;, $request-&gt;getHost());
+        $this-&gt;assertEquals(80, $request-&gt;getPort());
+
+        $request-&gt;server-&gt;set(&#039;HTTPS&#039;, true);
+        $request-&gt;headers-&gt;set(&#039;host&#039;, &#039;trusted.com&#039;);
+        $this-&gt;assertEquals(&#039;trusted.com&#039;, $request-&gt;getHost());
+        $this-&gt;assertEquals(443, $request-&gt;getPort());
+        $request-&gt;server-&gt;set(&#039;HTTPS&#039;, false);
+
+        $request-&gt;headers-&gt;set(&#039;host&#039;, &#039;trusted.com:8000&#039;);
+        $this-&gt;assertEquals(&#039;trusted.com&#039;, $request-&gt;getHost());
+        $this-&gt;assertEquals(8000, $request-&gt;getPort());
+
+        $request-&gt;headers-&gt;set(&#039;host&#039;, &#039;subdomain.trusted.com&#039;);
+        $this-&gt;assertEquals(&#039;subdomain.trusted.com&#039;, $request-&gt;getHost());
+
+        // reset request for following tests
+        Request::setTrustedHosts(array());
+    }
+
+    public function testFactory()
+    {
+        Request::setFactory(function (array $query = array(), array $request = array(), array $attributes = array(), array $cookies = array(), array $files = array(), array $server = array(), $content = null) {
+            return new NewRequest();
+        });
+
+        $this-&gt;assertEquals(&#039;foo&#039;, Request::create(&#039;/&#039;)-&gt;getFoo());
+
+        Request::setFactory(null);
+    }
+
+    /**
+     * @dataProvider getLongHostNames
+     */
+    public function testVeryLongHosts($host)
+    {
+        $start = microtime(true);
+
+        $request = Request::create(&#039;/&#039;);
+        $request-&gt;headers-&gt;set(&#039;host&#039;, $host);
+        $this-&gt;assertEquals($host, $request-&gt;getHost());
+        $this-&gt;assertLessThan(5, microtime(true) - $start);
+    }
+
+    /**
+     * @dataProvider getHostValidities
+     */
+    public function testHostValidity($host, $isValid, $expectedHost = null, $expectedPort = null)
+    {
+        $request = Request::create(&#039;/&#039;);
+        $request-&gt;headers-&gt;set(&#039;host&#039;, $host);
+
+        if ($isValid) {
+            $this-&gt;assertSame($expectedHost ?: $host, $request-&gt;getHost());
+            if ($expectedPort) {
+                $this-&gt;assertSame($expectedPort, $request-&gt;getPort());
+            }
+        } else {
+            if (method_exists($this, &#039;expectException&#039;)) {
+                $this-&gt;expectException(SuspiciousOperationException::class);
+                $this-&gt;expectExceptionMessage(&#039;Invalid Host&#039;);
+            } else {
+                $this-&gt;setExpectedException(SuspiciousOperationException::class, &#039;Invalid Host&#039;);
+            }
+
+            $request-&gt;getHost();
+        }
+    }
+
+    public function getHostValidities()
+    {
+        return array(
+            array(&#039;.a&#039;, false),
+            array(&#039;a..&#039;, false),
+            array(&#039;a.&#039;, true),
+            array(&quot;\xE9&quot;, false),
+            array(&#039;[::1]&#039;, true),
+            array(&#039;[::1]:80&#039;, true, &#039;[::1]&#039;, 80),
+            array(str_repeat(&#039;.&#039;, 101), false),
+        );
+    }
+
+    public function getLongHostNames()
+    {
+        return array(
+            array(&#039;a&#039;.str_repeat(&#039;.a&#039;, 40000)),
+            array(str_repeat(&#039;:&#039;, 101)),
+        );
+    }
+
+    /**
+     * @dataProvider methodIdempotentProvider
+     */
+    public function testMethodIdempotent($method, $idempotent)
+    {
+        $request = new Request();
+        $request-&gt;setMethod($method);
+        $this-&gt;assertEquals($idempotent, $request-&gt;isMethodIdempotent());
+    }
+
+    public function methodIdempotentProvider()
+    {
+        return array(
+            array(&#039;HEAD&#039;, true),
+            array(&#039;GET&#039;, true),
+            array(&#039;POST&#039;, false),
+            array(&#039;PUT&#039;, true),
+            array(&#039;PATCH&#039;, false),
+            array(&#039;DELETE&#039;, true),
+            array(&#039;PURGE&#039;, true),
+            array(&#039;OPTIONS&#039;, true),
+            array(&#039;TRACE&#039;, true),
+            array(&#039;CONNECT&#039;, false),
+        );
+    }
+
+    /**
+     * @dataProvider methodSafeProvider
+     */
+    public function testMethodSafe($method, $safe)
+    {
+        $request = new Request();
+        $request-&gt;setMethod($method);
+        $this-&gt;assertEquals($safe, $request-&gt;isMethodSafe(false));
+    }
+
+    public function methodSafeProvider()
+    {
+        return array(
+            array(&#039;HEAD&#039;, true),
+            array(&#039;GET&#039;, true),
+            array(&#039;POST&#039;, false),
+            array(&#039;PUT&#039;, false),
+            array(&#039;PATCH&#039;, false),
+            array(&#039;DELETE&#039;, false),
+            array(&#039;PURGE&#039;, false),
+            array(&#039;OPTIONS&#039;, true),
+            array(&#039;TRACE&#039;, true),
+            array(&#039;CONNECT&#039;, false),
+        );
+    }
+
+    /**
+     * @expectedException \BadMethodCallException
+     */
+    public function testMethodSafeChecksCacheable()
+    {
+        $request = new Request();
+        $request-&gt;setMethod(&#039;OPTIONS&#039;);
+        $request-&gt;isMethodSafe();
+    }
+
+    /**
+     * @dataProvider methodCacheableProvider
+     */
+    public function testMethodCacheable($method, $cacheable)
+    {
+        $request = new Request();
+        $request-&gt;setMethod($method);
+        $this-&gt;assertEquals($cacheable, $request-&gt;isMethodCacheable());
+    }
+
+    public function methodCacheableProvider()
+    {
+        return array(
+            array(&#039;HEAD&#039;, true),
+            array(&#039;GET&#039;, true),
+            array(&#039;POST&#039;, false),
+            array(&#039;PUT&#039;, false),
+            array(&#039;PATCH&#039;, false),
+            array(&#039;DELETE&#039;, false),
+            array(&#039;PURGE&#039;, false),
+            array(&#039;OPTIONS&#039;, false),
+            array(&#039;TRACE&#039;, false),
+            array(&#039;CONNECT&#039;, false),
+        );
+    }
+
+    /**
+     * @dataProvider protocolVersionProvider
+     */
+    public function testProtocolVersion($serverProtocol, $trustedProxy, $via, $expected)
+    {
+        if ($trustedProxy) {
+            Request::setTrustedProxies(array(&#039;1.1.1.1&#039;), -1);
+        }
+
+        $request = new Request();
+        $request-&gt;server-&gt;set(&#039;SERVER_PROTOCOL&#039;, $serverProtocol);
+        $request-&gt;server-&gt;set(&#039;REMOTE_ADDR&#039;, &#039;1.1.1.1&#039;);
+        $request-&gt;headers-&gt;set(&#039;Via&#039;, $via);
+
+        $this-&gt;assertSame($expected, $request-&gt;getProtocolVersion());
+    }
+
+    public function protocolVersionProvider()
+    {
+        return array(
+            &#039;untrusted without via&#039; =&gt; array(&#039;HTTP/2.0&#039;, false, &#039;&#039;, &#039;HTTP/2.0&#039;),
+            &#039;untrusted with via&#039; =&gt; array(&#039;HTTP/2.0&#039;, false, &#039;1.0 fred, 1.1 nowhere.com (Apache/1.1)&#039;, &#039;HTTP/2.0&#039;),
+            &#039;trusted without via&#039; =&gt; array(&#039;HTTP/2.0&#039;, true, &#039;&#039;, &#039;HTTP/2.0&#039;),
+            &#039;trusted with via&#039; =&gt; array(&#039;HTTP/2.0&#039;, true, &#039;1.0 fred, 1.1 nowhere.com (Apache/1.1)&#039;, &#039;HTTP/1.0&#039;),
+            &#039;trusted with via and protocol name&#039; =&gt; array(&#039;HTTP/2.0&#039;, true, &#039;HTTP/1.0 fred, HTTP/1.1 nowhere.com (Apache/1.1)&#039;, &#039;HTTP/1.0&#039;),
+            &#039;trusted with broken via&#039; =&gt; array(&#039;HTTP/2.0&#039;, true, &#039;HTTP/1^0 foo&#039;, &#039;HTTP/2.0&#039;),
+            &#039;trusted with partially-broken via&#039; =&gt; array(&#039;HTTP/2.0&#039;, true, &#039;1.0 fred, foo&#039;, &#039;HTTP/1.0&#039;),
+        );
+    }
+
+    public function nonstandardRequestsData()
+    {
+        return array(
+            array(&#039;&#039;,  &#039;&#039;, &#039;/&#039;, &#039;http://host:8080/&#039;, &#039;&#039;),
+            array(&#039;/&#039;, &#039;&#039;, &#039;/&#039;, &#039;http://host:8080/&#039;, &#039;&#039;),
+
+            array(&#039;hello/app.php/x&#039;,  &#039;&#039;, &#039;/x&#039;, &#039;http://host:8080/hello/app.php/x&#039;, &#039;/hello&#039;, &#039;/hello/app.php&#039;),
+            array(&#039;/hello/app.php/x&#039;, &#039;&#039;, &#039;/x&#039;, &#039;http://host:8080/hello/app.php/x&#039;, &#039;/hello&#039;, &#039;/hello/app.php&#039;),
+
+            array(&#039;&#039;,      &#039;a=b&#039;, &#039;/&#039;, &#039;http://host:8080/?a=b&#039;),
+            array(&#039;?a=b&#039;,  &#039;a=b&#039;, &#039;/&#039;, &#039;http://host:8080/?a=b&#039;),
+            array(&#039;/?a=b&#039;, &#039;a=b&#039;, &#039;/&#039;, &#039;http://host:8080/?a=b&#039;),
+
+            array(&#039;x&#039;,      &#039;a=b&#039;, &#039;/x&#039;, &#039;http://host:8080/x?a=b&#039;),
+            array(&#039;x?a=b&#039;,  &#039;a=b&#039;, &#039;/x&#039;, &#039;http://host:8080/x?a=b&#039;),
+            array(&#039;/x?a=b&#039;, &#039;a=b&#039;, &#039;/x&#039;, &#039;http://host:8080/x?a=b&#039;),
+
+            array(&#039;hello/x&#039;,  &#039;&#039;, &#039;/x&#039;, &#039;http://host:8080/hello/x&#039;, &#039;/hello&#039;),
+            array(&#039;/hello/x&#039;, &#039;&#039;, &#039;/x&#039;, &#039;http://host:8080/hello/x&#039;, &#039;/hello&#039;),
+
+            array(&#039;hello/app.php/x&#039;,      &#039;a=b&#039;, &#039;/x&#039;, &#039;http://host:8080/hello/app.php/x?a=b&#039;, &#039;/hello&#039;, &#039;/hello/app.php&#039;),
+            array(&#039;hello/app.php/x?a=b&#039;,  &#039;a=b&#039;, &#039;/x&#039;, &#039;http://host:8080/hello/app.php/x?a=b&#039;, &#039;/hello&#039;, &#039;/hello/app.php&#039;),
+            array(&#039;/hello/app.php/x?a=b&#039;, &#039;a=b&#039;, &#039;/x&#039;, &#039;http://host:8080/hello/app.php/x?a=b&#039;, &#039;/hello&#039;, &#039;/hello/app.php&#039;),
+        );
+    }
+
+    /**
+     * @dataProvider nonstandardRequestsData
+     */
+    public function testNonstandardRequests($requestUri, $queryString, $expectedPathInfo, $expectedUri, $expectedBasePath = &#039;&#039;, $expectedBaseUrl = null)
+    {
+        if (null === $expectedBaseUrl) {
+            $expectedBaseUrl = $expectedBasePath;
+        }
+
+        $server = array(
+            &#039;HTTP_HOST&#039; =&gt; &#039;host:8080&#039;,
+            &#039;SERVER_PORT&#039; =&gt; &#039;8080&#039;,
+            &#039;QUERY_STRING&#039; =&gt; $queryString,
+            &#039;PHP_SELF&#039; =&gt; &#039;/hello/app.php&#039;,
+            &#039;SCRIPT_FILENAME&#039; =&gt; &#039;/some/path/app.php&#039;,
+            &#039;REQUEST_URI&#039; =&gt; $requestUri,
+        );
+
+        $request = new Request(array(), array(), array(), array(), array(), $server);
+
+        $this-&gt;assertEquals($expectedPathInfo, $request-&gt;getPathInfo());
+        $this-&gt;assertEquals($expectedUri, $request-&gt;getUri());
+        $this-&gt;assertEquals($queryString, $request-&gt;getQueryString());
+        $this-&gt;assertEquals(8080, $request-&gt;getPort());
+        $this-&gt;assertEquals(&#039;host:8080&#039;, $request-&gt;getHttpHost());
+        $this-&gt;assertEquals($expectedBaseUrl, $request-&gt;getBaseUrl());
+        $this-&gt;assertEquals($expectedBasePath, $request-&gt;getBasePath());
+    }
+}
+
+class RequestContentProxy extends Request
+{
+    public function getContent($asResource = false)
+    {
+        return http_build_query(array(&#039;_method&#039; =&gt; &#039;PUT&#039;, &#039;content&#039; =&gt; &#039;mycontent&#039;), &#039;&#039;, &#039;&amp;&#039;);
+    }
+}
+
+class NewRequest extends Request
+{
+    public function getFoo()
+    {
+        return &#039;foo&#039;;
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>

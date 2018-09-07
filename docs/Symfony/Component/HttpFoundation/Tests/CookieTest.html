@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Symfony\Component\HttpFoundation\Tests\CookieTest | Khan framework Docs</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/prism.css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic' rel='stylesheet' type='text/css'>
+        <script src="../../../../js/prism.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Symfony_Component_HttpFoundation_Tests_CookieTest" data-root-path="../../../../">
+            <nav>
+    <div class="container">
+      <div class="title">
+        <a href="../../../../index.html">Khan framework Docs</a>
+      </div>
+      <ul>
+        <li><a href="../../../../classes.html">Classes</a></li>
+                  <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                <li><a href="../../../../interfaces.html">Interfaces</a></li>
+        <li><a href="../../../../traits.html">Traits</a></li>
+        <li><a href="../../../../doc-index.html">Index</a></li>
+        <li><a href="../../../../search.html">Search</a></li>
+      </ul>
+                  <ol class="breadcrumb">
+                                  <li><a href="../../../../Symfony.html">Symfony</a></li>
+                    <li><a href="../../../../Symfony/Component.html">Component</a></li>
+                    <li><a href="../../../../Symfony/Component/HttpFoundation.html">HttpFoundation</a></li>
+                    <li><a href="../../../../Symfony/Component/HttpFoundation/Tests.html">Tests</a></li>
+  
+            <li>CookieTest</li>
+        </ol>
+        </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+        <div id="control-panel">
+      </div>
+
+        <div id="api-tree"></div>
+
+    </div>
+    <div class="row">
+          <h1>CookieTest</h1>
+
+    <p>    class
+    <strong>CookieTest</strong>        extends <abbr title="PHPUnit\Framework\TestCase">TestCase</abbr>
+</p>
+
+            <p>CookieTest.</p>            
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table class="table">
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_invalidNames">invalidNames</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testInstantiationThrowsExceptionIfCookieNameContainsInvalidCharacters">testInstantiationThrowsExceptionIfCookieNameContainsInvalidCharacters</a>($name)</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testInvalidExpiration">testInvalidExpiration</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testNegativeExpirationIsNotPossible">testNegativeExpirationIsNotPossible</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetValue">testGetValue</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetPath">testGetPath</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetExpiresTime">testGetExpiresTime</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetExpiresTimeIsCastToInt">testGetExpiresTimeIsCastToInt</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testConstructorWithDateTime">testConstructorWithDateTime</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testConstructorWithDateTimeImmutable">testConstructorWithDateTimeImmutable</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetExpiresTimeWithStringValue">testGetExpiresTimeWithStringValue</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetDomain">testGetDomain</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testIsSecure">testIsSecure</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testIsHttpOnly">testIsHttpOnly</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testCookieIsNotCleared">testCookieIsNotCleared</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testCookieIsCleared">testCookieIsCleared</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testToString">testToString</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testRawCookie">testRawCookie</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testGetMaxAge">testGetMaxAge</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testFromString">testFromString</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testFromStringWithHttpOnly">testFromStringWithHttpOnly</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+            <tr>
+            <td>
+                <code class="language-php">
+                                                            public                                    </code>
+            </td>
+            <td class="text-right"><code class="language-php"></code></td>
+            <td>
+                <code class="language-php"><a href="#method_testSameSiteAttributeIsCaseInsensitive">testSameSiteAttributeIsCaseInsensitive</a>()</code>
+            </td>
+            <td>
+                                    No description
+                            </td>
+            <td></td>
+        </tr>
+        </table>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.27">27</a>
+                    </div>
+        <div>
+            <h3 id="method_invalidNames"><code class="language-php">invalidNames()</code></h3>
+            <code class="language-php">public invalidNames()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.46">46</a>
+                    </div>
+        <div>
+            <h3 id="method_testInstantiationThrowsExceptionIfCookieNameContainsInvalidCharacters"><code class="language-php">testInstantiationThrowsExceptionIfCookieNameContainsInvalidCharacters()</code></h3>
+            <code class="language-php">public testInstantiationThrowsExceptionIfCookieNameContainsInvalidCharacters($name)</code>
+        </div>
+    </div>
+
+    <div class="details">
+                            <h4>Parameters</h4>
+
+                <table class="table">
+                    <tr>
+                <td></td>
+                <td><code class="language-php">$name</code></td>
+                <td></td>
+            </tr>
+            </table>
+
+        
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.54">54</a>
+                    </div>
+        <div>
+            <h3 id="method_testInvalidExpiration"><code class="language-php">testInvalidExpiration()</code></h3>
+            <code class="language-php">public testInvalidExpiration()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.59">59</a>
+                    </div>
+        <div>
+            <h3 id="method_testNegativeExpirationIsNotPossible"><code class="language-php">testNegativeExpirationIsNotPossible()</code></h3>
+            <code class="language-php">public testNegativeExpirationIsNotPossible()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.66">66</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetValue"><code class="language-php">testGetValue()</code></h3>
+            <code class="language-php">public testGetValue()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.74">74</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetPath"><code class="language-php">testGetPath()</code></h3>
+            <code class="language-php">public testGetPath()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.81">81</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetExpiresTime"><code class="language-php">testGetExpiresTime()</code></h3>
+            <code class="language-php">public testGetExpiresTime()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.92">92</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetExpiresTimeIsCastToInt"><code class="language-php">testGetExpiresTimeIsCastToInt()</code></h3>
+            <code class="language-php">public testGetExpiresTimeIsCastToInt()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.99">99</a>
+                    </div>
+        <div>
+            <h3 id="method_testConstructorWithDateTime"><code class="language-php">testConstructorWithDateTime()</code></h3>
+            <code class="language-php">public testConstructorWithDateTime()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.107">107</a>
+                    </div>
+        <div>
+            <h3 id="method_testConstructorWithDateTimeImmutable"><code class="language-php">testConstructorWithDateTimeImmutable()</code></h3>
+            <code class="language-php">public testConstructorWithDateTimeImmutable()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.115">115</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetExpiresTimeWithStringValue"><code class="language-php">testGetExpiresTimeWithStringValue()</code></h3>
+            <code class="language-php">public testGetExpiresTimeWithStringValue()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.124">124</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetDomain"><code class="language-php">testGetDomain()</code></h3>
+            <code class="language-php">public testGetDomain()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.131">131</a>
+                    </div>
+        <div>
+            <h3 id="method_testIsSecure"><code class="language-php">testIsSecure()</code></h3>
+            <code class="language-php">public testIsSecure()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.138">138</a>
+                    </div>
+        <div>
+            <h3 id="method_testIsHttpOnly"><code class="language-php">testIsHttpOnly()</code></h3>
+            <code class="language-php">public testIsHttpOnly()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.145">145</a>
+                    </div>
+        <div>
+            <h3 id="method_testCookieIsNotCleared"><code class="language-php">testCookieIsNotCleared()</code></h3>
+            <code class="language-php">public testCookieIsNotCleared()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.152">152</a>
+                    </div>
+        <div>
+            <h3 id="method_testCookieIsCleared"><code class="language-php">testCookieIsCleared()</code></h3>
+            <code class="language-php">public testCookieIsCleared()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.159">159</a>
+                    </div>
+        <div>
+            <h3 id="method_testToString"><code class="language-php">testToString()</code></h3>
+            <code class="language-php">public testToString()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.174">174</a>
+                    </div>
+        <div>
+            <h3 id="method_testRawCookie"><code class="language-php">testRawCookie()</code></h3>
+            <code class="language-php">public testRawCookie()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.185">185</a>
+                    </div>
+        <div>
+            <h3 id="method_testGetMaxAge"><code class="language-php">testGetMaxAge()</code></h3>
+            <code class="language-php">public testGetMaxAge()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.197">197</a>
+                    </div>
+        <div>
+            <h3 id="method_testFromString"><code class="language-php">testFromString()</code></h3>
+            <code class="language-php">public testFromString()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.206">206</a>
+                    </div>
+        <div>
+            <h3 id="method_testFromStringWithHttpOnly"><code class="language-php">testFromStringWithHttpOnly()</code></h3>
+            <code class="language-php">public testFromStringWithHttpOnly()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+                        <div>
+        <div class="float-right">
+                            at line <a href="#source.215">215</a>
+                    </div>
+        <div>
+            <h3 id="method_testSameSiteAttributeIsCaseInsensitive"><code class="language-php">testSameSiteAttributeIsCaseInsensitive()</code></h3>
+            <code class="language-php">public testSameSiteAttributeIsCaseInsensitive()</code>
+        </div>
+    </div>
+
+    <div class="details">
+                
+        
+        
+            </div>
+
+            </div>
+
+    
+    <h2>Source code</h2>
+    <pre class="language-php line-numbers" id="source"><code>&lt;?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier &lt;fabien@symfony.com&gt;
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\HttpFoundation\Tests;
+
+use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\Cookie;
+
+/**
+ * CookieTest.
+ *
+ * @author John Kary &lt;john@johnkary.net&gt;
+ * @author Hugo Hamon &lt;hugo.hamon@sensio.com&gt;
+ *
+ * @group time-sensitive
+ */
+class CookieTest extends TestCase
+{
+    public function invalidNames()
+    {
+        return array(
+            array(&#039;&#039;),
+            array(&#039;,MyName&#039;),
+            array(&#039;;MyName&#039;),
+            array(&#039; MyName&#039;),
+            array(&quot;\tMyName&quot;),
+            array(&quot;\rMyName&quot;),
+            array(&quot;\nMyName&quot;),
+            array(&quot;\013MyName&quot;),
+            array(&quot;\014MyName&quot;),
+        );
+    }
+
+    /**
+     * @dataProvider invalidNames
+     * @expectedException \InvalidArgumentException
+     */
+    public function testInstantiationThrowsExceptionIfCookieNameContainsInvalidCharacters($name)
+    {
+        new Cookie($name);
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testInvalidExpiration()
+    {
+        new Cookie(&#039;MyCookie&#039;, &#039;foo&#039;, &#039;bar&#039;);
+    }
+
+    public function testNegativeExpirationIsNotPossible()
+    {
+        $cookie = new Cookie(&#039;foo&#039;, &#039;bar&#039;, -100);
+
+        $this-&gt;assertSame(0, $cookie-&gt;getExpiresTime());
+    }
+
+    public function testGetValue()
+    {
+        $value = &#039;MyValue&#039;;
+        $cookie = new Cookie(&#039;MyCookie&#039;, $value);
+
+        $this-&gt;assertSame($value, $cookie-&gt;getValue(), &#039;-&gt;getValue() returns the proper value&#039;);
+    }
+
+    public function testGetPath()
+    {
+        $cookie = new Cookie(&#039;foo&#039;, &#039;bar&#039;);
+
+        $this-&gt;assertSame(&#039;/&#039;, $cookie-&gt;getPath(), &#039;-&gt;getPath() returns / as the default path&#039;);
+    }
+
+    public function testGetExpiresTime()
+    {
+        $cookie = new Cookie(&#039;foo&#039;, &#039;bar&#039;);
+
+        $this-&gt;assertEquals(0, $cookie-&gt;getExpiresTime(), &#039;-&gt;getExpiresTime() returns the default expire date&#039;);
+
+        $cookie = new Cookie(&#039;foo&#039;, &#039;bar&#039;, $expire = time() + 3600);
+
+        $this-&gt;assertEquals($expire, $cookie-&gt;getExpiresTime(), &#039;-&gt;getExpiresTime() returns the expire date&#039;);
+    }
+
+    public function testGetExpiresTimeIsCastToInt()
+    {
+        $cookie = new Cookie(&#039;foo&#039;, &#039;bar&#039;, 3600.9);
+
+        $this-&gt;assertSame(3600, $cookie-&gt;getExpiresTime(), &#039;-&gt;getExpiresTime() returns the expire date as an integer&#039;);
+    }
+
+    public function testConstructorWithDateTime()
+    {
+        $expire = new \DateTime();
+        $cookie = new Cookie(&#039;foo&#039;, &#039;bar&#039;, $expire);
+
+        $this-&gt;assertEquals($expire-&gt;format(&#039;U&#039;), $cookie-&gt;getExpiresTime(), &#039;-&gt;getExpiresTime() returns the expire date&#039;);
+    }
+
+    public function testConstructorWithDateTimeImmutable()
+    {
+        $expire = new \DateTimeImmutable();
+        $cookie = new Cookie(&#039;foo&#039;, &#039;bar&#039;, $expire);
+
+        $this-&gt;assertEquals($expire-&gt;format(&#039;U&#039;), $cookie-&gt;getExpiresTime(), &#039;-&gt;getExpiresTime() returns the expire date&#039;);
+    }
+
+    public function testGetExpiresTimeWithStringValue()
+    {
+        $value = &#039;+1 day&#039;;
+        $cookie = new Cookie(&#039;foo&#039;, &#039;bar&#039;, $value);
+        $expire = strtotime($value);
+
+        $this-&gt;assertEquals($expire, $cookie-&gt;getExpiresTime(), &#039;-&gt;getExpiresTime() returns the expire date&#039;, 1);
+    }
+
+    public function testGetDomain()
+    {
+        $cookie = new Cookie(&#039;foo&#039;, &#039;bar&#039;, 0, &#039;/&#039;, &#039;.myfoodomain.com&#039;);
+
+        $this-&gt;assertEquals(&#039;.myfoodomain.com&#039;, $cookie-&gt;getDomain(), &#039;-&gt;getDomain() returns the domain name on which the cookie is valid&#039;);
+    }
+
+    public function testIsSecure()
+    {
+        $cookie = new Cookie(&#039;foo&#039;, &#039;bar&#039;, 0, &#039;/&#039;, &#039;.myfoodomain.com&#039;, true);
+
+        $this-&gt;assertTrue($cookie-&gt;isSecure(), &#039;-&gt;isSecure() returns whether the cookie is transmitted over HTTPS&#039;);
+    }
+
+    public function testIsHttpOnly()
+    {
+        $cookie = new Cookie(&#039;foo&#039;, &#039;bar&#039;, 0, &#039;/&#039;, &#039;.myfoodomain.com&#039;, false, true);
+
+        $this-&gt;assertTrue($cookie-&gt;isHttpOnly(), &#039;-&gt;isHttpOnly() returns whether the cookie is only transmitted over HTTP&#039;);
+    }
+
+    public function testCookieIsNotCleared()
+    {
+        $cookie = new Cookie(&#039;foo&#039;, &#039;bar&#039;, time() + 3600 * 24);
+
+        $this-&gt;assertFalse($cookie-&gt;isCleared(), &#039;-&gt;isCleared() returns false if the cookie did not expire yet&#039;);
+    }
+
+    public function testCookieIsCleared()
+    {
+        $cookie = new Cookie(&#039;foo&#039;, &#039;bar&#039;, time() - 20);
+
+        $this-&gt;assertTrue($cookie-&gt;isCleared(), &#039;-&gt;isCleared() returns true if the cookie has expired&#039;);
+    }
+
+    public function testToString()
+    {
+        $cookie = new Cookie(&#039;foo&#039;, &#039;bar&#039;, $expire = strtotime(&#039;Fri, 20-May-2011 15:25:52 GMT&#039;), &#039;/&#039;, &#039;.myfoodomain.com&#039;, true);
+        $this-&gt;assertEquals(&#039;foo=bar; expires=Fri, 20-May-2011 15:25:52 GMT; max-age=&#039;.($expire - time()).&#039;; path=/; domain=.myfoodomain.com; secure; httponly&#039;, (string) $cookie, &#039;-&gt;__toString() returns string representation of the cookie&#039;);
+
+        $cookie = new Cookie(&#039;foo&#039;, &#039;bar with white spaces&#039;, strtotime(&#039;Fri, 20-May-2011 15:25:52 GMT&#039;), &#039;/&#039;, &#039;.myfoodomain.com&#039;, true);
+        $this-&gt;assertEquals(&#039;foo=bar%20with%20white%20spaces; expires=Fri, 20-May-2011 15:25:52 GMT; max-age=&#039;.($expire - time()).&#039;; path=/; domain=.myfoodomain.com; secure; httponly&#039;, (string) $cookie, &#039;-&gt;__toString() encodes the value of the cookie according to RFC 3986 (white space = %20)&#039;);
+
+        $cookie = new Cookie(&#039;foo&#039;, null, 1, &#039;/admin/&#039;, &#039;.myfoodomain.com&#039;);
+        $this-&gt;assertEquals(&#039;foo=deleted; expires=&#039;.gmdate(&#039;D, d-M-Y H:i:s T&#039;, $expire = time() - 31536001).&#039;; max-age=&#039;.($expire - time()).&#039;; path=/admin/; domain=.myfoodomain.com; httponly&#039;, (string) $cookie, &#039;-&gt;__toString() returns string representation of a cleared cookie if value is NULL&#039;);
+
+        $cookie = new Cookie(&#039;foo&#039;, &#039;bar&#039;, 0, &#039;/&#039;, &#039;&#039;);
+        $this-&gt;assertEquals(&#039;foo=bar; path=/; httponly&#039;, (string) $cookie);
+    }
+
+    public function testRawCookie()
+    {
+        $cookie = new Cookie(&#039;foo&#039;, &#039;b a r&#039;, 0, &#039;/&#039;, null, false, false);
+        $this-&gt;assertFalse($cookie-&gt;isRaw());
+        $this-&gt;assertEquals(&#039;foo=b%20a%20r; path=/&#039;, (string) $cookie);
+
+        $cookie = new Cookie(&#039;foo&#039;, &#039;b+a+r&#039;, 0, &#039;/&#039;, null, false, false, true);
+        $this-&gt;assertTrue($cookie-&gt;isRaw());
+        $this-&gt;assertEquals(&#039;foo=b+a+r; path=/&#039;, (string) $cookie);
+    }
+
+    public function testGetMaxAge()
+    {
+        $cookie = new Cookie(&#039;foo&#039;, &#039;bar&#039;);
+        $this-&gt;assertEquals(0, $cookie-&gt;getMaxAge());
+
+        $cookie = new Cookie(&#039;foo&#039;, &#039;bar&#039;, $expire = time() + 100);
+        $this-&gt;assertEquals($expire - time(), $cookie-&gt;getMaxAge());
+
+        $cookie = new Cookie(&#039;foo&#039;, &#039;bar&#039;, $expire = time() - 100);
+        $this-&gt;assertEquals($expire - time(), $cookie-&gt;getMaxAge());
+    }
+
+    public function testFromString()
+    {
+        $cookie = Cookie::fromString(&#039;foo=bar; expires=Fri, 20-May-2011 15:25:52 GMT; path=/; domain=.myfoodomain.com; secure; httponly&#039;);
+        $this-&gt;assertEquals(new Cookie(&#039;foo&#039;, &#039;bar&#039;, strtotime(&#039;Fri, 20-May-2011 15:25:52 GMT&#039;), &#039;/&#039;, &#039;.myfoodomain.com&#039;, true, true, true), $cookie);
+
+        $cookie = Cookie::fromString(&#039;foo=bar&#039;, true);
+        $this-&gt;assertEquals(new Cookie(&#039;foo&#039;, &#039;bar&#039;, 0, &#039;/&#039;, null, false, false), $cookie);
+    }
+
+    public function testFromStringWithHttpOnly()
+    {
+        $cookie = Cookie::fromString(&#039;foo=bar; expires=Fri, 20-May-2011 15:25:52 GMT; path=/; domain=.myfoodomain.com; secure; httponly&#039;);
+        $this-&gt;assertTrue($cookie-&gt;isHttpOnly());
+
+        $cookie = Cookie::fromString(&#039;foo=bar; expires=Fri, 20-May-2011 15:25:52 GMT; path=/; domain=.myfoodomain.com; secure&#039;);
+        $this-&gt;assertFalse($cookie-&gt;isHttpOnly());
+    }
+
+    public function testSameSiteAttributeIsCaseInsensitive()
+    {
+        $cookie = new Cookie(&#039;foo&#039;, &#039;bar&#039;, 0, &#039;/&#039;, null, false, true, false, &#039;Lax&#039;);
+        $this-&gt;assertEquals(&#039;lax&#039;, $cookie-&gt;getSameSite());
+    }
+}
+</code></pre>
+    </div>
+    <div class="row">
+        <div id="footer">
+    Generated by <a href="http://sami.sensiolabs.org/">Sami, the API Documentation Generator</a> using <a href="https://github.com/nochso/sami-theme">nochso/sami-theme</a>.
+  </div>
+
+    </div>
+  </div>
+    </body>
+
+</html>
