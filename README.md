@@ -13,7 +13,7 @@
 </p>
 
 -----------------------
-  #### Readme in [English](https://github.com/PaulaoDev/khan/blob/master/README-en.md)
+  #### Readme in [English](https://github.com/PaulaoDev/khan/blob/master/resources/contributing/README-en.md)
 
   ### Documentaçao
   Uma documentação completa do sistema está disponível online [neste link](https://paulaodev.github.io/khan/docs/).
@@ -63,7 +63,7 @@
 
  ### Contribuiçoes
  - Envie relatórios de erros, sugestões e solicitações de upload para o [rastreador de problemas do GitHub](https://github.com/PaulaoDev/khan/issues).
- - Leia o [arquivo](https://github.com/PaulaoDev/khan/blob/master/CONTRIBUTING.md).
+ - Leia o [arquivo](https://github.com/PaulaoDev/khan/blob/master/resources/contributing/CONTRIBUTING.md).
   
   ### Geradores
   ```bash 
@@ -80,10 +80,12 @@
 Khan é um framework de aplicações web. Acreditamos que o desenvolvimento deve ser uma experiência boa e não cansativa para ser verdadeiramente produtivo. O Khan simplifica o desenvolvimento, facilitando tarefas comuns usadas na maioria dos projetos da web, incluindo:
  
  - [Khan CLI](https://github.com/PaulaoDev/khan-cli)
- - [Mecanismo de roteamento simples, fácil de aprender, rápido e com verificação em duas etapas para parâmetros](https://github.com/PaulaoDev/khan-core/blob/master/src/Khan/Component/Router/src/Router/Router.php)
+ - Rapida criação de API's
+ - Sistema inteligente na criaçao de Controllers
+ - [Mecanismo de rotas rápido de aprender e novas funcionalidades](https://github.com/PaulaoDev/khan-core/blob/master/src/Khan/Component/Router/src/Router/Router.php)
+ - Componentes para utilizar ( Router, Stream, Container, Hooks )
  - [Helpers para sua aplicação (Medoo PDO, Twig Engine View, Symfony, Carbon Date Manipulate)](https://github.com/PaulaoDev/khan-core/blob/master/composer.json)
- - [Recipiente de injeção de dependência rápida](https://github.com/PaulaoDev/khan-core/blob/master/src/Khan/Component/Container/ServiceContainer.php)
- - [Serviço de transmissão](https://github.com/PaulaoDev/khan-core/blob/master/src/Khan/Component/Stream/StreamServer.php)
+ - [Injeção de dependência rápida](https://github.com/PaulaoDev/khan-core/blob/master/src/Khan/Component/Container/ServiceContainer.php)
  - [Websockets](https://github.com/PaulaoDev/khan-core/blob/master/src/Khan/Component/Socket/Socket.php)
  
  ### Benchmarks
@@ -108,7 +110,7 @@ Khan é um framework de aplicações web. Acreditamos que o desenvolvimento deve
 Para que o sistema funcione 100% é necessário ter um Virtual Host configurado em seu localhost ou diretamente na pasta ROOT de uma hospedagem.
 
   ### Routes
-  Crie arquivos com rotas no diretório **routes/**
+  Crie arquivos com rotas no diretório **config/routes.php**
   
   <p align="center"><img src="https://i.imgur.com/Z7R5ew4.png" alt="Khan"/></p>
    
