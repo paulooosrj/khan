@@ -26,7 +26,3 @@ Router::post('/form', function ($req, $res) {
 });
 
 Router::get('/teste', "Controllers\TesteController->index");
-
-router('get', '/testando', function () {
-	return ["msg" => "Testando Rest API"];
-});

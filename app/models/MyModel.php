@@ -1,13 +1,9 @@
 <?php
 
-	namespace Models;
+namespace Models;
 
-	class MyModel {
+class Users {
 
-		public static function init(){
+	const table = 'login';
 
-			return "Ola mundo!!";
-
-		}
-
-	}
+}

@@ -16,7 +16,7 @@
   #### Readme in [English](https://github.com/PaulaoDev/khan/blob/master/resources/contributing/README-en.md)
 
   ### Documentaçao
-  Uma documentação completa do sistema está disponível online [neste link](https://paulaodev.github.io/khan/docs/).
+  Uma documentação completa do sistema está disponível online [neste link](https://paulaodev.github.io/khan/resources/docs/).
 
   - [Core do Projeto](https://github.com/PaulaoDev/khan-core)
   

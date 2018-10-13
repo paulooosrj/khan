@@ -1,25 +1,33 @@
 <?php
 
-	namespace Controllers;
+namespace Controllers;
 
-	class TesteController extends \App\Khan\Bootstrap\KhanController {
+class TesteController extends \App\Khan\Bootstrap\KhanController {
 
-		public function index($req, $res){
+	public function index($req, $res) {
 
-				// $this->helpers('cache');
+		// $this->helpers('cache');
 
-				// $this->cache->init();
-				// if(!$this->cache->get('data', $out)){
-				// 	$this->cache->set('data', [
-				// 		"msg" => $this->container::get('teste')()
-				// 	], 300);
-				// }
+		// $this->cache->init();
+		// if(!$this->cache->get('data', $out)){
+		// 	$this->cache->set('data', [
+		// 		"msg" => $this->container::get('teste')()
+		// 	], 300);
+		// }
 
-				// $this->cache->get('data', $out);
-				// $res->send($out['msg']);
+		// $this->cache->get('data', $out);
+		// $res->send($out['msg']);
 
-				$res->send("Ola mundo!!");
+		// $res->send("Ola mundo!!");
 
-		}
+		return "Ola mundo!!";
 
 	}
+
+	public function container() {
+
+		return $this->container::get('teste')();
+
+	}
+
+}

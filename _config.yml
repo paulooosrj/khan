@@ -7,7 +7,7 @@ markdown: kramdown
 highlighter: rouge
 link-tags: true
 
-include: [docs]
+include: [resources/docs]
 
 author:
   name: PaulaoDev
