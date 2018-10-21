@@ -1,4 +1,4 @@
-<p align="center"><img src="https://i.imgur.com/X9o9Za0.png" alt="ChatBotPHP" width="180"/></p>
+<p align="center"><img src="https://i.imgur.com/rjBZUWM.png" alt="Khan Framework" width="420"/></p>
 
 <p align="center">
     <a href="https://scrutinizer-ci.com/g/PaulaoDev/khan/?branch=master"><img src="https://scrutinizer-ci.com/g/PaulaoDev/router-khan/badges/quality-score.png?b=master" alt="Passing"></a>
@@ -29,36 +29,36 @@
   - Download [Zip](https://github.com/PaulaoDev/khan/archive/master.zip)
   ```bash 
     # download zip
-    git clone https://github.com/PaulaoDev/khan khan-project && cd khan-project && composer install
+    $ git clone https://github.com/PaulaoDev/khan khan-project && cd khan-project && composer install
     
     # using cli khan
-    php khan list
+    $ php khan list
        
     # download usando cli khan
-    php khan create khan-project && cd khan-project && composer install
+    $ php khan create khan-project && cd khan-project && composer install
     
     # instala dependencias e inicia o servidor
-    composer install
+    $ composer install
 
     # so funciona em php 7
-    php khan server
+    $ php khan server
     
   ```
   
   
 
   ### Linha de comando
-  ```console
-  php khan list
+  ```bash
+  $ php khan list
   ```
 
   ### Novidades
   <p align="center"><img src="https://i.imgur.com/H4GhPPE.png" alt="LiveServer" width="750"/></p>
   
   
-  ```console
+  ```bash
   # Iniciar o auto servidor
-  php khan live
+  $ php khan live
   ```
 
  ### Contribuiçoes
@@ -70,23 +70,23 @@
     # execute o comando no qual a estrutura está configurada
     
     # gera o sistema de login
-    khan make auth
+    $ khan make auth
     
     # gera o sistema de chat
-    khan make chat
+    $ khan make chat
   ```
 
  ### Sobre Khan
 Khan é um framework de aplicações web. Acreditamos que o desenvolvimento deve ser uma experiência boa e não cansativa para ser verdadeiramente produtivo. O Khan simplifica o desenvolvimento, facilitando tarefas comuns usadas na maioria dos projetos da web, incluindo:
  
- - [Khan CLI](https://github.com/PaulaoDev/khan-cli)
- - Rapida criação de API's
- - Sistema inteligente na criaçao de Controllers
- - [Mecanismo de rotas rápido de aprender e novas funcionalidades](https://github.com/PaulaoDev/khan-core/blob/master/src/Khan/Component/Router/src/Router/Router.php)
- - Componentes para utilizar ( Router, Stream, Container, Hooks )
- - [Helpers para sua aplicação (Medoo PDO, Twig Engine View, Symfony, Carbon Date Manipulate)](https://github.com/PaulaoDev/khan-core/blob/master/composer.json)
- - [Injeção de dependência rápida](https://github.com/PaulaoDev/khan-core/blob/master/src/Khan/Component/Container/ServiceContainer.php)
- - [Websockets](https://github.com/PaulaoDev/khan-core/blob/master/src/Khan/Component/Socket/Socket.php)
+ - 🖥 [Khan CLI](https://github.com/PaulaoDev/khan-cli)
+ - 🏎 Rapida criação de API's
+ - 🤓 Sistema inteligente na criaçao de Controllers
+ - 🛣 [Mecanismo de rotas rápido de aprender e novas funcionalidades](https://github.com/PaulaoDev/khan-core/blob/master/src/Khan/Component/Router/src/Router/Router.php)
+ - 🛠 Componentes para utilizar ( Router, Stream, Container, Hooks )
+ - 📗 [Helpers para sua aplicação (Medoo PDO, Twig Engine View, Symfony, Carbon Date Manipulate)](https://github.com/PaulaoDev/khan-core/blob/master/composer.json)
+ - 💉 [Injeção de dependência rápida](https://github.com/PaulaoDev/khan-core/blob/master/src/Khan/Component/Container/ServiceContainer.php)
+ - ⚙ [Websockets](https://github.com/PaulaoDev/khan-core/blob/master/src/Khan/Component/Socket/Socket.php)
  
  ### Benchmarks
  
@@ -110,9 +110,29 @@ Khan é um framework de aplicações web. Acreditamos que o desenvolvimento deve
 Para que o sistema funcione 100% é necessário ter um Virtual Host configurado em seu localhost ou diretamente na pasta ROOT de uma hospedagem.
 
   ### Routes
-  Crie arquivos com rotas no diretório **config/routes.php**
-  
-  <p align="center"><img src="https://i.imgur.com/Z7R5ew4.png" alt="Khan"/></p>
+  Configure rotas no arquivo **config/routes.php**
+   ```php
+use App\Khan\Component\Router\Router;
+
+Router\get('/home', function($req, $res){ 
+        return "Home"; 
+});
+Router\post('/home', function($req, $res){ 
+        return "Home"; 
+});
+Router\delete('/home', function($req, $res){ 
+        return "Home"; 
+});
+Router\put('/home', function($req, $res){ 
+        return "Home"; 
+});
+Router\patch('/home', function($req, $res){ 
+        return "Home"; 
+});
+Router\temp('/home', function($req, $res){ 
+        return "Home"; 
+});
+   ```
    
    ### Segurança
    Relacionar todas as vulnerabilidades encontradas de maneira responsável e construtiva [Email](jskhanframework@gmail.com).
