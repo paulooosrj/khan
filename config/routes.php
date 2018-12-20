@@ -3,7 +3,7 @@
 use \App\Khan\Component\Router\Router;
 
 Container::bind("teste", function () {
-	return "Comece o desenvolvimento!!";
+	return "Init development!!";
 });
 
 Router\notFound(function ($req, $res) {
